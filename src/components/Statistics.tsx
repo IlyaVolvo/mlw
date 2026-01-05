@@ -14,7 +14,6 @@ import {
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
 import type { LanguageConfig } from '../types';
-import { getLanguageConfigs } from '../data/dictionaryLoader';
 
 ChartJS.register(
   CategoryScale,
@@ -335,7 +334,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
   };
 
   // Helper function to create chart options with dynamic y-axis range
-  const createChartOptions = (dataValues: number[]): ChartOptions<'line' | 'bar'> => {
+  const createChartOptions = <T extends 'line' | 'bar'>(dataValues: number[]): ChartOptions<T> => {
     const minValue = Math.min(...dataValues);
     const maxValue = Math.max(...dataValues);
     const padding = 0.5;
@@ -379,7 +378,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
           radius: 2,
         },
       },
-    };
+    } as unknown as ChartOptions<T>;
   };
 
   return (
@@ -525,7 +524,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                 ctx.textBaseline = 'bottom';
                 ctx.fillStyle = '#333';
                 
-                chart.data.datasets.forEach((dataset: any, i: number) => {
+                chart.data.datasets.forEach((_dataset: any, i: number) => {
                   const meta = chart.getDatasetMeta(i);
                   meta.data.forEach((bar: any, index: number) => {
                     const count = distribution[index + 1] || 0;
@@ -544,7 +543,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                   data={attemptsDistributionChartData} 
                   plugins={[labelPlugin]}
                   options={(() => {
-                    const baseOptions = createChartOptions(attemptsDistributionPercentages);
+                    const baseOptions = createChartOptions<'bar'>(attemptsDistributionPercentages);
                     return {
                       ...baseOptions,
                       plugins: {
@@ -575,7 +574,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(runningDailyAverage.map(d => d.average))}
+                  options={createChartOptions<'line'>(runningDailyAverage.map(d => d.average))}
                 />
               </div>
             ) : (
@@ -599,7 +598,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(calendarWeeklyAverage.map(d => d.average))}
+                  options={createChartOptions<'bar'>(calendarWeeklyAverage.map(d => d.average))}
                 />
               </div>
             ) : (
@@ -623,7 +622,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(calendarMonthlyAverage.map(d => d.average))}
+                  options={createChartOptions<'bar'>(calendarMonthlyAverage.map(d => d.average))}
                 />
               </div>
             ) : (
@@ -647,7 +646,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(calendarYearlyAverage.map(d => d.average))}
+                  options={createChartOptions<'bar'>(calendarYearlyAverage.map(d => d.average))}
                 />
               </div>
             ) : (
@@ -670,7 +669,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(twoWeekRunningAverage.map(d => d.average))}
+                  options={createChartOptions<'line'>(twoWeekRunningAverage.map(d => d.average))}
                 />
               </div>
             ) : (
@@ -693,7 +692,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
                       },
                     ],
                   }}
-                  options={createChartOptions(fourWeekRunningAverage.map(d => d.average))}
+                  options={createChartOptions<'line'>(fourWeekRunningAverage.map(d => d.average))}
                 />
               </div>
             ) : (
