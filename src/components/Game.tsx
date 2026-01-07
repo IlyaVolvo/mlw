@@ -3,7 +3,7 @@ import type { GameState, DictionaryEntry, LetterState, LanguageConfig } from '..
 import { GameBoard } from './GameBoard';
 import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
-import { loadDictionary, getLanguageConfigs } from '../data/dictionaryLoader';
+import { loadDictionary } from '../data/dictionaryLoader';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
 import { loadPreferences, savePreferences } from '../utils/preferences';
@@ -19,11 +19,27 @@ interface GameProps {
   historicalDate?: string | null;
   onHistoricalDateCleared?: () => void;
   onViewHistoricalGame?: (date: string) => void;
+  language: string;
+  wordLength: number;
+  onLanguageChange: (language: string) => void;
+  onWordLengthChange: (wordLength: number) => void;
+  availableLanguages: LanguageConfig[];
 }
 
-export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange, historicalDate, onHistoricalDateCleared, onViewHistoricalGame }) => {
-  const [language, setLanguage] = useState<string>('en');
-  const [wordLength, setWordLength] = useState<number>(5);
+export const Game: React.FC<GameProps> = ({ 
+  userId, 
+  onLogout, 
+  view, 
+  onViewChange, 
+  historicalDate, 
+  onHistoricalDateCleared: _onHistoricalDateCleared, 
+  onViewHistoricalGame: _onViewHistoricalGame,
+  language,
+  wordLength,
+  onLanguageChange,
+  onWordLengthChange,
+  availableLanguages
+}) => {
   const [dictionary, setDictionary] = useState<DictionaryEntry | null>(null);
   const [targetWord, setTargetWord] = useState<string>('');
   const [gameState, setGameState] = useState<GameState | null>(null);
@@ -31,25 +47,11 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
   const [error, setError] = useState<string | null>(null);
   const [letterStates, setLetterStates] = useState<Map<string, LetterState>>(new Map());
   const [randomMode, setRandomMode] = useState<boolean>(false);
-  const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const initializedRef = useRef<boolean>(false);
   const [isHistoricalView, setIsHistoricalView] = useState<boolean>(false);
 
-  // Load language configs and preferences on mount
+  // Load preferences on mount
   useEffect(() => {
-    const loadConfigs = async () => {
-      const configs = await getLanguageConfigs();
-      setAvailableLanguages(configs);
-      
-      // Validate current word length for selected language
-      const currentLangConfig = configs.find(lang => lang.code === language);
-      if (currentLangConfig && !currentLangConfig.supportedLengths.includes(wordLength)) {
-        // If current word length is not supported, switch to first supported length
-        setWordLength(currentLangConfig.supportedLengths[0] || 5);
-      }
-    };
-    loadConfigs();
-
     // Always default to Daily mode
     setRandomMode(false);
   }, []);
@@ -92,6 +94,7 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
         setDictionary(dict);
 
         try {
+          // First check for completed game
           const completedResponse = await apiClient.getCompletedGame({
             language,
             wordLength,
@@ -99,6 +102,7 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
             isRandomMode: false,
           });
           if (completedResponse.game) {
+            // Found completed game - show it
             const target = completedResponse.game.target_word;
             const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
               word: g.word,
@@ -118,9 +122,69 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
             setGameState(historicalGame);
             setTargetWord(target);
             updateLetterStates(historicalGame);
-          } else {
-            setError(`No game found for ${historicalDate}`);
+            setLoading(false);
+            return;
           }
+
+          // Check for current (incomplete) game
+          const currentResponse = await apiClient.getCurrentGame({
+            language,
+            wordLength,
+            gameDate: historicalDate,
+            isRandomMode: false,
+          });
+          if (currentResponse.game) {
+            // Found incomplete game - restore it
+            const target = currentResponse.game.target_word;
+            const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
+              word: g.word,
+              evaluations: evaluateGuess(g.word, target),
+            }));
+            const currentGame: GameState = {
+              guesses: guessesWithEvals,
+              currentGuess: '',
+              isComplete: currentResponse.game.is_complete === 1,
+              isWon: currentResponse.game.isWon,
+              language: currentResponse.game.language,
+              wordLength: currentResponse.game.word_length,
+              date: currentResponse.game.game_date,
+              isRandomMode: currentResponse.game.is_random_mode === 1,
+              wordSeed: currentResponse.game.word_seed || undefined,
+            };
+            setGameState(currentGame);
+            setTargetWord(target);
+            updateLetterStates(currentGame);
+            setLoading(false);
+            return;
+          }
+
+          // No game found - start a new one for this date
+          const target = getDailyWord(dict, historicalDate);
+          const newState: GameState = {
+            guesses: [],
+            currentGuess: '',
+            isComplete: false,
+            isWon: false,
+            language,
+            wordLength,
+            date: historicalDate,
+            isRandomMode: false,
+          };
+          setGameState(newState);
+          setTargetWord(target);
+          updateLetterStates(newState);
+          
+          // Save new game to API
+          await apiClient.saveGame({
+            language,
+            wordLength,
+            targetWord: target,
+            gameDate: historicalDate,
+            isRandomMode: false,
+            guesses: [],
+            isComplete: false,
+            isWon: false,
+          });
         } catch (err) {
           console.error('Failed to load historical game:', err);
           setError('Failed to load historical game');
@@ -305,47 +369,18 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
         setDictionary(dict);
 
         const today = formatDate();
-        let target: string;
-        let wordSeed: number | undefined;
 
+        // Only load existing games, don't create new ones when settings change
+        // New games are only created when clicking "New Game" button
         if (randomMode) {
-          // Random mode: generate new word
-          wordSeed = Date.now();
-          target = getWordFromSeed(dict, wordSeed);
+          // Random mode: don't auto-create games on settings change
+          // Just clear the game state - user must click "New Game" to start
+          setGameState(null);
+          setTargetWord('');
+          setLetterStates(new Map());
         } else {
-          // Daily mode: same word for the day
-          target = getDailyWord(dict, today);
-        }
-
-        if (randomMode) {
-          // Random mode: always start new game when settings change
-          const newState: GameState = {
-            guesses: [],
-            currentGuess: '',
-            isComplete: false,
-            isWon: false,
-            language,
-            wordLength,
-            date: Date.now().toString(),
-            isRandomMode: true,
-            wordSeed,
-          };
-          setGameState(newState);
-          setTargetWord(target);
-          updateLetterStates(newState);
-          await apiClient.saveGame({
-            language,
-            wordLength,
-            targetWord: target,
-            gameDate: newState.date,
-            isRandomMode: true,
-            wordSeed,
-            guesses: [],
-            isComplete: false,
-            isWon: false,
-          });
-        } else {
-          // Daily mode: check for completed game first, then current game, otherwise start new
+          // Daily mode: check for completed game first, then current game
+          // Don't create new game if none exists
           try {
             const completedResponse = await apiClient.getCompletedGame({
               language,
@@ -403,48 +438,18 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
                 setTargetWord(target);
                 updateLetterStates(currentGame);
               } else {
-                // Start new game
-                const newState: GameState = {
-                  guesses: [],
-                  currentGuess: '',
-                  isComplete: false,
-                  isWon: false,
-                  language,
-                  wordLength,
-                  date: today,
-                  isRandomMode: false,
-                };
-                setGameState(newState);
-                setTargetWord(target);
-                updateLetterStates(newState);
-                await apiClient.saveGame({
-                  language,
-                  wordLength,
-                  targetWord: target,
-                  gameDate: today,
-                  isRandomMode: false,
-                  guesses: [],
-                  isComplete: false,
-                  isWon: false,
-                });
+                // No existing game - clear state, user must click "New Game" to start
+                setGameState(null);
+                setTargetWord('');
+                setLetterStates(new Map());
               }
             }
           } catch (err) {
             console.error('Failed to load game:', err);
-            // Start new game on error
-            const newState: GameState = {
-              guesses: [],
-              currentGuess: '',
-              isComplete: false,
-              isWon: false,
-              language,
-              wordLength,
-              date: today,
-              isRandomMode: false,
-            };
-            setGameState(newState);
-            setTargetWord(target);
-            updateLetterStates(newState);
+            // On error, clear state instead of creating new game
+            setGameState(null);
+            setTargetWord('');
+            setLetterStates(new Map());
           }
         }
       } catch (err) {
@@ -458,7 +463,13 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
   }, [language, wordLength, randomMode, userId]);
 
   const saveGameToApi = useCallback(async (state: GameState) => {
-    if (!dictionary) return;
+    if (!dictionary || !targetWord) return;
+    // Don't save if this is just an empty initial state that hasn't been initialized yet
+    // The initial save is handled explicitly in the initialization code
+    // Skip if: not initialized yet, no guesses, not complete, and no current guess
+    if (!initializedRef.current && state.guesses.length === 0 && !state.isComplete && state.currentGuess === '') {
+      return;
+    }
     try {
       await apiClient.saveGame({
         language: state.language,
@@ -534,16 +545,16 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
   }, [gameState, saveGameToApi]);
 
   const handleLanguageChange = (newLanguage: string) => {
-    setLanguage(newLanguage);
     // Update word length to first supported length if current is not supported
     const langConfig = availableLanguages.find(l => l.code === newLanguage);
     if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
-      setWordLength(langConfig.supportedLengths[0]);
+      onWordLengthChange(langConfig.supportedLengths[0] || 5);
     }
+    onLanguageChange(newLanguage);
   };
 
   const handleWordLengthChange = (newLength: number) => {
-    setWordLength(newLength);
+    onWordLengthChange(newLength);
   };
 
   const handleClearGame = useCallback(async () => {
@@ -697,6 +708,11 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
           </div>
         )}
       </div>
+      {isHistoricalView && historicalDate && (
+        <div className="historical-date-indicator">
+          Playing game for: {historicalDate}
+        </div>
+      )}
       <Settings
         language={language}
         wordLength={wordLength}
@@ -735,72 +751,18 @@ export const Game: React.FC<GameProps> = ({ userId, onLogout, view, onViewChange
             </div>
           ) : (
             <div className="result-message failure">
-              Game Over!
+              Game Over! The word was: <strong>{targetWord}</strong>
             </div>
           )}
         </div>
       )}
-      {isHistoricalView && historicalDate && (
-        <div className="historical-banner">
-          <button 
-            className="nav-historical-button"
-            onClick={() => {
-              const currentDate = new Date(historicalDate);
-              currentDate.setDate(currentDate.getDate() - 1);
-              const prevDate = currentDate.toISOString().split('T')[0];
-              if (onViewHistoricalGame) {
-                onViewHistoricalGame(prevDate);
-              }
-            }}
-            title="Previous date"
-          >
-            ←
-          </button>
-          <div className="historical-text">
-            <span>Viewing Historical Game:</span>
-            <span>{historicalDate}</span>
-          </div>
-          <button 
-            className="nav-historical-button"
-            onClick={() => {
-              const currentDate = new Date(historicalDate);
-              currentDate.setDate(currentDate.getDate() + 1);
-              const nextDate = currentDate.toISOString().split('T')[0];
-              const today = formatDate();
-              if (nextDate <= today) {
-                if (onViewHistoricalGame) {
-                  onViewHistoricalGame(nextDate);
-                }
-              }
-            }}
-            disabled={historicalDate >= formatDate()}
-            title="Next date"
-          >
-            →
-          </button>
-          <button 
-            className="close-historical-button"
-            onClick={() => {
-              setIsHistoricalView(false);
-              if (onHistoricalDateCleared) {
-                onHistoricalDateCleared();
-              }
-              initializedRef.current = false; // Reset to allow re-initialization
-            }}
-          >
-            Close
-          </button>
-        </div>
-      )}
-      {!isHistoricalView && (
-        <Keyboard
-          onKeyPress={handleKeyPress}
-          onEnter={handleEnter}
-          onBackspace={handleBackspace}
-          letterStates={letterStates}
-          language={language}
-        />
-      )}
+      <Keyboard
+        onKeyPress={handleKeyPress}
+        onEnter={handleEnter}
+        onBackspace={handleBackspace}
+        letterStates={letterStates}
+        language={language}
+      />
     </div>
   );
 };

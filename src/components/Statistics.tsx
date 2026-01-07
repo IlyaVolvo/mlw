@@ -47,6 +47,10 @@ interface StatisticsProps {
   view?: 'game' | 'statistics';
   onViewChange?: (view: 'game' | 'statistics') => void;
   onViewHistoricalGame?: (date: string) => void;
+  language: string;
+  wordLength: number;
+  onLanguageChange: (language: string) => void;
+  onWordLengthChange: (wordLength: number) => void;
 }
 
 type StatisticType = 
@@ -58,9 +62,17 @@ type StatisticType =
   | 'two-week-running'
   | 'four-week-running';
 
-export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguages, view, onViewChange, onViewHistoricalGame }) => {
-  const [language, setLanguage] = useState<string>('en');
-  const [wordLength, setWordLength] = useState<number>(5);
+export const Statistics: React.FC<StatisticsProps> = ({ 
+  userId, 
+  availableLanguages, 
+  view, 
+  onViewChange, 
+  onViewHistoricalGame,
+  language,
+  wordLength,
+  onLanguageChange,
+  onWordLengthChange
+}) => {
   const [modeFilter, setModeFilter] = useState<'daily' | 'all'>('all');
   const [statisticType, setStatisticType] = useState<StatisticType>('attempts-distribution');
   const [games, setGames] = useState<GameData[]>([]);
@@ -291,11 +303,11 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
   }
 
   const handleLanguageChange = (newLanguage: string) => {
-    setLanguage(newLanguage);
     const langConfig = availableLanguages.find(l => l.code === newLanguage);
     if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
-      setWordLength(langConfig.supportedLengths[0] || 5);
+      onWordLengthChange(langConfig.supportedLengths[0] || 5);
     }
+    onLanguageChange(newLanguage);
   };
 
   if (loading) {
@@ -422,7 +434,7 @@ export const Statistics: React.FC<StatisticsProps> = ({ userId, availableLanguag
         <div className="stat-filter-group">
           <select
             value={wordLength}
-            onChange={(e) => setWordLength(Number(e.target.value))}
+            onChange={(e) => onWordLengthChange(Number(e.target.value))}
           >
             {currentLangConfig?.supportedLengths.map((length) => (
               <option key={length} value={length}>

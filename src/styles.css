@@ -842,6 +842,14 @@ h1 .logout-wrapper:hover .logout-tooltip {
   background: #ffb300;
 }
 
+.historical-date-indicator {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .stats-grid {
     grid-template-columns: 1fr;

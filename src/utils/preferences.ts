@@ -2,10 +2,14 @@ const PREFERENCES_KEY = 'wordle-multi-preferences';
 
 export interface UserPreferences {
   randomMode: boolean; // If true, new word every game
+  language: string; // Selected language code
+  wordLength: number; // Selected word length
 }
 
 const DEFAULT_PREFERENCES: UserPreferences = {
   randomMode: false,
+  language: 'en',
+  wordLength: 5,
 };
 
 /**

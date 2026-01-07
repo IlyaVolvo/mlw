@@ -157,7 +157,7 @@ router.post('/save', authenticateToken, async (req: AuthRequest, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Check if game already exists
+    // Check if game already exists - check both incomplete and complete games
     let queryText = 'SELECT * FROM games WHERE user_id = $1 AND language = $2 AND word_length = $3 AND game_date = $4 AND is_random_mode = $5';
     const queryParams: any[] = [userId, language, wordLength, gameDate, isRandomMode ? 1 : 0];
     let paramIndex = 6;
@@ -169,6 +169,8 @@ router.post('/save', authenticateToken, async (req: AuthRequest, res) => {
     } else {
       queryText += ' AND word_seed IS NULL';
     }
+
+    queryText += ' ORDER BY created_at DESC LIMIT 1';
 
     const existingResult = await query(queryText, queryParams);
     const existingGame = existingResult.rows[0] as any;
@@ -188,24 +190,52 @@ router.post('/save', authenticateToken, async (req: AuthRequest, res) => {
 
       res.json({ success: true, gameId: existingGame.id });
     } else {
-      // Create new game
-      const result = await query(
-        'INSERT INTO games (user_id, language, word_length, target_word, game_date, is_random_mode, word_seed, is_complete, guesses, completed_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id',
-        [
-          userId,
-          language,
-          wordLength,
-          targetWord,
-          gameDate,
-          isRandomMode ? 1 : 0,
-          wordSeed || null,
-          isComplete ? 1 : 0,
-          (guesses || []).map((g: any) => typeof g === 'string' ? g : g.word), // Extract words from guesses array
-          isComplete ? new Date().toISOString() : null
-        ]
-      );
+      // Use INSERT ... ON CONFLICT to prevent duplicates in case of race conditions
+      // First, try to insert
+      try {
+        const result = await query(
+          'INSERT INTO games (user_id, language, word_length, target_word, game_date, is_random_mode, word_seed, is_complete, guesses, completed_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id',
+          [
+            userId,
+            language,
+            wordLength,
+            targetWord,
+            gameDate,
+            isRandomMode ? 1 : 0,
+            wordSeed || null,
+            isComplete ? 1 : 0,
+            (guesses || []).map((g: any) => typeof g === 'string' ? g : g.word), // Extract words from guesses array
+            isComplete ? new Date().toISOString() : null
+          ]
+        );
 
-      res.json({ success: true, gameId: result.rows[0].id });
+        res.json({ success: true, gameId: result.rows[0].id });
+      } catch (insertError: any) {
+        // If insert fails (e.g., unique constraint violation), try to find and update existing game
+        if (insertError.code === '23505') { // Unique violation
+          // Race condition: game was created between our check and insert, find it and update
+          const retryResult = await query(queryText, queryParams);
+          const retryGame = retryResult.rows[0] as any;
+          
+          if (retryGame) {
+            await query(
+              'UPDATE games SET target_word = $1, is_complete = $2, guesses = $3, completed_at = $4 WHERE id = $5',
+              [
+                targetWord,
+                isComplete ? 1 : 0,
+                (guesses || []).map((g: any) => typeof g === 'string' ? g : g.word),
+                isComplete ? new Date().toISOString() : null,
+                retryGame.id
+              ]
+            );
+            res.json({ success: true, gameId: retryGame.id });
+          } else {
+            throw insertError;
+          }
+        } else {
+          throw insertError;
+        }
+      }
     }
   } catch (error) {
     logger.error('Save game error', error);
