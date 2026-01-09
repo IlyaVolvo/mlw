@@ -850,6 +850,132 @@ h1 .logout-wrapper:hover .logout-tooltip {
   font-style: italic;
 }
 
+.play-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.play-controls .date-picker-wrapper {
+  position: relative;
+}
+
+.play-controls .date-input {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-width: 150px;
+  background: white;
+  color: #333;
+}
+
+.play-controls .date-input:hover {
+  border-color: #667eea;
+}
+
+.play-controls .date-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Ensure date picker calendar is visible */
+.play-controls .date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  padding: 4px;
+}
+
+.play-controls .date-input::-webkit-inner-spin-button,
+.play-controls .date-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.selected-date-indicator {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 600;
+  padding: 4px 8px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 6px;
+}
+
+.play-button {
+  padding: 10px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.play-button:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.play-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.view-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+.view-selector .view-tabs {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.date-hint {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.playing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px 16px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+}
+
+.playing-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.playing-date {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .stats-grid {
     grid-template-columns: 1fr;

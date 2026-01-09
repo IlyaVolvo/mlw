@@ -43,7 +43,11 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
     const text = await response.text();
     const words = text
       .split('\n')
-      .map(line => line.trim().toLowerCase())
+      .map(line => {
+        // Extract only the first word (up to first whitespace)
+        const firstWord = line.trim().split(/\s+/)[0];
+        return firstWord.toLowerCase();
+      })
       .filter(word => word.length > 0);
     
     console.log(`Loaded ${path}: ${words.length} words`);

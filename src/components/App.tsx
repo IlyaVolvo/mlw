@@ -114,13 +114,14 @@ export const App: React.FC = () => {
     setView('game'); // Switch to game view when viewing historical game
   };
 
-  const handleViewChange = (newView: 'game' | 'statistics') => {
-    setView(newView);
-    // Clear historical date when switching to game view (unless it's from a historical game selection)
-    if (newView === 'game' && !historicalDate) {
-      // Already cleared or not set
-    } else if (newView === 'statistics') {
-      // Clear historical date when switching to statistics
+  const handleViewChange = (newView: 'game' | 'statistics' | null) => {
+    if (newView === null) {
+      setView('game'); // Default to game if null
+    } else {
+      setView(newView);
+    }
+    // Clear historical date when switching views
+    if (newView === 'statistics') {
       setHistoricalDate(null);
     }
   };

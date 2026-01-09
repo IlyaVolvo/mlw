@@ -78,7 +78,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
   const [games, setGames] = useState<GameData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [historicalDate, setHistoricalDate] = useState<string>('');
 
   useEffect(() => {
     const loadStatistics = async () => {
@@ -94,7 +93,8 @@ export const Statistics: React.FC<StatisticsProps> = ({
         if (modeFilter === 'daily') {
           filteredGames = filteredGames.filter(game => !game.isRandomMode);
         }
-        setGames(filteredGames.filter(game => game.isComplete));
+        const completedGames = filteredGames.filter(game => game.isComplete);
+        setGames(completedGames);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load statistics');
       } finally {
@@ -455,42 +455,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
         </div>
       </div>
 
-      <div className="historical-game-section">
-        <label htmlFor="historical-date">View Historical Game:</label>
-        <div className="date-picker-wrapper">
-          <input
-            id="historical-date"
-            type="date"
-            value={historicalDate}
-            max={new Date().toISOString().split('T')[0]}
-            onChange={(e) => {
-              const date = e.target.value;
-              setHistoricalDate(date);
-              if (date && onViewHistoricalGame) {
-                onViewHistoricalGame(date);
-                if (onViewChange) {
-                  onViewChange('game');
-                }
-              }
-            }}
-            className="date-input-hidden"
-          />
-          <label htmlFor="historical-date" className="date-picker-icon" aria-label="Select date">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-              <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" strokeWidth="1.5"/>
-              <line x1="7" y1="4" x2="7" y2="8" stroke="currentColor" strokeWidth="1.5"/>
-              <line x1="13" y1="4" x2="13" y2="8" stroke="currentColor" strokeWidth="1.5"/>
-              <circle cx="10" cy="12" r="1" fill="currentColor"/>
-              <circle cx="13" cy="12" r="1" fill="currentColor"/>
-              <circle cx="16" cy="12" r="1" fill="currentColor"/>
-              <circle cx="10" cy="15" r="1" fill="currentColor"/>
-              <circle cx="13" cy="15" r="1" fill="currentColor"/>
-              <circle cx="16" cy="15" r="1" fill="currentColor"/>
-            </svg>
-          </label>
-        </div>
-      </div>
 
       <div className="stat-display">
         <div className="stat-card">

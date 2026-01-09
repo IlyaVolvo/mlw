@@ -55,12 +55,20 @@ function loadDictionaryFiles(language: string, wordLength: number): { answers: s
   
   const answers = fs.readFileSync(answersPath, 'utf-8')
     .split('\n')
-    .map(line => line.trim().toLowerCase())
+    .map(line => {
+      // Extract only the first word (up to first whitespace)
+      const firstWord = line.trim().split(/\s+/)[0];
+      return firstWord.toLowerCase();
+    })
     .filter(word => word.length > 0);
   
   const words = fs.readFileSync(dictionaryPath, 'utf-8')
     .split('\n')
-    .map(line => line.trim().toLowerCase())
+    .map(line => {
+      // Extract only the first word (up to first whitespace)
+      const firstWord = line.trim().split(/\s+/)[0];
+      return firstWord.toLowerCase();
+    })
     .filter(word => word.length > 0);
   
   return { answers, words };
