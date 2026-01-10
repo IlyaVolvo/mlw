@@ -23,7 +23,7 @@ function generateSeed(date: string, language: string, wordLength: number): numbe
  */
 export function getDailyWord(
   dictionary: DictionaryEntry,
-  date: string = new Date().toISOString().split('T')[0]
+  date: string = formatDate()
 ): string {
   const seed = generateSeed(date, dictionary.language, dictionary.wordLength);
   const answerWords = dictionary.answerWords;
@@ -51,9 +51,12 @@ export function getWordFromSeed(dictionary: DictionaryEntry, seed: number): stri
 }
 
 /**
- * Formats a date as YYYY-MM-DD
+ * Formats a date as YYYY-MM-DD using local time (not UTC)
  */
 export function formatDate(date: Date = new Date()): string {
-  return date.toISOString().split('T')[0];
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 

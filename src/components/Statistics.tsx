@@ -397,7 +397,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
     <div className="statistics-container">
       <div className="header-section">
         <h1>
-          <span>Wordle Multi</span>
+          <span>PolyWordle</span>
         </h1>
         {onViewChange && (
           <div className="view-tabs">

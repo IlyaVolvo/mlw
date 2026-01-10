@@ -94,8 +94,9 @@ h1 .logout-wrapper:hover .logout-tooltip {
   display: flex;
   gap: 16px;
   justify-content: center;
+  align-items: flex-start;
   margin-bottom: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .game-controls {
@@ -153,6 +154,70 @@ h1 .logout-wrapper:hover .logout-tooltip {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex-shrink: 0;
+}
+
+.setting-group.date-picker-setting {
+  flex: 0 0 auto;
+  min-width: auto;
+}
+
+.date-picker-input-compact {
+  /* Hide native calendar picker icon */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.date-picker-input-compact::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+.date-picker-input-compact::-webkit-inner-spin-button,
+.date-picker-input-compact::-webkit-outer-spin-button {
+  display: none !important;
+}
+
+/* Hide the native date input text completely */
+.date-picker-input-compact::-webkit-datetime-edit,
+.date-picker-input-compact::-webkit-datetime-edit-fields-wrapper,
+.date-picker-input-compact::-webkit-datetime-edit-text,
+.date-picker-input-compact::-webkit-datetime-edit-month-field,
+.date-picker-input-compact::-webkit-datetime-edit-day-field,
+.date-picker-input-compact::-webkit-datetime-edit-year-field {
+  color: transparent !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.date-picker-input-compact::-webkit-datetime-edit-text {
+  display: none !important;
+}
+
+/* Firefox */
+.date-picker-input-compact::-moz-placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.date-picker-input-compact::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Ensure our custom text overlay displays properly */
+.date-display-text-compact {
+  color: #333 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
 }
 
 .setting-group label {
@@ -780,6 +845,36 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .view-historical-button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+.date-picker-button-inline {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-picker-button-inline:hover:not(:disabled) {
+  border-color: #667eea;
+}
+
+.date-picker-button-inline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f5f5f5;
+}
+
+.date-display-text {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  user-select: none;
 }
 
 .historical-banner {

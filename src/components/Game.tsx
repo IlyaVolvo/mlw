@@ -49,15 +49,17 @@ export const Game: React.FC<GameProps> = ({
   const [randomMode, setRandomMode] = useState<boolean>(false);
   const initializedRef = useRef<boolean>(false);
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [previewGameState, setPreviewGameState] = useState<GameState | null>(null);
-  const [previewTargetWord, setPreviewTargetWord] = useState<string>('');
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
 
-  // Load preferences on mount
+  // Load preferences on mount - default to Daily mode (not Training)
   useEffect(() => {
     const prefs = loadPreferences();
-    setRandomMode(prefs.randomMode || false);
+    // Default to Daily (not Training) if not set
+    setRandomMode(prefs.randomMode === true);
+    // Initialize selected date to today for Daily mode
+    if (!prefs.randomMode) {
+      setSelectedPlayDate(formatDate());
+    }
   }, []);
 
   const updateLetterStates = useCallback((state: GameState) => {
@@ -127,7 +129,7 @@ export const Game: React.FC<GameProps> = ({
 
   // Handle language or word length change - reload dictionary and clear preview
   useEffect(() => {
-    if (!initializedRef.current || loading || isPlayingMode) return;
+      if (!initializedRef.current || loading || isPlayingMode) return;
 
     const changeSettings = async () => {
       try {
@@ -135,10 +137,12 @@ export const Game: React.FC<GameProps> = ({
         if (dict) {
           setDictionary(dict);
         }
-        // Clear preview when settings change
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
-        setSelectedPlayDate('');
+        // Clear game state when settings change
+        setGameState(null);
+        setTargetWord('');
+        if (!randomMode) {
+          setSelectedPlayDate(formatDate());
+        }
       } catch (err) {
         console.error('Failed to load dictionary:', err);
       }
@@ -148,6 +152,8 @@ export const Game: React.FC<GameProps> = ({
   }, [language, wordLength, initializedRef.current, loading, isPlayingMode]);
 
   const saveGameToApi = useCallback(async (state: GameState) => {
+    // Don't save Training mode games to DB
+    if (state.isRandomMode) return;
     if (!dictionary || !targetWord || !isPlayingMode) return; // Only save when actively playing
     try {
       await apiClient.saveGame({
@@ -155,7 +161,7 @@ export const Game: React.FC<GameProps> = ({
         wordLength: state.wordLength,
         targetWord,
         gameDate: state.date,
-        isRandomMode: state.isRandomMode || false,
+        isRandomMode: false,
         wordSeed: state.wordSeed,
         guesses: state.guesses,
         isComplete: state.isComplete,
@@ -166,7 +172,160 @@ export const Game: React.FC<GameProps> = ({
     }
   }, [dictionary, targetWord, isPlayingMode]);
 
-  const handleKeyPress = useCallback((key: string) => {
+  // New function to start game automatically (called when first letter is typed)
+  const handleStartGame = useCallback(async () => {
+    if (!dictionary || isPlayingMode) return;
+    
+    setIsPlayingMode(true);
+    const playDate = selectedPlayDate || formatDate();
+    let target: string;
+    let wordSeed: number | undefined;
+
+    try {
+      if (randomMode) {
+        // Training mode: always start new game
+        wordSeed = Date.now();
+        target = getWordFromSeed(dictionary, wordSeed);
+        
+        const newState: GameState = {
+          guesses: [],
+          currentGuess: '',
+          isComplete: false,
+          isWon: false,
+          language,
+          wordLength,
+          date: Date.now().toString(),
+          isRandomMode: true,
+          wordSeed: wordSeed,
+        };
+
+        setGameState(newState);
+        setTargetWord(target);
+        setLetterStates(new Map());
+        
+        // Don't save Training mode games to DB
+      } else {
+        // Daily mode: check for existing game first
+        const currentResponse = await apiClient.getCurrentGame({
+          language,
+          wordLength,
+          gameDate: playDate,
+          isRandomMode: false,
+        });
+        if (currentResponse.game && currentResponse.game.is_complete !== 1) {
+          // Found incomplete game - continue playing it
+          const target = currentResponse.game.target_word;
+          const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
+            word: g.word,
+            evaluations: evaluateGuess(g.word, target),
+          }));
+          const currentGame: GameState = {
+            guesses: guessesWithEvals,
+            currentGuess: '',
+            isComplete: false,
+            isWon: false,
+            language: currentResponse.game.language,
+            wordLength: currentResponse.game.word_length,
+            date: currentResponse.game.game_date,
+            isRandomMode: false,
+            wordSeed: undefined,
+          };
+          setGameState(currentGame);
+          setTargetWord(target);
+          updateLetterStates(currentGame);
+          return;
+        }
+        
+        // Check for completed game
+        const completedResponse = await apiClient.getCompletedGame({
+          language,
+          wordLength,
+          gameDate: playDate,
+          isRandomMode: false,
+        });
+        if (completedResponse.game) {
+          // Restore the completed game
+          const target = completedResponse.game.target_word;
+          const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
+            word: g.word,
+            evaluations: evaluateGuess(g.word, target),
+          }));
+          const completedGame: GameState = {
+            guesses: guessesWithEvals,
+            currentGuess: '',
+            isComplete: completedResponse.game.is_complete === 1,
+            isWon: completedResponse.game.isWon,
+            language: completedResponse.game.language,
+            wordLength: completedResponse.game.word_length,
+            date: completedResponse.game.game_date,
+            isRandomMode: false,
+            wordSeed: undefined,
+          };
+          setGameState(completedGame);
+          setTargetWord(target);
+          updateLetterStates(completedGame);
+          return;
+        }
+        
+        // No existing game, start a new one
+        target = getDailyWord(dictionary, playDate);
+        const newState: GameState = {
+          guesses: [],
+          currentGuess: '',
+          isComplete: false,
+          isWon: false,
+          language,
+          wordLength,
+          date: playDate,
+          isRandomMode: false,
+          wordSeed: undefined,
+        };
+
+        setGameState(newState);
+        setTargetWord(target);
+        setLetterStates(new Map());
+        
+        // Save game to DB (only for Daily mode)
+        await apiClient.saveGame({
+          language,
+          wordLength,
+          targetWord: target,
+          gameDate: playDate,
+          isRandomMode: false,
+          guesses: [],
+          isComplete: false,
+          isWon: false,
+        });
+      }
+    } catch (err) {
+      console.error('Failed to start game:', err);
+      setError('Failed to start game');
+      setIsPlayingMode(false);
+    }
+  }, [dictionary, language, wordLength, randomMode, selectedPlayDate, isPlayingMode, updateLetterStates]);
+
+  // Auto-start game when first letter is typed (instead of Play button)
+  const handleKeyPress = useCallback(async (key: string) => {
+    // If not in playing mode and we have a dictionary, start the game first
+    if (!isPlayingMode && dictionary && !gameState) {
+      await handleStartGame();
+      // After game starts, the gameState will be set, so we can process the key
+      // Use a small timeout to ensure state is updated
+      setTimeout(() => {
+        setGameState((currentState) => {
+          if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
+            const normalizedKey = key.toLowerCase();
+            const newGuess = currentState.currentGuess + normalizedKey;
+            const updatedState = { ...currentState, currentGuess: newGuess };
+            saveGameToApi(updatedState);
+            return updatedState;
+          }
+          return currentState;
+        });
+      }, 0);
+      return;
+    }
+
     if (!gameState || gameState.isComplete || !dictionary) return;
 
     const normalizedKey = key.toLowerCase();
@@ -176,7 +335,7 @@ export const Game: React.FC<GameProps> = ({
       setGameState(updatedState);
       saveGameToApi(updatedState);
     }
-  }, [gameState, wordLength, dictionary, saveGameToApi]);
+  }, [gameState, wordLength, dictionary, saveGameToApi, isPlayingMode, handleStartGame]);
 
   const handleEnter = useCallback(() => {
     if (!gameState || gameState.isComplete || !dictionary) return;
@@ -223,85 +382,47 @@ export const Game: React.FC<GameProps> = ({
     }
   }, [gameState, saveGameToApi]);
 
-  const handleLanguageChange = (newLanguage: string) => {
+  const handleLanguageChange = async (newLanguage: string) => {
     // Update word length to first supported length if current is not supported
     const langConfig = availableLanguages.find(l => l.code === newLanguage);
-    if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
-      onWordLengthChange(langConfig.supportedLengths[0] || 5);
+    const newWordLength = (langConfig && !langConfig.supportedLengths.includes(wordLength)) 
+      ? (langConfig.supportedLengths[0] || 5)
+      : wordLength;
+    
+    // Save current preferences
+    const prefs = loadPreferences();
+    prefs.language = newLanguage;
+    prefs.wordLength = newWordLength;
+    savePreferences(prefs);
+    
+    // Update state
+    if (newWordLength !== wordLength) {
+      onWordLengthChange(newWordLength);
     }
     onLanguageChange(newLanguage);
+    
+    // Game state will be loaded by the useEffect that watches language/wordLength
   };
 
-  const handleWordLengthChange = (newLength: number) => {
+  const handleWordLengthChange = async (newLength: number) => {
+    // Save current preferences
+    const prefs = loadPreferences();
+    prefs.wordLength = newLength;
+    savePreferences(prefs);
+    
     onWordLengthChange(newLength);
+    
+    // Game state will be loaded by the useEffect that watches language/wordLength
   };
 
-  const handlePlayGame = useCallback(async () => {
-    if (isPlaying || isPlayingMode) return;
-    
-    // Load dictionary if not loaded
-    let dict = dictionary;
-    if (!dict) {
+  // Load game state when date/language/length changes (if in Daily mode)
+  useEffect(() => {
+    if (randomMode || !dictionary || loading) return;
+
+    const loadGameForDate = async () => {
+      const playDate = selectedPlayDate || formatDate();
       try {
-        dict = await loadDictionary(language, wordLength);
-        if (!dict) {
-          setError(`Failed to load dictionary for ${language}-${wordLength}`);
-          return;
-        }
-        setDictionary(dict);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load dictionary');
-        return;
-      }
-    }
-
-    setIsPlaying(true);
-    setIsPlayingMode(true); // Enter playing mode - this greys out settings and tabs
-    
-    const playDate = selectedPlayDate || formatDate();
-    let target: string;
-    let wordSeed: number | undefined;
-
-    try {
-      if (randomMode) {
-        // Random mode: always start new game
-        wordSeed = Date.now();
-        target = getWordFromSeed(dict, wordSeed);
-        
-        // Start a new game
-        const newState: GameState = {
-          guesses: [],
-          currentGuess: '',
-          isComplete: false,
-          isWon: false,
-          language,
-          wordLength,
-          date: Date.now().toString(),
-          isRandomMode: true,
-          wordSeed: wordSeed,
-        };
-
-        setGameState(newState);
-        setTargetWord(target);
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
-        setLetterStates(new Map());
-        
-        // Create DB entry for new game
-        await apiClient.saveGame({
-          language,
-          wordLength,
-          targetWord: target,
-          gameDate: newState.date,
-          isRandomMode: true,
-          wordSeed: wordSeed,
-          guesses: [],
-          isComplete: false,
-          isWon: false,
-        });
-      } else {
-        // Daily mode: check for existing game (incomplete or completed) first
-        // First check for incomplete game
+        // Check for current game
         const currentResponse = await apiClient.getCurrentGame({
           language,
           wordLength,
@@ -309,7 +430,6 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
         });
         if (currentResponse.game && currentResponse.game.is_complete !== 1) {
-          // Found incomplete game - continue playing it
           const target = currentResponse.game.target_word;
           const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
@@ -328,10 +448,8 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          setPreviewGameState(null);
-          setPreviewTargetWord('');
           updateLetterStates(currentGame);
-          setIsPlaying(false);
+          setIsPlayingMode(true);
           return;
         }
         
@@ -343,7 +461,6 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
         });
         if (completedResponse.game) {
-          // Restore the completed game (show result, but don't allow playing)
           const target = completedResponse.game.target_word;
           const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
@@ -357,165 +474,54 @@ export const Game: React.FC<GameProps> = ({
             language: completedResponse.game.language,
             wordLength: completedResponse.game.word_length,
             date: completedResponse.game.game_date,
-            isRandomMode: completedResponse.game.is_random_mode === 1,
-            wordSeed: completedResponse.game.word_seed || undefined,
+            isRandomMode: false,
+            wordSeed: undefined,
           };
           setGameState(completedGame);
           setTargetWord(target);
-          setPreviewGameState(null);
-          setPreviewTargetWord('');
           updateLetterStates(completedGame);
-          setIsPlayingMode(true); // Show as playing but game is complete
-          setIsPlaying(false);
+          setIsPlayingMode(true);
           return;
         }
         
-        // No existing game, start a new one for this date
-        target = getDailyWord(dict, playDate);
-        const newState: GameState = {
-          guesses: [],
-          currentGuess: '',
-          isComplete: false,
-          isWon: false,
-          language,
-          wordLength,
-          date: playDate,
-          isRandomMode: false,
-          wordSeed: undefined,
-        };
-
-        setGameState(newState);
-        setTargetWord(target);
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
-        setLetterStates(new Map());
-        
-        // Create DB entry for new game
-        await apiClient.saveGame({
-          language,
-          wordLength,
-          targetWord: target,
-          gameDate: playDate,
-          isRandomMode: false,
-          guesses: [],
-          isComplete: false,
-          isWon: false,
-        });
-      }
-    } catch (err) {
-      console.error('Failed to start game:', err);
-      setError('Failed to start game');
-      setIsPlayingMode(false);
-    } finally {
-      setIsPlaying(false);
-      setSelectedPlayDate(''); // Clear date picker after starting
-    }
-  }, [dictionary, language, wordLength, randomMode, selectedPlayDate, isPlaying, isPlayingMode, updateLetterStates]);
-
-  // Load preview game for selected date when in selection mode (not playing)
-  useEffect(() => {
-    if (isPlayingMode || loading || !dictionary) {
-      // Clear preview when playing
-      if (isPlayingMode) {
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
-      }
-      return;
-    }
-    
-    const loadPreviewGame = async () => {
-      if (!selectedPlayDate && randomMode) {
-        // Random mode - no preview for specific date
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
-        return;
-      }
-      
-      const previewDate = selectedPlayDate || formatDate();
-      
-      try {
-        // Check for completed game first
-        const completedResponse = await apiClient.getCompletedGame({
-          language,
-          wordLength,
-          gameDate: previewDate,
-          isRandomMode: randomMode,
-        });
-        if (completedResponse.game) {
-          const target = completedResponse.game.target_word;
-          const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
-            word: g.word,
-            evaluations: evaluateGuess(g.word, target),
-          }));
-          const previewGame: GameState = {
-            guesses: guessesWithEvals,
-            currentGuess: '',
-            isComplete: completedResponse.game.is_complete === 1,
-            isWon: completedResponse.game.isWon,
-            language: completedResponse.game.language,
-            wordLength: completedResponse.game.word_length,
-            date: completedResponse.game.game_date,
-            isRandomMode: completedResponse.game.is_random_mode === 1,
-            wordSeed: completedResponse.game.word_seed || undefined,
-          };
-          setPreviewGameState(previewGame);
-          setPreviewTargetWord(target);
-          return;
-        }
-        
-        // Check for incomplete game
-        const currentResponse = await apiClient.getCurrentGame({
-          language,
-          wordLength,
-          gameDate: previewDate,
-          isRandomMode: randomMode,
-        });
-        if (currentResponse.game && currentResponse.game.is_complete !== 1) {
-          const target = currentResponse.game.target_word;
-          const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
-            word: g.word,
-            evaluations: evaluateGuess(g.word, target),
-          }));
-          const previewGame: GameState = {
-            guesses: guessesWithEvals,
-            currentGuess: '',
-            isComplete: false,
-            isWon: false,
-            language: currentResponse.game.language,
-            wordLength: currentResponse.game.word_length,
-            date: currentResponse.game.game_date,
-            isRandomMode: currentResponse.game.is_random_mode === 1,
-            wordSeed: currentResponse.game.word_seed || undefined,
-          };
-          setPreviewGameState(previewGame);
-          setPreviewTargetWord(target);
-          return;
-        }
-        
-        // No game exists - show empty preview
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
+        // No game exists - clear game state but keep playing mode if it was active
+        setGameState(null);
+        setTargetWord('');
+        // Don't reset isPlayingMode here - allow starting new game
       } catch (err) {
-        console.error('Failed to load preview game:', err);
-        setPreviewGameState(null);
-        setPreviewTargetWord('');
+        console.error('Failed to load game:', err);
+        setGameState(null);
+        setTargetWord('');
       }
     };
 
-    loadPreviewGame();
-  }, [selectedPlayDate, dictionary, language, wordLength, randomMode, isPlayingMode, loading]);
+    loadGameForDate();
+  }, [selectedPlayDate, language, wordLength, randomMode, dictionary, loading, updateLetterStates]);
+
+  // Handle date change
+  const handleDateChange = useCallback(async (date: string) => {
+    setSelectedPlayDate(date);
+    // Game state will be loaded by the useEffect above
+  }, []);
 
   const handleRandomModeChange = useCallback((newRandomMode: boolean) => {
-    if (isPlayingMode) return; // Don't allow changes when playing
     const prefs = loadPreferences();
     prefs.randomMode = newRandomMode;
-    savePreferences(prefs);
+    savePreferences(prefs); // Make sticky
     setRandomMode(newRandomMode);
-    // Clear preview when mode changes
-    setPreviewGameState(null);
-    setPreviewTargetWord('');
-    setSelectedPlayDate('');
-  }, [isPlayingMode]);
+    
+    if (!newRandomMode) {
+      // Switching to Daily mode - set date and load game state
+      setSelectedPlayDate(formatDate());
+      // Game state will be loaded by the useEffect that watches randomMode
+    } else {
+      // Switching to Training mode - clear date, clear game state
+      setSelectedPlayDate('');
+      setGameState(null);
+      setTargetWord('');
+      setIsPlayingMode(false);
+    }
+  }, []);
 
   // Handle keyboard events
   useEffect(() => {
@@ -543,148 +549,20 @@ export const Game: React.FC<GameProps> = ({
     return <div className="error">Error: {error}</div>;
   }
 
-  // Helper to format playing label
-  const getPlayingLabel = () => {
-    if (!gameState) return '';
-    if (gameState.isRandomMode) {
-      return 'Playing ... random';
-    }
-    const today = formatDate();
-    if (gameState.date === today) {
-      return 'Playing ...';
-    }
-    return `Playing ... ${gameState.date}`;
-  };
-
-  // Selection mode: not playing, show Play button and date picker
-  if (!isPlayingMode || !gameState) {
-    return (
-      <div className="game-container">
-        <div className="header-section">
-          <h1>
-            <span>Wordle Multi</span>
-            {onLogout && (
-              <div className="logout-wrapper">
-                <button onClick={onLogout} className="logout-icon" title="Logout">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16 17 21 12 16 7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                  </svg>
-                </button>
-                <span className="logout-tooltip">Logout</span>
-              </div>
-            )}
-          </h1>
-          {onViewChange && (
-            <div className="view-tabs">
-              <button
-                className={`view-tab ${view === 'game' && !isPlayingMode ? 'active' : ''}`}
-                onClick={() => {
-                  // Reset to selection mode when clicking Game tab
-                  setGameState(null);
-                  setTargetWord('');
-                  setPreviewGameState(null);
-                  setPreviewTargetWord('');
-                  setSelectedPlayDate('');
-                  setIsPlayingMode(false);
-                  onViewChange('game');
-                }}
-              >
-                Game
-              </button>
-              <button
-                className={`view-tab ${view === 'statistics' && !isPlayingMode ? 'active' : ''}`}
-                onClick={() => {
-                  if (!isPlayingMode) {
-                    onViewChange('statistics');
-                  }
-                }}
-              >
-                Statistics
-              </button>
-            </div>
-          )}
-        </div>
-        <Settings
-          language={language}
-          wordLength={wordLength}
-          randomMode={randomMode}
-          availableLanguages={availableLanguages}
-          onLanguageChange={handleLanguageChange}
-          onWordLengthChange={handleWordLengthChange}
-          onRandomModeChange={handleRandomModeChange}
-          disabled={false}
-        />
-        <div className="game-controls">
-          <div className="play-controls">
-            <button 
-              className="play-button" 
-              onClick={handlePlayGame}
-              disabled={loading || isPlaying || (previewGameState?.isComplete ?? false)}
-            >
-              {isPlaying ? 'Playing...' : 'Play'}
-            </button>
-            {!randomMode && (
-              <div className="date-picker-wrapper">
-                <input
-                  id="play-date"
-                  type="date"
-                  value={selectedPlayDate}
-                  max={new Date().toISOString().split('T')[0]}
-                  onChange={(e) => setSelectedPlayDate(e.target.value)}
-                  className="date-input"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-        {previewGameState && (
-          <>
-            <GameBoard
-              guesses={previewGameState.guesses}
-              currentGuess={previewGameState.currentGuess}
-              wordLength={wordLength}
-              maxGuesses={MAX_GUESSES}
-              targetWord={previewGameState.isComplete && !previewGameState.isWon ? previewTargetWord : undefined}
-              isComplete={previewGameState.isComplete}
-              isWon={previewGameState.isWon}
-            />
-            {previewGameState.isComplete && (
-              <div className="game-result">
-                {previewGameState.isWon ? (
-                  <div className="result-message success">
-                    Congratulations! You won!
-                  </div>
-                ) : (
-                  <div className="result-message failure">
-                    Answer was: <strong>{previewTargetWord}</strong>
-                  </div>
-                )}
-              </div>
-            )}
-          </>
-        )}
-        {!previewGameState && dictionary && (
-          <GameBoard
-            guesses={[]}
-            currentGuess={''}
-            wordLength={wordLength}
-            maxGuesses={MAX_GUESSES}
-            isComplete={false}
-            isWon={false}
-          />
-        )}
-      </div>
-    );
+  // Simplified render - always show game board
+  if (loading) {
+    return <div className="loading">Loading...</div>;
   }
 
-  // Playing mode: actively playing a game
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
+
   return (
     <div className="game-container">
       <div className="header-section">
         <h1>
-          <span>Wordle Multi</span>
+          <span>PolyWordle</span>
           {onLogout && (
             <div className="logout-wrapper">
               <button onClick={onLogout} className="logout-icon" title="Logout">
@@ -701,24 +579,19 @@ export const Game: React.FC<GameProps> = ({
         {onViewChange && (
           <div className="view-tabs">
             <button
-              className="view-tab"
+              className={`view-tab ${view === 'game' ? 'active' : ''}`}
               onClick={() => {
-                // Reset to selection mode when clicking Game tab
-                setGameState(null);
-                setTargetWord('');
-                setPreviewGameState(null);
-                setPreviewTargetWord('');
-                setSelectedPlayDate('');
-                setIsPlayingMode(false);
+                // Don't clear game state - keep selections sticky
                 onViewChange('game');
               }}
             >
               Game
             </button>
             <button
-              className="view-tab"
+              className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
               onClick={() => {
-                // Can't switch to statistics while playing
+                // Don't clear game state - keep selections sticky
+                onViewChange('statistics');
               }}
             >
               Statistics
@@ -731,45 +604,77 @@ export const Game: React.FC<GameProps> = ({
         wordLength={wordLength}
         randomMode={randomMode}
         availableLanguages={availableLanguages}
+        selectedDate={selectedPlayDate || formatDate()}
         onLanguageChange={handleLanguageChange}
         onWordLengthChange={handleWordLengthChange}
         onRandomModeChange={handleRandomModeChange}
-        disabled={true}
+        onDateChange={handleDateChange}
+        disabled={false}
       />
-      <div className="game-controls">
-        <div className="playing-indicator">
-          <span className="playing-label">{getPlayingLabel()}</span>
-        </div>
-      </div>
-      <GameBoard
-        guesses={gameState.guesses}
-        currentGuess={gameState.currentGuess}
-        wordLength={wordLength}
-        maxGuesses={MAX_GUESSES}
-        targetWord={gameState.isComplete && !gameState.isWon ? targetWord : undefined}
-        isComplete={gameState.isComplete}
-        isWon={gameState.isWon}
-      />
-      {gameState.isComplete && (
-        <div className="game-result">
-          {gameState.isWon ? (
-            <div className="result-message success">
-              Congratulations! You won!
-            </div>
-          ) : (
-            <div className="result-message failure">
-              Answer was: <strong>{targetWord}</strong>
+      {!dictionary && !loading && (
+        <GameBoard
+          guesses={[]}
+          currentGuess={''}
+          wordLength={wordLength}
+          maxGuesses={MAX_GUESSES}
+          isComplete={false}
+          isWon={false}
+        />
+      )}
+      {gameState && dictionary && (
+        <>
+          <GameBoard
+            guesses={gameState.guesses}
+            currentGuess={gameState.currentGuess}
+            wordLength={wordLength}
+            maxGuesses={MAX_GUESSES}
+            targetWord={gameState.isComplete && !gameState.isWon ? targetWord : undefined}
+            isComplete={gameState.isComplete}
+            isWon={gameState.isWon}
+          />
+          {gameState.isComplete && (
+            <div className="game-result">
+              {gameState.isWon ? (
+                <div className="result-message success">
+                  Congratulations! You won!
+                </div>
+              ) : (
+                <div className="result-message failure">
+                  Answer was: <strong>{targetWord}</strong>
+                </div>
+              )}
             </div>
           )}
-        </div>
+          {!gameState.isComplete && (
+            <Keyboard
+              onKeyPress={handleKeyPress}
+              onEnter={handleEnter}
+              onBackspace={handleBackspace}
+              letterStates={letterStates}
+              language={language}
+            />
+          )}
+        </>
       )}
-      <Keyboard
-        onKeyPress={handleKeyPress}
-        onEnter={handleEnter}
-        onBackspace={handleBackspace}
-        letterStates={letterStates}
-        language={language}
-      />
+      {!gameState && dictionary && (
+        <>
+          <GameBoard
+            guesses={[]}
+            currentGuess={''}
+            wordLength={wordLength}
+            maxGuesses={MAX_GUESSES}
+            isComplete={false}
+            isWon={false}
+          />
+          <Keyboard
+            onKeyPress={handleKeyPress}
+            onEnter={handleEnter}
+            onBackspace={handleBackspace}
+            letterStates={letterStates}
+            language={language}
+          />
+        </>
+      )}
     </div>
   );
 };

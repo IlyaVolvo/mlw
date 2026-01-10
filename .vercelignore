@@ -1,0 +1,9 @@
+node_modules
+server/node_modules
+server/logs
+server/dist
+dist
+.env
+.env.local
+*.log
+
