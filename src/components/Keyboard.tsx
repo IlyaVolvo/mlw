@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import type { LetterState } from '../types';
+import { loadKeyboard } from '../data/dictionaryLoader';
 
 interface KeyboardProps {
   onKeyPress: (key: string) => void;
@@ -9,34 +10,12 @@ interface KeyboardProps {
   language: string;
 }
 
-// Keyboard layouts for different languages
-const KEYBOARD_LAYOUTS: Record<string, string[][]> = {
-  en: [
-    ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-    ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
-  ],
-  de: [
-    ['q', 'w', 'e', 'r', 't', 'z', 'u', 'i', 'o', 'p'],
-    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-    ['y', 'x', 'c', 'v', 'b', 'n', 'm'],
-  ],
-  fr: [
-    ['a', 'z', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-    ['q', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm'],
-    ['w', 'x', 'c', 'v', 'b', 'n'],
-  ],
-  it: [
-    ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-    ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
-  ],
-  ru: [
-    ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ'],
-    ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
-    ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'],
-  ],
-};
+// Default English keyboard layout (used as fallback)
+const DEFAULT_KEYBOARD: string[][] = [
+  ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+  ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+  ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+];
 
 export const Keyboard: React.FC<KeyboardProps> = ({
   onKeyPress,
@@ -45,7 +24,16 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   letterStates,
   language,
 }) => {
-  const layout = KEYBOARD_LAYOUTS[language] || KEYBOARD_LAYOUTS.en;
+  const [layout, setLayout] = useState<string[][]>(DEFAULT_KEYBOARD);
+
+  useEffect(() => {
+    const loadLayout = async () => {
+      const keyboard = await loadKeyboard(language);
+      setLayout(keyboard || DEFAULT_KEYBOARD);
+    };
+    
+    loadLayout();
+  }, [language]);
 
   const getKeyClass = (key: string): string => {
     const state = letterStates.get(key.toLowerCase());

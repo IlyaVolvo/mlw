@@ -232,7 +232,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          updateLetterStates(currentGame);
+          setLetterStates(new Map()); // Reset letter states when loading game
           return;
         }
         
@@ -263,7 +263,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          updateLetterStates(completedGame);
+          setLetterStates(new Map()); // Reset letter states when loading game
           return;
         }
         
@@ -448,7 +448,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          updateLetterStates(currentGame);
+          setLetterStates(new Map()); // Reset letter states when loading game
           setIsPlayingMode(true);
           return;
         }
@@ -479,7 +479,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          updateLetterStates(completedGame);
+          setLetterStates(new Map()); // Reset letter states when loading game
           setIsPlayingMode(true);
           return;
         }

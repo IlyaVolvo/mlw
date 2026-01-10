@@ -1,22 +1,31 @@
 import type { DictionaryEntry, LanguageConfig } from '../types';
 
-// Language metadata (names only, lengths will be detected)
-const LANGUAGE_METADATA: Array<{ code: string; name: string }> = [
-  { code: 'en', name: 'English' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'fr', name: 'Français' },
-  { code: 'it', name: 'Italiano' },
-  { code: 'ru', name: 'Русский' },
-];
-
 // Cache for loaded dictionaries
 const dictionaryCache = new Map<string, DictionaryEntry>();
 
 // Cache for detected supported lengths per language
 const supportedLengthsCache = new Map<string, number[]>();
 
+// Cache for language configurations (discovered from directory structure)
+const languageConfigsCache = new Map<string, LanguageConfig>();
+
+// Cache for keyboard layouts
+const keyboardCache = new Map<string, string[][]>();
+
 /**
- * Loads a dictionary file as text
+ * Structure to map locale codes to language names
+ * Format: { [locale]: { language: string, name: string } }
+ */
+const LOCALE_TO_LANGUAGE: Record<string, { language: string; name: string; locale: string }> = {
+  'en': { language: 'English', name: 'English', locale: 'en' },
+  'ru': { language: 'Russian', name: 'Русский', locale: 'ru' },
+  'fr': { language: 'French', name: 'Français', locale: 'fr' },
+  'es': { language: 'Spanish', name: 'Español', locale: 'es' },
+  'de': { language: 'German', name: 'Deutsch', locale: 'de' },
+};
+
+/**
+ * Loads a dictionary file as text with support for comments (#) and empty lines
  */
 async function loadDictionaryFile(path: string): Promise<string[]> {
   try {
@@ -43,9 +52,18 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
     const text = await response.text();
     const words = text
       .split('\n')
+      .map(line => line.trim())
+      .filter(line => {
+        // Ignore empty lines
+        if (!line) return false;
+        // Ignore lines starting with #
+        if (line.startsWith('#')) return false;
+        return true;
+      })
       .map(line => {
         // Extract only the first word (up to first whitespace)
-        const firstWord = line.trim().split(/\s+/)[0];
+        // The rest is considered a comment and not used
+        const firstWord = line.split(/\s+/)[0];
         return firstWord.toLowerCase();
       })
       .filter(word => word.length > 0);
@@ -59,7 +77,70 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
 }
 
 /**
+ * Detects available languages by scanning the directory structure
+ * Looks for Language/Locale directories with answer files
+ */
+async function discoverLanguages(): Promise<LanguageConfig[]> {
+  // Check cache first
+  if (languageConfigsCache.size > 0) {
+    return Array.from(languageConfigsCache.values());
+  }
+
+  const configs: LanguageConfig[] = [];
+
+  // Try each known locale
+  for (const [locale, info] of Object.entries(LOCALE_TO_LANGUAGE)) {
+    // Check if this language/locale has answer files
+    const languageDir = `${info.language}/${locale}`;
+    
+    // Check for answer files (answers-4.txt, answers-5.txt, etc.)
+    const possibleLengths = [4, 5, 6, 7, 8, 9, 10];
+    const supportedLengths: number[] = [];
+    
+    for (const length of possibleLengths) {
+      const answerPath = `/dict/${languageDir}/answers-${length}.txt`;
+      try {
+        const response = await fetch(answerPath, { method: 'HEAD' });
+        if (response.ok && !response.headers.get('content-type')?.includes('text/html')) {
+          supportedLengths.push(length);
+        }
+      } catch (error) {
+        // File doesn't exist
+      }
+    }
+    
+    // Only include languages that have at least one answer file
+    if (supportedLengths.length > 0) {
+      // Format language name: if there's only one locale for this language, use language name
+      // Otherwise use language-locale format
+      const name = info.name; // For now, just use the provided name
+      
+      const config: LanguageConfig = {
+        code: locale,
+        name,
+        supportedLengths,
+      };
+      
+      configs.push(config);
+      languageConfigsCache.set(locale, config);
+    }
+  }
+
+  return configs;
+}
+
+/**
+ * Gets the directory path for a language/locale
+ */
+function getLanguageDir(locale: string): string | null {
+  const info = LOCALE_TO_LANGUAGE[locale];
+  if (!info) return null;
+  return `${info.language}/${info.locale}`;
+}
+
+/**
  * Loads a dictionary for a specific language and word length
+ * Uses the new directory structure: Language/Locale/answers-<len>.txt
  */
 export async function loadDictionary(
   language: string,
@@ -72,9 +153,15 @@ export async function loadDictionary(
     return dictionaryCache.get(cacheKey)!;
   }
 
-  // Load answer words and dictionary words
-  const answersPath = `/dict/wordle-wordlists/${language}-${wordLength}-answers.txt`;
-  const dictionaryPath = `/dict/wordle-wordlists/${language}-${wordLength}-dictionary.txt`;
+  const languageDir = getLanguageDir(language);
+  if (!languageDir) {
+    console.warn(`Unknown language code: ${language}`);
+    return null;
+  }
+
+  // Load answer words and dictionary words from new structure
+  const answersPath = `/dict/${languageDir}/answers-${wordLength}.txt`;
+  const dictionaryPath = `/dict/${languageDir}/dictionary-${wordLength}.txt`;
 
   const [answerWords, allWords] = await Promise.all([
     loadDictionaryFile(answersPath),
@@ -86,12 +173,16 @@ export async function loadDictionary(
     return null;
   }
 
-  // Combine answer words with dictionary words, removing duplicates
-  const wordSet = new Set<string>();
-  answerWords.forEach(word => wordSet.add(word));
-  allWords.forEach(word => wordSet.add(word));
-  
-  const combinedWords = Array.from(wordSet).sort();
+  // If dictionary file doesn't exist, use answer words as dictionary
+  const combinedWords = allWords.length > 0 
+    ? (() => {
+        const wordSet = new Set<string>();
+        answerWords.forEach(word => wordSet.add(word));
+        allWords.forEach(word => wordSet.add(word));
+        return Array.from(wordSet).sort();
+      })()
+    : [...answerWords].sort();
+
   const sortedAnswerWords = [...answerWords].sort();
 
   const dictionary: DictionaryEntry = {
@@ -108,8 +199,8 @@ export async function loadDictionary(
 }
 
 /**
- * Detects available word lengths for a language by trying to load each dictionary
- * This uses the actual dictionary loading mechanism, so it's reliable
+ * Detects available word lengths for a language by checking for answer files
+ * Uses the new directory structure
  */
 async function detectSupportedLengths(language: string): Promise<number[]> {
   // Check cache first
@@ -117,48 +208,58 @@ async function detectSupportedLengths(language: string): Promise<number[]> {
     return supportedLengthsCache.get(language)!;
   }
 
-  const possibleLengths = [4, 5, 6, 7, 8, 9, 10]; // Check common lengths
+  const languageDir = getLanguageDir(language);
+  if (!languageDir) {
+    return [];
+  }
 
-  // Try to load each dictionary - if it succeeds (returns non-null), the length is available
+  const possibleLengths = [4, 5, 6, 7, 8, 9, 10]; // Check common lengths
+  const detectedLengths: number[] = [];
+
+  // Check for answer files directly (faster than loading full dictionaries)
   const checkPromises = possibleLengths.map(async (length) => {
-      try {
-        const dictionary = await loadDictionary(language, length);
-        // Log detection result
-        console.log(`Language: ${language}, Length: ${length}, Dictionary size: ${dictionary ? dictionary.words.length : null}`);
-        // If dictionary loaded successfully (not null), this length is available
-        return dictionary !== null ? length : null;
+    const answerPath = `/dict/${languageDir}/answers-${length}.txt`;
+    try {
+      const response = await fetch(answerPath, { method: 'HEAD' });
+      if (response.ok && !response.headers.get('content-type')?.includes('text/html')) {
+        return length;
+      }
     } catch (error) {
-      // Dictionary doesn't exist or failed to load
-      return null;
+      // File doesn't exist
     }
+    return null;
   });
 
   const results = await Promise.all(checkPromises);
-  const detectedLengths = results.filter((length): length is number => length !== null).sort((a, b) => a - b);
+  const lengths = results.filter((length): length is number => length !== null).sort((a, b) => a - b);
 
   // Cache the result
-  supportedLengthsCache.set(language, detectedLengths);
+  supportedLengthsCache.set(language, lengths);
 
-  return detectedLengths;
+  return lengths;
 }
 
 /**
  * Gets all available language configurations with dynamically detected lengths
- * Only returns languages that have at least one dictionary
+ * Only returns languages that have at least one answer file
  */
 export async function getLanguageConfigs(): Promise<LanguageConfig[]> {
-  const configPromises = LANGUAGE_METADATA.map(async (lang) => {
-    const supportedLengths = await detectSupportedLengths(lang.code);
-    return {
-      code: lang.code,
-      name: lang.name,
-      supportedLengths,
-    };
-  });
+  // Discover languages from directory structure
+  const configs = await discoverLanguages();
+  
+  // Detect supported lengths for each discovered language
+  const configsWithLengths = await Promise.all(
+    configs.map(async (config) => {
+      const supportedLengths = await detectSupportedLengths(config.code);
+      return {
+        ...config,
+        supportedLengths,
+      };
+    })
+  );
 
-  const allConfigs = await Promise.all(configPromises);
-  // Filter out languages that don't have any dictionaries
-  return allConfigs.filter(config => config.supportedLengths.length > 0);
+  // Filter out languages that don't have any answer files
+  return configsWithLengths.filter(config => config.supportedLengths.length > 0);
 }
 
 /**
@@ -168,6 +269,51 @@ export async function getLanguageConfigs(): Promise<LanguageConfig[]> {
 export async function getLanguageConfig(code: string): Promise<LanguageConfig | undefined> {
   const configs = await getLanguageConfigs();
   return configs.find(lang => lang.code === code);
+}
+
+/**
+ * Loads keyboard layout for a language
+ */
+export async function loadKeyboard(language: string): Promise<string[][] | null> {
+  // Check cache first
+  if (keyboardCache.has(language)) {
+    return keyboardCache.get(language)!;
+  }
+
+  const languageDir = getLanguageDir(language);
+  if (!languageDir) {
+    return null;
+  }
+
+  const keyboardPath = `/dict/${languageDir}/keyboard.json`;
+
+  try {
+    const response = await fetch(keyboardPath);
+    
+    if (response.status === 404 || !response.ok) {
+      // Keyboard not found - return null to use default English keyboard
+      return null;
+    }
+    
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/html')) {
+      // File doesn't exist
+      return null;
+    }
+    
+    const keyboard = await response.json();
+    
+    // Validate keyboard structure (should be 2D array)
+    if (Array.isArray(keyboard) && keyboard.every(row => Array.isArray(row))) {
+      keyboardCache.set(language, keyboard);
+      return keyboard;
+    }
+    
+    return null;
+  } catch (error) {
+    // File doesn't exist or error occurred - return null to use default
+    return null;
+  }
 }
 
 /**
