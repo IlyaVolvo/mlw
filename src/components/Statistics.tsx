@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
+import { LanguageSelector } from './LanguageSelector';
 import type { LanguageConfig } from '../types';
 
 ChartJS.register(
@@ -44,9 +45,11 @@ interface GameData {
 interface StatisticsProps {
   userId: number;
   availableLanguages: LanguageConfig[];
+  allAvailableLanguages: LanguageConfig[];
   view?: 'game' | 'statistics';
   onViewChange?: (view: 'game' | 'statistics') => void;
   onViewHistoricalGame?: (date: string) => void;
+  onLanguageSelectionChange: (selectedCodes: string[]) => void;
   language: string;
   wordLength: number;
   onLanguageChange: (language: string) => void;
@@ -64,10 +67,12 @@ type StatisticType =
 
 export const Statistics: React.FC<StatisticsProps> = ({ 
   userId, 
-  availableLanguages, 
+  availableLanguages,
+  allAvailableLanguages,
   view, 
   onViewChange, 
-  onViewHistoricalGame,
+  onViewHistoricalGame: _onViewHistoricalGame,
+  onLanguageSelectionChange,
   language,
   wordLength,
   onLanguageChange,
@@ -78,6 +83,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
   const [games, setGames] = useState<GameData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
     const loadStatistics = async () => {
@@ -400,18 +406,30 @@ export const Statistics: React.FC<StatisticsProps> = ({
           <span>PolyWordle</span>
         </h1>
         {onViewChange && (
-          <div className="view-tabs">
+          <div className="header-tabs-row">
+            <div className="view-tabs">
+              <button
+                className={`view-tab ${view === 'game' ? 'active' : ''}`}
+                onClick={() => onViewChange('game')}
+              >
+                Game
+              </button>
+              <button
+                className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
+                onClick={() => onViewChange('statistics')}
+              >
+                Statistics
+              </button>
+            </div>
             <button
-              className={`view-tab ${view === 'game' ? 'active' : ''}`}
-              onClick={() => onViewChange('game')}
+              className={`options-icon-button ${showOptions ? 'active' : ''}`}
+              onClick={() => setShowOptions(!showOptions)}
+              title="Options"
             >
-              Game
-            </button>
-            <button
-              className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
-              onClick={() => onViewChange('statistics')}
-            >
-              Statistics
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
+              </svg>
             </button>
           </div>
         )}
@@ -677,6 +695,13 @@ export const Statistics: React.FC<StatisticsProps> = ({
           )}
         </div>
       </div>
+      <LanguageSelector
+        allAvailableLanguages={allAvailableLanguages}
+        filteredLanguages={availableLanguages}
+        isOpen={showOptions}
+        onClose={() => setShowOptions(false)}
+        onSelectionChange={onLanguageSelectionChange}
+      />
     </div>
   );
 };

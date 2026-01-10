@@ -21,6 +21,7 @@ export const App: React.FC = () => {
   const [authView, setAuthView] = useState<'login' | 'register' | 'forgot' | 'reset'>('login');
   const [resetToken, setResetToken] = useState<string | null>(null);
   const [view, setView] = useState<'game' | 'statistics'>('game');
+  const [allAvailableLanguages, setAllAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
   const [language, setLanguage] = useState<string>('en');
@@ -33,11 +34,31 @@ export const App: React.FC = () => {
     setWordLength(prefs.wordLength);
 
     const loadConfigs = async () => {
-      const configs = await getLanguageConfigs();
-      setAvailableLanguages(configs);
+      const allConfigs = await getLanguageConfigs();
+      setAllAvailableLanguages(allConfigs);
+      
+      // Filter based on user's language selection
+      let filteredConfigs = allConfigs;
+      
+      if (prefs.selectedLanguages && prefs.selectedLanguages.length < allConfigs.length) {
+        // Filter to only selected languages
+        const selectedSet = new Set(prefs.selectedLanguages);
+        filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
+      }
+      
+      // Ensure current language is in filtered list
+      if (prefs.language && !filteredConfigs.find(l => l.code === prefs.language)) {
+        // Current language was deselected, switch to first available
+        const langToUse = filteredConfigs[0]?.code || 'en';
+        const updatedPrefs = { ...prefs, language: langToUse };
+        savePreferences(updatedPrefs);
+        setLanguage(langToUse);
+      }
+      
+      setAvailableLanguages(filteredConfigs);
       
       // Validate word length for selected language after configs load
-      const langConfig = configs.find(lang => lang.code === prefs.language);
+      const langConfig = filteredConfigs.find(lang => lang.code === prefs.language);
       if (langConfig && !langConfig.supportedLengths.includes(prefs.wordLength)) {
         const validLength = langConfig.supportedLengths[0] || 5;
         setWordLength(validLength);
@@ -149,6 +170,24 @@ export const App: React.FC = () => {
     savePreferences(updatedPrefs);
   };
 
+  const handleLanguageSelectionChange = (selectedCodes: string[]) => {
+    // Reload configs with new selection
+    const allConfigs = allAvailableLanguages;
+    const selectedSet = new Set(selectedCodes);
+    const filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
+    
+    setAvailableLanguages(filteredConfigs);
+    
+    // Ensure current language is still available
+    const prefs = loadPreferences();
+    if (!filteredConfigs.find(l => l.code === prefs.language)) {
+      const langToUse = filteredConfigs[0]?.code || 'en';
+      setLanguage(langToUse);
+      const updatedPrefs = { ...prefs, language: langToUse };
+      savePreferences(updatedPrefs);
+    }
+  };
+
   return (
     <div className="app-container">
       {view === 'game' ? (
@@ -165,14 +204,18 @@ export const App: React.FC = () => {
           onLanguageChange={handleLanguageChange}
           onWordLengthChange={handleWordLengthChange}
           availableLanguages={availableLanguages}
+          allAvailableLanguages={allAvailableLanguages}
+          onLanguageSelectionChange={handleLanguageSelectionChange}
         />
       ) : (
         <Statistics 
           userId={user.id} 
-          availableLanguages={availableLanguages} 
+          availableLanguages={availableLanguages}
+          allAvailableLanguages={allAvailableLanguages}
           view={view} 
           onViewChange={handleViewChange}
           onViewHistoricalGame={handleViewHistoricalGame}
+          onLanguageSelectionChange={handleLanguageSelectionChange}
           language={language}
           wordLength={wordLength}
           onLanguageChange={handleLanguageChange}

@@ -3,6 +3,7 @@ import type { GameState, DictionaryEntry, LetterState, LanguageConfig } from '..
 import { GameBoard } from './GameBoard';
 import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
+import { LanguageSelector } from './LanguageSelector';
 import { loadDictionary } from '../data/dictionaryLoader';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
@@ -24,6 +25,8 @@ interface GameProps {
   onLanguageChange: (language: string) => void;
   onWordLengthChange: (wordLength: number) => void;
   availableLanguages: LanguageConfig[];
+  allAvailableLanguages: LanguageConfig[];
+  onLanguageSelectionChange: (selectedCodes: string[]) => void;
 }
 
 export const Game: React.FC<GameProps> = ({ 
@@ -38,7 +41,9 @@ export const Game: React.FC<GameProps> = ({
   wordLength,
   onLanguageChange,
   onWordLengthChange,
-  availableLanguages
+  availableLanguages,
+  allAvailableLanguages,
+  onLanguageSelectionChange
 }) => {
   const [dictionary, setDictionary] = useState<DictionaryEntry | null>(null);
   const [targetWord, setTargetWord] = useState<string>('');
@@ -50,6 +55,7 @@ export const Game: React.FC<GameProps> = ({
   const initializedRef = useRef<boolean>(false);
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
+  const [showOptions, setShowOptions] = useState(false);
 
   // Load preferences on mount - default to Daily mode (not Training)
   useEffect(() => {
@@ -577,24 +583,36 @@ export const Game: React.FC<GameProps> = ({
           )}
         </h1>
         {onViewChange && (
-          <div className="view-tabs">
+          <div className="header-tabs-row">
+            <div className="view-tabs">
+              <button
+                className={`view-tab ${view === 'game' ? 'active' : ''}`}
+                onClick={() => {
+                  // Don't clear game state - keep selections sticky
+                  onViewChange('game');
+                }}
+              >
+                Game
+              </button>
+              <button
+                className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
+                onClick={() => {
+                  // Don't clear game state - keep selections sticky
+                  onViewChange('statistics');
+                }}
+              >
+                Statistics
+              </button>
+            </div>
             <button
-              className={`view-tab ${view === 'game' ? 'active' : ''}`}
-              onClick={() => {
-                // Don't clear game state - keep selections sticky
-                onViewChange('game');
-              }}
+              className={`options-icon-button ${showOptions ? 'active' : ''}`}
+              onClick={() => setShowOptions(!showOptions)}
+              title="Options"
             >
-              Game
-            </button>
-            <button
-              className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
-              onClick={() => {
-                // Don't clear game state - keep selections sticky
-                onViewChange('statistics');
-              }}
-            >
-              Statistics
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
+              </svg>
             </button>
           </div>
         )}
@@ -675,6 +693,13 @@ export const Game: React.FC<GameProps> = ({
           />
         </>
       )}
+      <LanguageSelector
+        allAvailableLanguages={allAvailableLanguages}
+        filteredLanguages={availableLanguages}
+        isOpen={showOptions}
+        onClose={() => setShowOptions(false)}
+        onSelectionChange={onLanguageSelectionChange}
+      />
     </div>
   );
 };
