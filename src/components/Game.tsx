@@ -490,14 +490,15 @@ export const Game: React.FC<GameProps> = ({
           return;
         }
         
-        // No game exists - clear game state but keep playing mode if it was active
+        // No game exists - clear game state and reset playing mode to allow starting new game
         setGameState(null);
         setTargetWord('');
-        // Don't reset isPlayingMode here - allow starting new game
+        setIsPlayingMode(false); // Reset to allow starting new game
       } catch (err) {
         console.error('Failed to load game:', err);
         setGameState(null);
         setTargetWord('');
+        setIsPlayingMode(false); // Reset to allow starting new game
       }
     };
 
@@ -531,8 +532,31 @@ export const Game: React.FC<GameProps> = ({
 
   // Handle keyboard events
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (loading || !gameState || gameState.isComplete) return;
+    const handleKeyDown = async (e: KeyboardEvent) => {
+      if (loading) return;
+
+      // If no game state and it's a letter, start the game first (similar to handleKeyPress)
+      if (!gameState && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
+        if (!isPlayingMode && dictionary) {
+          await handleStartGame();
+          // After game starts, process the key
+          setTimeout(() => {
+            setGameState((currentState) => {
+              if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
+                const normalizedKey = e.key.toLowerCase();
+                const newGuess = currentState.currentGuess + normalizedKey;
+                const updatedState = { ...currentState, currentGuess: newGuess };
+                saveGameToApi(updatedState);
+                return updatedState;
+              }
+              return currentState;
+            });
+          }, 0);
+        }
+        return;
+      }
+
+      if (!gameState || gameState.isComplete) return;
 
       if (e.key === 'Enter') {
         handleEnter();
@@ -545,7 +569,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, handleEnter, handleBackspace, handleKeyPress]);
+  }, [loading, gameState, isPlayingMode, dictionary, wordLength, handleEnter, handleBackspace, handleKeyPress, handleStartGame, saveGameToApi]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -568,7 +592,7 @@ export const Game: React.FC<GameProps> = ({
     <div className="game-container">
       <div className="header-section">
         <h1>
-          <span>PolyWordle</span>
+          <span>PolyWordlot</span>
           {onLogout && (
             <div className="logout-wrapper">
               <button onClick={onLogout} className="logout-icon" title="Logout">

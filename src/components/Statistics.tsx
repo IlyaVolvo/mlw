@@ -403,7 +403,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
     <div className="statistics-container">
       <div className="header-section">
         <h1>
-          <span>PolyWordle</span>
+          <span>PolyWordlot</span>
         </h1>
         {onViewChange && (
           <div className="header-tabs-row">

@@ -88,10 +88,12 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
 
   const configs: LanguageConfig[] = [];
 
+  console.log('Processing language directories:');
   // Try each known locale
   for (const [locale, info] of Object.entries(LOCALE_TO_LANGUAGE)) {
     // Check if this language/locale has answer files
     const languageDir = `${info.language}/${locale}`;
+    console.log(`  - Checking directory: ${languageDir}`);
     
     // Check for answer files (answers-4.txt, answers-5.txt, etc.)
     const possibleLengths = [4, 5, 6, 7, 8, 9, 10];
@@ -111,6 +113,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
     
     // Only include languages that have at least one answer file
     if (supportedLengths.length > 0) {
+      console.log(`    ✓ Found ${languageDir}: word lengths [${supportedLengths.join(', ')}]`);
       // Format language name: if there's only one locale for this language, use language name
       // Otherwise use language-locale format
       const name = info.name; // For now, just use the provided name
@@ -123,9 +126,12 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
       
       configs.push(config);
       languageConfigsCache.set(locale, config);
+    } else {
+      console.log(`    ✗ No answer files found in ${languageDir}`);
     }
   }
 
+  console.log(`Loaded ${configs.length} language(s) with answer files:`, configs.map(c => `${c.name} (${c.code}): [${c.supportedLengths.join(', ')}]`));
   return configs;
 }
 
@@ -214,7 +220,6 @@ async function detectSupportedLengths(language: string): Promise<number[]> {
   }
 
   const possibleLengths = [4, 5, 6, 7, 8, 9, 10]; // Check common lengths
-  const detectedLengths: number[] = [];
 
   // Check for answer files directly (faster than loading full dictionaries)
   const checkPromises = possibleLengths.map(async (length) => {
