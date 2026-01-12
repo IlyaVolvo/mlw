@@ -4,7 +4,6 @@ import { loadPreferences, savePreferences } from '../utils/preferences';
 
 interface LanguageSelectorProps {
   allAvailableLanguages: LanguageConfig[]; // All languages before filtering
-  filteredLanguages: LanguageConfig[]; // Currently filtered languages
   isOpen: boolean;
   onClose: () => void;
   onSelectionChange: (selectedCodes: string[]) => void;
@@ -12,7 +11,6 @@ interface LanguageSelectorProps {
 
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   allAvailableLanguages,
-  filteredLanguages,
   isOpen,
   onClose,
   onSelectionChange,

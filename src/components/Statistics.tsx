@@ -697,7 +697,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
       </div>
       <LanguageSelector
         allAvailableLanguages={allAvailableLanguages}
-        filteredLanguages={availableLanguages}
         isOpen={showOptions}
         onClose={() => setShowOptions(false)}
         onSelectionChange={onLanguageSelectionChange}

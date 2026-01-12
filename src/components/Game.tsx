@@ -719,7 +719,6 @@ export const Game: React.FC<GameProps> = ({
       )}
       <LanguageSelector
         allAvailableLanguages={allAvailableLanguages}
-        filteredLanguages={availableLanguages}
         isOpen={showOptions}
         onClose={() => setShowOptions(false)}
         onSelectionChange={onLanguageSelectionChange}
