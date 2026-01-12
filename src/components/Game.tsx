@@ -7,6 +7,7 @@ import { LanguageSelector } from './LanguageSelector';
 import { loadDictionary } from '../data/dictionaryLoader';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
+import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import { apiClient } from '../api/client';
 
@@ -106,7 +107,7 @@ export const Game: React.FC<GameProps> = ({
     loadDict();
   }, [language, wordLength]);
 
-  // Initialize component - just load dictionary, don't create game
+  // Initialize component - just load dictionary and normalization, don't create game
   useEffect(() => {
     if (initializedRef.current) return;
     
@@ -115,13 +116,18 @@ export const Game: React.FC<GameProps> = ({
       setError(null);
 
       try {
-        const dict = await loadDictionary(language, wordLength);
+        // Load dictionary and normalization in parallel
+        const [dict] = await Promise.all([
+          loadDictionary(language, wordLength),
+          loadNormalization(language),
+        ]);
         if (!dict) {
           setError(`Failed to load dictionary for ${language}-${wordLength}`);
           setLoading(false);
           return;
         }
         setDictionary(dict);
+        // Normalization is cached in characterNormalization module, no need to store it
         initializedRef.current = true;
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to initialize');
@@ -133,16 +139,21 @@ export const Game: React.FC<GameProps> = ({
     initialize();
   }, [userId, language, wordLength]);
 
-  // Handle language or word length change - reload dictionary and clear preview
+  // Handle language or word length change - reload dictionary, normalization and clear preview
   useEffect(() => {
       if (!initializedRef.current || loading || isPlayingMode) return;
 
     const changeSettings = async () => {
       try {
-        const dict = await loadDictionary(language, wordLength);
+        // Load dictionary and normalization in parallel
+        const [dict] = await Promise.all([
+          loadDictionary(language, wordLength),
+          loadNormalization(language),
+        ]);
         if (dict) {
           setDictionary(dict);
         }
+        // Normalization is cached in characterNormalization module, no need to store it
         // Clear game state when settings change
         setGameState(null);
         setTargetWord('');
@@ -223,7 +234,7 @@ export const Game: React.FC<GameProps> = ({
           const target = currentResponse.game.target_word;
           const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
-            evaluations: evaluateGuess(g.word, target),
+            evaluations: evaluateGuess(g.word, target, language),
           }));
           const currentGame: GameState = {
             guesses: guessesWithEvals,
@@ -254,7 +265,7 @@ export const Game: React.FC<GameProps> = ({
           const target = completedResponse.game.target_word;
           const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
-            evaluations: evaluateGuess(g.word, target),
+            evaluations: evaluateGuess(g.word, target, language),
           }));
           const completedGame: GameState = {
             guesses: guessesWithEvals,
@@ -312,6 +323,8 @@ export const Game: React.FC<GameProps> = ({
 
   // Auto-start game when first letter is typed (instead of Play button)
   const handleKeyPress = useCallback(async (key: string) => {
+    const normalizedKey = key.toLowerCase();
+    
     // If not in playing mode and we have a dictionary, start the game first
     if (!isPlayingMode && dictionary && !gameState) {
       await handleStartGame();
@@ -320,7 +333,6 @@ export const Game: React.FC<GameProps> = ({
       setTimeout(() => {
         setGameState((currentState) => {
           if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
-            const normalizedKey = key.toLowerCase();
             const newGuess = currentState.currentGuess + normalizedKey;
             const updatedState = { ...currentState, currentGuess: newGuess };
             saveGameToApi(updatedState);
@@ -334,14 +346,13 @@ export const Game: React.FC<GameProps> = ({
 
     if (!gameState || gameState.isComplete || !dictionary) return;
 
-    const normalizedKey = key.toLowerCase();
     if (gameState.currentGuess.length < wordLength) {
       const newGuess = gameState.currentGuess + normalizedKey;
       const updatedState = { ...gameState, currentGuess: newGuess };
       setGameState(updatedState);
       saveGameToApi(updatedState);
     }
-  }, [gameState, wordLength, dictionary, saveGameToApi, isPlayingMode, handleStartGame]);
+  }, [gameState, wordLength, dictionary, language, saveGameToApi, isPlayingMode, handleStartGame]);
 
   const handleEnter = useCallback(() => {
     if (!gameState || gameState.isComplete || !dictionary) return;
@@ -359,8 +370,11 @@ export const Game: React.FC<GameProps> = ({
       return;
     }
 
-    const evaluations = evaluateGuess(guess, targetWord);
-    const isWon = guess === targetWord;
+    const evaluations = evaluateGuess(guess, targetWord, language);
+    // Normalize for language-specific character equivalences when checking win condition
+    const normalizedGuess = normalizeForLanguage(guess, language);
+    const normalizedTarget = normalizeForLanguage(targetWord, language);
+    const isWon = normalizedGuess === normalizedTarget;
     const newGuesses = [...gameState.guesses, { word: guess, evaluations }];
     const isComplete = isWon || newGuesses.length >= MAX_GUESSES;
 
@@ -375,7 +389,7 @@ export const Game: React.FC<GameProps> = ({
     setGameState(updatedState);
     saveGameToApi(updatedState);
     updateLetterStates(updatedState);
-  }, [gameState, dictionary, wordLength, targetWord, saveGameToApi]);
+  }, [gameState, dictionary, wordLength, targetWord, language, saveGameToApi, updateLetterStates]);
 
   const handleBackspace = useCallback(() => {
     if (!gameState || gameState.isComplete) return;
@@ -439,7 +453,7 @@ export const Game: React.FC<GameProps> = ({
           const target = currentResponse.game.target_word;
           const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
-            evaluations: evaluateGuess(g.word, target),
+            evaluations: evaluateGuess(g.word, target, language),
           }));
           const currentGame: GameState = {
             guesses: guessesWithEvals,
@@ -470,7 +484,7 @@ export const Game: React.FC<GameProps> = ({
           const target = completedResponse.game.target_word;
           const guessesWithEvals = (completedResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
-            evaluations: evaluateGuess(g.word, target),
+            evaluations: evaluateGuess(g.word, target, language),
           }));
           const completedGame: GameState = {
             guesses: guessesWithEvals,
@@ -569,7 +583,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, isPlayingMode, dictionary, wordLength, handleEnter, handleBackspace, handleKeyPress, handleStartGame, saveGameToApi]);
+  }, [loading, gameState, isPlayingMode, dictionary, wordLength, language, handleEnter, handleBackspace, handleKeyPress, handleStartGame, saveGameToApi]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;

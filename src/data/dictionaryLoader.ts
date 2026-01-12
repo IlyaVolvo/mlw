@@ -138,7 +138,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
 /**
  * Gets the directory path for a language/locale
  */
-function getLanguageDir(locale: string): string | null {
+export function getLanguageDir(locale: string): string | null {
   const info = LOCALE_TO_LANGUAGE[locale];
   if (!info) return null;
   return `${info.language}/${info.locale}`;
