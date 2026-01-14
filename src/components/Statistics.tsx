@@ -546,6 +546,14 @@ export const Statistics: React.FC<StatisticsProps> = ({
                           display: false,
                         },
                       },
+                      scales: {
+                        ...baseOptions.scales,
+                        y: {
+                          ...baseOptions.scales?.y,
+                          min: 0,
+                          max: 100,
+                        },
+                      },
                     };
                   })()}
                 />

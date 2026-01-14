@@ -249,7 +249,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          setLetterStates(new Map()); // Reset letter states when loading game
+          updateLetterStates(currentGame); // Update letter states from loaded guesses
           return;
         }
         
@@ -280,7 +280,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          setLetterStates(new Map()); // Reset letter states when loading game
+          updateLetterStates(completedGame); // Update letter states from loaded guesses
           return;
         }
         
@@ -468,7 +468,7 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          setLetterStates(new Map()); // Reset letter states when loading game
+          updateLetterStates(currentGame); // Update letter states from loaded guesses
           setIsPlayingMode(true);
           return;
         }
@@ -499,8 +499,8 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          setLetterStates(new Map()); // Reset letter states when loading game
-          setIsPlayingMode(true);
+          updateLetterStates(completedGame); // Update letter states from loaded guesses
+          setIsPlayingMode(false); // Set to false for completed games - keyboard won't show anyway
           return;
         }
         
