@@ -52,3 +52,7 @@ server/*.db
 # Prisma
 server/src/generated/prisma
 
+.vercel/*
+
+
+

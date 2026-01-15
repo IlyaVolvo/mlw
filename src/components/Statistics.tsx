@@ -72,10 +72,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
   view, 
   onViewChange, 
   onViewHistoricalGame: _onViewHistoricalGame,
-<<<<<<< Updated upstream
   onLanguageSelectionChange,
-=======
->>>>>>> Stashed changes
   language,
   wordLength,
   onLanguageChange,
