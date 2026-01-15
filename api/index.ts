@@ -18,7 +18,7 @@ app.use(cors({
 app.use(express.json());
 
 // Health check
-app.get('/health', async (req, res) => {
+app.get('/api/health', async (req, res) => {
   try {
     await query('SELECT 1');
     res.json({ status: 'ok', database: 'connected' });
@@ -28,8 +28,8 @@ app.get('/health', async (req, res) => {
 });
 
 // Routes
-app.use('/auth', authRoutes);
-app.use('/games', gamesRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/games', gamesRoutes);
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
