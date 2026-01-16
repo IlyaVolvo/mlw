@@ -162,6 +162,41 @@ h1 .logout-wrapper:hover .logout-tooltip {
   min-width: auto;
 }
 
+.date-navigation-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-nav-arrow {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 38px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.date-nav-arrow:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.date-nav-arrow:disabled,
+.date-nav-arrow-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #ccc;
+}
+
 .date-picker-input-compact {
   /* Hide native calendar picker icon */
   -webkit-appearance: none;

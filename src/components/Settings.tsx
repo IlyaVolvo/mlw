@@ -78,6 +78,37 @@ export const Settings: React.FC<SettingsProps> = ({
 }) => {
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
   const today = formatDate();
+  
+  // Helper function to add/subtract days from a date string
+  const addDays = (dateStr: string, days: number): string => {
+    const [year, month, day] = dateStr.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    date.setDate(date.getDate() + days);
+    return formatDate(date);
+  };
+  
+  // Check if selected date is today
+  const isToday = selectedDate === today;
+  
+  // Navigate to previous date
+  const goToPreviousDate = () => {
+    const currentDate = selectedDate || today;
+    const prevDate = addDays(currentDate, -1);
+    onDateChange(prevDate);
+  };
+  
+  // Navigate to next date (only if not today)
+  const goToNextDate = () => {
+    if (!isToday) {
+      const currentDate = selectedDate || today;
+      const nextDate = addDays(currentDate, 1);
+      // Don't allow future dates
+      if (nextDate <= today) {
+        onDateChange(nextDate);
+      }
+    }
+  };
+  
   const [showCalendar, setShowCalendar] = useState(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
@@ -157,7 +188,20 @@ export const Settings: React.FC<SettingsProps> = ({
       </div>
       {!randomMode && (
         <div className="setting-group date-picker-setting">
-          <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'inline-block' }}>
+          <div 
+            className="date-navigation-wrapper" 
+            style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+          >
+            <button
+              className="date-nav-arrow date-nav-arrow-left"
+              onClick={goToPreviousDate}
+              disabled={disabled}
+              aria-label="Previous date"
+              title="Previous date"
+            >
+              ‹
+            </button>
+            <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'inline-block' }}>
             <input
               id="date-picker-hidden"
               type="date"
@@ -178,13 +222,9 @@ export const Settings: React.FC<SettingsProps> = ({
                   setShowCalendar(true);
                 }
               }}
-              onTouchStart={(e) => {
-                // Prevent native calendar on touch devices (iPad)
-                e.preventDefault();
-                e.stopPropagation();
-                if (!disabled) {
-                  setShowCalendar(true);
-                }
+              onTouchStart={() => {
+                // Allow parent swipe handlers to work
+                // Don't stop propagation - let it bubble to date-navigation-wrapper
               }}
               disabled={disabled}
               className="date-picker-input-compact"
@@ -275,6 +315,16 @@ export const Settings: React.FC<SettingsProps> = ({
             >
               {formatDateDisplay(selectedDate || null, today)}
             </span>
+          </div>
+          <button
+            className={`date-nav-arrow date-nav-arrow-right ${isToday ? 'date-nav-arrow-disabled' : ''}`}
+            onClick={goToNextDate}
+            disabled={disabled || isToday}
+            aria-label="Next date"
+            title={isToday ? 'Today (no next date)' : 'Next date'}
+          >
+            ›
+          </button>
           </div>
         </div>
       )}

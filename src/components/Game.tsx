@@ -57,6 +57,12 @@ export const Game: React.FC<GameProps> = ({
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
   const [showOptions, setShowOptions] = useState(false);
+  
+  // Swipe gesture tracking for date navigation (entire screen)
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
+  const swipeStartDateRef = useRef<string | null>(null); // Capture date at swipe start
+  const minSwipeDistance = 100;
 
   // Load preferences on mount - default to Daily mode (not Training)
   useEffect(() => {
@@ -157,9 +163,8 @@ export const Game: React.FC<GameProps> = ({
         // Clear game state when settings change
         setGameState(null);
         setTargetWord('');
-        if (!randomMode) {
-          setSelectedPlayDate(formatDate());
-        }
+        // Don't reset selectedPlayDate - preserve it so switching games doesn't jump to today
+        // The date will be preserved and the game for that date will be loaded by the useEffect
       } catch (err) {
         console.error('Failed to load dictionary:', err);
       }
@@ -232,6 +237,12 @@ export const Game: React.FC<GameProps> = ({
         if (currentResponse.game && currentResponse.game.is_complete !== 1) {
           // Found incomplete game - continue playing it
           const target = currentResponse.game.target_word;
+          const gameDate = currentResponse.game.game_date;
+          // Only sync selectedPlayDate if it's empty or invalid - don't override user-initiated date changes
+          const isValidDate = selectedPlayDate && /^\d{4}-\d{2}-\d{2}$/.test(selectedPlayDate);
+          if (gameDate && !isValidDate) {
+            setSelectedPlayDate(gameDate);
+          }
           const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
             evaluations: evaluateGuess(g.word, target, language),
@@ -243,7 +254,7 @@ export const Game: React.FC<GameProps> = ({
             isWon: false,
             language: currentResponse.game.language,
             wordLength: currentResponse.game.word_length,
-            date: currentResponse.game.game_date,
+            date: gameDate,
             isRandomMode: false,
             wordSeed: undefined,
           };
@@ -451,6 +462,12 @@ export const Game: React.FC<GameProps> = ({
         });
         if (currentResponse.game && currentResponse.game.is_complete !== 1) {
           const target = currentResponse.game.target_word;
+          const gameDate = currentResponse.game.game_date;
+          // Only sync selectedPlayDate if it's empty or invalid - don't override user-initiated date changes
+          const isValidDate = selectedPlayDate && /^\d{4}-\d{2}-\d{2}$/.test(selectedPlayDate);
+          if (gameDate && !isValidDate) {
+            setSelectedPlayDate(gameDate);
+          }
           const guessesWithEvals = (currentResponse.game.guesses || []).map((g: any) => ({
             word: g.word,
             evaluations: evaluateGuess(g.word, target, language),
@@ -462,7 +479,7 @@ export const Game: React.FC<GameProps> = ({
             isWon: false,
             language: currentResponse.game.language,
             wordLength: currentResponse.game.word_length,
-            date: currentResponse.game.game_date,
+            date: gameDate,
             isRandomMode: false,
             wordSeed: undefined,
           };
@@ -526,6 +543,91 @@ export const Game: React.FC<GameProps> = ({
     setSelectedPlayDate(date);
     // Game state will be loaded by the useEffect above
   }, []);
+  
+  // Swipe gesture handlers for date navigation
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    // Only enable swipe for Daily mode (not Training)
+    if (randomMode) return;
+    
+    // Don't trigger swipe if starting on interactive elements
+    const target = e.target as HTMLElement;
+    if (target.closest('button') || 
+        target.closest('select') || 
+        target.closest('input') ||
+        target.closest('.language-selector-overlay') ||
+        target.closest('.calendar-popup-overlay')) {
+      return;
+    }
+    
+    // Capture the current date at swipe start to prevent mid-swipe state changes
+    // Only use today as fallback if selectedPlayDate is empty or invalid
+    // Check if selectedPlayDate is a valid date string (YYYY-MM-DD format)
+    const today = formatDate();
+    const isValidDate = selectedPlayDate && /^\d{4}-\d{2}-\d{2}$/.test(selectedPlayDate);
+    swipeStartDateRef.current = isValidDate ? selectedPlayDate : today;
+    touchStartRef.current = e.targetTouches[0].clientX;
+    touchEndRef.current = null;
+  }, [randomMode, selectedPlayDate]);
+  
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (randomMode || !touchStartRef.current) return;
+    touchEndRef.current = e.targetTouches[0].clientX;
+  }, [randomMode]);
+  
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (randomMode || !touchStartRef.current || !touchEndRef.current || !swipeStartDateRef.current) {
+      touchStartRef.current = null;
+      touchEndRef.current = null;
+      swipeStartDateRef.current = null;
+      return;
+    }
+    
+    const start = touchStartRef.current;
+    const end = touchEndRef.current;
+    const distance = start - end;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    // Use the date captured at swipe start, not current state
+    const currentDate = swipeStartDateRef.current;
+    const today = formatDate();
+    const isToday = currentDate === today;
+    
+    // Helper to add/subtract days from a date string
+    const addDays = (dateStr: string, days: number): string => {
+      if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+        // Invalid date format, return today minus days for left swipe, today for right
+        const todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + days);
+        return formatDate(todayDate);
+      }
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      date.setDate(date.getDate() + days);
+      return formatDate(date);
+    };
+    
+    if (isRightSwipe) {
+      // Right swipe = previous date (chronologically earlier)
+      e.preventDefault();
+      e.stopPropagation();
+      const prevDate = addDays(currentDate, -1);
+      handleDateChange(prevDate);
+    } else if (isLeftSwipe && !isToday) {
+      // Left swipe = next date (chronologically later, but disabled if today)
+      e.preventDefault();
+      e.stopPropagation();
+      const nextDate = addDays(currentDate, 1);
+      if (nextDate <= today) {
+        handleDateChange(nextDate);
+      }
+    }
+    
+    // Reset touch state
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+    swipeStartDateRef.current = null;
+  }, [randomMode, handleDateChange]);
 
   const handleRandomModeChange = useCallback((newRandomMode: boolean) => {
     const prefs = loadPreferences();
@@ -605,7 +707,12 @@ export const Game: React.FC<GameProps> = ({
   }
 
   return (
-    <div className="game-container">
+    <div 
+      className="game-container"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <div className="header-section">
         <h1>
           <span>PolyWordlot</span>
