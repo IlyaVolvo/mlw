@@ -163,11 +163,27 @@ export const Settings: React.FC<SettingsProps> = ({
               type="date"
               value={selectedDate || today}
               max={today}
+              readOnly
+              tabIndex={-1}
               onChange={(e) => {
-                const selectedValue = e.target.value;
-                // Ensure no future dates can be selected
-                if (selectedValue <= today) {
-                  onDateChange(selectedValue);
+                // Prevent native calendar from changing value
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+              onFocus={(e) => {
+                // Prevent native calendar from opening on focus (iPad/iOS)
+                e.preventDefault();
+                e.target.blur();
+                if (!disabled) {
+                  setShowCalendar(true);
+                }
+              }}
+              onTouchStart={(e) => {
+                // Prevent native calendar on touch devices (iPad)
+                e.preventDefault();
+                e.stopPropagation();
+                if (!disabled) {
+                  setShowCalendar(true);
                 }
               }}
               disabled={disabled}
@@ -188,7 +204,8 @@ export const Settings: React.FC<SettingsProps> = ({
                 height: '38px',
                 position: 'relative',
                 zIndex: 2,
-                caretColor: 'transparent'
+                caretColor: 'transparent',
+                pointerEvents: disabled ? 'none' : 'auto'
               }}
               onMouseEnter={(e) => {
                 if (!disabled) {
@@ -202,8 +219,9 @@ export const Settings: React.FC<SettingsProps> = ({
               }}
               onClick={(e) => {
                 if (!disabled) {
+                  e.preventDefault();
                   e.stopPropagation();
-                  // Open calendar popup instead of native picker
+                  // Prevent native picker and open custom calendar instead
                   setShowCalendar(true);
                 }
               }}
