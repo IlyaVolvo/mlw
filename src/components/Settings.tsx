@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
+import { Calendar } from './Calendar';
+import { apiClient } from '../api/client';
 
 interface SettingsProps {
+  userId: number;
   language: string;
   wordLength: number;
   randomMode: boolean;
@@ -61,6 +64,7 @@ const formatDateDisplay = (selectedDate: string | null, today: string): string =
 };
 
 export const Settings: React.FC<SettingsProps> = ({
+  userId,
   language,
   wordLength,
   randomMode,
@@ -74,6 +78,41 @@ export const Settings: React.FC<SettingsProps> = ({
 }) => {
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
   const today = formatDate();
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [calendarGames, setCalendarGames] = useState<any[]>([]);
+  const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
+    // Initialize calendar month to the selected date
+    if (selectedDate) {
+      const [year, month] = selectedDate.split('-').map(Number);
+      return new Date(year, month - 1, 1);
+    }
+    return new Date();
+  });
+
+  // Load games for calendar when it opens
+  useEffect(() => {
+    if (showCalendar && !randomMode) {
+      const loadGames = async () => {
+        try {
+          const response = await apiClient.getHistory(language, wordLength, 10000);
+          // Filter to only daily games (non-random mode)
+          const dailyGames = response.games.filter((game: any) => !game.isRandomMode);
+          setCalendarGames(dailyGames);
+        } catch (err) {
+          console.error('Failed to load games for calendar:', err);
+        }
+      };
+      loadGames();
+    }
+  }, [showCalendar, language, wordLength, randomMode, userId]);
+
+  // Update calendar month when selectedDate changes
+  useEffect(() => {
+    if (selectedDate) {
+      const [year, month] = selectedDate.split('-').map(Number);
+      setCalendarMonth(new Date(year, month - 1, 1));
+    }
+  }, [selectedDate]);
 
   return (
     <div className="settings">
@@ -164,17 +203,8 @@ export const Settings: React.FC<SettingsProps> = ({
               onClick={(e) => {
                 if (!disabled) {
                   e.stopPropagation();
-                  // Ensure the picker opens
-                  const input = e.currentTarget;
-                  if (input && typeof (input as any).showPicker === 'function') {
-                    try {
-                      (input as any).showPicker();
-                    } catch (err) {
-                      // Fallback if showPicker fails
-                      input.focus();
-                      input.click();
-                    }
-                  }
+                  // Open calendar popup instead of native picker
+                  setShowCalendar(true);
                 }
               }}
             />
@@ -227,6 +257,39 @@ export const Settings: React.FC<SettingsProps> = ({
             >
               {formatDateDisplay(selectedDate || null, today)}
             </span>
+          </div>
+        </div>
+      )}
+
+      {showCalendar && !randomMode && (
+        <div 
+          className="calendar-popup-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setShowCalendar(false);
+            }
+          }}
+        >
+          <div className="calendar-popup">
+            <div className="calendar-popup-header">
+              <h3>Select Date</h3>
+              <button 
+                className="calendar-popup-close"
+                onClick={() => setShowCalendar(false)}
+                aria-label="Close calendar"
+              >
+                ×
+              </button>
+            </div>
+            <Calendar
+              games={calendarGames}
+              currentMonth={calendarMonth}
+              onMonthChange={setCalendarMonth}
+              onDateClick={(date: string) => {
+                onDateChange(date);
+                setShowCalendar(false);
+              }}
+            />
           </div>
         </div>
       )}

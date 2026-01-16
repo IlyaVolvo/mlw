@@ -658,6 +658,7 @@ export const Game: React.FC<GameProps> = ({
         )}
       </div>
       <Settings
+        userId={userId}
         language={language}
         wordLength={wordLength}
         randomMode={randomMode}
