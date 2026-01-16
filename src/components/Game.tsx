@@ -507,11 +507,13 @@ export const Game: React.FC<GameProps> = ({
         // No game exists - clear game state and reset playing mode to allow starting new game
         setGameState(null);
         setTargetWord('');
+        setLetterStates(new Map()); // Reset letter states for new game
         setIsPlayingMode(false); // Reset to allow starting new game
       } catch (err) {
         console.error('Failed to load game:', err);
         setGameState(null);
         setTargetWord('');
+        setLetterStates(new Map()); // Reset letter states on error
         setIsPlayingMode(false); // Reset to allow starting new game
       }
     };
