@@ -259,6 +259,7 @@ router.get('/history', authenticateToken, async (req: AuthRequest, res) => {
         language,
         word_length,
         target_word,
+        game_date,
         guesses,
         is_complete
       FROM games 
@@ -294,6 +295,7 @@ router.get('/history', authenticateToken, async (req: AuthRequest, res) => {
           isRandomMode: game.is_random_mode === 1,
           gameStarted: game.created_at ? new Date(game.created_at).toISOString() : null,
           gameEnded: game.completed_at ? new Date(game.completed_at).toISOString() : null,
+          game_date: game.game_date || null,
           language: game.language,
           wordLength: game.word_length,
           targetWord: game.target_word,

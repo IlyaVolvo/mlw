@@ -22,7 +22,7 @@ interface CalendarDay {
 
 interface CalendarProps {
   games: Array<{
-    game_date?: string;
+    game_date?: string | null;
     gameDate?: string;
     gameEnded: string | null;
     gameStarted: string;
@@ -44,28 +44,26 @@ export const Calendar: React.FC<CalendarProps> = ({
   // Create a map of date strings to game status
   const gameStatusMap = new Map<string, GameStatus>();
   
+  // Create a set of all dates that have games in the database
+  const datesWithGames = new Set<string>();
+  
   games.forEach((game) => {
-    // Try multiple possible date field names
-    // The API returns gameStarted and gameEnded, but for daily games we need game_date
-    // For now, use gameStarted as the date (it's the date the game was created/started)
+    // Use game_date (the date the game was generated for), not the date it was played
     let gameDate: string | null = null;
     
     if (game.game_date) {
+      // game_date is already in YYYY-MM-DD format from the database
       gameDate = game.game_date;
     } else if (game.gameDate) {
       gameDate = game.gameDate;
-    } else if (game.gameStarted) {
-      // Use gameStarted date (created_at) as the game date
-      // Convert to local timezone date string
-      const date = new Date(game.gameStarted);
-      gameDate = formatLocalDate(date);
-    } else if (game.gameEnded) {
-      // Convert to local timezone date string
-      const date = new Date(game.gameEnded);
-      gameDate = formatLocalDate(date);
     }
     
+    // Only process games that have a game_date (daily games)
+    // Skip random/training mode games that don't have game_date
     if (gameDate) {
+      datesWithGames.add(gameDate);
+      
+      // Determine game status based on completion and win state
       if (game.isComplete && game.isWon) {
         gameStatusMap.set(gameDate, 'won');
       } else if (game.isComplete && !game.isWon) {
@@ -126,9 +124,22 @@ export const Calendar: React.FC<CalendarProps> = ({
     const date = new Date(year, month, day);
     date.setHours(0, 0, 0, 0);
     const dateString = formatLocalDate(date);
-    const status = gameStatusMap.get(dateString) || 'not-played';
     const isToday = dateString === todayStr;
     const isFuture = dateString > todayStr;
+    
+    // Check if this date has a game in the database
+    const hasGame = datesWithGames.has(dateString);
+    
+    // Determine status: if no game exists in DB and it's not future, it's grayed out
+    // If it's future, it's already handled by isFuture
+    let status: GameStatus;
+    if (isFuture) {
+      status = 'not-played'; // Future dates are not-played
+    } else if (!hasGame) {
+      status = 'not-played'; // Date has no game in DB - should be grayed out
+    } else {
+      status = gameStatusMap.get(dateString) || 'not-played';
+    }
 
     calendarDays.push({
       date,
