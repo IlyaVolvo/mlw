@@ -74,6 +74,22 @@ export const App: React.FC = () => {
         if (token) {
           const response = await apiClient.getCurrentUser();
           setUser(response.user);
+          
+          // Load preferences from API when logged in
+          try {
+            const apiPrefs = await apiClient.getPreferences();
+            if (apiPrefs.selectedLanguages !== null) {
+              // User has saved preferences in the database
+              const prefs = loadPreferences();
+              prefs.selectedLanguages = apiPrefs.selectedLanguages;
+              savePreferences(prefs); // Sync to localStorage for consistency
+            }
+            // If selectedLanguages is null, user has no saved preferences (all languages)
+            // Use localStorage preferences as fallback
+          } catch (apiError) {
+            // API call failed, use localStorage preferences as fallback
+            console.error('Failed to load preferences from API:', apiError);
+          }
         }
       } catch (error) {
         // Not authenticated
@@ -96,8 +112,27 @@ export const App: React.FC = () => {
     }
   }, []);
 
-  const handleLogin = (userData: User) => {
+  const handleLogin = async (userData: User) => {
     setUser(userData);
+    // Load preferences from API when user logs in
+    try {
+      const apiPrefs = await apiClient.getPreferences();
+      if (apiPrefs.selectedLanguages !== null) {
+        // User has saved preferences in the database
+        const prefs = loadPreferences();
+        prefs.selectedLanguages = apiPrefs.selectedLanguages;
+        savePreferences(prefs); // Sync to localStorage for consistency
+        
+        // Reload configs with API preferences
+        const allConfigs = allAvailableLanguages;
+        const selectedSet = new Set(apiPrefs.selectedLanguages);
+        const filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
+        setAvailableLanguages(filteredConfigs);
+      }
+    } catch (error) {
+      console.error('Failed to load preferences from API:', error);
+      // Continue with localStorage preferences as fallback
+    }
   };
 
   const handleLogout = () => {
@@ -170,7 +205,7 @@ export const App: React.FC = () => {
     savePreferences(updatedPrefs);
   };
 
-  const handleLanguageSelectionChange = (selectedCodes: string[]) => {
+  const handleLanguageSelectionChange = async (selectedCodes: string[]) => {
     // Reload configs with new selection
     const allConfigs = allAvailableLanguages;
     const selectedSet = new Set(selectedCodes);
@@ -178,8 +213,24 @@ export const App: React.FC = () => {
     
     setAvailableLanguages(filteredConfigs);
     
-    // Ensure current language is still available
+    // Save to localStorage
     const prefs = loadPreferences();
+    prefs.selectedLanguages = selectedCodes.length === allConfigs.length 
+      ? undefined 
+      : selectedCodes;
+    savePreferences(prefs);
+    
+    // Save to API if user is logged in
+    if (user) {
+      try {
+        await apiClient.savePreferences(prefs.selectedLanguages || null);
+      } catch (error) {
+        console.error('Failed to save preferences to API:', error);
+        // Continue anyway - localStorage backup is already saved
+      }
+    }
+    
+    // Ensure current language is still available
     if (!filteredConfigs.find(l => l.code === prefs.language)) {
       const langToUse = filteredConfigs[0]?.code || 'en';
       setLanguage(langToUse);

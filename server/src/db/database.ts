@@ -59,11 +59,24 @@ async function initializeSchema() {
       )
     `);
 
+    // Create user_preferences table
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS user_preferences (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL UNIQUE,
+        selected_languages TEXT[] DEFAULT ARRAY[]::TEXT[],
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+      )
+    `);
+
     // Create indexes
     await client.query('CREATE INDEX IF NOT EXISTS idx_games_user_date ON games(user_id, game_date)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_games_user_lang ON games(user_id, language, word_length)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_reset_tokens_token ON password_reset_tokens(token)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_reset_tokens_user ON password_reset_tokens(user_id)');
+    await client.query('CREATE INDEX IF NOT EXISTS idx_user_preferences_user ON user_preferences(user_id)');
 
     logger.info('Database schema initialized');
   } catch (error) {

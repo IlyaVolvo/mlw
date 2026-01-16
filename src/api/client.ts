@@ -169,6 +169,18 @@ class ApiClient {
 
     return this.request<{ games: any[] }>(`/games/history?${queryParams.toString()}`);
   }
+
+  // Preferences endpoints
+  async getPreferences(): Promise<{ selectedLanguages: string[] | null }> {
+    return this.request<{ selectedLanguages: string[] | null }>('/auth/preferences');
+  }
+
+  async savePreferences(selectedLanguages: string[] | null): Promise<{ success: boolean }> {
+    return this.request<{ success: boolean }>('/auth/preferences', {
+      method: 'POST',
+      body: JSON.stringify({ selectedLanguages }),
+    });
+  }
 }
 
 export const apiClient = new ApiClient();

@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import { randomBytes } from 'crypto';
 import { query } from '../db/database.js';
-import { generateToken } from '../middleware/auth.js';
+import { generateToken, authenticateToken, AuthRequest } from '../middleware/auth.js';
 import { sendPasswordResetEmail } from '../utils/email.js';
 import { logger } from '../utils/logger.js';
 
@@ -240,6 +240,60 @@ router.get('/me', async (req, res) => {
   } catch (error) {
     logger.error('Get user error', error);
     res.status(500).json({ error: 'Failed to get user' });
+  }
+});
+
+// Get user preferences
+router.get('/preferences', authenticateToken, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.userId!;
+    const result = await query(
+      'SELECT selected_languages FROM user_preferences WHERE user_id = $1',
+      [userId]
+    );
+
+    if (result.rows.length === 0) {
+      // No preferences yet, return null (means all languages)
+      return res.json({ selectedLanguages: null });
+    }
+
+    const prefs = result.rows[0];
+    // If selected_languages is empty array, return null (means all languages)
+    const selectedLanguages = (prefs.selected_languages || []).length > 0 
+      ? prefs.selected_languages 
+      : null;
+
+    res.json({ selectedLanguages });
+  } catch (error) {
+    logger.error('Get preferences error', error);
+    res.status(500).json({ error: 'Failed to get preferences' });
+  }
+});
+
+// Save user preferences
+router.post('/preferences', authenticateToken, async (req: AuthRequest, res) => {
+  try {
+    const userId = req.userId!;
+    const { selectedLanguages } = req.body;
+
+    // Validate selectedLanguages is an array or null/undefined
+    const languagesArray = selectedLanguages && Array.isArray(selectedLanguages) 
+      ? selectedLanguages 
+      : null;
+
+    // Use INSERT ... ON CONFLICT to upsert
+    await query(
+      `INSERT INTO user_preferences (user_id, selected_languages, updated_at) 
+       VALUES ($1, $2, CURRENT_TIMESTAMP)
+       ON CONFLICT (user_id) 
+       DO UPDATE SET selected_languages = $2, updated_at = CURRENT_TIMESTAMP`,
+      [userId, languagesArray || []]
+    );
+
+    res.json({ success: true });
+  } catch (error) {
+    logger.error('Save preferences error', error);
+    res.status(500).json({ error: 'Failed to save preferences' });
   }
 });
 
