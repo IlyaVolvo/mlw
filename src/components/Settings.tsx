@@ -208,7 +208,7 @@ export const Settings: React.FC<SettingsProps> = ({
               value={selectedDate || today}
               max={today}
               readOnly
-              tabIndex={-1}
+              tabIndex={disabled ? -1 : 0}
               onChange={(e) => {
                 // Prevent native calendar from changing value
                 e.preventDefault();
@@ -217,14 +217,27 @@ export const Settings: React.FC<SettingsProps> = ({
               onFocus={(e) => {
                 // Prevent native calendar from opening on focus (iPad/iOS)
                 e.preventDefault();
+                e.stopPropagation();
                 e.target.blur();
                 if (!disabled) {
                   setShowCalendar(true);
                 }
               }}
-              onTouchStart={() => {
-                // Allow parent swipe handlers to work
-                // Don't stop propagation - let it bubble to date-navigation-wrapper
+              onMouseDown={(e) => {
+                // Prevent native picker on mousedown
+                e.preventDefault();
+                e.stopPropagation();
+                if (!disabled) {
+                  setShowCalendar(true);
+                }
+              }}
+              onTouchStart={(e) => {
+                // Prevent native picker on touch start
+                e.preventDefault();
+                e.stopPropagation();
+                if (!disabled) {
+                  setShowCalendar(true);
+                }
               }}
               disabled={disabled}
               className="date-picker-input-compact"
@@ -244,8 +257,7 @@ export const Settings: React.FC<SettingsProps> = ({
                 height: '38px',
                 position: 'relative',
                 zIndex: 2,
-                caretColor: 'transparent',
-                pointerEvents: disabled ? 'none' : 'auto'
+                caretColor: 'transparent'
               }}
               onMouseEnter={(e) => {
                 if (!disabled) {
@@ -341,13 +353,34 @@ export const Settings: React.FC<SettingsProps> = ({
           <div className="calendar-popup">
             <div className="calendar-popup-header">
               <h3>Select Date</h3>
-              <button 
-                className="calendar-popup-close"
-                onClick={() => setShowCalendar(false)}
-                aria-label="Close calendar"
-              >
-                ×
-              </button>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button 
+                  className="calendar-today-button"
+                  onClick={() => {
+                    onDateChange(today);
+                    setShowCalendar(false);
+                  }}
+                  style={{
+                    padding: '6px 12px',
+                    fontSize: '0.9rem',
+                    backgroundColor: '#667eea',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: 500
+                  }}
+                >
+                  Today
+                </button>
+                <button 
+                  className="calendar-popup-close"
+                  onClick={() => setShowCalendar(false)}
+                  aria-label="Close calendar"
+                >
+                  ×
+                </button>
+              </div>
             </div>
             <Calendar
               games={calendarGames}

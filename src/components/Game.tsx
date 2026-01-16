@@ -69,10 +69,8 @@ export const Game: React.FC<GameProps> = ({
     const prefs = loadPreferences();
     // Default to Daily (not Training) if not set
     setRandomMode(prefs.randomMode === true);
-    // Initialize selected date to today for Daily mode
-    if (!prefs.randomMode) {
-      setSelectedPlayDate(formatDate());
-    }
+    // Initialize selected date - will be set properly when language/wordLength are available
+    // in the changeSettings useEffect
   }, []);
 
   const updateLetterStates = useCallback((state: GameState) => {
@@ -145,6 +143,32 @@ export const Game: React.FC<GameProps> = ({
     initialize();
   }, [userId, language, wordLength]);
 
+  // Store selected date per (language, wordLength) combination
+  const getDateKey = useCallback((lang: string, len: number) => {
+    return `selectedDate_${lang}_${len}`;
+  }, []);
+
+  // Load stored date for current (language, wordLength) combination
+  const loadStoredDate = useCallback((lang: string, len: number): string | null => {
+    try {
+      const key = getDateKey(lang, len);
+      const stored = localStorage.getItem(key);
+      return stored || null;
+    } catch {
+      return null;
+    }
+  }, [getDateKey]);
+
+  // Save date for current (language, wordLength) combination
+  const saveStoredDate = useCallback((lang: string, len: number, date: string) => {
+    try {
+      const key = getDateKey(lang, len);
+      localStorage.setItem(key, date);
+    } catch {
+      // Ignore storage errors
+    }
+  }, [getDateKey]);
+
   // Handle language or word length change - reload dictionary, normalization and clear preview
   useEffect(() => {
       if (!initializedRef.current || loading || isPlayingMode) return;
@@ -163,15 +187,22 @@ export const Game: React.FC<GameProps> = ({
         // Clear game state when settings change
         setGameState(null);
         setTargetWord('');
-        // Don't reset selectedPlayDate - preserve it so switching games doesn't jump to today
-        // The date will be preserved and the game for that date will be loaded by the useEffect
+        // Load stored date for this (language, wordLength) combination, or default to today
+        const storedDate = loadStoredDate(language, wordLength);
+        if (storedDate) {
+          setSelectedPlayDate(storedDate);
+        } else {
+          const today = formatDate();
+          setSelectedPlayDate(today);
+          saveStoredDate(language, wordLength, today);
+        }
       } catch (err) {
         console.error('Failed to load dictionary:', err);
       }
     };
 
     changeSettings();
-  }, [language, wordLength, initializedRef.current, loading, isPlayingMode]);
+  }, [language, wordLength, initializedRef.current, loading, isPlayingMode, loadStoredDate, saveStoredDate]);
 
   const saveGameToApi = useCallback(async (state: GameState) => {
     // Don't save Training mode games to DB
@@ -541,8 +572,10 @@ export const Game: React.FC<GameProps> = ({
   // Handle date change
   const handleDateChange = useCallback(async (date: string) => {
     setSelectedPlayDate(date);
+    // Save date for current (language, wordLength) combination
+    saveStoredDate(language, wordLength, date);
     // Game state will be loaded by the useEffect above
-  }, []);
+  }, [language, wordLength, saveStoredDate]);
   
   // Swipe gesture handlers for date navigation
   const onTouchStart = useCallback((e: React.TouchEvent) => {
