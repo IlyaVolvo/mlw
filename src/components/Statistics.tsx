@@ -78,7 +78,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
   onLanguageChange,
   onWordLengthChange
 }) => {
-  const [modeFilter, setModeFilter] = useState<'daily' | 'all'>('all');
   const [statisticType, setStatisticType] = useState<StatisticType>('attempts-distribution');
   const [games, setGames] = useState<GameData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -95,10 +94,8 @@ export const Statistics: React.FC<StatisticsProps> = ({
           wordLength,
           10000 // Get a large number to calculate all stats
         );
-        let filteredGames: GameData[] = response.games as GameData[];
-        if (modeFilter === 'daily') {
-          filteredGames = filteredGames.filter(game => !game.isRandomMode);
-        }
+        // Stats are only maintained for daily games (non-random mode)
+        const filteredGames: GameData[] = (response.games as GameData[]).filter(game => !game.isRandomMode);
         const completedGames = filteredGames.filter(game => game.isComplete);
         setGames(completedGames);
       } catch (err) {
@@ -109,7 +106,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
     };
 
     loadStatistics();
-  }, [userId, language, wordLength, modeFilter]);
+  }, [userId, language, wordLength]);
 
   // Calculate attempts distribution (1-6 for wins, 7 for losses)
   const attemptsDistribution = useMemo(() => {
@@ -459,16 +456,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
                 {length}
               </option>
             ))}
-          </select>
-        </div>
-        
-        <div className="stat-filter-group">
-          <select
-            value={modeFilter}
-            onChange={(e) => setModeFilter(e.target.value as 'daily' | 'all')}
-          >
-            <option value="daily">Daily Only</option>
-            <option value="all">All Games</option>
           </select>
         </div>
       </div>
