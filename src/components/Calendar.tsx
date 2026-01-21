@@ -1,5 +1,4 @@
 import React from 'react';
-import { formatDate } from '../utils/dailyWord';
 
 export type GameStatus = 'won' | 'lost' | 'incomplete' | 'not-played';
 
