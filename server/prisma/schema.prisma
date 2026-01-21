@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url     = env("DATABASE_URL")
 }
 
 model User {
@@ -15,6 +14,7 @@ model User {
   verified            Int?                 @default(0)
   games               Game[]
   passwordResetTokens PasswordResetToken[]
+  preferences         UserPreferences?
 
   @@map("users")
 }
@@ -51,4 +51,16 @@ model Game {
   @@index([userId, gameDate], map: "idx_games_user_date")
   @@index([userId, language, wordLength], map: "idx_games_user_lang")
   @@map("games")
+}
+
+model UserPreferences {
+  id                Int       @id @default(autoincrement())
+  userId            Int       @unique @map("user_id")
+  selectedLanguages String[]  @default([]) @map("selected_languages")
+  createdAt         DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt         DateTime? @default(now()) @map("updated_at") @db.Timestamp(6)
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([userId], map: "idx_user_preferences_user")
+  @@map("user_preferences")
 }
