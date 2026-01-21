@@ -162,41 +162,6 @@ h1 .logout-wrapper:hover .logout-tooltip {
   min-width: auto;
 }
 
-.date-navigation-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.date-nav-arrow {
-  background: #667eea;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  width: 32px;
-  height: 38px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.date-nav-arrow:hover:not(:disabled) {
-  background: #5568d3;
-}
-
-.date-nav-arrow:disabled,
-.date-nav-arrow-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  background: #ccc;
-}
-
 .date-picker-input-compact {
   /* Hide native calendar picker icon */
   -webkit-appearance: none;
@@ -320,6 +285,22 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .row {
   display: flex;
   gap: 8px;
+}
+
+.row.shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
 }
 
 .cell {
@@ -1336,7 +1317,6 @@ h1 .logout-wrapper:hover .logout-tooltip {
   }
 }
 
-
 /* Calendar View Styles */
 .calendar-container {
   max-width: 600px;
@@ -1369,13 +1349,8 @@ h1 .logout-wrapper:hover .logout-tooltip {
   justify-content: center;
 }
 
-.calendar-nav-button:hover:not(:disabled) {
+.calendar-nav-button:hover {
   background: #5568d3;
-}
-
-.calendar-nav-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
 }
 
 .calendar-month-year {
@@ -1451,12 +1426,6 @@ h1 .logout-wrapper:hover .logout-tooltip {
   color: #6c757d;
 }
 
-.calendar-day-future {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 .calendar-day-clickable {
   cursor: pointer;
 }
@@ -1522,75 +1491,5 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
   .legend-item {
     font-size: 0.8rem;
-  }
-}
-
-/* Calendar Popup Styles */
-.calendar-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-.calendar-popup {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  max-width: 650px;
-  width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  animation: slideUp 0.3s ease-out;
-}
-
-.calendar-popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.calendar-popup-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.calendar-popup-close {
-  background: none;
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
-  padding: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-  line-height: 1;
-}
-
-.calendar-popup-close:hover {
-  background-color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-  .calendar-popup {
-    width: 95%;
-    padding: 20px;
   }
 }

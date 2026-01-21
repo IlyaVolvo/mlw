@@ -9,6 +9,7 @@ interface GameBoardProps {
   targetWord?: string;
   isComplete?: boolean;
   isWon?: boolean;
+  shakeRowIndex?: number | null;
 }
 
 export const GameBoard: React.FC<GameBoardProps> = ({
@@ -19,6 +20,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   targetWord,
   isComplete,
   isWon,
+  shakeRowIndex,
 }) => {
   const getCellState = (row: number, col: number): LetterEvaluation | null => {
     // Show completed guesses
@@ -59,8 +61,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         </div>
       );
     }
+    const isShaking = shakeRowIndex !== null && row === shakeRowIndex;
     rows.push(
-      <div key={row} className="row">
+      <div key={row} className={`row ${isShaking ? 'shake' : ''}`}>
         {cells}
       </div>
     );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Login } from './Login';
 import { Register } from './Register';
 import { ForgotPassword } from './ForgotPassword';
@@ -18,6 +18,7 @@ interface User {
 export const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [configsLoaded, setConfigsLoaded] = useState(false);
   const [authView, setAuthView] = useState<'login' | 'register' | 'forgot' | 'reset'>('login');
   const [resetToken, setResetToken] = useState<string | null>(null);
   const [view, setView] = useState<'game' | 'statistics'>('game');
@@ -26,6 +27,8 @@ export const App: React.FC = () => {
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
   const [language, setLanguage] = useState<string>('en');
   const [wordLength, setWordLength] = useState<number>(5);
+  const configsLoadPromiseRef = useRef<Promise<void> | null>(null);
+  const allConfigsRef = useRef<LanguageConfig[]>([]);
 
   useEffect(() => {
     // Load preferences first
@@ -34,45 +37,63 @@ export const App: React.FC = () => {
     setWordLength(prefs.wordLength);
 
     const loadConfigs = async () => {
-      const allConfigs = await getLanguageConfigs();
-      setAllAvailableLanguages(allConfigs);
-      
-      // Filter based on user's language selection
-      let filteredConfigs = allConfigs;
-      
-      if (prefs.selectedLanguages && prefs.selectedLanguages.length < allConfigs.length) {
-        // Filter to only selected languages
-        const selectedSet = new Set(prefs.selectedLanguages);
-        filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
-      }
-      
-      // Ensure current language is in filtered list
-      if (prefs.language && !filteredConfigs.find(l => l.code === prefs.language)) {
-        // Current language was deselected, switch to first available
-        const langToUse = filteredConfigs[0]?.code || 'en';
-        const updatedPrefs = { ...prefs, language: langToUse };
-        savePreferences(updatedPrefs);
-        setLanguage(langToUse);
-      }
-      
-      setAvailableLanguages(filteredConfigs);
-      
-      // Validate word length for selected language after configs load
-      const langConfig = filteredConfigs.find(lang => lang.code === prefs.language);
-      if (langConfig && !langConfig.supportedLengths.includes(prefs.wordLength)) {
-        const validLength = langConfig.supportedLengths[0] || 5;
-        setWordLength(validLength);
-        const updatedPrefs = { ...prefs, wordLength: validLength };
-        savePreferences(updatedPrefs);
+      try {
+        const allConfigs = await getLanguageConfigs();
+        allConfigsRef.current = allConfigs;
+        setAllAvailableLanguages(allConfigs);
+        
+        // Filter based on user's language selection
+        let filteredConfigs = allConfigs;
+        
+        if (prefs.selectedLanguages && prefs.selectedLanguages.length < allConfigs.length) {
+          // Filter to only selected languages
+          const selectedSet = new Set(prefs.selectedLanguages);
+          filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
+        }
+        
+        // Ensure current language is in filtered list
+        if (prefs.language && !filteredConfigs.find(l => l.code === prefs.language)) {
+          // Current language was deselected, switch to first available
+          const langToUse = filteredConfigs[0]?.code || 'en';
+          const updatedPrefs = { ...prefs, language: langToUse };
+          savePreferences(updatedPrefs);
+          setLanguage(langToUse);
+        }
+        
+        setAvailableLanguages(filteredConfigs);
+        
+        // Validate word length for selected language after configs load
+        const langConfig = filteredConfigs.find(lang => lang.code === prefs.language);
+        if (langConfig && !langConfig.supportedLengths.includes(prefs.wordLength)) {
+          const validLength = langConfig.supportedLengths[0] || 5;
+          setWordLength(validLength);
+          const updatedPrefs = { ...prefs, wordLength: validLength };
+          savePreferences(updatedPrefs);
+        }
+        
+        setConfigsLoaded(true);
+      } catch (error) {
+        console.error('Failed to load language configs:', error);
+        setConfigsLoaded(true); // Still set to true to not block the app
       }
     };
-    loadConfigs();
+    
+    const configsPromise = loadConfigs();
+    configsLoadPromiseRef.current = configsPromise;
+    configsPromise.finally(() => {
+      configsLoadPromiseRef.current = null;
+    });
 
     const checkAuth = async () => {
       try {
+        // Wait for configs to load before setting user (prevents race condition)
+        await configsPromise;
+        
         const token = apiClient.getToken();
         if (token) {
           const response = await apiClient.getCurrentUser();
+          
+          // Configs are now loaded (we awaited the promise), safe to set user
           setUser(response.user);
           
           // Load preferences from API when logged in
@@ -83,6 +104,12 @@ export const App: React.FC = () => {
               const prefs = loadPreferences();
               prefs.selectedLanguages = apiPrefs.selectedLanguages;
               savePreferences(prefs); // Sync to localStorage for consistency
+              
+              // Reload configs with API preferences
+              // Use the ref to ensure we have the latest configs
+              const selectedSet = new Set(apiPrefs.selectedLanguages);
+              const filteredConfigs = allConfigsRef.current.filter(lang => selectedSet.has(lang.code));
+              setAvailableLanguages(filteredConfigs);
             }
             // If selectedLanguages is null, user has no saved preferences (all languages)
             // Use localStorage preferences as fallback
@@ -113,7 +140,15 @@ export const App: React.FC = () => {
   }, []);
 
   const handleLogin = async (userData: User) => {
+    // Wait for configs to be loaded before setting user (prevents race condition)
+    // This ensures Game component doesn't mount until configs are ready
+    if (configsLoadPromiseRef.current) {
+      await configsLoadPromiseRef.current;
+    }
+    
+    // Configs are now loaded (we awaited the promise), safe to set user
     setUser(userData);
+    
     // Load preferences from API when user logs in
     try {
       const apiPrefs = await apiClient.getPreferences();
@@ -124,9 +159,9 @@ export const App: React.FC = () => {
         savePreferences(prefs); // Sync to localStorage for consistency
         
         // Reload configs with API preferences
-        const allConfigs = allAvailableLanguages;
+        // Use the ref to ensure we have the latest configs
         const selectedSet = new Set(apiPrefs.selectedLanguages);
-        const filteredConfigs = allConfigs.filter(lang => selectedSet.has(lang.code));
+        const filteredConfigs = allConfigsRef.current.filter(lang => selectedSet.has(lang.code));
         setAvailableLanguages(filteredConfigs);
       }
     } catch (error) {
@@ -140,7 +175,7 @@ export const App: React.FC = () => {
     setUser(null);
   };
 
-  if (loading) {
+  if (loading || !configsLoaded) {
     return <div className="loading">Loading...</div>;
   }
 

@@ -55,6 +55,7 @@ export const Game: React.FC<GameProps> = ({
   const [randomMode, setRandomMode] = useState<boolean>(false);
   const initializedRef = useRef<boolean>(false);
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
+  const [shakeRowIndex, setShakeRowIndex] = useState<number | null>(null);
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
   const [showOptions, setShowOptions] = useState(false);
   
@@ -407,8 +408,13 @@ export const Game: React.FC<GameProps> = ({
     }
 
     if (!isValidWord(guess, dictionary)) {
-      // Show error - word not in dictionary
-      alert('Word not in dictionary!');
+      // Trigger shake animation on the current row
+      const currentRowIndex = gameState.guesses.length;
+      setShakeRowIndex(currentRowIndex);
+      // Clear shake after animation completes (600ms)
+      setTimeout(() => {
+        setShakeRowIndex(null);
+      }, 600);
       return;
     }
 
@@ -830,6 +836,7 @@ export const Game: React.FC<GameProps> = ({
             targetWord={gameState.isComplete && !gameState.isWon ? targetWord : undefined}
             isComplete={gameState.isComplete}
             isWon={gameState.isWon}
+            shakeRowIndex={shakeRowIndex}
           />
           {gameState.isComplete && (
             <div className="game-result">
