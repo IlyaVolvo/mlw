@@ -3,6 +3,7 @@ import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
 import { Calendar } from './Calendar';
 import { apiClient } from '../api/client';
+import { HelpTooltip } from './HelpTooltip';
 
 interface SettingsProps {
   userId: number;
@@ -148,18 +149,29 @@ export const Settings: React.FC<SettingsProps> = ({
   return (
     <div className="settings">
       <div className="setting-group">
-        <select
-          id="language-select"
-          value={language}
-          onChange={(e) => onLanguageChange(e.target.value)}
-          disabled={disabled}
-        >
-          {availableLanguages.map((lang) => (
-            <option key={lang.code} value={lang.code}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
+        <div className="language-select-wrapper">
+          <HelpTooltip language={language}>
+            <span className="help-icon" title="Help">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </span>
+          </HelpTooltip>
+          <select
+            id="language-select"
+            value={language}
+            onChange={(e) => onLanguageChange(e.target.value)}
+            disabled={disabled}
+          >
+            {availableLanguages.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="setting-group">
         <select
@@ -173,17 +185,6 @@ export const Settings: React.FC<SettingsProps> = ({
               {length}
             </option>
           ))}
-        </select>
-      </div>
-      <div className="setting-group">
-        <select
-          id="mode-select"
-          value={randomMode ? 'training' : 'daily'}
-          onChange={(e) => onRandomModeChange(e.target.value === 'training')}
-          disabled={disabled}
-        >
-          <option value="daily">Daily</option>
-          <option value="training">Training</option>
         </select>
       </div>
       {!randomMode && (

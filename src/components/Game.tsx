@@ -790,16 +790,29 @@ export const Game: React.FC<GameProps> = ({
                 Statistics
               </button>
             </div>
-            <button
-              className={`options-icon-button ${showOptions ? 'active' : ''}`}
-              onClick={() => setShowOptions(!showOptions)}
-              title="Options"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
-              </svg>
-            </button>
+            {!randomMode && (
+              <select
+                className="mode-selector-compact"
+                value={randomMode ? 'training' : 'daily'}
+                onChange={(e) => handleRandomModeChange(e.target.value === 'training')}
+              >
+                <option value="daily">Daily</option>
+                <option value="training">Training</option>
+              </select>
+            )}
+            <div className="options-button-wrapper">
+              <div className="options-tooltip">Mark one or more languages you'd like to be in language selection menu</div>
+              <button
+                className={`options-icon-button ${showOptions ? 'active' : ''}`}
+                onClick={() => setShowOptions(!showOptions)}
+                title="Options"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         )}
       </div>
