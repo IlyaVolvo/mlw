@@ -865,6 +865,60 @@ export const Game: React.FC<GameProps> = ({
             </div>
           </div>
         )}
+        {showCalendar && !randomMode && (
+          <div className="calendar-full-panel">
+            <div className="calendar-full-header">
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                <button 
+                  className="calendar-today-button"
+                  onClick={() => {
+                    const today = formatDate();
+                    handleDateChange(today);
+                    setShowCalendar(false);
+                  }}
+                  style={{
+                    padding: '8px 16px',
+                    fontSize: '0.9rem',
+                    backgroundColor: '#667eea',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Today
+                </button>
+                <button 
+                  className="calendar-close-button"
+                  onClick={() => setShowCalendar(false)}
+                  aria-label="Close calendar"
+                  style={{
+                    padding: '8px 16px',
+                    fontSize: '0.9rem',
+                    backgroundColor: '#ccc',
+                    color: '#333',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+            <Calendar
+              games={calendarGames}
+              currentMonth={calendarMonth}
+              onMonthChange={setCalendarMonth}
+              onDateClick={(date: string) => {
+                handleDateChange(date);
+                setShowCalendar(false);
+              }}
+            />
+          </div>
+        )}
       </div>
       <Settings
         userId={userId}
@@ -884,60 +938,7 @@ export const Game: React.FC<GameProps> = ({
         calendarMonth={calendarMonth}
         onCalendarMonthChange={setCalendarMonth}
       />
-      {showCalendar && !randomMode ? (
-        <div className="calendar-full-panel">
-          <div className="calendar-full-header">
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-              <button 
-                className="calendar-today-button"
-                onClick={() => {
-                  const today = formatDate();
-                  handleDateChange(today);
-                  setShowCalendar(false);
-                }}
-                style={{
-                  padding: '8px 16px',
-                  fontSize: '0.9rem',
-                  backgroundColor: '#667eea',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                Today
-              </button>
-              <button 
-                className="calendar-close-button"
-                onClick={() => setShowCalendar(false)}
-                aria-label="Close calendar"
-                style={{
-                  padding: '8px 16px',
-                  fontSize: '0.9rem',
-                  backgroundColor: '#ccc',
-                  color: '#333',
-                  border: 'none',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-          <Calendar
-            games={calendarGames}
-            currentMonth={calendarMonth}
-            onMonthChange={setCalendarMonth}
-            onDateClick={(date: string) => {
-              handleDateChange(date);
-              setShowCalendar(false);
-            }}
-          />
-        </div>
-      ) : (
+      {!showCalendar || randomMode ? (
         <>
       {!dictionary && !loading && (
         <GameBoard
@@ -1005,7 +1006,7 @@ export const Game: React.FC<GameProps> = ({
         </>
       )}
         </>
-      )}
+      ) : null}
       <LanguageSelector
         allAvailableLanguages={allAvailableLanguages}
         isOpen={showOptions}
