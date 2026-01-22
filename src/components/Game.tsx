@@ -3,6 +3,7 @@ import type { GameState, DictionaryEntry, LetterState, LanguageConfig } from '..
 import { GameBoard } from './GameBoard';
 import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
+import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
 import { loadDictionary } from '../data/dictionaryLoader';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
@@ -58,6 +59,19 @@ export const Game: React.FC<GameProps> = ({
   const [shakeRowIndex, setShakeRowIndex] = useState<number | null>(null);
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
   const [showOptions, setShowOptions] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [calendarGames, setCalendarGames] = useState<any[]>([]);
+  const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
+    const today = formatDate();
+    const [year, month] = today.split('-').map(Number);
+    return new Date(year, month - 1, 1);
+  });
+  const calendarMonthRef = useRef<Date>(calendarMonth);
+  
+  // Keep ref in sync with state
+  useEffect(() => {
+    calendarMonthRef.current = calendarMonth;
+  }, [calendarMonth]);
   
   // Swipe gesture tracking for date navigation (entire screen)
   const touchStartRef = useRef<number | null>(null);
@@ -134,6 +148,9 @@ export const Game: React.FC<GameProps> = ({
         setDictionary(dict);
         // Normalization is cached in characterNormalization module, no need to store it
         initializedRef.current = true;
+        // On initial load, always default to today (don't load stored dates)
+        const today = formatDate();
+        setSelectedPlayDate(today);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to initialize');
       } finally {
@@ -188,11 +205,13 @@ export const Game: React.FC<GameProps> = ({
         // Clear game state when settings change
         setGameState(null);
         setTargetWord('');
-        // Load stored date for this (language, wordLength) combination, or default to today
+        // When switching language/word length, load stored date for this combination
+        // This allows returning to the last selected date for each combination
         const storedDate = loadStoredDate(language, wordLength);
         if (storedDate) {
           setSelectedPlayDate(storedDate);
         } else {
+          // If no stored date for this combination, default to today
           const today = formatDate();
           setSelectedPlayDate(today);
           saveStoredDate(language, wordLength, today);
@@ -363,6 +382,37 @@ export const Game: React.FC<GameProps> = ({
       setIsPlayingMode(false);
     }
   }, [dictionary, language, wordLength, randomMode, selectedPlayDate, isPlayingMode, updateLetterStates]);
+
+  // Load games for calendar when it opens
+  useEffect(() => {
+    if (showCalendar && !randomMode) {
+      const loadGames = async () => {
+        try {
+          const response = await apiClient.getHistory(language, wordLength, 10000);
+          // Filter to only daily games (non-random mode)
+          const dailyGames = response.games.filter((game: any) => !game.isRandomMode);
+          setCalendarGames(dailyGames);
+        } catch (err) {
+          console.error('Failed to load games for calendar:', err);
+        }
+      };
+      loadGames();
+    }
+  }, [showCalendar, language, wordLength, randomMode]);
+
+  // Update calendar month when selectedPlayDate changes
+  useEffect(() => {
+    if (selectedPlayDate) {
+      const [year, month] = selectedPlayDate.split('-').map(Number);
+      const newMonth = new Date(year, month - 1, 1);
+      // Only update if the month actually changed to avoid unnecessary re-renders
+      const currentMonth = calendarMonthRef.current;
+      if (currentMonth.getFullYear() !== newMonth.getFullYear() || 
+          currentMonth.getMonth() !== newMonth.getMonth()) {
+        setCalendarMonth(newMonth);
+      }
+    }
+  }, [selectedPlayDate]);
 
   // Auto-start game when first letter is typed (instead of Play button)
   const handleKeyPress = useCallback(async (key: string) => {
@@ -578,7 +628,7 @@ export const Game: React.FC<GameProps> = ({
   // Handle date change
   const handleDateChange = useCallback(async (date: string) => {
     setSelectedPlayDate(date);
-    // Save date for current (language, wordLength) combination
+    // Save the date for this (language, wordLength) combination
     saveStoredDate(language, wordLength, date);
     // Game state will be loaded by the useEffect above
   }, [language, wordLength, saveStoredDate]);
@@ -828,7 +878,68 @@ export const Game: React.FC<GameProps> = ({
         onRandomModeChange={handleRandomModeChange}
         onDateChange={handleDateChange}
         disabled={false}
+        showCalendar={showCalendar}
+        onShowCalendarChange={setShowCalendar}
+        calendarGames={calendarGames}
+        calendarMonth={calendarMonth}
+        onCalendarMonthChange={setCalendarMonth}
       />
+      {showCalendar && !randomMode ? (
+        <div className="calendar-full-panel">
+          <div className="calendar-full-header">
+            <h3>Select Date</h3>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <button 
+                className="calendar-today-button"
+                onClick={() => {
+                  const today = formatDate();
+                  handleDateChange(today);
+                  setShowCalendar(false);
+                }}
+                style={{
+                  padding: '8px 16px',
+                  fontSize: '0.9rem',
+                  backgroundColor: '#667eea',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontWeight: 600
+                }}
+              >
+                Today
+              </button>
+              <button 
+                className="calendar-close-button"
+                onClick={() => setShowCalendar(false)}
+                aria-label="Close calendar"
+                style={{
+                  padding: '8px 16px',
+                  fontSize: '0.9rem',
+                  backgroundColor: '#ccc',
+                  color: '#333',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontWeight: 600
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+          <Calendar
+            games={calendarGames}
+            currentMonth={calendarMonth}
+            onMonthChange={setCalendarMonth}
+            onDateClick={(date: string) => {
+              handleDateChange(date);
+              setShowCalendar(false);
+            }}
+          />
+        </div>
+      ) : (
+        <>
       {!dictionary && !loading && (
         <GameBoard
           guesses={[]}
@@ -892,6 +1003,8 @@ export const Game: React.FC<GameProps> = ({
             letterStates={letterStates}
             language={language}
           />
+        </>
+      )}
         </>
       )}
       <LanguageSelector

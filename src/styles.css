@@ -1467,8 +1467,16 @@ h1 .logout-wrapper:hover .logout-tooltip {
   justify-content: center;
 }
 
-.calendar-nav-button:hover {
+.calendar-nav-button:hover:not(:disabled) {
   background: #5568d3;
+}
+
+.calendar-nav-button:disabled,
+.calendar-nav-button-disabled {
+  background: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .calendar-month-year {
@@ -1542,6 +1550,17 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .calendar-day-not-played {
   background: #e9ecef;
   color: #6c757d;
+}
+
+.calendar-day-future {
+  background: #e9ecef;
+  border-color: #6c757d;
+}
+
+.calendar-day-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .calendar-day-clickable {

@@ -81,23 +81,33 @@ export const Calendar: React.FC<CalendarProps> = ({
   const daysInMonth = lastDay.getDate();
   const startingDayOfWeek = firstDay.getDay();
 
+  // Get today's date for comparison
+  const todayDate = new Date();
+  const currentYear = todayDate.getFullYear();
+  const currentMonthIndex = todayDate.getMonth();
+  
   // Get previous and next month
-  const prevMonth = () => {
+  const prevMonth = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Always allow going to previous month (no limit in the past)
+    // Handle year rollover automatically (e.g., January -> December of previous year)
     const newDate = new Date(year, month - 1, 1);
     onMonthChange(newDate);
   };
 
-  const nextMonth = () => {
+  const nextMonth = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!canGoToNextMonth) return;
+    // Only allow going to next month if we haven't reached the current month
     const newDate = new Date(year, month + 1, 1);
     onMonthChange(newDate);
   };
 
-  // Check if current month is the current month or later
-  const currentMonthDate = new Date();
-  const currentMonthYear = currentMonthDate.getFullYear();
-  const currentMonthMonth = currentMonthDate.getMonth();
-  const isCurrentMonthOrFuture = year > currentMonthYear || (year === currentMonthYear && month >= currentMonthMonth);
-  const canGoToNextMonth = !isCurrentMonthOrFuture;
+  // Check if we can go to next month - only if we haven't reached the current month/year
+  // Disable if we're at or past the current month (can't go to future)
+  const canGoToNextMonth = year < currentYear || (year === currentYear && month < currentMonthIndex);
 
   // Generate calendar days
   const calendarDays: CalendarDay[] = [];
@@ -151,18 +161,33 @@ export const Calendar: React.FC<CalendarProps> = ({
   }
 
   // Add empty cells for days after the last day of the month to complete the grid
+  // But don't show future dates - only show dates up to today
   const remainingCells = 42 - calendarDays.length; // 6 weeks * 7 days
   for (let day = 1; day <= remainingCells; day++) {
     const date = new Date(year, month + 1, day);
     const dateString = formatLocalDate(date);
-    calendarDays.push({
-      date,
-      day: date.getDate(),
-      status: 'not-played',
-      isCurrentMonth: false,
-      isToday: false,
-      isFuture: dateString > todayStr,
-    });
+    const isFuture = dateString > todayStr;
+    // Only add cells for dates that are not in the future
+    // If we've reached future dates, add empty placeholder cells
+    if (isFuture) {
+      calendarDays.push({
+        date,
+        day: 0, // Use 0 to indicate empty/hidden cell
+        status: 'not-played',
+        isCurrentMonth: false,
+        isToday: false,
+        isFuture: true,
+      });
+    } else {
+      calendarDays.push({
+        date,
+        day: date.getDate(),
+        status: 'not-played',
+        isCurrentMonth: false,
+        isToday: false,
+        isFuture: false,
+      });
+    }
   }
 
   const monthNames = [
@@ -173,7 +198,8 @@ export const Calendar: React.FC<CalendarProps> = ({
   const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   const handleDateClick = (day: CalendarDay) => {
-    if (day.isCurrentMonth && !day.isFuture && onDateClick) {
+    // Only allow clicking on current month dates that are not in the future
+    if (day.isCurrentMonth && !day.isFuture && day.day > 0 && onDateClick) {
       const dateString = formatLocalDate(day.date);
       onDateClick(dateString);
     }
@@ -181,6 +207,12 @@ export const Calendar: React.FC<CalendarProps> = ({
 
   const getDayClassName = (day: CalendarDay): string => {
     const classes = ['calendar-day'];
+    
+    // Hide future dates completely
+    if (day.isFuture) {
+      classes.push('calendar-day-future', 'calendar-day-hidden');
+      return classes.join(' ');
+    }
     
     if (!day.isCurrentMonth) {
       classes.push('calendar-day-other-month');
@@ -190,15 +222,10 @@ export const Calendar: React.FC<CalendarProps> = ({
       classes.push('calendar-day-today');
     }
     
-    if (day.isFuture) {
-      classes.push('calendar-day-future');
-    }
-    
     classes.push(`calendar-day-${day.status}`);
     
-    if (day.isCurrentMonth && !day.isFuture && day.status !== 'not-played') {
-      classes.push('calendar-day-clickable');
-    } else if (day.isCurrentMonth && !day.isFuture) {
+    // Only make clickable if it's current month, not future, and has a day number
+    if (day.isCurrentMonth && !day.isFuture && day.day > 0) {
       classes.push('calendar-day-clickable');
     }
     
@@ -208,7 +235,12 @@ export const Calendar: React.FC<CalendarProps> = ({
   return (
     <div className="calendar-container">
       <div className="calendar-header">
-        <button onClick={prevMonth} className="calendar-nav-button" aria-label="Previous month">
+        <button 
+          onClick={prevMonth} 
+          className="calendar-nav-button" 
+          aria-label="Previous month"
+          type="button"
+        >
           ‹
         </button>
         <h3 className="calendar-month-year">
@@ -219,6 +251,7 @@ export const Calendar: React.FC<CalendarProps> = ({
           className={`calendar-nav-button ${!canGoToNextMonth ? 'calendar-nav-button-disabled' : ''}`}
           aria-label="Next month"
           disabled={!canGoToNextMonth}
+          type="button"
         >
           ›
         </button>
@@ -239,12 +272,12 @@ export const Calendar: React.FC<CalendarProps> = ({
             className={getDayClassName(day)}
             onClick={() => handleDateClick(day)}
             title={
-              day.isCurrentMonth
+              day.isCurrentMonth && !day.isFuture && day.day > 0
                 ? `${day.date.toLocaleDateString()} - ${day.status === 'won' ? 'Won' : day.status === 'lost' ? 'Lost' : day.status === 'incomplete' ? 'Incomplete' : 'Not played'}`
                 : undefined
             }
           >
-            {day.isCurrentMonth ? day.day : ''}
+            {day.isCurrentMonth && !day.isFuture && day.day > 0 ? day.day : ''}
           </div>
         ))}
       </div>

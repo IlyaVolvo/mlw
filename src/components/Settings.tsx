@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
-import { Calendar } from './Calendar';
 import { apiClient } from '../api/client';
 import { HelpTooltip } from './HelpTooltip';
 
@@ -17,6 +16,11 @@ interface SettingsProps {
   onRandomModeChange: (randomMode: boolean) => void;
   onDateChange: (date: string) => void;
   disabled?: boolean;
+  onShowCalendarChange?: (show: boolean) => void;
+  showCalendar?: boolean;
+  calendarGames?: any[];
+  calendarMonth?: Date;
+  onCalendarMonthChange?: (date: Date) => void;
 }
 
 // Format date for display - show "today", "yesterday", day of week, or actual date
@@ -73,8 +77,14 @@ export const Settings: React.FC<SettingsProps> = ({
   selectedDate,
   onLanguageChange,
   onWordLengthChange,
+  onRandomModeChange: _onRandomModeChange,
   onDateChange,
   disabled = false,
+  onShowCalendarChange,
+  showCalendar: externalShowCalendar,
+  calendarGames: _externalCalendarGames,
+  calendarMonth: _externalCalendarMonth,
+  onCalendarMonthChange,
 }) => {
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
   const today = formatDate();
@@ -109,9 +119,9 @@ export const Settings: React.FC<SettingsProps> = ({
     }
   };
   
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [calendarGames, setCalendarGames] = useState<any[]>([]);
-  const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
+  const [internalShowCalendar, setInternalShowCalendar] = useState(false);
+  const [_internalCalendarGames, setInternalCalendarGames] = useState<any[]>([]);
+  const [_internalCalendarMonth, setInternalCalendarMonth] = useState<Date>(() => {
     // Initialize calendar month to the selected date
     if (selectedDate) {
       const [year, month] = selectedDate.split('-').map(Number);
@@ -119,6 +129,25 @@ export const Settings: React.FC<SettingsProps> = ({
     }
     return new Date();
   });
+
+  // Use external state if provided, otherwise use internal state
+  const showCalendar = externalShowCalendar !== undefined ? externalShowCalendar : internalShowCalendar;
+  
+  const setShowCalendar = (value: boolean) => {
+    if (onShowCalendarChange) {
+      onShowCalendarChange(value);
+    } else {
+      setInternalShowCalendar(value);
+    }
+  };
+  
+  const setCalendarMonth = (date: Date) => {
+    if (onCalendarMonthChange) {
+      onCalendarMonthChange(date);
+    } else {
+      setInternalCalendarMonth(date);
+    }
+  };
 
   // Load games for calendar when it opens
   useEffect(() => {
@@ -128,22 +157,32 @@ export const Settings: React.FC<SettingsProps> = ({
           const response = await apiClient.getHistory(language, wordLength, 10000);
           // Filter to only daily games (non-random mode)
           const dailyGames = response.games.filter((game: any) => !game.isRandomMode);
-          setCalendarGames(dailyGames);
+          if (onShowCalendarChange === undefined) {
+            // Only set internal state if not using external state
+            setInternalCalendarGames(dailyGames);
+          }
         } catch (err) {
           console.error('Failed to load games for calendar:', err);
         }
       };
       loadGames();
     }
-  }, [showCalendar, language, wordLength, randomMode, userId]);
+  }, [showCalendar, language, wordLength, randomMode, userId, onShowCalendarChange]);
 
   // Update calendar month when selectedDate changes
   useEffect(() => {
     if (selectedDate) {
       const [year, month] = selectedDate.split('-').map(Number);
-      setCalendarMonth(new Date(year, month - 1, 1));
+      const newMonth = new Date(year, month - 1, 1);
+      // Only update if the month actually changed to avoid infinite loops
+      const currentMonth = onCalendarMonthChange ? _externalCalendarMonth : _internalCalendarMonth;
+      if (!currentMonth || 
+          currentMonth.getFullYear() !== newMonth.getFullYear() || 
+          currentMonth.getMonth() !== newMonth.getMonth()) {
+        setCalendarMonth(newMonth);
+      }
     }
-  }, [selectedDate]);
+  }, [selectedDate]); // Removed setCalendarMonth from dependencies - it's recreated on every render
 
   return (
     <div className="settings">
@@ -158,18 +197,18 @@ export const Settings: React.FC<SettingsProps> = ({
               </svg>
             </span>
           </HelpTooltip>
-          <select
-            id="language-select"
-            value={language}
-            onChange={(e) => onLanguageChange(e.target.value)}
-            disabled={disabled}
-          >
-            {availableLanguages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
+        <select
+          id="language-select"
+          value={language}
+          onChange={(e) => onLanguageChange(e.target.value)}
+          disabled={disabled}
+        >
+          {availableLanguages.map((lang) => (
+            <option key={lang.code} value={lang.code}>
+              {lang.name}
+            </option>
+          ))}
+        </select>
         </div>
       </div>
       <div className="setting-group">
@@ -190,7 +229,7 @@ export const Settings: React.FC<SettingsProps> = ({
         <div className="setting-group date-picker-setting">
           <div 
             className="date-navigation-wrapper" 
-            style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}
           >
             <button
               className="date-nav-arrow date-nav-arrow-left"
@@ -201,7 +240,7 @@ export const Settings: React.FC<SettingsProps> = ({
             >
               ‹
             </button>
-            <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'inline-block' }}>
+            <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: 1, alignItems: 'center' }}>
             <input
               id="date-picker-hidden"
               type="date"
@@ -239,7 +278,7 @@ export const Settings: React.FC<SettingsProps> = ({
                   setShowCalendar(true);
                 }
               }}
-              disabled={disabled}
+          disabled={disabled}
               className="date-picker-input-compact"
               style={{ 
                 padding: '8px 8px',
@@ -252,8 +291,7 @@ export const Settings: React.FC<SettingsProps> = ({
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 transition: 'border-color 0.2s',
                 color: 'transparent',
-                width: 'auto',
-                minWidth: '120px',
+                width: '100%',
                 height: '38px',
                 position: 'relative',
                 zIndex: 2,
@@ -338,62 +376,9 @@ export const Settings: React.FC<SettingsProps> = ({
             ›
           </button>
           </div>
-        </div>
+      </div>
       )}
 
-      {showCalendar && !randomMode && (
-        <div 
-          className="calendar-popup-overlay"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setShowCalendar(false);
-            }
-          }}
-        >
-          <div className="calendar-popup">
-            <div className="calendar-popup-header">
-              <h3>Select Date</h3>
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                <button 
-                  className="calendar-today-button"
-                  onClick={() => {
-                    onDateChange(today);
-                    setShowCalendar(false);
-                  }}
-                  style={{
-                    padding: '6px 12px',
-                    fontSize: '0.9rem',
-                    backgroundColor: '#667eea',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontWeight: 500
-                  }}
-                >
-                  Today
-                </button>
-                <button 
-                  className="calendar-popup-close"
-                  onClick={() => setShowCalendar(false)}
-                  aria-label="Close calendar"
-                >
-                  ×
-                </button>
-              </div>
-            </div>
-            <Calendar
-              games={calendarGames}
-              currentMonth={calendarMonth}
-              onMonthChange={setCalendarMonth}
-              onDateClick={(date: string) => {
-                onDateChange(date);
-                setShowCalendar(false);
-              }}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
