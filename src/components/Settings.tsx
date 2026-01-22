@@ -73,7 +73,6 @@ export const Settings: React.FC<SettingsProps> = ({
   selectedDate,
   onLanguageChange,
   onWordLengthChange,
-  onRandomModeChange,
   onDateChange,
   disabled = false,
 }) => {
