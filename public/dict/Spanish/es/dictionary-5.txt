@@ -1,3104 +1,3551 @@
-puede 1396264 VERB
-parte 1232035 NOUN
-antes 1050485 ADV
-tiene 1035686 VERB
-forma 1016330 NOUN
-hacer 1151301 VERB
-menos 907485 ADV
-tanto 894956 ADV
-mundo 896597 NOUN
-decir 807216 VERB
-ahora 795134 ADV
-cosas 759963 NOUN
-lugar 886177 NOUN
-mujer 665908 NOUN
-tener 693335 VERB
-padre 636839 NOUN
-mucho 680792 ADV
-mejor 652273 ADJ
-estar 640383 VERB
-nunca 645178 ADV
-veces 632141 NOUN
-nuevo 630684 ADJ
-mayor 607153 ADJ
-madre 592687 NOUN
-noche 620867 NOUN
-haber 536517 VERB
-luego 536006 ADV
-manos 530311 NOUN
-punto 528795 NOUN
-gente 465096 NOUN
-hecho 447127 VERB
-dicho 444950 VERB
-hecho 399607 NOUN
-saber 370218 VERB
-tengo 369915 VERB
-estoy 366608 VERB
-poder 367735 NOUN
-largo 354271 ADJ
-fuera 347637 VERB
-visto 338782 VERB
-puedo 334202 VERB
-buena 333966 ADJ
-grupo 337550 NOUN
-medio 338300 NOUN
-junto 333633 ADJ
-fuera 308837 ADV
-horas 307454 NOUN
-suelo 304452 NOUN
-nueva 302116 ADJ
-salir 298476 VERB
-hemos 298406 VERB
-hijos 298361 NOUN
-cerca 288660 ADV
-pasar 288553 VERB
-vista 316112 NOUN
-valor 292572 NOUN
-siglo 282168 NOUN
-poder 282474 VERB
-dejar 272783 VERB
-miedo 266346 NOUN
-pesar 288296 VERB
-casos 260425 NOUN
-trata 263082 VERB
-igual 263371 ADJ
-final 257153 NOUN
-dolor 258741 NOUN
-meses 255382 NOUN
-orden 257043 NOUN
-favor 255085 NOUN
-mente 251248 NOUN
-amigo 247795 NOUN
-nivel 252884 NOUN
-datos 246717 NOUN
-papel 244871 NOUN
-clase 241388 NOUN
-tarde 236533 ADV
-tomar 232556 VERB
-claro 230938 ADJ
-vivir 229544 VERB
-resto 224842 NOUN
-color 218956 NOUN
-ayuda 224968 NOUN
-pueda 216613 VERB
-falta 224099 NOUN
-campo 218051 NOUN
-calle 209899 NOUN
-deben 210473 VERB
-mismo 204376 ADJ
-lejos 201162 ADV
-cielo 200859 NOUN
-libre 193298 ADJ
-fondo 191176 NOUN
-bueno 189585 ADJ
-capaz 191882 ADJ
-menor 187611 ADJ
-salud 189823 NOUN
-hacen 184892 VERB
-viaje 188070 NOUN
-causa 182887 NOUN
-coche 183574 NOUN
-tarde 179949 NOUN
-fuego 178639 NOUN
-juego 177053 NOUN
-joven 173783 NOUN
-ideas 172408 NOUN
-poner 171918 VERB
-sigue 167642 VERB
-brazo 166948 NOUN
-queda 165619 VERB
-vamos 163696 VERB
-lleva 161499 VERB
-sitio 158660 NOUN
-texto 157320 NOUN
-comer 158021 VERB
-obras 155055 NOUN
-gusta 155336 VERB
-pecho 155431 NOUN
-autor 153513 NOUN
-deseo 151847 NOUN
-serie 152580 NOUN
-dedos 147296 NOUN
-mitad 144540 NOUN
-feliz 143159 ADJ
-carta 140645 NOUN
-joven 140221 ADJ
-plazo 139693 NOUN
-gesto 143723 NOUN
-viene 136771 VERB
-pasos 135180 NOUN
-mejor 134304 ADV
-somos 133644 VERB
-apoyo 130763 NOUN
-habla 129482 VERB
-tenga 127533 VERB
-mirar 128123 VERB
-leyes 124160 NOUN
-creer 123828 VERB
-darle 124362 VERB
-cargo 121217 NOUN
-tipos 120280 NOUN
-golpe 120093 NOUN
-carne 119429 NOUN
-fuese 119384 VERB
-grado 117542 NOUN
-calor 121056 NOUN
-media 116008 ADJ
-crear 115169 VERB
-seres 114568 NOUN
-dando 113625 VERB
-justo 114652 ADJ
-chica 110017 NOUN
-sabes 108309 ADJ
-lista 109273 NOUN
-fecha 109347 NOUN
-total 107938 ADJ
-llega 107108 VERB
-silla 106863 NOUN
-actos 106603 NOUN
-pared 105911 NOUN
-lucha 103160 NOUN
-tarea 103004 NOUN
-venir 101176 VERB
-armas 101880 NOUN
-culpa 98008 NOUN
-error 98070 NOUN
-hecho 97684 ADJ
-ganas 97928 NOUN
-julio 97813 NOUN
-amiga 97405 NOUN
-abajo 96164 ADV
-viejo 97367 NOUN
-larga 97311 ADJ
-chico 96059 NOUN
-marco 95216 NOUN
-gusto 95035 NOUN
-casas 94253 NOUN
-suele 94211 VERB
-marzo 96074 NOUN
-ruido 92473 NOUN
-abrir 93117 VERB
-final 92063 ADJ
-morir 92885 VERB
-temas 90866 NOUN
-pobre 92394 ADJ
-hotel 89764 NOUN
-civil 89720 ADJ
-junio 89376 NOUN
-llena 89059 ADJ
-grave 87819 ADJ
-carga 88569 NOUN
-dicen 86011 VERB
-doble 86413 ADJ
-enero 86046 NOUN
-abril 87098 NOUN
-perro 85717 NOUN
-dicha 84397 ADJ
-vidas 83871 NOUN
-darse 83858 VERB
-plano 83718 NOUN
-pagar 83750 VERB
-curso 85865 NOUN
-frase 84436 NOUN
-norte 83047 NOUN
-hogar 81701 NOUN
-local 80545 ADJ
-serio 80931 NOUN
-quiso 79211 VERB
-clara 79450 ADJ
-ritmo 79176 NOUN
-redes 78991 NOUN
-suave 78111 ADJ
-clave 77823 NOUN
-zonas 77132 NOUN
-verlo 77028 VERB
-sacar 76335 VERB
-fines 76132 NOUN
-honor 75293 NOUN
-moral 74687 ADJ
-hojas 74696 NOUN
-plaza 73666 NOUN
-tanto 73612 NOUN
-jugar 73439 VERB
-reino 73171 NOUN
-legal 72461 ADJ
-aguas 71442 NOUN
-norma 71108 NOUN
-barco 71166 NOUN
-hayan 71175 VERB
-nariz 69955 NOUN
-polvo 69567 NOUN
-pedir 70867 VERB
-costa 69382 NOUN
-sirve 69096 VERB
-reina 69354 NOUN
-playa 68774 NOUN
-lleno 68649 ADJ
-temor 68694 NOUN
-etapa 68815 NOUN
-haces 67420 VERB
-leche 67047 NOUN
-dudas 66797 NOUN
-poeta 68035 NOUN
-igual 65315 ADV
-busca 66122 NOUN
-borde 65020 NOUN
-negra 66072 ADJ
-firme 64725 ADJ
-voces 64084 NOUN
-acaba 63761 VERB
-saben 63734 VERB
-subir 63366 VERB
-ganar 64305 VERB
-penal 63101 ADJ
-luces 62729 NOUN
-techo 62415 NOUN
-marca 61884 NOUN
-vemos 61726 VERB
-corte 62118 NOUN
-verla 61598 VERB
-bolsa 61174 NOUN
-notas 60245 NOUN
-busca 59984 VERB
-breve 59514 ADJ
-modos 58986 NOUN
-humor 59690 NOUN
-patio 58337 NOUN
-prisa 58043 NOUN
-grito 58405 NOUN
-trato 58347 NOUN
-reloj 57974 NOUN
-acaso 57836 ADV
-punta 57807 NOUN
-calma 57124 NOUN
-bajar 57596 VERB
-regla 57264 NOUN
-venta 56632 NOUN
-tocar 56586 VERB
-fotos 56041 NOUN
-verse 55870 VERB
-plata 55836 NOUN
-arena 55742 NOUN
-verde 55621 ADJ
-banco 55340 NOUN
-labor 55306 NOUN
-lados 54733 NOUN
-matar 54819 VERB
-deber 54386 NOUN
-plato 54065 NOUN
-vieja 54419 ADJ
-nieve 53330 NOUN
-abajo 53129 NOUN
-plena 53100 ADJ
-justo 52781 ADV
-dulce 52685 VERB
-motor 52503 NOUN
-radio 52390 NOUN
-traje 52301 NOUN
-altos 51956 ADJ
-corto 51840 ADJ
-hasta 51601 ADV
-euros 51199 NOUN
-tabla 51107 NOUN
-claro 50936 ADV
-letra 51084 NOUN
-pieza 50826 NOUN
-parar 49652 VERB
-daban 49214 VERB
-rabia 48995 NOUN
-altas 48804 ADJ
-medio 48643 ADJ
-beber 48451 VERB
-ideal 48414 ADJ
-mando 48117 NOUN
-vuelo 48155 NOUN
-total 47638 NOUN
-darme 47590 VERB
-magia 47997 NOUN
-saber 47436 NOUN
-viven 46704 VERB
-entra 46649 VERB
-paseo 46079 NOUN
-baile 46014 NOUN
-deuda 46199 NOUN
-viejo 45419 ADJ
-pausa 45089 NOUN
-ciclo 45148 NOUN
-bases 44852 NOUN
-andar 44885 VERB
-llave 44622 NOUN
-desea 44546 VERB
-nubes 44808 NOUN
-tesis 44685 NOUN
-novia 44458 NOUN
-exige 44113 VERB
-pista 44697 NOUN
-echar 44109 VERB
-hielo 43997 NOUN
-salto 43397 NOUN
-poema 43500 NOUN
-falta 42681 VERB
-banda 42552 NOUN
-ramas 42205 NOUN
-sabor 42232 NOUN
-dieta 41872 NOUN
-barra 41616 NOUN
-dejan 41282 VERB
-pasan 41669 VERB
-fruto 41377 NOUN
-vital 40787 ADJ
-diera 40958 VERB
-basta 40546 VERB
-crees 40528 VERB
-hijas 40219 NOUN
-posee 40042 VERB
-hagas 39672 VERB
-dosis 39536 NOUN
-metal 39389 NOUN
-cenar 39190 VERB
-dices 38512 VERB
-rumbo 38485 NOUN
-noble 38324 ADJ
-flujo 38015 NOUN
-debes 37992 VERB
-signo 37862 NOUN
-ocupa 37855 VERB
-valle 37963 NOUN
-ponen 37030 VERB
-verte 36877 VERB
-listo 36578 ADJ
-deseo 36530 VERB
-creen 36565 VERB
-lento 36255 ADJ
-almas 36212 NOUN
-notar 36130 VERB
-verme 36009 VERB
-turno 35987 NOUN
-rango 36067 NOUN
-quede 35884 VERB
-mueve 35497 VERB
-clima 35759 NOUN
-digas 35473 VERB
-firma 35349 NOUN
-novio 35263 NOUN
-trate 35077 VERB
-gasto 35334 NOUN
-oreja 35050 NOUN
-canal 34772 NOUN
-pleno 34781 ADJ
-vivos 34752 ADJ
-rayos 34733 NOUN
-besos 34520 NOUN
-solas 34326 VERB
-malas 34541 ADJ
-oeste 34489 NOUN
-torre 34460 NOUN
-caras 34305 NOUN
-penas 34201 NOUN
-llevo 34086 VERB
-suyos 34095 NOUN
-coger 34054 VERB
-sabes 34043 VERB
-amaba 34117 VERB
-carro 33957 NOUN
-hagan 33641 VERB
-broma 33930 NOUN
-furia 33390 NOUN
-solos 33132 ADJ
-salen 32981 VERB
-serio 32879 ADJ
-misma 32605 ADJ
-cuero 32555 NOUN
-anual 32770 ADJ
-venga 32375 VERB
-sudor 32423 NOUN
-mesas 32209 NOUN
-corta 31899 ADJ
-monte 31860 NOUN
-renta 31883 NOUN
-trono 32185 NOUN
-aroma 31800 NOUN
-patas 31705 NOUN
-queso 31649 NOUN
-reyes 31540 NOUN
-medio 31299 ADV
-cajas 31233 NOUN
-culto 31309 NOUN
-surge 31394 VERB
-seria 31195 ADJ
-bolso 31060 NOUN
-vimos 31005 VERB
-horno 30997 NOUN
-gafas 31093 NOUN
-islas 30880 NOUN
-trozo 30930 NOUN
-vigor 30507 NOUN
-local 30390 NOUN
-hayas 30373 VERB
-mueca 30355 NOUN
-traer 30158 VERB
-masas 30124 NOUN
-primo 30123 NOUN
-muros 30086 NOUN
-metas 30083 NOUN
-disco 30006 NOUN
-actor 29877 NOUN
-coste 29836 NOUN
-museo 29812 NOUN
-cruel 29795 ADJ
-obvio 29772 ADJ
-botas 29741 NOUN
-barba 29557 NOUN
-tumba 29517 NOUN
-jefes 29489 NOUN
-pacto 29399 NOUN
-moral 29308 NOUN
-ducha 29051 NOUN
-parto 28910 NOUN
-presa 28731 NOUN
-risas 28676 NOUN
-mover 28443 VERB
-arroz 28562 NOUN
-artes 28165 NOUN
-lunes 28037 NOUN
-halla 28345 VERB
-labio 28025 NOUN
-pesos 27995 NOUN
-cejas 28002 NOUN
-acero 28007 NOUN
-fases 27910 NOUN
-media 27774 NOUN
-siete 27871 NOUN
-palma 27756 NOUN
-salsa 27658 NOUN
-quise 27629 VERB
-logra 27567 VERB
-suena 27560 VERB
-falso 27546 ADJ
-viera 27718 VERB
-negro 27430 NOUN
-santo 27381 NOUN
-trajo 27304 VERB
-volar 27195 VERB
-visto 27161 ADJ
-quedo 27177 VERB
-hueco 27149 NOUN
-falsa 26998 ADJ
-duque 27058 NOUN
-sonar 26940 VERB
-cueva 26960 NOUN
-grasa 27009 NOUN
-trago 26873 NOUN
-malos 26813 ADJ
-votos 26767 NOUN
-costo 26708 NOUN
-vapor 26603 NOUN
-corre 26617 VERB
-meter 26588 VERB
-genio 26607 NOUN
-medir 26675 VERB
-rural 26411 ADJ
-copas 26481 NOUN
-chica 26392 ADJ
-aldea 26303 NOUN
-negar 26290 VERB
-altar 26285 NOUN
-hueso 26251 NOUN
-conde 26414 NOUN
-digno 26182 ADJ
-pongo 26101 VERB
-sobre 26118 NOUN
-filas 26036 NOUN
-llamo 25914 VERB
-copia 25865 NOUN
-pollo 25732 NOUN
-darte 25684 VERB
-rocas 25536 NOUN
-vasos 25509 NOUN
-piano 25496 NOUN
-bajas 25393 ADJ
-toque 25279 NOUN
-cinta 25270 NOUN
-lleve 25188 VERB
-barro 25219 NOUN
-duele 24884 VERB
-falda 24881 NOUN
-bordo 25104 NOUN
-causa 24684 VERB
-toman 24528 VERB
-celos 24191 NOUN
-fruta 24131 NOUN
-velas 24107 NOUN
-bello 24162 ADJ
-huevo 24130 NOUN
-tirar 24075 VERB
-verde 23972 VERB
-nacer 23944 VERB
-celda 24047 NOUN
-curva 23903 NOUN
-girar 23930 VERB
-verbo 23874 NOUN
-bomba 23838 NOUN
-pagos 23829 NOUN
-pasta 23747 NOUN
-cifra 23737 NOUN
-pelea 23850 NOUN
-lecho 23656 NOUN
-finca 23453 NOUN
-gotas 23386 NOUN
-bella 23222 NOUN
-abuso 23161 NOUN
-yendo 23079 VERB
-hecha 23203 ADJ
-capas 23006 NOUN
-duelo 22915 NOUN
-lenta 22766 ADJ
-prima 22792 NOUN
-pulso 22759 NOUN
-aviso 22851 NOUN
-brisa 22696 NOUN
-duras 22651 ADJ
-rodea 22636 VERB
-nueve 22718 NOUN
-ponga 22597 VERB
-villa 22416 NOUN
-muere 22344 VERB
-diosa 22432 NOUN
-vayas 22183 VERB
-casco 22047 NOUN
-hablo 22140 VERB
-pluma 21989 NOUN
-rueda 21868 NOUN
-justa 21804 ADJ
-rubio 21654 ADJ
-venas 21497 NOUN
-verso 21331 NOUN
-solar 21289 ADJ
-peces 21184 NOUN
-acabo 21100 VERB
-selva 21181 NOUN
-ropas 20866 NOUN
-dicha 20823 NOUN
-bajos 20719 ADJ
-damos 20661 VERB
-virus 20619 NOUN
-niega 20589 VERB
-rojas 20494 ADJ
-salga 20557 VERB
-debes 20468 ADJ
-crema 20582 NOUN
-entre 20410 VERB
-grano 20483 NOUN
-oliva 20293 NOUN
-vayan 20262 VERB
-apoya 20260 VERB
-verle 20206 VERB
-citas 20174 NOUN
-rigor 20167 NOUN
-sabes 20152 NOUN
-naves 20163 NOUN
-damas 20049 NOUN
-crean 20122 VERB
-tasas 20080 NOUN
-ajeno 20074 ADJ
-sello 19997 NOUN
-fatal 19973 ADJ
-sufre 19916 VERB
-juega 19864 VERB
-guapo 19967 ADJ
-sutil 19966 ADJ
-socio 19743 NOUN
-lleno 19723 VERB
-vieja 19660 NOUN
-ancho 19599 NOUN
-drama 19594 NOUN
-ricos 19584 NOUN
-hondo 19672 ADJ
-danza 19488 NOUN
-manta 19543 NOUN
-aguda 19190 ADJ
-lazos 19123 NOUN
-suyas 19086 NOUN
-crece 18934 VERB
-joyas 18843 NOUN
-crees 18817 NOUN
-genes 18779 NOUN
-dejes 18693 VERB
-ajena 18689 ADJ
-viuda 18626 NOUN
-pisos 18520 NOUN
-agudo 18533 ADJ
-fijar 18437 VERB
-ricos 18348 ADJ
-rasgo 18374 NOUN
-males 18356 NOUN
-rojos 18290 ADJ
-usaba 18245 VERB
-pares 18209 NOUN
-miran 18189 VERB
-tacto 18187 NOUN
-santa 18320 ADJ
-retos 18182 NOUN
-ayude 18176 VERB
-sorbo 18121 NOUN
-dices 18070 NOUN
-trigo 18153 NOUN
-larga 17971 NOUN
-rumor 17920 NOUN
-cerdo 17832 NOUN
-junto 17825 VERB
-quita 17829 VERB
-mismo 17670 ADV
-dudar 17700 VERB
-fumar 17683 VERB
-fuere 17453 VERB
-sobra 17485 VERB
-digna 17372 ADJ
-cuota 17334 NOUN
-amada 17318 ADJ
-serlo 17177 VERB
-tribu 17198 NOUN
-tazas 17091 NOUN
-acera 16981 NOUN
-droga 16902 NOUN
-cubre 16884 VERB
-manga 16875 NOUN
-asume 16836 VERB
-guapa 16836 ADJ
-logro 16944 NOUN
-manto 16877 NOUN
-ondas 16822 NOUN
-manda 16786 VERB
-extra 16781 ADJ
-tonos 16750 NOUN
-junta 16670 NOUN
-lanza 16619 NOUN
-autos 16482 NOUN
-trama 16561 NOUN
-minas 16474 NOUN
-caldo 16505 NOUN
-pesca 16479 NOUN
-sucio 16392 ADJ
-recta 16315 NOUN
-viste 16236 VERB
-placa 16230 NOUN
-corto 16140 NOUN
-roles 16112 NOUN
-aguja 16112 NOUN
-gatos 16093 NOUN
-cable 16015 NOUN
-ideal 15984 NOUN
-usado 15930 VERB
-mapas 15907 NOUN
-secos 15870 ADJ
-rompe 15722 VERB
-fijos 15672 ADJ
-reojo 15637 NOUN
-gases 15578 NOUN
-rutas 15547 NOUN
-total 15492 ADV
-ronca 15460 ADJ
-amado 15457 ADJ
-pelos 15430 NOUN
-abren 15402 VERB
-guste 15389 VERB
-aires 15325 NOUN
-lanza 15312 VERB
-tonto 15381 ADJ
-cobre 15216 NOUN
-tenso 15248 ADJ
-rosas 15203 NOUN
-crees 15145 ADJ
-hondo 15118 VERB
-salas 15156 NOUN
-fallo 15095 NOUN
-vinos 15035 NOUN
-fibra 15117 NOUN
-tinta 14949 NOUN
-vista 14921 ADJ
-kilos 14948 NOUN
-robar 14891 VERB
-cesar 14918 VERB
-vivas 14731 ADJ
-sabio 14707 ADJ
-monto 14709 NOUN
-citar 14530 VERB
-unido 14469 ADJ
-culpa 14450 VERB
-dejas 14438 VERB
-flota 14519 NOUN
-huida 14386 NOUN
-tensa 14307 ADJ
-mitos 14355 NOUN
-buque 14301 NOUN
-hilos 14259 NOUN
-veras 14137 NOUN
-aleja 14169 VERB
-sucia 14087 ADJ
-vejez 14031 NOUN
-llego 14022 VERB
-tramo 14065 NOUN
-locos 13988 NOUN
-torso 13977 NOUN
-video 13998 NOUN
-marca 13949 VERB
-codos 13907 NOUN
-feroz 13860 ADJ
-mares 13816 NOUN
-bella 13784 ADJ
-globo 13742 NOUN
-acoso 13775 NOUN
-bruja 13732 NOUN
-ciego 13739 ADJ
-cinco 13731 NOUN
-muslo 13660 NOUN
-enojo 13674 NOUN
-creas 13605 VERB
-susto 13548 NOUN
-dulce 13540 NOUN
-ruina 13511 NOUN
-besar 13540 VERB
-jaula 13357 NOUN
-talla 13441 NOUN
-macho 13304 NOUN
-vengo 13300 VERB
-rival 13246 NOUN
-senos 13233 NOUN
-balas 13226 NOUN
-vende 13223 VERB
-natal 13214 ADJ
-raras 13197 ADJ
-camas 13173 NOUN
-gozar 13175 VERB
-temer 13123 VERB
-salgo 13048 VERB
-unida 13050 ADJ
-barca 13141 NOUN
-hecha 12950 NOUN
-secas 12920 ADJ
-curar 12997 VERB
-malos 12798 NOUN
-tenue 12760 ADJ
-ruego 12812 VERB
-vacas 12704 NOUN
-senda 12764 NOUN
-chino 12705 ADJ
-orina 12673 NOUN
-alude 12621 VERB
-duros 12515 ADJ
-bodas 12466 NOUN
-bares 12437 NOUN
-pizca 12428 NOUN
-ancha 12407 ADJ
-sabio 12371 NOUN
-dones 12371 NOUN
-hecha 12359 VERB
-hadas 12313 NOUN
-plomo 12335 NOUN
-cruce 12339 NOUN
-multa 12367 NOUN
-bando 12291 NOUN
-conde 12290 VERB
-tonta 12246 ADJ
-ceder 12203 VERB
-irnos 12107 VERB
-amiga 12076 ADJ
-razas 12066 NOUN
-pesar 12036 NOUN
-mutuo 12035 ADJ
-prosa 12048 NOUN
-llena 12017 VERB
-evita 11911 VERB
-apego 11921 NOUN
-harto 11873 ADJ
-durar 11756 VERB
-nieto 11743 NOUN
-monje 11711 NOUN
-lobos 11697 NOUN
-fuera 11671 NOUN
-usado 11639 ADJ
-clave 11634 ADJ
-acabe 11621 VERB
-prima 11578 ADJ
-panel 11576 NOUN
-amado 11554 VERB
-dados 11549 ADJ
-sirva 11531 VERB
-tropa 11607 NOUN
-ratas 11522 NOUN
-rubia 11530 ADJ
-elige 11481 VERB
-llame 11455 VERB
-dejen 11416 VERB
-pinta 11356 NOUN
-cruza 11383 VERB
-digan 11339 VERB
-norte 11330 ADJ
-torpe 11343 ADJ
-atado 11327 ADJ
-piden 11271 VERB
-marea 11319 NOUN
-dimos 11199 VERB
-atrae 11154 VERB
-rezar 11164 VERB
-ronda 11156 NOUN
-freno 11160 NOUN
-ricas 11115 ADJ
-palos 11065 NOUN
-sexto 11073 ADJ
-gorra 11045 NOUN
-tenis 11065 NOUN
-burla 11008 NOUN
-desee 10954 VERB
-nacen 10951 VERB
-truco 10941 NOUN
-trapo 10963 NOUN
-santo 10875 ADJ
-fugaz 10876 ADJ
-vicio 10848 NOUN
-entes 10802 NOUN
-linda 10909 ADJ
-optar 10832 VERB
-tarta 10789 NOUN
-telas 10775 NOUN
-gordo 10798 ADJ
-breve 10766 NOUN
-rotos 10745 ADJ
-finas 10731 ADJ
-hacha 10690 NOUN
-ansia 10662 NOUN
-shock 10567 NOUN
-rollo 10594 NOUN
-casar 10535 VERB
-blusa 10632 NOUN
-busco 10503 VERB
-deban 10498 VERB
-banca 10498 NOUN
-guiar 10505 VERB
-arcos 10411 NOUN
-honra 10423 NOUN
-pagan 10383 VERB
-rubia 10368 NOUN
-ardor 10381 NOUN
-guion 10333 NOUN
-canta 10312 VERB
-tubos 10310 NOUN
-ratos 10287 NOUN
-mango 10262 NOUN
-queja 10276 NOUN
-preso 10241 ADJ
-ritos 10225 NOUN
-sanos 10204 ADJ
-serlo 10204 NOUN
-eleva 10192 VERB
-bolas 10166 NOUN
-nazis 10162 NOUN
-dedos 10157 ADJ
-yemas 10132 NOUN
-traen 10107 VERB
-basan 10106 VERB
-renal 10121 ADJ
-tenor 10086 NOUN
-molde 10061 NOUN
-nieta 10070 NOUN
-comen 10025 VERB
-polla 10049 NOUN
-aulas 10009 NOUN
-cazar 9952 VERB
-pones 9922 VERB
-pobre 9829 NOUN
-tonto 9798 NOUN
-sepan 9772 VERB
-ayuno 9769 NOUN
-perra 9786 NOUN
-papas 9756 NOUN
-censo 9737 NOUN
-feria 9728 NOUN
-diese 9714 VERB
-votar 9674 VERB
-bulto 9699 NOUN
-enero 9615 ADJ
-huele 9592 VERB
-sexos 9585 NOUN
-recto 9582 NOUN
-ancho 9575 ADJ
-cesta 9642 NOUN
-peste 9564 NOUN
-opone 9550 VERB
-grita 9563 NOUN
-clero 9544 NOUN
-negra 9542 NOUN
-jarra 9526 NOUN
-rizos 9523 NOUN
-opera 9505 VERB
-mutua 9499 ADJ
-rodar 9486 VERB
-colmo 9312 NOUN
-licor 9345 NOUN
-densa 9288 ADJ
-cobro 9337 NOUN
-caiga 9276 VERB
-tutor 9279 NOUN
-tiros 9269 NOUN
-pizza 9253 NOUN
-verde 9211 NOUN
-abril 9204 ADJ
-leves 9191 ADJ
-bocas 9189 NOUN
-toros 9175 NOUN
-sumar 9131 VERB
-denso 9118 ADJ
-indio 9086 NOUN
-cabra 9068 NOUN
-ficha 9037 NOUN
-tomas 9029 NOUN
-roble 9055 NOUN
-monja 9030 NOUN
-circo 9014 NOUN
-hable 9002 VERB
-tiras 8987 NOUN
-fetal 9009 ADJ
-usada 8977 ADJ
-muero 8956 VERB
-sigan 8947 VERB
-veloz 8922 ADJ
-lucro 8912 NOUN
-corta 8851 VERB
-saldo 8904 NOUN
-obrar 8819 VERB
-habia 8807 VERB
-cacao 8768 NOUN
-chico 8765 ADJ
-pisar 8767 VERB
-pegar 8711 VERB
-sordo 8717 ADJ
-curas 8677 NOUN
-grita 8665 ADJ
-miras 8654 NOUN
-dorso 8663 NOUN
-moros 8627 NOUN
-sepas 8584 VERB
-acude 8577 VERB
-diste 8564 VERB
-asilo 8538 NOUN
-valla 8496 NOUN
-picos 8487 NOUN
-finos 8485 ADJ
-verja 8504 NOUN
-gorro 8485 NOUN
-monos 8454 NOUN
-rigen 8453 VERB
-pleno 8442 NOUN
-valer 8430 VERB
-porte 8364 NOUN
-viaja 8382 VERB
-sodio 8364 NOUN
-armar 8375 VERB
-usual 8341 ADJ
-sanar 8315 VERB
-junio 8281 ADJ
-riego 8298 NOUN
-cauce 8273 NOUN
-vasto 8306 ADJ
-cerro 8277 NOUN
-bonos 8261 NOUN
-sonda 8255 NOUN
-suite 8244 NOUN
-mando 8224 VERB
-soplo 8241 NOUN
-rayas 8209 NOUN
-gallo 8129 NOUN
-pases 8139 NOUN
-clavo 8103 NOUN
-cenar 8098 NOUN
-duros 8076 NOUN
-emite 8069 VERB
-cobra 8048 VERB
-andan 8038 VERB
-pasto 8068 NOUN
-lindo 7978 ADJ
-vello 7981 NOUN
-vivos 7913 NOUN
-unido 7916 VERB
-logro 7886 VERB
-pudor 7880 NOUN
-alzar 7899 VERB
-tigre 7842 NOUN
-muera 7838 VERB
-actas 7831 NOUN
-fauna 7789 NOUN
-robot 7772 NOUN
-huido 7770 VERB
-pasen 7714 VERB
-rojos 7709 NOUN
-solos 7638 VERB
-himno 7635 NOUN
-grifo 7651 NOUN
-tocan 7611 VERB
-brazo 7572 ADJ
-fluye 7580 VERB
-bruma 7520 NOUN
-atroz 7515 ADJ
-rusos 7510 NOUN
-bajos 7505 NOUN
-torno 7507 NOUN
-pinos 7455 NOUN
-gorda 7445 ADJ
-vasta 7411 ADJ
-dolor 7395 ADJ
-fusil 7385 NOUN
-farsa 7387 NOUN
-pauta 7367 NOUN
-pilar 7372 NOUN
-hable 7343 ADJ
-ganan 7334 VERB
-focos 7329 NOUN
-corta 7310 NOUN
-criar 7316 VERB
-suyos 7295 ADJ
-julio 7275 ADJ
-suelo 7267 VERB
-valen 7248 VERB
-queja 7235 VERB
-dadas 7226 VERB
-cruda 7224 ADJ
-rosas 7201 ADJ
-rotas 7194 ADJ
-matiz 7210 NOUN
-sesgo 7190 NOUN
-yegua 7168 NOUN
-tomen 7141 VERB
-furor 7149 NOUN
-audaz 7114 ADJ
-tibia 7106 ADJ
-ciego 7067 NOUN
-suben 7065 VERB
-oveja 7058 NOUN
-caros 7046 ADJ
-narra 7016 VERB
-mosca 7024 NOUN
-lapso 6988 NOUN
-indio 6961 ADJ
-botes 6948 NOUN
-miles 6923 NOUN
-niego 6947 VERB
-tumor 6905 NOUN
-avena 6934 NOUN
-after 6897 VERB
-nasal 6895 ADJ
-cubos 6872 NOUN
-sacos 6864 NOUN
-matan 6860 VERB
-asoma 6805 VERB
-torna 6805 VERB
-lagos 6795 NOUN
-gripe 6777 NOUN
-raros 6746 ADJ
-ciega 6765 ADJ
-vigas 6742 NOUN
-harta 6740 ADJ
-latas 6720 NOUN
-gozan 6722 VERB
-atada 6709 ADJ
-joder 6661 VERB
-prado 6655 NOUN
-plana 6630 ADJ
-pilas 6621 NOUN
-tarda 6460 VERB
-salva 6473 VERB
-sacan 6451 VERB
-tallo 6446 NOUN
-audio 6442 NOUN
-salta 6458 VERB
-rusos 6428 ADJ
-fosas 6409 NOUN
-rejas 6400 NOUN
-tetas 6384 NOUN
-canon 6378 NOUN
-vives 6382 ADJ
-zorro 6353 NOUN
-casta 6372 NOUN
-burro 6353 NOUN
-fijas 6335 ADJ
-flora 6312 NOUN
-apodo 6348 NOUN
-naval 6276 ADJ
-goles 6291 NOUN
-anexo 6272 NOUN
-coser 6252 VERB
-valga 6250 VERB
-islam 6249 NOUN
-omiso 6251 ADJ
-herir 6254 VERB
-trazo 6222 NOUN
-viese 6206 VERB
-polos 6206 NOUN
-malla 6206 NOUN
-dadas 6170 ADJ
-bajan 6170 VERB
-rubor 6170 NOUN
-hedor 6153 NOUN
-fuero 6135 NOUN
-hazlo 6131 VERB
-acoge 6127 VERB
-menta 6115 NOUN
-abono 6135 NOUN
-cofre 6135 NOUN
-dotar 6111 VERB
-plaga 6094 NOUN
-letal 6103 ADJ
-cabos 6093 NOUN
-echan 6088 VERB
-funda 6067 NOUN
-giros 6045 NOUN
-apaga 6029 VERB
-corte 6005 VERB
-hunde 6005 VERB
-temen 6012 VERB
-bicho 6004 NOUN
-rifle 5990 NOUN
-ocaso 5988 NOUN
-honda 5960 ADJ
-mozos 5950 NOUN
-heces 5917 NOUN
-dotes 5912 NOUN
-algas 5907 NOUN
-tenia 5898 VERB
-demos 5880 VERB
-ubica 5883 VERB
-della 5867 VERB
-suero 5856 NOUN
-evoca 5861 VERB
-sumas 5845 NOUN
-tango 5810 NOUN
-hayan 5808 NOUN
-opina 5796 VERB
-suman 5795 VERB
-toque 5769 VERB
-tuyos 5755 NOUN
-calla 5765 VERB
-lleno 5749 NOUN
-icono 5744 NOUN
-cenas 5739 NOUN
-logre 5733 VERB
-fiera 5743 NOUN
-choza 5737 NOUN
-solas 5728 ADJ
-anima 5714 VERB
-pague 5712 VERB
-chino 5704 NOUN
-socio 5696 ADJ
-borda 5689 NOUN
-putas 5685 NOUN
-nudos 5682 NOUN
-juzga 5676 VERB
-robos 5671 NOUN
-plana 5649 NOUN
-poste 5644 NOUN
-facto 5625 NOUN
-pozos 5630 NOUN
-funda 5616 VERB
-breve 5584 VERB
-guapa 5547 NOUN
-obvia 5524 ADJ
-tomes 5523 VERB
-otras 5532 ADJ
-gordo 5497 NOUN
-foros 5499 NOUN
-plena 5494 NOUN
-sepas 5479 NOUN
-cerco 5478 NOUN
-lomos 5464 NOUN
-opuso 5436 VERB
-place 5440 VERB
-tapar 5445 VERB
-recae 5431 VERB
-locas 5415 ADJ
-gemir 5414 VERB
-puras 5403 ADJ
-colas 5375 NOUN
-bajas 5361 NOUN
-pavor 5397 NOUN
-suena 5345 ADJ
-sabia 5357 ADJ
-viuda 5329 ADJ
-tapas 5326 NOUN
-coach 5315 NOUN
-musgo 5320 NOUN
-recto 5296 ADJ
-vuela 5294 VERB
-lucir 5293 VERB
-chile 5284 NOUN
-apuro 5280 NOUN
-varas 5275 NOUN
-zorra 5275 NOUN
-mires 5252 VERB
-panes 5258 NOUN
-pasas 5246 VERB
-crema 5229 ADJ
-nicho 5223 NOUN
-rodeo 5227 NOUN
-puros 5210 NOUN
-mixta 5202 ADJ
-bruto 5211 ADJ
-secta 5209 NOUN
-sanas 5201 ADJ
-lista 5174 ADJ
-copos 5164 NOUN
-buceo 5165 NOUN
-crudo 5168 ADJ
-dogma 5155 NOUN
-litro 5134 NOUN
-yogur 5114 NOUN
-golfo 5111 NOUN
-faena 5112 NOUN
-quito 5088 VERB
-jurar 5101 VERB
-farol 5090 NOUN
-folio 5033 NOUN
-tomos 5037 NOUN
-llora 5023 VERB
-cocer 5026 VERB
-tonta 5003 VERB
-sable 4988 NOUN
-lenta 4968 VERB
-mareo 4969 NOUN
-venda 4967 NOUN
-setas 4959 NOUN
-mafia 4944 NOUN
-mulas 4936 NOUN
-pinta 4936 VERB
-semen 4932 NOUN
-elfos 4921 NOUN
-ocupe 4918 VERB
-tinto 4926 ADJ
-suene 4912 VERB
-batir 4919 VERB
-vasco 4914 ADJ
-giran 4901 VERB
-grata 4904 ADJ
-tanta 4889 VERB
-cejas 4876 ADJ
-malas 4867 NOUN
-mueva 4868 VERB
-remos 4858 NOUN
-duque 4856 VERB
-odiar 4853 VERB
-locos 4849 ADJ
-tibio 4860 ADJ
-grato 4838 ADJ
-carpa 4860 NOUN
-trece 4823 NOUN
-magos 4814 NOUN
-enano 4810 NOUN
-oasis 4797 NOUN
-agota 4795 VERB
-filme 4789 NOUN
-rampa 4789 NOUN
-extra 4785 NOUN
-libra 4788 NOUN
-tenaz 4781 ADJ
-vodka 4774 NOUN
-taxis 4764 NOUN
-sudar 4777 VERB
-culpa 4746 ADJ
-sorda 4737 ADJ
-llora 4719 ADJ
-balsa 4699 NOUN
-deber 4695 VERB
-cuida 4684 VERB
-lunas 4683 NOUN
-llano 4666 NOUN
-lunar 4670 VERB
-pesas 4665 NOUN
-agita 4652 VERB
-razon 4643 NOUN
-micro 4643 NOUN
-sorna 4648 NOUN
-acusa 4631 VERB
-vocal 4622 ADJ
-velar 4612 VERB
-copia 4600 ADJ
-tacos 4592 NOUN
-ataca 4579 VERB
-brote 4558 NOUN
-frito 4552 ADJ
-polis 4547 NOUN
-human 4540 NOUN
-mixto 4534 ADJ
-pides 4519 VERB
-balde 4547 NOUN
-rumbo 4481 ADJ
-dicta 4479 VERB
-busto 4490 NOUN
-faros 4466 NOUN
-poros 4409 NOUN
-sales 4396 ADJ
-sexta 4405 ADJ
-monta 4390 VERB
-caigo 3920 VERB
-nueve 3914 ADJ
-dunas 3911 NOUN
-onzas 3910 NOUN
-vasca 3916 ADJ
-ancla 3912 NOUN
-coros 2869 NOUN
-arado 2867 NOUN
-ebrio 2873 ADJ
-modos 2763 ADJ
-rubro 2762 NOUN
-aptos 2754 ADJ
-prior 2755 NOUN
-rubro 2762 NOUN
-modos 2763 ADJ
-prior 2755 NOUN
-aptos 2754 ADJ
-tedio 2748 NOUN
-daros 2738 VERB
-higos 2739 NOUN
-rapto 2737 NOUN
-ebook 2735 ADJ
-siete 2724 ADJ
-humos 2721 NOUN
-clubs 2716 NOUN
-sidra 2721 NOUN
-adobe 2715 NOUN
-fazer 2712 NOUN
-polen 2711 NOUN
-pique 2708 NOUN
-ajena 2699 VERB
-obrar 2697 NOUN
-agrio 2694 ADJ
-porno 2697 ADJ
-llana 2694 ADJ
-pubis 2690 NOUN
-cines 2687 NOUN
-sauce 2687 NOUN
-suyas 2684 ADJ
-roban 2683 VERB
-toser 2683 NOUN
-yelmo 2676 NOUN
-cedro 2671 NOUN
-laico 2666 ADJ
-gramo 2661 NOUN
-amara 2652 VERB
-dices 2640 ADJ
-mugre 2639 NOUN
-moras 2637 NOUN
-della 2637 ADJ
-fardo 2644 NOUN
-parir 2628 VERB
-latir 2625 NOUN
-aorta 2627 NOUN
-ruega 2623 VERB
-jeque 2621 NOUN
-setos 2617 NOUN
-llene 2609 VERB
-goteo 2607 NOUN
-echas 2603 VERB
-velos 2599 NOUN
-mudar 2597 VERB
-hallo 2590 VERB
-rezos 2587 NOUN
-lobby 2584 NOUN
-velar 2583 NOUN
-regar 2582 VERB
-horda 2585 NOUN
-debut 2573 NOUN
-yerba 2569 NOUN
-graso 2569 ADJ
-euros 2568 ADJ
-laudo 2567 NOUN
-listo 2566 NOUN
-arder 2559 NOUN
-rival 2558 ADJ
-mella 2545 ADJ
-marca 2546 ADJ
-cariz 2543 NOUN
-atado 2546 VERB
-racha 2541 NOUN
-idear 2539 VERB
-rogar 2543 VERB
-sacas 2536 VERB
-cases 2538 NOUN
-poseo 2534 VERB
-jeans 2533 NOUN
-mitin 2535 NOUN
-chivo 2525 NOUN
-corra 2524 VERB
-tosca 2525 ADJ
-sabia 2516 NOUN
-vivaz 2514 ADJ
-ethos 2513 NOUN
-hurto 2514 NOUN
-laica 2512 ADJ
-erige 2510 VERB
-llave 2507 ADJ
-pavos 2504 NOUN
-regia 2502 ADJ
-fobia 2501 NOUN
-godos 2501 NOUN
-peaje 2494 NOUN
-punta 2498 ADJ
-cruzo 2489 VERB
-asada 2478 ADJ
-mirad 2478 NOUN
-stand 2472 NOUN
-flash 2472 NOUN
-forro 2470 NOUN
-super 2468 VERB
-sagaz 2468 ADJ
-muger 2461 NOUN
-puzle 2455 NOUN
-antro 2455 NOUN
-peras 2450 NOUN
-reses 2447 NOUN
-dudes 2448 VERB
-fonda 2446 NOUN
-litio 2447 NOUN
-flota 2438 VERB
-lepra 2448 NOUN
-sopor 2429 NOUN
-usara 2428 VERB
-adora 2421 VERB
-ligas 2419 NOUN
-falso 2421 NOUN
-profe 2413 NOUN
-viudo 2411 NOUN
-porta 2408 NOUN
-bruja 2407 ADJ
-hojas 2400 ADJ
-bravo 2400 ADJ
-mocos 2387 NOUN
-coito 2387 NOUN
-axial 2385 ADJ
-casan 2385 VERB
-apoye 2378 VERB
-zombi 2372 NOUN
-pidan 2366 VERB
-raros 2358 NOUN
-gorda 2355 NOUN
-brasa 2354 NOUN
-cursi 2350 ADJ
-hazme 2345 VERB
-giras 2338 NOUN
-serlo 2338 ADJ
-viola 2336 VERB
-pares 2332 ADJ
-terco 2321 ADJ
-calvo 2312 NOUN
-gueto 2312 NOUN
-porta 2308 VERB
-prima 2307 VERB
-losas 2301 NOUN
-istmo 2297 NOUN
-plexo 2296 NOUN
-ciega 2293 VERB
-pedal 2287 NOUN
-obvia 2284 VERB
-apnea 2287 NOUN
-flojo 2278 ADJ
-visor 2280 NOUN
-macro 2278 ADJ
-lunar 2278 ADJ
-alejo 2271 VERB
-llaga 2270 NOUN
-brota 2278 VERB
-gesta 2271 NOUN
-zumos 2268 NOUN
-pipas 2263 NOUN
-datan 2260 VERB
-vagas 2259 ADJ
-forja 2236 NOUN
-temer 2234 NOUN
-libra 2227 VERB
-lucen 2224 VERB
-porno 2224 NOUN
-cogen 2225 VERB
-mimos 2221 NOUN
-aleje 2217 VERB
-jodas 2215 VERB
-tumba 2210 VERB
-fiaba 2210 VERB
-boina 2208 NOUN
-elijo 2203 VERB
-mojar 2204 VERB
-trans 2202 ADJ
-picas 2199 NOUN
-aloja 2202 VERB
-dagas 2198 NOUN
-leche 2202 VERB
-tonos 2195 ADJ
-optan 2195 VERB
-jaque 2193 NOUN
-sabia 2192 VERB
-sufro 2189 VERB
-light 2182 ADJ
-ferri 2177 NOUN
-vagos 2166 NOUN
-incas 2167 NOUN
-culpo 2162 VERB
-musas 2161 NOUN
-kayak 2162 NOUN
-right 2161 ADJ
-animo 2156 VERB
-tapia 2155 NOUN
-dezir 2156 VERB
-mudos 2147 ADJ
-culto 2146 ADJ
-coman 2143 VERB
-comes 2144 ADJ
-momia 2135 NOUN
-haced 2132 VERB
-visir 2131 NOUN
-salve 2123 VERB
-viudo 2117 ADJ
-gemas 2114 NOUN
-ronco 2103 NOUN
-baste 2101 VERB
-yacen 2099 VERB
-ganso 2094 NOUN
-gatas 2095 NOUN
-flote 2086 VERB
-nulos 2076 ADJ
-toldo 2070 NOUN
-arden 2068 VERB
-morbo 2066 NOUN
-omite 2064 VERB
-tests 2062 NOUN
-ajeno 2060 VERB
-gusto 2058 ADJ
-odias 2053 VERB
-calma 2056 VERB
-echen 2050 VERB
-celta 2052 ADJ
-andas 2049 ADJ
-flaca 2043 ADJ
-prole 2042 NOUN
-salva 2041 ADJ
-vives 2040 NOUN
-goces 2038 NOUN
-crack 2038 NOUN
-basar 2031 VERB
-pegan 2031 VERB
-clave 2028 VERB
-lloro 2030 ADJ
-fiera 2025 ADJ
-opaca 2020 ADJ
-nazca 2018 VERB
-magna 2017 ADJ
-notan 2007 VERB
-comes 2004 NOUN
-sacra 2004 ADJ
-rimas 2002 NOUN
-cante 2000 NOUN
-mutua 1998 NOUN
-pulir 2002 VERB
-locus 1997 NOUN
-bolos 1995 NOUN
-alado 1994 ADJ
-delta 1991 NOUN
-panda 1990 NOUN
-ruido 1983 ADJ
-porra 1981 NOUN
-ataba 1977 VERB
-sacro 1977 ADJ
-porro 1979 NOUN
-tibia 1969 NOUN
-short 1966 NOUN
-podio 1964 NOUN
-quejo 1967 VERB
-regio 1962 ADJ
-imita 1957 VERB
-nexos 1955 NOUN
-remar 1953 VERB
-ajuar 1950 NOUN
-hebra 1946 NOUN
-venid 1937 VERB
-cutis 1934 NOUN
-dardo 1934 NOUN
-opera 1934 ADJ
-errar 1921 VERB
-quier 1920 VERB
-recia 1919 ADJ
-sueca 1922 ADJ
-abate 1918 NOUN
-tuyos 1915 ADJ
-segun 1912 VERB
-bulbo 1912 NOUN
-novia 1909 ADJ
-resta 1907 NOUN
-amena 1902 ADJ
-roces 1902 NOUN
-rotor 1900 NOUN
-ameno 1898 ADJ
-focal 1893 ADJ
-tuits 1893 NOUN
-mayas 1891 ADJ
-corro 1890 VERB
-opera 1890 NOUN
-frena 1887 VERB
-pardo 1885 ADJ
-rudos 1885 ADJ
-sexta 1884 NOUN
-metas 1881 VERB
-recio 1878 ADJ
-ronco 1873 ADJ
-siseo 1868 NOUN
-osado 1866 ADJ
-ingle 1864 NOUN
-dudan 1862 VERB
-frita 1862 ADJ
-debas 1861 VERB
-pymes 1861 NOUN
-posta 1861 NOUN
-alaba 1860 VERB
-verbo 1860 ADJ
-honra 1858 VERB
-topes 1857 NOUN
-putos 1857 NOUN
-sordo 1854 NOUN
-picor 1852 NOUN
-siete 1842 ADV
-ictus 1839 NOUN
-cromo 1839 NOUN
-pulsa 1835 VERB
-ceros 1831 NOUN
-sales 1823 VERB
-venia 1823 NOUN
-ateos 1820 NOUN
-primo 1819 ADJ
-pegue 1818 VERB
-amada 1816 NOUN
-merma 1819 NOUN
-larga 1816 VERB
-runas 1812 NOUN
-pesos 1808 ADJ
-hosco 1806 ADJ
-agora 1808 ADJ
-topos 1806 NOUN
-comas 1802 NOUN
-vagos 1801 ADJ
-canta 1800 ADJ
-misil 1797 NOUN
-atril 1798 NOUN
-mozas 1795 NOUN
-tanga 1795 NOUN
-metes 1792 VERB
-leona 1793 NOUN
-tanta 1788 ADJ
-clama 1785 VERB
-ruedo 1789 NOUN
-nogal 1788 NOUN
-hacer 1783 NOUN
-mudas 1780 ADJ
-estan 1778 VERB
-rindo 1779 VERB
-blusa 1778 ADJ
-doler 1771 VERB
-babor 1773 NOUN
-mates 1770 NOUN
-vulva 1771 NOUN
-plata 1768 ADJ
-suban 1767 VERB
-nulas 1766 ADJ
-medir 1766 NOUN
-exime 1764 VERB
-chips 1765 NOUN
-callo 1762 VERB
-vetas 1759 NOUN
-darla 1759 VERB
-tonal 1756 ADJ
-aguda 1754 NOUN
-abres 1755 VERB
-fecal 1750 ADJ
-temes 1750 VERB
-poeta 1749 ADJ
-asnos 1743 NOUN
-vanas 1742 ADJ
-modal 1741 ADJ
-buses 1739 NOUN
-cauto 1737 ADJ
-coles 1737 NOUN
-risco 1741 NOUN
-burda 1730 ADJ
-logro 1727 ADJ
-harto 1725 VERB
-vides 1723 NOUN
-sirio 1721 ADJ
-cobra 1717 ADJ
-serte 1717 VERB
-finas 1716 NOUN
-swing 1713 NOUN
-calva 1708 ADJ
-rosal 1707 NOUN
-habas 1705 NOUN
-tanda 1706 NOUN
-rumbo 1702 VERB
-pillo 1697 NOUN
-versa 1685 VERB
-agora 1685 VERB
-eches 1685 VERB
-canje 1685 NOUN
-oigan 1684 VERB
-calvo 1679 ADJ
-trufa 1677 NOUN
-lamer 1677 VERB
-termo 1675 NOUN
-bebes 1670 NOUN
-telar 1669 NOUN
-caigo 1664 NOUN
-tardo 1664 VERB
-linde 1661 NOUN
-purga 1662 NOUN
-cesan 1659 VERB
-debes 1657 NOUN
-axila 1656 NOUN
-pampa 1654 NOUN
-enoja 1651 VERB
-poses 1651 NOUN
-sedas 1650 NOUN
-priva 1648 VERB
-mosto 1649 NOUN
-cuajo 1647 NOUN
-panal 1646 NOUN
-exijo 1646 VERB
-osito 1646 NOUN
-tocas 1642 VERB
-casto 1642 ADJ
-gasas 1641 NOUN
-hueca 1645 NOUN
-brota 1640 NOUN
-sapos 1639 NOUN
-viles 1639 ADJ
-besan 1636 VERB
-ceden 1634 VERB
-dista 1634 VERB
-yerno 1634 ADJ
-pelar 1630 VERB
-caber 1629 VERB
-curan 1625 VERB
-artes 1618 ADJ
-minar 1621 VERB
-bollo 1617 NOUN
-erais 1614 VERB
-ozono 1614 NOUN
-muela 1611 NOUN
-brava 1608 ADJ
-abeto 1606 NOUN
-place 1604 NOUN
-viajo 1600 VERB
-focas 1600 NOUN
-calva 1599 NOUN
-sitio 1600 ADJ
-opere 1598 VERB
-bazar 1598 NOUN
-lirio 1596 NOUN
-coral 1593 ADJ
-hueca 1590 ADJ
-bombo 1593 NOUN
-pardo 1590 NOUN
-jerez 1588 NOUN
-corro 1587 ADJ
-seque 1586 VERB
-pasmo 1581 NOUN
-junto 1583 NOUN
-colar 1583 VERB
-grupa 1579 NOUN
-verso 1576 ADJ
-suiza 1577 ADJ
-tamiz 1576 NOUN
-deseo 1575 ADJ
-pajar 1574 NOUN
-filos 1566 NOUN
-cuece 1566 VERB
-sarta 1566 NOUN
-dejad 1560 VERB
-corre 1561 ADJ
-rosca 1560 NOUN
-paseo 1559 VERB
-visos 1558 NOUN
-ardid 1559 NOUN
-shows 1552 NOUN
-sigas 1550 ADJ
-obran 1549 VERB
-ileso 1549 ADJ
-rozan 1545 VERB
-doler 1544 NOUN
-cazas 1541 NOUN
-beata 1540 NOUN
-motas 1539 NOUN
-dicta 1537 ADJ
-tersa 1535 ADJ
-sueco 1533 NOUN
-curia 1534 NOUN
-aleta 1535 NOUN
-pilla 1533 VERB
-asumo 1532 VERB
-brota 1530 ADJ
-lados 1531 ADJ
-necio 1527 NOUN
-calme 1527 VERB
-reyes 1524 ADJ
-micro 1524 ADJ
-vibra 1527 VERB
-venda 1525 VERB
-curva 1521 ADJ
-acuda 1520 VERB
-vitro 1517 NOUN
-helio 1515 NOUN
-aseos 1514 NOUN
-oidor 1509 NOUN
-lavan 1508 VERB
-magos 1507 ADJ
-llore 1504 VERB
-vanos 1503 NOUN
-urbes 1495 NOUN
-avaro 1495 NOUN
-abajo 1494 VERB
-bello 1494 NOUN
-burdo 1493 ADJ
-manda 1491 ADJ
-yerro 1487 NOUN
-tonel 1487 NOUN
-evita 1486 ADJ
-graba 1483 VERB
-posan 1476 VERB
-quiso 1473 ADJ
-cruce 1469 VERB
-noria 1469 NOUN
-pende 1466 VERB
-hoyos 1466 NOUN
-vendo 1465 VERB
-hogar 1464 VERB
-treta 1465 NOUN
-mails 1460 NOUN
-senil 1460 ADJ
-lince 1459 NOUN
-lomas 1458 NOUN
-lares 1458 NOUN
-corso 1457 NOUN
-usura 1457 NOUN
-chefs 1456 NOUN
-medie 1456 VERB
-hazte 1456 VERB
-redil 1456 NOUN
-deste 1445 ADJ
-batas 1436 NOUN
-sogas 1436 NOUN
-metan 1435 VERB
-sacro 1429 NOUN
-still 1428 ADJ
-sigla 1424 NOUN
-sexto 1429 NOUN
-oraba 1422 VERB
-fusta 1420 NOUN
-toreo 1418 NOUN
-copla 1414 NOUN
-socia 1413 NOUN
-meros 1413 NOUN
-gomas 1411 NOUN
-foral 1409 ADJ
-tilde 1411 NOUN
-aunar 1404 VERB
-terca 1402 ADJ
-cofia 1404 NOUN
-eleva 1401 NOUN
-osaba 1400 VERB
-hilar 1399 VERB
-favor 1396 ADJ
-ganga 1390 NOUN
-maese 1393 VERB
-galos 1388 NOUN
-dorar 1387 VERB
-bledo 1387 NOUN
-guano 1384 NOUN
-toser 1383 VERB
-narco 1382 NOUN
-queme 1383 VERB
-insta 1379 VERB
-erizo 1377 NOUN
-tened 1372 VERB
-fijen 1371 VERB
-ferry 1368 NOUN
-canso 1362 VERB
-deste 1361 VERB
-lisas 1360 NOUN
-fetos 1360 NOUN
-polea 1360 NOUN
-dejes 1356 NOUN
-osado 1355 VERB
-cobre 1358 VERB
-junio 1355 ADV
-vasco 1350 NOUN
-acres 1349 NOUN
-vasto 1349 NOUN
-valer 1349 NOUN
-aspas 1350 NOUN
-aduce 1347 VERB
-oruga 1347 NOUN
-palpa 1345 VERB
-imita 1344 ADJ
-presa 1342 VERB
-verla 1342 NOUN
-brida 1343 NOUN
-parra 1337 NOUN
-tarot 1333 NOUN
-salte 1332 VERB
-fisco 1332 NOUN
-ahogo 1329 NOUN
-gamma 1327 NOUN
-untar 1325 VERB
-curso 1324 ADJ
-adora 1320 NOUN
-rompo 1319 VERB
-domar 1319 VERB
-algun 1318 VERB
-opino 1313 VERB
-burra 1314 NOUN
-jeans 1311 ADJ
-chupa 1309 VERB
-pajes 1309 NOUN
-sepas 1306 ADJ
-eleve 1305 VERB
-nevar 1305 VERB
-cisma 1308 NOUN
-glosa 1300 NOUN
-avise 1294 VERB
-tiara 1293 NOUN
-mudos 1290 NOUN
-asomo 1289 VERB
-ubica 1286 ADJ
-liras 1285 NOUN
-cursa 1285 VERB
-cagar 1283 VERB
-pibes 1281 NOUN
-penal 1280 NOUN
-cenit 1280 NOUN
-rezan 1279 VERB
-rasca 1280 VERB
-fuman 1277 VERB
-lloro 1276 VERB
-cuido 1276 VERB
-bache 1273 NOUN
-argot 1271 NOUN
-falaz 1275 ADJ
-cobra 1270 NOUN
-cover 1267 VERB
-hondo 1267 NOUN
-marzo 1267 ADJ
-aboga 1266 VERB
-saeta 1263 NOUN
-botar 1262 VERB
-nalga 1261 NOUN
-relax 1260 NOUN
-liado 1259 VERB
-lupus 1258 NOUN
-comas 1257 VERB
-emita 1255 VERB
-tieso 1255 ADJ
-dabas 1252 VERB
-nudos 1252 ADJ
-liceo 1251 NOUN
-ultra 1249 ADJ
-diana 1249 ADJ
-julio 1248 ADV
-lacio 1245 NOUN
-vieja 1244 VERB
-fijas 1242 VERB
-trigo 1241 ADJ
-siega 1242 NOUN
-feudo 1241 NOUN
-retro 1243 ADJ
-secan 1238 VERB
-bajen 1240 VERB
-friso 1239 NOUN
-paper 1236 VERB
-eriza 1237 VERB
-tejen 1231 VERB
-parta 1232 VERB
-osada 1228 ADJ
-calmo 1227 ADJ
-votan 1225 VERB
-aptas 1224 ADJ
-cuasi 1224 NOUN
-huelo 1221 VERB
-lemas 1223 NOUN
-monta 1225 NOUN
-hogar 1221 ADJ
-monde 1220 VERB
-aprox 1220 NOUN
-right 1219 NOUN
-lunar 1217 NOUN
-ostra 1219 NOUN
-ficha 1216 ADJ
-ebria 1215 ADJ
-alega 1215 VERB
-guasa 1214 NOUN
-creer 1213 NOUN
-ataca 1211 ADJ
-oyese 1210 VERB
-vibra 1209 NOUN
-bulla 1208 NOUN
-pegas 1204 NOUN
-tinto 1201 NOUN
-olido 1202 VERB
-cebra 1199 NOUN
-cieno 1199 NOUN
-fosos 1197 NOUN
-comes 1197 VERB
-nubla 1197 VERB
-venta 1197 ADJ
-anota 1196 ADJ
-lilas 1195 NOUN
-muera 1194 ADJ
-grada 1189 NOUN
-legal 1188 VERB
-caqui 1185 ADJ
-vales 1182 VERB
-virar 1181 VERB
-rotar 1180 VERB
-pinar 1179 NOUN
-macro 1177 NOUN
-sones 1176 NOUN
-clics 1176 NOUN
-pinto 1174 VERB
-nariz 1172 ADJ
-loros 1171 NOUN
-testa 1171 NOUN
-bravo 1170 NOUN
-queso 1169 ADJ
-tinta 1167 VERB
-fecho 1170 ADJ
-dista 1165 ADJ
-fotos 1162 ADJ
-mapeo 1159 NOUN
-moles 1158 NOUN
-atlas 1155 NOUN
-magra 1152 ADJ
-funda 1150 ADJ
-guapa 1150 VERB
-finos 1149 NOUN
-sismo 1150 NOUN
-cauta 1149 ADJ
-netas 1149 ADJ
-anglo 1147 ADJ
-alero 1145 NOUN
-junco 1140 NOUN
-astas 1138 NOUN
-hundo 1137 VERB
-flema 1138 NOUN
-grava 1134 ADJ
-gocen 1133 VERB
-acoso 1129 ADJ
-parco 1128 ADJ
-mesma 1127 NOUN
-parda 1126 ADJ
-curro 1126 NOUN
-digna 1123 VERB
-cutre 1124 ADJ
-zarza 1118 NOUN
-salva 1116 NOUN
-desea 1116 ADJ
-opten 1115 VERB
-recio 1114 NOUN
-mirra 1114 NOUN
-traba 1114 VERB
-times 1114 ADJ
-rumba 1112 NOUN
-nabos 1112 NOUN
-azota 1110 VERB
-pelea 1108 VERB
-tardo 1108 ADJ
-spray 1109 NOUN
-riega 1108 VERB
-diles 1108 NOUN
-carpo 1108 NOUN
-danza 1107 VERB
-enana 1104 NOUN
-tifus 1102 NOUN
-capos 1100 NOUN
-humus 1103 NOUN
-fazen 1098 VERB
-table 1098 ADJ
-abras 1096 VERB
-molar 1096 NOUN
-ahogo 1094 VERB
-litro 1096 ADJ
-resta 1092 ADJ
-iluso 1092 ADJ
-ganen 1092 VERB
-hiena 1090 NOUN
-anime 1090 VERB
-rugir 1089 NOUN
-colma 1087 VERB
-ronda 1086 VERB
-cocos 1084 NOUN
-persa 1086 NOUN
-subes 1083 VERB
-mamas 1082 NOUN
-emana 1080 ADJ
-gusta 1078 NOUN
-cardo 1077 NOUN
-presa 1073 ADJ
-coste 1068 ADJ
-valgo 1068 VERB
-chulo 1068 NOUN
-pulso 1066 ADJ
-pican 1065 VERB
-tumbo 1063 VERB
-bocas 1063 ADJ
-cubro 1063 VERB
-jodan 1056 VERB
-lisos 1054 ADJ
-buzos 1053 NOUN
-calas 1053 NOUN
-manso 1053 ADJ
-elles 1052 ADJ
-copia 1052 VERB
-ancas 1051 NOUN
-forja 1051 VERB
-necia 1050 NOUN
-azada 1050 NOUN
-clima 1050 ADJ
-verla 1048 ADJ
-films 1047 NOUN
-jalar 1046 VERB
-obeso 1046 ADJ
-vuesa 1045 ADJ
-still 1045 NOUN
-silos 1045 NOUN
-trino 1044 NOUN
-liado 1043 ADJ
-round 1042 NOUN
-maese 1040 NOUN
-falsa 1039 NOUN
-renos 1039 NOUN
-rapaz 1037 ADJ
-yermo 1037 ADJ
-pisan 1036 VERB
-abona 1033 VERB
-enano 1034 ADJ
-ceras 1033 NOUN
-sucia 1032 NOUN
-aprox 1031 ADJ
-pecas 1029 ADJ
-prana 1029 NOUN
-tiesa 1029 VERB
-cable 1028 ADJ
-alada 1026 ADJ
-tinta 1026 ADJ
-cerda 1027 NOUN
-talco 1025 NOUN
-gajos 1023 NOUN
-input 1021 NOUN
-yacer 1021 VERB
-huida 1020 ADJ
-rubio 1018 NOUN
-grana 1019 NOUN
-rugir 1016 VERB
-peros 1014 NOUN
-prono 1012 NOUN
-talar 1012 VERB
-disco 1011 ADJ
-rudas 1010 ADJ
-curva 1009 VERB
-rogar 1008 NOUN
-canal 1008 ADJ
-oreja 1007 ADJ
-roben 1007 VERB
-vales 1006 ADJ
-educa 1007 VERB
-seria 1006 VERB
-lonas 1005 NOUN
-curvo 1006 ADJ
-penes 1003 NOUN
-islas 1001 ADJ
-lisas 997 ADJ
-paren 997 VERB
-ajado 996 ADJ
-murga 997 NOUN
-vuela 995 ADJ
-curri 994 NOUN
-vagan 993 VERB
-dador 992 NOUN
-paras 992 NOUN
-chulo 991 ADJ
-babas 992 NOUN
-bicis 991 NOUN
-agora 990 NOUN
-pasta 990 ADJ
-toses 989 NOUN
-quita 987 NOUN
-salga 985 ADJ
-regla 983 VERB
-perra 982 ADJ
-ramal 982 NOUN
-raudo 982 NOUN
-miope 981 ADJ
-sabed 980 NOUN
-barre 978 VERB
-letra 977 VERB
-solaz 977 NOUN
-obsta 976 VERB
-fauno 975 NOUN
-riera 976 VERB
-party 974 ADJ
-coste 973 VERB
-andas 972 VERB
-lanas 971 NOUN
-apura 971 VERB
-vitro 971 ADJ
-simio 970 NOUN
-avala 968 VERB
-docto 968 NOUN
-tacha 968 NOUN
-felpa 968 NOUN
-visir 967 VERB
-pajas 965 NOUN
-morar 965 VERB
-rinda 966 VERB
-lance 965 VERB
-manta 964 ADJ
-velan 964 VERB
-tuyas 964 ADJ
-vente 962 ADV
-quite 960 NOUN
-impar 957 ADJ
-bingo 959 NOUN
-culos 955 NOUN
-talud 955 NOUN
-actor 955 ADJ
-checo 954 ADJ
-zarpa 953 NOUN
-ciber 953 NOUN
-elude 953 VERB
-vacas 949 ADJ
-yates 949 NOUN
-linda 950 NOUN
-apena 948 VERB
-memes 948 NOUN
-zorra 948 ADJ
-soles 947 ADJ
-flaca 946 NOUN
-hunda 946 VERB
-anexa 944 ADJ
-ducho 943 ADJ
-quema 941 ADJ
-ladra 936 VERB
-teman 935 VERB
-corto 935 VERB
-nadan 934 VERB
-honda 933 NOUN
-trece 933 VERB
-evito 932 VERB
-llamo 931 NOUN
-canes 930 NOUN
-belga 930 NOUN
-anida 928 VERB
-garza 928 NOUN
-hosca 927 ADJ
-pozas 927 NOUN
-retar 929 VERB
-siria 926 ADJ
-diera 924 ADJ
-bardo 924 NOUN
-rules 923 ADJ
-hiato 923 NOUN
-guita 923 NOUN
-arena 920 ADJ
-sauna 917 ADJ
-mover 916 NOUN
-greco 915 ADJ
-vezes 915 NOUN
-likes 914 NOUN
-vales 913 NOUN
-labia 912 NOUN
-acuse 911 NOUN
-ramos 910 ADJ
-fluya 910 VERB
-cunas 910 NOUN
-equis 910 NOUN
-globo 909 ADJ
-hijas 908 ADJ
-pulga 907 NOUN
-magia 906 ADJ
-malva 906 NOUN
-agave 906 NOUN
-dance 905 VERB
-sella 905 VERB
-trago 903 ADJ
-vayas 903 NOUN
-pelis 902 NOUN
-calco 902 NOUN
-bajel 903 NOUN
-venza 901 VERB
-mulos 900 NOUN
-edita 900 VERB
-terso 901 ADJ
-sagas 899 NOUN
-hampa 898 NOUN
-manco 896 NOUN
-trust 895 NOUN
-bulas 895 NOUN
-rayar 893 VERB
-insta 892 ADJ
-novel 892 NOUN
-tajos 890 NOUN
-acero 890 ADJ
-moler 890 VERB
-colza 889 NOUN
-lacio 889 ADJ
-manso 888 NOUN
-celda 887 ADJ
-vives 885 VERB
-aptos 883 VERB
-calvo 883 VERB
-rapaz 883 NOUN
-orcos 882 NOUN
-varia 880 ADJ
-linea 880 NOUN
-calza 877 VERB
-reste 877 VERB
-ajada 877 ADJ
-haiku 879 NOUN
-acuse 876 VERB
-grama 876 NOUN
-apago 873 VERB
-comba 873 NOUN
-cruda 873 NOUN
-caiga 872 ADJ
-smart 872 NOUN
-opaca 870 VERB
-catas 869 NOUN
-monte 869 ADV
-lacra 869 NOUN
-gamas 869 NOUN
-paria 868 NOUN
-mamar 866 NOUN
-right 866 VERB
-cruje 866 VERB
-viola 866 NOUN
-borde 866 VERB
-staff 865 NOUN
-flama 864 NOUN
-pesto 865 NOUN
-ladea 861 VERB
-diodo 862 NOUN
-abuse 859 VERB
-facha 858 NOUN
-sabor 859 ADJ
-cojan 858 VERB
-huido 858 ADJ
-bando 858 VERB
-canse 856 VERB
-decae 856 VERB
-tweed 852 NOUN
-gnomo 854 NOUN
-riada 851 NOUN
-rulos 851 NOUN
-vanos 851 ADJ
-moran 851 VERB
-decid 850 VERB
-baten 848 VERB
-topar 847 VERB
-segar 847 VERB
-fallo 846 ADJ
-novel 845 ADJ
-tigre 844 ADJ
-beato 843 NOUN
-polio 843 NOUN
-torne 843 VERB
-ebook 842 NOUN
-culta 841 NOUN
-manda 840 NOUN
-psoas 842 NOUN
-ramos 836 VERB
-arman 835 VERB
-deuda 832 ADJ
-cirio 833 NOUN
-reyno 831 NOUN
-diere 831 VERB
-pille 830 VERB
-sutil 830 NOUN
-niega 829 ADJ
-wasap 829 NOUN
-sumen 829 VERB
-tejer 830 NOUN
-human 829 VERB
-grava 828 VERB
-tapan 828 VERB
-traba 827 NOUN
-terna 827 NOUN
-sedal 827 NOUN
-larva 827 NOUN
-menea 827 VERB
-mirlo 825 NOUN
-rasga 824 VERB
-anden 823 VERB
-fajas 823 NOUN
-fruto 823 ADJ
-mires 823 NOUN
-agote 822 VERB
-rombo 820 NOUN
-prosa 819 ADJ
-ligue 818 NOUN
-finjo 818 VERB
-anexo 818 ADJ
-lodos 817 NOUN
-lides 817 NOUN
-mirar 817 NOUN
-chats 817 NOUN
-abusa 817 VERB
-dicha 816 VERB
-ujier 817 NOUN
-checa 816 ADJ
-auras 814 NOUN
-match 812 NOUN
-cupos 812 NOUN
-gaita 811 NOUN
-obren 810 VERB
-broma 809 ADJ
-extra 810 ADV
-chute 807 NOUN
-cazan 806 VERB
-ibais 806 VERB
-suple 806 VERB
-sepia 806 ADJ
-suave 806 NOUN
-mamut 806 NOUN
-desta 805 NOUN
-buche 804 NOUN
-abate 803 VERB
-logra 802 ADJ
-losas 802 ADJ
-nacer 802 NOUN
-falso 801 VERB
-cavar 801 NOUN
-pisco 800 NOUN
-mimar 799 VERB
-press 798 ADJ
-susto 798 ADJ
-nylon 798 NOUN
-grite 795 VERB
-fajos 794 NOUN
-locas 793 NOUN
-hiela 792 VERB
-froto 790 VERB
-dizen 789 VERB
-galgo 788 NOUN
-brezo 789 NOUN
-fundo 788 VERB
-sexys 787 ADJ
-liada 785 ADJ
-ajeno 783 NOUN
-odres 783 NOUN
-formo 782 VERB
-ovnis 782 NOUN
-mondo 781 NOUN
-desto 780 ADJ
-multi 778 NOUN
-suena 777 NOUN
-coces 777 NOUN
-tomad 776 VERB
-pudre 775 VERB
-mamar 774 VERB
-prime 773 NOUN
-ojear 774 VERB
-suizo 773 NOUN
-gotea 772 VERB
-brujo 772 ADJ
-afana 771 VERB
-surta 770 VERB
-oigas 769 VERB
-cegar 770 VERB
-fluya 768 ADJ
-luces 768 ADJ
-jacta 767 VERB
-bebas 764 VERB
-mansa 764 ADJ
-verme 763 ADJ
-urdir 763 VERB
-priva 762 ADJ
-anule 760 VERB
-barda 760 NOUN
-mirto 759 NOUN
-duren 759 VERB
-mazas 757 NOUN
-estad 757 NOUN
-honra 755 ADJ
-lapso 754 ADJ
-juzgo 754 ADJ
-aviva 754 VERB
-aforo 753 NOUN
-quina 752 NOUN
-palio 751 NOUN
-vagas 751 NOUN
-tejos 751 NOUN
-mente 750 ADJ
-mural 749 ADJ
-amaba 749 ADJ
-limas 748 NOUN
-orbes 747 NOUN
-jadea 747 VERB
-avere 747 VERB
-pieza 747 VERB
-jamas 746 NOUN
-ronda 746 ADJ
-huela 745 VERB
-robot 744 ADJ
-dende 743 VERB
-sufra 741 ADJ
-heavy 741 ADJ
-lobos 740 ADJ
-eones 740 NOUN
-legos 739 NOUN
-lamas 739 NOUN
-fatuo 739 ADJ
-brisa 738 ADJ
-enojo 736 VERB
-surte 735 VERB
-hucha 735 NOUN
-zombi 734 ADJ
-lonja 732 NOUN
-doblo 731 VERB
-sufre 731 ADJ
-alijo 728 NOUN
-limar 728 VERB
-enero 728 ADV
-frase 726 VERB
-borre 725 VERB
-cubas 724 NOUN
-subas 724 NOUN
-finta 724 NOUN
-adora 721 ADJ
-fijos 720 NOUN
-ejido 720 NOUN
-arpas 719 NOUN
-tieso 717 NOUN
-joyas 717 ADJ
-ponto 719 NOUN
-perro 715 ADJ
-molar 715 ADJ
-turba 715 VERB
-valgo 714 NOUN
-creta 713 NOUN
-heavy 712 NOUN
-dotan 712 VERB
-velar 711 ADJ
-gaste 711 VERB
-torva 710 ADJ
-queja 709 ADJ
-creas 708 NOUN
-dello 707 NOUN
-gamba 706 NOUN
-kilos 704 ADJ
-salas 702 ADJ
-necia 701 ADJ
-bajes 701 VERB
-marzo 701 ADV
-nimio 700 ADJ
-busco 699 ADJ
-reine 699 VERB
-rueca 699 NOUN
-jalea 697 NOUN
-hotel 697 ADJ
-paros 696 NOUN
-emita 695 ADJ
-ducal 694 ADJ
-sorry 692 ADJ
-enoje 693 VERB
-doren 692 VERB
-mudan 692 VERB
-gatos 691 ADJ
-sedas 689 ADJ
-super 689 NOUN
-ponlo 687 VERB
-queer 687 VERB
-bytes 686 NOUN
-alelo 686 NOUN
-hidra 685 NOUN
-boato 685 NOUN
-mates 685 ADJ
-arras 685 NOUN
-chata 684 NOUN
-silba 684 VERB
-podas 683 NOUN
-gozos 683 NOUN
-roles 682 ADJ
-tires 680 VERB
-cesen 680 VERB
-dados 680 NOUN
-dudes 679 NOUN
-clips 678 NOUN
-pudin 678 NOUN
-rompe 677 ADJ
-clavo 676 VERB
-garbo 676 NOUN
-fuese 676 ADJ
-ligan 674 VERB
-jaspe 675 NOUN
-arcos 674 ADJ
-cuasi 674 ADJ
-bobos 673 NOUN
-green 673 NOUN
-dadme 672 VERB
-break 673 NOUN
-surge 672 ADJ
-malta 673 NOUN
-ancla 671 VERB
-motes 671 NOUN
-mouse 669 NOUN
-canto 668 VERB
-choca 668 NOUN
-enana 667 ADJ
-saldo 668 ADJ
-sudan 666 VERB
-chata 666 ADJ
-fuste 667 NOUN
-carey 666 NOUN
-flete 664 NOUN
-criba 663 NOUN
-costo 662 ADJ
-albur 661 NOUN
-quiso 661 NOUN
-lloro 660 NOUN
-pared 660 ADJ
-alfil 659 NOUN
-borla 659 NOUN
-niego 659 NOUN
-cubil 658 NOUN
-mella 657 VERB
-nenas 657 NOUN
-sarna 656 NOUN
-piojo 656 NOUN
-acudo 655 VERB
-manar 654 VERB
-pelar 653 ADJ
-reiki 654 NOUN
-harta 652 VERB
-lucho 652 VERB
-omeya 650 ADJ
-bonus 652 NOUN
-orado 649 VERB
-pujar 648 VERB
-preso 647 VERB
-hunos 647 NOUN
-pitos 647 NOUN
-ubres 647 NOUN
-porte 647 VERB
-ascos 646 NOUN
-alabo 646 VERB
-barco 646 ADJ
-sirio 645 NOUN
-coges 645 NOUN
-cojas 645 VERB
-andas 644 NOUN
-click 644 NOUN
-amase 643 VERB
-ratio 643 ADJ
-llamo 643 ADJ
-acuso 643 VERB
-tiren 642 VERB
-tecno 642 NOUN
-juran 641 VERB
-ralea 641 NOUN
-tilos 641 NOUN
-noten 641 VERB
-raras 641 VERB
-ultra 640 VERB
-cerdo 641 ADJ
-trago 640 VERB
-panda 640 ADJ
-renta 639 VERB
-arios 639 NOUN
-basis 639 NOUN
-light 639 NOUN
-yerma 639 ADJ
-obeso 638 NOUN
-godos 638 ADJ
-vagal 637 ADJ
-pedos 637 NOUN
-pulla 637 NOUN
-vuele 637 VERB
-geles 636 NOUN
-rucio 637 NOUN
-eleva 636 ADJ
-salve 634 NOUN
-chato 634 ADJ
-luche 632 VERB
-datar 633 VERB
-subte 632 NOUN
-troll 632 NOUN
-topan 630 VERB
-pones 629 NOUN
-paras 628 VERB
-astro 629 ADJ
-peque 628 ADJ
-pides 627 NOUN
-adujo 627 VERB
-droga 627 ADJ
-pines 627 NOUN
-habia 626 ADJ
-trepa 626 VERB
-parca 625 NOUN
-aviar 626 VERB
-serme 624 NOUN
-meneo 625 NOUN
-linfa 625 NOUN
-aptas 623 VERB
-curvo 622 NOUN
-reino 622 ADJ
-mazos 622 NOUN
-lores 621 NOUN
-capta 621 ADJ
-hados 620 NOUN
-bocio 620 NOUN
-guiar 620 NOUN
-queje 619 VERB
-naves 619 ADJ
-casen 619 VERB
-junta 619 ADJ
-enojo 618 ADJ
-acusa 618 NOUN
-taita 618 NOUN
-atado 617 NOUN
-conos 617 ADJ
-kurdo 617 ADJ
-sorgo 616 NOUN
-vibra 615 ADJ
-terno 616 NOUN
-nazca 614 ADJ
-ajena 611 NOUN
-husos 610 NOUN
-acosa 610 VERB
-otear 609 VERB
-ceiba 609 NOUN
-tenia 607 ADJ
-sumos 607 NOUN
-break 606 ADJ
-ondea 606 VERB
-baile 606 VERB
-vital 606 VERB
-notes 605 NOUN
-surca 605 VERB
-andes 604 NOUN
-clava 604 NOUN
-borde 604 ADJ
-cuyas 604 ADJ
-dupla 604 NOUN
-sordo 603 VERB
-visas 602 NOUN
-tocas 602 NOUN
-cobre 601 ADJ
-pillo 601 VERB
-impar 600 VERB
-oliva 600 ADJ
-boxes 600 NOUN
-dalla 600 VERB
-ponis 600 NOUN
-llave 600 VERB
-posts 599 NOUN
-token 600 NOUN
-bailo 599 VERB
-jamba 599 NOUN
-corzo 597 NOUN
-links 596 NOUN
-moler 595 NOUN
-hazle 595 VERB
-tacha 594 ADJ
-perno 594 NOUN
-salid 594 NOUN
-fagot 593 NOUN
-lujos 593 ADJ
-lidia 592 NOUN
-peina 592 VERB
-celos 591 ADJ
-taras 592 NOUN
-alega 588 NOUN
-dinos 588 NOUN
-sacia 587 VERB
-grito 588 VERB
-malva 586 ADJ
-lomos 585 VERB
-magro 585 ADJ
-huele 585 NOUN
-delta 584 ADJ
-nenes 584 NOUN
-banal 584 NOUN
-mutis 584 NOUN
-salsa 584 ADJ
-sepia 583 NOUN
-cojos 582 NOUN
-rasos 581 ADJ
-chupa 581 NOUN
-lucho 580 ADJ
-amaba 580 NOUN
-anuda 580 VERB
-acota 580 VERB
-yesca 580 NOUN
-regio 579 NOUN
-adujo 578 NOUN
-rojas 578 NOUN
-beban 578 VERB
-anote 578 VERB
-zagal 577 NOUN
-anima 577 NOUN
-palta 576 NOUN
-dotes 576 ADJ
-viles 576 NOUN
-mudas 575 NOUN
-hutus 575 NOUN
-animo 575 NOUN
-chili 574 NOUN
-veraz 574 VERB
-callo 573 NOUN
-fundo 572 NOUN
-ocres 571 ADJ
-grafo 571 NOUN
-besas 569 VERB
-diosa 569 ADJ
-samba 568 NOUN
-nueve 567 VERB
-beige 566 ADJ
-flash 566 ADJ
-besos 566 ADJ
-diles 566 ADJ
-dudes 565 ADJ
-legar 566 VERB
-lisos 564 NOUN
-sable 564 ADJ
-burla 563 ADJ
-brama 563 NOUN
-yunta 563 NOUN
-pareo 562 NOUN
-tunda 562 NOUN
-flota 561 ADJ
-taula 561 NOUN
-bedel 560 NOUN
-numen 560 NOUN
-hoces 559 NOUN
-ufana 559 VERB
-caber 558 NOUN
-leche 558 ADJ
-venia 558 VERB
-mudez 558 NOUN
-check 558 ADJ
-incas 558 ADJ
-dable 557 VERB
-juzgo 557 VERB
-lacre 557 NOUN
-mambo 557 NOUN
-lecho 556 ADJ
-nahua 555 ADJ
-shows 554 ADJ
-evade 554 VERB
-roble 554 ADJ
-calar 553 VERB
-tenga 553 ADJ
-abeja 553 ADJ
-pudra 553 VERB
-corno 552 NOUN
-burgo 552 NOUN
-fasta 551 ADJ
-prepa 551 NOUN
-check 550 NOUN
-paleo 549 NOUN
-tasca 549 NOUN
-combo 548 NOUN
-magno 549 ADJ
-peque 548 NOUN
-checo 548 NOUN
-zurdo 546 NOUN
-educa 545 NOUN
-marea 546 VERB
-pasad 545 NOUN
-green 545 VERB
-susto 544 VERB
-baila 543 ADJ
-pulse 543 VERB
-jemer 543 ADJ
-yenes 542 NOUN
-togas 542 NOUN
-beber 541 NOUN
-ascua 540 NOUN
-spots 540 NOUN
-oxida 540 VERB
-posos 539 NOUN
-orcas 539 NOUN
-dejan 539 NOUN
-ocres 538 NOUN
-paper 538 NOUN
-patea 538 VERB
-asome 537 VERB
-arias 537 NOUN
-osara 537 VERB
-agita 537 ADJ
-comun 536 VERB
-odies 536 VERB
-venta 535 VERB
-dedal 535 NOUN
-yihad 534 NOUN
-tumba 533 ADJ
-acoja 533 VERB
-levas 533 NOUN
-ardua 533 VERB
-olmos 533 NOUN
-fecho 532 NOUN
-grima 531 NOUN
-ponla 531 VERB
-peces 531 ADJ
-lleve 530 ADJ
-sigas 529 NOUN
-tolva 529 NOUN
-batea 529 NOUN
-morsa 528 NOUN
-tempo 528 ADJ
-carta 527 VERB
-pecan 527 VERB
-burlo 527 VERB
-lagar 526 NOUN
-nafta 525 NOUN
-score 524 NOUN
-house 524 NOUN
-huyes 524 NOUN
-relox 524 NOUN
-mojan 523 VERB
-falle 523 VERB
-sucio 521 NOUN
-levar 520 VERB
-infla 520 VERB
-viole 520 VERB
-rijan 519 VERB
-narra 519 ADJ
-cloud 519 NOUN
-mueca 518 ADJ
-torpe 518 NOUN
-tizas 517 NOUN
-trama 517 VERB
-vanas 517 NOUN
-dulce 516 ADV
-opuse 516 VERB
-broma 515 VERB
-mecen 515 VERB
-anime 515 NOUN
-yogui 515 NOUN
-esnob 514 ADJ
-abras 514 NOUN
-basto 513 ADJ
-bufet 514 NOUN
-niega 513 NOUN
-bario 513 NOUN
-prior 512 ADJ
-cacho 512 NOUN
-coses 512 NOUN
-sitio 512 VERB
-pases 512 ADJ
-magia 510 VERB
-ufano 510 NOUN
-capte 510 VERB
-careo 510 NOUN
-natos 509 ADJ
-email 509 ADJ
-lajas 509 NOUN
-firme 509 VERB
-marta 509 NOUN
-veras 509 VERB
-voten 508 VERB
-dexar 509 VERB
-rollo 508 ADJ
-cenas 508 ADJ
-borne 507 NOUN
-horma 508 NOUN
-pizza 507 VERB
-ogros 507 NOUN
-vasta 507 NOUN
-litis 505 NOUN
-dejas 505 NOUN
-temor 505 ADJ
-fojas 503 NOUN
-gafas 503 ADJ
-diosa 503 VERB
-pilla 502 NOUN
-nanas 502 NOUN
-solio 501 NOUN
-danos 501 NOUN
-tisis 500 NOUN
-raudo 500 ADJ
-pomos 500 NOUN
-fanal 499 NOUN
-pongo 499 NOUN
-ganes 499 NOUN
-erial 498 NOUN
-milpa 499 NOUN
-chavo 498 NOUN
-ciego 498 VERB
-boles 498 NOUN
-adobo 498 NOUN
-amena 497 NOUN
-suiza 497 VERB
-compa 497 NOUN
-venda 495 ADJ
-basen 495 VERB
-saldo 495 VERB
-share 495 NOUN
-zafra 495 NOUN
-ponle 495 VERB
-combi 495 NOUN
-avino 495 VERB
-malta 494 ADJ
-micer 494 VERB
-acuda 493 ADJ
-bemol 493 ADJ
-ricas 493 NOUN
-nardo 493 NOUN
-llame 493 ADJ
-bordo 493 VERB
-socia 492 ADJ
-pujas 492 NOUN
-ponme 490 VERB
-alzas 490 NOUN
-poned 490 VERB
-bulos 489 NOUN
-catar 490 VERB
-sobra 489 NOUN
-drena 489 VERB
-gesta 488 VERB
-tarda 488 NOUN
-zumba 487 VERB
-santa 487 VERB
-duden 485 VERB
-fasta 483 NOUN
-elevo 482 VERB
-zares 482 NOUN
-burro 480 ADJ
-orujo 480 NOUN
-menta 479 ADJ
-mareo 479 VERB
-retos 479 ADJ
-corra 478 ADJ
-traje 478 ADJ
-hiera 478 VERB
-basas 477 NOUN
-digne 477 VERB
-aboca 477 VERB
-naipe 477 NOUN
-vegas 477 NOUN
-crema 476 VERB
-kurda 476 ADJ
-reuma 476 NOUN
-droga 475 VERB
-misal 475 NOUN
-congo 474 NOUN
-camas 474 ADJ
-pasto 474 ADJ
-dandi 474 NOUN
-modas 474 ADJ
-traes 474 NOUN
-caros 473 NOUN
-curas 472 ADJ
-profe 472 VERB
-click 472 VERB
-fecho 471 VERB
-perla 471 ADJ
-touch 471 NOUN
+puede	1396264,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+parte	1232035,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+hacer	1151301,VERB,NOUN,SINGULAR
+antes	1050485,ADVERB,PREPOSITION,NOUN,PLURAL
+tiene	1035686,VERB,3PS,INFLECTED_FORM
+forma	1016330,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+menos	907485,ADVERB,DETERMINER,PREPOSITION,CONJUNCTION,NOUN,SINGULAR
+mundo	896597,NOUN,SINGULAR
+tanto	894956,DETERMINER,ADVERB,NOUN,PRONOUN,SINGULAR
+lugar	886177,NOUN,SINGULAR
+decir	807216,VERB,NOUN,SINGULAR
+ahora	795134,ADVERB,CONJUNCTION
+cosas	759963,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+tener	693335,VERB,INF
+mucho	680792,DETERMINER,ADVERB,PRONOUN
+mujer	665908,NOUN,SINGULAR
+mejor	652273,ADJECTIVE,ADVERB
+nunca	645178,ADVERB
+estar	640383,VERB,INF,INFLECTED_FORM,PRES_PART
+padre	636839,NOUN,ADJECTIVE,SINGULAR
+veces	632141,PREPOSITION,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+nuevo	630684,ADJECTIVE
+noche	620867,NOUN,ADVERB,SINGULAR
+mayor	607153,ADJECTIVE,NOUN,SINGULAR
+madre	592687,NOUN,SINGULAR
+haber	536517,VERB,NOUN,INF,INFLECTED_FORM,PAST_PART,SINGULAR
+luego	536006,ADVERB,CONJUNCTION
+manos	530311,NOUN,PLURAL
+punto	528795,NOUN,INTERJECTION,VERB,SINGULAR
+gente	465096,NOUN,SINGULAR
+hecho	447127,ADJECTIVE,PARTICIPLE,NOUN,VERB,INFLECTED_FORM,PAST_PART,SINGULAR
+dicho	444950,ADJECTIVE,DETERMINER,NOUN,PARTICIPLE,SINGULAR
+libro	382402,NOUN,VERB,SINGULAR
+saber	370218,VERB,NOUN,SINGULAR
+tengo	369915,VERB
+poder	367735,VERB,NOUN,SINGULAR
+estoy	366608,VERB
+largo	354271,ADJECTIVE,NOUN,INTERJECTION,VERB,SINGULAR
+fuera	347637,ADVERB,VERB,3PS,INFLECTED_FORM,SUBJ
+visto	338782,ADJECTIVE,PARTICIPLE,VERB,INFLECTED_FORM,PAST_PART
+medio	338300,ADJECTIVE,ADVERB,NOUN,VERB,SINGULAR
+grupo	337550,NOUN,SINGULAR
+puedo	334202,VERB
+buena	333966,NOUN,ADJECTIVE,SINGULAR
+junto	333633,ADJECTIVE,ADVERB,PREPOSITION,VERB
+vista	316112,NOUN,ADJECTIVE,PARTICIPLE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+horas	307454,NOUN,PLURAL
+suelo	304452,NOUN,VERB,SINGULAR
+nueva	302116,NOUN,ADJECTIVE,SINGULAR
+salir	298476,VERB,FORM_OF,INFLECTED_FORM
+hemos	298406,NOUN,VERB,PLURAL
+hijos	298361,NOUN,PLURAL
+valor	292572,NOUN,SINGULAR
+cerca	288660,ADVERB,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pasar	288553,VERB
+pesar	288296,VERB,NOUN,SINGULAR
+siglo	282168,NOUN,SINGULAR
+dejar	272783,VERB,INF
+miedo	266346,NOUN,SINGULAR
+igual	263371,ADJECTIVE,NOUN,ADVERB,SINGULAR
+trata	263082,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+casos	260425,NOUN,PLURAL
+dolor	258741,NOUN,SINGULAR
+final	257153,ADJECTIVE,NOUN,SINGULAR
+orden	257043,NOUN,SINGULAR
+meses	255382,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+favor	255085,NOUN,SINGULAR
+nivel	252884,NOUN,SINGULAR
+mente	251248,NOUN,SINGULAR
+amigo	247795,NOUN,VERB,SINGULAR
+datos	246717,NOUN,PLURAL
+papel	244871,NOUN,SINGULAR
+clase	241388,NOUN,SINGULAR
+tarde	236533,ADJECTIVE,ADVERB,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tomar	232556,VERB
+claro	230938,ADJECTIVE,ADVERB,NOUN,INTERJECTION,SINGULAR
+vivir	229544,VERB,NOUN,SINGULAR
+ayuda	224968,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+resto	224842,NOUN,VERB,SINGULAR
+falta	224099,NOUN,VERB,ADJECTIVE,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+color	218956,NOUN,SINGULAR
+campo	218051,NOUN,VERB,SINGULAR
+pueda	216613,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+deben	210473,VERB
+calle	209899,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+mismo	204376,ADJECTIVE,ADVERB
+lejos	201162,ADVERB
+cielo	200859,NOUN,SINGULAR
+libre	193298,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+capaz	191882,ADJECTIVE,ADVERB
+fondo	191176,NOUN,SINGULAR
+salud	189823,NOUN,INTERJECTION,SINGULAR
+bueno	189585,ADJECTIVE,INTERJECTION
+viaje	188070,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+menor	187611,ADJECTIVE,NOUN,SINGULAR
+hacen	184892,VERB
+coche	183574,NOUN,SINGULAR
+causa	182887,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fuego	178639,NOUN,INTERJECTION,SINGULAR
+juego	177053,NOUN,VERB,SINGULAR
+joven	173783,ADJECTIVE,NOUN,SINGULAR
+ideas	172408,NOUN,VERB,PLURAL
+poner	171918,VERB,INF
+sigue	167642,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+brazo	166948,NOUN,SINGULAR
+queda	165619,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+vamos	163696,INTERJECTION,VERB,FORM_OF,IMP,INFLECTED_FORM
+lleva	161499,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sitio	158660,NOUN,VERB,SINGULAR
+comer	158021,VERB,NOUN,SINGULAR
+texto	157320,NOUN,SINGULAR
+pecho	155431,NOUN,VERB,SINGULAR
+gusta	155336,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+obras	155055,NOUN,VERB,PLURAL
+autor	153513,NOUN,SINGULAR
+serie	152580,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+deseo	151847,NOUN,VERB,SINGULAR
+dedos	147296,NOUN,PLURAL
+mitad	144540,NOUN,SINGULAR
+gesto	143723,NOUN,VERB,SINGULAR
+feliz	143159,ADJECTIVE
+carta	140645,NOUN,SINGULAR
+plazo	139693,NOUN,SINGULAR
+viene	136771,VERB,3PS,INFLECTED_FORM
+pasos	135180,ADJECTIVE,NOUN,PLURAL
+somos	133644,VERB,NOUN,PLURAL
+apoyo	130763,NOUN,VERB,SINGULAR
+llama	130506,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+habla	129482,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tenga	127533,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+darle	124362,VERB,INF
+leyes	124160,NOUN,PLURAL
+creer	123828,VERB
+cargo	121217,NOUN,VERB,SINGULAR
+calor	121056,NOUN,SINGULAR
+tipos	120280,ADJECTIVE,NOUN,PLURAL
+golpe	120093,NOUN,SINGULAR
+carne	119429,NOUN,SINGULAR
+fuese	119384,VERB,3PS,INFLECTED_FORM,SUBJ
+negro	118535,NOUN,ADJECTIVE,SINGULAR
+grado	117542,NOUN,VERB,SINGULAR
+media	116008,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+crear	115169,VERB
+justo	114652,ADVERB,ADJECTIVE,VERB
+seres	114568,NOUN,PLURAL
+dando	113625,VERB,INFLECTED_FORM,PRES_PART
+chica	110017,NOUN,ADJECTIVE,SINGULAR
+fecha	109347,NOUN,VERB,PARTICIPLE,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lista	109273,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sabes	108309,INTERJECTION,VERB
+total	107938,ADJECTIVE,ADVERB,NOUN,SINGULAR
+llega	107108,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+silla	106863,NOUN,SINGULAR
+actos	106603,NOUN,PLURAL
+pared	105911,NOUN,SINGULAR
+lucha	103160,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tarea	103004,NOUN,SINGULAR
+armas	101880,NOUN,VERB,PLURAL
+venir	101176,VERB
+error	98070,NOUN,SINGULAR
+culpa	98008,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ganas	97928,NOUN,VERB,PLURAL
+julio	97813,NOUN,SINGULAR
+amiga	97405,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+viejo	97367,ADJECTIVE,NOUN,SINGULAR
+larga	97311,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+abajo	96164,ADVERB,INTERJECTION,VERB
+marzo	96074,NOUN,SINGULAR
+chico	96059,ADJECTIVE,NOUN,SINGULAR
+marco	95216,NOUN,VERB,SINGULAR
+gusto	95035,NOUN,VERB,SINGULAR
+casas	94253,NOUN,VERB,PLURAL
+suele	94211,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+abrir	93117,VERB,NOUN,SINGULAR
+morir	92885,VERB
+ruido	92473,NOUN,SINGULAR
+pobre	92394,ADJECTIVE
+temas	90866,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+hotel	89764,NOUN,SINGULAR
+civil	89720,ADJECTIVE
+junio	89376,NOUN,SINGULAR
+llena	89059,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+carga	88569,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+grave	87819,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+abril	87098,NOUN,SINGULAR
+doble	86413,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+enero	86046,NOUN,SINGULAR
+dicen	86011,VERB
+curso	85865,NOUN,VERB,SINGULAR
+perro	85717,NOUN,ADJECTIVE,SINGULAR
+frase	84436,NOUN,SINGULAR
+dicha	84397,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+vidas	83871,NOUN,PLURAL
+darse	83858,VERB,INF
+pagar	83750,VERB
+plano	83718,ADJECTIVE,NOUN,SINGULAR
+norte	83047,ADJECTIVE,NOUN,SINGULAR
+hogar	81701,NOUN,SINGULAR
+serio	80931,ADJECTIVE,VERB
+local	80545,ADJECTIVE,NOUN,SINGULAR
+clara	79450,NOUN,ADJECTIVE,SINGULAR
+quiso	79211,VERB,3PS,INFLECTED_FORM,PAST
+ritmo	79176,NOUN,SINGULAR
+redes	78991,NOUN,PLURAL
+suave	78111,ADJECTIVE
+clave	77823,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+zonas	77132,NOUN,PLURAL
+verlo	77028,VERB,INF
+sacar	76335,VERB
+fines	76132,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+honor	75293,NOUN,SINGULAR
+hojas	74696,NOUN,PLURAL
+moral	74687,ADJECTIVE,NOUN,SINGULAR
+plaza	73666,NOUN,SINGULAR
+jugar	73439,VERB
+reino	73171,NOUN,VERB,SINGULAR
+legal	72461,ADJECTIVE
+aguas	71442,INTERJECTION,NOUN,VERB,PLURAL
+hayan	71175,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+barco	71166,NOUN,SINGULAR
+norma	71108,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pedir	70867,VERB
+nariz	69955,NOUN,SINGULAR
+polvo	69567,NOUN,SINGULAR
+costa	69382,NOUN,SINGULAR
+reina	69354,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sirve	69096,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+etapa	68815,NOUN,SINGULAR
+playa	68774,NOUN,ADJECTIVE,SINGULAR
+temor	68694,NOUN,SINGULAR
+lleno	68649,ADJECTIVE,VERB
+poeta	68035,NOUN,SINGULAR
+haces	67420,NOUN,VERB,PLURAL
+leche	67047,NOUN,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+dudas	66797,NOUN,VERB,PLURAL
+busca	66122,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+negra	66072,NOUN,ADJECTIVE,SINGULAR
+borde	65020,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+firme	64725,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ganar	64305,VERB
+voces	64084,NOUN,PLURAL
+acaba	63761,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+saben	63734,VERB
+subir	63366,VERB
+penal	63101,ADJECTIVE,NOUN,SINGULAR
+luces	62729,NOUN,VERB,PLURAL
+techo	62415,NOUN,VERB,SINGULAR
+corte	62118,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+marca	61884,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+vemos	61726,VERB
+verla	61598,VERB,INF
+bolsa	61174,NOUN,SINGULAR
+notas	60245,NOUN,VERB,PLURAL
+humor	59690,NOUN,SINGULAR
+breve	59514,ADJECTIVE
+modos	58986,NOUN,PLURAL
+grito	58405,NOUN,VERB,SINGULAR
+trato	58347,NOUN,VERB,SINGULAR
+patio	58337,NOUN,SINGULAR
+prisa	58043,NOUN,SINGULAR
+reloj	57974,NOUN,SINGULAR
+acaso	57836,ADVERB
+punta	57807,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+bajar	57596,VERB
+regla	57264,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+calma	57124,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+venta	56632,NOUN,SINGULAR
+tocar	56586,VERB
+fotos	56041,NOUN,PLURAL
+verse	55870,VERB,3PS,FORM_OF,IMP,INF,INFLECTED_FORM,SUBJ
+plata	55836,ADJECTIVE,NOUN,SINGULAR
+arena	55742,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+verde	55621,ADJECTIVE,NOUN,SINGULAR
+banco	55340,NOUN,VERB,SINGULAR
+labor	55306,NOUN,SINGULAR
+matar	54819,VERB
+lados	54733,NOUN,PLURAL
+vieja	54419,NOUN,ADJECTIVE,SINGULAR
+deber	54386,VERB,NOUN,INFLECTED_FORM,PAST,SINGULAR
+plato	54065,NOUN,SINGULAR
+nieve	53330,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+plena	53100,ADJECTIVE,NOUN,SINGULAR
+dulce	52685,ADJECTIVE,NOUN,SINGULAR
+motor	52503,ADJECTIVE,NOUN,SINGULAR
+radio	52390,NOUN,VERB,SINGULAR
+traje	52301,NOUN,VERB,INFLECTED_FORM,PAST,SINGULAR
+altos	51956,ADJECTIVE,NOUN,PLURAL
+corto	51840,ADJECTIVE,NOUN,VERB,SINGULAR
+hasta	51601,ADVERB,PREPOSITION
+euros	51199,NOUN,PLURAL
+tabla	51107,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+letra	51084,NOUN,SINGULAR
+pieza	50826,NOUN,SINGULAR
+parar	49652,VERB
+daban	49214,VERB
+rabia	48995,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+altas	48804,ADJECTIVE,NOUN,PLURAL
+beber	48451,VERB
+ideal	48414,ADJECTIVE,NOUN,SINGULAR
+vuelo	48155,NOUN,VERB,SINGULAR
+mando	48117,NOUN,VERB,SINGULAR
+magia	47997,NOUN,SINGULAR
+darme	47590,VERB,INF
+viven	46704,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+entra	46649,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+deuda	46199,NOUN,SINGULAR
+paseo	46079,NOUN,VERB,SINGULAR
+baile	46014,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ciclo	45148,NOUN,VERB,SINGULAR
+pausa	45089,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+andar	44885,VERB,NOUN,INFLECTED_FORM,PRES_PART,SINGULAR
+bases	44852,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+nubes	44808,ADJECTIVE,NOUN,PLURAL
+pista	44697,NOUN,SINGULAR
+tesis	44685,NOUN,SINGULAR
+llave	44622,NOUN,SINGULAR
+desea	44546,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+novia	44458,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+exige	44113,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+echar	44109,VERB
+hielo	43997,NOUN,VERB,SINGULAR
+poema	43500,NOUN,SINGULAR
+salto	43397,NOUN,VERB,SINGULAR
+banda	42552,NOUN,SINGULAR
+sabor	42232,NOUN,SINGULAR
+ramas	42205,NOUN,PLURAL
+dieta	41872,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pasan	41669,VERB
+barra	41616,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+fruto	41377,NOUN,VERB,SINGULAR
+dejan	41282,VERB
+diera	40958,VERB,3PS,INFLECTED_FORM,SUBJ
+vital	40787,ADJECTIVE
+basta	40546,INTERJECTION,VERB,NOUN,ADJECTIVE,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+crees	40528,VERB,INFLECTED_FORM,SUBJ
+hijas	40219,NOUN,PLURAL
+posee	40042,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hagas	39672,VERB,INFLECTED_FORM,SUBJ
+dosis	39536,NOUN,SINGULAR
+metal	39389,NOUN,SINGULAR
+cenar	39190,VERB
+dices	38512,VERB
+rumbo	38485,NOUN,SINGULAR
+noble	38324,ADJECTIVE
+flujo	38015,NOUN,SINGULAR
+debes	37992,VERB
+valle	37963,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+signo	37862,NOUN,VERB,SINGULAR
+ocupa	37855,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ponen	37030,VERB
+verte	36877,VERB,INF
+listo	36578,ADJECTIVE,INTERJECTION,VERB
+creen	36565,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lento	36255,ADJECTIVE
+almas	36212,NOUN,ADJECTIVE,PLURAL
+notar	36130,VERB
+rango	36067,NOUN,SINGULAR
+verme	36009,NOUN,VERB,INF,SINGULAR
+turno	35987,NOUN,VERB,SINGULAR
+quede	35884,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+clima	35759,NOUN,SINGULAR
+mueve	35497,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+digas	35473,VERB,INFLECTED_FORM,SUBJ
+firma	35349,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+gasto	35334,NOUN,VERB,SINGULAR
+novio	35263,NOUN,VERB,SINGULAR
+trate	35077,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+oreja	35050,NOUN,SINGULAR
+pleno	34781,NOUN,ADJECTIVE,SINGULAR
+canal	34772,NOUN,SINGULAR
+vivos	34752,ADJECTIVE
+rayos	34733,INTERJECTION,NOUN,PLURAL
+malas	34541,ADJECTIVE,NOUN,PLURAL
+besos	34520,NOUN,PLURAL
+oeste	34489,NOUN,SINGULAR
+torre	34460,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+solas	34326,ADJECTIVE
+caras	34305,ADJECTIVE,NOUN,PLURAL
+penas	34201,NOUN,VERB,PLURAL
+amaba	34117,VERB,3PS,INFLECTED_FORM
+suyos	34095,DETERMINER,PRONOUN
+llevo	34086,VERB
+coger	34054,VERB
+carro	33957,NOUN,SINGULAR
+broma	33930,NOUN,SINGULAR
+hagan	33641,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+metro	33463,NOUN,SINGULAR
+furia	33390,NOUN,SINGULAR
+solos	33132,ADJECTIVE
+canto	33016,NOUN,VERB,SINGULAR
+salen	32981,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+anual	32770,ADJECTIVE
+misma	32605,ADJECTIVE
+cuero	32555,NOUN,SINGULAR
+sudor	32423,NOUN,SINGULAR
+venga	32375,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+mesas	32209,NOUN,VERB,PLURAL
+trono	32185,NOUN,SINGULAR
+corta	31899,ADJECTIVE,VERB,NOUN,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+renta	31883,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+monte	31860,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+aroma	31800,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+patas	31705,NOUN,PLURAL
+queso	31649,NOUN,SINGULAR
+reyes	31540,NOUN,PLURAL
+surge	31394,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+culto	31309,ADJECTIVE,NOUN,SINGULAR
+cajas	31233,NOUN,PLURAL
+seria	31195,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+gafas	31093,NOUN,VERB,PLURAL
+bolso	31060,NOUN,SINGULAR
+vimos	31005,VERB,INFLECTED_FORM,PAST
+horno	30997,NOUN,SINGULAR
+trozo	30930,NOUN,VERB,SINGULAR
+islas	30880,NOUN,PLURAL
+vigor	30507,NOUN,SINGULAR
+hayas	30373,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+mueca	30355,NOUN,SINGULAR
+traer	30158,VERB
+masas	30124,NOUN,VERB,PLURAL
+primo	30123,NOUN,ADJECTIVE,VERB,SINGULAR
+muros	30086,NOUN,PLURAL
+metas	30083,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+disco	30006,NOUN,VERB,SINGULAR
+actor	29877,NOUN,SINGULAR
+coste	29836,NOUN,SINGULAR
+museo	29812,NOUN,SINGULAR
+cruel	29795,ADJECTIVE
+obvio	29772,ADJECTIVE,VERB
+botas	29741,NOUN,ADJECTIVE,VERB,PLURAL
+barba	29557,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tumba	29517,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+jefes	29489,NOUN,PLURAL
+pacto	29399,NOUN,VERB,SINGULAR
+ducha	29051,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+parto	28910,NOUN,ADJECTIVE,VERB,SINGULAR
+presa	28731,NOUN,ADJECTIVE,SINGULAR
+arroz	28562,NOUN,SINGULAR
+mover	28443,VERB
+halla	28345,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+artes	28165,NOUN,PLURAL
+lunes	28037,NOUN,SINGULAR
+labio	28025,NOUN,SINGULAR
+acero	28007,NOUN,VERB,SINGULAR
+cejas	28002,NOUN,VERB,PLURAL
+pesos	27995,NOUN,PLURAL
+fases	27910,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+siete	27871,NUMERAL,NOUN,SINGULAR
+viera	27718,VERB,3PS,INFLECTED_FORM,SUBJ
+salsa	27658,NOUN,ADJECTIVE,SINGULAR
+quise	27629,VERB,INFLECTED_FORM,PAST
+logra	27567,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+suena	27560,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+falso	27546,ADJECTIVE,VERB
+santo	27381,ADJECTIVE,NOUN,SINGULAR
+trajo	27304,VERB,3PS,INFLECTED_FORM,PAST
+volar	27195,VERB
+quedo	27177,ADJECTIVE,ADVERB,VERB
+hueco	27149,ADJECTIVE,NOUN,SINGULAR
+duque	27058,NOUN,SINGULAR
+grasa	27009,NOUN,ADJECTIVE,SINGULAR
+falsa	26998,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+cueva	26960,NOUN,SINGULAR
+sonar	26940,VERB,NOUN,SINGULAR
+trago	26873,NOUN,VERB,SINGULAR
+malos	26813,ADJECTIVE,NOUN,PLURAL
+votos	26767,NOUN,PLURAL
+costo	26708,NOUN,SINGULAR
+medir	26675,VERB
+corre	26617,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+genio	26607,NOUN,SINGULAR
+vapor	26603,NOUN,SINGULAR
+meter	26588,VERB
+copas	26481,NOUN,VERB,PLURAL
+conde	26414,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rural	26411,ADJECTIVE,NOUN,SINGULAR
+aldea	26303,NOUN,SINGULAR
+negar	26290,VERB
+altar	26285,NOUN,SINGULAR
+hueso	26251,NOUN,SINGULAR
+digno	26182,ADJECTIVE,VERB
+sobre	26118,PREPOSITION,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+pongo	26101,NOUN,VERB,SINGULAR
+filas	26036,NOUN,VERB,PLURAL
+llamo	25914,VERB
+copia	25865,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pollo	25732,NOUN,ADJECTIVE,SINGULAR
+darte	25684,VERB,INF
+rocas	25536,ADJECTIVE,NOUN,PLURAL
+vasos	25509,NOUN,PLURAL
+piano	25496,NOUN,SINGULAR
+bajas	25393,ADJECTIVE,NOUN,VERB,PLURAL
+toque	25279,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cinta	25270,NOUN,SINGULAR
+barro	25219,NOUN,VERB,SINGULAR
+lleve	25188,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+bordo	25104,NOUN,VERB,SINGULAR
+duele	24884,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+falda	24881,NOUN,SINGULAR
+toman	24528,VERB
+celos	24191,NOUN,SINGULAR
+bello	24162,ADJECTIVE
+fruta	24131,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+huevo	24130,NOUN,SINGULAR
+velas	24107,NOUN,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL
+tirar	24075,VERB
+celda	24047,NOUN,SINGULAR
+nacer	23944,VERB
+girar	23930,VERB
+curva	23903,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+verbo	23874,NOUN,SINGULAR
+pelea	23850,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+bomba	23838,NOUN,ADJECTIVE,SINGULAR
+pagos	23829,NOUN,PLURAL
+pasta	23747,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cifra	23737,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lecho	23656,NOUN,VERB,SINGULAR
+finca	23453,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+gotas	23386,NOUN,PLURAL
+bella	23222,ADJECTIVE
+hecha	23203,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+abuso	23161,NOUN,VERB,SINGULAR
+yendo	23079,VERB,INFLECTED_FORM,PRES_PART
+capas	23006,NOUN,VERB,PLURAL
+duelo	22915,NOUN,VERB,SINGULAR
+aviso	22851,NOUN,VERB,SINGULAR
+prima	22792,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+lenta	22766,ADJECTIVE
+pulso	22759,NOUN,VERB,SINGULAR
+nueve	22718,NUMERAL,NOUN,SINGULAR
+brisa	22696,NOUN,SINGULAR
+duras	22651,ADJECTIVE,VERB
+rodea	22636,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ponga	22597,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+diosa	22432,NOUN,SINGULAR
+villa	22416,NOUN,SINGULAR
+muere	22344,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+vayas	22183,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+hablo	22140,VERB
+casco	22047,NOUN,VERB,SINGULAR
+pluma	21989,NOUN,SINGULAR
+rueda	21868,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+justa	21804,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rubio	21654,ADJECTIVE,NOUN,SINGULAR
+venas	21497,NOUN,PLURAL
+verso	21331,ADJECTIVE,NOUN,VERB,SINGULAR
+solar	21289,NOUN,VERB,ADJECTIVE,SINGULAR
+peces	21184,NOUN,PLURAL
+selva	21181,NOUN,SINGULAR
+acabo	21100,NOUN,VERB,SINGULAR
+ropas	20866,NOUN,PLURAL
+bajos	20719,ADJECTIVE,NOUN,PLURAL
+damos	20661,VERB
+virus	20619,NOUN,SINGULAR
+niega	20589,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+crema	20582,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+salga	20557,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+rojas	20494,ADJECTIVE,NOUN,PLURAL
+grano	20483,NOUN,VERB,SINGULAR
+entre	20410,PREPOSITION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+oliva	20293,NOUN,SINGULAR
+vayan	20262,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+apoya	20260,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+verle	20206,VERB,INF
+citas	20174,NOUN,VERB,PLURAL
+rigor	20167,NOUN,SINGULAR
+naves	20163,NOUN,PLURAL
+crean	20122,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tasas	20080,NOUN,VERB,PLURAL
+ajeno	20074,ADJECTIVE
+damas	20049,NOUN,PLURAL
+sello	19997,NOUN,VERB,SINGULAR
+fatal	19973,ADJECTIVE,ADVERB
+guapo	19967,NOUN,ADJECTIVE,SINGULAR
+sutil	19966,ADJECTIVE
+sufre	19916,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+juega	19864,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+socio	19743,NOUN,SINGULAR
+hondo	19672,ADJECTIVE,ADVERB
+ancho	19599,ADJECTIVE,NOUN,VERB,SINGULAR
+drama	19594,NOUN,SINGULAR
+ricos	19584,ADJECTIVE
+manta	19543,NOUN,SINGULAR
+danza	19488,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aguda	19190,ADJECTIVE
+lazos	19123,NOUN,PLURAL
+suyas	19086,DETERMINER,PRONOUN
+crece	18934,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+joyas	18843,ADJECTIVE,NOUN,PLURAL
+genes	18779,NOUN,PLURAL
+dejes	18693,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+ajena	18689,ADJECTIVE
+viuda	18626,NOUN,ADJECTIVE,SINGULAR
+agudo	18533,ADJECTIVE
+pisos	18520,NOUN,PLURAL
+fijar	18437,VERB
+rasgo	18374,NOUN,VERB,SINGULAR
+males	18356,NOUN,PLURAL
+santa	18320,NOUN,ADJECTIVE,SINGULAR
+rojos	18290,ADJECTIVE,NOUN,PLURAL
+usaba	18245,VERB,3PS,INFLECTED_FORM
+pares	18209,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+miran	18189,VERB
+tacto	18187,NOUN,SINGULAR
+retos	18182,NOUN,PLURAL
+ayude	18176,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+trigo	18153,NOUN,SINGULAR
+sorbo	18121,NOUN,VERB,SINGULAR
+rumor	17920,NOUN,SINGULAR
+cerdo	17832,ADJECTIVE,NOUN,SINGULAR
+quita	17829,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+dudar	17700,VERB
+fumar	17683,VERB
+sobra	17485,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fuere	17453,VERB,3PS,INFLECTED_FORM,SUBJ
+digna	17372,ADJECTIVE,VERB,3PS,IMP,INFLECTED_FORM
+cuota	17334,NOUN,SINGULAR
+amada	17318,ADJECTIVE,PARTICIPLE
+tribu	17198,NOUN,SINGULAR
+serlo	17177,VERB,INF
+tazas	17091,NOUN,PLURAL
+logro	16944,NOUN,VERB,SINGULAR
+droga	16902,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cubre	16884,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+manto	16877,NOUN,SINGULAR
+manga	16875,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+asume	16836,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+guapa	16836,ADJECTIVE
+ondas	16822,NOUN,PLURAL
+manda	16786,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+extra	16781,ADJECTIVE,NOUN,SINGULAR
+tonos	16750,NOUN,PLURAL
+junta	16670,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lanza	16619,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+trama	16561,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+caldo	16505,NOUN,SINGULAR
+autos	16482,NOUN,PLURAL
+pesca	16479,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+minas	16474,NOUN,VERB,PLURAL
+sucio	16392,ADJECTIVE,ADVERB
+recta	16315,NOUN,ADJECTIVE,SINGULAR
+viste	16236,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,PAST
+placa	16230,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aguja	16112,NOUN,SINGULAR
+roles	16112,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+gatos	16093,NOUN,PLURAL
+cable	16015,NOUN,SINGULAR
+usado	15930,ADJECTIVE,PARTICIPLE
+mapas	15907,NOUN,PLURAL
+secos	15870,ADJECTIVE
+rompe	15722,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+fijos	15672,ADJECTIVE
+reojo	15637,NOUN,SINGULAR
+gases	15578,NOUN,PLURAL
+rutas	15547,NOUN,PLURAL
+ronca	15460,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+amado	15457,ADJECTIVE,PARTICIPLE
+pelos	15430,NOUN,PLURAL
+abren	15402,VERB
+guste	15389,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tonto	15381,ADJECTIVE,NOUN,SINGULAR
+aires	15325,NOUN,PLURAL
+tenso	15248,ADJECTIVE,VERB
+cobre	15216,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+rosas	15203,ADJECTIVE,NOUN,PLURAL
+salas	15156,NOUN,VERB,PLURAL
+fibra	15117,NOUN,SINGULAR
+fallo	15095,NOUN,VERB,SINGULAR
+vinos	15035,NOUN,PLURAL
+tinta	14949,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+kilos	14948,NOUN,PLURAL
+cesar	14918,VERB
+robar	14891,VERB
+vivas	14731,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+monto	14709,NOUN,VERB,SINGULAR
+sabio	14707,ADJECTIVE,NOUN,SINGULAR
+citar	14530,VERB
+flota	14519,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+unido	14469,ADJECTIVE,PARTICIPLE
+dejas	14438,NOUN,VERB,PLURAL
+huida	14386,NOUN,PARTICIPLE,SINGULAR
+mitos	14355,NOUN,PLURAL
+tensa	14307,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+buque	14301,NOUN,SINGULAR
+hilos	14259,NOUN,PLURAL
+aleja	14169,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+veras	14137,NOUN,ADJECTIVE,PLURAL
+sucia	14087,ADJECTIVE
+tramo	14065,NOUN,VERB,SINGULAR
+vejez	14031,NOUN,SINGULAR
+llego	14022,VERB
+video	13998,NOUN,SINGULAR
+locos	13988,ADJECTIVE,NOUN,PLURAL
+torso	13977,NOUN,SINGULAR
+codos	13907,ADJECTIVE,NOUN,PLURAL
+feroz	13860,ADJECTIVE
+mares	13816,NOUN,PLURAL
+nadar	13780,VERB
+acoso	13775,NOUN,VERB,SINGULAR
+globo	13742,NOUN,SINGULAR
+ciego	13739,NOUN,ADJECTIVE,VERB,SINGULAR
+bruja	13732,NOUN,SINGULAR
+cinco	13731,NUMERAL,NOUN,SINGULAR
+enojo	13674,NOUN,VERB,SINGULAR
+muslo	13660,NOUN,SINGULAR
+creas	13605,VERB,INFLECTED_FORM,SUBJ
+susto	13548,NOUN,SINGULAR
+besar	13540,VERB
+ruina	13511,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+talla	13441,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+jaula	13357,NOUN,SINGULAR
+macho	13304,ADJECTIVE,NOUN,VERB,SINGULAR
+vengo	13300,VERB
+rival	13246,ADJECTIVE,NOUN,SINGULAR
+senos	13233,NOUN,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL
+balas	13226,NOUN,VERB,PLURAL
+vende	13223,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+natal	13214,ADJECTIVE
+raras	13197,ADJECTIVE
+gozar	13175,VERB
+camas	13173,NOUN,PLURAL
+barca	13141,NOUN,SINGULAR
+temer	13123,VERB
+unida	13050,ADJECTIVE,PARTICIPLE
+salgo	13048,VERB
+curar	12997,VERB
+secas	12920,ADJECTIVE,VERB
+ruego	12812,NOUN,VERB,SINGULAR
+senda	12764,NOUN,SINGULAR
+tenue	12760,ADJECTIVE
+chino	12705,ADJECTIVE,NOUN,SINGULAR
+vacas	12704,ADJECTIVE,NOUN,VERB,PLURAL
+orina	12673,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alude	12621,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+duros	12515,ADJECTIVE,NOUN,PLURAL
+bodas	12466,NOUN,PLURAL
+china	12461,NOUN,ADJECTIVE,SINGULAR
+bares	12437,NOUN,PLURAL
+pizca	12428,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ancha	12407,ADJECTIVE,VERB,NOUN,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+dones	12371,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+multa	12367,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cruce	12339,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+plomo	12335,NOUN,SINGULAR
+hadas	12313,NOUN,PLURAL
+bando	12291,NOUN,SINGULAR
+tonta	12246,NOUN,ADJECTIVE,SINGULAR
+ceder	12203,VERB
+irnos	12107,VERB,INF
+razas	12066,NOUN,PLURAL
+prosa	12048,NOUN,SINGULAR
+mutuo	12035,ADJECTIVE
+apego	11921,NOUN,VERB,SINGULAR
+evita	11911,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+harto	11873,ADJECTIVE,ADVERB,VERB
+durar	11756,VERB
+nieto	11743,NOUN,SINGULAR
+monje	11711,NOUN,SINGULAR
+lobos	11697,NOUN,PLURAL
+acabe	11621,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tropa	11607,NOUN,SINGULAR
+panel	11576,NOUN,SINGULAR
+dados	11549,NOUN,PARTICIPLE,PLURAL
+sirva	11531,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rubia	11530,NOUN,ADJECTIVE,SINGULAR
+ratas	11522,NOUN,PLURAL
+elige	11481,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+llame	11455,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dejen	11416,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cruza	11383,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pinta	11356,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+torpe	11343,ADJECTIVE,NOUN,SINGULAR
+digan	11339,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lavar	11338,VERB
+atado	11327,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+marea	11319,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+piden	11271,VERB
+dimos	11199,VERB,INFLECTED_FORM,PAST
+rezar	11164,VERB
+freno	11160,NOUN,VERB,SINGULAR
+ronda	11156,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+atrae	11154,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ricas	11115,ADJECTIVE,NOUN,PLURAL
+sexto	11073,ADJECTIVE,NOUN,SINGULAR
+palos	11065,NOUN,PLURAL
+tenis	11065,NOUN,SINGULAR
+gorra	11045,NOUN,SINGULAR
+burla	11008,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+trapo	10963,NOUN,SINGULAR
+desee	10954,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nacen	10951,VERB
+truco	10941,NOUN,VERB,SINGULAR
+linda	10909,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+fugaz	10876,ADJECTIVE
+vicio	10848,NOUN,VERB,SINGULAR
+optar	10832,VERB
+entes	10802,NOUN,PLURAL
+gordo	10798,ADJECTIVE,NOUN,SINGULAR
+tarta	10789,NOUN,SINGULAR
+telas	10775,NOUN,PLURAL
+rotos	10745,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+finas	10731,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+hacha	10690,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ansia	10662,NOUN,SINGULAR
+rollo	10594,NOUN,SINGULAR
+shock	10567,NOUN,SINGULAR
+casar	10535,VERB
+guiar	10505,VERB
+busco	10503,VERB
+banca	10498,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+deban	10498,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+honra	10423,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+arcos	10411,NOUN,PLURAL
+pagan	10383,VERB
+ardor	10381,NOUN,SINGULAR
+guion	10333,NOUN,SINGULAR
+canta	10312,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tubos	10310,NOUN,PLURAL
+ratos	10287,NOUN,PLURAL
+queja	10276,NOUN,VERB,3PS,IMP,INFLECTED_FORM,SINGULAR
+mango	10262,NOUN,VERB,FORM_OF,INFLECTED_FORM,SINGULAR
+preso	10241,ADJECTIVE,NOUN,SINGULAR
+ritos	10225,NOUN,PLURAL
+sanos	10204,ADJECTIVE
+eleva	10192,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bolas	10166,ADJECTIVE,NOUN,PLURAL
+nazis	10162,ADJECTIVE,NOUN,PLURAL
+yemas	10132,NOUN,PLURAL
+renal	10121,ADJECTIVE
+traen	10107,VERB
+basan	10106,VERB
+tenor	10086,NOUN,SINGULAR
+nieta	10070,NOUN,SINGULAR
+molde	10061,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+polla	10049,NOUN,ADJECTIVE,SINGULAR
+comen	10025,VERB
+aulas	10009,NOUN,PLURAL
+cazar	9952,VERB
+pones	9922,VERB
+perra	9786,NOUN,ADJECTIVE,SINGULAR
+sepan	9772,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ayuno	9769,ADJECTIVE,NOUN,VERB,SINGULAR
+papas	9756,NOUN,VERB,PLURAL
+censo	9737,NOUN,VERB,SINGULAR
+feria	9728,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+diese	9714,VERB,3PS,INFLECTED_FORM,SUBJ
+bulto	9699,NOUN,SINGULAR
+votar	9674,VERB
+cesta	9642,NOUN,SINGULAR
+huele	9592,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sexos	9585,NOUN,PLURAL
+recto	9582,ADJECTIVE,NOUN,SINGULAR
+peste	9564,NOUN,SINGULAR
+grita	9563,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+opone	9550,VERB,3PS,INFLECTED_FORM
+clero	9544,NOUN,SINGULAR
+jarra	9526,NOUN,SINGULAR
+opera	9505,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mutua	9499,ADJECTIVE
+rodar	9486,VERB
+licor	9345,NOUN,SINGULAR
+cobro	9337,NOUN,VERB,SINGULAR
+colmo	9312,NOUN,ADJECTIVE,VERB,SINGULAR
+densa	9288,ADJECTIVE
+tutor	9279,NOUN,SINGULAR
+caiga	9276,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tiros	9269,NOUN,PLURAL
+pizza	9253,NOUN,SINGULAR
+leves	9191,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+bocas	9189,NOUN,PLURAL
+toros	9175,NOUN,PLURAL
+sumar	9131,VERB
+denso	9118,ADJECTIVE,VERB
+indio	9086,ADJECTIVE,NOUN,SINGULAR
+cabra	9068,NOUN,SINGULAR
+roble	9055,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ficha	9037,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+monja	9030,NOUN,SINGULAR
+tomas	9029,NOUN,VERB,PLURAL
+circo	9014,NOUN,SINGULAR
+fetal	9009,ADJECTIVE
+hable	9002,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tiras	8987,NOUN,VERB,PLURAL
+usada	8977,ADJECTIVE,PARTICIPLE
+muero	8956,VERB
+sigan	8947,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+veloz	8922,ADJECTIVE
+lucro	8912,NOUN,VERB,SINGULAR
+saldo	8904,NOUN,VERB,SINGULAR
+obrar	8819,VERB
+habia	8807,VERB
+cacao	8768,NOUN,SINGULAR
+pisar	8767,VERB
+sordo	8717,ADJECTIVE,NOUN,SINGULAR
+pegar	8711,VERB
+curas	8677,ADJECTIVE,NOUN,VERB,PLURAL
+dorso	8663,NOUN,SINGULAR
+miras	8654,NOUN,VERB,PLURAL
+moros	8627,NOUN,PLURAL
+sepas	8584,VERB,INFLECTED_FORM,SUBJ
+acude	8577,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+diste	8564,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,PAST,SUBJ
+asilo	8538,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+verja	8504,NOUN,SINGULAR
+valla	8496,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+picos	8487,NOUN,PLURAL
+finos	8485,ADJECTIVE
+gorro	8485,NOUN,SINGULAR
+monos	8454,ADJECTIVE,NOUN,PLURAL
+rigen	8453,VERB
+valer	8430,VERB
+viaja	8382,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+armar	8375,VERB
+porte	8364,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+sodio	8364,NOUN,SINGULAR
+usual	8341,ADJECTIVE
+sanar	8315,VERB
+vasto	8306,ADJECTIVE
+riego	8298,NOUN,VERB,SINGULAR
+cerro	8277,NOUN,SINGULAR
+cauce	8273,NOUN,SINGULAR
+bonos	8261,ADJECTIVE,NOUN,PLURAL
+sonda	8255,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+suite	8244,NOUN,SINGULAR
+soplo	8241,NOUN,VERB,SINGULAR
+pases	8139,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+gallo	8129,NOUN,SINGULAR
+clavo	8103,NOUN,VERB,SINGULAR
+emite	8069,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pasto	8068,NOUN,VERB,SINGULAR
+cobra	8048,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+andan	8038,VERB
+vello	7981,NOUN,SINGULAR
+lindo	7978,ADJECTIVE,VERB
+alzar	7899,VERB
+pudor	7880,NOUN,SINGULAR
+tigre	7842,NOUN,SINGULAR
+muera	7838,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+actas	7831,NOUN,PLURAL
+fauna	7789,NOUN,SINGULAR
+robot	7772,NOUN,SINGULAR
+huido	7770,NOUN,PARTICIPLE,SINGULAR
+pasen	7714,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+grifo	7651,NOUN,ADJECTIVE,SINGULAR
+himno	7635,NOUN,SINGULAR
+tocan	7611,VERB
+fluye	7580,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bruma	7520,NOUN,SINGULAR
+atroz	7515,ADJECTIVE
+rusos	7510,ADJECTIVE,NOUN,PLURAL
+torno	7507,NOUN,VERB,SINGULAR
+pinos	7455,NOUN,PLURAL
+gorda	7445,NOUN,ADJECTIVE,SINGULAR
+vasta	7411,ADJECTIVE
+farsa	7387,NOUN,SINGULAR
+fusil	7385,NOUN,SINGULAR
+pilar	7372,NOUN,VERB,SINGULAR
+pauta	7367,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ganan	7334,VERB
+focos	7329,NOUN,PLURAL
+criar	7316,VERB
+valen	7248,VERB
+dadas	7226,PARTICIPLE
+cruda	7224,NOUN,ADJECTIVE,SINGULAR
+matiz	7210,NOUN,SINGULAR
+rotas	7194,ADJECTIVE,NOUN,PARTICIPLE,VERB,PLURAL
+sesgo	7190,ADJECTIVE,NOUN,VERB,SINGULAR
+yegua	7168,NOUN,SINGULAR
+furor	7149,NOUN,SINGULAR
+tomen	7141,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+audaz	7114,ADJECTIVE
+tibia	7106,ADJECTIVE,NOUN,SINGULAR
+suben	7065,VERB
+oveja	7058,NOUN,SINGULAR
+caros	7046,ADJECTIVE
+mosca	7024,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+narra	7016,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lapso	6988,NOUN,SINGULAR
+botes	6948,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+niego	6947,VERB
+avena	6934,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+miles	6923,NOUN,NUMERAL,PLURAL
+tumor	6905,NOUN,SINGULAR
+after	6897,NOUN,SINGULAR
+nasal	6895,ADJECTIVE,NOUN,SINGULAR
+cubos	6872,NOUN,PLURAL
+sacos	6864,NOUN,PLURAL
+matan	6860,VERB
+asoma	6805,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+torna	6805,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lagos	6795,NOUN,PLURAL
+ciega	6765,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+raros	6746,ADJECTIVE
+vigas	6742,NOUN,PLURAL
+harta	6740,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+gozan	6722,VERB
+latas	6720,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+atada	6709,ADJECTIVE,PARTICIPLE
+joder	6661,VERB,INTERJECTION,ADVERB
+prado	6655,NOUN,SINGULAR
+plana	6630,NOUN,ADJECTIVE,SINGULAR
+pilas	6621,INTERJECTION,NOUN,VERB,PLURAL
+salva	6473,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tarda	6460,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+salta	6458,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sacan	6451,VERB
+tallo	6446,NOUN,VERB,SINGULAR
+audio	6442,NOUN,SINGULAR
+fosas	6409,NOUN,VERB,PLURAL
+rejas	6400,NOUN,PLURAL
+tetas	6384,ADJECTIVE,NOUN,PLURAL
+vives	6382,VERB,INFLECTED_FORM,SUBJ
+canon	6378,NOUN,SINGULAR
+casta	6372,NOUN,ADJECTIVE,SINGULAR
+burro	6353,NOUN,ADJECTIVE,SINGULAR
+zorro	6353,NOUN,ADJECTIVE,SINGULAR
+apodo	6348,NOUN,VERB,SINGULAR
+fijas	6335,ADJECTIVE,VERB
+flora	6312,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+goles	6291,NOUN,PLURAL
+naval	6276,ADJECTIVE
+anexo	6272,ADJECTIVE,NOUN,VERB,SINGULAR
+herir	6254,VERB
+coser	6252,VERB
+omiso	6251,ADJECTIVE
+valga	6250,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+islam	6249,NOUN,SINGULAR
+secar	6239,VERB
+trazo	6222,NOUN,VERB,SINGULAR
+malla	6206,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+polos	6206,NOUN,PLURAL
+viese	6206,VERB,3PS,INFLECTED_FORM,SUBJ
+bajan	6170,VERB
+rubor	6170,NOUN,SINGULAR
+hedor	6153,NOUN,SINGULAR
+abono	6135,NOUN,VERB,SINGULAR
+cofre	6135,NOUN,SINGULAR
+fuero	6135,NOUN,SINGULAR
+hazlo	6131,VERB,IMP,INFLECTED_FORM
+acoge	6127,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+menta	6115,NOUN,SINGULAR
+dotar	6111,VERB
+letal	6103,ADJECTIVE
+plaga	6094,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cabos	6093,NOUN,PLURAL
+echan	6088,VERB
+funda	6067,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+giros	6045,NOUN,PLURAL
+apaga	6029,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+temen	6012,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+hunde	6005,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bicho	6004,NOUN,SINGULAR
+rifle	5990,NOUN,SINGULAR
+ocaso	5988,NOUN,SINGULAR
+honda	5960,NOUN,ADJECTIVE,SINGULAR
+mozos	5950,ADJECTIVE,NOUN,PLURAL
+heces	5917,NOUN,PLURAL
+dotes	5912,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+algas	5907,NOUN,PLURAL
+tenia	5898,NOUN,SINGULAR
+ubica	5883,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+demos	5880,NOUN,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL,SUBJ
+della	5867,CONTRACTION
+evoca	5861,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+suero	5856,NOUN,SINGULAR
+sumas	5845,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+tango	5810,NOUN,VERB,SINGULAR
+opina	5796,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+suman	5795,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+calla	5765,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tuyos	5755,DETERMINER,PRONOUN
+icono	5744,NOUN,SINGULAR
+fiera	5743,NOUN,ADJECTIVE,SINGULAR
+cenas	5739,NOUN,VERB,PLURAL
+choza	5737,NOUN,SINGULAR
+logre	5733,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+anima	5714,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pague	5712,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+borda	5689,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+putas	5685,ADVERB,ADJECTIVE,NOUN,PLURAL
+nudos	5682,ADJECTIVE,NOUN,PLURAL
+juzga	5676,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+robos	5671,NOUN,PLURAL
+poste	5644,NOUN,SINGULAR
+pozos	5630,NOUN,PLURAL
+facto	5625,NOUN,SINGULAR
+otras	5532,DETERMINER,INTERJECTION,PRONOUN
+obvia	5524,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tomes	5523,VERB,INFLECTED_FORM,SUBJ
+foros	5499,NOUN,PLURAL
+cerco	5478,NOUN,VERB,SINGULAR
+lomos	5464,NOUN,PLURAL
+tapar	5445,VERB
+place	5440,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+opuso	5436,VERB,3PS,INFLECTED_FORM,PAST
+recae	5431,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+locas	5415,ADJECTIVE,NOUN,PLURAL
+gemir	5414,VERB
+puras	5403,ADJECTIVE
+pavor	5397,NOUN,SINGULAR
+colas	5375,NOUN,VERB,PLURAL
+sabia	5357,NOUN,ADJECTIVE,SINGULAR
+tapas	5326,NOUN,VERB,PLURAL
+musgo	5320,NOUN,SINGULAR
+coach	5315,NOUN,SINGULAR
+vuela	5294,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lucir	5293,VERB
+chile	5284,NOUN,SINGULAR
+apuro	5280,NOUN,VERB,SINGULAR
+varas	5275,ADJECTIVE,NOUN,VERB,PLURAL
+zorra	5275,NOUN,ADJECTIVE,SINGULAR
+panes	5258,NOUN,PLURAL
+mires	5252,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+pasas	5246,ADJECTIVE,NOUN,VERB,PLURAL
+rodeo	5227,NOUN,VERB,SINGULAR
+nicho	5223,NOUN,SINGULAR
+bruto	5211,ADJECTIVE,NOUN,SINGULAR
+puros	5210,ADJECTIVE,NOUN,PLURAL
+secta	5209,NOUN,SINGULAR
+mixta	5202,ADJECTIVE
+sanas	5201,ADJECTIVE,VERB
+buceo	5165,NOUN,VERB,SINGULAR
+copos	5164,NOUN,PLURAL
+dogma	5155,NOUN,SINGULAR
+litro	5134,NOUN,SINGULAR
+yogur	5114,NOUN,SINGULAR
+faena	5112,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+golfo	5111,NOUN,ADJECTIVE,SINGULAR
+jurar	5101,VERB
+farol	5090,NOUN,SINGULAR
+quito	5088,ADJECTIVE,VERB
+tomos	5037,NOUN,PLURAL
+folio	5033,NOUN,VERB,SINGULAR
+cocer	5026,VERB
+llora	5023,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sable	4988,ADJECTIVE,NOUN,SINGULAR
+mareo	4969,NOUN,VERB,SINGULAR
+venda	4967,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+setas	4959,NOUN,PLURAL
+mafia	4944,NOUN,SINGULAR
+mulas	4936,NOUN,PLURAL
+semen	4932,NOUN,SINGULAR
+tinto	4926,ADJECTIVE,NOUN,VERB,SINGULAR
+elfos	4921,NOUN,PLURAL
+batir	4919,VERB
+ocupe	4918,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vasco	4914,ADJECTIVE,NOUN,SINGULAR
+suene	4912,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+grata	4904,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+giran	4901,VERB
+tanta	4889,DETERMINER
+mueva	4868,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+carpa	4860,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tibio	4860,ADJECTIVE
+remos	4858,NOUN,PLURAL
+odiar	4853,VERB
+grato	4838,ADJECTIVE,VERB
+trece	4823,NUMERAL,NOUN,SINGULAR
+magos	4814,ADJECTIVE,NOUN,PLURAL
+enano	4810,ADJECTIVE,NOUN,SINGULAR
+oasis	4797,NOUN,SINGULAR
+agota	4795,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+filme	4789,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+rampa	4789,NOUN,SINGULAR
+libra	4788,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tenaz	4781,ADJECTIVE
+sudar	4777,VERB
+vodka	4774,NOUN,SINGULAR
+taxis	4764,NOUN,PLURAL
+sorda	4737,NOUN,ADJECTIVE,SINGULAR
+balsa	4699,NOUN,SINGULAR
+cuida	4684,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lunas	4683,NOUN,PLURAL
+lunar	4670,ADJECTIVE,NOUN,SINGULAR
+llano	4666,ADJECTIVE,NOUN,SINGULAR
+pesas	4665,NOUN,VERB,PLURAL
+agita	4652,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sorna	4648,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+micro	4643,NOUN,SINGULAR
+razon	4643,NOUN,SINGULAR
+acusa	4631,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+vocal	4622,NOUN,ADJECTIVE,SINGULAR
+velar	4612,ADJECTIVE,VERB
+tacos	4592,NOUN,PLURAL
+ataca	4579,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+brote	4558,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+frito	4552,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PAST_PART,SINGULAR
+balde	4547,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+polis	4547,NOUN,PLURAL
+human	4540,VERB
+mixto	4534,ADJECTIVE,NOUN,SINGULAR
+pides	4519,VERB
+miden	4506,VERB
+panza	4505,NOUN,SINGULAR
+perla	4498,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+busto	4490,NOUN,SINGULAR
+dicta	4479,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+faros	4466,NOUN,VERB,INF,PLURAL
+gruta	4459,NOUN,SINGULAR
+palmo	4454,NOUN,VERB,SINGULAR
+fijan	4443,VERB
+ponte	4437,VERB,IMP,INFLECTED_FORM
+fango	4434,NOUN,SINGULAR
+poros	4409,NOUN,PLURAL
+sexta	4405,NOUN,ADJECTIVE,SINGULAR
+sales	4396,VERB,NOUN,INFLECTED_FORM,PLURAL,SUBJ
+monta	4390,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+coral	4378,NOUN,ADJECTIVE,SINGULAR
+edema	4351,NOUN,SINGULAR
+forme	4348,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+fluir	4338,VERB
+bruta	4334,NOUN,ADJECTIVE,SINGULAR
+turba	4325,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+exija	4323,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+boxeo	4320,NOUN,VERB,SINGULAR
+lente	4317,NOUN,SINGULAR
+tripa	4316,NOUN,SINGULAR
+stock	4310,NOUN,SINGULAR
+paces	4303,NOUN,VERB,PLURAL
+bucle	4298,NOUN,SINGULAR
+caben	4298,VERB
+paran	4297,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cabal	4284,ADJECTIVE,ADVERB
+falte	4282,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+canas	4281,ADJECTIVE,NOUN,PLURAL
+elite	4273,NOUN,SINGULAR
+credo	4268,NOUN,SINGULAR
+yerno	4268,NOUN,SINGULAR
+posar	4260,VERB
+jerga	4250,NOUN,SINGULAR
+palco	4250,NOUN,SINGULAR
+meten	4246,VERB
+tecla	4239,NOUN,ADJECTIVE,SINGULAR
+oyera	4236,VERB,3PS,INFLECTED_FORM,SUBJ
+meros	4229,ADJECTIVE,NOUN,PLURAL
+vaina	4225,NOUN,SINGULAR
+arduo	4217,ADJECTIVE
+necio	4212,ADJECTIVE,NOUN,SINGULAR
+rinde	4205,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+vivan	4204,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+motel	4196,NOUN,SINGULAR
+sigas	4195,VERB,INFLECTED_FORM,SUBJ
+entro	4189,VERB
+cause	4188,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+india	4183,NOUN,ADJECTIVE,SINGULAR
+quema	4159,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+trote	4154,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tinte	4153,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ranas	4151,NOUN,PLURAL
+meras	4148,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+viril	4145,ADJECTIVE
+ayudo	4137,VERB
+ratio	4125,NOUN,SINGULAR
+traza	4122,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+flaco	4121,ADJECTIVE,NOUN,SINGULAR
+cesto	4096,NOUN,SINGULAR
+karma	4080,NOUN,SINGULAR
+belga	4077,ADJECTIVE,NOUN,SINGULAR
+omega	4072,NOUN,SINGULAR
+persa	4057,ADJECTIVE,NOUN,SINGULAR
+turco	4050,ADJECTIVE,NOUN,SINGULAR
+duran	4046,VERB
+fresa	4045,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rozar	4034,VERB
+atrio	4018,NOUN,SINGULAR
+blues	3983,NOUN,SINGULAR
+pulpa	3976,NOUN,SINGULAR
+pugna	3971,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+serle	3961,VERB,INF
+misas	3958,NOUN,VERB,PLURAL
+sopla	3956,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+milla	3954,NOUN,SINGULAR
+gasta	3950,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hitos	3943,NOUN,PLURAL
+caigo	3920,VERB
+vasca	3916,NOUN,ADJECTIVE,SINGULAR
+ancla	3912,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+dunas	3911,NOUN,PLURAL
+onzas	3910,NOUN,PLURAL
+canoa	3896,NOUN,SINGULAR
+tuyas	3894,DETERMINER,NOUN,PRONOUN,PLURAL
+suizo	3889,ADJECTIVE,NOUN,SINGULAR
+asomo	3879,NOUN,VERB,SINGULAR
+cavar	3871,VERB
+mande	3858,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nutre	3856,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sesos	3847,NOUN,PLURAL
+migas	3826,NOUN,VERB,PLURAL
+nidos	3826,NOUN,PLURAL
+garra	3823,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+verga	3820,NOUN,INTERJECTION,SINGULAR
+falla	3817,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+rompa	3816,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+becas	3804,NOUN,VERB,PLURAL
+iones	3779,NOUN,PLURAL
+latir	3779,VERB
+arder	3758,VERB
+vence	3750,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+nodos	3741,NOUN,PLURAL
+modas	3735,NOUN,PLURAL
+soles	3730,NOUN,PLURAL
+picar	3729,VERB
+halle	3713,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tarro	3708,NOUN,SINGULAR
+basal	3704,ADJECTIVE
+motos	3704,NOUN,PLURAL
+mural	3696,ADJECTIVE,NOUN,SINGULAR
+culta	3692,ADJECTIVE
+asado	3668,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+elija	3666,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+sedes	3649,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+jadeo	3638,NOUN,VERB,SINGULAR
+muevo	3620,VERB
+cotas	3619,NOUN,PLURAL
+lujos	3619,NOUN,PLURAL
+avisa	3618,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+horca	3610,NOUN,SINGULAR
+saque	3610,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+posea	3594,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+resta	3592,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+torta	3586,NOUN,SINGULAR
+patos	3580,NOUN,PLURAL
+pasea	3575,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+cisne	3571,NOUN,SINGULAR
+colon	3569,NOUN,SINGULAR
+urnas	3568,NOUN,PLURAL
+abeja	3567,NOUN,SINGULAR
+grava	3556,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+bilis	3555,NOUN,SINGULAR
+legua	3552,NOUN,SINGULAR
+polar	3539,ADJECTIVE,NOUN,SINGULAR
+corro	3525,NOUN,VERB,SINGULAR
+guiso	3521,NOUN,VERB,SINGULAR
+ligar	3508,VERB
+cetro	3505,NOUN,SINGULAR
+gacha	3493,NOUN,ADJECTIVE,SINGULAR
+jugos	3489,NOUN,PLURAL
+bayas	3483,ADJECTIVE,NOUN,PLURAL
+olivo	3483,NOUN,SINGULAR
+sufra	3483,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+surco	3479,NOUN,VERB,SINGULAR
+dicte	3477,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cinto	3471,NOUN,SINGULAR
+radar	3471,NOUN,SINGULAR
+amago	3460,NOUN,VERB,SINGULAR
+fiero	3458,ADJECTIVE
+baila	3456,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tiran	3439,VERB
+citan	3438,VERB
+regir	3430,VERB
+traes	3421,VERB
+beben	3396,VERB
+funde	3393,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pagas	3391,NOUN,VERB,PLURAL
+huyen	3379,VERB
+matas	3377,NOUN,VERB,PLURAL
+netos	3376,ADJECTIVE
+guisa	3371,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+adoro	3358,NOUN,VERB,SINGULAR
+zanja	3354,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cimas	3351,NOUN,VERB,PLURAL
+cuyas	3350,DETERMINER
+surja	3347,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pidas	3342,VERB,INFLECTED_FORM,SUBJ
+pesan	3338,VERB
+opaco	3337,ADJECTIVE,VERB
+cansa	3335,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hongo	3316,NOUN,SINGULAR
+plebe	3314,NOUN,SINGULAR
+pecar	3310,VERB
+talle	3305,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+blogs	3289,NOUN,PLURAL
+pinza	3277,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+morro	3272,NOUN,SINGULAR
+quepa	3271,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rugby	3269,NOUN,SINGULAR
+astro	3263,NOUN,SINGULAR
+desta	3258,CONTRACTION
+savia	3252,NOUN,SINGULAR
+lanzo	3251,VERB
+quite	3248,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+sirvo	3248,VERB
+chapa	3245,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mecha	3245,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pompa	3245,NOUN,ADJECTIVE,SINGULAR
+crudo	3240,ADJECTIVE,NOUN,SINGULAR
+mesmo	3220,ADJECTIVE
+cuide	3213,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tapiz	3195,NOUN,SINGULAR
+vagar	3195,VERB
+anota	3193,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tejer	3193,VERB
+arcas	3188,NOUN,PLURAL
+cepas	3184,NOUN,PLURAL
+ramos	3168,NOUN,PLURAL
+ahoga	3162,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+suela	3122,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tejas	3122,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+maten	3113,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+emana	3110,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+darlo	3099,VERB,INF
+traga	3093,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+borra	3087,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+logia	3086,NOUN,SINGULAR
+dosel	3082,NOUN,SINGULAR
+cubra	3071,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dobla	3071,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+vulgo	3067,NOUN,ADVERB,SINGULAR
+trans	3066,ADJECTIVE,NOUN,SINGULAR
+catre	3057,NOUN,SINGULAR
+odian	3050,VERB
+ollas	3049,NOUN,PLURAL
+conos	3043,NOUN,PLURAL
+bucal	3028,ADJECTIVE
+galas	3027,ADJECTIVE,NOUN,PLURAL
+salmo	3024,NOUN,SINGULAR
+jaleo	3018,NOUN,VERB,SINGULAR
+falto	3017,ADJECTIVE,VERB
+papal	3017,ADJECTIVE
+banal	3015,ADJECTIVE
+mayas	3015,ADJECTIVE,NOUN,VERB,PLURAL
+fazer	3013,VERB
+diana	3011,NOUN,SINGULAR
+odios	3007,NOUN,PLURAL
+palas	2994,NOUN,PLURAL
+caoba	2985,ADJECTIVE,NOUN,SINGULAR
+duela	2983,VERB,NOUN,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+brujo	2982,NOUN,SINGULAR
+evite	2980,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ardua	2977,ADJECTIVE
+rusas	2972,ADJECTIVE,NOUN,PLURAL
+sense	2960,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+alzan	2955,VERB
+sueco	2955,ADJECTIVE,NOUN,SINGULAR
+finge	2954,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ocupo	2946,VERB
+cuela	2940,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pulpo	2935,NOUN,SINGULAR
+peine	2932,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+fugas	2926,NOUN,VERB,PLURAL
+limbo	2923,NOUN,SINGULAR
+lotes	2922,NOUN,PLURAL
+pecas	2922,NOUN,VERB,PLURAL
+floja	2921,ADJECTIVE
+viral	2921,ADJECTIVE
+anula	2920,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+veros	2920,ADJECTIVE,NOUN,VERB,INF,PLURAL
+ninfa	2918,NOUN,SINGULAR
+logos	2912,NOUN,PLURAL
+clava	2909,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+turca	2907,NOUN,ADJECTIVE,SINGULAR
+tosco	2905,ADJECTIVE
+dique	2904,NOUN,INTERJECTION,SINGULAR
+agria	2901,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tempo	2899,NOUN,SINGULAR
+jarro	2896,NOUN,SINGULAR
+nuera	2891,NOUN,SINGULAR
+azote	2886,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ebrio	2873,ADJECTIVE
+coros	2869,NOUN,PLURAL
+arado	2867,NOUN,PARTICIPLE,SINGULAR
+sopas	2844,NOUN,VERB,PLURAL
+alias	2839,ADVERB,NOUN,SINGULAR
+house	2832,NOUN,SINGULAR
+atajo	2831,NOUN,VERB,SINGULAR
+potro	2831,NOUN,SINGULAR
+flote	2830,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+abran	2813,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+asuma	2812,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+frota	2812,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hiere	2811,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lance	2806,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+choca	2802,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+capta	2799,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+jueza	2796,NOUN,SINGULAR
+apela	2793,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+veraz	2778,ADJECTIVE
+email	2769,NOUN,SINGULAR
+rubro	2762,NOUN,SINGULAR
+prior	2755,NOUN,SINGULAR
+aptos	2754,ADJECTIVE
+tedio	2748,NOUN,SINGULAR
+higos	2739,NOUN,PLURAL
+daros	2738,VERB,INF
+rapto	2737,NOUN,VERB,SINGULAR
+ebook	2735,NOUN,SINGULAR
+humos	2721,NOUN,PLURAL
+sidra	2721,NOUN,SINGULAR
+clubs	2716,NOUN,PLURAL
+adobe	2715,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+polen	2711,NOUN,VERB,SINGULAR
+pique	2708,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+porno	2697,ADJECTIVE,NOUN,SINGULAR
+agrio	2694,ADJECTIVE,VERB
+llana	2694,NOUN,ADJECTIVE,SINGULAR
+pubis	2690,NOUN,SINGULAR
+cines	2687,NOUN,PLURAL
+sauce	2687,NOUN,SINGULAR
+roban	2683,VERB
+toser	2683,VERB
+yelmo	2676,NOUN,SINGULAR
+cedro	2671,NOUN,SINGULAR
+laico	2666,ADJECTIVE,NOUN,SINGULAR
+gramo	2661,NOUN,SINGULAR
+amara	2652,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+fardo	2644,NOUN,VERB,SINGULAR
+mugre	2639,NOUN,SINGULAR
+moras	2637,NOUN,VERB,PLURAL
+parir	2628,VERB
+aorta	2627,NOUN,SINGULAR
+ruega	2623,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+jeque	2621,NOUN,SINGULAR
+setos	2617,NOUN,PLURAL
+llene	2609,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+goteo	2607,NOUN,VERB,SINGULAR
+echas	2603,VERB
+velos	2599,NOUN,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL
+mudar	2597,VERB,NOUN,SINGULAR
+hallo	2590,VERB
+rezos	2587,NOUN,PLURAL
+horda	2585,NOUN,SINGULAR
+lobby	2584,NOUN,SINGULAR
+regar	2582,VERB
+debut	2573,NOUN,SINGULAR
+graso	2569,ADJECTIVE
+yerba	2569,NOUN,SINGULAR
+laudo	2567,NOUN,VERB,SINGULAR
+mella	2545,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cariz	2543,NOUN,SINGULAR
+rogar	2543,VERB
+racha	2541,NOUN,SINGULAR
+idear	2539,VERB
+cases	2538,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+sacas	2536,NOUN,VERB,PLURAL
+mitin	2535,NOUN,SINGULAR
+poseo	2534,VERB
+jeans	2533,NOUN,PLURAL
+chivo	2525,NOUN,ADJECTIVE,VERB,SINGULAR
+tosca	2525,NOUN,ADJECTIVE,SINGULAR
+corra	2524,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+hurto	2514,NOUN,VERB,SINGULAR
+vivaz	2514,ADJECTIVE
+ethos	2513,NOUN,SINGULAR
+laica	2512,ADJECTIVE
+erige	2510,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pavos	2504,NOUN,PLURAL
+regia	2502,ADJECTIVE
+fobia	2501,NOUN,SINGULAR
+godos	2501,ADJECTIVE,NOUN,PLURAL
+peaje	2494,NOUN,SINGULAR
+cruzo	2489,VERB
+asada	2478,ADJECTIVE,PARTICIPLE
+mirad	2478,VERB,IMP,INFLECTED_FORM
+flash	2472,NOUN,SINGULAR
+stand	2472,NOUN,SINGULAR
+forro	2470,NOUN,VERB,SINGULAR
+sagaz	2468,ADJECTIVE
+super	2468,ADJECTIVE
+muger	2461,NOUN,SINGULAR
+antro	2455,NOUN,SINGULAR
+puzle	2455,NOUN,SINGULAR
+peras	2450,NOUN,PLURAL
+dudes	2448,VERB,INFLECTED_FORM,SUBJ
+litio	2447,NOUN,SINGULAR
+reses	2447,NOUN,PLURAL
+fonda	2446,NOUN,SINGULAR
+sopor	2429,NOUN,SINGULAR
+usara	2428,VERB,3PS,INFLECTED_FORM,SUBJ
+adora	2421,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ligas	2419,NOUN,VERB,PLURAL
+profe	2413,NOUN,SINGULAR
+viudo	2411,ADJECTIVE,NOUN,SINGULAR
+porta	2408,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+bravo	2400,ADJECTIVE,INTERJECTION
+coito	2387,NOUN,SINGULAR
+mocos	2387,NOUN,PLURAL
+axial	2385,ADJECTIVE
+casan	2385,VERB
+apoye	2378,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+zombi	2372,NOUN,SINGULAR
+pidan	2366,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+brasa	2354,NOUN,SINGULAR
+cursi	2350,ADJECTIVE
+hazme	2345,VERB,IMP,INFLECTED_FORM
+giras	2338,NOUN,VERB,PLURAL
+viola	2336,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+terco	2321,ADJECTIVE
+calvo	2312,ADJECTIVE,NOUN,SINGULAR
+gueto	2312,NOUN,SINGULAR
+losas	2301,NOUN,VERB,PLURAL
+istmo	2297,NOUN,SINGULAR
+plexo	2296,NOUN,SINGULAR
+curry	2294,NOUN,SINGULAR
+apnea	2287,NOUN,SINGULAR
+pedal	2287,NOUN,SINGULAR
+visor	2280,NOUN,SINGULAR
+brota	2278,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+flojo	2278,ADJECTIVE
+macro	2278,NOUN,SINGULAR
+alejo	2271,ADJECTIVE,VERB
+gesta	2271,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+llaga	2270,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+zumos	2268,NOUN,PLURAL
+pipas	2263,NOUN,VERB,PLURAL
+datan	2260,VERB
+vagas	2259,ADJECTIVE,NOUN,VERB,PLURAL
+forja	2236,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cogen	2225,VERB
+lucen	2224,VERB
+mimos	2221,NOUN,PLURAL
+aleje	2217,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+jodas	2215,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+fiaba	2210,VERB,3PS,INFLECTED_FORM
+boina	2208,NOUN,SINGULAR
+mojar	2204,VERB
+elijo	2203,VERB
+aloja	2202,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+picas	2199,NOUN,VERB,PLURAL
+dagas	2198,NOUN,PLURAL
+optan	2195,VERB
+jaque	2193,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sufro	2189,VERB
+light	2182,ADJECTIVE
+ferri	2177,NOUN,SINGULAR
+incas	2167,NOUN,PLURAL
+vagos	2166,ADJECTIVE,NOUN,PLURAL
+culpo	2162,VERB
+kayak	2162,NOUN,SINGULAR
+musas	2161,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+right	2161,NOUN,SINGULAR
+animo	2156,VERB
+dezir	2156,VERB,FORM_OF,INFLECTED_FORM
+tapia	2155,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mudos	2147,ADJECTIVE,NOUN,PLURAL
+comes	2144,VERB
+coman	2143,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+momia	2135,NOUN,ADJECTIVE,SINGULAR
+haced	2132,VERB,IMP,INFLECTED_FORM
+visir	2131,NOUN,SINGULAR
+salve	2123,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+gemas	2114,NOUN,PLURAL
+sushi	2106,NOUN,SINGULAR
+ronco	2103,NOUN,ADJECTIVE,VERB,SINGULAR
+baste	2101,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+yacen	2099,VERB
+gatas	2095,NOUN,PLURAL
+ganso	2094,ADJECTIVE,NOUN,SINGULAR
+nulos	2076,ADJECTIVE
+toldo	2070,NOUN,VERB,SINGULAR
+arden	2068,VERB
+morbo	2066,NOUN,SINGULAR
+omite	2064,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tests	2062,NOUN,PLURAL
+odias	2053,VERB
+celta	2052,ADJECTIVE,NOUN,PROPER NOUN,SINGULAR
+echen	2050,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+andas	2049,NOUN,VERB,PLURAL
+flaca	2043,NOUN,ADJECTIVE,SINGULAR
+prole	2042,NOUN,SINGULAR
+crack	2038,NOUN,SINGULAR
+goces	2038,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+basar	2031,VERB
+pegan	2031,VERB
+lloro	2030,NOUN,VERB,SINGULAR
+opaca	2020,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+nazca	2018,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+magna	2017,ADJECTIVE
+notan	2007,VERB
+sacra	2004,ADJECTIVE
+pulir	2002,VERB
+rimas	2002,NOUN,VERB,PLURAL
+cante	2000,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+locus	1997,NOUN,SINGULAR
+bolos	1995,NOUN,ADJECTIVE,PLURAL
+alado	1994,ADJECTIVE
+delta	1991,NOUN,SINGULAR
+panda	1990,NOUN,ADJECTIVE,SINGULAR
+porra	1981,NOUN,INTERJECTION,ADJECTIVE,SINGULAR
+porro	1979,NOUN,ADJECTIVE,SINGULAR
+ataba	1977,VERB,3PS,INFLECTED_FORM
+sacro	1977,ADJECTIVE,NOUN,SINGULAR
+short	1966,NOUN,SINGULAR
+podio	1964,NOUN,SINGULAR
+regio	1962,ADJECTIVE,ADVERB
+imita	1957,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+nexos	1955,NOUN,PLURAL
+remar	1953,VERB
+ajuar	1950,NOUN,SINGULAR
+hebra	1946,NOUN,SINGULAR
+venid	1937,VERB,IMP,INFLECTED_FORM
+cutis	1934,NOUN,SINGULAR
+dardo	1934,NOUN,SINGULAR
+sueca	1922,NOUN,ADJECTIVE,SINGULAR
+errar	1921,VERB
+quier	1920,CONJUNCTION,VERB,FORM_OF,INFLECTED_FORM
+recia	1919,ADJECTIVE
+abate	1918,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+bulbo	1912,NOUN,SINGULAR
+segun	1912,PREPOSITION
+amena	1902,ADJECTIVE
+roces	1902,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+rotor	1900,NOUN,SINGULAR
+ameno	1898,ADJECTIVE
+focal	1893,ADJECTIVE
+tuits	1893,NOUN,PLURAL
+frena	1887,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pardo	1885,ADJECTIVE,NOUN,SINGULAR
+rudos	1885,ADJECTIVE,NOUN,PLURAL
+recio	1878,ADJECTIVE,ADVERB,NOUN,SINGULAR
+siseo	1868,NOUN,VERB,SINGULAR
+osado	1866,ADJECTIVE,PARTICIPLE
+ingle	1864,NOUN,SINGULAR
+dudan	1862,VERB
+frita	1862,NOUN,ADJECTIVE,PARTICIPLE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+debas	1861,VERB,INFLECTED_FORM,SUBJ
+posta	1861,NOUN,ADJECTIVE,ADVERB,INTERJECTION,SINGULAR
+pymes	1861,NOUN,PLURAL
+alaba	1860,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+topes	1857,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+picor	1852,NOUN,SINGULAR
+cromo	1839,NOUN,VERB,SINGULAR
+ictus	1839,NOUN,SINGULAR
+pulsa	1835,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ceros	1831,NOUN,PLURAL
+venia	1823,NOUN,SINGULAR
+ateos	1820,ADJECTIVE,NOUN,PLURAL
+merma	1819,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pegue	1818,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+runas	1812,ADJECTIVE,NOUN,PLURAL
+agora	1808,ADVERB
+hosco	1806,ADJECTIVE
+topos	1806,NOUN,PLURAL
+comas	1802,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+atril	1798,NOUN,SINGULAR
+misil	1797,NOUN,SINGULAR
+mozas	1795,ADJECTIVE,NOUN,PLURAL
+tanga	1795,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+leona	1793,NOUN,SINGULAR
+metes	1792,VERB
+ruedo	1789,NOUN,VERB,SINGULAR
+nogal	1788,NOUN,ADJECTIVE,SINGULAR
+clama	1785,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mudas	1780,ADJECTIVE,NOUN,VERB,PLURAL
+rindo	1779,VERB
+blusa	1778,NOUN,SINGULAR
+estan	1778,VERB
+babor	1773,NOUN,SINGULAR
+doler	1771,VERB
+vulva	1771,NOUN,SINGULAR
+mates	1770,NOUN,ADJECTIVE,VERB,INFLECTED_FORM,PLURAL,SUBJ
+suban	1767,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nulas	1766,ADJECTIVE
+chips	1765,NOUN,PLURAL
+exime	1764,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+darla	1759,VERB,INF
+vetas	1759,NOUN,VERB,PLURAL
+tonal	1756,ADJECTIVE
+abres	1755,VERB
+fecal	1750,ADJECTIVE
+temes	1750,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+asnos	1743,NOUN,PLURAL
+vanas	1742,ADJECTIVE
+modal	1741,ADJECTIVE
+risco	1741,NOUN,SINGULAR
+buses	1739,NOUN,PLURAL
+cauto	1737,ADJECTIVE
+coles	1737,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+burda	1730,ADJECTIVE
+vides	1723,NOUN,PLURAL
+beige	1721,ADJECTIVE,NOUN,SINGULAR
+sirio	1721,ADJECTIVE,NOUN,SINGULAR
+serte	1717,VERB,INF
+swing	1713,NOUN,SINGULAR
+calva	1708,NOUN,ADJECTIVE,SINGULAR
+rosal	1707,NOUN,SINGULAR
+tanda	1706,NOUN,SINGULAR
+habas	1705,NOUN,PLURAL
+pillo	1697,ADJECTIVE,NOUN,VERB,SINGULAR
+canje	1685,NOUN,SINGULAR
+eches	1685,VERB,INFLECTED_FORM,SUBJ
+versa	1685,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+oigan	1684,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lamer	1677,VERB
+termo	1675,NOUN,SINGULAR
+magma	1673,NOUN,SINGULAR
+bebes	1670,NOUN,VERB,PLURAL
+telar	1669,NOUN,SINGULAR
+tardo	1664,ADJECTIVE,VERB
+purga	1662,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+linde	1661,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cesan	1659,VERB
+axila	1656,NOUN,SINGULAR
+pampa	1654,NOUN,SINGULAR
+enoja	1651,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+poses	1651,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+sedas	1650,NOUN,VERB,PLURAL
+mosto	1649,NOUN,SINGULAR
+priva	1648,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cuajo	1647,NOUN,VERB,SINGULAR
+exijo	1646,VERB
+osito	1646,NOUN,SINGULAR
+panal	1646,NOUN,SINGULAR
+hueca	1645,ADJECTIVE
+casto	1642,ADJECTIVE
+tocas	1642,NOUN,VERB,PLURAL
+gasas	1641,NOUN,PLURAL
+sapos	1639,ADJECTIVE,NOUN,PLURAL
+viles	1639,ADJECTIVE
+besan	1636,VERB
+ceden	1634,VERB
+dista	1634,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pelar	1630,VERB
+caber	1629,VERB
+curan	1625,VERB
+minar	1621,VERB
+bollo	1617,NOUN,ADJECTIVE,SINGULAR
+erais	1614,VERB
+ozono	1614,NOUN,SINGULAR
+muela	1611,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+brava	1608,ADJECTIVE
+abeto	1606,NOUN,SINGULAR
+focas	1600,NOUN,PLURAL
+viajo	1600,VERB
+bazar	1598,NOUN,SINGULAR
+opere	1598,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lirio	1596,NOUN,SINGULAR
+bombo	1593,ADJECTIVE,INTERJECTION,NOUN,SINGULAR
+jerez	1588,NOUN,SINGULAR
+seque	1586,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+colar	1583,VERB
+pasmo	1581,NOUN,VERB,SINGULAR
+grupa	1579,NOUN,SINGULAR
+suiza	1577,NOUN,ADJECTIVE,SINGULAR
+tamiz	1576,NOUN,SINGULAR
+pajar	1574,NOUN,SINGULAR
+cuece	1566,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+filos	1566,NOUN,PLURAL
+sarta	1566,NOUN,SINGULAR
+dejad	1560,VERB,IMP,INFLECTED_FORM
+rosca	1560,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ardid	1559,NOUN,ADJECTIVE,SINGULAR
+visos	1558,NOUN,PLURAL
+shows	1552,NOUN,PLURAL
+ileso	1549,ADJECTIVE
+obran	1549,VERB
+rozan	1545,VERB
+cazas	1541,NOUN,VERB,PLURAL
+motas	1539,NOUN,PLURAL
+aleta	1535,NOUN,SINGULAR
+tersa	1535,ADJECTIVE
+curia	1534,NOUN,SINGULAR
+pilla	1533,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+asumo	1532,VERB
+calme	1527,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vibra	1527,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+acuda	1520,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vitro	1517,NOUN,SINGULAR
+helio	1515,NOUN,SINGULAR
+aseos	1514,NOUN,PLURAL
+oidor	1509,NOUN,SINGULAR
+lavan	1508,VERB
+llore	1504,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vanos	1503,ADJECTIVE,NOUN,PLURAL
+avaro	1495,ADJECTIVE,NOUN,SINGULAR
+urbes	1495,NOUN,PLURAL
+burdo	1493,ADJECTIVE
+tonel	1487,NOUN,SINGULAR
+yerro	1487,NOUN,VERB,SINGULAR
+graba	1483,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sauna	1481,NOUN,SINGULAR
+posan	1476,VERB
+noria	1469,NOUN,SINGULAR
+hoyos	1466,NOUN,PLURAL
+pende	1466,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+treta	1465,NOUN,SINGULAR
+vendo	1465,NOUN,VERB,SINGULAR
+mails	1460,NOUN,PLURAL
+senil	1460,ADJECTIVE
+lince	1459,NOUN,SINGULAR
+lares	1458,NOUN,PLURAL
+lomas	1458,NOUN,PLURAL
+corso	1457,ADJECTIVE,NOUN,SINGULAR
+usura	1457,NOUN,SINGULAR
+chefs	1456,NOUN,PLURAL
+hazte	1456,VERB,IMP,INFLECTED_FORM
+medie	1456,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+redil	1456,NOUN,SINGULAR
+deste	1445,CONTRACTION
+batas	1436,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+sogas	1436,NOUN,PLURAL
+metan	1435,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+still	1428,NOUN,SINGULAR
+sigla	1424,NOUN,SINGULAR
+oraba	1422,VERB,3PS,INFLECTED_FORM
+fusta	1420,NOUN,SINGULAR
+toreo	1418,NOUN,VERB,SINGULAR
+copla	1414,NOUN,SINGULAR
+socia	1413,NOUN,SINGULAR
+gomas	1411,NOUN,VERB,PLURAL
+tilde	1411,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+foral	1409,ADJECTIVE
+aunar	1404,VERB
+cofia	1404,NOUN,SINGULAR
+terca	1402,ADJECTIVE
+osaba	1400,VERB,3PS,INFLECTED_FORM
+hilar	1399,VERB
+maese	1393,NOUN,SINGULAR
+ganga	1390,NOUN,SINGULAR
+galos	1388,ADJECTIVE
+bledo	1387,NOUN,SINGULAR
+dorar	1387,VERB
+guano	1384,NOUN,SINGULAR
+queme	1383,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+narco	1382,NOUN,SINGULAR
+insta	1379,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+erizo	1377,NOUN,VERB,SINGULAR
+tened	1372,VERB,IMP,INFLECTED_FORM
+fijen	1371,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ferry	1368,NOUN,SINGULAR
+canso	1362,ADJECTIVE,VERB
+fetos	1360,NOUN,PLURAL
+lisas	1360,ADJECTIVE,NOUN,VERB,PLURAL
+polea	1360,NOUN,SINGULAR
+aspas	1350,NOUN,VERB,PLURAL
+acres	1349,ADJECTIVE,NOUN,PLURAL
+aduce	1347,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+oruga	1347,NOUN,SINGULAR
+palpa	1345,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+brida	1343,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+parra	1337,NOUN,SINGULAR
+tarot	1333,NOUN,SINGULAR
+fisco	1332,NOUN,SINGULAR
+salte	1332,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ahogo	1329,NOUN,VERB,SINGULAR
+gamma	1327,NOUN,SINGULAR
+untar	1325,VERB
+domar	1319,VERB
+rompo	1319,VERB
+algun	1318,ADJECTIVE
+burra	1314,NOUN,ADJECTIVE,SINGULAR
+opino	1313,VERB
+chupa	1309,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pajes	1309,NOUN,PLURAL
+cisma	1308,NOUN,SINGULAR
+eleve	1305,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nevar	1305,VERB
+glosa	1300,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+avise	1294,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tiara	1293,NOUN,SINGULAR
+cursa	1285,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+liras	1285,NOUN,PLURAL
+cagar	1283,VERB
+pibes	1281,NOUN,PLURAL
+cenit	1280,NOUN,SINGULAR
+rasca	1280,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rezan	1279,VERB
+fuman	1277,VERB
+cuido	1276,NOUN,VERB,SINGULAR
+falaz	1275,ADJECTIVE
+bache	1273,NOUN,SINGULAR
+argot	1271,NOUN,SINGULAR
+cover	1267,NOUN,SINGULAR
+aboga	1266,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+saeta	1263,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+botar	1262,VERB
+nalga	1261,NOUN,SINGULAR
+relax	1260,NOUN,SINGULAR
+liado	1259,PARTICIPLE
+lupus	1258,NOUN,SINGULAR
+emita	1255,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tieso	1255,ADJECTIVE,NOUN,SINGULAR
+dabas	1252,VERB
+liceo	1251,NOUN,SINGULAR
+ultra	1249,ADJECTIVE,ADVERB,NOUN,SINGULAR
+lacio	1245,ADJECTIVE
+retro	1243,ADJECTIVE
+siega	1242,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+feudo	1241,NOUN,SINGULAR
+bajen	1240,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+friso	1239,NOUN,VERB,SINGULAR
+secan	1238,VERB
+eriza	1237,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+paper	1236,NOUN,SINGULAR
+parta	1232,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tejen	1231,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+osada	1228,ADJECTIVE,PARTICIPLE
+calmo	1227,ADJECTIVE,VERB
+votan	1225,VERB
+aptas	1224,ADJECTIVE,VERB
+cuasi	1224,ADVERB
+lemas	1223,NOUN,PLURAL
+huelo	1221,VERB
+aprox	1220,ADVERB
+monde	1220,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ostra	1219,NOUN,SINGULAR
+alega	1215,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ebria	1215,ADJECTIVE
+guasa	1214,NOUN,ADJECTIVE,SINGULAR
+oyese	1210,VERB,3PS,INFLECTED_FORM,SUBJ
+bulla	1208,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+pegas	1204,NOUN,VERB,PLURAL
+olido	1202,PARTICIPLE
+cebra	1199,NOUN,SINGULAR
+cieno	1199,NOUN,SINGULAR
+fosos	1197,NOUN,PLURAL
+lilas	1195,ADJECTIVE,NOUN,PLURAL
+grada	1189,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+caqui	1185,NOUN,SINGULAR
+vales	1182,NOUN,VERB,PLURAL
+virar	1181,VERB
+rotar	1180,VERB
+pinar	1179,NOUN,SINGULAR
+clics	1176,NOUN,PLURAL
+sones	1176,NOUN,PLURAL
+pinto	1174,ADJECTIVE,VERB
+loros	1171,NOUN,PLURAL
+testa	1171,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fecho	1170,VERB,PARTICIPLE,NOUN,FORM_OF,INFLECTED_FORM,PAST_PART,SINGULAR
+podar	1163,VERB
+mapeo	1159,NOUN,VERB,SINGULAR
+moles	1158,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+atlas	1155,NOUN,SINGULAR
+magra	1152,NOUN,ADJECTIVE,SINGULAR
+sismo	1150,NOUN,SINGULAR
+cauta	1149,ADJECTIVE
+netas	1149,ADJECTIVE,NOUN,PLURAL
+anglo	1147,ADJECTIVE,NOUN,SINGULAR
+alero	1145,NOUN,SINGULAR
+junco	1140,NOUN,SINGULAR
+astas	1138,NOUN,PLURAL
+flema	1138,NOUN,SINGULAR
+hundo	1137,VERB
+gocen	1133,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+parco	1128,ADJECTIVE
+mesma	1127,ADJECTIVE
+curro	1126,NOUN,ADJECTIVE,VERB,SINGULAR
+parda	1126,ADJECTIVE
+cutre	1124,ADJECTIVE
+zarza	1118,NOUN,SINGULAR
+opten	1115,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+mirra	1114,NOUN,SINGULAR
+times	1114,VERB,INFLECTED_FORM,SUBJ
+traba	1114,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+nabos	1112,NOUN,PLURAL
+rumba	1112,NOUN,SINGULAR
+azota	1110,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+spray	1109,NOUN,SINGULAR
+carpo	1108,NOUN,VERB,SINGULAR
+diles	1108,VERB,IMP,INFLECTED_FORM
+riega	1108,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+enana	1104,NOUN,ADJECTIVE,SINGULAR
+humus	1103,NOUN,SINGULAR
+tifus	1102,NOUN,SINGULAR
+capos	1100,NOUN,PLURAL
+hobby	1100,NOUN,SINGULAR
+fazen	1098,VERB
+table	1098,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+abras	1096,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+molar	1096,ADJECTIVE,NOUN,VERB,SINGULAR
+ganen	1092,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+iluso	1092,ADJECTIVE,NOUN,SINGULAR
+anime	1090,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+hiena	1090,NOUN,SINGULAR
+rugir	1089,VERB
+colma	1087,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+cocos	1084,NOUN,PLURAL
+subes	1083,VERB
+mamas	1082,NOUN,VERB,PLURAL
+cardo	1077,NOUN,VERB,SINGULAR
+chulo	1068,ADJECTIVE,NOUN,SINGULAR
+valgo	1068,ADJECTIVE,VERB
+pican	1065,VERB
+cubro	1063,VERB
+tumbo	1063,NOUN,VERB,SINGULAR
+jodan	1056,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lisos	1054,ADJECTIVE
+buzos	1053,NOUN,ADJECTIVE,PLURAL
+calas	1053,NOUN,VERB,PLURAL
+manso	1053,ADJECTIVE,NOUN,SINGULAR
+elles	1052,PRONOUN,NOUN,PLURAL
+ancas	1051,NOUN,PLURAL
+azada	1050,NOUN,SINGULAR
+necia	1050,ADJECTIVE
+films	1047,NOUN,PLURAL
+jalar	1046,VERB
+obeso	1046,ADJECTIVE,NOUN,SINGULAR
+silos	1045,NOUN,PLURAL
+vuesa	1045,PRONOUN
+trino	1044,NOUN,VERB,ADJECTIVE,SINGULAR
+round	1042,NOUN,SINGULAR
+renos	1039,NOUN,PLURAL
+yermo	1037,NOUN,ADJECTIVE,VERB,SINGULAR
+pisan	1036,VERB
+abona	1033,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ceras	1033,NOUN,PLURAL
+prana	1029,NOUN,SINGULAR
+tiesa	1029,ADJECTIVE
+cerda	1027,NOUN,ADJECTIVE,SINGULAR
+alada	1026,ADJECTIVE
+talco	1025,NOUN,SINGULAR
+gajos	1023,NOUN,PLURAL
+input	1021,NOUN,SINGULAR
+yacer	1021,VERB
+grana	1019,VERB,NOUN,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mitra	1018,NOUN,SINGULAR
+peros	1014,NOUN,PLURAL
+prono	1012,ADJECTIVE
+talar	1012,ADJECTIVE,VERB,NOUN,SINGULAR
+rudas	1010,ADJECTIVE,NOUN,PLURAL
+educa	1007,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+roben	1007,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+curvo	1006,ADJECTIVE,VERB
+lonas	1005,NOUN,PLURAL
+penes	1003,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+murga	997,NOUN,SINGULAR
+paren	997,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ajado	996,ADJECTIVE,PARTICIPLE
+curri	994,NOUN,SINGULAR
+vagan	993,VERB
+babas	992,NOUN,PLURAL
+dador	992,NOUN,SINGULAR
+paras	992,VERB,INFLECTED_FORM,SUBJ
+bicis	991,NOUN,PLURAL
+toses	989,NOUN,VERB,PLURAL
+ramal	982,NOUN,SINGULAR
+raudo	982,ADJECTIVE
+miope	981,ADJECTIVE,NOUN,SINGULAR
+sabed	980,VERB,IMP,INFLECTED_FORM
+barre	978,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+solaz	977,NOUN,SINGULAR
+obsta	976,VERB,3PS,INFLECTED_FORM
+riera	976,VERB,3PS,INFLECTED_FORM,SUBJ
+fauno	975,NOUN,SINGULAR
+party	974,NOUN,SINGULAR
+apura	971,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lanas	971,NOUN,PLURAL
+simio	970,NOUN,SINGULAR
+avala	968,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+docto	968,ADJECTIVE
+felpa	968,NOUN,SINGULAR
+tacha	968,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rinda	966,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+morar	965,VERB
+pajas	965,NOUN,PLURAL
+velan	964,VERB
+vente	962,VERB,IMP,INFLECTED_FORM
+bingo	959,NOUN,SINGULAR
+impar	957,ADJECTIVE,NOUN,SINGULAR
+culos	955,ADJECTIVE,NOUN,PLURAL
+talud	955,NOUN,SINGULAR
+checo	954,ADJECTIVE,NOUN,VERB,SINGULAR
+ciber	953,NOUN,SINGULAR
+elude	953,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+zarpa	953,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+queer	951,ADJECTIVE
+yates	949,NOUN,PLURAL
+apena	948,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+memes	948,NOUN,PLURAL
+hunda	946,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+anexa	944,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ducho	943,ADJECTIVE,VERB
+ladra	936,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+teman	935,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nadan	934,VERB
+evito	932,VERB
+canes	930,NOUN,PLURAL
+retar	929,VERB
+anida	928,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+garza	928,NOUN,ADJECTIVE,SINGULAR
+hosca	927,ADJECTIVE
+pozas	927,NOUN,PLURAL
+siria	926,NOUN,ADJECTIVE,SINGULAR
+bardo	924,NOUN,SINGULAR
+guita	923,NOUN,SINGULAR
+hiato	923,NOUN,SINGULAR
+rules	923,VERB,INFLECTED_FORM,SUBJ
+greco	915,ADJECTIVE
+vezes	915,NOUN,SINGULAR
+likes	914,NOUN,PLURAL
+labia	912,NOUN,SINGULAR
+acuse	911,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cunas	910,NOUN,PLURAL
+equis	910,NOUN,SINGULAR
+fluya	910,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pulga	907,NOUN,SINGULAR
+agave	906,NOUN,SINGULAR
+malva	906,NOUN,ADJECTIVE,SINGULAR
+dance	905,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+sella	905,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bajel	903,NOUN,SINGULAR
+calco	902,NOUN,VERB,SINGULAR
+pelis	902,NOUN,PLURAL
+terso	901,ADJECTIVE
+venza	901,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+edita	900,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mulos	900,NOUN,PLURAL
+sagas	899,NOUN,PLURAL
+hampa	898,NOUN,SINGULAR
+manco	896,ADJECTIVE,NOUN,VERB,SINGULAR
+bulas	895,NOUN,PLURAL
+trust	895,NOUN,SINGULAR
+rayar	893,VERB
+novel	892,ADJECTIVE,NOUN,SINGULAR
+moler	890,VERB
+tajos	890,NOUN,PLURAL
+colza	889,NOUN,SINGULAR
+rapaz	883,ADJECTIVE,NOUN,SINGULAR
+orcos	882,NOUN,PLURAL
+linea	880,VERB,NOUN,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+varia	880,ADJECTIVE
+haiku	879,NOUN,SINGULAR
+ajada	877,ADJECTIVE,PARTICIPLE
+calza	877,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+reste	877,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+grama	876,NOUN,SINGULAR
+apago	873,VERB
+comba	873,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+smart	872,ADJECTIVE
+catas	869,NOUN,VERB,PLURAL
+gamas	869,NOUN,PLURAL
+lacra	869,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+paria	868,NOUN,SINGULAR
+cruje	866,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mamar	866,VERB
+pesto	865,NOUN,SINGULAR
+staff	865,NOUN,SINGULAR
+flama	864,NOUN,SINGULAR
+diodo	862,NOUN,SINGULAR
+ladea	861,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+abuse	859,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cojan	858,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+facha	858,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+canse	856,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+decae	856,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+gnomo	854,NOUN,SINGULAR
+tweed	852,NOUN,SINGULAR
+moran	851,VERB
+riada	851,NOUN,SINGULAR
+rulos	851,NOUN,PLURAL
+decid	850,VERB,IMP,INFLECTED_FORM
+baten	848,VERB
+segar	847,VERB
+topar	847,VERB
+beato	843,ADJECTIVE
+polio	843,NOUN,SINGULAR
+torne	843,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+psoas	842,NOUN,SINGULAR
+arman	835,VERB
+cirio	833,NOUN,SINGULAR
+diere	831,VERB,3PS,INFLECTED_FORM,SUBJ
+reyno	831,NOUN,SINGULAR
+pille	830,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+sumen	829,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+wasap	829,NOUN,SINGULAR
+tapan	828,VERB
+larva	827,NOUN,ADJECTIVE,SINGULAR
+menea	827,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sedal	827,NOUN,SINGULAR
+terna	827,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mirlo	825,NOUN,SINGULAR
+rasga	824,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+anden	823,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+fajas	823,NOUN,VERB,PLURAL
+agote	822,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+rombo	820,NOUN,SINGULAR
+finjo	818,VERB
+ligue	818,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+abusa	817,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+chats	817,NOUN,PLURAL
+lides	817,NOUN,PLURAL
+mirar	817,VERB
+ujier	817,NOUN,SINGULAR
+checa	816,NOUN,ADJECTIVE,PROPER NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+auras	814,NOUN,PLURAL
+cupos	812,NOUN,PLURAL
+match	812,NOUN,SINGULAR
+gaita	811,NOUN,SINGULAR
+obren	810,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+chute	807,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cazan	806,VERB
+ibais	806,VERB
+mamut	806,NOUN,SINGULAR
+sepia	806,NOUN,SINGULAR
+suple	806,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+buche	804,NOUN,SINGULAR
+pisco	800,NOUN,SINGULAR
+mimar	799,VERB
+nylon	798,NOUN,SINGULAR
+grite	795,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+fajos	794,NOUN,PLURAL
+hiela	792,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+brezo	789,NOUN,VERB,SINGULAR
+dizen	789,VERB
+fundo	788,NOUN,VERB,SINGULAR
+galgo	788,NOUN,SINGULAR
+sexys	787,ADJECTIVE
+liada	785,PARTICIPLE
+odres	783,NOUN,PLURAL
+formo	782,VERB
+ovnis	782,NOUN,PLURAL
+mondo	781,ADJECTIVE,NOUN,VERB,FORM_OF,INFLECTED_FORM,SINGULAR
+desto	780,CONTRACTION
+multi	778,NOUN,SINGULAR
+coces	777,NOUN,PLURAL
+tomad	776,VERB,IMP,INFLECTED_FORM
+pudre	775,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ojear	774,VERB
+prime	773,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+gotea	772,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+afana	771,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+cegar	770,VERB
+surta	770,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+oigas	769,VERB,INFLECTED_FORM,SUBJ
+jacta	767,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bebas	764,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+mansa	764,ADJECTIVE
+urdir	763,VERB
+anule	760,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+barda	760,NOUN,SINGULAR
+duren	759,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+mirto	759,NOUN,SINGULAR
+estad	757,VERB,IMP,INFLECTED_FORM
+mazas	757,NOUN,VERB,PLURAL
+aviva	754,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+juzgo	754,VERB
+aforo	753,NOUN,VERB,SINGULAR
+quina	752,NOUN,SINGULAR
+palio	751,NOUN,VERB,SINGULAR
+tejos	751,NOUN,PLURAL
+limas	748,NOUN,VERB,PLURAL
+avere	747,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+jadea	747,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+orbes	747,NOUN,PLURAL
+huela	745,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dende	743,PREPOSITION
+heavy	741,ADJECTIVE
+eones	740,NOUN,PLURAL
+fatuo	739,ADJECTIVE
+lamas	739,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+legos	739,ADJECTIVE,NOUN,PLURAL
+hucha	735,NOUN,SINGULAR
+lonja	732,NOUN,SINGULAR
+doblo	731,VERB
+alijo	728,NOUN,VERB,SINGULAR
+limar	728,VERB
+borre	725,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cubas	724,NOUN,PLURAL
+finta	724,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+subas	724,VERB,INFLECTED_FORM,SUBJ
+ejido	720,NOUN,SINGULAR
+arpas	719,NOUN,PLURAL
+ponto	719,NOUN,SINGULAR
+creta	713,NOUN,SINGULAR
+dotan	712,VERB
+gaste	711,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+torva	710,ADJECTIVE
+gamba	706,NOUN,SINGULAR
+bajes	701,VERB,INFLECTED_FORM,SUBJ
+nimio	700,ADJECTIVE
+reine	699,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rueca	699,NOUN,SINGULAR
+jalea	697,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+paros	696,NOUN,PLURAL
+ducal	694,ADJECTIVE
+enoje	693,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+doren	692,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+mudan	692,VERB
+sorry	692,INTERJECTION
+ponlo	687,VERB,IMP,INFLECTED_FORM
+alelo	686,NOUN,VERB,SINGULAR
+bytes	686,NOUN,PLURAL
+arras	685,NOUN,SINGULAR
+boato	685,NOUN,SINGULAR
+hidra	685,NOUN,SINGULAR
+chata	684,NOUN,ADJECTIVE,SINGULAR
+silba	684,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+podas	683,NOUN,VERB,PLURAL
+cesen	680,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tires	680,VERB,INFLECTED_FORM,SUBJ
+clips	678,NOUN,PLURAL
+pudin	678,NOUN,SINGULAR
+garbo	676,NOUN,VERB,SINGULAR
+jaspe	675,NOUN,SINGULAR
+ligan	674,VERB
+bobos	673,ADJECTIVE,NOUN,PLURAL
+break	673,NOUN,SINGULAR
+green	673,NOUN,SINGULAR
+malta	673,NOUN,SINGULAR
+dadme	672,VERB,IMP,INFLECTED_FORM
+motes	671,NOUN,PLURAL
+mouse	669,NOUN,SINGULAR
+carey	666,NOUN,SINGULAR
+sudan	666,VERB
+flete	664,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+criba	663,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+albur	661,NOUN,SINGULAR
+alfil	659,NOUN,SINGULAR
+borla	659,NOUN,SINGULAR
+cubil	658,NOUN,SINGULAR
+nenas	657,NOUN,PLURAL
+piojo	656,NOUN,SINGULAR
+sarna	656,NOUN,SINGULAR
+acudo	655,VERB
+manar	654,VERB
+reiki	654,NOUN,SINGULAR
+bonus	652,NOUN,SINGULAR
+lucho	652,VERB
+omeya	650,NOUN,ADJECTIVE,SINGULAR
+orado	649,PARTICIPLE
+pujar	648,VERB
+hunos	647,ADJECTIVE,NOUN,PLURAL
+pitos	647,NOUN,PLURAL
+ubres	647,NOUN,PLURAL
+alabo	646,VERB
+ascos	646,NOUN,PLURAL
+coges	645,VERB
+cojas	645,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+click	644,NOUN,SINGULAR
+acuso	643,VERB
+amase	643,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tecno	642,ADJECTIVE,NOUN,SINGULAR
+tiren	642,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+juran	641,VERB
+noten	641,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ralea	641,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tilos	641,NOUN,PLURAL
+arios	639,ADJECTIVE,NOUN,PLURAL
+basis	639,NOUN,SINGULAR
+yerma	639,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pedos	637,ADJECTIVE,NOUN,PLURAL
+pulla	637,NOUN,SINGULAR
+rucio	637,ADJECTIVE
+vagal	637,ADJECTIVE
+vuele	637,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+geles	636,NOUN,PLURAL
+chato	634,ADJECTIVE
+datar	633,VERB
+luche	632,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+subte	632,NOUN,SINGULAR
+troll	632,NOUN,SINGULAR
+topan	630,VERB
+peque	628,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+adujo	627,VERB,3PS,INFLECTED_FORM,PAST
+pines	627,NOUN,PLURAL
+aviar	626,ADJECTIVE,VERB
+trepa	626,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+linfa	625,NOUN,SINGULAR
+meneo	625,NOUN,VERB,SINGULAR
+parca	625,NOUN,ADJECTIVE,SINGULAR
+serme	624,VERB,INF
+lores	621,NOUN,PLURAL
+bocio	620,NOUN,SINGULAR
+hados	620,NOUN,PLURAL
+casen	619,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+queje	619,VERB,3PS,IMP,INFLECTED_FORM,SUBJ
+taita	618,NOUN,SINGULAR
+kurdo	617,ADJECTIVE,NOUN,SINGULAR
+sorgo	616,NOUN,SINGULAR
+terno	616,NOUN,VERB,SINGULAR
+acosa	610,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+husos	610,NOUN,PLURAL
+ceiba	609,NOUN,SINGULAR
+otear	609,VERB
+sumos	607,ADJECTIVE
+ondea	606,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+notes	605,VERB,INFLECTED_FORM,SUBJ
+surca	605,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+andes	604,VERB,INFLECTED_FORM,SUBJ
+dupla	604,NOUN,SINGULAR
+visas	602,NOUN,VERB,PLURAL
+boxes	600,NOUN,PLURAL
+dalla	600,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ponis	600,NOUN,PLURAL
+token	600,NOUN,SINGULAR
+bailo	599,VERB
+jamba	599,NOUN,VERB,3PS,IMP,INFLECTED_FORM,SINGULAR
+posts	599,NOUN,PLURAL
+corzo	597,NOUN,SINGULAR
+links	596,NOUN,PLURAL
+hazle	595,VERB,IMP,INFLECTED_FORM
+perno	594,NOUN,SINGULAR
+salid	594,VERB,IMP,INFLECTED_FORM
+fagot	593,NOUN,SINGULAR
+lidia	592,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+peina	592,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+taras	592,NOUN,VERB,PLURAL
+dinos	588,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+sacia	587,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+magro	585,ADJECTIVE,NOUN,SINGULAR
+mutis	584,INTERJECTION,NOUN,SINGULAR
+nenes	584,NOUN,PLURAL
+cojos	582,ADJECTIVE,NOUN,PLURAL
+rasos	581,ADJECTIVE,NOUN,PLURAL
+acota	580,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+yesca	580,NOUN,SINGULAR
+anote	578,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+beban	578,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+zagal	577,NOUN,SINGULAR
+palta	576,NOUN,ADJECTIVE,SINGULAR
+hutus	575,ADJECTIVE,NOUN,PLURAL
+chili	574,NOUN,SINGULAR
+callo	573,NOUN,VERB,SINGULAR
+grafo	571,NOUN,SINGULAR
+ocres	571,NOUN,PLURAL
+besas	569,VERB
+samba	568,NOUN,SINGULAR
+legar	566,VERB
+brama	563,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+yunta	563,NOUN,SINGULAR
+pareo	562,NOUN,VERB,SINGULAR
+tunda	562,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+taula	561,NOUN,SINGULAR
+bedel	560,NOUN,SINGULAR
+numen	560,NOUN,SINGULAR
+hoces	559,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+ufana	559,ADJECTIVE,VERB,3PS,IMP,INFLECTED_FORM
+check	558,NOUN,SINGULAR
+mudez	558,NOUN,SINGULAR
+dable	557,ADJECTIVE
+lacre	557,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+mambo	557,NOUN,SINGULAR
+nahua	555,ADJECTIVE,NOUN,SINGULAR
+evade	554,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+calar	553,ADJECTIVE,NOUN,VERB,SINGULAR
+pudra	553,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+burgo	552,NOUN,SINGULAR
+corno	552,NOUN,SINGULAR
+fasta	551,PREPOSITION,ADJECTIVE
+prepa	551,NOUN,SINGULAR
+magno	549,ADJECTIVE
+paleo	549,VERB
+tasca	549,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+combo	548,NOUN,VERB,SINGULAR
+zurdo	546,ADJECTIVE,NOUN,SINGULAR
+pasad	545,VERB,IMP,INFLECTED_FORM
+jemer	543,NOUN,SINGULAR
+pulse	543,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+togas	542,NOUN,VERB,PLURAL
+yenes	542,NOUN,PLURAL
+ascua	540,NOUN,SINGULAR
+oxida	540,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+spots	540,NOUN,PLURAL
+orcas	539,NOUN,PLURAL
+posos	539,NOUN,PLURAL
+patea	538,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+arias	537,ADJECTIVE,NOUN,PLURAL
+asome	537,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+osara	537,VERB,3PS,INFLECTED_FORM,SUBJ
+comun	536,ADJECTIVE
+odies	536,VERB,INFLECTED_FORM,SUBJ
+dedal	535,NOUN,SINGULAR
+yihad	534,NOUN,SINGULAR
+acoja	533,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+levas	533,NOUN,VERB,PLURAL
+olmos	533,NOUN,PLURAL
+grima	531,NOUN,SINGULAR
+ponla	531,VERB,IMP,INFLECTED_FORM
+batea	529,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tolva	529,NOUN,SINGULAR
+morsa	528,NOUN,SINGULAR
+burlo	527,VERB
+pecan	527,VERB
+lagar	526,NOUN,SINGULAR
+nafta	525,NOUN,SINGULAR
+huyes	524,VERB
+relox	524,NOUN,SINGULAR
+score	524,NOUN,SINGULAR
+falle	523,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+mojan	523,VERB
+infla	520,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+levar	520,VERB
+viole	520,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cloud	519,NOUN,SINGULAR
+rijan	519,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tizas	517,NOUN,PLURAL
+opuse	516,VERB,INFLECTED_FORM,PAST
+mecen	515,VERB
+yogui	515,NOUN,SINGULAR
+bufet	514,NOUN,SINGULAR
+esnob	514,NOUN,SINGULAR
+bario	513,NOUN,SINGULAR
+basto	513,NOUN,ADJECTIVE,VERB,SINGULAR
+cacho	512,NOUN,VERB,SINGULAR
+coses	512,VERB
+capte	510,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+careo	510,NOUN,VERB,SINGULAR
+ufano	510,ADJECTIVE,VERB
+dexar	509,VERB
+lajas	509,NOUN,PLURAL
+marta	509,NOUN,SINGULAR
+natos	509,ADJECTIVE
+horma	508,NOUN,SINGULAR
+voten	508,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+borne	507,NOUN,SINGULAR
+ogros	507,NOUN,PLURAL
+litis	505,NOUN,SINGULAR
+fojas	503,NOUN,PLURAL
+nanas	502,NOUN,PLURAL
+danos	501,VERB,FORM_OF,IMP,INFLECTED_FORM
+solio	501,NOUN,SINGULAR
+pomos	500,NOUN,PLURAL
+tisis	500,NOUN,SINGULAR
+fanal	499,NOUN,SINGULAR
+ganes	499,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+milpa	499,NOUN,SINGULAR
+adobo	498,NOUN,VERB,SINGULAR
+boles	498,NOUN,PLURAL
+chavo	498,NOUN,SINGULAR
+erial	498,ADJECTIVE,NOUN,SINGULAR
+compa	497,NOUN,SINGULAR
+tapir	497,NOUN,SINGULAR
+avino	495,VERB,3PS,INFLECTED_FORM,PAST
+basen	495,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+combi	495,NOUN,SINGULAR
+ponle	495,VERB,IMP,INFLECTED_FORM
+share	495,NOUN,SINGULAR
+zafra	495,NOUN,SINGULAR
+micer	494,NOUN,SINGULAR
+bemol	493,ADJECTIVE,NOUN,SINGULAR
+nardo	493,NOUN,SINGULAR
+pujas	492,NOUN,VERB,PLURAL
+alzas	490,NOUN,VERB,PLURAL
+catar	490,VERB
+poned	490,VERB,IMP,INFLECTED_FORM
+ponme	490,VERB,IMP,INFLECTED_FORM
+bulos	489,NOUN,PLURAL
+drena	489,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+zumba	487,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+duden	485,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+elevo	482,VERB
+zares	482,NOUN,PLURAL
+orujo	480,NOUN,SINGULAR
+hiera	478,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+aboca	477,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+basas	477,VERB
+digne	477,VERB,3PS,IMP,INFLECTED_FORM,SUBJ
+naipe	477,NOUN,SINGULAR
+vegas	477,NOUN,PLURAL
+kurda	476,NOUN,ADJECTIVE,SINGULAR
+reuma	476,NOUN,SINGULAR
+misal	475,NOUN,SINGULAR
+congo	474,NOUN,SINGULAR
+dandi	474,NOUN,SINGULAR
+touch	471,ADJECTIVE
+glifo	470,NOUN,SINGULAR
+manes	470,NOUN,VERB,INFLECTED_FORM,SINGULAR,SUBJ
+sorbe	470,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+burle	467,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+clown	467,NOUN,SINGULAR
+obesa	467,NOUN,ADJECTIVE,SINGULAR
+quemo	467,VERB
+arces	466,NOUN,PLURAL
+docta	466,ADJECTIVE
+fluid	466,VERB,IMP,INFLECTED_FORM
+coxis	465,NOUN,SINGULAR
+ninja	465,NOUN,SINGULAR
+pisas	465,NOUN,VERB,PLURAL
+tuteo	465,NOUN,VERB,SINGULAR
+vetar	465,VERB
+boyas	463,NOUN,VERB,PLURAL
+midan	463,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rajar	461,VERB
+piara	460,NOUN,VERB,3PS,INFLECTED_FORM,SINGULAR,SUBJ
+culpe	457,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pacta	456,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pumas	456,NOUN,PLURAL
+dandy	453,NOUN,SINGULAR
+himen	453,NOUN,SINGULAR
+koala	453,NOUN,SINGULAR
+conga	452,NOUN,SINGULAR
+piras	451,NOUN,VERB,PLURAL
+asido	450,PARTICIPLE
+pasma	450,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rajas	450,NOUN,VERB,PLURAL
+tacho	449,NOUN,VERB,SINGULAR
+donas	448,NOUN,VERB,PLURAL
+lunch	448,NOUN,SINGULAR
+nopal	448,NOUN,SINGULAR
+caspa	447,NOUN,SINGULAR
+laten	447,VERB
+hindi	446,NOUN,SINGULAR
+huyan	445,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nimbo	445,NOUN,VERB,SINGULAR
+bozal	444,NOUN,ADJECTIVE,SINGULAR
+ducto	443,NOUN,SINGULAR
+ilusa	442,NOUN,ADJECTIVE,SINGULAR
+petos	441,NOUN,PLURAL
+ripio	441,NOUN,VERB,SINGULAR
+afina	440,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mecer	440,VERB
+apure	439,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+games	438,NOUN,PLURAL
+opine	437,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+beses	436,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+broca	436,NOUN,SINGULAR
+hulla	436,NOUN,SINGULAR
+vacua	434,ADJECTIVE
+acata	433,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+labra	432,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+amino	431,ADJECTIVE,NOUN,SINGULAR
+bisel	431,NOUN,SINGULAR
+erres	431,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+prive	431,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rodee	431,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+valet	431,NOUN,SINGULAR
+bazas	430,NOUN,PLURAL
+delas	430,CONTRACTION,VERB,3PS,IMP,INFLECTED_FORM
+dores	430,VERB,INFLECTED_FORM,SUBJ
+pinga	430,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+looks	429,NOUN,PLURAL
+mames	429,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+monas	429,ADJECTIVE,NOUN,PLURAL
+chula	428,NOUN,ADJECTIVE,SINGULAR
+zurda	428,NOUN,ADJECTIVE,SINGULAR
+balda	426,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cepos	426,NOUN,PLURAL
+choco	425,ADJECTIVE,NOUN,VERB,SINGULAR
+cunde	425,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lauro	425,NOUN,SINGULAR
+sople	425,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+sanan	424,VERB
+gules	423,ADJECTIVE,NOUN,SINGULAR
+dello	422,CONTRACTION
+tique	422,NOUN,SINGULAR
+albor	421,NOUN,SINGULAR
+ungir	421,VERB
+recua	420,NOUN,SINGULAR
+tenlo	420,VERB,IMP,INFLECTED_FORM
+trona	420,NOUN,SINGULAR
+cejar	419,VERB
+faces	419,NOUN,VERB,PLURAL
+capto	418,VERB
+fideo	418,NOUN,SINGULAR
+ocios	417,NOUN,PLURAL
+donut	416,NOUN,SINGULAR
+grial	415,NOUN,SINGULAR
+imago	415,NOUN,SINGULAR
+tinas	415,NOUN,PLURAL
+efeto	414,NOUN,SINGULAR
+hippy	414,NOUN,SINGULAR
+ovino	414,ADJECTIVE
+penar	412,VERB
+silbo	412,NOUN,VERB,SINGULAR
+nodal	411,ADJECTIVE
+chelo	409,ADJECTIVE,NOUN,SINGULAR
+comed	408,VERB,IMP,INFLECTED_FORM
+rugen	408,VERB
+nomos	407,NOUN,PLURAL
+parka	407,NOUN,SINGULAR
+abone	406,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+friki	405,ADJECTIVE,NOUN,SINGULAR
+rauda	404,ADJECTIVE,NOUN,SINGULAR
+acebo	403,NOUN,SINGULAR
+luzca	403,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rally	403,NOUN,SINGULAR
+tiple	403,NOUN,SINGULAR
+brega	402,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+curen	402,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+folla	402,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+simas	402,NOUN,PLURAL
+peana	400,NOUN,SINGULAR
+telos	400,NOUN,PLURAL
+kiwis	399,NOUN,PLURAL
+press	399,NOUN,SINGULAR
+gajes	398,NOUN,PLURAL
+muele	398,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+valva	398,NOUN,SINGULAR
+laxos	397,ADJECTIVE
+yerra	397,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+fleco	396,NOUN,SINGULAR
+dueto	395,NOUN,SINGULAR
+sumir	394,VERB
+tebeo	394,NOUN,SINGULAR
+relee	392,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+adore	391,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cando	391,VERB
+indie	391,NOUN,SINGULAR
+causo	390,VERB
+lisis	390,NOUN,SINGULAR
+liana	389,NOUN,SINGULAR
+medos	389,ADJECTIVE,NOUN,PLURAL
+creed	388,VERB,IMP,INFLECTED_FORM
+budas	386,NOUN,PLURAL
+yedra	386,NOUN,SINGULAR
+dijes	384,NOUN,PLURAL
+golfa	384,NOUN,ADJECTIVE,SINGULAR
+meato	384,NOUN,SINGULAR
+insto	383,VERB
+jeeps	383,NOUN,PLURAL
+maple	383,NOUN,SINGULAR
+sexis	383,ADJECTIVE
+tropo	383,NOUN,SINGULAR
+pisto	382,NOUN,SINGULAR
+chupo	381,VERB
+tense	381,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+croar	380,VERB
+peleo	380,VERB
+finja	378,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+venal	378,ADJECTIVE
+agito	377,VERB
+anejo	377,ADJECTIVE,NOUN,SINGULAR
+frene	377,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+gleba	377,NOUN,SINGULAR
+pants	377,NOUN,SINGULAR
+pijos	376,ADJECTIVE,NOUN,PLURAL
+besen	375,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+craso	374,ADJECTIVE
+halos	374,NOUN,PLURAL
+alabe	373,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+comic	373,NOUN,SINGULAR
+fiado	372,NOUN,PARTICIPLE,SINGULAR
+moved	372,VERB,IMP,INFLECTED_FORM
+amasa	371,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+false	371,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vacuo	371,ADJECTIVE,NOUN,SINGULAR
+helar	370,VERB
+machi	370,NOUN,SINGULAR
+delos	368,CONTRACTION,VERB,3PS,IMP,INFLECTED_FORM
+ilesa	368,ADJECTIVE
+mohos	368,NOUN,PLURAL
+pinte	368,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+selfi	368,NOUN,SINGULAR
+braza	367,NOUN,SINGULAR
+cotos	367,NOUN,PLURAL
+dural	367,ADJECTIVE
+imite	367,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+finde	366,NOUN,SINGULAR
+pairo	366,NOUN,SINGULAR
+potes	366,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+copal	365,NOUN,SINGULAR
+cenan	364,VERB
+fagan	364,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+giren	364,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+lijar	363,VERB
+bates	362,NOUN,VERB,PLURAL
+junte	362,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+royal	362,NOUN,SINGULAR
+turbe	362,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+berza	361,NOUN,SINGULAR
+fular	361,NOUN,SINGULAR
+ojiva	361,NOUN,SINGULAR
+enema	359,NOUN,SINGULAR
+rabos	358,NOUN,PLURAL
+acuna	357,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+reata	357,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tours	357,NOUN,PLURAL
+laude	356,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+gimen	355,VERB
+proas	355,NOUN,PLURAL
+rifas	355,NOUN,VERB,PLURAL
+alien	354,NOUN,SINGULAR
+honre	354,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+scout	353,NOUN,SINGULAR
+timba	353,NOUN,SINGULAR
+corva	351,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lamen	350,VERB
+odien	350,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+parce	350,NOUN,SINGULAR
+cazos	349,NOUN,PLURAL
+kebab	349,NOUN,SINGULAR
+arete	348,NOUN,SINGULAR
+cagas	348,VERB
+dales	348,VERB,FORM_OF,IMP,INFLECTED_FORM
+folie	348,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pelas	348,NOUN,VERB,PLURAL
+ruede	348,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+sueno	348,NOUN,VERB,SINGULAR
+batey	347,NOUN,SINGULAR
+lumen	347,NOUN,SINGULAR
+oxide	347,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pitar	347,VERB
+polca	347,NOUN,SINGULAR
+usase	347,VERB,3PS,INFLECTED_FORM,SUBJ
+birra	346,NOUN,SINGULAR
+chava	346,NOUN,SINGULAR
+viage	346,NOUN,SINGULAR
+ceses	345,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+ficus	345,NOUN,SINGULAR
+fijes	345,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+salar	345,NOUN,VERB,SINGULAR
+sarao	344,NOUN,SINGULAR
+sayal	344,NOUN,SINGULAR
+track	343,NOUN,SINGULAR
+fumas	342,NOUN,VERB,PLURAL
+anche	341,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+flexo	341,NOUN,SINGULAR
+meado	341,PARTICIPLE
+brete	340,NOUN,SINGULAR
+alces	338,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+cebar	338,VERB
+hurra	338,INTERJECTION,NOUN,SINGULAR
+ismos	338,NOUN,PLURAL
+lotos	337,NOUN,PLURAL
+gulag	335,NOUN,SINGULAR
+hojea	335,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+plugo	335,VERB,3PS,INFLECTED_FORM,PAST
+cuaja	334,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+osage	334,ADJECTIVE
+robas	334,VERB
+skate	334,NOUN,SINGULAR
+decil	333,NOUN,SINGULAR
+vires	331,VERB,INFLECTED_FORM,SUBJ
+bulle	329,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hazla	329,VERB,IMP,INFLECTED_FORM
+inane	329,ADJECTIVE
+manan	329,VERB
+curul	328,NOUN,SINGULAR
+inste	328,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+maman	328,VERB
+pasee	328,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+racks	328,NOUN,PLURAL
+carpe	326,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mofas	326,NOUN,VERB,PLURAL
+augur	325,NOUN,SINGULAR
+borro	325,VERB
+porto	325,VERB
+aguza	324,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+asida	324,PARTICIPLE
+rotan	323,VERB
+cunda	322,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+festa	322,NOUN,SINGULAR
+tarso	322,NOUN,SINGULAR
+libio	321,ADJECTIVE,NOUN,SINGULAR
+vados	321,NOUN,PLURAL
+bateo	320,NOUN,VERB,SINGULAR
+pecio	320,NOUN,SINGULAR
+quark	320,NOUN,SINGULAR
+vario	320,ADJECTIVE
+bread	319,VERB,IMP,INFLECTED_FORM
+cedan	319,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cholo	319,NOUN,ADJECTIVE,SINGULAR
+detal	319,NOUN,SINGULAR
+mudra	319,NOUN,SINGULAR
+pesen	318,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+avale	317,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cuele	317,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+firmo	317,VERB
+bizco	316,ADJECTIVE,VERB
+circa	313,PREPOSITION
+dixit	312,PREPOSITION
+ramen	312,NOUN,SINGULAR
+sarro	312,NOUN,SINGULAR
+traca	312,NOUN,SINGULAR
+atara	311,VERB,3PS,INFLECTED_FORM,SUBJ
+honro	311,VERB
+juros	311,NOUN,PLURAL
+redox	311,ADJECTIVE
+caray	310,INTERJECTION
+djinn	310,NOUN,SINGULAR
+filma	310,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+grabe	310,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+coque	309,NOUN,SINGULAR
+intro	309,NOUN,SINGULAR
+pacte	309,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ruana	309,NOUN,ADJECTIVE,SINGULAR
+afila	306,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+orlas	306,NOUN,VERB,PLURAL
+sirga	306,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tutsi	306,ADJECTIVE,NOUN,SINGULAR
+burka	305,NOUN,SINGULAR
+chopo	304,NOUN,SINGULAR
+pacer	304,VERB
+apega	303,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+buril	303,NOUN,SINGULAR
+ficar	303,VERB
+punks	303,NOUN,PLURAL
+alisa	302,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+asear	302,VERB
+perol	302,NOUN,SINGULAR
+zafio	302,ADJECTIVE
+tasar	301,VERB
+andad	300,VERB,IMP,INFLECTED_FORM
+folle	300,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tumbe	300,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+nucal	299,ADJECTIVE
+podre	299,NOUN,SINGULAR
+viere	299,VERB,3PS,INFLECTED_FORM,SUBJ
+cojea	298,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hiyab	298,NOUN,SINGULAR
+imito	298,VERB
+licra	298,NOUN,SINGULAR
+sarga	298,NOUN,SINGULAR
+tweet	298,NOUN,SINGULAR
+yerto	298,ADJECTIVE
+estro	297,NOUN,SINGULAR
+zonal	297,ADJECTIVE
+blocs	296,NOUN,PLURAL
+cuate	296,NOUN,SINGULAR
+jaras	296,ADJECTIVE,NOUN,PLURAL
+lavas	296,VERB
+laven	296,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pelee	296,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+elote	295,NOUN,SINGULAR
+retal	295,NOUN,SINGULAR
+rublo	295,NOUN,SINGULAR
+biela	294,NOUN,SINGULAR
+copio	294,VERB
+liaba	294,VERB,3PS,INFLECTED_FORM
+recen	293,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+rumia	293,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+atole	292,NOUN,SINGULAR
+oboes	292,NOUN,PLURAL
+peino	292,VERB
+donan	291,VERB
+gofre	291,NOUN,SINGULAR
+gunas	291,NOUN,PLURAL
+tambo	291,NOUN,SINGULAR
+trova	291,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+coxal	290,NOUN,SINGULAR
+funge	290,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hatos	290,NOUN,PLURAL
+merca	289,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+peplo	289,NOUN,SINGULAR
+bufar	288,VERB
+farra	288,NOUN,SINGULAR
+hinca	288,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+traed	288,VERB,IMP,INFLECTED_FORM
+gamos	287,NOUN,PLURAL
+mutar	287,VERB
+pacas	287,ADJECTIVE,NOUN,PLURAL
+pibas	287,NOUN,PLURAL
+guata	286,NOUN,SINGULAR
+twist	286,NOUN,SINGULAR
+henna	285,NOUN,SINGULAR
+bromo	284,NOUN,SINGULAR
+retan	284,VERB
+agite	283,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ceceo	283,NOUN,VERB,SINGULAR
+evoco	283,VERB
+beodo	282,ADJECTIVE,NOUN,SINGULAR
+cosen	282,VERB
+cueza	282,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+grabo	282,VERB
+anoto	281,VERB
+sayas	281,NOUN,PLURAL
+alcen	280,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+curse	280,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dacha	279,NOUN,SINGULAR
+dalle	279,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+lapas	279,NOUN,PLURAL
+releo	279,VERB
+split	279,NOUN,SINGULAR
+tules	279,NOUN,PLURAL
+amish	278,ADJECTIVE,NOUN,SINGULAR
+chiva	278,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+forte	277,ADJECTIVE,ADVERB,NOUN,SINGULAR
+insti	277,NOUN,SINGULAR
+onrra	277,NOUN,SINGULAR
+pisen	277,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+yugos	277,NOUN,PLURAL
+apelo	276,VERB
+crash	276,NOUN,SINGULAR
+dadle	276,VERB,IMP,INFLECTED_FORM
+emane	276,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+gripa	276,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+monda	276,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pucho	276,NOUN,VERB,SINGULAR
+troca	276,NOUN,SINGULAR
+zurra	276,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+bacon	275,NOUN,SINGULAR
+bursa	275,NOUN,SINGULAR
+cagan	275,VERB
+feraz	275,ADJECTIVE
+lucio	275,NOUN,ADJECTIVE,SINGULAR
+lutos	275,NOUN,PLURAL
+lacas	274,NOUN,VERB,PLURAL
+palpo	273,NOUN,VERB,SINGULAR
+alojo	272,VERB
+rasco	272,VERB
+gavia	271,NOUN,SINGULAR
+facer	270,VERB,FORM_OF,INFLECTED_FORM
+fenol	270,NOUN,SINGULAR
+lines	270,NOUN,PLURAL
+omita	270,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+wikis	270,NOUN,PLURAL
+aliso	269,NOUN,VERB,SINGULAR
+ameba	269,NOUN,SINGULAR
+divas	269,ADJECTIVE,NOUN,PLURAL
+emoji	269,NOUN,SINGULAR
+minan	269,VERB
+siclo	268,NOUN,SINGULAR
+talio	268,NOUN,SINGULAR
+trena	268,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+yerta	267,ADJECTIVE
+yurta	267,NOUN,SINGULAR
+betas	266,NOUN,PLURAL
+voseo	266,NOUN,VERB,SINGULAR
+novas	265,ADJECTIVE,NOUN,VERB,PLURAL
+sinos	265,NOUN,PLURAL
+torvo	265,ADJECTIVE
+inuit	264,ADJECTIVE,NOUN,SINGULAR
+files	263,VERB,INFLECTED_FORM,SUBJ
+halar	263,VERB
+trace	263,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cuina	262,NOUN,SINGULAR
+pelan	262,VERB
+aqueo	261,ADJECTIVE,NOUN,SINGULAR
+ataja	261,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+coged	261,VERB,IMP,INFLECTED_FORM
+copie	261,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dimes	261,NOUN,SINGULAR
+forum	261,NOUN,SINGULAR
+subid	261,VERB,IMP,INFLECTED_FORM
+logar	260,NOUN,VERB,FORM_OF,INFLECTED_FORM,SINGULAR
+mujik	260,NOUN,SINGULAR
+taifa	260,NOUN,SINGULAR
+aloje	259,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+aluda	259,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+joden	259,VERB
+nadas	259,VERB
+nones	259,ADVERB
+parva	259,NOUN,ADJECTIVE,SINGULAR
+raspa	259,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rizar	259,VERB
+rocks	259,NOUN,PLURAL
+yarda	259,NOUN,SINGULAR
+nimia	258,ADJECTIVE
+adula	257,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+anega	257,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+huyas	257,VERB,INFLECTED_FORM,SUBJ
+paisa	257,NOUN,SINGULAR
+snack	257,NOUN,SINGULAR
+squat	257,NOUN,SINGULAR
+jures	256,VERB,INFLECTED_FORM,SUBJ
+manas	256,NOUN,VERB,PLURAL
+pages	256,NOUN,PLURAL
+segur	256,NOUN,SINGULAR
+arreo	255,NOUN,VERB,ADVERB,SINGULAR
+sopar	255,VERB
+banjo	254,NOUN,SINGULAR
+estor	254,NOUN,SINGULAR
+tamal	254,NOUN,ADJECTIVE,SINGULAR
+asola	253,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+cayos	253,NOUN,PLURAL
+hache	253,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ochos	253,NOUN,PLURAL
+ojito	253,NOUN,SINGULAR
+supla	253,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+virgo	251,NOUN,ADJECTIVE,SINGULAR
+cavan	250,VERB
+cuaje	250,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+greda	250,NOUN,SINGULAR
+izada	250,NOUN,PARTICIPLE,SINGULAR
+calzo	249,NOUN,VERB,SINGULAR
+denle	249,VERB,IMP,INFLECTED_FORM
+golem	249,NOUN,SINGULAR
+grapa	249,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mores	248,VERB,INFLECTED_FORM,SUBJ
+shuar	248,ADJECTIVE,NOUN,SINGULAR
+aspen	247,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vibre	247,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+emula	246,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+juras	246,VERB
+plays	246,NOUN,PLURAL
+atina	245,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dense	244,VERB,IMP,INFLECTED_FORM
+flaps	244,NOUN,PLURAL
+mides	244,VERB
+otero	244,NOUN,SINGULAR
+rafia	243,NOUN,SINGULAR
+braga	242,NOUN,SINGULAR
+grajo	241,NOUN,SINGULAR
+migra	241,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+deudo	240,NOUN,SINGULAR
+efebo	240,NOUN,SINGULAR
+oblea	240,NOUN,SINGULAR
+domos	239,NOUN,PLURAL
+zafar	239,VERB
+corza	238,NOUN,SINGULAR
+gateo	238,NOUN,VERB,SINGULAR
+maras	238,NOUN,PLURAL
+sioux	238,ADJECTIVE,NOUN,SINGULAR
+debdo	237,NOUN,SINGULAR
+draft	237,NOUN,SINGULAR
+somas	237,NOUN,PLURAL
+bosta	236,NOUN,SINGULAR
+cuita	236,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+jacal	235,NOUN,SINGULAR
+memos	235,ADJECTIVE,NOUN,PLURAL
+ovina	235,ADJECTIVE
+rupia	235,NOUN,SINGULAR
+vatio	235,NOUN,SINGULAR
+vahos	234,NOUN,PLURAL
+vates	233,NOUN,PLURAL
+masca	232,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+meada	232,NOUN,PARTICIPLE,SINGULAR
+pargo	232,NOUN,SINGULAR
+picha	232,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+riman	232,VERB
+laxas	231,ADJECTIVE,VERB
+arepa	230,NOUN,SINGULAR
+asaba	230,VERB,3PS,INFLECTED_FORM
+bobas	230,ADJECTIVE,NOUN,PLURAL
+cados	230,NOUN,PLURAL
+cesio	230,NOUN,SINGULAR
+jotas	230,NOUN,PLURAL
+sisea	230,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sotos	230,NOUN,PLURAL
+tilda	230,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+veste	230,NOUN,SINGULAR
+atiza	229,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dildo	229,NOUN,SINGULAR
+galio	229,NOUN,SINGULAR
+jondo	228,ADJECTIVE
+salda	228,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+solfa	228,NOUN,SINGULAR
+astil	227,NOUN,SINGULAR
+medro	227,NOUN,VERB,SINGULAR
+nieva	227,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ardan	226,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+campa	226,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dinar	226,NOUN,SINGULAR
+lobas	226,NOUN,PLURAL
+vivac	226,NOUN,SINGULAR
+yuyos	226,NOUN,PLURAL
+cacas	225,NOUN,PLURAL
+dogal	225,NOUN,SINGULAR
+gozne	225,NOUN,SINGULAR
+irlos	225,VERB,INF
+izado	224,NOUN,PARTICIPLE,SINGULAR
+rosto	224,VERB
+sodas	224,NOUN,PLURAL
+ticas	224,ADJECTIVE
+cerio	223,NOUN,SINGULAR
+mezzo	223,NOUN,SINGULAR
+rayan	223,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+acojo	222,VERB
+grumo	222,NOUN,SINGULAR
+porfa	221,ADVERB
+abrid	220,VERB,IMP,INFLECTED_FORM
+bagre	220,NOUN,SINGULAR
+fasto	220,ADJECTIVE,NOUN,SINGULAR
+foque	220,NOUN,SINGULAR
+peral	220,NOUN,SINGULAR
+chela	219,NOUN,ADJECTIVE,SINGULAR
+comal	219,NOUN,SINGULAR
+crono	219,NOUN,SINGULAR
+denme	219,VERB,IMP,INFLECTED_FORM
+nobel	219,NOUN,SINGULAR
+voleo	219,NOUN,VERB,SINGULAR
+acera	218,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+afijo	218,NOUN,SINGULAR
+astur	218,ADJECTIVE
+cakes	218,NOUN,PLURAL
+hipos	218,NOUN,PLURAL
+tizne	218,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+trujo	218,VERB,3PS,INFLECTED_FORM,PAST
+apero	217,NOUN,SINGULAR
+bagel	217,NOUN,SINGULAR
+metil	217,NOUN,SINGULAR
+virey	217,NOUN,SINGULAR
+oyere	216,VERB,3PS,INFLECTED_FORM,SUBJ
+papis	216,NOUN,PLURAL
+trola	216,NOUN,SINGULAR
+atino	215,VERB
+deven	215,VERB
+nutra	215,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+septo	215,NOUN,SINGULAR
+vetos	215,NOUN,PLURAL
+cuelo	214,VERB
+seros	214,VERB,INF
+ticos	214,ADJECTIVE,NOUN,PLURAL
+bucea	213,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dacio	213,ADJECTIVE,NOUN,SINGULAR
+sobar	213,VERB
+albas	212,ADJECTIVE,NOUN,PLURAL
+atuvo	212,VERB,3PS,INFLECTED_FORM,PAST
+cacha	212,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cofas	212,NOUN,PLURAL
+hurga	212,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+salde	212,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+seudo	212,ADJECTIVE
+azoro	211,VERB
+micos	211,NOUN,PLURAL
+preda	211,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fisio	210,NOUN,SINGULAR
+flato	210,NOUN,SINGULAR
+jefas	210,NOUN,PLURAL
+passo	210,VERB
+pedid	210,VERB,IMP,INFLECTED_FORM
+shots	210,NOUN,PLURAL
+corvo	209,ADJECTIVE,NOUN,VERB,SINGULAR
+quero	209,NOUN,SINGULAR
+surte	209,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+velen	209,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+gozas	208,VERB
+morra	208,NOUN,INTERJECTION,SINGULAR
+alano	207,ADJECTIVE,NOUN,SINGULAR
+cents	207,NOUN,PLURAL
+chola	207,NOUN,ADJECTIVE,SINGULAR
+mocho	207,ADJECTIVE,NOUN,VERB,SINGULAR
+sural	207,ADJECTIVE
+pitas	206,NOUN,VERB,PLURAL
+rezas	206,VERB
+stent	206,NOUN,SINGULAR
+topas	206,VERB
+chupe	205,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cisco	205,NOUN,VERB,SINGULAR
+tunas	205,NOUN,VERB,PLURAL
+ilion	204,NOUN,SINGULAR
+lerdo	204,ADJECTIVE
+majos	204,ADJECTIVE
+mofan	204,VERB
+puyas	204,NOUN,VERB,PLURAL
+sigma	204,NOUN,SINGULAR
+untan	204,VERB
+bogar	203,VERB
+elije	203,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+follo	203,VERB
+mugir	203,VERB
+avara	202,NOUN,ADJECTIVE,SINGULAR
+itrio	202,NOUN,SINGULAR
+alfoz	201,NOUN,SINGULAR
+aneja	201,ADJECTIVE
+fosco	201,ADJECTIVE
+gofio	201,NOUN,SINGULAR
+mutan	201,VERB
+senso	201,VERB
+calan	200,VERB
+huaca	200,NOUN,SINGULAR
+majas	200,ADJECTIVE,VERB
+meaba	200,VERB,3PS,INFLECTED_FORM
+plega	200,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+apele	199,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+seseo	199,NOUN,VERB,SINGULAR
+volea	198,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+drone	197,NOUN,SINGULAR
+guaje	197,ADJECTIVE,NOUN,SINGULAR
+jalan	197,VERB
+nerds	197,NOUN,PLURAL
+pepas	197,NOUN,PLURAL
+torio	197,NOUN,SINGULAR
+bebed	196,VERB,IMP,INFLECTED_FORM
+falos	196,NOUN,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL
+fiara	196,VERB,3PS,INFLECTED_FORM,SUBJ
+optas	196,VERB
+palpe	196,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cural	195,ADJECTIVE
+libia	195,NOUN,ADJECTIVE,SINGULAR
+poden	195,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+froto	194,VERB
+vivid	194,VERB,IMP,INFLECTED_FORM
+frote	193,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+grill	193,NOUN,SINGULAR
+jaima	193,NOUN,SINGULAR
+japos	193,NOUN,PLURAL
+polka	193,NOUN,SINGULAR
+rones	193,NOUN,PLURAL
+trina	193,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+babea	192,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+copta	192,NOUN,ADJECTIVE,SINGULAR
+lecto	192,NOUN,SINGULAR
+loado	192,PARTICIPLE
+salia	192,ADJECTIVE
+turbo	192,ADJECTIVE,NOUN,VERB,SINGULAR
+umami	192,NOUN,SINGULAR
+aguar	191,VERB
+breva	191,NOUN,SINGULAR
+cales	191,VERB,INFLECTED_FORM,SUBJ
+chido	191,ADJECTIVE
+nuble	191,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pifia	191,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+colme	190,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+escay	190,NOUN,SINGULAR
+jodes	190,VERB
+lacia	190,ADJECTIVE
+bioma	189,NOUN,SINGULAR
+mosso	189,NOUN,SINGULAR
+naces	189,VERB
+nubio	189,NOUN,ADJECTIVE,SINGULAR
+reset	189,NOUN,SINGULAR
+suevo	188,NOUN,ADJECTIVE,SINGULAR
+fumes	187,VERB,INFLECTED_FORM,SUBJ
+laves	187,VERB,INFLECTED_FORM,SUBJ
+cocoa	186,NOUN,SINGULAR
+filio	186,VERB
+timar	185,VERB
+aftas	184,NOUN,PLURAL
+ataco	184,VERB
+cague	184,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+creps	184,NOUN,PLURAL
+gongs	184,NOUN,PLURAL
+lichi	184,NOUN,SINGULAR
+lijas	184,NOUN,VERB,PLURAL
+cocas	183,NOUN,PLURAL
+cures	183,VERB,INFLECTED_FORM,SUBJ
+foyer	183,NOUN,SINGULAR
+luzco	183,VERB
+riese	183,VERB,3PS,INFLECTED_FORM,SUBJ
+amare	182,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cavas	182,ADJECTIVE,NOUN,VERB,PLURAL
+fatua	182,ADJECTIVE,NOUN,SINGULAR
+sobro	182,VERB
+menda	181,NOUN,PRONOUN,SINGULAR
+punir	181,VERB
+quepo	181,VERB
+agraz	180,ADJECTIVE,NOUN,SINGULAR
+armen	180,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+copto	180,ADJECTIVE,NOUN,SINGULAR
+fugar	180,VERB
+limos	180,NOUN,PLURAL
+nadir	180,NOUN,SINGULAR
+osase	180,VERB,3PS,INFLECTED_FORM,SUBJ
+sisas	180,NOUN,VERB,PLURAL
+aduar	179,NOUN,SINGULAR
+crepe	179,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+izaba	179,VERB,3PS,INFLECTED_FORM
+magas	179,ADJECTIVE,NOUN,PLURAL
+sitos	179,ADJECTIVE
+urato	179,NOUN,SINGULAR
+vedar	179,VERB
+adios	178,INTERJECTION
+cabro	178,NOUN,SINGULAR
+orara	178,VERB,3PS,INFLECTED_FORM,SUBJ
+repta	178,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+berro	177,NOUN,SINGULAR
+bonzo	177,NOUN,SINGULAR
+cedas	177,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+naide	177,PRONOUN
+watts	177,NOUN,PLURAL
+chuzo	176,NOUN,VERB,SINGULAR
+coima	176,NOUN,SINGULAR
+cucos	176,ADJECTIVE,NOUN,PLURAL
+echad	176,VERB,IMP,INFLECTED_FORM
+humea	176,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+malar	176,ADJECTIVE
+cloro	175,NOUN,VERB,SINGULAR
+pitan	175,VERB
+urgen	175,VERB
+aleve	174,ADJECTIVE,NOUN,SINGULAR
+haiga	174,VERB,NOUN,FORM_OF,INFLECTED_FORM,SINGULAR
+poleo	174,NOUN,SINGULAR
+emito	173,VERB
+getas	173,NOUN,PLURAL
+packs	173,NOUN,PLURAL
+signa	173,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+talas	173,NOUN,VERB,PLURAL
+avive	172,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+biota	172,NOUN,SINGULAR
+danta	172,NOUN,SINGULAR
+hurta	172,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+salio	172,ADJECTIVE,NOUN,SINGULAR
+henos	171,NOUN,PHRASE,VERB,FORM_OF,IMP,INFLECTED_FORM,PLURAL
+pacos	171,NOUN,ADJECTIVE,PLURAL
+yucas	171,ADJECTIVE,NOUN,PLURAL
+amaga	170,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+doten	170,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+filia	170,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+libar	170,VERB
+lozas	170,NOUN,PLURAL
+tenar	170,ADJECTIVE
+cecas	169,NOUN,PLURAL
+cedes	169,VERB
+curve	169,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+dubda	169,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+greca	169,NOUN,ADJECTIVE,SINGULAR
+ladro	169,VERB
+potra	169,NOUN,SINGULAR
+roses	169,NOUN,PLURAL
+usina	169,NOUN,SINGULAR
+yidis	169,PROPER NOUN
+belfo	168,ADJECTIVE,NOUN,SINGULAR
+bifes	168,NOUN,PLURAL
+bizca	168,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+ceban	168,VERB
+choro	168,ADJECTIVE,NOUN,SINGULAR
+cundo	168,VERB
+famas	168,NOUN,PLURAL
+zocos	168,ADJECTIVE,NOUN,PLURAL
+apila	167,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+broza	167,NOUN,SINGULAR
+codea	167,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+exima	167,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+pimas	167,ADJECTIVE,NOUN,PLURAL
+pises	167,VERB,INFLECTED_FORM,SUBJ
+sosos	167,ADJECTIVE,NOUN,PLURAL
+ateas	166,ADJECTIVE,NOUN,PLURAL
+popes	166,NOUN,PLURAL
+sardo	166,ADJECTIVE,NOUN,SINGULAR
+shake	166,NOUN,SINGULAR
+cafre	165,NOUN,ADJECTIVE,SINGULAR
+calce	165,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+lupas	165,NOUN,PLURAL
+millo	165,NOUN,SINGULAR
+pacen	165,VERB
+saris	165,NOUN,PLURAL
+vento	165,NOUN,SINGULAR
+yesos	165,NOUN,PLURAL
+derbi	164,NOUN,SINGULAR
+narre	164,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+ocote	164,NOUN,SINGULAR
+orate	164,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+paste	164,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+pujos	164,NOUN,PLURAL
+brana	163,NOUN,SINGULAR
+deles	163,VERB,3PS,IMP,INFLECTED_FORM
+esmog	163,NOUN,SINGULAR
+hilas	163,VERB
+reces	163,VERB,INFLECTED_FORM,SUBJ
+reune	163,VERB
+longo	162,ADJECTIVE,NOUN,SINGULAR
+pisha	162,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+quilo	162,NOUN,SINGULAR
+rocen	162,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+asana	161,NOUN,SINGULAR
+betel	161,NOUN,SINGULAR
+compi	161,NOUN,SINGULAR
+doses	161,NOUN,PLURAL
+fosca	161,ADJECTIVE
+hueva	161,NOUN,SINGULAR
+miman	161,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+tipis	161,NOUN,PLURAL
+trota	161,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+aludo	160,ADJECTIVE,VERB
+chita	160,NOUN,SINGULAR
+furto	160,VERB
+rioja	160,NOUN,SINGULAR
+cauda	159,NOUN,SINGULAR
+dicto	159,VERB
+pateo	159,NOUN,VERB,SINGULAR
+popas	159,NOUN,PLURAL
+pucha	159,NOUN,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rozas	159,NOUN,VERB,PLURAL
+atora	158,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+crush	158,NOUN,SINGULAR
+tabas	158,NOUN,PLURAL
+verba	158,NOUN,SINGULAR
+amate	157,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+balar	157,VERB
+cameo	157,NOUN,SINGULAR
+erice	157,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+exuda	157,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+halal	156,ADJECTIVE
+ibero	156,ADJECTIVE,NOUN,SINGULAR
+parad	156,VERB,IMP,INFLECTED_FORM
+sanen	156,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+juren	155,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+vejar	155,VERB
+finan	154,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+guiri	154,NOUN,SINGULAR
+umbra	154,NOUN,ADJECTIVE,SINGULAR
+zamba	154,NOUN,ADJECTIVE,SINGULAR
+nitro	153,NOUN,VERB,SINGULAR
+stupa	153,NOUN,SINGULAR
+zambo	153,ADJECTIVE,NOUN,SINGULAR
+citen	152,VERB,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+compu	152,NOUN,SINGULAR
+ombre	152,NOUN,SINGULAR
+probo	152,ADJECTIVE
+redor	152,NOUN,SINGULAR
+punza	151,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM

@@ -1,2607 +1,4508 @@
-momento 1009983 NOUN
-trabajo 783196 NOUN
-embargo 574397 NOUN
-persona 551911 NOUN
-hombres 504411 NOUN
-ejemplo 462878 NOUN
-mujeres 436465 NOUN
-familia 427365 NOUN
-derecho 417151 NOUN
-sentido 409658 NOUN
-sistema 382496 NOUN
-proceso 379770 NOUN
-acuerdo 329822 NOUN
-palabra 292648 NOUN
-minutos 252813 NOUN
-espacio 243050 NOUN
-sonrisa 240188 NOUN
-empresa 234535 NOUN
-control 233607 NOUN
-hermano 220850 NOUN
-estudio 212842 NOUN
-efectos 176819 NOUN
-entrada 168273 NOUN
-hermana 166868 NOUN
-mercado 161080 NOUN
-cultura 160345 NOUN
-aspecto 153467 NOUN
-calidad 150857 NOUN
-materia 148553 NOUN
-espalda 148277 NOUN
-valores 146244 NOUN
-especie 146229 NOUN
-fuerzas 145256 NOUN
-memoria 140947 NOUN
-hombros 140489 NOUN
-tiempos 137929 NOUN
-escuela 134729 NOUN
-cambios 134232 NOUN
-piernas 133120 NOUN
-semanas 130098 NOUN
-destino 127505 NOUN
-ventana 125673 NOUN
-capital 124992 NOUN
-general 124411 NOUN
-medidas 123658 NOUN
-lugares 115554 NOUN
-mensaje 115157 NOUN
-carrera 113569 NOUN
-partido 112933 NOUN
-ciencia 112488 NOUN
-cerebro 111061 NOUN
-actitud 110169 NOUN
-razones 109962 NOUN
-iglesia 108055 NOUN
-cuidado 105669 NOUN
-peligro 103919 NOUN
-pruebas 99055 NOUN
-vestido 97929 NOUN
-negocio 97290 NOUN
-puertas 96834 NOUN
-dientes 95957 NOUN
-objetos 94330 NOUN
-secreto 93794 NOUN
-entorno 93760 NOUN
-defensa 92972 NOUN
-caballo 92256 NOUN
-colores 90801 NOUN
-batalla 90252 NOUN
-lectura 90162 NOUN
-derecha 89672 NOUN
-octubre 89619 NOUN
-respeto 89437 NOUN
-niveles 88191 NOUN
-autores 87925 NOUN
-pueblos 87524 NOUN
-alumnos 86384 NOUN
-oficina 86110 NOUN
-cabello 85876 NOUN
-cuerpos 84040 NOUN
-segundo 82719 NOUN
-belleza 82206 NOUN
-noticia 80890 NOUN
-consumo 80205 NOUN
-nombres 78228 NOUN
-asiento 77939 NOUN
-maestro 77762 NOUN
-aumento 77619 NOUN
-terreno 77580 NOUN
-periodo 77036 NOUN
-recurso 75745 NOUN
-tierras 75730 NOUN
-motivos 74418 NOUN
-enemigo 73933 NOUN
-asuntos 73554 NOUN
-pasillo 73246 NOUN
-impacto 72319 NOUN
-febrero 72201 NOUN
-fuentes 72035 NOUN
-intento 71608 NOUN
-cliente 71314 NOUN
-cuentas 70944 NOUN
-volumen 69427 NOUN
-alcance 68554 NOUN
-demanda 68493 NOUN
-plantas 68391 NOUN
-muestra 68191 NOUN
-paredes 67722 NOUN
-miembro 67604 NOUN
-extremo 66731 NOUN
-llegada 66727 NOUN
-informe 64802 NOUN
-aliento 63987 NOUN
-regreso 63907 NOUN
-colegio 62954 NOUN
-amistad 61996 NOUN
-modelos 61946 NOUN
-finales 61622 NOUN
-agentes 61476 NOUN
-riesgos 61032 NOUN
-detalle 60150 NOUN
-muertos 60088 NOUN
-partida 59843 NOUN
-centros 59744 NOUN
-palacio 58900 NOUN
-pintura 58706 NOUN
-entidad 58575 NOUN
-reforma 58121 NOUN
-planeta 57890 NOUN
-dominio 57858 NOUN
-vueltas 57854 NOUN
-permiso 57710 NOUN
-esencia 57240 NOUN
-estados 57240 NOUN
-guardia 55931 NOUN
-gracias 55816 NOUN
-maneras 55567 NOUN
-poderes 54776 NOUN
-figuras 54576 NOUN
-escrito 54203 NOUN
-piedras 54184 NOUN
-fortuna 54035 NOUN
-equipos 53944 NOUN
-enfoque 53628 NOUN
-cristal 53212 NOUN
-consejo 52993 NOUN
-revista 52761 NOUN
-cintura 52495 NOUN
-esquina 52462 NOUN
-soledad 52172 NOUN
-errores 51895 NOUN
-caminos 51756 NOUN
-puestos 51316 NOUN
-vecinos 51299 NOUN
-riqueza 51272 NOUN
-repente 50988 NOUN
-actores 50847 NOUN
-papeles 50839 NOUN
-orgullo 50492 NOUN
-adultos 50483 NOUN
-impulso 50338 NOUN
-sombras 50048 NOUN
-precios 49825 NOUN
-zapatos 49538 NOUN
-botella 48565 NOUN
-amenaza 48249 NOUN
-miradas 48157 NOUN
-alcohol 48077 NOUN
-mejilla 47904 NOUN
-abogado 47807 NOUN
-postura 47526 NOUN
-columna 47127 NOUN
-artista 47029 NOUN
-paisaje 46724 NOUN
-cerveza 45896 NOUN
-antigua 44673 NOUN
-pobreza 43920 NOUN
-remedio 43056 NOUN
-combate 42761 NOUN
-anciano 42757 NOUN
-delitos 42705 NOUN
-fracaso 42306 NOUN
-castigo 42117 NOUN
-humanos 42060 NOUN
-rapidez 41048 NOUN
-promesa 40214 NOUN
-ventaja 40199 NOUN
-talento 39844 NOUN
-enfermo 39423 NOUN
-jornada 39314 NOUN
-ingreso 38905 NOUN
-domingo 38801 NOUN
-sujetos 38615 NOUN
-vistazo 38501 NOUN
-certeza 38029 NOUN
-soldado 38011 NOUN
-heridas 37764 NOUN
-suspiro 37498 NOUN
-aparato 37294 NOUN
-quieres 37174 NOUN
-testigo 37148 NOUN
-entrega 36987 NOUN
-comedor 36691 NOUN
-eventos 36690 NOUN
-nervios 36679 NOUN
-cabezas 35729 NOUN
-reflejo 35483 NOUN
-fiestas 35473 NOUN
-rechazo 35408 NOUN
-visitas 34713 NOUN
-deporte 34711 NOUN
-parejas 34632 NOUN
-vientre 34577 NOUN
-lenguas 33491 NOUN
-coronel 33400 NOUN
-asesino 33377 NOUN
-sonidos 33363 NOUN
-imperio 32843 NOUN
-reserva 32707 NOUN
-refugio 32688 NOUN
-jugador 32637 NOUN
-tiendas 32628 NOUN
-triunfo 32541 NOUN
-asombro 31658 NOUN
-ataques 31376 NOUN
-esquema 31222 NOUN
-guerras 31123 NOUN
-salario 31047 NOUN
-cuadros 30995 NOUN
-tarjeta 30841 NOUN
-deberes 30756 NOUN
-mayores 30498 NOUN
-viernes 30382 NOUN
-ternura 29981 NOUN
-pistola 29957 NOUN
-treinta 29852 NOUN
-humedad 29752 NOUN
-agujero 29506 NOUN
-activos 29481 NOUN
-usuario 29031 NOUN
-caderas 28732 NOUN
-relatos 28308 NOUN
-bosques 28164 NOUN
-terapia 28158 NOUN
-archivo 28130 NOUN
-demonio 27993 NOUN
-milagro 27896 NOUN
-bandeja 27766 NOUN
-armario 27554 NOUN
-piscina 27341 NOUN
-retrato 27208 NOUN
-novelas 27042 NOUN
-cuentos 26913 NOUN
-mandato 26906 NOUN
-alturas 26834 NOUN
-muebles 26790 NOUN
-contigo 26769 NOUN
-paquete 26762 NOUN
-rostros 26718 NOUN
-terraza 26716 NOUN
-resumen 26619 NOUN
-compras 26533 NOUN
-rodilla 26430 NOUN
-soporte 26181 NOUN
-defecto 26126 NOUN
-sendero 26109 NOUN
-costado 26045 NOUN
-canales 26037 NOUN
-formato 25893 NOUN
-firmeza 25856 NOUN
-colegas 25823 NOUN
-monedas 25802 NOUN
-pescado 25779 NOUN
-importe 25621 NOUN
-dibujos 25469 NOUN
-mentira 25454 NOUN
-agencia 25218 NOUN
-cadenas 25125 NOUN
-derrota 25006 NOUN
-juicios 24988 NOUN
-sesenta 24711 NOUN
-alcalde 24699 NOUN
-leyenda 24537 NOUN
-mochila 24423 NOUN
-cultivo 24392 NOUN
-retorno 24366 NOUN
-escenas 24028 NOUN
-titular 24001 NOUN
-avances 23933 NOUN
-huellas 23900 NOUN
-seguros 23865 NOUN
-pecados 23809 NOUN
-ruptura 23777 NOUN
-bandera 23418 NOUN
-lealtad 23283 NOUN
-turismo 23164 NOUN
-llamada 23121 NOUN
-pedazos 23098 NOUN
-arreglo 22891 NOUN
-envidia 22764 NOUN
-obreros 22723 NOUN
-validez 22718 NOUN
-miseria 22658 NOUN
-ensayos 22509 NOUN
-sucesos 22471 NOUN
-varones 22459 NOUN
-estatus 22362 NOUN
-tejidos 22298 NOUN
-alianza 22268 NOUN
-condena 22245 NOUN
-anuncio 22213 NOUN
-tercera 22040 NOUN
-bebidas 22026 NOUN
-tratado 21845 NOUN
-anciana 21833 NOUN
-decreto 21523 NOUN
-dolores 21342 NOUN
-novedad 21144 NOUN
-nobleza 21085 NOUN
-abuelos 21070 NOUN
-susurro 20939 NOUN
-colonia 20812 NOUN
-cuerdas 20639 NOUN
-regalos 20604 NOUN
-carbono 20373 NOUN
-estatua 20301 NOUN
-hogares 20265 NOUN
-corteza 20173 NOUN
-cartera 20148 NOUN
-manzana 20147 NOUN
-ascenso 19979 NOUN
-encanto 19896 NOUN
-parecer 19773 NOUN
-manchas 19663 NOUN
-fachada 19591 NOUN
-doctora 19587 NOUN
-hierbas 19435 NOUN
-guantes 19346 NOUN
-rumores 19317 NOUN
-patatas 19163 NOUN
-perfume 19019 NOUN
-blancos 18948 NOUN
-recinto 18617 NOUN
-propios 18520 NOUN
-maestra 18425 NOUN
-bloques 18299 NOUN
-capilla 18243 NOUN
-horario 18170 NOUN
-caridad 18107 NOUN
-comidas 18005 NOUN
-decenas 17990 NOUN
-portada 17880 NOUN
-debates 17869 NOUN
-dulzura 17853 NOUN
-labores 17848 NOUN
-cebolla 17841 NOUN
-conmigo 17767 NOUN
-aliados 17766 NOUN
-balance 17709 NOUN
-muertes 17562 NOUN
-setenta 17437 NOUN
-sobrino 17358 NOUN
-romanos 17325 NOUN
-tortura 17299 NOUN
-barrera 17293 NOUN
-relieve 17229 NOUN
-apetito 17208 NOUN
-poquito 17123 NOUN
-monarca 17002 NOUN
-estilos 16957 NOUN
-aviones 16934 NOUN
-barrios 16926 NOUN
-reparto 16902 NOUN
-hoteles 16862 NOUN
-idiomas 16812 NOUN
-salidas 16797 NOUN
-motores 16727 NOUN
-amantes 16712 NOUN
-volante 16616 NOUN
-rescate 16541 NOUN
-trasero 16533 NOUN
-madurez 16444 NOUN
-griegos 16207 NOUN
-esposas 16187 NOUN
-avenida 16071 NOUN
-orillas 16049 NOUN
-experto 16031 NOUN
-esclavo 16015 NOUN
-estadio 15995 NOUN
-narices 15991 NOUN
-cortina 15904 NOUN
-profeta 15862 NOUN
-viajero 15832 NOUN
-botones 15768 NOUN
-ingenio 15642 NOUN
-semilla 15627 NOUN
-cenizas 15555 NOUN
-cuartel 15496 NOUN
-corbata 15449 NOUN
-carpeta 15372 NOUN
-cautela 15287 NOUN
-comedia 15215 NOUN
-inicios 15169 NOUN
-creador 15113 NOUN
-afueras 15050 NOUN
-encargo 15026 NOUN
-retraso 14986 NOUN
-flechas 14868 NOUN
-vientos 14794 NOUN
-silueta 14791 NOUN
-disparo 14763 NOUN
-billete 14737 NOUN
-pasajes 14643 NOUN
-escasez 14600 NOUN
-templos 14509 NOUN
-heridos 14508 NOUN
-reinado 14504 NOUN
-censura 14459 NOUN
-matices 14452 NOUN
-ideales 14403 NOUN
-maldito 14378 NOUN
-naranja 14259 NOUN
-higiene 14214 NOUN
-mejoras 14208 NOUN
-factura 14144 NOUN
-cuartos 14125 NOUN
-bestias 14122 NOUN
-colinas 14071 NOUN
-cosecha 14010 NOUN
-espadas 13958 NOUN
-temores 13942 NOUN
-correos 13837 NOUN
-portero 13730 NOUN
-montaje 13702 NOUN
-noventa 13675 NOUN
-nulidad 13486 NOUN
-maletas 13407 NOUN
-grandes 13352 NOUN
-riendas 13352 NOUN
-auxilio 13349 NOUN
-abdomen 13337 NOUN
-muralla 13337 NOUN
-gemelos 13289 NOUN
-orgasmo 13179 NOUN
-esferas 13100 NOUN
-diarios 13016 NOUN
-prendas 12945 NOUN
-ingesta 12769 NOUN
-disputa 12728 NOUN
-funeral 12639 NOUN
-recetas 12542 NOUN
-pilares 12537 NOUN
-duquesa 12501 NOUN
-pezones 12444 NOUN
-premios 12418 NOUN
-hoguera 12415 NOUN
-textura 12371 NOUN
-bloqueo 12359 NOUN
-puertos 12300 NOUN
-acogida 12290 NOUN
-cemento 12275 NOUN
-diablos 12150 NOUN
-criados 12014 NOUN
-despido 12009 NOUN
-tesoros 11976 NOUN
-metales 11909 NOUN
-vanidad 11898 NOUN
-cazador 11865 NOUN
-glucosa 11865 NOUN
-ofertas 11833 NOUN
-timidez 11823 NOUN
-ajedrez 11736 NOUN
-espanto 11659 NOUN
-militar 11633 NOUN
-oficios 11608 NOUN
-campana 11565 NOUN
-iguales 11549 NOUN
-romance 11480 NOUN
-temblor 11427 NOUN
-hechizo 11362 NOUN
-apuesta 11358 NOUN
-tributo 11343 NOUN
-taberna 11242 NOUN
-caricia 11218 NOUN
-gallina 11144 NOUN
-equidad 11087 NOUN
-empleos 11086 NOUN
-condesa 11078 NOUN
-arrugas 11039 NOUN
-piensas 11005 NOUN
-desnudo 10953 NOUN
-pupilas 10953 NOUN
-puentes 10845 NOUN
-patente 10842 NOUN
-tablero 10713 NOUN
-excusas 10709 NOUN
-gigante 10658 NOUN
-cuernos 10657 NOUN
-escalas 10655 NOUN
-espejos 10627 NOUN
-talones 10554 NOUN
-captura 10549 NOUN
-locales 10523 NOUN
-indicio 10512 NOUN
-aprecio 10507 NOUN
-llanura 10487 NOUN
-difunto 10387 NOUN
-calidez 10385 NOUN
-pesetas 10367 NOUN
-troncos 10323 NOUN
-cuchara 10308 NOUN
-abanico 10304 NOUN
-tenedor 10300 NOUN
-poblado 10279 NOUN
-cigarro 10250 NOUN
-docente 10245 NOUN
-lluvias 10242 NOUN
-tobillo 10223 NOUN
-juguete 10174 NOUN
-latidos 10133 NOUN
-parques 10132 NOUN
-rigidez 10115 NOUN
-cuantos 10059 NOUN
-saberlo 10028 NOUN
-anillos 10018 NOUN
-mirarme 10014 NOUN
-rivales 9900 NOUN
-cascada 9879 NOUN
-obispos 9877 NOUN
-espiral 9874 NOUN
-camilla 9870 NOUN
-barriga 9830 NOUN
-libreta 9830 NOUN
-sobrina 9804 NOUN
-salones 9793 NOUN
-jinetes 9792 NOUN
-ustedes 9629 NOUN
-listado 9567 NOUN
-gerente 9533 NOUN
-sanidad 9530 NOUN
-docenas 9525 NOUN
-afectos 9515 NOUN
-budismo 9493 NOUN
-saberes 9442 NOUN
-premisa 9410 NOUN
-establo 9387 NOUN
-fomento 9358 NOUN
-sucesor 9286 NOUN
-escudos 9232 NOUN
-pasivos 9187 NOUN
-cordero 9170 NOUN
-ahorros 9167 NOUN
-nativos 9136 NOUN
-modales 9119 NOUN
-honores 9111 NOUN
-infarto 9058 NOUN
-balanza 9035 NOUN
-senador 9018 NOUN
-favores 8972 NOUN
-quietud 8958 NOUN
-ochenta 8918 NOUN
-traidor 8914 NOUN
-comarca 8912 NOUN
-respiro 8893 NOUN
-lujuria 8889 NOUN
-adornos 8848 NOUN
-gemidos 8840 NOUN
-apuntes 8833 NOUN
-punzada 8819 NOUN
-arteria 8810 NOUN
-acierto 8806 NOUN
-trampas 8785 NOUN
-crianza 8760 NOUN
-malicia 8759 NOUN
-patadas 8746 NOUN
-cuadras 8731 NOUN
-piratas 8712 NOUN
-relleno 8674 NOUN
-sabores 8628 NOUN
-excesos 8615 NOUN
-esperas 8613 NOUN
-pizarra 8557 NOUN
-tomates 8546 NOUN
-inercia 8539 NOUN
-chispas 8503 NOUN
-aportes 8492 NOUN
-charlas 8488 NOUN
-delirio 8473 NOUN
-ofrenda 8459 NOUN
-cajones 8400 NOUN
-tacones 8381 NOUN
-adentro 8350 NOUN
-deleite 8341 NOUN
-desfile 8305 NOUN
-paneles 8238 NOUN
-ajustes 8218 NOUN
-quieras 8187 NOUN
-espinas 8162 NOUN
-codicia 8139 NOUN
-plancha 8071 NOUN
-pisadas 8051 NOUN
-zumbido 8030 NOUN
-rutinas 7958 NOUN
-condado 7921 NOUN
-cordura 7914 NOUN
-cepillo 7903 NOUN
-perejil 7883 NOUN
-colonos 7864 NOUN
-teclado 7854 NOUN
-vampiro 7834 NOUN
-juzgado 7789 NOUN
-palmada 7735 NOUN
-astucia 7729 NOUN
-gatillo 7719 NOUN
-notario 7719 NOUN
-arcilla 7713 NOUN
-escucha 7705 NOUN
-torpeza 7670 NOUN
-colapso 7662 NOUN
-ratones 7656 NOUN
-querida 7655 NOUN
-cojones 7652 NOUN
-grietas 7652 NOUN
-matanza 7597 NOUN
-euforia 7589 NOUN
-maridos 7589 NOUN
-hembras 7584 NOUN
-insulto 7570 NOUN
-declive 7555 NOUN
-chaleco 7549 NOUN
-confort 7543 NOUN
-siervos 7533 NOUN
-cavidad 7501 NOUN
-chistes 7498 NOUN
-burbuja 7492 NOUN
-asfalto 7490 NOUN
-abrazos 7487 NOUN
-disfraz 7484 NOUN
-aceites 7483 NOUN
-hormona 7458 NOUN
-esclava 7430 NOUN
-pelotas 7429 NOUN
-enormes 7424 NOUN
-enlaces 7415 NOUN
-francos 7399 NOUN
-vinagre 7396 NOUN
-frentes 7392 NOUN
-socorro 7379 NOUN
-capucha 7347 NOUN
-inversa 7338 NOUN
-taxista 7338 NOUN
-mesilla 7290 NOUN
-pilotos 7215 NOUN
-devenir 7212 NOUN
-escolta 7153 NOUN
-subasta 7153 NOUN
-camisas 7134 NOUN
-agresor 7103 NOUN
-sheriff 7073 NOUN
-audacia 7029 NOUN
-atuendo 7022 NOUN
-silbido 6994 NOUN
-relojes 6989 NOUN
-pedidos 6988 NOUN
-cuantas 6981 NOUN
-reclamo 6973 NOUN
-influjo 6971 NOUN
-palanca 6948 NOUN
-anchura 6933 NOUN
-rodajas 6915 NOUN
-caverna 6904 NOUN
-quiebra 6903 NOUN
-racismo 6882 NOUN
-calzado 6835 NOUN
-tercios 6826 NOUN
-invento 6820 NOUN
-medalla 6790 NOUN
-aptitud 6783 NOUN
-ombligo 6768 NOUN
-alambre 6705 NOUN
-comando 6703 NOUN
-letrero 6667 NOUN
-enzimas 6602 NOUN
-lagunas 6600 NOUN
-espesor 6598 NOUN
-oriente 6570 NOUN
-monitor 6562 NOUN
-felices 6508 NOUN
-vigilia 6500 NOUN
-rastros 6477 NOUN
-lateral 6475 NOUN
-mineros 6467 NOUN
-ceguera 6456 NOUN
-lucidez 6436 NOUN
-carrito 6420 NOUN
-tejados 6417 NOUN
-portazo 6410 NOUN
-manteca 6399 NOUN
-paladar 6394 NOUN
-montura 6391 NOUN
-alumnas 6384 NOUN
-cochero 6371 NOUN
-sueldos 6370 NOUN
-tarifas 6353 NOUN
-sirenas 6347 NOUN
-fluidez 6339 NOUN
-facetas 6297 NOUN
-estupor 6290 NOUN
-ganador 6287 NOUN
-masacre 6278 NOUN
-calzada 6272 NOUN
-tijeras 6267 NOUN
-rabillo 6247 NOUN
-tristes 6236 NOUN
-tumores 6236 NOUN
-crucero 6203 NOUN
-estreno 6187 NOUN
-tatuaje 6185 NOUN
-palomas 6179 NOUN
-casados 6178 NOUN
-granito 6143 NOUN
-cojines 6117 NOUN
-teatros 6098 NOUN
-elogios 6096 NOUN
-oyentes 6091 NOUN
-marchas 6089 NOUN
-verdugo 6088 NOUN
-padrino 6071 NOUN
-gusanos 6033 NOUN
-tanques 6032 NOUN
-cortejo 6030 NOUN
-vacunas 5995 NOUN
-estante 5979 NOUN
-drenaje 5969 NOUN
-neblina 5942 NOUN
-capullo 5916 NOUN
-mezclas 5902 NOUN
-pienses 5901 NOUN
-sosiego 5888 NOUN
-fluidos 5885 NOUN
-parados 5870 NOUN
-tortuga 5828 NOUN
-caracol 5811 NOUN
-parcela 5806 NOUN
-pulsera 5797 NOUN
-crujido 5772 NOUN
-celular 5771 NOUN
-arresto 5762 NOUN
-esposos 5755 NOUN
-fusiles 5755 NOUN
-postres 5748 NOUN
-mediana 5717 NOUN
-ballena 5713 NOUN
-anhelos 5711 NOUN
-lamento 5708 NOUN
-granjas 5698 NOUN
-cazuela 5697 NOUN
-folleto 5694 NOUN
-potasio 5694 NOUN
-milenio 5686 NOUN
-filtros 5656 NOUN
-muelles 5649 NOUN
-hileras 5643 NOUN
-frailes 5637 NOUN
-turista 5632 NOUN
-helados 5626 NOUN
-siembra 5607 NOUN
-cobarde 5595 NOUN
-envases 5576 NOUN
-cocinas 5540 NOUN
-toallas 5535 NOUN
-atletas 5515 NOUN
-sureste 5512 NOUN
-bodegas 5487 NOUN
-oscuros 5487 NOUN
-alegres 5478 NOUN
-altitud 5470 NOUN
-mendigo 5470 NOUN
-sollozo 5452 NOUN
-vaquero 5451 NOUN
-solidez 5435 NOUN
-estrado 5429 NOUN
-paradas 5407 NOUN
-tumulto 5381 NOUN
-cumbres 5342 NOUN
-limosna 5339 NOUN
-costura 5315 NOUN
-anuncia 5312 NOUN
-pantano 5311 NOUN
-emblema 5282 NOUN
-carreta 5280 NOUN
-estampa 5279 NOUN
-rosario 5266 NOUN
-cuestas 5261 NOUN
-trazado 5255 NOUN
-estirpe 5249 NOUN
-tocador 5236 NOUN
-murmura 5235 NOUN
-central 5228 NOUN
-laderas 5226 NOUN
-carisma 5224 NOUN
-aplauso 5214 NOUN
-maderas 5196 NOUN
-escamas 5193 NOUN
-follaje 5187 NOUN
-insecto 5186 NOUN
-cruzada 5183 NOUN
-mudanza 5177 NOUN
-mascota 5153 NOUN
-galaxia 5132 NOUN
-uniones 5127 NOUN
-mostaza 5121 NOUN
-litigio 5102 NOUN
-pericia 5057 NOUN
-tribuna 5054 NOUN
-autismo 5027 NOUN
-aquello 5017 NOUN
-palidez 4989 NOUN
-alarmas 4973 NOUN
-pecador 4971 NOUN
-galeras 4968 NOUN
-truenos 4961 NOUN
-vapores 4955 NOUN
-realeza 4946 NOUN
-cacique 4944 NOUN
-ventura 4925 NOUN
-cinismo 4924 NOUN
-vidrios 4897 NOUN
-abogada 4895 NOUN
-oscuras 4885 NOUN
-catorce 4883 NOUN
-estuche 4881 NOUN
-resorte 4875 NOUN
-cabildo 4873 NOUN
-casilla 4869 NOUN
-divisas 4868 NOUN
-vocales 4868 NOUN
-guarida 4850 NOUN
-coronas 4818 NOUN
-granero 4807 NOUN
-diarrea 4800 NOUN
-canasta 4757 NOUN
-sonetos 4754 NOUN
-locuras 4738 NOUN
-descaro 4728 NOUN
-noreste 4726 NOUN
-soltura 4722 NOUN
-agudeza 4705 NOUN
-talante 4689 NOUN
-huelgas 4679 NOUN
-peinado 4676 NOUN
-arbusto 4637 NOUN
-capataz 4623 NOUN
-altares 4617 NOUN
-tendido 4606 NOUN
-perrito 4605 NOUN
-guardas 4604 NOUN
-mosaico 4587 NOUN
-pradera 4574 NOUN
-cerrojo 4564 NOUN
-sumario 4562 NOUN
-arsenal 4555 NOUN
-insumos 4517 NOUN
-conejos 4457 NOUN
-nazismo 4419 NOUN
-dormida 4409 NOUN
-vocablo 4409 NOUN
-camello 4402 NOUN
-litoral 4400 NOUN
-nitidez 4400 NOUN
-galleta 4392 NOUN
-infante 4389 NOUN
-picante 4344 NOUN
-verdura 4312 NOUN
-maestre 4283 NOUN
-bendito 4258 NOUN
-experta 4212 NOUN
-alergia 4186 NOUN
-acabada 4175 NOUN
-intriga 4141 NOUN
-suicida 4128 NOUN
-canalla 4082 NOUN
-clavado 4074 NOUN
-natural 4026 NOUN
-madrina 4024 NOUN
-brigada 4023 NOUN
-enviada 4010 NOUN
-latinos 4000 NOUN
-idiotas 3978 NOUN
-borrado 3962 NOUN
-tientas 3958 NOUN
-egipcia 3953 NOUN
-emisora 3952 NOUN
-lechuga 3949 NOUN
-lenguas 3937 NOUN
-soltero 3918 NOUN
-salvaje 3816 NOUN
-casadas 3792 NOUN
-chismes 3724 NOUN
-carnero 3708 NOUN
-bordado 3658 NOUN
-acogido 3648 NOUN
-propina 3646 NOUN
-adultos 3632 NOUN
-genital 3578 NOUN
-jurista 3570 NOUN
-diestra 3561 NOUN
-redonda 3536 NOUN
-acusada 3516 NOUN
-exactos 3502 NOUN
-andaluz 3492 NOUN
-caldera 3424 NOUN
-dictado 3411 NOUN
-herrero 3403 NOUN
-saludos 3402 NOUN
-afilado 3383 NOUN
-jirones 3378 NOUN
-motoras 3314 NOUN
-lavanda 3290 NOUN
-heladas 3286 NOUN
-adivina 3262 NOUN
-agravio 3247 NOUN
-erudito 3241 NOUN
-dictado 3238 NOUN
-directa 3234 NOUN
-placebo 3229 NOUN
-tostado 3217 NOUN
-derrame 3206 NOUN
-regente 3205 NOUN
-tallado 3153 NOUN
-forjado 3110 NOUN
-nodriza 3110 NOUN
-lectora 3094 NOUN
-adictos 3072 NOUN
-asesina 3045 NOUN
-numeral 3026 NOUN
-eslogan 3016 NOUN
-gemelas 3013 NOUN
-tostada 2989 NOUN
-vinagre 2987 NOUN
-rebelde 2986 NOUN
-veladas 2951 NOUN
-aprieto 2916 NOUN
-letrado 2914 NOUN
-soltera 2892 NOUN
-neurona 2867 NOUN
-jeringa 2866 NOUN
-congoja 2865 NOUN
-asfixia 2845 NOUN
-cautivo 2841 NOUN
-sobrina 2841 NOUN
-torcido 2834 NOUN
-periplo 2821 NOUN
-trazado 2803 NOUN
-detalle 2796 NOUN
-cohetes 2786 NOUN
-jesuita 2766 NOUN
-reguero 2753 NOUN
-paridad 2749 NOUN
-cocidos 2747 NOUN
-fatigas 2745 NOUN
-corrida 2744 NOUN
-soborno 2743 NOUN
-aludido 2741 NOUN
-enigmas 2739 NOUN
-jugadas 2737 NOUN
-paganos 2732 NOUN
-falacia 2728 NOUN
-indulto 2717 NOUN
-criolla 2715 NOUN
-ardilla 2712 NOUN
-agallas 2708 NOUN
-abortos 2705 NOUN
-encajes 2705 NOUN
-alfiler 2704 NOUN
-auditor 2702 NOUN
-sucesos 2702 NOUN
-caminar 2698 NOUN
-hubiere 2697 NOUN
-murales 2697 NOUN
-bolsita 2691 NOUN
-vecinas 2680 NOUN
-sueltos 2678 NOUN
-necedad 2675 NOUN
-estorbo 2670 NOUN
-alertas 2666 NOUN
-muertas 2663 NOUN
-cartero 2660 NOUN
-faroles 2660 NOUN
-gallega 2659 NOUN
-gemelas 2656 NOUN
-suspiro 2656 NOUN
-clavado 2654 NOUN
-trofeos 2652 NOUN
-soporte 2650 NOUN
-vendido 2650 NOUN
-cuencos 2648 NOUN
-colmena 2646 NOUN
-barullo 2645 NOUN
-huellas 2644 NOUN
-rodillo 2633 NOUN
-ustedes 2630 NOUN
-pupitre 2628 NOUN
-concejo 2627 NOUN
-sierras 2622 NOUN
-volumen 2621 NOUN
-cornisa 2616 NOUN
-voltaje 2615 NOUN
-llantos 2612 NOUN
-injuria 2608 NOUN
-pulgada 2608 NOUN
-arquero 2607 NOUN
-desamor 2606 NOUN
-cliente 2605 NOUN
-retazos 2594 NOUN
-vestido 2591 NOUN
-diestro 2586 NOUN
-latinas 2585 NOUN
-polacos 2584 NOUN
-harapos 2578 NOUN
-locutor 2576 NOUN
-saludos 2576 NOUN
-clienta 2574 NOUN
-librero 2571 NOUN
-tirador 2558 NOUN
-esclavo 2557 NOUN
-reflujo 2548 NOUN
-biomasa 2547 NOUN
-alegato 2546 NOUN
-bandada 2546 NOUN
-planteo 2543 NOUN
-frescos 2542 NOUN
-recados 2541 NOUN
-deporte 2540 NOUN
-recarga 2531 NOUN
-frescor 2524 NOUN
-aztecas 2522 NOUN
-enemiga 2521 NOUN
-jesuita 2512 NOUN
-maqueta 2512 NOUN
-malvado 2510 NOUN
-sudario 2509 NOUN
-azafata 2508 NOUN
-espasmo 2508 NOUN
-otomano 2507 NOUN
-hermano 2503 NOUN
-prelado 2503 NOUN
-pesares 2501 NOUN
-modales 2497 NOUN
-comidas 2494 NOUN
-altivez 2492 NOUN
-dictado 2488 NOUN
-ganados 2486 NOUN
-buitres 2485 NOUN
-higuera 2484 NOUN
-camping 2481 NOUN
-cohorte 2480 NOUN
-hidalgo 2480 NOUN
-apuesta 2477 NOUN
-migajas 2476 NOUN
-bolitas 2474 NOUN
-devotos 2467 NOUN
-abadesa 2466 NOUN
-cuartas 2463 NOUN
-inglesa 2460 NOUN
-europeo 2459 NOUN
-vidente 2456 NOUN
-elector 2455 NOUN
-parches 2453 NOUN
-limones 2450 NOUN
-quiosco 2450 NOUN
-derrama 2445 NOUN
-sudeste 2443 NOUN
-aquello 2441 NOUN
-conoces 2437 NOUN
-temores 2437 NOUN
-llegues 2434 NOUN
-navidad 2432 NOUN
-biopsia 2427 NOUN
-ligeros 2425 NOUN
-viruela 2425 NOUN
-matrona 2424 NOUN
-mecenas 2424 NOUN
-diploma 2423 NOUN
-mojadas 2417 NOUN
-risitas 2417 NOUN
-forjado 2415 NOUN
-vuestro 2412 NOUN
-ponente 2409 NOUN
-cliente 2407 NOUN
-trueque 2406 NOUN
-fotones 2404 NOUN
-barroco 2403 NOUN
-despues 2403 NOUN
-enteros 2403 NOUN
-cercado 2402 NOUN
-venidas 2400 NOUN
-alcaide 2396 NOUN
-diablos 2395 NOUN
-crudeza 2387 NOUN
-forzado 2385 NOUN
-incesto 2385 NOUN
-honesta 2380 NOUN
-replica 2376 NOUN
-moqueta 2374 NOUN
-diadema 2371 NOUN
-estacas 2363 NOUN
-puestas 2361 NOUN
-hinchas 2355 NOUN
-autista 2354 NOUN
-ramitas 2340 NOUN
-remesas 2339 NOUN
-acuario 2333 NOUN
-artista 2329 NOUN
-asesina 2323 NOUN
-quiebra 2323 NOUN
-subidas 2320 NOUN
-recargo 2317 NOUN
-cloruro 2316 NOUN
-caldero 2312 NOUN
-proezas 2309 NOUN
-mordida 2296 NOUN
-desecho 2293 NOUN
-almenas 2288 NOUN
-silbato 2285 NOUN
-baranda 2283 NOUN
-parking 2274 NOUN
-vencido 2263 NOUN
-doquier 2256 NOUN
-lactosa 2256 NOUN
-centeno 2252 NOUN
-bocados 2247 NOUN
-garrote 2246 NOUN
-crestas 2244 NOUN
-alacena 2239 NOUN
-boletos 2239 NOUN
-cefalea 2236 NOUN
-garante 2236 NOUN
-marines 2234 NOUN
-cubitos 2233 NOUN
-masones 2231 NOUN
-platino 2230 NOUN
-recibos 2230 NOUN
-pionero 2224 NOUN
-franela 2223 NOUN
-aureola 2216 NOUN
-venenos 2215 NOUN
-trocito 2214 NOUN
-festejo 2212 NOUN
-lunares 2208 NOUN
-chorizo 2206 NOUN
-suegros 2204 NOUN
-vuestra 2199 NOUN
-jabones 2195 NOUN
-insigne 2192 NOUN
-plumaje 2191 NOUN
-cometas 2190 NOUN
-palizas 2183 NOUN
-viandas 2183 NOUN
-falange 2180 NOUN
-atrofia 2179 NOUN
-fieltro 2179 NOUN
-espigas 2178 NOUN
-manitas 2176 NOUN
-prefijo 2176 NOUN
-dorados 2173 NOUN
-cerilla 2172 NOUN
-contras 2172 NOUN
-ladrido 2170 NOUN
-varilla 2170 NOUN
-botines 2161 NOUN
-bonanza 2160 NOUN
-fosfato 2160 NOUN
-lagarto 2158 NOUN
-ecuador 2157 NOUN
-haberle 2153 NOUN
-tsunami 2152 NOUN
-tintero 2141 NOUN
-turbina 2141 NOUN
-recaudo 2131 NOUN
-literas 2129 NOUN
-binomio 2127 NOUN
-acomodo 2124 NOUN
-esgrima 2123 NOUN
-moverte 2123 NOUN
-moderna 2122 NOUN
-mientes 2119 NOUN
-becerro 2118 NOUN
-rosales 2116 NOUN
-bonitos 2114 NOUN
-piadosa 2113 NOUN
-suertes 2112 NOUN
-ganchos 2111 NOUN
-pitillo 2111 NOUN
-veredas 2110 NOUN
-perilla 2108 NOUN
-solapas 2108 NOUN
-colador 2106 NOUN
-aderezo 2105 NOUN
-ausente 2104 NOUN
-raqueta 2101 NOUN
-rotonda 2095 NOUN
-bombero 2087 NOUN
-gruesos 2084 NOUN
-barraca 2082 NOUN
-balazos 2080 NOUN
-ladrona 2076 NOUN
-saqueos 2071 NOUN
-cajeros 2067 NOUN
-lactato 2063 NOUN
-pantera 2063 NOUN
-ranking 2058 NOUN
-decirlo 2056 NOUN
-tapujos 2048 NOUN
-sorteos 2047 NOUN
-invasor 2043 NOUN
-harinas 2042 NOUN
-apaches 2041 NOUN
-hamacas 2041 NOUN
-violeta 2036 NOUN
-exclama 2034 NOUN
-modista 2034 NOUN
-desidia 2031 NOUN
-heraldo 2031 NOUN
-lacayos 2030 NOUN
-librito 2028 NOUN
-brebaje 2026 NOUN
-alhajas 2025 NOUN
-jacuzzi 2019 NOUN
-bautizo 2018 NOUN
-carcasa 2017 NOUN
-patines 2014 NOUN
-picadas 2013 NOUN
-fogones 2011 NOUN
-flautas 2009 NOUN
-sanador 2006 NOUN
-tornado 2004 NOUN
-sordera 1997 NOUN
-tibieza 1997 NOUN
-ovarios 1996 NOUN
-fumador 1995 NOUN
-gaviota 1992 NOUN
-iceberg 1992 NOUN
-pintora 1992 NOUN
-prurito 1987 NOUN
-salitre 1982 NOUN
-diezmos 1977 NOUN
-fraudes 1977 NOUN
-libreto 1977 NOUN
-mucosas 1977 NOUN
-reducto 1977 NOUN
-cabinas 1976 NOUN
-humores 1976 NOUN
-selecto 1976 NOUN
-difunta 1973 NOUN
-barrido 1971 NOUN
-surtido 1971 NOUN
-laringe 1970 NOUN
-decenio 1969 NOUN
-injerto 1961 NOUN
-mechero 1959 NOUN
-manadas 1958 NOUN
-rastreo 1954 NOUN
-ranchos 1952 NOUN
-expreso 1951 NOUN
-hostias 1951 NOUN
-galones 1949 NOUN
-alubias 1948 NOUN
-euskera 1945 NOUN
-famosos 1941 NOUN
-cadetes 1928 NOUN
-vacante 1928 NOUN
-mientas 1926 NOUN
-quiebre 1919 NOUN
-secuela 1917 NOUN
-regidor 1914 NOUN
-exclamo 1909 NOUN
-payasos 1900 NOUN
-cierres 1898 NOUN
-granizo 1885 NOUN
-infeliz 1884 NOUN
-gotitas 1883 NOUN
-pechera 1882 NOUN
-brillos 1873 NOUN
-fonemas 1865 NOUN
-comento 1864 NOUN
-sexismo 1864 NOUN
-tiernos 1863 NOUN
-patitas 1855 NOUN
-canguro 1852 NOUN
-atalaya 1851 NOUN
-plantel 1851 NOUN
-mirilla 1849 NOUN
-andamio 1840 NOUN
-montado 1840 NOUN
-colilla 1833 NOUN
-finitud 1830 NOUN
-patrono 1824 NOUN
-repudio 1824 NOUN
-augurio 1820 NOUN
-remanso 1816 NOUN
-huertas 1815 NOUN
-mestizo 1815 NOUN
-culebra 1808 NOUN
-chequeo 1801 NOUN
-llantas 1800 NOUN
-llavero 1798 NOUN
-tirones 1795 NOUN
-silicio 1792 NOUN
-renacer 1791 NOUN
-amasijo 1790 NOUN
-comunas 1790 NOUN
-country 1790 NOUN
-bulevar 1787 NOUN
-bohemia 1784 NOUN
-alberca 1777 NOUN
-escozor 1777 NOUN
-escollo 1772 NOUN
-tendero 1772 NOUN
-latinos 1771 NOUN
-burlona 1769 NOUN
-cobalto 1766 NOUN
-canario 1761 NOUN
-coqueta 1759 NOUN
-celador 1756 NOUN
-sulfato 1756 NOUN
-remeros 1755 NOUN
-reveses 1755 NOUN
-penuria 1753 NOUN
-desfase 1752 NOUN
-lechuza 1746 NOUN
-levitas 1745 NOUN
-predios 1744 NOUN
-cretino 1743 NOUN
-puntaje 1741 NOUN
-embates 1732 NOUN
-jubileo 1730 NOUN
-adultez 1729 NOUN
-lavabos 1724 NOUN
-empaque 1722 NOUN
-musical 1721 NOUN
-hebilla 1720 NOUN
-oprobio 1720 NOUN
-mordaza 1718 NOUN
-tribuno 1718 NOUN
-moradas 1717 NOUN
-amplias 1710 NOUN
-reality 1709 NOUN
-holgura 1701 NOUN
-secador 1701 NOUN
-tapones 1700 NOUN
-curador 1698 NOUN
-pasador 1689 NOUN
-sondeos 1689 NOUN
-grafito 1688 NOUN
-nirvana 1683 NOUN
-perrita 1683 NOUN
-acritud 1678 NOUN
-cautiva 1678 NOUN
-pechuga 1675 NOUN
-rigores 1675 NOUN
-casinos 1670 NOUN
-corales 1668 NOUN
-infanta 1666 NOUN
-busques 1665 NOUN
-arancel 1660 NOUN
-ciernes 1659 NOUN
-bravura 1654 NOUN
-novicia 1653 NOUN
-partera 1653 NOUN
-mancebo 1648 NOUN
-cabaret 1646 NOUN
-formula 1643 NOUN
-gringos 1642 NOUN
-gatitos 1641 NOUN
-esporas 1640 NOUN
-bajadas 1638 NOUN
-pesebre 1636 NOUN
-escriba 1634 NOUN
-estribo 1630 NOUN
-ojillos 1630 NOUN
-trompas 1629 NOUN
-estelas 1628 NOUN
-puntero 1626 NOUN
-maderos 1624 NOUN
-regusto 1618 NOUN
-sexenio 1618 NOUN
-rarezas 1616 NOUN
-ordenes 1614 NOUN
-medidor 1613 NOUN
-ampolla 1610 NOUN
-repollo 1609 NOUN
-sudores 1604 NOUN
-penacho 1603 NOUN
-pepitas 1602 NOUN
-exmujer 1599 NOUN
-hipoxia 1599 NOUN
-quijada 1599 NOUN
-hispano 1597 NOUN
-humanas 1597 NOUN
-editada 1596 NOUN
-embalse 1596 NOUN
-sabueso 1593 NOUN
-canchas 1592 NOUN
-tumbona 1590 NOUN
-acabado 1589 NOUN
-modesta 1586 NOUN
-tiradas 1583 NOUN
-debacle 1582 NOUN
-druidas 1580 NOUN
-avispas 1578 NOUN
-amarras 1577 NOUN
-mierdas 1576 NOUN
-poetisa 1576 NOUN
-plumazo 1571 NOUN
-gorilas 1570 NOUN
-mexicas 1567 NOUN
-andares 1563 NOUN
-cupones 1563 NOUN
-desarme 1562 NOUN
-palillo 1562 NOUN
-brasero 1561 NOUN
-flashes 1561 NOUN
-nupcias 1559 NOUN
-palitos 1551 NOUN
-reactor 1551 NOUN
-polilla 1548 NOUN
-extenso 1547 NOUN
-axiomas 1545 NOUN
-esfinge 1544 NOUN
-antifaz 1543 NOUN
-croquis 1541 NOUN
-tenazas 1541 NOUN
-suspira 1540 NOUN
-nevadas 1538 NOUN
-ultraje 1537 NOUN
-forraje 1534 NOUN
-taladro 1532 NOUN
-amapola 1531 NOUN
-astilla 1531 NOUN
-lonchas 1531 NOUN
-llantos 1530 NOUN
-recital 1530 NOUN
-frenada 1527 NOUN
-volutas 1527 NOUN
-bramido 1525 NOUN
-retiros 1525 NOUN
-antojos 1523 NOUN
-enredos 1522 NOUN
-papilla 1522 NOUN
-sortija 1515 NOUN
-florero 1513 NOUN
-tiernas 1511 NOUN
-noruego 1509 NOUN
-timbres 1507 NOUN
-almejas 1506 NOUN
-vigente 1499 NOUN
-cochera 1497 NOUN
-hippies 1494 NOUN
-pinchos 1494 NOUN
-puestas 1491 NOUN
-enaguas 1488 NOUN
-roturas 1487 NOUN
-otredad 1479 NOUN
-hondura 1478 NOUN
-veloces 1478 NOUN
-barones 1473 NOUN
-lustros 1472 NOUN
-titanio 1472 NOUN
-barcaza 1468 NOUN
-incisos 1468 NOUN
-grupito 1467 NOUN
-basuras 1465 NOUN
-nieblas 1465 NOUN
-islotes 1464 NOUN
-glaciar 1461 NOUN
-tejanos 1460 NOUN
-criollo 1459 NOUN
-obreras 1459 NOUN
-faringe 1455 NOUN
-cortijo 1453 NOUN
-cadalso 1451 NOUN
-alemana 1450 NOUN
-posadas 1448 NOUN
-revisor 1448 NOUN
-rugidos 1447 NOUN
-paletas 1441 NOUN
-adivino 1438 NOUN
-aparejo 1438 NOUN
-aerosol 1436 NOUN
-codazos 1435 NOUN
-macizos 1433 NOUN
-candela 1428 NOUN
-trasera 1425 NOUN
-andaluz 1421 NOUN
-pillaje 1419 NOUN
-cobijas 1416 NOUN
-tomador 1414 NOUN
-asesora 1413 NOUN
-peruano 1404 NOUN
-amazona 1401 NOUN
-ambages 1399 NOUN
-levante 1399 NOUN
-boliche 1396 NOUN
-conjura 1394 NOUN
-fogatas 1394 NOUN
-chileno 1388 NOUN
-retardo 1386 NOUN
-abonado 1381 NOUN
-bancada 1381 NOUN
-glamour 1380 NOUN
-heroica 1377 NOUN
-rafting 1376 NOUN
-sicario 1374 NOUN
-bebedor 1369 NOUN
-mandado 1368 NOUN
-repulsa 1368 NOUN
-manejos 1366 NOUN
-edictos 1361 NOUN
-embrujo 1358 NOUN
-coaches 1354 NOUN
-quistes 1354 NOUN
-idiotez 1353 NOUN
-quechua 1352 NOUN
-visados 1350 NOUN
-convite 1349 NOUN
-navajas 1349 NOUN
-titanes 1348 NOUN
-collage 1347 NOUN
-prometo 1346 NOUN
-cerrada 1345 NOUN
-directa 1345 NOUN
-sonrojo 1345 NOUN
-hoyuelo 1343 NOUN
-portera 1343 NOUN
-azoteas 1342 NOUN
-cloacas 1340 NOUN
-podcast 1338 NOUN
-cancela 1337 NOUN
-liebres 1336 NOUN
-anverso 1335 NOUN
-bocinas 1335 NOUN
-rebajas 1335 NOUN
-canicas 1333 NOUN
-zancada 1332 NOUN
-supremo 1326 NOUN
-lavados 1324 NOUN
-suturas 1323 NOUN
-replico 1322 NOUN
-mortaja 1321 NOUN
-espinos 1320 NOUN
-jaqueca 1320 NOUN
-churros 1319 NOUN
-coautor 1319 NOUN
-hechura 1319 NOUN
-mulatos 1318 NOUN
-pedales 1318 NOUN
-especia 1315 NOUN
-duermes 1312 NOUN
-penalti 1311 NOUN
-enchufe 1310 NOUN
-ganados 1306 NOUN
-cabales 1305 NOUN
-pijamas 1302 NOUN
-titubeo 1300 NOUN
-mugeres 1299 NOUN
-sabanas 1299 NOUN
-hackers 1294 NOUN
-manzano 1293 NOUN
-albacea 1289 NOUN
-llenado 1287 NOUN
-callado 1283 NOUN
-sadismo 1281 NOUN
-maldijo 1279 NOUN
-penique 1277 NOUN
-hacedor 1275 NOUN
-mampara 1275 NOUN
-espumas 1271 NOUN
-demoras 1268 NOUN
-ciruela 1267 NOUN
-humilde 1264 NOUN
-veganos 1261 NOUN
-cabezal 1259 NOUN
-novatos 1259 NOUN
-vincula 1259 NOUN
-atadura 1255 NOUN
-costras 1255 NOUN
-misivas 1253 NOUN
-fetiche 1251 NOUN
-boquete 1250 NOUN
-motines 1249 NOUN
-pareces 1248 NOUN
-aviador 1247 NOUN
-haberes 1245 NOUN
-esbozos 1244 NOUN
-pensado 1244 NOUN
-pierdes 1242 NOUN
-termino 1242 NOUN
-elegida 1238 NOUN
-negrita 1238 NOUN
-arrabal 1237 NOUN
-catarro 1237 NOUN
-cautivo 1232 NOUN
-egipcio 1232 NOUN
-yugular 1232 NOUN
-velorio 1231 NOUN
-rabinos 1230 NOUN
-calores 1227 NOUN
-copista 1226 NOUN
-hilillo 1226 NOUN
-matador 1225 NOUN
-telares 1225 NOUN
-nadador 1223 NOUN
-crecida 1219 NOUN
-alzados 1217 NOUN
-cerezos 1216 NOUN
-nacidas 1216 NOUN
-asidero 1212 NOUN
-apuesto 1211 NOUN
-toreros 1211 NOUN
-lirismo 1210 NOUN
-pagador 1208 NOUN
-votante 1207 NOUN
-estepas 1206 NOUN
-morisco 1204 NOUN
-hornear 1200 NOUN
-casting 1198 NOUN
-cuentes 1198 NOUN
-erratas 1198 NOUN
-ranuras 1198 NOUN
-serbios 1197 NOUN
-augusto 1196 NOUN
-tazones 1195 NOUN
-troyano 1194 NOUN
-pujanza 1190 NOUN
-suicida 1189 NOUN
-zarpazo 1188 NOUN
-ternero 1186 NOUN
-colchas 1183 NOUN
-desaire 1183 NOUN
-estanco 1182 NOUN
-ingrata 1180 NOUN
-pasadas 1179 NOUN
-vaciado 1179 NOUN
-altillo 1178 NOUN
-casetas 1176 NOUN
-tuviera 1176 NOUN
-virutas 1175 NOUN
-carajos 1174 NOUN
-bohemio 1171 NOUN
-morenas 1170 NOUN
-acicate 1166 NOUN
-dejadez 1166 NOUN
-lectora 1165 NOUN
-velador 1164 NOUN
-resinas 1162 NOUN
-brocado 1161 NOUN
-carrete 1161 NOUN
-ribetes 1161 NOUN
-bulimia 1160 NOUN
-papiros 1160 NOUN
-acequia 1157 NOUN
-denuedo 1157 NOUN
-espesos 1153 NOUN
-fregona 1152 NOUN
-sajones 1152 NOUN
-vasallo 1152 NOUN
-cositas 1148 NOUN
-popular 1148 NOUN
-veraneo 1148 NOUN
-mesitas 1143 NOUN
-domador 1139 NOUN
-prensas 1139 NOUN
-cabrito 1136 NOUN
-gritito 1136 NOUN
-puerros 1135 NOUN
-estafas 1133 NOUN
-inquina 1132 NOUN
-pastora 1131 NOUN
-derribo 1129 NOUN
-felinos 1129 NOUN
-violada 1129 NOUN
-apartes 1128 NOUN
-recluta 1127 NOUN
-tiestos 1127 NOUN
-gauchos 1126 NOUN
-panacea 1125 NOUN
-panceta 1121 NOUN
-anguila 1118 NOUN
-desvelo 1118 NOUN
-esparto 1116 NOUN
-puridad 1116 NOUN
-barbudo 1114 NOUN
-becario 1112 NOUN
-legajos 1111 NOUN
-secreta 1110 NOUN
-concisa 1108 NOUN
-argivos 1101 NOUN
-malezas 1101 NOUN
-piropos 1101 NOUN
-sepelio 1101 NOUN
-escaneo 1100 NOUN
-observo 1100 NOUN
-pepinos 1099 NOUN
-temario 1099 NOUN
-soprano 1097 NOUN
-postigo 1095 NOUN
-merluza 1094 NOUN
-sabedor 1094 NOUN
-mordido 1092 NOUN
-recluso 1089 NOUN
-anchoas 1088 NOUN
-bananas 1088 NOUN
-toneles 1088 NOUN
-cortada 1086 NOUN
-remates 1086 NOUN
-papilas 1083 NOUN
-risilla 1082 NOUN
-timonel 1082 NOUN
-marcaje 1081 NOUN
-briznas 1075 NOUN
-civiles 1075 NOUN
-exnovio 1074 NOUN
-colecta 1073 NOUN
-comadre 1073 NOUN
-arneses 1071 NOUN
-veleros 1069 NOUN
-cosacos 1068 NOUN
-escasas 1066 NOUN
-pitidos 1066 NOUN
-rabieta 1066 NOUN
-laxitud 1064 NOUN
-regaliz 1064 NOUN
-anatema 1063 NOUN
-levedad 1062 NOUN
-zafiros 1061 NOUN
-perchas 1060 NOUN
-dragona 1057 NOUN
-broncas 1056 NOUN
-modesto 1056 NOUN
-argolla 1055 NOUN
-ponente 1055 NOUN
-nitrato 1053 NOUN
-embolia 1051 NOUN
-sillita 1051 NOUN
-escucho 1049 NOUN
-condujo 1048 NOUN
-elipsis 1048 NOUN
-trechos 1048 NOUN
-hashtag 1047 NOUN
-eritema 1046 NOUN
-sastres 1046 NOUN
-genuina 1044 NOUN
-eunucos 1041 NOUN
-grafiti 1041 NOUN
-mantras 1040 NOUN
-cercana 1038 NOUN
-obscuro 1038 NOUN
-corneta 1037 NOUN
-esenios 1036 NOUN
-bendito 1035 NOUN
-ofensor 1035 NOUN
-vertido 1035 NOUN
-trineos 1034 NOUN
-ternera 1032 NOUN
-baladas 1031 NOUN
-querido 1031 NOUN
-redondo 1031 NOUN
-escobas 1029 NOUN
-recreos 1027 NOUN
-movidas 1026 NOUN
-siestas 1026 NOUN
-quintos 1024 NOUN
-atentas 1023 NOUN
-corazas 1023 NOUN
-yglesia 1023 NOUN
-alardes 1021 NOUN
-cianuro 1021 NOUN
-relevos 1021 NOUN
-arrullo 1020 NOUN
-bourbon 1020 NOUN
-maxilar 1019 NOUN
-neceser 1019 NOUN
-soplido 1018 NOUN
-bisonte 1017 NOUN
-melones 1017 NOUN
-morenos 1017 NOUN
-mantuvo 1015 NOUN
-vintage 1015 NOUN
-bordado 1014 NOUN
-fianzas 1014 NOUN
-octavas 1014 NOUN
-rededor 1014 NOUN
-nacidos 1013 NOUN
-casucha 1011 NOUN
-mocedad 1011 NOUN
-manager 1010 NOUN
-damasco 1009 NOUN
-intrusa 1009 NOUN
-ortigas 1008 NOUN
-disenso 1006 NOUN
-voltios 1006 NOUN
-yanquis 1005 NOUN
-dineral 1003 NOUN
-bobadas 1001 NOUN
-carecen 1000 NOUN
-molesto 1000 NOUN
-autocar 999 NOUN
-boquita 999 NOUN
-molares 999 NOUN
-alameda 998 NOUN
-granuja 997 NOUN
-cubismo 994 NOUN
-emerger 994 NOUN
-demente 993 NOUN
-neutral 993 NOUN
-sonatas 992 NOUN
-sultana 992 NOUN
-ganglio 991 NOUN
-solares 989 NOUN
-amplios 987 NOUN
-dossier 987 NOUN
-oquedad 987 NOUN
-estufas 985 NOUN
-porrazo 985 NOUN
-fitness 984 NOUN
-tuercas 984 NOUN
-empeine 983 NOUN
-linfoma 982 NOUN
-verbena 980 NOUN
-gentuza 979 NOUN
-beisbol 978 NOUN
-cetosis 978 NOUN
-andenes 972 NOUN
-gordura 971 NOUN
-limites 971 NOUN
-playboy 970 NOUN
-frenado 969 NOUN
-picante 968 NOUN
-bitcoin 967 NOUN
-ahijado 966 NOUN
-divisor 965 NOUN
-inmenso 965 NOUN
-esquela 962 NOUN
-estrago 962 NOUN
-chupito 961 NOUN
-corrido 960 NOUN
-galanes 960 NOUN
-pinares 960 NOUN
-bobinas 959 NOUN
-piquete 958 NOUN
-cenador 957 NOUN
-pocilga 957 NOUN
-ardides 955 NOUN
-acetato 953 NOUN
-afilado 953 NOUN
-calamar 953 NOUN
-notable 953 NOUN
-vegetal 952 NOUN
-saquito 950 NOUN
-aldeano 949 NOUN
-desgano 948 NOUN
-garajes 947 NOUN
-potrero 947 NOUN
-daneses 946 NOUN
-chupete 945 NOUN
-grumete 945 NOUN
-asepsia 944 NOUN
-alfalfa 943 NOUN
-tinajas 942 NOUN
-decurso 941 NOUN
-goteras 941 NOUN
-selenio 940 NOUN
-chances 936 NOUN
-sardina 936 NOUN
-tabacos 936 NOUN
-indiano 935 NOUN
-neonato 935 NOUN
-arrobas 932 NOUN
-pasitos 932 NOUN
-atisbos 928 NOUN
-terrier 928 NOUN
-colitis 925 NOUN
-karaoke 924 NOUN
-playera 924 NOUN
-pupilos 924 NOUN
-pelucas 923 NOUN
-puercos 923 NOUN
-coyotes 922 NOUN
-donaire 922 NOUN
-arcanos 921 NOUN
-esclusa 920 NOUN
-esteras 920 NOUN
-subtipo 920 NOUN
-chalupa 919 NOUN
-pendejo 919 NOUN
-serenos 919 NOUN
-reborde 918 NOUN
-expolio 917 NOUN
-permuta 916 NOUN
-dialogo 915 NOUN
-tugurio 914 NOUN
-asirios 913 NOUN
-cetonas 913 NOUN
-diverso 912 NOUN
-divinos 912 NOUN
-oidores 912 NOUN
-letrina 911 NOUN
-olvidos 911 NOUN
-vikingo 911 NOUN
-deciros 910 NOUN
-alforja 909 NOUN
-affaire 908 NOUN
-manojos 907 NOUN
-barrita 906 NOUN
-alondra 905 NOUN
-naranjo 904 NOUN
-procura 901 NOUN
-mesetas 900 NOUN
-criador 899 NOUN
-rosados 899 NOUN
-bajeles 898 NOUN
-startup 895 NOUN
-aguante 894 NOUN
-mapache 893 NOUN
-felpudo 891 NOUN
-licitud 891 NOUN
-default 890 NOUN
-resorts 889 NOUN
-voceros 889 NOUN
-pilotes 888 NOUN
-audaces 886 NOUN
-charola 886 NOUN
-proceda 886 NOUN
-leptina 885 NOUN
-friends 884 NOUN
-salinas 883 NOUN
-etileno 881 NOUN
-remover 881 NOUN
-cohecho 880 NOUN
-martini 879 NOUN
-postrer 879 NOUN
-tablado 878 NOUN
-bidones 877 NOUN
-tenerte 876 NOUN
-plugins 875 NOUN
-relator 875 NOUN
-citados 873 NOUN
-lodazal 871 NOUN
-teucros 870 NOUN
-broches 869 NOUN
-canasto 869 NOUN
-frazada 869 NOUN
-venados 869 NOUN
-trading 868 NOUN
-biquini 865 NOUN
-andadas 864 NOUN
-mirones 864 NOUN
-marisma 863 NOUN
-civismo 862 NOUN
-ilustre 861 NOUN
-plebeyo 860 NOUN
-luceros 859 NOUN
-exnovia 858 NOUN
-morados 858 NOUN
-western 858 NOUN
-represa 856 NOUN
-yogures 856 NOUN
-viajera 855 NOUN
-emporio 854 NOUN
-perrera 852 NOUN
-batidas 850 NOUN
-minibar 850 NOUN
-tozudez 849 NOUN
-basalto 848 NOUN
-capitan 848 NOUN
-coliseo 846 NOUN
-tiritas 846 NOUN
-lombriz 844 NOUN
-collado 842 NOUN
-jamones 842 NOUN
-arriero 841 NOUN
-trances 840 NOUN
-hatillo 839 NOUN
-ventero 839 NOUN
-psiquis 838 NOUN
-colgajo 837 NOUN
-mirarte 837 NOUN
-rinitis 837 NOUN
-penados 836 NOUN
-sedante 835 NOUN
-tiovivo 835 NOUN
-valijas 834 NOUN
-bonitas 833 NOUN
-repique 831 NOUN
-anillas 829 NOUN
-estudia 829 NOUN
-sufijos 829 NOUN
-chanzas 828 NOUN
-escroto 828 NOUN
-redadas 828 NOUN
-duodeno 827 NOUN
-tenista 827 NOUN
-armador 826 NOUN
-convino 824 NOUN
-juliana 824 NOUN
-cabeceo 823 NOUN
-muescas 823 NOUN
-retales 823 NOUN
-tintura 823 NOUN
-arcabuz 822 NOUN
-arboles 820 NOUN
-melenas 820 NOUN
-tamales 819 NOUN
-taninos 818 NOUN
-caninos 817 NOUN
-cajitas 816 NOUN
-juergas 815 NOUN
-viejito 815 NOUN
-manilla 814 NOUN
-radares 813 NOUN
-puntito 812 NOUN
-absceso 809 NOUN
-empates 809 NOUN
-nominal 809 NOUN
-andador 808 NOUN
-baldosa 806 NOUN
-casadas 806 NOUN
-truchas 804 NOUN
-cachete 803 NOUN
-opresor 803 NOUN
-juntura 800 NOUN
-maligno 799 NOUN
-eslavos 798 NOUN
-burrito 797 NOUN
-treguas 797 NOUN
-amargor 796 NOUN
-bellota 795 NOUN
-encomio 795 NOUN
-pollito 794 NOUN
-simples 794 NOUN
-bocazas 793 NOUN
-batidor 792 NOUN
-excepto 792 NOUN
-flirteo 791 NOUN
-potente 791 NOUN
-remotos 791 NOUN
-sangres 791 NOUN
-campera 790 NOUN
-estasis 790 NOUN
-repunte 790 NOUN
-literal 788 NOUN
-alcobas 787 NOUN
-delator 787 NOUN
-flagelo 787 NOUN
-frenazo 786 NOUN
-gaznate 786 NOUN
-terceto 786 NOUN
-capitel 785 NOUN
-colgada 783 NOUN
-compota 782 NOUN
-modorra 782 NOUN
-ardores 781 NOUN
-suponer 781 NOUN
-trancas 780 NOUN
-adorada 779 NOUN
-durazno 778 NOUN
-fichaje 778 NOUN
-medusas 778 NOUN
-resulte 777 NOUN
-pirueta 776 NOUN
-sofrito 776 NOUN
-meseros 775 NOUN
-barrica 774 NOUN
-indemne 774 NOUN
-acacias 773 NOUN
-fiambre 772 NOUN
-calleja 771 NOUN
-pinches 771 NOUN
-reventa 771 NOUN
-gestora 770 NOUN
-sentada 770 NOUN
-frontal 769 NOUN
-plumero 766 NOUN
-difusor 765 NOUN
-hacerla 765 NOUN
-sostuvo 765 NOUN
-empalme 762 NOUN
-tostado 762 NOUN
-novicio 760 NOUN
-haberos 759 NOUN
-repisas 759 NOUN
-gordito 758 NOUN
-ruidito 758 NOUN
-arconte 757 NOUN
-atracos 756 NOUN
-auroras 755 NOUN
-mollera 754 NOUN
-morfema 754 NOUN
-primado 754 NOUN
-retinas 754 NOUN
-buzones 753 NOUN
-bronces 751 NOUN
-retoque 751 NOUN
-tajadas 751 NOUN
-marcado 747 NOUN
-ramales 746 NOUN
-destajo 745 NOUN
-egresos 745 NOUN
-fornido 745 NOUN
-torpedo 745 NOUN
-cedente 743 NOUN
-chacras 743 NOUN
-piragua 743 NOUN
-dedillo 742 NOUN
-fariseo 742 NOUN
-ahijada 741 NOUN
-impasse 741 NOUN
-miosina 741 NOUN
-portado 741 NOUN
-mixtura 740 NOUN
-rameras 740 NOUN
-vampira 739 NOUN
-arengas 738 NOUN
-boniato 735 NOUN
-garrafa 735 NOUN
-lanzada 735 NOUN
-reversa 734 NOUN
-profeso 733 NOUN
-eternos 732 NOUN
-acelgas 729 NOUN
-platito 729 NOUN
-regateo 728 NOUN
-confeti 727 NOUN
-berlina 726 NOUN
-vallado 725 NOUN
-porches 723 NOUN
-puntada 723 NOUN
-bengala 722 NOUN
-quintas 722 NOUN
-daditos 721 NOUN
-dechado 720 NOUN
-obrador 718 NOUN
-boleros 716 NOUN
-ensalmo 716 NOUN
-opereta 716 NOUN
-frutero 715 NOUN
-inicial 715 NOUN
-mundano 715 NOUN
-gacelas 714 NOUN
-genomas 714 NOUN
-bufones 713 NOUN
-proteja 712 NOUN
-macabra 711 NOUN
-palazzo 711 NOUN
-interna 710 NOUN
-tejedor 709 NOUN
-flojera 708 NOUN
-afiches 707 NOUN
-circulo 707 NOUN
-maicena 707 NOUN
-negrito 707 NOUN
-chicles 705 NOUN
-deditos 705 NOUN
-esprint 705 NOUN
-reyerta 705 NOUN
-mareada 704 NOUN
-chancho 703 NOUN
-sainete 701 NOUN
-erguido 700 NOUN
-moderno 699 NOUN
-fibrina 697 NOUN
-trastes 697 NOUN
-usurero 697 NOUN
-gruesas 696 NOUN
-prontos 695 NOUN
-embuste 694 NOUN
-mocosos 692 NOUN
-cunetas 691 NOUN
-caterva 690 NOUN
-guisado 689 NOUN
-torreta 689 NOUN
-tapetes 688 NOUN
-azulejo 687 NOUN
-patrias 687 NOUN
-neveras 686 NOUN
-tersura 684 NOUN
-bajista 683 NOUN
-atentos 682 NOUN
-fanegas 682 NOUN
-helecho 680 NOUN
-mereces 680 NOUN
-sarcoma 679 NOUN
-whiskey 679 NOUN
-casetes 678 NOUN
-chabola 677 NOUN
-pilates 676 NOUN
-viejita 676 NOUN
-celeste 675 NOUN
-orfebre 674 NOUN
-mentora 673 NOUN
-caldeos 672 NOUN
-electro 668 NOUN
-frondas 667 NOUN
-celosos 666 NOUN
-risotto 666 NOUN
-cigarra 663 NOUN
-bisagra 662 NOUN
-encinas 661 NOUN
-lujosos 661 NOUN
-pandero 661 NOUN
-tocados 661 NOUN
-atrasos 660 NOUN
-lechero 660 NOUN
-masilla 659 NOUN
-golpiza 658 NOUN
-caritas 657 NOUN
-garfios 657 NOUN
-adjunto 656 NOUN
-cookies 656 NOUN
-incauto 656 NOUN
-tickets 655 NOUN
-feacios 654 NOUN
-lindero 654 NOUN
-refleja 654 NOUN
-dejarte 653 NOUN
-escueto 653 NOUN
-mimbres 653 NOUN
-gametos 652 NOUN
-hocicos 652 NOUN
-cerdito 651 NOUN
-divanes 651 NOUN
-hachazo 651 NOUN
-siervas 651 NOUN
-coletas 649 NOUN
-porotos 649 NOUN
-rositas 649 NOUN
-suprema 649 NOUN
-coreano 648 NOUN
-aludida 647 NOUN
-cajuela 647 NOUN
-pomadas 647 NOUN
-moldura 646 NOUN
-bellaco 645 NOUN
-atraque 644 NOUN
-efigies 644 NOUN
-escabel 644 NOUN
-morador 644 NOUN
-dentina 643 NOUN
-hojitas 640 NOUN
-cubetas 639 NOUN
-lisonja 638 NOUN
-batatas 637 NOUN
-nutrias 637 NOUN
-puntera 636 NOUN
-cercano 635 NOUN
-ascesis 634 NOUN
-rebotes 634 NOUN
-sordina 634 NOUN
-sofista 632 NOUN
-corbeta 631 NOUN
-jirafas 630 NOUN
-villana 630 NOUN
-barajas 628 NOUN
-arenque 627 NOUN
-liberto 627 NOUN
-remotas 627 NOUN
-sulfuro 627 NOUN
-selfies 624 NOUN
-soplete 624 NOUN
-espuela 622 NOUN
-hernias 622 NOUN
-monismo 622 NOUN
-peineta 621 NOUN
-triples 621 NOUN
-grullas 620 NOUN
-penales 620 NOUN
-rellena 620 NOUN
-sumisos 620 NOUN
-espesas 619 NOUN
-argucia 618 NOUN
-croatas 618 NOUN
-parasol 618 NOUN
-chapuza 617 NOUN
-pernera 616 NOUN
-niegues 615 NOUN
-sondaje 615 NOUN
-tirante 615 NOUN
-esquife 614 NOUN
-estatal 614 NOUN
-estoque 614 NOUN
-maricas 612 NOUN
-vasitos 611 NOUN
-charcas 610 NOUN
-explico 610 NOUN
-fierros 610 NOUN
-fritura 609 NOUN
-cabrona 608 NOUN
-chistar 608 NOUN
-ingenua 608 NOUN
-manazas 608 NOUN
-invicto 607 NOUN
-vinilos 607 NOUN
-hobbies 606 NOUN
-mandala 606 NOUN
-topacio 606 NOUN
-abastos 605 NOUN
-helenos 605 NOUN
-probeta 605 NOUN
-caballa 604 NOUN
-compost 604 NOUN
-prismas 604 NOUN
-taludes 604 NOUN
-borrego 603 NOUN
-gorrito 603 NOUN
-palomar 603 NOUN
-plantea 601 NOUN
-primate 601 NOUN
-anuario 600 NOUN
-jurista 600 NOUN
-bendiga 599 NOUN
-sorbito 599 NOUN
-carnada 598 NOUN
-hambres 598 NOUN
-menudeo 598 NOUN
-brincos 597 NOUN
-feeling 597 NOUN
-mazorca 597 NOUN
-soviets 596 NOUN
-velamen 596 NOUN
-calculo 594 NOUN
-tablets 594 NOUN
-iguanas 593 NOUN
-moteles 593 NOUN
-muiscas 593 NOUN
-armadas 592 NOUN
-jumento 592 NOUN
-polenta 592 NOUN
-arcones 591 NOUN
-fascias 589 NOUN
-matojos 589 NOUN
-hititas 588 NOUN
-atascos 586 NOUN
-bacilos 585 NOUN
-marasmo 585 NOUN
-armados 583 NOUN
-chivato 583 NOUN
-futuras 583 NOUN
-germano 583 NOUN
-delgado 582 NOUN
-pollera 581 NOUN
-blancas 579 NOUN
-samsara 578 NOUN
-motoras 577 NOUN
-protege 576 NOUN
-carcoma 575 NOUN
-novillo 575 NOUN
-bazofia 574 NOUN
-exudado 574 NOUN
-jofaina 574 NOUN
-cabrero 573 NOUN
-hijitos 573 NOUN
-banales 572 NOUN
-favelas 571 NOUN
-fusible 571 NOUN
-llaneza 571 NOUN
-pocillo 571 NOUN
-adivina 570 NOUN
-parties 570 NOUN
-guiarte 568 NOUN
-jarcias 568 NOUN
-caniche 567 NOUN
-rateros 566 NOUN
-parquet 565 NOUN
-destete 564 NOUN
-lisiado 564 NOUN
-derivas 563 NOUN
-paprika 563 NOUN
-redoble 563 NOUN
-viveros 563 NOUN
-peciolo 562 NOUN
-brazada 561 NOUN
-pedrada 561 NOUN
-aditivo 559 NOUN
-jarabes 559 NOUN
-mitosis 558 NOUN
-vihuela 558 NOUN
-asiduos 557 NOUN
-arroces 556 NOUN
-chuleta 556 NOUN
-cilicio 556 NOUN
-hinojos 556 NOUN
-milonga 556 NOUN
-brochas 555 NOUN
-empaste 555 NOUN
-adioses 554 NOUN
-humedal 554 NOUN
-quinina 554 NOUN
-cuestor 552 NOUN
-asedios 550 NOUN
-canilla 550 NOUN
-salidos 550 NOUN
-valedor 550 NOUN
-amarres 549 NOUN
-arvejas 549 NOUN
-criptas 549 NOUN
-evasiva 549 NOUN
-joyeros 549 NOUN
-pasante 549 NOUN
-subjefe 549 NOUN
-baremos 548 NOUN
-sumisas 548 NOUN
-nudillo 547 NOUN
-peculio 547 NOUN
-zapatas 547 NOUN
-naviera 546 NOUN
-escorzo 545 NOUN
-huesudo 545 NOUN
-molusco 545 NOUN
-guayaba 544 NOUN
-meeting 544 NOUN
-califas 543 NOUN
-leasing 543 NOUN
-borrico 542 NOUN
-burdeos 542 NOUN
-metraje 542 NOUN
-pigmeos 542 NOUN
-tufillo 542 NOUN
-afeites 541 NOUN
-eremita 540 NOUN
-mendiga 540 NOUN
-molicie 540 NOUN
-teacher 540 NOUN
-dinares 539 NOUN
-afamado 538 NOUN
-empujes 538 NOUN
-nogales 538 NOUN
-profano 538 NOUN
-besitos 537 NOUN
-estevia 537 NOUN
-planear 537 NOUN
-situado 537 NOUN
-espelta 535 NOUN
-meteoro 535 NOUN
-sorbete 535 NOUN
-anteojo 533 NOUN
-cornudo 533 NOUN
-esbirro 533 NOUN
-piensos 533 NOUN
-boletas 529 NOUN
-bombazo 529 NOUN
-trombos 529 NOUN
-zodiaco 529 NOUN
-colleja 528 NOUN
-externo 528 NOUN
-brownie 527 NOUN
-estupro 527 NOUN
-marrano 527 NOUN
-tartera 527 NOUN
-beberlo 526 NOUN
-ermitas 526 NOUN
-famosas 526 NOUN
-platero 526 NOUN
-colosal 525 NOUN
-display 525 NOUN
-exentas 525 NOUN
-mielina 525 NOUN
-rumanos 525 NOUN
-tigresa 525 NOUN
-maquina 524 NOUN
-minucia 524 NOUN
-moteros 524 NOUN
-rurales 524 NOUN
-zapallo 524 NOUN
-tanteos 523 NOUN
-bendijo 522 NOUN
-fiordos 522 NOUN
-ascetas 521 NOUN
-colosos 521 NOUN
-petardo 521 NOUN
-maduras 520 NOUN
-varices 520 NOUN
-verruga 520 NOUN
-casonas 519 NOUN
-falsete 519 NOUN
-hurones 519 NOUN
-dehesas 518 NOUN
-meiosis 518 NOUN
-bailado 517 NOUN
-becaria 517 NOUN
-mantita 517 NOUN
-garitos 516 NOUN
-mojones 516 NOUN
-bombona 515 NOUN
-deseada 514 NOUN
-cantero 513 NOUN
-escapes 513 NOUN
-micosis 513 NOUN
-oradora 513 NOUN
-saltito 513 NOUN
-apraxia 512 NOUN
-dormido 512 NOUN
-tullido 512 NOUN
-volador 512 NOUN
-escitas 511 NOUN
-plebeya 511 NOUN
-forjado 510 NOUN
-maillot 510 NOUN
-manglar 510 NOUN
-azucena 509 NOUN
-caretas 509 NOUN
-clavija 508 NOUN
-tunante 508 NOUN
-singles 506 NOUN
-holgada 505 NOUN
-taconeo 505 NOUN
-parador 504 NOUN
-sofocos 504 NOUN
-tiamina 504 NOUN
-gorjeos 503 NOUN
-pionera 503 NOUN
-sutiles 503 NOUN
-agasajo 502 NOUN
-pedante 501 NOUN
-trienio 500 NOUN
-benceno 499 NOUN
-navarro 499 NOUN
-biblias 498 NOUN
-cluster 498 NOUN
-bulldog 497 NOUN
-menisco 497 NOUN
-recodos 497 NOUN
-yonquis 497 NOUN
-afirman 496 NOUN
-alfanje 496 NOUN
-bagajes 496 NOUN
-gritaba 495 NOUN
-bufidos 494 NOUN
-ceviche 494 NOUN
-devotas 494 NOUN
-holding 494 NOUN
-chilena 493 NOUN
-durezas 493 NOUN
-malware 493 NOUN
-mejunje 493 NOUN
-penosos 493 NOUN
-reposar 493 NOUN
-inhalar 492 NOUN
-amargos 491 NOUN
-ascitis 491 NOUN
-pelliza 491 NOUN
-goleada 490 NOUN
-macacos 490 NOUN
-quantum 490 NOUN
-tenaces 490 NOUN
-doblaje 489 NOUN
-empacho 489 NOUN
-placita 489 NOUN
-comanda 488 NOUN
-escotes 488 NOUN
-losetas 487 NOUN
-mundana 487 NOUN
-varitas 487 NOUN
-vodevil 487 NOUN
-cenobio 486 NOUN
-patitos 486 NOUN
-chuches 485 NOUN
-pleamar 485 NOUN
-hervido 483 NOUN
-aniones 482 NOUN
-benigna 482 NOUN
-octavos 482 NOUN
-arpones 481 NOUN
-fundido 481 NOUN
-acarreo 480 NOUN
-gavetas 480 NOUN
-geranio 480 NOUN
-hogazas 480 NOUN
-incapaz 480 NOUN
-ingresa 480 NOUN
-rapaces 480 NOUN
-sacados 480 NOUN
-bolsito 479 NOUN
-chalets 479 NOUN
-funesta 479 NOUN
-lejanas 479 NOUN
-aguadas 478 NOUN
-infames 478 NOUN
-huesuda 477 NOUN
-running 477 NOUN
-prosigo 476 NOUN
-sobrios 476 NOUN
-anaquel 475 NOUN
-estraza 475 NOUN
-lejanos 475 NOUN
-ramajes 474 NOUN
-tendida 474 NOUN
-conatos 473 NOUN
-lobbies 473 NOUN
-aceptes 472 NOUN
-denario 472 NOUN
-sevicia 472 NOUN
-engorro 471 NOUN
-enroque 471 NOUN
-equinos 471 NOUN
-gourmet 471 NOUN
-prepago 470 NOUN
-solista 470 NOUN
+siempre	1012426,ADVERB
+momento	1009983,NOUN,SINGULAR
+trabajo	783196,NOUN,VERB,SINGULAR
+embargo	574397,NOUN,VERB,SINGULAR
+primera	564455,NOUN,ADJECTIVE,SINGULAR
+persona	551911,NOUN,VERB,3PS,IMP,INFLECTED_FORM,SINGULAR
+ejemplo	462878,NOUN,SINGULAR
+posible	452926,ADJECTIVE
+familia	427365,NOUN,SINGULAR
+incluso	420723,ADJECTIVE,ADVERB
+derecho	417151,ADJECTIVE,NOUN,ADVERB,SINGULAR
+sentido	409658,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+sistema	382496,NOUN,SINGULAR
+proceso	379770,NOUN,VERB,SINGULAR
+grandes	338086,ADJECTIVE,NOUN,PLURAL
+general	336254,ADJECTIVE,NOUN,SINGULAR
+acuerdo	329822,NOUN,VERB,SINGULAR
+palabra	292648,NOUN,SINGULAR
+espacio	243050,NOUN,VERB,SINGULAR
+sonrisa	240188,NOUN,SINGULAR
+empresa	234535,NOUN,SINGULAR
+control	233607,NOUN,SINGULAR
+tampoco	226961,ADVERB
+delante	223710,ADVERB
+hermano	220850,NOUN,VERB,SINGULAR
+estudio	212842,NOUN,VERB,SINGULAR
+primero	202177,NOUN,ADJECTIVE,ADVERB,SINGULAR
+segundo	190958,ADJECTIVE,NOUN,VERB,SINGULAR
+segunda	188183,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+conocer	168563,VERB
+entrada	168273,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+llegado	167476,ADJECTIVE,PARTICIPLE
+hermana	166868,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mercado	161080,NOUN,PARTICIPLE,SINGULAR
+cultura	160345,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+natural	159237,ADJECTIVE,NOUN,SINGULAR
+aspecto	153467,NOUN,SINGULAR
+calidad	150857,NOUN,SINGULAR
+materia	148553,NOUN,SINGULAR
+espalda	148277,NOUN,SINGULAR
+especie	146229,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+memoria	140947,NOUN,SINGULAR
+escuela	134729,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cambiar	130178,VERB
+destino	127505,NOUN,VERB,SINGULAR
+mejores	127230,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+ventana	125673,NOUN,SINGULAR
+humanos	125289,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+capital	124992,ADJECTIVE,NOUN,SINGULAR
+mensaje	115157,NOUN,SINGULAR
+obtener	113957,VERB
+carrera	113569,NOUN,SINGULAR
+partido	112933,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+ciencia	112488,NOUN,SINGULAR
+cerebro	111061,NOUN,SINGULAR
+actitud	110169,NOUN,SINGULAR
+iglesia	108055,NOUN,SINGULAR
+cuidado	105669,INTERJECTION,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+propias	104072,ADJECTIVE
+peligro	103919,NOUN,VERB,SINGULAR
+llamado	103543,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+empezar	99779,VERB,INF
+vestido	97929,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+perdido	97595,ADJECTIVE,PARTICIPLE
+negocio	97290,NOUN,VERB,SINGULAR
+secreto	93794,ADJECTIVE,NOUN,VERB,SINGULAR
+entorno	93760,NOUN,VERB,SINGULAR
+parecer	93342,VERB,NOUN,SINGULAR
+defensa	92972,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+recibir	92532,VERB
+caballo	92256,NOUN,SINGULAR
+llamada	91448,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+batalla	90252,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lectura	90162,NOUN,SINGULAR
+central	90093,ADJECTIVE,NOUN,SINGULAR
+derecha	89672,NOUN,ADJECTIVE,SINGULAR
+octubre	89619,NOUN,SINGULAR
+respeto	89437,NOUN,VERB,SINGULAR
+oficial	89348,ADJECTIVE,NOUN,SINGULAR
+cumplir	88564,VERB
+mayores	87238,ADJECTIVE,NOUN,PLURAL
+laboral	87214,ADJECTIVE
+oficina	86110,NOUN,SINGULAR
+cabello	85876,NOUN,SINGULAR
+muestra	82789,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+antiguo	82552,ADJECTIVE,VERB
+belleza	82206,NOUN,SINGULAR
+noticia	80890,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+consumo	80205,NOUN,VERB,SINGULAR
+militar	79605,ADJECTIVE,NOUN,VERB,SINGULAR
+abierta	78733,ADJECTIVE,PARTICIPLE
+mejorar	78727,VERB
+asiento	77939,NOUN,VERB,SINGULAR
+maestro	77762,NOUN,ADJECTIVE,SINGULAR
+aumento	77619,NOUN,VERB,SINGULAR
+terreno	77580,ADJECTIVE,NOUN,SINGULAR
+periodo	77036,NOUN,SINGULAR
+comprar	76867,VERB
+sentado	76386,ADJECTIVE,PARTICIPLE
+recurso	75745,NOUN,SINGULAR
+aceptar	75401,VERB
+enemigo	73933,ADJECTIVE,NOUN,SINGULAR
+directa	73591,NOUN,ADJECTIVE,SINGULAR
+pasillo	73246,NOUN,SINGULAR
+impacto	72319,NOUN,VERB,SINGULAR
+febrero	72201,NOUN,SINGULAR
+preciso	71859,ADJECTIVE,VERB
+intento	71608,NOUN,VERB,SINGULAR
+cliente	71314,NOUN,SINGULAR
+inicial	70031,ADJECTIVE,NOUN,SINGULAR
+volumen	69427,NOUN,SINGULAR
+escapar	68814,VERB
+alcance	68554,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+demanda	68493,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fuertes	68317,ADJECTIVE,NOUN,PLURAL
+locales	67773,ADJECTIVE,NOUN,PLURAL
+miembro	67604,NOUN,SINGULAR
+popular	67025,ADJECTIVE,NOUN,SINGULAR
+extremo	66731,ADJECTIVE,NOUN,VERB,SINGULAR
+llegada	66727,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+querido	66322,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+capaces	66051,ADJECTIVE
+informe	64802,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+caminar	64522,VERB
+aliento	63987,NOUN,VERB,SINGULAR
+regreso	63907,NOUN,VERB,SINGULAR
+hablado	63828,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+hermosa	63534,ADJECTIVE
+similar	63523,ADJECTIVE
+colegio	62954,NOUN,VERB,SINGULAR
+privado	62013,ADJECTIVE,PARTICIPLE
+amistad	61996,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+finales	61622,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+menores	60838,ADJECTIVE,NOUN,PLURAL
+directo	60828,ADJECTIVE,NOUN,SINGULAR
+detalle	60150,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+muertos	60088,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+partida	59843,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+palacio	58900,NOUN,SINGULAR
+pintura	58706,NOUN,SINGULAR
+entidad	58575,NOUN,SINGULAR
+mostrar	58441,VERB
+reforma	58121,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+planeta	57890,NOUN,SINGULAR
+dominio	57858,NOUN,SINGULAR
+permiso	57710,NOUN,INTERJECTION,VERB,SINGULAR
+abierto	57269,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+esencia	57240,NOUN,SINGULAR
+olvidar	56767,VERB
+guardia	55931,NOUN,SINGULAR
+mundial	54968,ADJECTIVE,NOUN,SINGULAR
+repente	54945,NOUN,SINGULAR
+escrito	54203,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+fortuna	54035,NOUN,SINGULAR
+enfoque	53628,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cristal	53212,NOUN,SINGULAR
+consejo	52993,NOUN,VERB,SINGULAR
+revista	52761,NOUN,PARTICIPLE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cintura	52495,NOUN,SINGULAR
+esquina	52462,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+comunes	52340,ADJECTIVE,NOUN,PLURAL
+tercera	52215,NOUN,ADJECTIVE,SINGULAR
+soledad	52172,NOUN,SINGULAR
+sentada	51827,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+interna	51769,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aplicar	51592,VERB
+privada	51523,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+logrado	51323,ADJECTIVE,PARTICIPLE
+puestos	51316,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+vecinos	51299,ADJECTIVE,NOUN,PLURAL
+riqueza	51272,NOUN,SINGULAR
+reducir	51120,VERB
+digital	50639,ADJECTIVE,NOUN,SINGULAR
+orgullo	50492,NOUN,SINGULAR
+adultos	50483,ADJECTIVE,NOUN,PLURAL
+impulso	50338,NOUN,VERB,SINGULAR
+sombras	50048,ADJECTIVE,NOUN,VERB,PLURAL
+generar	49190,VERB
+incapaz	48906,ADJECTIVE
+interno	48779,ADJECTIVE,NOUN,VERB,SINGULAR
+ofrecer	48695,VERB
+botella	48565,NOUN,SINGULAR
+amenaza	48249,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alcohol	48077,NOUN,SINGULAR
+mejilla	47904,NOUN,SINGULAR
+abogado	47807,NOUN,PARTICIPLE,SINGULAR
+contado	47565,ADJECTIVE,PARTICIPLE
+postura	47526,NOUN,SINGULAR
+contigo	47136,ADVERB
+columna	47127,NOUN,SINGULAR
+artista	47029,NOUN,SINGULAR
+paisaje	46724,NOUN,SINGULAR
+decidir	46351,VERB
+hermoso	46148,ADJECTIVE
+cerveza	45896,NOUN,SINGULAR
+antigua	44673,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+intenso	44483,ADJECTIVE
+visitar	44302,VERB
+pobreza	43920,NOUN,SINGULAR
+recoger	43725,VERB
+superar	43260,VERB
+remedio	43056,NOUN,VERB,SINGULAR
+moderna	43052,ADJECTIVE
+cercano	42836,ADJECTIVE
+combate	42761,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+anciano	42757,ADJECTIVE,NOUN,SINGULAR
+propios	42570,ADJECTIVE
+fracaso	42306,NOUN,VERB,SINGULAR
+castigo	42117,NOUN,VERB,SINGULAR
+rapidez	41048,NOUN,SINGULAR
+acceder	40580,VERB
+existir	40527,VERB
+tercero	40510,ADJECTIVE,NOUN,SINGULAR
+promesa	40214,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ventaja	40199,NOUN,SINGULAR
+talento	39844,NOUN,SINGULAR
+blancas	39702,ADJECTIVE
+seguido	39462,ADVERB,ADJECTIVE,PARTICIPLE
+enfermo	39423,ADJECTIVE,NOUN,VERB,SINGULAR
+jornada	39314,NOUN,SINGULAR
+ingreso	38905,NOUN,VERB,SINGULAR
+domingo	38801,NOUN,SINGULAR
+sujetos	38615,ADJECTIVE,NOUN,PLURAL
+vistazo	38501,NOUN,SINGULAR
+definir	38464,VERB
+certeza	38029,NOUN,SINGULAR
+confiar	38018,VERB
+soldado	38011,NOUN,PARTICIPLE,SINGULAR
+moderno	37954,ADJECTIVE
+estatal	37828,ADJECTIVE
+heridas	37764,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+suspiro	37498,NOUN,VERB,SINGULAR
+aparato	37294,NOUN,VERB,SINGULAR
+testigo	37148,NOUN,SINGULAR
+enormes	37001,ADJECTIVE
+entrega	36987,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+atender	36900,VERB
+comedor	36691,NOUN,SINGULAR
+legales	36491,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+incluir	36457,VERB
+felices	36359,ADJECTIVE
+avanzar	36351,VERB
+perdida	36196,ADJECTIVE,PARTICIPLE
+musical	35782,ADJECTIVE,NOUN,SINGULAR
+sufrido	35770,ADJECTIVE,PARTICIPLE
+reflejo	35483,NOUN,VERB,SINGULAR
+rechazo	35408,NOUN,VERB,SINGULAR
+iguales	35003,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+cerrada	34778,ADJECTIVE,PARTICIPLE
+deporte	34711,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+parejas	34632,ADJECTIVE,NOUN,PLURAL
+escrita	34612,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+vientre	34577,NOUN,SINGULAR
+humanas	34308,ADJECTIVE,NOUN,VERB,PLURAL
+intensa	34256,ADJECTIVE
+querida	34230,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+guardar	34203,VERB
+escolar	34147,ADJECTIVE,NOUN,VERB,SINGULAR
+ejercer	33981,VERB
+seguida	33827,ADJECTIVE,PARTICIPLE
+civiles	33818,ADJECTIVE
+afirmar	33781,VERB
+parcial	33529,ADJECTIVE,NOUN,SINGULAR
+coronel	33400,NOUN,SINGULAR
+asesino	33377,ADJECTIVE,NOUN,VERB,SINGULAR
+evaluar	33361,VERB
+visible	33204,ADJECTIVE
+adoptar	33136,VERB
+entrado	33007,ADJECTIVE,PARTICIPLE
+imperio	32843,NOUN,SINGULAR
+reserva	32707,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+refugio	32688,NOUN,VERB,SINGULAR
+jugador	32637,NOUN,SINGULAR
+triunfo	32541,NOUN,VERB,SINGULAR
+ocurrir	32419,VERB
+iniciar	32200,VERB
+ocultar	31950,VERB
+colocar	31728,VERB
+asombro	31658,NOUN,VERB,SINGULAR
+acabado	31342,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+elevado	31330,ADJECTIVE,PARTICIPLE
+esquema	31222,NOUN,SINGULAR
+cansado	31156,ADJECTIVE,PARTICIPLE
+salario	31047,NOUN,VERB,SINGULAR
+curioso	30978,ADJECTIVE,NOUN,SINGULAR
+tarjeta	30841,NOUN,SINGULAR
+elegido	30515,NOUN,PARTICIPLE,SINGULAR
+simples	30398,ADJECTIVE,NOUN,PLURAL
+viernes	30382,NOUN,SINGULAR
+liberal	30366,ADJECTIVE,NOUN,SINGULAR
+cercana	30342,ADJECTIVE
+prestar	30207,VERB
+europea	30088,NOUN,ADJECTIVE,SINGULAR
+ternura	29981,NOUN,SINGULAR
+pistola	29957,NOUN,SINGULAR
+admitir	29853,VERB
+cerrado	29835,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+humedad	29752,NOUN,SINGULAR
+tratado	29704,NOUN,PARTICIPLE,SINGULAR
+agujero	29506,NOUN,VERB,SINGULAR
+notable	29486,ADJECTIVE
+activos	29481,ADJECTIVE,NOUN,PLURAL
+suceder	29303,VERB
+impedir	29219,VERB
+usuario	29031,NOUN,SINGULAR
+radical	28803,ADJECTIVE,NOUN,SINGULAR
+situado	28662,ADJECTIVE,PARTICIPLE
+cansada	28652,ADJECTIVE,PARTICIPLE
+blancos	28555,ADJECTIVE,NOUN,PLURAL
+repetir	28466,VERB
+suponer	28189,VERB
+terapia	28158,NOUN,SINGULAR
+archivo	28130,NOUN,VERB,SINGULAR
+demonio	27993,NOUN,SINGULAR
+milagro	27896,NOUN,SINGULAR
+enviado	27847,NOUN,PARTICIPLE,SINGULAR
+morales	27811,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+bandeja	27766,NOUN,SINGULAR
+dormido	27737,ADJECTIVE,PARTICIPLE
+armario	27554,NOUN,SINGULAR
+externa	27443,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+piscina	27341,NOUN,SINGULAR
+retrato	27208,NOUN,VERB,SINGULAR
+asistir	27119,VERB
+salvaje	26914,ADJECTIVE,NOUN,SINGULAR
+mandato	26906,NOUN,VERB,SINGULAR
+europeo	26853,ADJECTIVE,NOUN,SINGULAR
+paquete	26762,NOUN,SINGULAR
+terraza	26716,NOUN,SINGULAR
+resumen	26619,NOUN,VERB,SINGULAR
+rodilla	26430,NOUN,SINGULAR
+dirigir	26369,VERB
+lateral	26288,ADJECTIVE,NOUN,SINGULAR
+manejar	26242,VERB
+soporte	26181,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+defecto	26126,NOUN,SINGULAR
+sendero	26109,NOUN,SINGULAR
+costado	26045,NOUN,PARTICIPLE,SINGULAR
+oscuras	25967,ADJECTIVE
+consigo	25932,ADVERB,VERB
+formato	25893,NOUN,SINGULAR
+firmeza	25856,NOUN,SINGULAR
+oscuros	25846,ADJECTIVE
+celular	25842,ADJECTIVE,NOUN,SINGULAR
+pescado	25779,NOUN,PARTICIPLE,SINGULAR
+sagrado	25738,ADJECTIVE
+valorar	25720,VERB
+importe	25621,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+elevada	25580,ADJECTIVE,PARTICIPLE
+mentira	25454,NOUN,SINGULAR
+inmensa	25370,ADJECTIVE
+abordar	25281,VERB
+agencia	25218,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+derrota	25006,NOUN,PARTICIPLE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+inmenso	24927,ADJECTIVE
+limpiar	24853,VERB
+estable	24780,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+extrema	24762,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alcalde	24699,NOUN,SINGULAR
+detener	24665,VERB
+leyenda	24537,NOUN,SINGULAR
+mochila	24423,NOUN,SINGULAR
+cultivo	24392,NOUN,VERB,SINGULAR
+retorno	24366,NOUN,VERB,SINGULAR
+situada	24333,ADJECTIVE,PARTICIPLE
+externo	24104,ADJECTIVE,VERB
+revisar	24096,VERB
+titular	24001,ADJECTIVE,NOUN,VERB,SINGULAR
+seguros	23865,ADJECTIVE,NOUN,PLURAL
+ocupado	23861,ADJECTIVE,PARTICIPLE
+ruptura	23777,NOUN,SINGULAR
+molesta	23456,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+bandera	23418,NOUN,SINGULAR
+desnuda	23388,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lealtad	23283,NOUN,SINGULAR
+turismo	23164,NOUN,SINGULAR
+alemana	23075,NOUN,ADJECTIVE,SINGULAR
+vestida	23021,ADJECTIVE,PARTICIPLE
+arreglo	22891,NOUN,VERB,SINGULAR
+envidia	22764,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+obreros	22723,ADJECTIVE,NOUN,PLURAL
+validez	22718,NOUN,SINGULAR
+miseria	22658,NOUN,SINGULAR
+estatus	22362,NOUN,SINGULAR
+humilde	22327,ADJECTIVE
+escucha	22283,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alianza	22268,NOUN,SINGULAR
+condena	22245,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+anuncio	22213,NOUN,VERB,SINGULAR
+bebidas	22026,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+apartar	21972,VERB
+anciana	21833,NOUN,ADJECTIVE,SINGULAR
+decreto	21523,NOUN,VERB,SINGULAR
+vigente	21500,ADJECTIVE
+aclarar	21496,VERB
+trasera	21296,ADJECTIVE
+emplear	21249,VERB
+sincero	21214,ADJECTIVE,VERB
+novedad	21144,NOUN,SINGULAR
+nobleza	21085,NOUN,SINGULAR
+opuesto	20984,ADJECTIVE,PARTICIPLE
+aportar	20943,VERB
+susurro	20939,NOUN,VERB,SINGULAR
+imponer	20886,VERB
+colonia	20812,NOUN,SINGULAR
+furioso	20776,ADJECTIVE
+cometer	20724,VERB
+cuerdas	20639,ADJECTIVE,NOUN,PLURAL
+dormida	20607,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+carbono	20373,NOUN,VERB,SINGULAR
+estatua	20301,NOUN,SINGULAR
+afectar	20187,VERB
+corteza	20173,NOUN,SINGULAR
+cartera	20148,NOUN,SINGULAR
+manzana	20147,NOUN,SINGULAR
+absurdo	20112,ADJECTIVE,NOUN,SINGULAR
+ascenso	19979,NOUN,SINGULAR
+encanto	19896,NOUN,VERB,SINGULAR
+inglesa	19754,NOUN,ADJECTIVE,SINGULAR
+volando	19751,ADJECTIVE,VERB,INFLECTED_FORM,PRES_PART
+federal	19620,ADJECTIVE,NOUN,SINGULAR
+fachada	19591,NOUN,PARTICIPLE,SINGULAR
+doctora	19587,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+potente	19487,ADJECTIVE
+cocinar	19375,VERB
+armados	19371,ADJECTIVE,PARTICIPLE
+regular	19149,ADJECTIVE,VERB
+precisa	19145,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+perfume	19019,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+ocupada	18870,ADJECTIVE,PARTICIPLE
+sincera	18826,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dominar	18780,VERB
+marcado	18772,ADJECTIVE,PARTICIPLE
+recinto	18617,NOUN,SINGULAR
+maestra	18425,NOUN,ADJECTIVE,SINGULAR
+delgado	18299,ADJECTIVE
+capilla	18243,NOUN,SINGULAR
+crecido	18175,ADJECTIVE,PARTICIPLE
+horario	18170,ADJECTIVE,NOUN,SINGULAR
+ordenar	18165,VERB
+caridad	18107,NOUN,SINGULAR
+temblar	18072,VERB
+marchar	18027,VERB
+comidas	18005,ADJECTIVE,NOUN,PARTICIPLE,VERB,INFLECTED_FORM,PLURAL,SUBJ
+decenas	17990,ADJECTIVE,NOUN,PLURAL
+adentro	17987,ADVERB,NOUN,INTERJECTION,VERB,SINGULAR
+portada	17880,NOUN,PARTICIPLE,SINGULAR
+maldita	17868,ADJECTIVE,PARTICIPLE
+dulzura	17853,NOUN,SINGULAR
+cebolla	17841,NOUN,SINGULAR
+conmigo	17767,ADVERB
+aliados	17766,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+escoger	17761,VERB
+balance	17709,NOUN,SINGULAR
+secreta	17400,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sobrino	17358,NOUN,SINGULAR
+romanos	17325,ADJECTIVE,NOUN,PLURAL
+rurales	17322,ADJECTIVE
+delgada	17303,ADJECTIVE
+tortura	17299,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+barrera	17293,NOUN,SINGULAR
+ignorar	17281,VERB
+relieve	17229,NOUN,SINGULAR
+apetito	17208,NOUN,SINGULAR
+ampliar	17205,VERB
+poquito	17123,ADJECTIVE,ADVERB
+monarca	17002,NOUN,SINGULAR
+alejado	16996,ADJECTIVE,PARTICIPLE
+liberar	16910,VERB
+reparto	16902,NOUN,VERB,SINGULAR
+anuales	16845,ADJECTIVE
+salidas	16797,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+motores	16727,ADJECTIVE,NOUN,PLURAL
+amantes	16712,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+separar	16680,VERB
+cargado	16641,ADJECTIVE,PARTICIPLE
+crucial	16634,ADJECTIVE
+volante	16616,ADJECTIVE,NOUN,SINGULAR
+rescate	16541,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+desnudo	16536,ADJECTIVE,VERB
+trasero	16533,ADJECTIVE,NOUN,SINGULAR
+urgente	16462,ADJECTIVE
+madurez	16444,NOUN,SINGULAR
+influir	16349,VERB
+griegos	16207,ADJECTIVE,NOUN,PLURAL
+marcada	16177,ADJECTIVE,PARTICIPLE
+futuros	16101,ADJECTIVE,NOUN,PLURAL
+avenida	16071,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+experto	16031,ADJECTIVE,NOUN,SINGULAR
+esclavo	16015,NOUN,SINGULAR
+estadio	15995,NOUN,SINGULAR
+narices	15991,ADVERB,NOUN,PLURAL
+cortina	15904,NOUN,SINGULAR
+vitales	15897,ADJECTIVE
+deseado	15885,ADJECTIVE,PARTICIPLE
+profeta	15862,NOUN,SINGULAR
+viajero	15832,ADJECTIVE,NOUN,SINGULAR
+virtual	15826,ADJECTIVE
+valioso	15695,ADJECTIVE
+exponer	15694,VERB
+ingenio	15642,NOUN,VERB,SINGULAR
+semilla	15627,NOUN,SINGULAR
+cenizas	15555,ADJECTIVE,NOUN,PLURAL
+cuartel	15496,NOUN,SINGULAR
+corbata	15449,NOUN,SINGULAR
+carpeta	15372,NOUN,SINGULAR
+reparar	15326,VERB
+futuras	15317,ADJECTIVE,NOUN,PLURAL
+cautela	15287,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+comedia	15215,NOUN,SINGULAR
+basadas	15197,ADJECTIVE,PARTICIPLE
+previos	15196,ADJECTIVE
+furiosa	15130,ADJECTIVE
+creador	15113,NOUN,SINGULAR
+extraer	15058,VERB
+afueras	15050,NOUN,VERB,SINGULAR
+revelar	15029,VERB
+encargo	15026,NOUN,VERB,SINGULAR
+retraso	14986,NOUN,VERB,SINGULAR
+mandado	14982,NOUN,PARTICIPLE,SINGULAR
+retirar	14869,VERB
+previas	14794,ADJECTIVE
+vientos	14794,ADVERB,INTERJECTION,NOUN,PLURAL
+silueta	14791,NOUN,SINGULAR
+disparo	14763,NOUN,VERB,SINGULAR
+billete	14737,NOUN,SINGULAR
+confuso	14736,ADJECTIVE
+escasez	14600,NOUN,SINGULAR
+juvenil	14595,ADJECTIVE
+injusto	14533,ADJECTIVE
+heridos	14508,ADJECTIVE,PARTICIPLE
+reinado	14504,NOUN,PARTICIPLE,SINGULAR
+censura	14459,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+agregar	14433,VERB
+ideales	14403,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+penales	14400,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+maldito	14378,ADJECTIVE,INTERJECTION,NOUN,PARTICIPLE,SINGULAR
+extensa	14358,ADJECTIVE
+basados	14280,ADJECTIVE,PARTICIPLE
+naranja	14259,ADJECTIVE,NOUN,SINGULAR
+higiene	14214,NOUN,SINGULAR
+salvado	14195,NOUN,PARTICIPLE,SINGULAR
+amorosa	14148,ADJECTIVE
+factura	14144,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cuartos	14125,NOUN,ADJECTIVE,PLURAL
+bestias	14122,ADJECTIVE,NOUN,PLURAL
+nuclear	14036,ADJECTIVE,VERB
+cosecha	14010,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+golpear	13950,VERB
+teatral	13940,ADJECTIVE
+nombrar	13823,VERB
+portero	13730,NOUN,SINGULAR
+pasados	13703,ADJECTIVE,PARTICIPLE
+montaje	13702,NOUN,SINGULAR
+nulidad	13486,NOUN,SINGULAR
+gigante	13399,ADJECTIVE,NOUN,SINGULAR
+auxilio	13349,NOUN,VERB,SINGULAR
+abdomen	13337,NOUN,SINGULAR
+muralla	13337,NOUN,SINGULAR
+curiosa	13311,NOUN,ADJECTIVE,SINGULAR
+gemelos	13289,ADJECTIVE,NOUN,PLURAL
+sagrada	13255,ADJECTIVE
+solemne	13192,ADJECTIVE
+orgasmo	13179,NOUN,SINGULAR
+callado	13177,ADJECTIVE,PARTICIPLE
+cargada	13083,ADJECTIVE,PARTICIPLE
+vegetal	13052,ADJECTIVE,NOUN,SINGULAR
+diarios	13016,ADJECTIVE,NOUN,PLURAL
+urbanos	13004,ADJECTIVE
+pasadas	12965,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+nacidos	12900,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+sensual	12887,ADJECTIVE
+ingesta	12769,NOUN,SINGULAR
+saludar	12760,VERB
+disputa	12728,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+diarias	12673,ADJECTIVE
+funeral	12639,ADJECTIVE,NOUN,SINGULAR
+frontal	12630,ADJECTIVE,NOUN,SINGULAR
+probado	12615,ADJECTIVE,PARTICIPLE
+callada	12574,ADJECTIVE,PARTICIPLE
+ansioso	12561,ADJECTIVE
+aliviar	12527,VERB
+deducir	12506,VERB
+supremo	12505,ADJECTIVE
+duquesa	12501,NOUN,SINGULAR
+dedicar	12485,VERB
+hoguera	12415,NOUN,SINGULAR
+textura	12371,NOUN,SINGULAR
+bloqueo	12359,NOUN,VERB,SINGULAR
+dibujar	12331,VERB
+limitar	12313,VERB
+acogida	12290,NOUN,PARTICIPLE,SINGULAR
+cemento	12275,NOUN,VERB,SINGULAR
+aislado	12242,ADJECTIVE,PARTICIPLE
+diablos	12150,INTERJECTION,ADVERB,NOUN,PLURAL
+despido	12009,NOUN,VERB,SINGULAR
+alterar	11950,VERB
+opuesta	11931,ADJECTIVE,PARTICIPLE
+vanidad	11898,NOUN,SINGULAR
+cazador	11865,ADJECTIVE,NOUN,SINGULAR
+glucosa	11865,NOUN,SINGULAR
+amplios	11846,ADJECTIVE
+timidez	11823,NOUN,SINGULAR
+ajedrez	11736,NOUN,SINGULAR
+ausente	11706,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+espanto	11659,NOUN,VERB,SINGULAR
+campana	11565,NOUN,SINGULAR
+sublime	11523,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+romance	11480,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+temblor	11427,NOUN,SINGULAR
+alejada	11424,ADJECTIVE,PARTICIPLE
+forzada	11399,ADJECTIVE,PARTICIPLE
+literal	11394,ADJECTIVE,ADVERB
+hechizo	11362,ADJECTIVE,NOUN,VERB,SINGULAR
+apuesta	11358,NOUN,VERB,ADJECTIVE,PARTICIPLE,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tributo	11343,NOUN,VERB,SINGULAR
+pesados	11276,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+taberna	11242,NOUN,SINGULAR
+ocultos	11237,ADJECTIVE
+caricia	11218,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+amplias	11178,ADJECTIVE
+acusado	11148,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+citados	11115,ADJECTIVE,PARTICIPLE
+vigilar	11103,VERB
+equidad	11087,NOUN,SINGULAR
+condesa	11078,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+absurda	11071,ADJECTIVE
+tristes	11071,ADJECTIVE
+valiosa	11014,ADJECTIVE
+extenso	10998,ADJECTIVE
+confusa	10945,ADJECTIVE
+empiezo	10914,NOUN,VERB,SINGULAR
+ubicado	10893,ADJECTIVE,PARTICIPLE
+patente	10842,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+abrazar	10784,VERB
+infeliz	10783,ADJECTIVE
+tablero	10713,NOUN,SINGULAR
+docente	10664,ADJECTIVE,NOUN,SINGULAR
+cuernos	10657,ADVERB,NOUN,PLURAL
+enferma	10633,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+captura	10549,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aislada	10531,ADJECTIVE,PARTICIPLE
+indicio	10512,NOUN,VERB,SINGULAR
+aprecio	10507,NOUN,VERB,SINGULAR
+llanura	10487,NOUN,SINGULAR
+charlar	10469,VERB
+enteras	10454,ADJECTIVE,VERB
+dorados	10420,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+navegar	10407,VERB
+difunto	10387,ADJECTIVE
+calidez	10385,NOUN,SINGULAR
+agotada	10362,ADJECTIVE,PARTICIPLE
+dividir	10350,VERB
+decente	10309,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+cuchara	10308,NOUN,VERB,3PS,INFLECTED_FORM,SINGULAR,SUBJ
+abanico	10304,NOUN,VERB,SINGULAR
+tenedor	10300,NOUN,SINGULAR
+poblado	10279,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+mezclar	10255,VERB
+cigarro	10250,NOUN,SINGULAR
+urbanas	10243,ADJECTIVE
+tobillo	10223,NOUN,SINGULAR
+acordar	10206,VERB
+admirar	10205,VERB
+amoroso	10198,ADJECTIVE
+juguete	10174,NOUN,SINGULAR
+atrapar	10170,VERB
+deprisa	10160,ADVERB
+enojado	10144,ADJECTIVE,PARTICIPLE
+rigidez	10115,NOUN,SINGULAR
+cortado	10091,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+inusual	10076,ADJECTIVE
+retener	10061,VERB
+amables	10028,ADJECTIVE
+gradual	9989,ADJECTIVE,NOUN,SINGULAR
+reunido	9989,ADJECTIVE,PARTICIPLE
+rivales	9900,ADJECTIVE,NOUN,PLURAL
+redonda	9891,NOUN,ADJECTIVE,SINGULAR
+cascada	9879,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+rebelde	9877,ADJECTIVE,NOUN,SINGULAR
+espiral	9874,ADJECTIVE,NOUN,SINGULAR
+camilla	9870,NOUN,SINGULAR
+lejanos	9868,ADJECTIVE
+mensual	9837,ADJECTIVE
+barriga	9830,NOUN,SINGULAR
+libreta	9830,NOUN,SINGULAR
+sobrina	9804,NOUN,SINGULAR
+agotado	9796,ADJECTIVE,PARTICIPLE
+gruesas	9757,ADJECTIVE,NOUN,PLURAL
+ahorrar	9751,VERB
+ajustar	9728,VERB
+meditar	9713,VERB
+ansiosa	9689,ADJECTIVE
+retomar	9668,VERB
+puntual	9595,ADJECTIVE
+listado	9567,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+grabado	9562,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+bonitas	9544,ADJECTIVE
+constar	9538,VERB
+gerente	9533,NOUN,SINGULAR
+sanidad	9530,NOUN,SINGULAR
+docenas	9525,ADJECTIVE,NOUN,PLURAL
+afectos	9515,ADJECTIVE,NOUN,PLURAL
+animado	9512,ADJECTIVE,PARTICIPLE
+ilustre	9502,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+budismo	9493,NOUN,SINGULAR
+tomadas	9464,ADJECTIVE,PARTICIPLE
+vendido	9421,NOUN,PARTICIPLE,SINGULAR
+premisa	9410,NOUN,SINGULAR
+honesto	9406,ADJECTIVE,VERB
+escasos	9390,ADJECTIVE
+establo	9387,NOUN,VERB,SINGULAR
+nominal	9377,ADJECTIVE
+sugerir	9367,VERB
+fomento	9358,NOUN,VERB,SINGULAR
+colgado	9295,ADJECTIVE,PARTICIPLE
+sucesor	9286,ADJECTIVE,NOUN,SINGULAR
+suprema	9285,NOUN,ADJECTIVE,SINGULAR
+tumbado	9271,ADJECTIVE,PARTICIPLE
+firmado	9251,ADJECTIVE,PARTICIPLE
+lanzado	9248,ADJECTIVE,PARTICIPLE
+pasivos	9187,ADJECTIVE,NOUN,PLURAL
+cordero	9170,NOUN,SINGULAR
+pesadas	9166,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+brindar	9157,VERB
+agarrar	9139,VERB
+nativos	9136,ADJECTIVE,NOUN,PLURAL
+muertas	9125,ADJECTIVE,PARTICIPLE
+ubicada	9124,ADJECTIVE,PARTICIPLE
+modales	9119,NOUN,ADJECTIVE,PLURAL
+aprobar	9101,VERB
+someter	9064,VERB
+infarto	9058,NOUN,VERB,SINGULAR
+balanza	9035,NOUN,SINGULAR
+escasas	9026,ADJECTIVE
+senador	9018,NOUN,SINGULAR
+apuntar	9008,VERB
+lamento	9000,NOUN,VERB,SINGULAR
+quietud	8958,NOUN,SINGULAR
+agitada	8932,ADJECTIVE,PARTICIPLE
+traidor	8914,ADJECTIVE,NOUN,SINGULAR
+comarca	8912,NOUN,SINGULAR
+totales	8901,ADJECTIVE,NOUN,PLURAL
+respiro	8893,NOUN,VERB,SINGULAR
+vomitar	8891,VERB
+lujuria	8889,NOUN,SINGULAR
+otorgar	8886,VERB
+exitoso	8875,ADJECTIVE
+sutiles	8870,ADJECTIVE
+cobarde	8848,ADJECTIVE,NOUN,SINGULAR
+frescas	8840,ADJECTIVE
+activar	8834,VERB
+punzada	8819,NOUN,PARTICIPLE,SINGULAR
+forzado	8818,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+pintado	8814,NOUN,PARTICIPLE,SINGULAR
+arteria	8810,NOUN,SINGULAR
+acierto	8806,NOUN,VERB,SINGULAR
+crianza	8760,NOUN,SINGULAR
+malicia	8759,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aspirar	8739,VERB
+limpias	8731,ADJECTIVE,NOUN,VERB,PLURAL
+padecer	8692,VERB
+adaptar	8688,VERB
+empiece	8685,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+deseada	8678,ADJECTIVE,PARTICIPLE
+relleno	8674,ADJECTIVE,NOUN,VERB,SINGULAR
+repleto	8668,ADJECTIVE,VERB
+honrado	8641,ADJECTIVE,PARTICIPLE
+encajar	8623,VERB
+celeste	8618,ADJECTIVE,NOUN,SINGULAR
+pizarra	8557,NOUN,SINGULAR
+inercia	8539,NOUN,SINGULAR
+puestas	8522,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+invitar	8512,VERB
+chispas	8503,ADJECTIVE,NOUN,VERB,PLURAL
+exitosa	8502,ADJECTIVE
+enteros	8496,ADJECTIVE,NOUN,PLURAL
+delirio	8473,NOUN,SINGULAR
+doradas	8467,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+ofrenda	8459,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+clavada	8422,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+animada	8417,ADJECTIVE,PARTICIPLE
+diversa	8404,ADJECTIVE
+corrido	8397,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+atentos	8343,ADJECTIVE
+deleite	8341,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+frescos	8326,ADJECTIVE,NOUN,PLURAL
+crueles	8324,ADJECTIVE
+desfile	8305,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+obligar	8268,VERB
+ocultas	8263,ADJECTIVE,VERB
+indagar	8252,VERB
+vencido	8211,ADJECTIVE,PARTICIPLE
+gruesos	8190,ADJECTIVE,NOUN,PLURAL
+codicia	8139,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+apretar	8129,VERB
+sujetas	8105,ADJECTIVE,VERB
+cordial	8100,ADJECTIVE
+plancha	8071,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pisadas	8051,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+armadas	8034,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+zumbido	8030,NOUN,SINGULAR
+brillar	8019,VERB
+apuesto	7921,ADJECTIVE,NOUN,VERB,PARTICIPLE,INFLECTED_FORM,PAST_PART,SINGULAR
+condado	7921,NOUN,SINGULAR
+cortada	7921,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+cordura	7914,NOUN,SINGULAR
+cepillo	7903,NOUN,VERB,SINGULAR
+perejil	7883,NOUN,SINGULAR
+teclado	7854,NOUN,SINGULAR
+agitado	7834,ADJECTIVE,PARTICIPLE
+vampiro	7834,NOUN,SINGULAR
+modesto	7820,ADJECTIVE
+agraria	7819,ADJECTIVE
+procura	7804,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+limpios	7800,ADJECTIVE
+juzgado	7789,NOUN,PARTICIPLE,SINGULAR
+palmada	7735,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+astucia	7729,NOUN,SINGULAR
+activas	7728,ADJECTIVE,VERB
+gatillo	7719,NOUN,VERB,SINGULAR
+notario	7719,NOUN,VERB,SINGULAR
+arcilla	7713,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+empujar	7708,VERB
+semanal	7677,ADJECTIVE
+torpeza	7670,NOUN,SINGULAR
+repleta	7668,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+colapso	7662,NOUN,VERB,SINGULAR
+cojones	7652,INTERJECTION,ADVERB,NOUN,PLURAL
+proveer	7638,VERB
+matanza	7597,NOUN,SINGULAR
+euforia	7589,NOUN,SINGULAR
+insulto	7570,NOUN,VERB,SINGULAR
+declive	7555,NOUN,SINGULAR
+chaleco	7549,NOUN,SINGULAR
+confort	7543,NOUN,SINGULAR
+plantar	7532,VERB,ADJECTIVE
+citadas	7515,ADJECTIVE,PARTICIPLE
+cavidad	7501,NOUN,SINGULAR
+burbuja	7492,NOUN,SINGULAR
+asfalto	7490,NOUN,VERB,SINGULAR
+disfraz	7484,NOUN,SINGULAR
+apagado	7475,ADJECTIVE,PARTICIPLE
+famosas	7466,ADJECTIVE,NOUN,PLURAL
+hormona	7458,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+mentido	7443,ADJECTIVE,PARTICIPLE
+esclava	7430,NOUN,SINGULAR
+francos	7399,ADJECTIVE,NOUN,PLURAL
+vinagre	7396,NOUN,SINGULAR
+arrojar	7394,VERB
+socorro	7379,NOUN,INTERJECTION,VERB,SINGULAR
+estimar	7349,VERB
+capucha	7347,NOUN,SINGULAR
+inversa	7338,ADJECTIVE
+taxista	7338,NOUN,SINGULAR
+mesilla	7290,NOUN,SINGULAR
+carente	7286,ADJECTIVE
+alegres	7269,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+sensato	7263,ADJECTIVE
+devenir	7212,VERB,NOUN,SINGULAR
+impresa	7174,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+tumbada	7158,ADJECTIVE,PARTICIPLE
+escolta	7153,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+subasta	7153,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+creados	7116,ADJECTIVE,PARTICIPLE
+neutral	7112,ADJECTIVE
+asentir	7110,VERB
+agresor	7103,NOUN,SINGULAR
+sheriff	7073,NOUN,SINGULAR
+ingenua	7055,NOUN,ADJECTIVE,SINGULAR
+audacia	7029,NOUN,SINGULAR
+llenado	7028,NOUN,PARTICIPLE,SINGULAR
+atuendo	7022,NOUN,SINGULAR
+materno	7000,ADJECTIVE
+silbido	6994,NOUN,SINGULAR
+reclamo	6973,NOUN,VERB,SINGULAR
+desviar	6971,VERB
+influjo	6971,NOUN,SINGULAR
+palanca	6948,NOUN,SINGULAR
+injusta	6941,ADJECTIVE
+anchura	6933,NOUN,SINGULAR
+lejanas	6920,ADJECTIVE
+caverna	6904,NOUN,SINGULAR
+quiebra	6903,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+casados	6892,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+tolerar	6884,VERB
+racismo	6882,NOUN,SINGULAR
+calzado	6835,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+enojada	6833,ADJECTIVE,PARTICIPLE
+educado	6830,ADJECTIVE,PARTICIPLE
+tercios	6826,ADJECTIVE,NOUN,PLURAL
+invento	6820,NOUN,VERB,SINGULAR
+redondo	6818,ADJECTIVE
+escalar	6811,VERB,ADJECTIVE
+medalla	6790,NOUN,SINGULAR
+aptitud	6783,NOUN,SINGULAR
+ombligo	6768,NOUN,SINGULAR
+ahogado	6744,NOUN,PARTICIPLE,SINGULAR
+atacado	6710,ADJECTIVE,PARTICIPLE
+alambre	6705,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+creadas	6704,ADJECTIVE,PARTICIPLE
+comando	6703,NOUN,VERB,SINGULAR
+modesta	6696,ADJECTIVE
+excluir	6676,VERB
+letrero	6667,NOUN,SINGULAR
+grabada	6656,ADJECTIVE,PARTICIPLE
+pegados	6628,ADJECTIVE,PARTICIPLE
+acercar	6617,VERB
+espesor	6598,NOUN,SINGULAR
+anormal	6576,ADJECTIVE
+oriente	6570,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+monitor	6562,NOUN,SINGULAR
+seguras	6512,ADJECTIVE,VERB
+peruana	6502,NOUN,ADJECTIVE,SINGULAR
+vigilia	6500,NOUN,SINGULAR
+mineros	6467,ADJECTIVE,NOUN,PLURAL
+ceguera	6456,NOUN,SINGULAR
+variada	6444,ADJECTIVE,PARTICIPLE
+apostar	6443,VERB
+lucidez	6436,NOUN,SINGULAR
+elegida	6435,NOUN,PARTICIPLE,SINGULAR
+remonta	6425,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+carrito	6420,NOUN,SINGULAR
+portazo	6410,NOUN,SINGULAR
+manteca	6399,NOUN,SINGULAR
+paladar	6394,NOUN,SINGULAR
+montura	6391,NOUN,SINGULAR
+peruano	6372,ADJECTIVE,NOUN,SINGULAR
+cochero	6371,NOUN,SINGULAR
+fluidez	6339,NOUN,SINGULAR
+robusto	6319,ADJECTIVE
+sembrar	6316,VERB
+enfriar	6309,VERB
+enfocar	6295,VERB
+temible	6295,ADJECTIVE
+estupor	6290,NOUN,SINGULAR
+resumir	6290,VERB
+ganador	6287,ADJECTIVE,NOUN,SINGULAR
+masacre	6278,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+estirar	6273,VERB
+calzada	6272,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+colgada	6272,ADJECTIVE,PARTICIPLE
+abarcar	6260,VERB
+educada	6256,ADJECTIVE,PARTICIPLE
+rabillo	6247,NOUN,SINGULAR
+repasar	6215,VERB
+razonar	6206,VERB
+reposar	6206,VERB
+crucero	6203,NOUN,SINGULAR
+estreno	6187,NOUN,VERB,SINGULAR
+tatuaje	6185,NOUN,SINGULAR
+palomas	6179,ADJECTIVE,NOUN,PLURAL
+renovar	6179,VERB
+expreso	6177,NOUN,VERB,SINGULAR
+ligeras	6175,ADJECTIVE
+granito	6143,NOUN,SINGULAR
+bonitos	6098,ADJECTIVE,NOUN,PLURAL
+oyentes	6091,ADJECTIVE,NOUN,PLURAL
+ingenuo	6090,ADJECTIVE,NOUN,SINGULAR
+verdugo	6088,NOUN,SINGULAR
+padrino	6071,NOUN,SINGULAR
+apagada	6062,ADJECTIVE,PARTICIPLE
+centrar	6042,VERB
+cortejo	6030,NOUN,VERB,SINGULAR
+diverso	6027,ADJECTIVE
+intacto	6023,ADJECTIVE
+seducir	6014,VERB
+forzosa	6001,ADJECTIVE
+vacunas	5995,ADJECTIVE,NOUN,VERB,PLURAL
+avisado	5985,ADJECTIVE,PARTICIPLE
+estante	5979,ADJECTIVE,NOUN,SINGULAR
+drenaje	5969,NOUN,SINGULAR
+neblina	5942,NOUN,SINGULAR
+budista	5938,ADJECTIVE,NOUN,SINGULAR
+dichoso	5925,ADJECTIVE
+intacta	5923,ADJECTIVE
+nasales	5920,ADJECTIVE,NOUN,PLURAL
+soltera	5917,NOUN,ADJECTIVE,SINGULAR
+capullo	5916,NOUN,SINGULAR
+pillado	5902,ADJECTIVE,PARTICIPLE
+burlona	5890,NOUN,ADJECTIVE,SINGULAR
+revivir	5887,VERB
+chileno	5886,ADJECTIVE,NOUN,SINGULAR
+malvado	5886,ADJECTIVE
+fluidos	5885,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+planear	5882,VERB
+parados	5870,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+tortuga	5828,NOUN,SINGULAR
+caracol	5811,NOUN,SINGULAR
+parcela	5806,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pulsera	5797,NOUN,SINGULAR
+sujetar	5795,VERB
+derivar	5780,VERB
+crujido	5772,NOUN,PARTICIPLE,SINGULAR
+solares	5766,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+arresto	5762,NOUN,VERB,SINGULAR
+paterna	5744,ADJECTIVE
+rallado	5721,ADJECTIVE,PARTICIPLE
+mediana	5717,NOUN,ADJECTIVE,SINGULAR
+dotados	5714,ADJECTIVE,PARTICIPLE
+ballena	5713,NOUN,SINGULAR
+molesto	5712,ADJECTIVE,VERB
+cazuela	5697,NOUN,SINGULAR
+folleto	5694,NOUN,SINGULAR
+potasio	5694,NOUN,SINGULAR
+milenio	5686,NOUN,SINGULAR
+escriba	5680,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+invadir	5675,VERB
+muelles	5649,ADJECTIVE,NOUN,PLURAL
+turista	5632,NOUN,SINGULAR
+helados	5626,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+chilena	5615,NOUN,ADJECTIVE,SINGULAR
+siembra	5607,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tomados	5598,ADJECTIVE,PARTICIPLE
+inducir	5594,VERB
+habitar	5572,VERB
+ligeros	5570,ADJECTIVE
+eternos	5543,ADJECTIVE
+inserta	5513,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+sureste	5512,NOUN,SINGULAR
+violeta	5496,ADJECTIVE,NOUN,SINGULAR
+heroico	5488,ADJECTIVE
+desleal	5483,ADJECTIVE
+altitud	5470,NOUN,SINGULAR
+mendigo	5470,NOUN,VERB,SINGULAR
+textual	5459,ADJECTIVE
+sollozo	5452,NOUN,VERB,SINGULAR
+vaquero	5451,ADJECTIVE,NOUN,SINGULAR
+tajante	5443,ADJECTIVE
+debidas	5441,ADJECTIVE,PARTICIPLE
+solidez	5435,NOUN,SINGULAR
+estrado	5429,NOUN,SINGULAR
+genuino	5407,ADJECTIVE
+paradas	5407,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+baratos	5401,ADJECTIVE
+tendido	5382,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+tumulto	5381,NOUN,SINGULAR
+firmada	5375,ADJECTIVE,PARTICIPLE
+remotos	5340,ADJECTIVE
+limosna	5339,NOUN,SINGULAR
+costura	5315,NOUN,SINGULAR
+pantano	5311,NOUN,SINGULAR
+impreso	5309,ADJECTIVE,PARTICIPLE
+marinas	5298,ADJECTIVE,NOUN,VERB,PLURAL
+mediano	5288,ADJECTIVE
+emblema	5282,NOUN,SINGULAR
+carreta	5280,NOUN,SINGULAR
+estampa	5279,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+gastado	5279,ADJECTIVE,PARTICIPLE
+rosario	5266,NOUN,SINGULAR
+grosero	5256,ADJECTIVE
+trazado	5255,NOUN,PARTICIPLE,SINGULAR
+estirpe	5249,NOUN,SINGULAR
+recabar	5241,VERB
+pagados	5238,ADJECTIVE,PARTICIPLE
+tocador	5236,NOUN,SINGULAR
+laderas	5226,ADJECTIVE,NOUN,PLURAL
+carisma	5224,NOUN,SINGULAR
+erguida	5215,ADJECTIVE,PARTICIPLE
+aplauso	5214,NOUN,SINGULAR
+vencida	5189,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+follaje	5187,NOUN,SINGULAR
+insecto	5186,NOUN,SINGULAR
+cruzada	5183,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+mitigar	5176,VERB
+genuina	5169,ADJECTIVE
+mascota	5153,NOUN,SINGULAR
+galaxia	5132,NOUN,SINGULAR
+inmerso	5130,ADJECTIVE
+litigio	5102,NOUN,SINGULAR
+montado	5088,ADJECTIVE,PARTICIPLE
+afilada	5084,ADJECTIVE,PARTICIPLE
+vacilar	5075,VERB
+exceder	5057,VERB
+pericia	5057,NOUN,SINGULAR
+mineral	5055,ADJECTIVE,NOUN,SINGULAR
+tribuna	5054,NOUN,SINGULAR
+abatido	5028,ADJECTIVE,PARTICIPLE
+divinas	5028,ADJECTIVE,VERB
+autismo	5027,NOUN,SINGULAR
+potable	5016,ADJECTIVE
+quemado	5011,ADJECTIVE,PARTICIPLE
+notorio	5001,ADJECTIVE
+referir	5001,VERB
+costoso	4996,ADJECTIVE
+palidez	4989,NOUN,SINGULAR
+inverso	4981,ADJECTIVE
+honesta	4973,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pecador	4971,ADJECTIVE,NOUN,SINGULAR
+cruzado	4962,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+motivar	4957,VERB
+vecinas	4957,ADJECTIVE,NOUN,PLURAL
+asociar	4956,VERB
+realeza	4946,NOUN,SINGULAR
+bendita	4944,ADJECTIVE,PARTICIPLE
+cacique	4944,NOUN,SINGULAR
+pintada	4929,NOUN,PARTICIPLE,SINGULAR
+nadando	4928,ADJECTIVE,VERB,INFLECTED_FORM,PRES_PART
+ventura	4925,NOUN,ADJECTIVE,SINGULAR
+cinismo	4924,NOUN,SINGULAR
+forzoso	4912,ADJECTIVE
+abogada	4895,NOUN,PARTICIPLE,SINGULAR
+robusta	4892,ADJECTIVE
+dichosa	4883,ADJECTIVE
+estuche	4881,NOUN,SINGULAR
+saltado	4879,ADJECTIVE,PARTICIPLE
+resorte	4875,NOUN,SINGULAR
+cabildo	4873,NOUN,SINGULAR
+casilla	4869,NOUN,SINGULAR
+vocales	4868,ADJECTIVE,NOUN,PLURAL
+invocar	4860,VERB
+marinos	4858,ADJECTIVE,NOUN,PLURAL
+guarida	4850,NOUN,PARTICIPLE,SINGULAR
+merecer	4832,VERB
+ofender	4823,VERB
+espinal	4818,ADJECTIVE
+maligno	4817,ADJECTIVE,NOUN,SINGULAR
+diarrea	4800,NOUN,SINGULAR
+colosal	4796,ADJECTIVE
+quemada	4777,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+sueltos	4774,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+angular	4772,ADJECTIVE,VERB
+remover	4765,VERB
+canasta	4757,NOUN,SINGULAR
+sueltas	4756,ADJECTIVE,NOUN,PARTICIPLE,VERB,PLURAL
+carecer	4742,VERB
+enemiga	4740,NOUN,ADJECTIVE,SINGULAR
+feroces	4736,ADJECTIVE
+descaro	4728,NOUN,VERB,SINGULAR
+noreste	4726,NOUN,SINGULAR
+soltura	4722,NOUN,SINGULAR
+alargar	4712,VERB
+agudeza	4705,NOUN,SINGULAR
+talante	4689,NOUN,SINGULAR
+festivo	4678,ADJECTIVE,NOUN,SINGULAR
+peinado	4676,NOUN,PARTICIPLE,SINGULAR
+griegas	4669,ADJECTIVE,NOUN,PLURAL
+eternas	4655,ADJECTIVE
+soltero	4651,ADJECTIVE,NOUN,SINGULAR
+arbusto	4637,NOUN,SINGULAR
+vaginal	4626,ADJECTIVE
+trivial	4624,ADJECTIVE
+capataz	4623,NOUN,SINGULAR
+calmada	4622,ADJECTIVE,PARTICIPLE
+egipcio	4613,ADJECTIVE,NOUN,SINGULAR
+perrito	4605,NOUN,SINGULAR
+regalar	4604,VERB
+mosaico	4587,ADJECTIVE,NOUN,SINGULAR
+pradera	4574,NOUN,SINGULAR
+cerrojo	4564,NOUN,SINGULAR
+sumario	4562,ADJECTIVE,NOUN,VERB,SINGULAR
+incidir	4560,VERB
+arsenal	4555,NOUN,SINGULAR
+digerir	4553,VERB
+forense	4552,ADJECTIVE,NOUN,SINGULAR
+relucir	4548,VERB
+figurar	4545,VERB
+sacudir	4531,VERB
+divinos	4511,ADJECTIVE
+delicia	4506,NOUN,SINGULAR
+latente	4503,ADJECTIVE
+milicia	4500,NOUN,SINGULAR
+remitir	4491,VERB
+malvada	4485,ADJECTIVE
+ternera	4475,NOUN,SINGULAR
+borrosa	4467,ADJECTIVE
+fiables	4459,ADJECTIVE
+peritos	4457,ADJECTIVE,NOUN,PLURAL
+hornear	4446,VERB
+calmado	4441,ADJECTIVE,PARTICIPLE
+honrada	4430,ADJECTIVE,PARTICIPLE
+nazismo	4419,NOUN,SINGULAR
+soslayo	4419,ADJECTIVE,VERB
+peluche	4410,NOUN,SINGULAR
+debatir	4409,VERB
+vocablo	4409,NOUN,SINGULAR
+camello	4402,NOUN,VERB,SINGULAR
+litoral	4400,ADJECTIVE,NOUN,SINGULAR
+nitidez	4400,NOUN,SINGULAR
+galleta	4392,NOUN,SINGULAR
+infante	4389,NOUN,SINGULAR
+brindis	4385,NOUN,SINGULAR
+cobrado	4376,ADJECTIVE,PARTICIPLE
+esponja	4361,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+aplique	4360,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+intruso	4360,ADJECTIVE,NOUN,VERB,SINGULAR
+reverso	4360,NOUN,VERB,SINGULAR
+estigma	4356,NOUN,SINGULAR
+reporte	4351,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+picante	4344,ADJECTIVE,NOUN,SINGULAR
+aullido	4342,NOUN,SINGULAR
+absorto	4328,ADJECTIVE
+doquier	4312,ADVERB
+verdura	4312,NOUN,SINGULAR
+agradar	4311,VERB
+mirador	4308,NOUN,SINGULAR
+notoria	4306,ADJECTIVE
+bufanda	4303,NOUN,SINGULAR
+exhibir	4297,VERB
+fingida	4288,ADJECTIVE,PARTICIPLE
+exentos	4287,ADJECTIVE
+maestre	4283,NOUN,SINGULAR
+pellejo	4280,NOUN,SINGULAR
+mareada	4278,ADJECTIVE,PARTICIPLE
+exactas	4262,ADJECTIVE
+acordes	4261,ADJECTIVE,NOUN,PLURAL
+bendito	4258,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+vicioso	4234,ADJECTIVE
+letargo	4230,NOUN,SINGULAR
+blandos	4212,ADJECTIVE
+experta	4212,NOUN,ADJECTIVE,SINGULAR
+revuelo	4195,NOUN,VERB,SINGULAR
+ensayar	4193,VERB
+alergia	4186,NOUN,SINGULAR
+liderar	4177,VERB
+acabada	4175,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+erguido	4168,ADJECTIVE,PARTICIPLE
+cubanos	4151,ADJECTIVE,NOUN,PLURAL
+esbelta	4143,ADJECTIVE
+intriga	4141,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ruidoso	4133,ADJECTIVE
+doblado	4128,ADJECTIVE,PARTICIPLE
+suicida	4128,ADJECTIVE,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rejilla	4126,NOUN,SINGULAR
+maduros	4120,ADJECTIVE,NOUN,PLURAL
+tableta	4120,NOUN,SINGULAR
+afeitar	4087,VERB
+canalla	4082,NOUN,SINGULAR
+residuo	4080,NOUN,SINGULAR
+decorar	4075,VERB
+clavado	4074,ADJECTIVE,INTERJECTION,NOUN,PARTICIPLE,SINGULAR
+poblada	4069,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+ahogada	4053,NOUN,PARTICIPLE,SINGULAR
+prender	4052,VERB
+relatar	4051,VERB
+estrofa	4050,NOUN,SINGULAR
+recitar	4032,VERB
+madrina	4024,NOUN,SINGULAR
+brigada	4023,NOUN,SINGULAR
+montada	4023,ADJECTIVE,PARTICIPLE
+enviada	4010,NOUN,PARTICIPLE,SINGULAR
+latinos	4000,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+soleado	3999,ADJECTIVE,PARTICIPLE
+simular	3995,VERB
+secular	3985,ADJECTIVE
+rellano	3983,NOUN,SINGULAR
+metidos	3981,ADJECTIVE,PARTICIPLE
+negrura	3980,NOUN,SINGULAR
+idiotas	3978,ADJECTIVE,NOUN,PLURAL
+deseoso	3977,ADJECTIVE
+torcida	3976,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+encarar	3975,VERB
+borrado	3962,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+afrenta	3959,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+variado	3959,ADJECTIVE,PARTICIPLE
+egipcia	3953,NOUN,ADJECTIVE,SINGULAR
+emisora	3952,NOUN,ADJECTIVE,SINGULAR
+lechuga	3949,NOUN,INTERJECTION,SINGULAR
+relajar	3949,VERB
+severas	3933,ADJECTIVE
+esbozar	3930,VERB
+piadoso	3923,ADJECTIVE
+comunal	3919,ADJECTIVE
+perenne	3913,ADJECTIVE
+ambigua	3899,ADJECTIVE
+editora	3899,NOUN,SINGULAR
+agrario	3897,ADJECTIVE
+donante	3869,ADJECTIVE,NOUN,SINGULAR
+fallido	3862,ADJECTIVE,PARTICIPLE
+delegar	3852,VERB
+alentar	3849,VERB
+heroica	3846,ADJECTIVE
+altavoz	3825,NOUN,SINGULAR
+quietos	3821,ADJECTIVE
+madurar	3819,VERB
+recrear	3812,VERB
+sensata	3807,ADJECTIVE
+picados	3798,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+casadas	3792,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+cuidada	3786,ADJECTIVE,PARTICIPLE
+hispano	3784,ADJECTIVE
+adultas	3772,ADJECTIVE,NOUN,PLURAL
+enterar	3763,VERB
+tirados	3753,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+vicario	3753,NOUN,SINGULAR
+masivos	3752,ADJECTIVE
+ambiguo	3749,ADJECTIVE
+paterno	3749,ADJECTIVE
+candado	3747,NOUN,PARTICIPLE,SINGULAR
+devorar	3738,VERB
+tractor	3731,ADJECTIVE,NOUN,SINGULAR
+vajilla	3731,NOUN,SINGULAR
+sortear	3710,VERB
+carnero	3708,NOUN,SINGULAR
+adjunto	3707,ADJECTIVE,ADVERB,VERB
+marisco	3707,NOUN,VERB,SINGULAR
+paisano	3707,NOUN,SINGULAR
+heredar	3706,VERB
+asustar	3705,VERB
+sellado	3703,ADJECTIVE,PARTICIPLE
+conjuro	3700,NOUN,VERB,SINGULAR
+patrona	3700,NOUN,SINGULAR
+plasmar	3698,VERB
+azulado	3697,ADJECTIVE,PARTICIPLE
+indigno	3693,ADJECTIVE,VERB
+sumando	3690,NOUN,VERB,INFLECTED_FORM,PRES_PART,SINGULAR
+villano	3675,ADJECTIVE,NOUN,SINGULAR
+anzuelo	3668,NOUN,SINGULAR
+apremio	3661,NOUN,VERB,SINGULAR
+bordado	3658,ADJECTIVE,ADVERB,NOUN,PARTICIPLE,SINGULAR
+calibre	3650,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cantina	3649,NOUN,SINGULAR
+latitud	3649,NOUN,SINGULAR
+acogido	3648,NOUN,PARTICIPLE,SINGULAR
+propina	3646,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tomillo	3643,NOUN,SINGULAR
+alarido	3631,NOUN,SINGULAR
+bacalao	3629,NOUN,SINGULAR
+fechada	3623,ADJECTIVE,PARTICIPLE
+heredad	3622,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+vividas	3620,ADJECTIVE,PARTICIPLE
+teorema	3618,NOUN,SINGULAR
+doblada	3617,ADJECTIVE,PARTICIPLE
+eclipse	3604,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+girasol	3598,NOUN,SINGULAR
+parodia	3596,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+recorte	3596,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+gitanos	3592,ADJECTIVE,NOUN,PLURAL
+huestes	3592,ADJECTIVE,NOUN,PLURAL
+remotas	3587,ADJECTIVE
+sonoras	3580,ADJECTIVE
+genital	3578,ADJECTIVE,NOUN,SINGULAR
+jurista	3570,NOUN,SINGULAR
+bromear	3568,VERB
+audible	3545,ADJECTIVE
+barbero	3545,NOUN,SINGULAR
+inmoral	3538,ADJECTIVE
+inferir	3534,VERB
+sangrar	3523,VERB
+acusada	3516,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+masivas	3515,ADJECTIVE
+exactos	3502,ADJECTIVE,NOUN,PLURAL
+maligna	3502,ADJECTIVE
+rendija	3500,NOUN,SINGULAR
+andaluz	3492,ADJECTIVE,NOUN,SINGULAR
+tabique	3469,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+blandas	3466,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+pesadez	3461,NOUN,SINGULAR
+aparcar	3460,VERB
+aplacar	3460,VERB
+costosa	3460,ADJECTIVE
+divisar	3455,VERB
+certero	3447,ADJECTIVE
+fundido	3447,ADJECTIVE,PARTICIPLE
+granada	3447,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+alterna	3441,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+igualar	3439,VERB
+agrupar	3432,VERB
+caldera	3424,NOUN,ADJECTIVE,SINGULAR
+vendaje	3416,NOUN,SINGULAR
+desgana	3413,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+dictado	3411,NOUN,PARTICIPLE,SINGULAR
+ingerir	3407,VERB
+herrero	3403,NOUN,SINGULAR
+despojo	3391,NOUN,VERB,SINGULAR
+cribado	3390,NOUN,PARTICIPLE,SINGULAR
+acertar	3387,VERB
+obreras	3385,ADJECTIVE,NOUN,PLURAL
+fiereza	3384,NOUN,SINGULAR
+afilado	3383,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+percibo	3382,NOUN,VERB,SINGULAR
+arraigo	3375,NOUN,VERB,SINGULAR
+severos	3365,ADJECTIVE
+reunida	3358,ADJECTIVE,PARTICIPLE
+consola	3353,NOUN,SINGULAR
+nupcial	3336,ADJECTIVE
+hormiga	3334,NOUN,SINGULAR
+baratas	3333,ADJECTIVE,NOUN,VERB,PLURAL
+disipar	3333,VERB
+mitades	3331,ADJECTIVE,NOUN,PLURAL
+guiados	3330,ADJECTIVE,PARTICIPLE
+ruidosa	3328,ADJECTIVE
+motoras	3314,ADJECTIVE,NOUN,PLURAL
+tendida	3314,ADJECTIVE,PARTICIPLE
+ahondar	3307,VERB
+reponer	3306,VERB
+borroso	3305,ADJECTIVE
+lavanda	3290,NOUN,SINGULAR
+centavo	3289,ADJECTIVE,NOUN,SINGULAR
+heladas	3286,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+tambien	3286,ADVERB
+adivina	3262,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+enseres	3262,NOUN,SINGULAR
+hispana	3260,ADJECTIVE
+voltear	3258,VERB
+anclaje	3256,NOUN,SINGULAR
+rendido	3255,ADJECTIVE,PARTICIPLE
+inodoro	3253,ADJECTIVE,NOUN,SINGULAR
+retablo	3249,NOUN,SINGULAR
+agravio	3247,NOUN,VERB,SINGULAR
+infamia	3246,NOUN,SINGULAR
+erudito	3241,ADJECTIVE,NOUN,SINGULAR
+ideario	3240,NOUN,SINGULAR
+herejes	3229,ADJECTIVE,NOUN,PLURAL
+placebo	3229,NOUN,SINGULAR
+estrato	3228,NOUN,SINGULAR
+bruscos	3227,ADJECTIVE
+sabroso	3225,ADJECTIVE
+desatar	3221,VERB
+tostado	3217,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+usuales	3211,ADJECTIVE
+bandido	3210,NOUN,SINGULAR
+esbelto	3210,ADJECTIVE
+fugaces	3210,ADJECTIVE
+derrame	3206,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+amargas	3205,ADJECTIVE,VERB
+regente	3205,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+vitrina	3204,NOUN,SINGULAR
+emerger	3200,VERB
+ajetreo	3175,NOUN,VERB,SINGULAR
+malaria	3171,NOUN,SINGULAR
+marcial	3164,ADJECTIVE
+modelar	3162,VERB
+magnate	3159,NOUN,SINGULAR
+innovar	3154,VERB
+tallado	3153,NOUN,PARTICIPLE,SINGULAR
+amuleto	3151,NOUN,SINGULAR
+pliegue	3145,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tequila	3140,NOUN,SINGULAR
+emigrar	3136,VERB
+nublado	3120,ADJECTIVE,PARTICIPLE
+hebreos	3112,ADJECTIVE,NOUN,PLURAL
+forjado	3110,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+nodriza	3110,NOUN,SINGULAR
+residir	3107,VERB
+tiroteo	3102,NOUN,VERB,SINGULAR
+angosto	3100,ADJECTIVE,VERB
+lectora	3094,NOUN,ADJECTIVE,SINGULAR
+verdoso	3094,ADJECTIVE
+acostar	3092,VERB
+quejido	3091,NOUN,SINGULAR
+adictos	3072,ADJECTIVE,NOUN,PLURAL
+costera	3069,NOUN,ADJECTIVE,SINGULAR
+perecer	3062,VERB
+premura	3062,NOUN,SINGULAR
+emotivo	3060,ADJECTIVE,NOUN,SINGULAR
+rebajar	3059,VERB
+entrego	3053,NOUN,VERB,SINGULAR
+glacial	3050,ADJECTIVE
+asesina	3045,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fealdad	3029,NOUN,SINGULAR
+fichero	3029,NOUN,SINGULAR
+tiernos	3028,ADJECTIVE
+numeral	3026,NOUN,SINGULAR
+eslogan	3016,NOUN,SINGULAR
+gemelas	3013,ADJECTIVE,NOUN,PLURAL
+desmayo	2998,NOUN,VERB,SINGULAR
+podrido	2998,ADJECTIVE,PARTICIPLE
+complot	2995,NOUN,SINGULAR
+ingente	2994,ADJECTIVE
+tostada	2989,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+tocante	2988,ADJECTIVE
+matinal	2978,ADJECTIVE
+mortero	2978,NOUN,SINGULAR
+rotunda	2976,ADJECTIVE
+escupir	2974,VERB
+epopeya	2973,NOUN,SINGULAR
+podrida	2973,ADJECTIVE,PARTICIPLE
+morfina	2967,NOUN,SINGULAR
+pegadas	2965,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+puchero	2963,NOUN,SINGULAR
+ciertos	2961,ADJECTIVE,DETERMINER
+femoral	2959,ADJECTIVE
+nocivos	2959,ADJECTIVE
+cursiva	2958,NOUN,ADJECTIVE,SINGULAR
+racista	2957,ADJECTIVE,NOUN,SINGULAR
+funesto	2955,ADJECTIVE
+ginebra	2951,NOUN,SINGULAR
+carroza	2949,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cantera	2947,NOUN,SINGULAR
+errante	2947,ADJECTIVE
+rabioso	2947,ADJECTIVE
+emotiva	2946,NOUN,ADJECTIVE,SINGULAR
+sonoros	2934,ADJECTIVE
+exentas	2933,ADJECTIVE,VERB
+varonil	2928,ADJECTIVE
+plagado	2922,ADJECTIVE,PARTICIPLE
+cerezas	2919,ADJECTIVE,NOUN,PLURAL
+aprieto	2916,NOUN,VERB,SINGULAR
+letrado	2914,ADJECTIVE,NOUN,SINGULAR
+enclave	2913,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+gallego	2909,ADJECTIVE,NOUN,SINGULAR
+deseosa	2908,ADJECTIVE
+devengo	2906,NOUN,VERB,SINGULAR
+acallar	2904,VERB
+bostezo	2903,NOUN,VERB,SINGULAR
+esperma	2903,NOUN,SINGULAR
+fornido	2902,ADJECTIVE
+palmera	2893,NOUN,ADJECTIVE,SINGULAR
+inmersa	2892,ADJECTIVE
+retrete	2884,NOUN,SINGULAR
+neurona	2867,NOUN,SINGULAR
+jeringa	2866,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+congoja	2865,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+levante	2861,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+acampar	2854,VERB
+mediada	2848,ADJECTIVE,PARTICIPLE
+asfixia	2845,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+torcido	2834,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+abatida	2833,ADJECTIVE,PARTICIPLE
+rematar	2833,VERB
+cogidos	2832,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+riberas	2830,ADJECTIVE,NOUN,PLURAL
+adverso	2828,ADJECTIVE,VERB
+quebrar	2826,VERB
+mutismo	2825,NOUN,SINGULAR
+quimera	2823,NOUN,SINGULAR
+rotundo	2822,ADJECTIVE
+periplo	2821,NOUN,SINGULAR
+rehacer	2816,VERB
+amnesia	2813,NOUN,SINGULAR
+tiranos	2806,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+machete	2804,NOUN,SINGULAR
+sufrida	2796,ADJECTIVE,PARTICIPLE
+escoria	2793,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+zozobra	2792,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+indigna	2790,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+violado	2783,ADJECTIVE,PARTICIPLE
+atroces	2782,ADJECTIVE
+fragata	2777,NOUN,SINGULAR
+grosera	2776,ADJECTIVE
+esmalte	2774,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+fechado	2769,ADJECTIVE,PARTICIPLE
+validar	2769,VERB
+jesuita	2766,NOUN,ADJECTIVE,SINGULAR
+reguero	2753,NOUN,SINGULAR
+mojados	2752,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+paridad	2749,NOUN,SINGULAR
+cocidos	2747,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+corrida	2744,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+soborno	2743,NOUN,VERB,SINGULAR
+aludido	2741,ADJECTIVE,PARTICIPLE
+jugadas	2737,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+arribar	2736,VERB
+paganos	2732,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+falacia	2728,NOUN,SINGULAR
+indulto	2717,NOUN,VERB,SINGULAR
+criolla	2715,NOUN,ADJECTIVE,SINGULAR
+ardilla	2712,NOUN,SINGULAR
+barroca	2708,ADJECTIVE
+barroco	2707,ADJECTIVE
+alfiler	2704,NOUN,SINGULAR
+auditor	2702,NOUN,SINGULAR
+murales	2697,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,PLURAL
+cocidas	2692,ADJECTIVE,PARTICIPLE
+bolsita	2691,NOUN,SINGULAR
+bipolar	2682,ADJECTIVE
+tisular	2677,ADJECTIVE
+necedad	2675,NOUN,SINGULAR
+estorbo	2670,NOUN,VERB,SINGULAR
+galante	2670,ADJECTIVE
+tiernas	2670,ADJECTIVE
+alertas	2666,ADJECTIVE,NOUN,VERB,PLURAL
+sofocar	2665,VERB
+cartero	2660,NOUN,SINGULAR
+gallega	2659,NOUN,ADJECTIVE,SINGULAR
+resonar	2656,VERB
+colmena	2646,NOUN,SINGULAR
+ahumado	2645,ADJECTIVE,PARTICIPLE
+barullo	2645,NOUN,SINGULAR
+pausada	2635,ADJECTIVE,PARTICIPLE
+rodillo	2633,NOUN,SINGULAR
+pupitre	2628,NOUN,SINGULAR
+sabrosa	2628,ADJECTIVE
+gutural	2627,ADJECTIVE
+cornisa	2616,NOUN,SINGULAR
+voltaje	2615,NOUN,SINGULAR
+injuria	2608,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pulgada	2608,NOUN,SINGULAR
+arquero	2607,NOUN,SINGULAR
+desamor	2606,NOUN,SINGULAR
+pagadas	2605,ADJECTIVE,PARTICIPLE
+arcaico	2594,ADJECTIVE
+diestro	2586,ADJECTIVE,NOUN,SINGULAR
+latinas	2585,ADJECTIVE,NOUN,VERB,PLURAL
+polacos	2584,ADJECTIVE,NOUN,PLURAL
+locutor	2576,NOUN,SINGULAR
+clienta	2574,NOUN,SINGULAR
+librero	2571,NOUN,SINGULAR
+fatales	2570,ADJECTIVE
+tirador	2558,NOUN,SINGULAR
+guiadas	2550,ADJECTIVE,PARTICIPLE
+dotadas	2548,ADJECTIVE,PARTICIPLE
+reflujo	2548,NOUN,SINGULAR
+biomasa	2547,NOUN,SINGULAR
+alegato	2546,NOUN,SINGULAR
+bandada	2546,NOUN,ADJECTIVE,SINGULAR
+objetar	2543,VERB
+planteo	2543,NOUN,VERB,SINGULAR
+escueta	2537,ADJECTIVE
+evacuar	2536,VERB
+maduras	2533,ADJECTIVE,VERB
+recarga	2531,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+anclado	2524,ADJECTIVE,PARTICIPLE
+craneal	2524,ADJECTIVE
+frescor	2524,NOUN,SINGULAR
+aztecas	2522,ADJECTIVE,NOUN,PLURAL
+chillar	2522,VERB
+maqueta	2512,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sudario	2509,NOUN,SINGULAR
+azafata	2508,NOUN,SINGULAR
+espasmo	2508,NOUN,SINGULAR
+otomano	2507,ADJECTIVE,NOUN,SINGULAR
+prelado	2503,NOUN,SINGULAR
+probada	2502,ADJECTIVE,PARTICIPLE
+inertes	2501,ADJECTIVE
+endeble	2495,ADJECTIVE
+altivez	2492,NOUN,SINGULAR
+ganados	2486,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+atenuar	2484,VERB
+higuera	2484,NOUN,SINGULAR
+cohorte	2480,NOUN,SINGULAR
+hidalgo	2480,ADJECTIVE,NOUN,SINGULAR
+deforme	2468,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+devotos	2467,ADJECTIVE,NOUN,PLURAL
+abadesa	2466,NOUN,SINGULAR
+cuartas	2463,ADJECTIVE,NOUN,PLURAL
+rendida	2462,ADJECTIVE,PARTICIPLE
+abortar	2457,VERB
+vidente	2456,NOUN,ADJECTIVE,SINGULAR
+elector	2455,NOUN,SINGULAR
+rosadas	2455,ADJECTIVE
+quiosco	2450,NOUN,SINGULAR
+adecuar	2445,VERB
+derrama	2445,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+sudeste	2443,NOUN,SINGULAR
+espesas	2436,ADJECTIVE,VERB
+renacer	2435,VERB
+adornar	2433,VERB
+navidad	2432,PROPER NOUN,NOUN,SINGULAR
+navales	2429,ADJECTIVE
+biopsia	2427,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+viruela	2425,NOUN,SINGULAR
+matrona	2424,NOUN,SINGULAR
+mecenas	2424,NOUN,SINGULAR
+diploma	2423,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+operado	2420,ADJECTIVE,PARTICIPLE
+fluvial	2419,ADJECTIVE
+abrupto	2418,ADJECTIVE
+mojadas	2417,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+refutar	2417,VERB
+ponente	2409,NOUN,SINGULAR
+trueque	2406,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+despues	2403,ADVERB
+cercado	2402,NOUN,PARTICIPLE,SINGULAR
+robados	2399,ADJECTIVE,PARTICIPLE
+alcaide	2396,NOUN,SINGULAR
+audaces	2395,ADJECTIVE
+crudeza	2387,NOUN,SINGULAR
+incesto	2385,NOUN,SINGULAR
+sopesar	2379,VERB
+acortar	2375,VERB
+moqueta	2374,NOUN,SINGULAR
+diadema	2371,NOUN,SINGULAR
+moldear	2363,VERB
+hinchas	2355,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+autista	2354,ADJECTIVE,NOUN,SINGULAR
+expedir	2352,VERB
+filtrar	2352,VERB
+fallida	2350,ADJECTIVE,PARTICIPLE
+letales	2346,ADJECTIVE
+pausado	2345,ADJECTIVE,PARTICIPLE
+demente	2337,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SUBJ
+acuario	2333,NOUN,SINGULAR
+anclada	2328,ADJECTIVE,PARTICIPLE
+soleada	2324,ADJECTIVE,PARTICIPLE
+subidas	2320,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+austero	2319,ADJECTIVE
+recargo	2317,NOUN,VERB,SINGULAR
+cloruro	2316,NOUN,SINGULAR
+abusivo	2314,ADJECTIVE
+caldero	2312,ADJECTIVE,NOUN,SINGULAR
+plagada	2307,ADJECTIVE,PARTICIPLE
+capilar	2298,ADJECTIVE,NOUN,SINGULAR
+punible	2298,ADJECTIVE
+mordida	2296,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+asaltar	2294,VERB
+desecho	2293,NOUN,VERB,SINGULAR
+caseros	2290,ADJECTIVE,NOUN,PLURAL
+silbato	2285,NOUN,SINGULAR
+baranda	2283,NOUN,SINGULAR
+sentida	2283,ADJECTIVE,PARTICIPLE
+alertar	2282,VERB
+abrupta	2281,ADJECTIVE
+fecundo	2264,ADJECTIVE,VERB
+angosta	2262,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+lactosa	2256,NOUN,SINGULAR
+centeno	2252,NOUN,ADJECTIVE,SINGULAR
+arcaica	2251,ADJECTIVE
+garrote	2246,NOUN,SINGULAR
+aliadas	2245,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+nativas	2245,ADJECTIVE,NOUN,PLURAL
+apenada	2242,ADJECTIVE,PARTICIPLE
+azulada	2242,ADJECTIVE,PARTICIPLE
+alacena	2239,NOUN,SINGULAR
+cefalea	2236,NOUN,SINGULAR
+garante	2236,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+platino	2230,ADJECTIVE,NOUN,SINGULAR
+lograda	2229,ADJECTIVE,PARTICIPLE
+ahorita	2226,ADVERB
+aflorar	2224,VERB
+pionero	2224,ADJECTIVE,NOUN,SINGULAR
+franela	2223,NOUN,SINGULAR
+aureola	2216,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+trocito	2214,NOUN,SINGULAR
+veloces	2213,ADJECTIVE
+festejo	2212,NOUN,VERB,SINGULAR
+nutrido	2212,ADJECTIVE,PARTICIPLE
+rebosar	2210,VERB
+lunares	2208,ADJECTIVE,NOUN,PLURAL
+chorizo	2206,NOUN,ADJECTIVE,VERB,SINGULAR
+batidos	2194,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+insigne	2192,ADJECTIVE
+plumaje	2191,NOUN,SINGULAR
+labrada	2187,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+liviano	2187,ADJECTIVE,NOUN,SINGULAR
+falange	2180,NOUN,SINGULAR
+atrofia	2179,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+fieltro	2179,NOUN,SINGULAR
+prefijo	2176,NOUN,ADJECTIVE,VERB,SINGULAR
+cerilla	2172,NOUN,SINGULAR
+ladrido	2170,NOUN,SINGULAR
+rosados	2170,ADJECTIVE
+varilla	2170,NOUN,SINGULAR
+matizar	2169,VERB
+sexista	2165,ADJECTIVE,NOUN,SINGULAR
+bonanza	2160,NOUN,SINGULAR
+fosfato	2160,NOUN,VERB,SINGULAR
+lagarto	2158,NOUN,SINGULAR
+medular	2158,ADJECTIVE
+ecuador	2157,NOUN,SINGULAR
+tsunami	2152,NOUN,SINGULAR
+inmundo	2149,ADJECTIVE
+mineras	2149,ADJECTIVE,NOUN,PLURAL
+tintero	2141,NOUN,SINGULAR
+turbina	2141,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+gastada	2137,ADJECTIVE,PARTICIPLE
+andante	2132,ADJECTIVE,NOUN,ADVERB,SINGULAR
+lanzada	2132,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+recaudo	2131,NOUN,VERB,SINGULAR
+lujosos	2130,ADJECTIVE
+pasivas	2130,ADJECTIVE
+binomio	2127,ADJECTIVE,NOUN,SINGULAR
+acomodo	2124,NOUN,VERB,SINGULAR
+esgrima	2123,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+atentar	2118,VERB
+becerro	2118,NOUN,SINGULAR
+piadosa	2113,ADJECTIVE
+pitillo	2111,NOUN,SINGULAR
+certera	2108,ADJECTIVE
+perilla	2108,NOUN,SINGULAR
+amargos	2106,ADJECTIVE,NOUN,PLURAL
+colador	2106,NOUN,SINGULAR
+aderezo	2105,NOUN,VERB,SINGULAR
+profano	2105,ADJECTIVE,NOUN,VERB,SINGULAR
+raqueta	2101,NOUN,SINGULAR
+fruncir	2097,VERB
+inhibir	2097,VERB
+rotonda	2095,NOUN,SINGULAR
+teclear	2092,VERB
+esquivo	2090,ADJECTIVE,VERB
+bombero	2087,NOUN,SINGULAR
+gaseosa	2087,NOUN,ADJECTIVE,SINGULAR
+enfadar	2086,VERB
+funesta	2084,ADJECTIVE
+barraca	2082,NOUN,SINGULAR
+viables	2082,ADJECTIVE
+ladrona	2076,NOUN,ADJECTIVE,SINGULAR
+esquiva	2074,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+hablada	2072,ADJECTIVE,PARTICIPLE
+alinear	2070,VERB
+metidas	2068,ADJECTIVE,PARTICIPLE
+contada	2064,ADJECTIVE,PARTICIPLE
+liviana	2064,ADJECTIVE
+lactato	2063,NOUN,SINGULAR
+pantera	2063,NOUN,SINGULAR
+operada	2060,ADJECTIVE,PARTICIPLE
+binario	2058,ADJECTIVE
+exhalar	2052,VERB
+comento	2051,NOUN,VERB,SINGULAR
+saladas	2051,ADJECTIVE,PARTICIPLE
+oscilar	2049,VERB
+benigno	2048,ADJECTIVE
+renales	2046,ADJECTIVE
+invasor	2043,ADJECTIVE,NOUN,SINGULAR
+excavar	2038,VERB
+modista	2034,NOUN,SINGULAR
+desidia	2031,NOUN,SINGULAR
+heraldo	2031,NOUN,SINGULAR
+librito	2028,NOUN,SINGULAR
+austera	2027,ADJECTIVE
+pasmado	2027,ADJECTIVE,PARTICIPLE
+brebaje	2026,NOUN,SINGULAR
+oxidado	2024,ADJECTIVE,PARTICIPLE
+enlazar	2022,VERB
+jacuzzi	2019,NOUN,SINGULAR
+bautizo	2018,NOUN,VERB,SINGULAR
+carcasa	2017,NOUN,SINGULAR
+criollo	2014,ADJECTIVE,NOUN,SINGULAR
+picadas	2013,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+ventral	2012,ADJECTIVE
+absorta	2007,ADJECTIVE
+sanador	2006,ADJECTIVE,NOUN,SINGULAR
+tornado	2004,NOUN,PARTICIPLE,SINGULAR
+sellada	2000,ADJECTIVE,PARTICIPLE
+nefasto	1998,ADJECTIVE
+sordera	1997,NOUN,SINGULAR
+tibieza	1997,NOUN,SINGULAR
+fumador	1995,ADJECTIVE,NOUN,SINGULAR
+gaviota	1992,NOUN,SINGULAR
+iceberg	1992,NOUN,SINGULAR
+pintora	1992,NOUN,SINGULAR
+mundana	1991,ADJECTIVE
+furtiva	1990,ADJECTIVE
+macabro	1989,ADJECTIVE
+prurito	1987,NOUN,SINGULAR
+salitre	1982,NOUN,SINGULAR
+diezmos	1977,ADJECTIVE,NOUN,PLURAL
+libreto	1977,NOUN,SINGULAR
+mucosas	1977,ADJECTIVE,NOUN,PLURAL
+reducto	1977,NOUN,SINGULAR
+selecto	1976,ADJECTIVE
+difunta	1973,ADJECTIVE
+diferir	1972,VERB
+barrido	1971,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+horaria	1971,ADJECTIVE
+movidos	1971,ADJECTIVE,PARTICIPLE
+surtido	1971,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+laringe	1970,NOUN,SINGULAR
+decenio	1969,NOUN,SINGULAR
+injerto	1961,NOUN,VERB,SINGULAR
+mechero	1959,NOUN,SINGULAR
+rastreo	1954,NOUN,VERB,SINGULAR
+cremosa	1952,ADJECTIVE
+adjunta	1947,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+mundano	1946,ADJECTIVE
+euskera	1945,ADJECTIVE,NOUN,SINGULAR
+fingido	1943,ADJECTIVE,PARTICIPLE
+oblicuo	1943,ADJECTIVE
+redimir	1942,VERB
+famosos	1941,ADJECTIVE,NOUN,PLURAL
+vacante	1928,ADJECTIVE,NOUN,SINGULAR
+revocar	1920,VERB
+ingrato	1919,ADJECTIVE,NOUN,SINGULAR
+quiebre	1919,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+secuela	1917,NOUN,SINGULAR
+cotizar	1916,VERB
+regidor	1914,NOUN,SINGULAR
+saquear	1912,VERB
+agravar	1909,VERB
+sucinta	1908,ADJECTIVE
+tedioso	1906,ADJECTIVE
+adiposo	1905,ADJECTIVE
+payasos	1900,ADJECTIVE,NOUN,PLURAL
+rocosas	1900,ADJECTIVE
+oblicua	1898,ADJECTIVE
+diestra	1895,NOUN,ADJECTIVE,SINGULAR
+quietas	1895,ADJECTIVE,VERB
+estival	1893,ADJECTIVE
+sinuoso	1888,ADJECTIVE
+granizo	1885,NOUN,VERB,SINGULAR
+pechera	1882,NOUN,ADJECTIVE,SINGULAR
+cifrado	1871,ADJECTIVE,PARTICIPLE
+sexismo	1864,NOUN,SINGULAR
+moradas	1860,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+pelados	1860,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+fetales	1857,ADJECTIVE
+forrado	1854,ADJECTIVE,PARTICIPLE
+canguro	1852,NOUN,SINGULAR
+aplazar	1851,VERB
+atalaya	1851,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+plantel	1851,NOUN,SINGULAR
+apurado	1849,ADJECTIVE,PARTICIPLE
+mirilla	1849,NOUN,SINGULAR
+caseras	1847,ADJECTIVE,NOUN,PLURAL
+electos	1845,ADJECTIVE,PARTICIPLE
+oxidada	1845,ADJECTIVE,PARTICIPLE
+andamio	1840,NOUN,VERB,SINGULAR
+agreste	1839,ADJECTIVE
+florido	1834,ADJECTIVE
+colilla	1833,NOUN,SINGULAR
+finitud	1830,NOUN,SINGULAR
+repeler	1825,VERB
+patrono	1824,NOUN,SINGULAR
+repudio	1824,NOUN,VERB,SINGULAR
+decimal	1823,ADJECTIVE
+festiva	1822,ADJECTIVE
+mediado	1822,ADJECTIVE,PARTICIPLE
+augurio	1820,NOUN,SINGULAR
+peladas	1819,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+modular	1818,ADJECTIVE,VERB
+abusiva	1816,ADJECTIVE
+difusos	1816,ADJECTIVE
+remanso	1816,NOUN,ADJECTIVE,VERB,SINGULAR
+mestizo	1815,ADJECTIVE,NOUN,VERB,SINGULAR
+culebra	1808,NOUN,SINGULAR
+uterino	1808,ADJECTIVE
+aflojar	1802,VERB
+chequeo	1801,NOUN,VERB,SINGULAR
+llavero	1798,NOUN,SINGULAR
+pasmosa	1798,ADJECTIVE
+bordada	1796,ADJECTIVE,PARTICIPLE
+viscosa	1793,ADJECTIVE
+silicio	1792,NOUN,SINGULAR
+amasijo	1790,NOUN,VERB,SINGULAR
+country	1790,NOUN,SINGULAR
+bulevar	1787,NOUN,SINGULAR
+bohemia	1784,NOUN,ADJECTIVE,SINGULAR
+marital	1784,ADJECTIVE
+basales	1781,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+demorar	1780,VERB
+sesgada	1780,ADJECTIVE,PARTICIPLE
+bestial	1779,ADJECTIVE
+alberca	1777,NOUN,SINGULAR
+escozor	1777,NOUN,SINGULAR
+gustoso	1775,ADJECTIVE
+nocivas	1775,ADJECTIVE
+escollo	1772,NOUN,SINGULAR
+tendero	1772,NOUN,SINGULAR
+solista	1770,NOUN,SINGULAR
+rabiosa	1769,ADJECTIVE
+cobalto	1766,NOUN,SINGULAR
+excitar	1765,VERB
+estoico	1764,ADJECTIVE,NOUN,SINGULAR
+canario	1761,ADJECTIVE,NOUN,SINGULAR
+coqueta	1759,NOUN,ADJECTIVE,SINGULAR
+colmado	1757,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+viscoso	1757,ADJECTIVE
+celador	1756,ADJECTIVE,NOUN,SINGULAR
+sulfato	1756,NOUN,VERB,SINGULAR
+copiosa	1753,ADJECTIVE
+penuria	1753,NOUN,SINGULAR
+desfase	1752,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+lechuza	1746,NOUN,SINGULAR
+entonar	1745,VERB
+cretino	1743,ADJECTIVE,NOUN,SINGULAR
+puntaje	1741,NOUN,SINGULAR
+legible	1737,ADJECTIVE
+jubileo	1730,NOUN,SINGULAR
+adultez	1729,NOUN,SINGULAR
+nacidas	1729,ADJECTIVE,PARTICIPLE
+nutrida	1727,ADJECTIVE,PARTICIPLE
+estelar	1723,ADJECTIVE
+empaque	1722,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+hebilla	1720,NOUN,SINGULAR
+oprobio	1720,NOUN,SINGULAR
+mordaza	1718,NOUN,SINGULAR
+tribuno	1718,NOUN,SINGULAR
+atisbar	1716,VERB
+manchar	1716,VERB
+inmunes	1714,ADJECTIVE
+fibroso	1711,ADJECTIVE
+reality	1709,NOUN,SINGULAR
+gestora	1707,NOUN,SINGULAR
+socavar	1705,VERB
+holgura	1701,NOUN,SINGULAR
+secador	1701,ADJECTIVE,NOUN,SINGULAR
+curador	1698,NOUN,SINGULAR
+anotado	1693,ADJECTIVE,PARTICIPLE
+pasador	1689,NOUN,SINGULAR
+grafito	1688,NOUN,SINGULAR
+escueto	1685,ADJECTIVE
+alojado	1684,NOUN,PARTICIPLE,SINGULAR
+nirvana	1683,NOUN,SINGULAR
+perrita	1683,NOUN,SINGULAR
+allende	1681,ADVERB,PREPOSITION
+expulsa	1679,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+acritud	1678,NOUN,SINGULAR
+cautiva	1678,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+ociosos	1678,ADJECTIVE,NOUN,PLURAL
+pechuga	1675,NOUN,SINGULAR
+forrada	1672,ADJECTIVE,PARTICIPLE
+pasmada	1669,ADJECTIVE,PARTICIPLE
+volador	1669,ADJECTIVE,NOUN,SINGULAR
+corales	1668,ADJECTIVE,NOUN,PLURAL
+infanta	1666,NOUN,SINGULAR
+arancel	1660,NOUN,SINGULAR
+incitar	1659,VERB
+costero	1657,ADJECTIVE
+bravura	1654,NOUN,SINGULAR
+novicia	1653,NOUN,SINGULAR
+partera	1653,NOUN,SINGULAR
+dejados	1651,ADJECTIVE,PARTICIPLE
+mancebo	1648,ADJECTIVE,NOUN,SINGULAR
+cabaret	1646,NOUN,SINGULAR
+binaria	1641,ADJECTIVE
+bajadas	1638,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+curtido	1638,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+pesebre	1636,NOUN,SINGULAR
+letrada	1632,NOUN,ADJECTIVE,SINGULAR
+estribo	1630,NOUN,VERB,SINGULAR
+mafioso	1630,ADJECTIVE,NOUN,SINGULAR
+tirante	1630,ADJECTIVE,NOUN,SINGULAR
+puntero	1626,ADJECTIVE,NOUN,SINGULAR
+anulada	1623,ADJECTIVE,PARTICIPLE
+regusto	1618,NOUN,SINGULAR
+sexenio	1618,NOUN,SINGULAR
+soluble	1616,ADJECTIVE
+dirimir	1614,VERB
+medidor	1613,ADJECTIVE,NOUN,SINGULAR
+ampolla	1610,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+delatar	1610,VERB
+coronar	1609,VERB
+repollo	1609,NOUN,VERB,SINGULAR
+aludida	1606,ADJECTIVE,PARTICIPLE
+obscura	1603,ADJECTIVE
+penacho	1603,NOUN,SINGULAR
+macabra	1600,ADJECTIVE
+exmujer	1599,NOUN,SINGULAR
+hipoxia	1599,NOUN,SINGULAR
+quijada	1599,NOUN,SINGULAR
+moderar	1597,VERB
+embalse	1596,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+obscuro	1594,ADJECTIVE
+sabueso	1593,NOUN,SINGULAR
+estoica	1591,NOUN,ADJECTIVE,SINGULAR
+tumbona	1590,NOUN,ADJECTIVE,SINGULAR
+mestiza	1587,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+abusado	1585,PARTICIPLE,ADJECTIVE
+insular	1584,ADJECTIVE,NOUN,SINGULAR
+tiradas	1583,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+debacle	1582,NOUN,SINGULAR
+tumoral	1579,ADJECTIVE
+poetisa	1576,NOUN,SINGULAR
+labrado	1575,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+alocada	1572,ADJECTIVE,PARTICIPLE
+plumazo	1571,NOUN,SINGULAR
+sinuosa	1569,ADJECTIVE
+lujosas	1567,ADJECTIVE
+mexicas	1567,ADJECTIVE,NOUN,PLURAL
+costear	1566,VERB
+atacada	1563,ADJECTIVE,PARTICIPLE
+desarme	1562,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+palillo	1562,NOUN,SINGULAR
+brasero	1561,NOUN,SINGULAR
+nupcias	1559,NOUN,SINGULAR
+dimitir	1554,VERB
+reactor	1551,NOUN,SINGULAR
+polilla	1548,NOUN,SINGULAR
+oneroso	1545,ADJECTIVE
+ovalada	1545,ADJECTIVE
+robadas	1545,ADJECTIVE,PARTICIPLE
+llorosa	1544,ADJECTIVE
+antifaz	1543,NOUN,SINGULAR
+conciso	1541,ADJECTIVE
+croquis	1541,NOUN,SINGULAR
+nevadas	1538,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+ultraje	1537,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+granate	1535,ADJECTIVE,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+forraje	1534,NOUN,SINGULAR
+taladro	1532,NOUN,VERB,SINGULAR
+amapola	1531,NOUN,SINGULAR
+astilla	1531,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+recital	1530,NOUN,SINGULAR
+frenada	1527,NOUN,PARTICIPLE,SINGULAR
+pastosa	1527,ADJECTIVE
+bramido	1525,NOUN,SINGULAR
+uterina	1523,ADJECTIVE
+papilla	1522,NOUN,SINGULAR
+innatas	1517,ADJECTIVE
+sortija	1515,NOUN,SINGULAR
+pujante	1514,ADJECTIVE
+acosado	1513,ADJECTIVE,PARTICIPLE
+florero	1513,NOUN,SINGULAR
+noruego	1509,ADJECTIVE,NOUN,SINGULAR
+obsceno	1503,ADJECTIVE
+rebasar	1500,VERB
+mullido	1499,ADJECTIVE,PARTICIPLE
+cochera	1497,NOUN,SINGULAR
+pinchar	1494,VERB
+alegrar	1493,VERB
+lasciva	1493,ADJECTIVE
+conexos	1488,ADJECTIVE
+apenado	1486,ADJECTIVE,PARTICIPLE
+premiar	1486,VERB
+mordido	1485,ADJECTIVE,PARTICIPLE
+pendejo	1484,NOUN,ADJECTIVE,SINGULAR
+cremoso	1483,ADJECTIVE
+renegar	1480,VERB
+otredad	1479,NOUN,SINGULAR
+hondura	1478,NOUN,SINGULAR
+tapados	1475,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+infames	1472,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+rebatir	1472,VERB
+titanio	1472,NOUN,SINGULAR
+amateur	1469,ADJECTIVE,NOUN,SINGULAR
+barcaza	1468,NOUN,SINGULAR
+incisos	1468,ADJECTIVE,NOUN,PLURAL
+grupito	1467,NOUN,SINGULAR
+astutos	1465,ADJECTIVE
+glaciar	1461,NOUN,SINGULAR
+cubanas	1460,ADJECTIVE,NOUN,PLURAL
+tejanos	1460,NOUN,ADJECTIVE,VERB,IMP,INFLECTED_FORM,PLURAL
+inundar	1459,VERB
+voluble	1458,ADJECTIVE
+adversa	1457,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+faringe	1455,NOUN,SINGULAR
+nublada	1455,ADJECTIVE,PARTICIPLE
+sinusal	1454,ADJECTIVE
+cortijo	1453,NOUN,SINGULAR
+exaltar	1453,VERB
+cadalso	1451,NOUN,SINGULAR
+vistoso	1450,ADJECTIVE
+austral	1449,ADJECTIVE,NOUN,SINGULAR
+abismal	1448,ADJECTIVE
+revisor	1448,ADJECTIVE,NOUN,SINGULAR
+nefasta	1441,ADJECTIVE
+paletas	1441,ADJECTIVE,NOUN,PLURAL
+realzar	1439,VERB
+adivino	1438,NOUN,VERB,SINGULAR
+aparejo	1438,NOUN,VERB,SINGULAR
+aerosol	1436,NOUN,SINGULAR
+macizos	1433,ADJECTIVE,NOUN,PLURAL
+excelsa	1429,ADJECTIVE
+candela	1428,NOUN,SINGULAR
+furtivo	1421,ADJECTIVE,NOUN,SINGULAR
+pillaje	1419,NOUN,SINGULAR
+vesical	1418,ADJECTIVE
+tubular	1417,ADJECTIVE
+salidos	1414,ADJECTIVE,PARTICIPLE
+tomador	1414,NOUN,SINGULAR
+asesora	1413,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+jodidos	1413,ADJECTIVE,PARTICIPLE
+arrasar	1410,VERB
+verdosa	1410,ADJECTIVE
+aguante	1408,NOUN,INTERJECTION,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+gestual	1408,ADJECTIVE
+turbios	1405,ADJECTIVE
+manager	1403,NOUN,SINGULAR
+fundida	1402,ADJECTIVE,PARTICIPLE
+amazona	1401,NOUN,SINGULAR
+ruinoso	1401,ADJECTIVE
+ambages	1399,NOUN,SINGULAR
+boliche	1396,NOUN,SINGULAR
+colmada	1394,ADJECTIVE,PARTICIPLE
+conjura	1394,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+retardo	1386,NOUN,VERB,SINGULAR
+abonado	1381,NOUN,PARTICIPLE,SINGULAR
+bancada	1381,NOUN,PARTICIPLE,SINGULAR
+elogiar	1380,VERB
+glamour	1380,NOUN,SINGULAR
+imputar	1380,VERB
+cruenta	1379,ADJECTIVE
+azarosa	1375,ADJECTIVE
+sicario	1374,NOUN,SINGULAR
+bebedor	1369,ADJECTIVE,NOUN,SINGULAR
+morboso	1369,ADJECTIVE
+orbital	1364,ADJECTIVE,NOUN,SINGULAR
+alcista	1363,ADJECTIVE
+anhelar	1360,VERB
+paganas	1359,ADJECTIVE,NOUN,PLURAL
+embrujo	1358,NOUN,VERB,SINGULAR
+mapuche	1356,ADJECTIVE,NOUN,SINGULAR
+idiotez	1353,NOUN,SINGULAR
+quechua	1352,ADJECTIVE,NOUN,SINGULAR
+cantada	1349,NOUN,PARTICIPLE,SINGULAR
+convite	1349,NOUN,SINGULAR
+collage	1347,NOUN,SINGULAR
+pleural	1347,ADJECTIVE
+banales	1345,ADJECTIVE
+sonrojo	1345,NOUN,VERB,SINGULAR
+hoyuelo	1343,NOUN,SINGULAR
+portera	1343,NOUN,SINGULAR
+rojizas	1340,ADJECTIVE
+podcast	1338,NOUN,SINGULAR
+rebotar	1338,VERB
+animoso	1337,ADJECTIVE
+cancela	1337,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+anverso	1335,NOUN,SINGULAR
+anodino	1334,ADJECTIVE
+encinta	1332,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+zancada	1332,NOUN,SINGULAR
+vecinal	1329,ADJECTIVE
+dejadas	1323,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+mortaja	1321,NOUN,SINGULAR
+usuaria	1321,NOUN,SINGULAR
+empacar	1320,VERB
+jaqueca	1320,NOUN,SINGULAR
+churros	1319,ADJECTIVE,NOUN,PLURAL
+coautor	1319,NOUN,SINGULAR
+hechura	1319,NOUN,SINGULAR
+mulatos	1318,ADJECTIVE,NOUN,PLURAL
+oriundo	1316,ADJECTIVE,NOUN,SINGULAR
+especia	1315,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+develar	1312,VERB
+forjada	1311,ADJECTIVE,PARTICIPLE
+gremial	1311,ADJECTIVE
+penalti	1311,NOUN,SINGULAR
+enchufe	1310,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+maxilar	1310,ADJECTIVE
+turbias	1309,ADJECTIVE
+excelso	1306,ADJECTIVE
+neutros	1306,ADJECTIVE
+brincar	1305,VERB
+cabales	1305,NOUN,ADJECTIVE,PLURAL
+menudos	1304,ADJECTIVE,NOUN,PLURAL
+curvada	1300,ADJECTIVE,PARTICIPLE
+titubeo	1300,NOUN,VERB,SINGULAR
+husmear	1297,VERB
+agredir	1295,VERB
+mullida	1294,ADJECTIVE,PARTICIPLE
+vertido	1291,NOUN,PARTICIPLE,SINGULAR
+profana	1290,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+albacea	1289,NOUN,SINGULAR
+ominoso	1288,ADJECTIVE
+anulado	1287,ADJECTIVE,PARTICIPLE
+patinar	1285,VERB
+morbosa	1283,ADJECTIVE
+detente	1282,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+sadismo	1281,NOUN,SINGULAR
+apurada	1280,ADJECTIVE,PARTICIPLE
+penique	1277,NOUN,SINGULAR
+hacedor	1275,NOUN,SINGULAR
+inmunda	1275,ADJECTIVE
+mampara	1275,NOUN,SINGULAR
+fusilar	1271,VERB
+tediosa	1271,ADJECTIVE
+ciruela	1267,NOUN,SINGULAR
+divagar	1267,VERB
+sagital	1265,ADJECTIVE
+veganos	1261,ADJECTIVE,NOUN,PLURAL
+cabezal	1259,NOUN,SINGULAR
+novatos	1259,ADJECTIVE,NOUN,PLURAL
+avistar	1257,VERB
+atadura	1255,NOUN,SINGULAR
+misivas	1253,ADJECTIVE,NOUN,PLURAL
+curtida	1252,ADJECTIVE,PARTICIPLE
+drogado	1252,ADJECTIVE,PARTICIPLE
+fetiche	1251,NOUN,SINGULAR
+boquete	1250,NOUN,SINGULAR
+focales	1250,ADJECTIVE
+pomposo	1250,ADJECTIVE
+aviador	1247,NOUN,SINGULAR
+azorado	1247,ADJECTIVE,PARTICIPLE
+apegado	1246,ADJECTIVE,PARTICIPLE
+dudosos	1246,ADJECTIVE
+honrosa	1246,ADJECTIVE
+negrita	1238,NOUN,ADJECTIVE,SINGULAR
+arrabal	1237,NOUN,SINGULAR
+catarro	1237,NOUN,SINGULAR
+enredar	1234,VERB
+rocosos	1233,ADJECTIVE
+cautivo	1232,ADJECTIVE,NOUN,VERB,SINGULAR
+yugular	1232,ADJECTIVE,NOUN,VERB,SINGULAR
+velorio	1231,NOUN,SINGULAR
+copioso	1226,ADJECTIVE
+copista	1226,NOUN,SINGULAR
+hilillo	1226,NOUN,SINGULAR
+terrena	1226,ADJECTIVE
+matador	1225,NOUN,SINGULAR
+pionera	1224,NOUN,ADJECTIVE,SINGULAR
+nadador	1223,NOUN,SINGULAR
+silente	1223,ADJECTIVE
+crecida	1219,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+erizado	1219,ADJECTIVE,PARTICIPLE
+alzados	1217,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+reclame	1214,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+asidero	1212,NOUN,SINGULAR
+sondear	1211,VERB
+difusas	1210,ADJECTIVE
+lirismo	1210,NOUN,SINGULAR
+pagador	1208,ADJECTIVE,NOUN,SINGULAR
+cobrizo	1207,ADJECTIVE
+votante	1207,ADJECTIVE,NOUN,SINGULAR
+subidos	1206,ADJECTIVE,PARTICIPLE
+morisco	1204,ADJECTIVE,NOUN,SINGULAR
+viciado	1202,ADJECTIVE,PARTICIPLE
+serbios	1197,ADJECTIVE,NOUN,PLURAL
+augusto	1196,ADJECTIVE
+oclusal	1196,ADJECTIVE
+celosos	1195,ADJECTIVE
+penosas	1195,ADJECTIVE
+alocado	1194,ADJECTIVE,PARTICIPLE
+troyano	1194,ADJECTIVE,NOUN,SINGULAR
+tocados	1192,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+pujanza	1190,NOUN,SINGULAR
+zarpazo	1188,NOUN,SINGULAR
+ternero	1186,NOUN,SINGULAR
+sobrado	1184,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+desaire	1183,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+estanco	1182,ADJECTIVE,NOUN,VERB,SINGULAR
+refinar	1182,VERB
+ingrata	1180,NOUN,ADJECTIVE,SINGULAR
+intimar	1175,VERB
+germano	1174,ADJECTIVE,NOUN,SINGULAR
+bohemio	1171,ADJECTIVE,NOUN,SINGULAR
+morenas	1170,ADJECTIVE,NOUN,PLURAL
+bajista	1168,ADJECTIVE,NOUN,SINGULAR
+acicate	1166,NOUN,SINGULAR
+dejadez	1166,NOUN,SINGULAR
+velador	1164,NOUN,SINGULAR
+templar	1163,VERB
+brocado	1161,NOUN,SINGULAR
+carrete	1161,NOUN,SINGULAR
+bulimia	1160,NOUN,SINGULAR
+erectos	1160,ADJECTIVE
+acequia	1157,NOUN,SINGULAR
+denuedo	1157,NOUN,SINGULAR
+cuajada	1154,NOUN,PARTICIPLE,SINGULAR
+espesos	1153,ADJECTIVE
+fregona	1152,NOUN,ADJECTIVE,SINGULAR
+sajones	1152,ADJECTIVE,NOUN,PLURAL
+vasallo	1152,ADJECTIVE,NOUN,SINGULAR
+dilatar	1150,VERB
+veraneo	1148,NOUN,VERB,SINGULAR
+tatuado	1147,ADJECTIVE,PARTICIPLE
+benigna	1145,ADJECTIVE
+denotar	1144,VERB
+ovalado	1143,ADJECTIVE
+apresar	1141,VERB
+atracar	1140,VERB
+inflado	1140,NOUN,PARTICIPLE,SINGULAR
+domador	1139,NOUN,SINGULAR
+cubital	1138,ADJECTIVE
+cabrito	1136,NOUN,SINGULAR
+gritito	1136,NOUN,SINGULAR
+holgada	1134,ADJECTIVE,PARTICIPLE
+inquina	1132,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pastora	1131,NOUN,SINGULAR
+resecos	1130,ADJECTIVE
+abrigar	1129,VERB
+derribo	1129,NOUN,VERB,SINGULAR
+felinos	1129,ADJECTIVE,NOUN,PLURAL
+violada	1129,ADJECTIVE,PARTICIPLE
+apartes	1128,ADJECTIVE,VERB,INFLECTED_FORM,SUBJ
+recluta	1127,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+tiestos	1127,ADJECTIVE,NOUN,PLURAL
+gauchos	1126,ADJECTIVE,NOUN,PLURAL
+honroso	1125,ADJECTIVE
+panacea	1125,NOUN,SINGULAR
+excusar	1121,VERB
+irritar	1121,VERB
+panceta	1121,NOUN,SINGULAR
+amarrar	1119,VERB
+anguila	1118,NOUN,SINGULAR
+azaroso	1118,ADJECTIVE
+desvelo	1118,NOUN,VERB,SINGULAR
+andinos	1116,ADJECTIVE,NOUN,PLURAL
+depurar	1116,VERB
+esparto	1116,NOUN,VERB,SINGULAR
+puridad	1116,NOUN,SINGULAR
+amparar	1114,VERB
+barbudo	1114,ADJECTIVE
+demoler	1114,VERB
+becario	1112,NOUN,SINGULAR
+inserto	1112,ADJECTIVE,VERB
+azorada	1110,ADJECTIVE,PARTICIPLE
+concisa	1108,ADJECTIVE
+selecta	1107,NOUN,ADJECTIVE,SINGULAR
+volcada	1103,NOUN,PARTICIPLE,SINGULAR
+proprio	1102,ADJECTIVE
+argivos	1101,ADJECTIVE,NOUN,PLURAL
+sepelio	1101,NOUN,SINGULAR
+asestar	1100,VERB
+escaneo	1100,NOUN,VERB,SINGULAR
+forales	1099,ADJECTIVE
+temario	1099,NOUN,SINGULAR
+soprano	1097,NOUN,SINGULAR
+postigo	1095,NOUN,SINGULAR
+merluza	1094,NOUN,SINGULAR
+sabedor	1094,ADJECTIVE
+boscosa	1089,ADJECTIVE
+recluso	1089,ADJECTIVE,NOUN,SINGULAR
+anotada	1088,ADJECTIVE,PARTICIPLE
+denegar	1087,VERB
+galopar	1085,VERB
+cogidas	1083,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+risilla	1082,NOUN,SINGULAR
+timonel	1082,NOUN,SINGULAR
+marcaje	1081,NOUN,SINGULAR
+menguar	1080,VERB
+acotado	1079,ADJECTIVE,PARTICIPLE
+exnovio	1074,NOUN,SINGULAR
+colecta	1073,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+comadre	1073,NOUN,SINGULAR
+cotejar	1072,VERB
+abocado	1070,ADJECTIVE,PARTICIPLE
+agachar	1069,VERB
+caladas	1069,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+rellena	1069,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+tantear	1069,VERB
+cosacos	1068,ADJECTIVE,NOUN,PLURAL
+oprimir	1066,VERB
+rabieta	1066,NOUN,SINGULAR
+laxitud	1064,NOUN,SINGULAR
+regaliz	1064,NOUN,SINGULAR
+anatema	1063,NOUN,SINGULAR
+anodina	1063,ADJECTIVE
+levedad	1062,NOUN,SINGULAR
+brumoso	1060,ADJECTIVE
+efusivo	1059,ADJECTIVE
+dragona	1057,NOUN,SINGULAR
+broncas	1056,ADJECTIVE,NOUN,PLURAL
+argolla	1055,NOUN,SINGULAR
+nitrato	1053,NOUN,SINGULAR
+arenosa	1052,ADJECTIVE
+embolia	1051,NOUN,SINGULAR
+sillita	1051,NOUN,SINGULAR
+elipsis	1048,NOUN,SINGULAR
+sumaria	1048,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+allanar	1047,VERB
+expirar	1047,VERB
+hashtag	1047,NOUN,SINGULAR
+eritema	1046,NOUN,SINGULAR
+medible	1043,ADJECTIVE
+salados	1043,ADJECTIVE,PARTICIPLE
+bruscas	1041,ADJECTIVE
+grafiti	1041,NOUN,SINGULAR
+corneta	1037,NOUN,SINGULAR
+esenios	1036,ADJECTIVE,NOUN,PLURAL
+pascual	1036,ADJECTIVE
+ofensor	1035,ADJECTIVE,NOUN,SINGULAR
+tutelar	1034,ADJECTIVE,VERB
+rallada	1033,ADJECTIVE,PARTICIPLE
+saltear	1033,VERB
+vaquera	1033,NOUN,ADJECTIVE,SINGULAR
+movidas	1026,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+azotado	1025,NOUN,PARTICIPLE,SINGULAR
+quintos	1024,ADJECTIVE,NOUN,PLURAL
+atentas	1023,ADJECTIVE,VERB
+lascivo	1023,ADJECTIVE
+yglesia	1023,NOUN,SINGULAR
+cianuro	1021,NOUN,SINGULAR
+arrullo	1020,NOUN,VERB,SINGULAR
+bourbon	1020,NOUN,SINGULAR
+carnosa	1019,ADJECTIVE
+neceser	1019,NOUN,SINGULAR
+soplido	1018,NOUN,SINGULAR
+bisonte	1017,NOUN,SINGULAR
+morenos	1017,ADJECTIVE,NOUN,PLURAL
+arenoso	1016,ADJECTIVE
+rehusar	1016,VERB
+peludas	1015,ADJECTIVE
+vintage	1015,ADJECTIVE
+derogar	1014,VERB
+octavas	1014,ADJECTIVE,NOUN,PLURAL
+rededor	1014,NOUN,SINGULAR
+casucha	1011,NOUN,SINGULAR
+cegador	1011,ADJECTIVE
+mocedad	1011,NOUN,SINGULAR
+seminal	1011,ADJECTIVE
+inhalar	1010,VERB
+alojada	1009,NOUN,PARTICIPLE,SINGULAR
+damasco	1009,NOUN,SINGULAR
+intrusa	1009,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+disenso	1006,NOUN,SINGULAR
+innoble	1006,ADJECTIVE
+postiza	1006,ADJECTIVE
+yanquis	1005,ADJECTIVE,NOUN,PLURAL
+adosada	1003,ADJECTIVE,PARTICIPLE
+dineral	1003,NOUN,SINGULAR
+morisca	1000,NOUN,ADJECTIVE,SINGULAR
+autocar	999,NOUN,SINGULAR
+boquita	999,NOUN,SINGULAR
+molares	999,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+alameda	998,NOUN,SINGULAR
+espirar	998,VERB
+vistosa	998,ADJECTIVE
+granuja	997,NOUN,ADJECTIVE,SINGULAR
+serrano	996,ADJECTIVE,NOUN,SINGULAR
+bombear	995,VERB
+cubismo	994,NOUN,SINGULAR
+andinas	992,ADJECTIVE,NOUN,PLURAL
+sultana	992,NOUN,SINGULAR
+ganglio	991,NOUN,SINGULAR
+germana	990,NOUN,ADJECTIVE,SINGULAR
+dossier	987,NOUN,SINGULAR
+oquedad	987,NOUN,SINGULAR
+porrazo	985,NOUN,SINGULAR
+aburrir	984,VERB
+fitness	984,NOUN,SINGULAR
+pulidas	983,ADJECTIVE,PARTICIPLE
+rasposa	983,ADJECTIVE
+linfoma	982,NOUN,SINGULAR
+virales	982,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+coreano	981,ADJECTIVE,NOUN,SINGULAR
+lingual	980,ADJECTIVE
+verbena	980,NOUN,SINGULAR
+gentuza	979,NOUN,SINGULAR
+beisbol	978,NOUN,SINGULAR
+cetosis	978,NOUN,SINGULAR
+dudosas	978,ADJECTIVE
+innatos	977,ADJECTIVE
+gordura	971,NOUN,SINGULAR
+playboy	970,NOUN,SINGULAR
+frenado	969,NOUN,PARTICIPLE,SINGULAR
+reabrir	969,VERB
+bitcoin	967,NOUN,SINGULAR
+ahijado	966,NOUN,PARTICIPLE,SINGULAR
+divisor	965,ADJECTIVE,NOUN,SINGULAR
+pilotar	964,VERB
+voraces	963,ADJECTIVE
+esquela	962,NOUN,SINGULAR
+estrago	962,NOUN,VERB,SINGULAR
+menudas	962,ADJECTIVE
+chupito	961,NOUN,SINGULAR
+cavilar	960,VERB
+galanes	960,ADJECTIVE,NOUN,PLURAL
+tomista	960,ADJECTIVE
+piquete	958,NOUN,SINGULAR
+cenador	957,NOUN,SINGULAR
+pocilga	957,NOUN,SINGULAR
+ardides	955,ADJECTIVE,NOUN,PLURAL
+tapadas	954,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+acetato	953,NOUN,SINGULAR
+calamar	953,NOUN,SINGULAR
+saquito	950,NOUN,SINGULAR
+aldeano	949,ADJECTIVE,NOUN,SINGULAR
+cuadrar	949,VERB
+aduanal	948,ADJECTIVE
+desgano	948,NOUN,VERB,SINGULAR
+potrero	947,NOUN,SINGULAR
+sobrada	947,ADJECTIVE,PARTICIPLE
+apegada	946,ADJECTIVE,PARTICIPLE
+daneses	946,ADJECTIVE,NOUN,PLURAL
+malsana	946,ADJECTIVE
+chupete	945,NOUN,SINGULAR
+grumete	945,NOUN,SINGULAR
+asepsia	944,NOUN,SINGULAR
+alfalfa	943,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+decurso	941,NOUN,SINGULAR
+selenio	940,NOUN,SINGULAR
+vivaces	939,ADJECTIVE
+plomizo	936,ADJECTIVE
+sardina	936,NOUN,SINGULAR
+indiano	935,ADJECTIVE,NOUN,SINGULAR
+neonato	935,NOUN,SINGULAR
+ruinosa	935,ADJECTIVE
+oficiar	934,VERB
+alabado	928,NOUN,PARTICIPLE,SINGULAR
+tatuada	928,ADJECTIVE,PARTICIPLE
+terrier	928,NOUN,SINGULAR
+cotilla	927,ADJECTIVE,NOUN,SINGULAR
+colitis	925,NOUN,SINGULAR
+karaoke	924,NOUN,SINGULAR
+playera	924,NOUN,ADJECTIVE,SINGULAR
+ahorcar	923,VERB
+extinta	923,ADJECTIVE
+puercos	923,ADJECTIVE,NOUN,PLURAL
+donaire	922,NOUN,SINGULAR
+impuros	922,ADJECTIVE
+arcanos	921,ADJECTIVE,NOUN,PLURAL
+augusta	921,ADJECTIVE
+coreana	921,NOUN,ADJECTIVE,SINGULAR
+morados	921,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+esclusa	920,NOUN,SINGULAR
+subtipo	920,NOUN,SINGULAR
+venerar	920,VERB
+chalupa	919,NOUN,SINGULAR
+serenos	919,ADJECTIVE,NOUN,PLURAL
+prestas	918,ADJECTIVE,VERB
+reborde	918,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+expolio	917,NOUN,VERB,SINGULAR
+tugurio	914,NOUN,SINGULAR
+asirios	913,ADJECTIVE,NOUN,PLURAL
+gourmet	913,ADJECTIVE
+letrina	911,NOUN,SINGULAR
+vikingo	911,ADJECTIVE,NOUN,SINGULAR
+alforja	909,NOUN,SINGULAR
+fibrosa	909,ADJECTIVE
+affaire	908,NOUN,SINGULAR
+alondra	905,NOUN,SINGULAR
+naranjo	904,NOUN,SINGULAR
+ahumada	902,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+invitas	900,ADJECTIVE,VERB
+leproso	900,ADJECTIVE
+criador	899,NOUN,SINGULAR
+nevados	899,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+sideral	899,ADJECTIVE
+odiosos	898,ADJECTIVE
+bizarro	896,ADJECTIVE
+startup	895,NOUN,SINGULAR
+mapache	893,NOUN,SINGULAR
+obscena	893,ADJECTIVE
+fluidas	892,ADJECTIVE,PARTICIPLE
+ominosa	892,ADJECTIVE
+rodante	892,ADJECTIVE
+felpudo	891,NOUN,SINGULAR
+licitud	891,NOUN,SINGULAR
+default	890,NOUN,SINGULAR
+molidas	890,ADJECTIVE,PARTICIPLE
+tonales	888,ADJECTIVE
+estrena	887,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alzadas	886,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+charola	886,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+leptina	885,NOUN,SINGULAR
+florida	884,ADJECTIVE
+coqueto	883,ADJECTIVE,NOUN,SINGULAR
+salinas	883,ADJECTIVE,NOUN,PLURAL
+abyecto	882,ADJECTIVE
+etileno	881,NOUN,SINGULAR
+jugosos	881,ADJECTIVE
+cohecho	880,NOUN,VERB,SINGULAR
+martini	879,NOUN,SINGULAR
+postrer	879,ADJECTIVE
+noruega	878,NOUN,ADJECTIVE,SINGULAR
+tablado	878,NOUN,PARTICIPLE,SINGULAR
+relator	875,NOUN,SINGULAR
+convexo	874,ADJECTIVE
+abdicar	873,VERB
+versado	873,ADJECTIVE,PARTICIPLE
+borrada	872,ADJECTIVE,PARTICIPLE
+coaxial	872,ADJECTIVE
+teucros	870,ADJECTIVE,NOUN,PLURAL
+ventoso	870,ADJECTIVE,NOUN,SINGULAR
+afamado	869,ADJECTIVE,PARTICIPLE
+canasto	869,NOUN,SINGULAR
+frazada	869,NOUN,SINGULAR
+curvado	867,ADJECTIVE,PARTICIPLE
+viriles	866,ADJECTIVE
+biquini	865,NOUN,SINGULAR
+detonar	864,VERB
+mirones	864,ADJECTIVE,NOUN,PLURAL
+acosada	863,ADJECTIVE,PARTICIPLE
+clarito	863,ADJECTIVE
+deponer	863,VERB
+drogada	863,ADJECTIVE,PARTICIPLE
+marisma	863,NOUN,SINGULAR
+civismo	862,NOUN,SINGULAR
+plebeyo	860,ADJECTIVE,NOUN,SINGULAR
+tupidas	860,ADJECTIVE,PARTICIPLE
+exnovia	858,NOUN,SINGULAR
+neutras	858,ADJECTIVE
+western	858,NOUN,SINGULAR
+tiritar	857,VERB
+represa	856,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+rizados	856,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+viajera	855,NOUN,ADJECTIVE,SINGULAR
+emporio	854,NOUN,SINGULAR
+batidas	850,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+minibar	850,NOUN,SINGULAR
+tozudez	849,NOUN,SINGULAR
+basalto	848,NOUN,SINGULAR
+capitan	848,NOUN,SINGULAR
+coliseo	846,NOUN,SINGULAR
+halagar	846,VERB
+sedante	846,ADJECTIVE,NOUN,SINGULAR
+erizada	845,ADJECTIVE,PARTICIPLE
+insomne	844,ADJECTIVE,NOUN,SINGULAR
+lombriz	844,NOUN,SINGULAR
+collado	842,NOUN,SINGULAR
+arriero	841,NOUN,SINGULAR
+impunes	841,ADJECTIVE
+conexas	840,ADJECTIVE
+reacios	840,ADJECTIVE
+veganas	840,ADJECTIVE,NOUN,PLURAL
+hatillo	839,NOUN,SINGULAR
+ventero	839,NOUN,SINGULAR
+evasiva	838,NOUN,ADJECTIVE,SINGULAR
+psiquis	838,NOUN,SINGULAR
+colgajo	837,NOUN,SINGULAR
+rinitis	837,NOUN,SINGULAR
+penados	836,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+profusa	836,ADJECTIVE
+pulidos	836,ADJECTIVE,PARTICIPLE
+tiovivo	835,NOUN,SINGULAR
+prestos	834,ADJECTIVE
+repique	831,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+sufijos	829,ADJECTIVE,NOUN,PLURAL
+escroto	828,NOUN,SINGULAR
+duodeno	827,NOUN,SINGULAR
+tenista	827,NOUN,SINGULAR
+armador	826,NOUN,SINGULAR
+lechoso	825,ADJECTIVE,NOUN,SINGULAR
+oloroso	825,ADJECTIVE,NOUN,SINGULAR
+juliana	824,NOUN,ADJECTIVE,SINGULAR
+cabeceo	823,NOUN,VERB,SINGULAR
+tintura	823,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+arcabuz	822,NOUN,SINGULAR
+acotada	820,ADJECTIVE,PARTICIPLE
+cursado	820,ADJECTIVE,PARTICIPLE
+tamales	819,ADJECTIVE,NOUN,PLURAL
+caninos	817,ADJECTIVE,NOUN,PLURAL
+viejito	815,ADJECTIVE
+manilla	814,NOUN,SINGULAR
+avezado	812,ADJECTIVE,PARTICIPLE
+puntito	812,NOUN,SINGULAR
+usurpar	812,VERB
+canaria	811,NOUN,ADJECTIVE,SINGULAR
+absceso	809,NOUN,SINGULAR
+gustosa	809,ADJECTIVE
+andador	808,ADJECTIVE,NOUN,SINGULAR
+baldosa	806,NOUN,SINGULAR
+ociosas	806,ADJECTIVE,NOUN,PLURAL
+surfear	805,VERB
+finitos	804,ADJECTIVE
+truchas	804,ADJECTIVE,NOUN,PLURAL
+cachete	803,NOUN,SINGULAR
+opresor	803,NOUN,SINGULAR
+bucales	802,ADJECTIVE
+juntura	800,NOUN,SINGULAR
+otomana	800,ADJECTIVE
+eslavos	798,ADJECTIVE,NOUN,PLURAL
+burrito	797,NOUN,SINGULAR
+hervido	797,NOUN,PARTICIPLE,SINGULAR
+amargor	796,NOUN,SINGULAR
+mayoral	796,NOUN,SINGULAR
+vetusto	796,ADJECTIVE
+bellota	795,NOUN,SINGULAR
+encomio	795,NOUN,VERB,SINGULAR
+pollito	794,NOUN,SINGULAR
+bocazas	793,NOUN,SINGULAR
+coronal	793,ADJECTIVE,NOUN,SINGULAR
+dentada	793,ADJECTIVE,PARTICIPLE
+batidor	792,NOUN,SINGULAR
+rasgado	792,NOUN,PARTICIPLE,SINGULAR
+flirteo	791,NOUN,VERB,SINGULAR
+campera	790,NOUN,ADJECTIVE,SINGULAR
+estasis	790,NOUN,SINGULAR
+falsear	790,VERB
+moteado	790,ADJECTIVE,PARTICIPLE
+repunte	790,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+delator	787,ADJECTIVE,NOUN,SINGULAR
+flagelo	787,NOUN,VERB,SINGULAR
+frenazo	786,NOUN,SINGULAR
+gaznate	786,NOUN,SINGULAR
+navarro	786,ADJECTIVE,NOUN,SINGULAR
+pedante	786,ADJECTIVE,NOUN,SINGULAR
+terceto	786,NOUN,SINGULAR
+capitel	785,NOUN,SINGULAR
+compota	782,NOUN,SINGULAR
+modorra	782,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+durazno	778,NOUN,SINGULAR
+fichaje	778,NOUN,SINGULAR
+altivos	776,ADJECTIVE
+pirueta	776,NOUN,SINGULAR
+sofrito	776,NOUN,PARTICIPLE,SINGULAR
+abundar	774,VERB
+barrica	774,NOUN,SINGULAR
+indemne	774,ADJECTIVE
+clarear	773,VERB
+fiambre	772,NOUN,SINGULAR
+calleja	771,NOUN,SINGULAR
+estanca	771,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+pinches	771,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+reventa	771,NOUN,SINGULAR
+olorosa	770,ADJECTIVE
+sazonar	768,VERB
+plumero	766,NOUN,SINGULAR
+difusor	765,ADJECTIVE,NOUN,SINGULAR
+equipar	763,VERB
+empalme	762,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+enfilar	762,VERB
+bisagra	761,NOUN,SINGULAR
+hebreas	761,ADJECTIVE,NOUN,PLURAL
+inculto	761,ADJECTIVE
+novicio	760,NOUN,SINGULAR
+brumosa	759,ADJECTIVE
+zarista	759,ADJECTIVE,NOUN,SINGULAR
+gordito	758,ADJECTIVE
+relevar	758,VERB
+ruidito	758,NOUN,SINGULAR
+arconte	757,NOUN,SINGULAR
+insulsa	757,ADJECTIVE
+adosado	756,ADJECTIVE,PARTICIPLE
+laminar	755,ADJECTIVE,VERB
+erudita	754,NOUN,ADJECTIVE,SINGULAR
+mollera	754,NOUN,SINGULAR
+morfema	754,NOUN,SINGULAR
+diurnas	753,ADJECTIVE
+peludos	753,ADJECTIVE,NOUN,PLURAL
+castizo	752,ADJECTIVE
+retoque	751,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tajadas	751,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+encoger	750,VERB
+noveles	749,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+efusiva	748,ADJECTIVE
+curados	746,ADJECTIVE,PARTICIPLE
+carnoso	745,ADJECTIVE
+destajo	745,NOUN,VERB,SINGULAR
+torpedo	745,NOUN,SINGULAR
+cedente	743,NOUN,ADJECTIVE,SINGULAR
+piragua	743,NOUN,SINGULAR
+dedillo	742,NOUN,SINGULAR
+fariseo	742,NOUN,SINGULAR
+ahijada	741,NOUN,PARTICIPLE,SINGULAR
+impasse	741,NOUN,SINGULAR
+miosina	741,NOUN,SINGULAR
+mixtura	740,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+onerosa	740,ADJECTIVE
+vampira	739,NOUN,SINGULAR
+monacal	737,ADJECTIVE
+barajar	735,VERB
+boniato	735,NOUN,SINGULAR
+garrafa	735,NOUN,SINGULAR
+retocar	735,VERB
+impares	734,ADJECTIVE,NOUN,PLURAL
+reversa	734,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+abocada	732,ADJECTIVE,PARTICIPLE
+defecar	732,VERB
+miedoso	732,ADJECTIVE,NOUN,SINGULAR
+airadas	730,ADJECTIVE,PARTICIPLE
+evasivo	729,ADJECTIVE
+indiana	729,NOUN,ADJECTIVE,SINGULAR
+platito	729,NOUN,SINGULAR
+regateo	728,NOUN,VERB,SINGULAR
+risible	728,ADJECTIVE
+confeti	727,NOUN,SINGULAR
+berlina	726,NOUN,SINGULAR
+alterno	725,ADJECTIVE,VERB
+cuelgue	725,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+vallado	725,NOUN,PARTICIPLE,SINGULAR
+granado	723,ADJECTIVE,PARTICIPLE,NOUN,SINGULAR
+puntada	723,NOUN,PARTICIPLE,SINGULAR
+bengala	722,NOUN,SINGULAR
+holgado	722,ADJECTIVE,PARTICIPLE
+quintas	722,ADJECTIVE,NOUN,PLURAL
+dechado	720,NOUN,SINGULAR
+graduar	720,VERB
+empapar	719,VERB
+litigar	719,VERB
+obrador	718,NOUN,SINGULAR
+sesgado	718,ADJECTIVE,PARTICIPLE
+ultimar	717,VERB
+ensalmo	716,NOUN,SINGULAR
+opereta	716,NOUN,SINGULAR
+frutero	715,ADJECTIVE,NOUN,SINGULAR
+lloroso	715,ADJECTIVE
+malsano	714,ADJECTIVE
+serenas	714,ADJECTIVE,NOUN,VERB,PLURAL
+palazzo	711,NOUN,SINGULAR
+tejedor	709,NOUN,SINGULAR
+flojera	708,NOUN,SINGULAR
+barrial	707,ADJECTIVE,NOUN,SINGULAR
+maicena	707,NOUN,SINGULAR
+negrito	707,NOUN,ADJECTIVE,SINGULAR
+ganadas	706,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+esprint	705,NOUN,SINGULAR
+insulso	705,ADJECTIVE
+reyerta	705,NOUN,SINGULAR
+chancho	703,NOUN,ADJECTIVE,SINGULAR
+acechar	701,VERB
+rapaces	701,ADJECTIVE,NOUN,PLURAL
+sainete	701,NOUN,SINGULAR
+alarmar	700,VERB
+patrias	700,ADJECTIVE,NOUN,PLURAL
+arrugar	698,VERB
+fibrina	697,NOUN,SINGULAR
+granero	697,NOUN,SINGULAR
+usurero	697,NOUN,SINGULAR
+acuosos	696,ADJECTIVE
+prontos	695,ADJECTIVE
+embuste	694,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+finitas	692,ADJECTIVE
+mocosos	692,ADJECTIVE,NOUN,PLURAL
+caterva	690,NOUN,SINGULAR
+guisado	689,NOUN,PARTICIPLE,SINGULAR
+torreta	689,NOUN,SINGULAR
+sagaces	688,ADJECTIVE
+azulejo	687,ADJECTIVE,NOUN,VERB,SINGULAR
+tersura	684,NOUN,SINGULAR
+animosa	683,ADJECTIVE
+gozosos	680,ADJECTIVE
+gravosa	680,ADJECTIVE
+helecho	680,NOUN,SINGULAR
+lechosa	680,NOUN,ADJECTIVE,SINGULAR
+quejoso	680,ADJECTIVE
+debidos	679,ADJECTIVE,PARTICIPLE
+sarcoma	679,NOUN,SINGULAR
+whiskey	679,NOUN,SINGULAR
+chabola	677,NOUN,SINGULAR
+recular	677,VERB
+viciosa	677,ADJECTIVE
+bordear	676,VERB
+pilates	676,NOUN,SINGULAR
+viejita	676,NOUN,ADJECTIVE,SINGULAR
+taimada	675,ADJECTIVE
+orfebre	674,NOUN,SINGULAR
+papales	674,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+taimado	674,ADJECTIVE
+mentora	673,NOUN,SINGULAR
+caldeos	672,ADJECTIVE,NOUN,PLURAL
+mafiosa	672,NOUN,ADJECTIVE,SINGULAR
+infecta	670,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+dentado	669,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+uretral	669,ADJECTIVE
+electro	668,NOUN,SINGULAR
+embalar	668,VERB
+ligando	666,NOUN,VERB,INFLECTED_FORM,PRES_PART,SINGULAR
+risotto	666,NOUN,SINGULAR
+soldada	666,NOUN,PARTICIPLE,SINGULAR
+rectora	664,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+cigarra	663,NOUN,SINGULAR
+moteada	663,ADJECTIVE,PARTICIPLE
+pandero	661,NOUN,SINGULAR
+faldero	660,ADJECTIVE
+lechero	660,ADJECTIVE,NOUN,SINGULAR
+masilla	659,NOUN,SINGULAR
+golpiza	658,NOUN,SINGULAR
+arquear	657,VERB
+espesar	656,VERB
+incauto	656,ADJECTIVE,NOUN,VERB,SINGULAR
+feacios	654,ADJECTIVE,NOUN,PLURAL
+lindero	654,NOUN,ADJECTIVE,SINGULAR
+relegar	654,VERB
+trabada	654,ADJECTIVE,PARTICIPLE
+convexa	653,ADJECTIVE
+hachazo	651,NOUN,SINGULAR
+pomposa	648,ADJECTIVE
+cajuela	647,NOUN,SINGULAR
+moldura	646,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+terroso	646,ADJECTIVE
+bellaco	645,NOUN,ADJECTIVE,SINGULAR
+atraque	644,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+escabel	644,NOUN,SINGULAR
+morador	644,ADJECTIVE,NOUN,SINGULAR
+dentina	643,NOUN,SINGULAR
+nivelar	643,VERB
+calloso	642,ADJECTIVE
+colegir	642,VERB
+mosaica	641,ADJECTIVE
+cubetas	639,ADJECTIVE,NOUN,PLURAL
+fangoso	639,ADJECTIVE
+gordita	638,NOUN,ADJECTIVE,SINGULAR
+lisonja	638,NOUN,SINGULAR
+puntera	636,NOUN,ADJECTIVE,SINGULAR
+acoplar	634,VERB
+aguardo	634,NOUN,VERB,SINGULAR
+ascesis	634,NOUN,SINGULAR
+sedosos	634,ADJECTIVE
+sordina	634,NOUN,SINGULAR
+cenital	632,ADJECTIVE
+hinchar	632,VERB
+sofista	632,NOUN,SINGULAR
+corbeta	631,NOUN,SINGULAR
+villana	630,NOUN,ADJECTIVE,SINGULAR
+cansino	628,ADJECTIVE
+arenque	627,NOUN,SINGULAR
+liberto	627,ADJECTIVE,NOUN,VERB,SINGULAR
+sulfuro	627,NOUN,VERB,SINGULAR
+veraces	627,ADJECTIVE
+blandir	625,VERB
+soplete	624,NOUN,SINGULAR
+espuela	622,NOUN,SINGULAR
+monismo	622,NOUN,SINGULAR
+licuado	621,NOUN,PARTICIPLE,SINGULAR
+peineta	621,NOUN,SINGULAR
+triples	621,ADJECTIVE,NOUN,PLURAL
+grullas	620,ADJECTIVE,NOUN,PLURAL
+perlada	620,ADJECTIVE,PARTICIPLE
+sumisos	620,ADJECTIVE
+repicar	619,VERB
+argucia	618,NOUN,SINGULAR
+croatas	618,ADJECTIVE,NOUN,PLURAL
+parasol	618,NOUN,SINGULAR
+chapuza	617,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+achacar	616,VERB
+airados	616,ADJECTIVE,PARTICIPLE
+ofertar	616,VERB
+pernera	616,NOUN,SINGULAR
+recelar	616,VERB
+ojeroso	615,ADJECTIVE
+sondaje	615,NOUN,SINGULAR
+varados	615,ADJECTIVE,PARTICIPLE
+celosas	614,ADJECTIVE
+esquife	614,NOUN,SINGULAR
+estoque	614,NOUN,SINGULAR
+laborar	614,VERB
+aferrar	612,VERB
+zarpado	612,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+patrios	611,ADJECTIVE
+fierros	610,ADJECTIVE,NOUN,PLURAL
+fritura	609,NOUN,SINGULAR
+trabado	609,ADJECTIVE,PARTICIPLE
+cabrona	608,NOUN,ADJECTIVE,SINGULAR
+chistar	608,VERB
+invicto	607,ADJECTIVE
+diurnos	606,ADJECTIVE,NOUN,PLURAL
+mandala	606,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+topacio	606,NOUN,SINGULAR
+helenos	605,ADJECTIVE
+probeta	605,NOUN,SINGULAR
+caballa	604,NOUN,SINGULAR
+compost	604,NOUN,SINGULAR
+rolliza	604,ADJECTIVE
+borrego	603,ADJECTIVE,NOUN,SINGULAR
+gorrito	603,NOUN,SINGULAR
+palomar	603,NOUN,SINGULAR
+durable	602,ADJECTIVE
+penosos	602,ADJECTIVE
+primate	601,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+anuario	600,NOUN,SINGULAR
+sorbito	599,NOUN,SINGULAR
+carnada	598,NOUN,SINGULAR
+jugosas	597,ADJECTIVE
+mazorca	597,NOUN,SINGULAR
+apocado	596,ADJECTIVE,PARTICIPLE
+mariana	596,ADJECTIVE
+velamen	596,NOUN,SINGULAR
+macular	594,ADJECTIVE,VERB
+adherir	593,VERB
+muiscas	593,ADJECTIVE,NOUN,PLURAL
+jumento	592,NOUN,SINGULAR
+levitar	592,VERB
+polenta	592,NOUN,SINGULAR
+sucinto	592,ADJECTIVE
+culposa	589,ADJECTIVE
+cifrada	588,ADJECTIVE,PARTICIPLE
+hititas	588,ADJECTIVE,NOUN,PLURAL
+vacunar	588,VERB
+inculta	587,ADJECTIVE
+mamaria	586,ADJECTIVE
+mandona	586,NOUN,ADJECTIVE,SINGULAR
+radicar	586,VERB
+marasmo	585,NOUN,SINGULAR
+chivato	583,NOUN,SINGULAR
+estafar	582,VERB
+macizas	581,ADJECTIVE,VERB
+pollera	581,NOUN,SINGULAR
+prolija	581,ADJECTIVE
+abyecta	580,ADJECTIVE
+boyante	579,ADJECTIVE
+sosegar	579,VERB
+samsara	578,NOUN,SINGULAR
+delirar	577,VERB
+miedosa	577,ADJECTIVE
+navarra	577,NOUN,ADJECTIVE,SINGULAR
+carcoma	575,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+novillo	575,NOUN,SINGULAR
+aciagos	574,ADJECTIVE,NOUN,PLURAL
+bazofia	574,NOUN,SINGULAR
+inocuos	574,ADJECTIVE
+jofaina	574,NOUN,SINGULAR
+cabrero	573,NOUN,SINGULAR
+offline	573,ADJECTIVE
+barbado	572,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+fusible	571,ADJECTIVE,NOUN,SINGULAR
+llaneza	571,NOUN,SINGULAR
+pocillo	571,NOUN,SINGULAR
+longeva	570,ADJECTIVE
+remojar	570,VERB
+gravoso	568,ADJECTIVE
+caniche	567,NOUN,SINGULAR
+divinal	567,ADJECTIVE
+lechera	566,NOUN,ADJECTIVE,SINGULAR
+viciada	566,ADJECTIVE,PARTICIPLE
+parquet	565,NOUN,SINGULAR
+arrimar	564,VERB
+destete	564,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+lisiado	564,ADJECTIVE,PARTICIPLE
+movible	563,ADJECTIVE
+paprika	563,NOUN,SINGULAR
+redoble	563,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+peciolo	562,NOUN,SINGULAR
+brazada	561,NOUN,SINGULAR
+huesuda	561,ADJECTIVE
+pedrada	561,NOUN,SINGULAR
+mediata	560,ADJECTIVE
+plebeya	560,NOUN,ADJECTIVE,SINGULAR
+vienesa	560,NOUN,ADJECTIVE,SINGULAR
+aditivo	559,ADJECTIVE,NOUN,SINGULAR
+medroso	558,ADJECTIVE
+mitosis	558,NOUN,SINGULAR
+vihuela	558,NOUN,SINGULAR
+asiduos	557,ADJECTIVE
+chuleta	556,NOUN,SINGULAR
+cilicio	556,ADJECTIVE,NOUN,SINGULAR
+milonga	556,NOUN,SINGULAR
+brochas	555,NOUN,ADJECTIVE,PLURAL
+brother	555,NOUN,SINGULAR
+empaste	555,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+humedal	554,NOUN,SINGULAR
+quinina	554,NOUN,SINGULAR
+recetar	554,VERB
+fecales	553,ADJECTIVE
+cuestor	552,NOUN,SINGULAR
+retozar	551,VERB
+canilla	550,NOUN,SINGULAR
+valedor	550,NOUN,SINGULAR
+cruento	549,ADJECTIVE
+culposo	549,ADJECTIVE
+extinto	549,ADJECTIVE
+lectivo	549,ADJECTIVE
+pasante	549,NOUN,ADJECTIVE,SINGULAR
+subjefe	549,NOUN,SINGULAR
+sumisas	548,ADJECTIVE
+nudillo	547,NOUN,SINGULAR
+peculio	547,NOUN,SINGULAR
+achicar	546,VERB
+naviera	546,NOUN,ADJECTIVE,SINGULAR
+cesante	545,ADJECTIVE,NOUN,SINGULAR
+escorzo	545,NOUN,VERB,SINGULAR
+huesudo	545,ADJECTIVE
+molusco	545,NOUN,ADJECTIVE,SINGULAR
+recalar	545,VERB
+tupidos	545,ADJECTIVE,PARTICIPLE
+guayaba	544,NOUN,VERB,3PS,INFLECTED_FORM,SINGULAR
+deudora	543,NOUN,SINGULAR
+borrico	542,NOUN,SINGULAR
+burdeos	542,ADJECTIVE,NOUN,SINGULAR
+metraje	542,NOUN,SINGULAR
+pigmeos	542,ADJECTIVE,NOUN,PLURAL
+sobrios	542,ADJECTIVE
+tufillo	542,NOUN,SINGULAR
+astutas	541,ADJECTIVE
+macerar	541,VERB
+boscoso	540,ADJECTIVE
+eremita	540,NOUN,SINGULAR
+mendiga	540,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+molicie	540,NOUN,SINGULAR
+teacher	540,NOUN,SINGULAR
+prolijo	539,ADJECTIVE
+debutar	538,VERB
+estevia	537,NOUN,SINGULAR
+rizadas	537,ADJECTIVE,PARTICIPLE
+vetusta	537,ADJECTIVE
+espelta	535,NOUN,SINGULAR
+gitanas	535,ADJECTIVE,NOUN,PLURAL
+meteoro	535,NOUN,SINGULAR
+sorbete	535,NOUN,ADJECTIVE,SINGULAR
+tontear	535,VERB
+amasado	534,NOUN,PARTICIPLE,SINGULAR
+ineptos	534,ADJECTIVE
+anteojo	533,NOUN,SINGULAR
+cornudo	533,ADJECTIVE,NOUN,SINGULAR
+esbirro	533,NOUN,SINGULAR
+vacunal	530,ADJECTIVE
+bombazo	529,NOUN,SINGULAR
+huidiza	529,ADJECTIVE
+zodiaco	529,NOUN,SINGULAR
+colleja	528,NOUN,SINGULAR
+brownie	527,NOUN,SINGULAR
+estupro	527,NOUN,SINGULAR
+marrano	527,NOUN,ADJECTIVE,SINGULAR
+postizo	527,ADJECTIVE,NOUN,SINGULAR
+secante	527,ADJECTIVE,NOUN,SINGULAR
+tartera	527,NOUN,SINGULAR
+tocadas	527,ADJECTIVE,PARTICIPLE
+odiosas	526,ADJECTIVE
+platero	526,NOUN,SINGULAR
+rancios	526,ADJECTIVE,NOUN,PLURAL
+surtida	526,ADJECTIVE,PARTICIPLE
+display	525,NOUN,SINGULAR
+enojoso	525,ADJECTIVE
+mielina	525,NOUN,SINGULAR
+rumanos	525,ADJECTIVE,NOUN,PLURAL
+tigresa	525,NOUN,SINGULAR
+minucia	524,NOUN,SINGULAR
+zapallo	524,NOUN,SINGULAR
+hortera	523,ADJECTIVE,NOUN,SINGULAR
+jodidas	523,ADJECTIVE,PARTICIPLE,VERB,INFLECTED_FORM,PAST_PART
+petardo	521,NOUN,SINGULAR
+musitar	520,VERB
+serenar	520,VERB
+verruga	520,NOUN,SINGULAR
+falsete	519,NOUN,SINGULAR
+polacas	519,ADJECTIVE,NOUN,PLURAL
+meiosis	518,NOUN,SINGULAR
+becaria	517,NOUN,SINGULAR
+mantita	517,NOUN,SINGULAR
+armenio	515,ADJECTIVE,NOUN,SINGULAR
+bombona	515,NOUN,SINGULAR
+confeso	515,ADJECTIVE,NOUN,SINGULAR
+afamada	513,ADJECTIVE,PARTICIPLE
+cantero	513,NOUN,SINGULAR
+micosis	513,NOUN,SINGULAR
+oradora	513,NOUN,SINGULAR
+premium	513,ADJECTIVE
+saltito	513,NOUN,SINGULAR
+apraxia	512,NOUN,SINGULAR
+fenicia	512,NOUN,ADJECTIVE,SINGULAR
+sonreir	512,VERB
+copular	511,VERB
+escitas	511,ADJECTIVE,NOUN,PLURAL
+rociada	511,NOUN,PARTICIPLE,SINGULAR
+salivar	511,VERB
+inermes	510,ADJECTIVE
+maillot	510,NOUN,SINGULAR
+manglar	510,NOUN,SINGULAR
+azucena	509,NOUN,SINGULAR
+caretas	509,ADJECTIVE,NOUN,PLURAL
+clavija	508,NOUN,SINGULAR
+tunante	508,ADJECTIVE,NOUN,SINGULAR
+acaecer	506,VERB
+adrenal	506,ADJECTIVE
+taconeo	505,NOUN,VERB,SINGULAR
+falaces	504,ADJECTIVE
+parador	504,NOUN,SINGULAR
+sonante	504,ADJECTIVE
+tiamina	504,NOUN,SINGULAR
+abrumar	503,VERB
+pupilar	503,ADJECTIVE
+agasajo	502,NOUN,VERB,SINGULAR
+fractal	502,NOUN,ADJECTIVE,SINGULAR
+leonado	501,ADJECTIVE
+ojerosa	501,ADJECTIVE
+saturar	501,VERB
+trienio	500,NOUN,SINGULAR
+yacente	500,ADJECTIVE
+benceno	499,NOUN,SINGULAR
+cetrina	499,ADJECTIVE
+filosas	499,ADJECTIVE
+atinado	498,ADJECTIVE,PARTICIPLE
+cluster	498,NOUN,SINGULAR
+bulldog	497,NOUN,SINGULAR
+dolosos	497,ADJECTIVE
+menisco	497,NOUN,SINGULAR
+mudable	497,ADJECTIVE
+alfanje	496,NOUN,SINGULAR
+fascial	496,ADJECTIVE
+devotas	494,ADJECTIVE,NOUN,PLURAL
+malware	493,NOUN,SINGULAR
+mejunje	493,NOUN,SINGULAR
+huidizo	492,ADJECTIVE
+ascitis	491,NOUN,SINGULAR
+pelliza	491,NOUN,SINGULAR
+cansina	490,ADJECTIVE
+goleada	490,NOUN,PARTICIPLE,SINGULAR
+macacos	490,ADJECTIVE,NOUN,PLURAL
+quantum	490,NOUN,SINGULAR
+tenaces	490,ADJECTIVE
+corneal	489,ADJECTIVE
+doblaje	489,NOUN,SINGULAR
+empacho	489,NOUN,VERB,SINGULAR
+placita	489,NOUN,SINGULAR
+comanda	488,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+impuras	488,ADJECTIVE
+resecas	487,ADJECTIVE,VERB
+cenobio	486,NOUN,SINGULAR
+taurino	486,ADJECTIVE
+pleamar	485,NOUN,SINGULAR
+medrosa	483,ADJECTIVE
+octavos	482,NOUN,ADJECTIVE,PLURAL
+ventosa	482,NOUN,ADJECTIVE,SINGULAR
+acarreo	480,NOUN,VERB,SINGULAR
+geranio	480,NOUN,SINGULAR
+mariano	480,ADJECTIVE
+bolsito	479,NOUN,SINGULAR
+aguadas	478,ADJECTIVE,PARTICIPLE
+fangosa	477,ADJECTIVE
+fornida	477,ADJECTIVE
+anaquel	475,NOUN,SINGULAR
+deparar	475,VERB
+estraza	475,NOUN,SINGULAR
+mediato	475,ADJECTIVE
+rugosas	475,ADJECTIVE
+axiales	474,ADJECTIVE
+cheddar	474,NOUN,SINGULAR
+exiguas	474,ADJECTIVE
+aldeana	473,NOUN,ADJECTIVE,SINGULAR
+cumbres	472,ADJECTIVE,NOUN,PLURAL
+denario	472,NOUN,SINGULAR
+sevicia	472,NOUN,SINGULAR
+engorro	471,NOUN,SINGULAR
+enroque	471,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+equinos	471,ADJECTIVE,NOUN,PLURAL
+fraguar	470,VERB
+prepago	470,NOUN,VERB,SINGULAR
+cubista	469,ADJECTIVE,NOUN,SINGULAR
+imberbe	469,ADJECTIVE
+venosos	469,ADJECTIVE
+curadas	468,ADJECTIVE,PARTICIPLE
+rollito	468,NOUN,SINGULAR
+bovinos	467,ADJECTIVE,NOUN,PLURAL
+guineas	467,ADJECTIVE,NOUN,PLURAL
+toscano	467,ADJECTIVE,NOUN,SINGULAR
+aleluya	466,INTERJECTION,NOUN,SINGULAR
+coartar	466,VERB
+cochino	466,NOUN,ADJECTIVE,SINGULAR
+rehogar	466,VERB
+afanoso	465,ADJECTIVE
+birrete	465,NOUN,SINGULAR
+parejos	464,ADJECTIVE
+apelado	463,NOUN,PARTICIPLE,SINGULAR
+fijador	463,ADJECTIVE,NOUN,SINGULAR
+errados	462,ADJECTIVE,PARTICIPLE
+empatar	461,VERB
+infecto	461,ADJECTIVE,VERB
+sofisma	461,NOUN,SINGULAR
+pluvial	460,ADJECTIVE
+aductor	459,NOUN,SINGULAR
+longevo	459,ADJECTIVE
+aprista	458,ADJECTIVE,NOUN,SINGULAR
+exhumar	458,VERB
+factual	458,ADJECTIVE
+montera	458,NOUN,SINGULAR
+pasable	458,ADJECTIVE
+requisa	456,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+atelier	455,NOUN,SINGULAR
+babosas	455,ADJECTIVE,NOUN,PLURAL
+imperar	455,VERB
+meandro	455,NOUN,SINGULAR
+pastoso	455,ADJECTIVE
+tortazo	454,NOUN,SINGULAR
+arqueta	453,NOUN,SINGULAR
+cobriza	452,ADJECTIVE
+enojosa	452,ADJECTIVE
+estremo	451,ADJECTIVE,NOUN,SINGULAR
+gavilla	451,NOUN,SINGULAR
+medievo	451,NOUN,SINGULAR
+vividor	451,NOUN,SINGULAR
+achaque	450,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+taurina	450,NOUN,ADJECTIVE,SINGULAR
+astenia	449,NOUN,SINGULAR
+barrida	449,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+gimoteo	449,NOUN,VERB,SINGULAR
+rancias	449,ADJECTIVE
+sumeria	449,NOUN,ADJECTIVE,SINGULAR
+veranda	449,NOUN,SINGULAR
+casulla	448,NOUN,SINGULAR
+rollizo	448,ADJECTIVE
+cantata	447,NOUN,SINGULAR
+cuerdos	447,ADJECTIVE
+entreno	447,NOUN,VERB,SINGULAR
+resalte	447,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+amilasa	446,NOUN,SINGULAR
+manopla	446,NOUN,SINGULAR
+mutable	445,ADJECTIVE
+pulcras	445,ADJECTIVE
+sobrias	445,ADJECTIVE
+comidos	444,ADJECTIVE,PARTICIPLE
+efluvio	444,NOUN,SINGULAR
+loables	444,ADJECTIVE
+mutilar	444,VERB
+cobijar	443,VERB
+fenicio	441,ADJECTIVE,NOUN,SINGULAR
+exhorto	440,NOUN,VERB,SINGULAR
+chalota	439,NOUN,SINGULAR
+dificil	439,ADJECTIVE
+olmecas	439,ADJECTIVE,NOUN,PLURAL
+pedaleo	439,NOUN,VERB,SINGULAR
+mamario	438,ADJECTIVE
+camafeo	437,NOUN,SINGULAR
+cotarro	437,NOUN,SINGULAR
+tocones	437,ADJECTIVE,NOUN,PLURAL
+trasluz	437,NOUN,SINGULAR
+cetrino	436,ADJECTIVE
+moringa	436,NOUN,SINGULAR
+ojeriza	436,NOUN,SINGULAR
+perlado	436,ADJECTIVE,PARTICIPLE
+erradas	435,ADJECTIVE,PARTICIPLE
+hornada	435,NOUN,SINGULAR
+maquila	435,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+granola	434,NOUN,SINGULAR
+puntuar	433,VERB
+ciruelo	432,NOUN,SINGULAR
+lesivos	432,ADJECTIVE
+paperas	432,NOUN,ADJECTIVE,PLURAL
+reacias	432,ADJECTIVE
+afanosa	431,ADJECTIVE
+alpinas	431,ADJECTIVE
+chavala	431,NOUN,SINGULAR
+trabuco	431,NOUN,VERB,SINGULAR
+papilar	430,ADJECTIVE
+retador	430,ADJECTIVE,NOUN,SINGULAR
+tullido	430,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+vedados	430,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+falible	428,ADJECTIVE
+metanol	428,NOUN,SINGULAR
+premier	428,NOUN,SINGULAR
+fashion	427,ADJECTIVE,NOUN,SINGULAR
+walkman	427,NOUN,SINGULAR
+amianto	426,NOUN,SINGULAR
+aventar	426,VERB
+justeza	426,NOUN,SINGULAR
+nitroso	426,ADJECTIVE
+afables	425,ADJECTIVE
+taponar	425,VERB
+venosas	425,ADJECTIVE
+tortita	424,NOUN,SINGULAR
+chupada	423,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+marmita	423,NOUN,SINGULAR
+perineo	423,NOUN,SINGULAR
+sintasa	423,NOUN,SINGULAR
+chatear	422,VERB
+glicina	422,NOUN,SINGULAR
+rayuela	422,NOUN,SINGULAR
+tartana	422,NOUN,SINGULAR
+enjugar	421,VERB
+cifosis	420,NOUN,SINGULAR
+grosura	420,NOUN,SINGULAR
+monista	420,NOUN,SINGULAR
+bajamar	419,NOUN,SINGULAR
+velludo	419,ADJECTIVE,NOUN,SINGULAR
+berrear	418,VERB
+sedosas	418,ADJECTIVE
+soplado	418,ADJECTIVE,PARTICIPLE
+calceta	417,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+caribes	417,ADJECTIVE
+fogosos	415,ADJECTIVE
+folclor	415,NOUN,SINGULAR
+quejica	415,ADJECTIVE,NOUN,SINGULAR
+sentina	415,NOUN,SINGULAR
+castiza	414,ADJECTIVE
+mustias	414,ADJECTIVE
+etarras	413,ADJECTIVE,NOUN,PLURAL
+suturar	413,VERB
+tonillo	413,NOUN,SINGULAR
+acetona	412,NOUN,SINGULAR
+alisios	412,ADJECTIVE
+aterido	412,ADJECTIVE,PARTICIPLE
+humoral	412,ADJECTIVE
+mutante	412,ADJECTIVE,NOUN,SINGULAR
+alusivo	411,ADJECTIVE
+cultual	411,ADJECTIVE
+inocuas	411,ADJECTIVE
+niacina	411,NOUN,SINGULAR
+picoteo	411,NOUN,VERB,SINGULAR
+caporal	410,NOUN,SINGULAR
+magenta	410,NOUN,ADJECTIVE,SINGULAR
+albarda	409,NOUN,SINGULAR
+alpinos	409,ADJECTIVE
+pollino	409,NOUN,ADJECTIVE,SINGULAR
+quetzal	409,NOUN,SINGULAR
+caducas	408,ADJECTIVE,VERB
+cotorra	408,NOUN,ADJECTIVE,SINGULAR
+diezmar	408,VERB
+mulatas	408,ADJECTIVE,NOUN,PLURAL
+tramado	408,NOUN,PARTICIPLE,SINGULAR
+gallito	407,NOUN,SINGULAR
+negadas	407,ADJECTIVE,PARTICIPLE
+pataleo	407,NOUN,VERB,SINGULAR
+ruindad	407,NOUN,SINGULAR
+bicolor	406,ADJECTIVE
+escusar	406,VERB
+exiguos	406,ADJECTIVE
+acuosas	405,ADJECTIVE
+bajados	405,ADJECTIVE,PARTICIPLE
+posdata	405,NOUN,SINGULAR
+calados	404,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+difamar	404,VERB
+elusivo	404,ADJECTIVE
+cricket	403,NOUN,SINGULAR
+exemplo	403,NOUN,SINGULAR
+mareado	403,ADJECTIVE,PARTICIPLE
+espuria	402,ADJECTIVE
+lingote	402,NOUN,SINGULAR
+ordinal	402,ADJECTIVE
+palique	402,NOUN,SINGULAR
+fetidez	400,NOUN,SINGULAR
+numerar	400,VERB
+bichito	399,NOUN,SINGULAR
+priista	399,ADJECTIVE,NOUN,SINGULAR
+afganos	398,ADJECTIVE,NOUN,PLURAL
+foramen	398,NOUN,SINGULAR
+cagadas	397,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+corista	397,NOUN,SINGULAR
+judaica	396,ADJECTIVE
+quiebro	396,NOUN,VERB,SINGULAR
+samovar	396,NOUN,SINGULAR
+amputar	395,VERB
+troncal	395,ADJECTIVE
+califal	394,ADJECTIVE
+calizas	394,ADJECTIVE,NOUN,PLURAL
+profuso	394,ADJECTIVE
+pulcros	393,ADJECTIVE
+ungidos	393,ADJECTIVE,PARTICIPLE
+chaveta	392,NOUN,SINGULAR
+lesivas	392,ADJECTIVE
+repecho	391,NOUN,VERB,SINGULAR
+barrena	390,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+molidos	390,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+aditiva	389,ADJECTIVE
+paletos	389,ADJECTIVE,NOUN,PLURAL
+techado	388,NOUN,PARTICIPLE,SINGULAR
+canjear	387,VERB
+chicana	387,NOUN,ADJECTIVE,SINGULAR
+elusiva	387,ADJECTIVE
+bacanal	386,NOUN,SINGULAR
+insanos	386,ADJECTIVE
+marmota	386,NOUN,SINGULAR
+proemio	384,NOUN,SINGULAR
+guajiro	383,ADJECTIVE,NOUN,SINGULAR
+terrado	383,NOUN,SINGULAR
+deshora	382,NOUN,SINGULAR
+diantre	381,NOUN,INTERJECTION,SINGULAR
+chucrut	380,NOUN,SINGULAR
+quantas	380,ADJECTIVE
+tapioca	380,NOUN,SINGULAR
+origami	379,NOUN,SINGULAR
+torunda	379,NOUN,SINGULAR
+tarados	378,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+vedadas	378,ADJECTIVE,PARTICIPLE
+adictas	377,ADJECTIVE,NOUN,PLURAL
+basilar	377,ADJECTIVE
+interes	377,NOUN,SINGULAR
+leonesa	377,NOUN,ADJECTIVE,SINGULAR
+fichado	376,ADJECTIVE,PARTICIPLE
+laboreo	375,NOUN,SINGULAR
+ungueal	374,ADJECTIVE
+anfibio	373,ADJECTIVE,NOUN,SINGULAR
+natales	373,ADJECTIVE
+piqueta	371,NOUN,SINGULAR
+retraer	371,VERB
+loquero	370,NOUN,SINGULAR
+peroneo	370,ADJECTIVE
+reclusa	370,NOUN,ADJECTIVE,SINGULAR
+chupado	369,ADJECTIVE,PARTICIPLE
+eslavas	369,ADJECTIVE,NOUN,PLURAL
+largura	369,NOUN,SINGULAR
+gracejo	368,NOUN,SINGULAR
+nudosas	368,ADJECTIVE
+spaniel	368,NOUN,SINGULAR
+agobiar	367,VERB
+citrato	367,NOUN,SINGULAR
+allegar	366,VERB
+jerarca	366,NOUN,SINGULAR
+alterne	365,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+altivas	365,ADJECTIVE
+cacareo	365,NOUN,VERB,SINGULAR
+jocosos	365,ADJECTIVE
+tonsura	365,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+alumbre	364,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+aprismo	364,NOUN,SINGULAR
+blindar	364,VERB
+caducos	364,ADJECTIVE
+incuria	364,NOUN,SINGULAR
+puberal	364,ADJECTIVE
+centena	363,NOUN,ADJECTIVE,SINGULAR
+engrudo	363,NOUN,VERB,SINGULAR
+jacinto	363,NOUN,SINGULAR
+liguero	363,ADJECTIVE,NOUN,SINGULAR
+galeses	362,ADJECTIVE,NOUN,PLURAL
+mellizo	362,ADJECTIVE,NOUN,SINGULAR
+amainar	361,VERB
+filosos	361,ADJECTIVE
+navajos	361,ADJECTIVE,NOUN,PLURAL
+regodeo	361,NOUN,VERB,SINGULAR
+sarnoso	361,ADJECTIVE
+resabio	360,NOUN,SINGULAR
+revoque	360,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+carburo	359,NOUN,VERB,SINGULAR
+cebiche	359,NOUN,SINGULAR
+fallera	359,ADJECTIVE,VERB,3PS,INFLECTED_FORM,SUBJ
+parqueo	359,NOUN,VERB,SINGULAR
+picador	358,NOUN,SINGULAR
+primita	358,NOUN,SINGULAR
+socaire	358,NOUN,SINGULAR
+toronja	358,NOUN,SINGULAR
+gangosa	356,ADJECTIVE
+marinar	356,VERB
+mimados	356,ADJECTIVE,PARTICIPLE
+quinasa	356,NOUN,SINGULAR
+bromuro	354,NOUN,SINGULAR
+auditar	353,VERB
+llorona	353,NOUN,ADJECTIVE,SINGULAR
+pulsado	353,NOUN,PARTICIPLE,SINGULAR
+sonados	353,ADJECTIVE,PARTICIPLE
+batista	352,NOUN,SINGULAR
+chicano	352,ADJECTIVE,NOUN,SINGULAR
+zoquete	352,NOUN,SINGULAR
+guanina	351,NOUN,SINGULAR
+pasmoso	351,ADJECTIVE
+capones	350,ADJECTIVE,NOUN,PLURAL
+ginseng	350,NOUN,SINGULAR
+helador	350,ADJECTIVE
+nudosos	350,ADJECTIVE
+apocada	349,ADJECTIVE,PARTICIPLE
+armenia	349,NOUN,ADJECTIVE,SINGULAR
+doblete	349,NOUN,SINGULAR
+engorde	349,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+espurio	349,ADJECTIVE
+incurso	349,ADJECTIVE
+lasitud	349,NOUN,SINGULAR
+atrever	348,VERB
+mellada	348,ADJECTIVE,PARTICIPLE
+trenzar	348,VERB
+humeral	347,ADJECTIVE
+latines	347,ADJECTIVE,NOUN,VERB,INFLECTED_FORM,PLURAL,SUBJ
+rasante	347,ADJECTIVE
+beduino	346,ADJECTIVE,NOUN,SINGULAR
+enjutos	346,ADJECTIVE
+fondear	346,VERB
+incaica	346,ADJECTIVE
+paulina	346,ADJECTIVE
+porosas	346,ADJECTIVE
+solitos	346,ADJECTIVE
+adenina	345,NOUN,SINGULAR
+agnosia	345,NOUN,SINGULAR
+carioca	345,ADJECTIVE,NOUN,SINGULAR
+cobrada	345,ADJECTIVE,PARTICIPLE
+matraca	345,NOUN,SINGULAR
+briosos	344,ADJECTIVE
+calcita	344,NOUN,SINGULAR
+canosos	344,ADJECTIVE
+chalado	344,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+patilla	344,NOUN,SINGULAR
+playero	344,ADJECTIVE,NOUN,SINGULAR
+quintal	344,NOUN,SINGULAR
+recobro	344,NOUN,VERB,SINGULAR
+relente	344,NOUN,SINGULAR
+actoral	343,ADJECTIVE
+poquita	343,ADJECTIVE
+alistar	342,VERB
+raspado	342,NOUN,PARTICIPLE,SINGULAR
+asonada	341,NOUN,PARTICIPLE,SINGULAR
+barbuda	341,ADJECTIVE
+perruna	341,ADJECTIVE
+caninas	340,ADJECTIVE
+cogollo	340,NOUN,SINGULAR
+colecho	340,NOUN,SINGULAR
+emirato	340,NOUN,SINGULAR
+aguador	339,NOUN,SINGULAR
+exordio	339,NOUN,SINGULAR
+negrero	339,ADJECTIVE,NOUN,SINGULAR
+chamaco	338,NOUN,SINGULAR
+negados	338,ADJECTIVE,PARTICIPLE
+oriunda	338,NOUN,ADJECTIVE,SINGULAR
+romanas	338,ADJECTIVE,NOUN,PLURAL
+atresia	337,NOUN,SINGULAR
+chambre	337,NOUN,SINGULAR
+hendida	337,ADJECTIVE,PARTICIPLE
+tramoya	337,NOUN,SINGULAR
+alargue	336,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+cazados	336,ADJECTIVE,PARTICIPLE
+barrote	335,NOUN,SINGULAR
+ketchup	335,NOUN,SINGULAR
+malayos	335,ADJECTIVE,NOUN,PLURAL
+lactasa	334,NOUN,SINGULAR
+novenas	334,ADJECTIVE,NOUN,PLURAL
+amargar	333,VERB
+serrana	333,NOUN,ADJECTIVE,SINGULAR
+votivas	333,ADJECTIVE
+acodado	332,ADJECTIVE,PARTICIPLE
+fatigar	332,VERB
+ondular	332,VERB
+minoica	331,ADJECTIVE
+abjurar	330,VERB
+alpiste	330,NOUN,SINGULAR
+despeje	330,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+habanos	330,ADJECTIVE,NOUN,PLURAL
+hartura	330,NOUN,SINGULAR
+jamases	330,NOUN,SINGULAR
+sablazo	330,NOUN,SINGULAR
+surreal	330,ADJECTIVE
+altamar	329,NOUN,SINGULAR
+ignotos	329,ADJECTIVE
+palmito	329,NOUN,SINGULAR
+salobre	329,ADJECTIVE
+husillo	328,NOUN,SINGULAR
+muladar	327,NOUN,SINGULAR
+naviero	327,ADJECTIVE,NOUN,SINGULAR
+nudista	327,ADJECTIVE,NOUN,SINGULAR
+untuosa	327,ADJECTIVE
+chapado	326,ADJECTIVE,PARTICIPLE
+refrito	326,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+nefando	325,ADJECTIVE
+romanza	325,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+birmano	324,ADJECTIVE,NOUN,SINGULAR
+cafetal	324,NOUN,SINGULAR
+materna	324,ADJECTIVE
+castrar	323,VERB
+engarce	323,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+pillada	323,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+revival	323,NOUN,SINGULAR
+subpelo	323,NOUN,SINGULAR
+asediar	322,VERB
+corneja	322,NOUN,SINGULAR
+guarapo	322,NOUN,SINGULAR
+hendido	321,ADJECTIVE,PARTICIPLE
+mamadas	321,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+predial	321,ADJECTIVE
+tabarra	321,NOUN,SINGULAR
+venablo	321,NOUN,SINGULAR
+visillo	321,NOUN,SINGULAR
+amansar	320,VERB
+arropar	320,VERB
+cantaor	320,NOUN,SINGULAR
+fregado	320,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+dolidos	319,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+lupanar	319,NOUN,SINGULAR
+paladas	319,ADJECTIVE,NOUN,PLURAL
+pelador	319,ADJECTIVE,NOUN,SINGULAR
+horadar	318,VERB
+cortito	317,ADJECTIVE
+irrigar	317,VERB
+plomero	317,NOUN,SINGULAR
+regleta	317,NOUN,SINGULAR
+asocial	316,ADJECTIVE
+callosa	315,ADJECTIVE
+incaico	315,ADJECTIVE
+versada	315,ADJECTIVE,PARTICIPLE
+charada	314,NOUN,SINGULAR
+braille	313,NOUN,SINGULAR
+derrito	313,NOUN,VERB,SINGULAR
+eximido	313,ADJECTIVE,PARTICIPLE
+hioides	313,NOUN,ADJECTIVE,PLURAL
+lenteja	313,NOUN,SINGULAR
+pasible	313,ADJECTIVE
+devaneo	312,NOUN,SINGULAR
+lisiada	312,ADJECTIVE,PARTICIPLE
+mimesis	312,NOUN,SINGULAR
+tasador	312,NOUN,SINGULAR
+brasier	311,NOUN,SINGULAR
+nodular	311,ADJECTIVE
+paisana	311,NOUN,SINGULAR
+polonio	311,NOUN,SINGULAR
+alanina	310,NOUN,SINGULAR
+tetilla	310,NOUN,SINGULAR
+machaca	309,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+parvada	309,NOUN,SINGULAR
+acopiar	308,VERB
+asbesto	308,NOUN,SINGULAR
+pendeja	308,NOUN,SINGULAR
+bebidos	307,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+cartela	307,NOUN,SINGULAR
+chibcha	307,ADJECTIVE,NOUN,SINGULAR
+feriado	307,NOUN,PARTICIPLE,SINGULAR
+augurar	306,VERB
+cabrear	306,VERB
+pitanza	306,NOUN,SINGULAR
+tomismo	306,NOUN,SINGULAR
+ukelele	306,NOUN,SINGULAR
+gonadal	305,ADJECTIVE
+eternal	304,ADJECTIVE
+tracios	304,ADJECTIVE,NOUN,PLURAL
+absenta	303,NOUN,SINGULAR
+bretona	303,NOUN,ADJECTIVE,SINGULAR
+lexical	303,ADJECTIVE
+jamelgo	302,NOUN,SINGULAR
+albergo	301,NOUN,VERB,FORM_OF,INFLECTED_FORM,SINGULAR
+carraca	301,NOUN,SINGULAR
+envasar	301,VERB
+fiducia	300,NOUN,SINGULAR
+rasgueo	300,NOUN,VERB,SINGULAR
+seniles	300,ADJECTIVE
+berilio	299,NOUN,SINGULAR
+bromita	299,NOUN,SINGULAR
+carnaza	299,NOUN,SINGULAR
+florete	299,NOUN,SINGULAR
+samurai	299,NOUN,SINGULAR
+calizos	298,ADJECTIVE
+etrusca	298,ADJECTIVE
+meconio	298,NOUN,SINGULAR
+mieloma	298,NOUN,SINGULAR
+mustios	298,ADJECTIVE
+romeros	298,ADJECTIVE,NOUN,PLURAL
+bereber	297,ADJECTIVE,NOUN,SINGULAR
+speaker	297,NOUN,SINGULAR
+crupier	296,NOUN,SINGULAR
+diretes	296,NOUN,SINGULAR
+etrusco	296,ADJECTIVE,NOUN,SINGULAR
+montero	296,NOUN,SINGULAR
+tarrina	296,NOUN,SINGULAR
+grafeno	295,NOUN,SINGULAR
+insanas	295,ADJECTIVE
+tarasca	295,NOUN,ADJECTIVE,SINGULAR
+terrosa	295,ADJECTIVE
+timador	295,NOUN,SINGULAR
+afectas	294,ADJECTIVE,VERB
+afligir	294,VERB
+manoseo	294,NOUN,VERB,SINGULAR
+monjita	294,NOUN,SINGULAR
+plomada	294,NOUN,SINGULAR
+alisado	292,NOUN,PARTICIPLE,SINGULAR
+fondant	292,NOUN,SINGULAR
+agorero	291,ADJECTIVE,NOUN,SINGULAR
+bigamia	291,NOUN,SINGULAR
+donador	291,NOUN,SINGULAR
+ferroso	291,ADJECTIVE
+gustazo	291,NOUN,SINGULAR
+alusiva	290,ADJECTIVE
+chalote	290,NOUN,SINGULAR
+dislate	290,NOUN,SINGULAR
+jarrita	290,NOUN,SINGULAR
+petanca	290,NOUN,SINGULAR
+tronera	290,NOUN,SINGULAR
+cartita	289,NOUN,SINGULAR
+cenagal	289,NOUN,SINGULAR
+llenura	289,NOUN,SINGULAR
+mayoreo	289,NOUN,SINGULAR
+sabidas	289,ADJECTIVE,PARTICIPLE
+segador	289,NOUN,SINGULAR
+vegetar	289,VERB
+cerillo	288,NOUN,SINGULAR
+frontis	288,NOUN,SINGULAR
+gozosas	288,ADJECTIVE
+aterida	287,ADJECTIVE,PARTICIPLE
+destape	287,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+hipster	287,NOUN,SINGULAR
+maullar	287,VERB
+salinos	287,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+tempura	287,NOUN,ADJECTIVE,SINGULAR
+covacha	286,NOUN,SINGULAR
+prietos	286,ADJECTIVE
+purista	286,ADJECTIVE,NOUN,SINGULAR
+trailer	286,NOUN,SINGULAR
+falafel	285,NOUN,SINGULAR
+modisto	285,NOUN,SINGULAR
+mongola	285,NOUN,ADJECTIVE,SINGULAR
+rebrote	285,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+saudade	285,NOUN,SINGULAR
+catador	284,NOUN,SINGULAR
+ignotas	284,ADJECTIVE
+novilla	284,NOUN,SINGULAR
+sumerio	284,ADJECTIVE,NOUN,SINGULAR
+trocear	284,VERB
+mientra	283,ADVERB
+rugosos	283,ADJECTIVE
+sesudos	283,ADJECTIVE
+sufismo	283,NOUN,SINGULAR
+tebanos	283,ADJECTIVE
+llamita	281,NOUN,SINGULAR
+secuoya	281,NOUN,SINGULAR
+apresto	280,NOUN,VERB,SINGULAR
+bandazo	280,NOUN,SINGULAR
+enjutas	280,ADJECTIVE,NOUN,VERB,PLURAL
+foresta	280,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+galerna	280,NOUN,SINGULAR
+airosos	279,ADJECTIVE
+egregio	279,ADJECTIVE
+fanzine	279,NOUN,SINGULAR
+molotov	279,NOUN,SINGULAR
+quiasmo	279,NOUN,SINGULAR
+berrido	278,NOUN,SINGULAR
+lividez	278,NOUN,SINGULAR
+nominar	278,VERB
+obtusos	278,ADJECTIVE
+gramaje	277,NOUN,SINGULAR
+laburar	277,VERB
+lancero	277,NOUN,SINGULAR
+rasposo	277,ADJECTIVE
+rebuzno	277,NOUN,VERB,SINGULAR
+baqueta	276,NOUN,SINGULAR
+kibbutz	276,NOUN,SINGULAR
+rockero	276,ADJECTIVE,NOUN,SINGULAR
+caducar	275,VERB
+coclear	275,ADJECTIVE
+morocha	275,NOUN,ADJECTIVE,SINGULAR
+pancita	275,NOUN,SINGULAR
+gliales	274,ADJECTIVE
+nipones	274,ADJECTIVE,NOUN,PLURAL
+oxidasa	274,NOUN,SINGULAR
+permear	274,VERB
+quejosa	274,ADJECTIVE
+caldear	273,VERB
+loquito	273,ADJECTIVE,NOUN,SINGULAR
+machote	273,NOUN,SINGULAR
+omisiva	273,ADJECTIVE
+remedar	273,VERB
+chilaba	272,NOUN,SINGULAR
+estroma	272,NOUN,SINGULAR
+rostral	272,ADJECTIVE
+alelado	271,ADJECTIVE,PARTICIPLE
+poblano	271,ADJECTIVE,NOUN,SINGULAR
+serrato	271,NOUN,SINGULAR
+apestar	270,VERB
+asexual	270,ADJECTIVE,NOUN,SINGULAR
+caduceo	270,NOUN,SINGULAR
+lagrima	270,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+quantos	270,ADJECTIVE
+amoldar	269,VERB
+porcina	269,ADJECTIVE
+cojudos	268,ADJECTIVE,NOUN,PLURAL
+eructar	268,VERB
+pelmazo	268,NOUN,SINGULAR
+bizarra	267,ADJECTIVE
+bracero	267,NOUN,SINGULAR
+grasoso	267,ADJECTIVE
+porcino	267,ADJECTIVE,NOUN,SINGULAR
+apalear	266,VERB
+bulbosa	266,ADJECTIVE
+hidrato	266,NOUN,VERB,SINGULAR
+laxante	266,ADJECTIVE,NOUN,SINGULAR
+morosos	266,ADJECTIVE,NOUN,PLURAL
+acrecer	265,VERB
+aturdir	265,VERB
+bismuto	265,NOUN,SINGULAR
+esquila	265,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+lumbago	265,NOUN,SINGULAR
+bermejo	264,ADJECTIVE,NOUN,SINGULAR
+disecar	264,VERB
+puntita	264,NOUN,SINGULAR
+untuoso	264,ADJECTIVE
+chamana	263,NOUN,SINGULAR
+quintil	263,NOUN,SINGULAR
+roperos	263,ADJECTIVE,NOUN,PLURAL
+salival	263,ADJECTIVE
+aguados	262,ADJECTIVE,PARTICIPLE
+arrebol	261,NOUN,SINGULAR
+caprino	261,ADJECTIVE
+lustrar	261,VERB
+pretina	261,NOUN,SINGULAR
+arengar	260,VERB
+camorra	260,NOUN,PROPER NOUN,SINGULAR
+parcheo	260,NOUN,VERB,SINGULAR
+corifeo	259,NOUN,SINGULAR
+inicuos	259,ADJECTIVE,NOUN,PLURAL
+mamparo	259,NOUN,SINGULAR
+ojuelos	259,NOUN,SINGULAR
+paulino	259,ADJECTIVE
+casorio	258,NOUN,SINGULAR
+holismo	258,NOUN,SINGULAR
+ortesis	258,NOUN,SINGULAR
+pastura	258,NOUN,SINGULAR
+sexuado	258,ADJECTIVE
+baronet	257,NOUN,SINGULAR
+citosol	257,NOUN,SINGULAR
+crochet	257,NOUN,SINGULAR
+grasosa	257,ADJECTIVE
+adustos	256,ADJECTIVE
+hirsuto	256,ADJECTIVE
+manigua	256,NOUN,SINGULAR
+orbitar	256,VERB
+poterna	256,NOUN,SINGULAR
+yeguada	256,NOUN,SINGULAR
+arpegio	255,NOUN,VERB,SINGULAR
+arquera	255,NOUN,SINGULAR
+cromado	255,NOUN,PARTICIPLE,SINGULAR
+cuartil	255,NOUN,SINGULAR
+dulzona	255,ADJECTIVE
+engrase	255,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+palurdo	255,ADJECTIVE,NOUN,SINGULAR
+babuino	254,NOUN,SINGULAR
+boscaje	254,NOUN,SINGULAR
+incubar	254,VERB
+mismito	254,ADJECTIVE
+mohosos	254,ADJECTIVE
+cosilla	253,NOUN,SINGULAR
+mixteca	253,NOUN,ADJECTIVE,SINGULAR
+ovocito	253,NOUN,SINGULAR
+dolosas	252,ADJECTIVE
+felinas	252,ADJECTIVE
+hielera	252,NOUN,SINGULAR
+oxalato	252,NOUN,SINGULAR
+vanadio	252,NOUN,SINGULAR
+varadas	252,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+zigurat	252,NOUN,SINGULAR
+achiote	251,NOUN,SINGULAR
+ahuecar	251,VERB
+hibisco	251,NOUN,SINGULAR
+objetor	251,NOUN,SINGULAR
+pitbull	251,NOUN,SINGULAR
+alevoso	250,ADJECTIVE,NOUN,SINGULAR
+anidado	250,ADJECTIVE,PARTICIPLE
+himeneo	250,ADJECTIVE
+propano	250,NOUN,SINGULAR
+triedro	250,NOUN,SINGULAR
+aerobio	249,ADJECTIVE,NOUN,SINGULAR
+tarareo	249,NOUN,VERB,SINGULAR
+cordaje	248,NOUN,SINGULAR
+magneto	248,NOUN,SINGULAR
+plomiza	248,ADJECTIVE
+torques	248,NOUN,SINGULAR
+trapero	248,NOUN,SINGULAR
+aluvial	247,ADJECTIVE
+congrio	247,NOUN,SINGULAR
+lozanas	247,ADJECTIVE
+machito	247,NOUN,SINGULAR
+venales	247,ADJECTIVE
+abridor	246,ADJECTIVE,NOUN,SINGULAR
+aprisco	246,NOUN,VERB,SINGULAR
+arpista	246,NOUN,SINGULAR
+ladinos	246,ADJECTIVE,NOUN,PLURAL
+posesos	246,ADJECTIVE,NOUN,PLURAL
+rapsoda	246,NOUN,SINGULAR
+recusar	246,VERB
+abrevar	245,VERB
+arenero	245,ADJECTIVE,NOUN,SINGULAR
+pivotar	245,VERB
+amorfos	244,ADJECTIVE
+danesas	244,ADJECTIVE,NOUN,PLURAL
+mozuelo	244,NOUN,ADJECTIVE,SINGULAR
+relicto	244,ADJECTIVE,NOUN,SINGULAR
+enervar	243,VERB
+escolio	243,NOUN,SINGULAR
+oblonga	243,ADJECTIVE
+piquito	243,NOUN,SINGULAR
+retinol	243,NOUN,SINGULAR
+suajili	243,NOUN,SINGULAR
+faldita	242,NOUN,SINGULAR
+escoplo	241,NOUN,SINGULAR
+subtema	241,NOUN,SINGULAR
+coladas	240,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+pogromo	240,NOUN,SINGULAR
+rocalla	240,NOUN,SINGULAR
+abadejo	239,NOUN,SINGULAR
+autoral	239,ADJECTIVE
+narciso	239,NOUN,SINGULAR
+raperos	239,ADJECTIVE,NOUN,PLURAL
+tuertos	239,ADJECTIVE,NOUN,PLURAL
+bosnios	238,ADJECTIVE,NOUN,PLURAL
+chingar	238,VERB
+rebanar	238,VERB
+alevosa	237,ADJECTIVE
+tamizar	237,VERB
+ventera	237,NOUN,SINGULAR
+bajitos	236,ADJECTIVE
+toscana	236,NOUN,ADJECTIVE,SINGULAR
+bilioso	235,ADJECTIVE
+ciclasa	235,NOUN,SINGULAR
+efesios	235,ADJECTIVE,NOUN,PLURAL
+hidalga	235,NOUN,ADJECTIVE,SINGULAR
+jugados	235,ADJECTIVE,PARTICIPLE
+scooter	235,NOUN,SINGULAR
+abscisa	234,NOUN,SINGULAR
+cascajo	234,NOUN,SINGULAR
+cestita	234,NOUN,SINGULAR
+porosos	234,ADJECTIVE
+brioche	233,NOUN,SINGULAR
+burrada	233,NOUN,SINGULAR
+chantre	233,NOUN,SINGULAR
+cretona	233,NOUN,SINGULAR
+jocosas	233,ADJECTIVE
+maniaco	233,ADJECTIVE,NOUN,SINGULAR
+riojano	233,ADJECTIVE,NOUN,SINGULAR
+someras	233,ADJECTIVE
+amorfas	232,ADJECTIVE
+esqueje	232,NOUN,SINGULAR
+nitrito	232,NOUN,SINGULAR
+sexuada	232,ADJECTIVE
+arcanas	231,ADJECTIVE
+lanceta	231,NOUN,SINGULAR
+lobezno	231,NOUN,SINGULAR
+bravata	230,NOUN,SINGULAR
+broquel	230,NOUN,SINGULAR
+gustito	230,NOUN,SINGULAR
+vaguada	230,NOUN,SINGULAR
+abrasar	229,VERB
+bemoles	229,ADJECTIVE,NOUN,PLURAL
+etarios	229,ADJECTIVE
+morocho	229,NOUN,ADJECTIVE,SINGULAR
+nodales	229,ADJECTIVE
+caudado	228,ADJECTIVE,NOUN,SINGULAR
+insania	228,NOUN,SINGULAR
+nervudo	228,ADJECTIVE
+anfibia	227,ADJECTIVE
+esnifar	227,VERB
+impudor	227,NOUN,SINGULAR
+inicuas	227,ADJECTIVE,NOUN,PLURAL
+zopenco	227,ADJECTIVE,NOUN,SINGULAR
+gorgona	226,NOUN,SINGULAR
+retumbo	226,NOUN,VERB,SINGULAR
+agriado	225,ADJECTIVE,PARTICIPLE
+bianual	225,ADJECTIVE
+gineceo	225,NOUN,SINGULAR
+truncar	225,VERB
+carrizo	224,NOUN,SINGULAR
+escurra	224,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+flojito	224,ADJECTIVE
+leucina	224,NOUN,SINGULAR
+rasurar	224,VERB
+cananea	223,NOUN,ADJECTIVE,SINGULAR
+playita	223,NOUN,SINGULAR
+liminar	222,ADJECTIVE
+mozuela	222,NOUN,ADJECTIVE,SINGULAR
+quedada	222,NOUN,PARTICIPLE,SINGULAR
+quimono	222,NOUN,SINGULAR
+troyana	222,NOUN,ADJECTIVE,SINGULAR
+bermeja	221,ADJECTIVE
+charqui	221,NOUN,SINGULAR
+cornada	221,NOUN,SINGULAR
+empinar	221,VERB
+fenecer	221,VERB
+luminal	221,ADJECTIVE,NOUN,SINGULAR
+propria	221,ADJECTIVE
+rebozar	221,VERB
+sedente	221,ADJECTIVE
+cameral	220,ADJECTIVE
+decible	220,ADJECTIVE,NOUN,SINGULAR
+judaico	220,ADJECTIVE
+prietas	220,ADJECTIVE,NOUN,PLURAL
+rayados	220,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+umbroso	220,ADJECTIVE
+cachito	219,NOUN,SINGULAR
+cartuja	219,NOUN,ADJECTIVE,SINGULAR
+hollejo	219,NOUN,SINGULAR
+llanero	219,NOUN,SINGULAR
+perruno	219,ADJECTIVE
+barista	218,NOUN,SINGULAR
+basural	218,NOUN,SINGULAR
+carilla	218,NOUN,ADJECTIVE,SINGULAR
+corvina	218,NOUN,ADJECTIVE,SINGULAR
+forzudo	218,ADJECTIVE
+indiada	218,NOUN,SINGULAR
+pronoto	218,NOUN,SINGULAR
+quiasma	218,NOUN,SINGULAR
+veletas	218,ADJECTIVE,NOUN,PLURAL
+vicaria	218,NOUN,SINGULAR
+alucina	217,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+flamear	217,VERB
+payeses	217,ADJECTIVE,NOUN,PLURAL
+prontas	217,ADJECTIVE
+bozales	216,ADJECTIVE,NOUN,PLURAL
+entente	216,NOUN,SINGULAR
+nalgada	216,NOUN,SINGULAR
+nefanda	216,ADJECTIVE
+rearmar	216,VERB
+tullida	216,ADJECTIVE,PARTICIPLE
+ubicuos	216,ADJECTIVE
+aplanar	215,VERB
+lantano	215,NOUN,SINGULAR
+leonina	215,ADJECTIVE
+topless	215,ADJECTIVE
+endosar	214,VERB
+haltera	214,NOUN,SINGULAR
+hechiza	214,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+leonera	214,NOUN,SINGULAR
+lucerna	214,NOUN,SINGULAR
+platina	214,NOUN,ADJECTIVE,SINGULAR
+shampoo	214,NOUN,SINGULAR
+testero	214,NOUN,SINGULAR
+tonante	214,ADJECTIVE
+atrasar	213,VERB
+bondage	213,NOUN,SINGULAR
+delicto	213,NOUN,SINGULAR
+enserio	213,ADVERB,VERB
+mandril	213,NOUN,SINGULAR
+polvera	213,NOUN,SINGULAR
+abacial	212,ADJECTIVE
+flexivo	212,ADJECTIVE
+paladio	212,NOUN,SINGULAR
+progres	212,ADJECTIVE,NOUN,PLURAL
+zamarra	212,NOUN,SINGULAR
+buenazo	211,ADJECTIVE
+golosos	211,ADJECTIVE
+papayas	211,ADJECTIVE,NOUN,PLURAL
+pudendo	211,ADJECTIVE,NOUN,SINGULAR
+aclamar	210,VERB
+chapada	210,ADJECTIVE,PARTICIPLE
+charros	210,INTERJECTION,ADJECTIVE,NOUN,PLURAL
+jubilar	210,VERB
+quedito	210,ADVERB
+antenal	209,ADJECTIVE
+ateroma	209,NOUN,SINGULAR
+biotina	209,NOUN,SINGULAR
+empiema	209,NOUN,SINGULAR
+incauta	209,ADJECTIVE,NOUN,VERB,3PS,IMP,INFLECTED_FORM,SINGULAR
+macarra	209,ADJECTIVE,NOUN,SINGULAR
+pilosos	209,ADJECTIVE
+recluir	209,VERB
+adenoma	208,NOUN,SINGULAR
+anasazi	208,ADJECTIVE,NOUN,SINGULAR
+buscona	208,NOUN,ADJECTIVE,SINGULAR
+cantora	208,NOUN,ADJECTIVE,SINGULAR
+depilar	208,VERB
+leprosa	208,ADJECTIVE
+campito	207,NOUN,SINGULAR
+curable	207,ADJECTIVE
+egregia	207,ADJECTIVE
+espigar	207,VERB
+regable	207,ADJECTIVE
+titilar	207,VERB
+tiznada	207,ADJECTIVE,PARTICIPLE
+tiznado	207,ADJECTIVE,PARTICIPLE
+alquilo	206,NOUN,VERB,SINGULAR
+asadera	206,NOUN,ADJECTIVE,SINGULAR
+cerumen	206,NOUN,SINGULAR
+cooptar	206,VERB
+memento	206,NOUN,SINGULAR
+tendera	206,NOUN,SINGULAR
+tripita	206,NOUN,SINGULAR
+birmana	205,NOUN,ADJECTIVE,SINGULAR
+cajista	205,NOUN,SINGULAR
+desovar	205,VERB
+etolios	205,ADJECTIVE,NOUN,PLURAL
+hirsuta	205,ADJECTIVE
+inmolar	205,VERB
+jordano	205,NOUN,ADJECTIVE,SINGULAR
+luengas	205,ADJECTIVE
+modismo	205,NOUN,SINGULAR
+chinita	204,NOUN,SINGULAR
+chiripa	204,NOUN,SINGULAR
+galeota	204,NOUN,SINGULAR
+guayabo	204,NOUN,SINGULAR
+podador	204,ADJECTIVE,NOUN,SINGULAR
+testear	204,VERB
+cizalla	203,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+dentera	203,NOUN,SINGULAR
+estator	203,NOUN,SINGULAR
+peonaje	203,NOUN,SINGULAR
+salsera	203,NOUN,ADJECTIVE,SINGULAR
+terciar	203,VERB
+bajitas	202,ADJECTIVE
+calvero	202,NOUN,SINGULAR
+mellado	202,ADJECTIVE,PARTICIPLE
+tilapia	202,NOUN,SINGULAR
+tranqui	202,ADJECTIVE,INTERJECTION
+zapador	202,NOUN,SINGULAR
+aseados	201,ADJECTIVE,PARTICIPLE
+feraces	201,ADJECTIVE
+fermosa	201,ADJECTIVE
+retreta	201,NOUN,SINGULAR
+caletre	200,NOUN,SINGULAR
+chiitas	200,ADJECTIVE,NOUN,PLURAL
+poblana	200,NOUN,ADJECTIVE,SINGULAR
+velluda	200,NOUN,ADJECTIVE,SINGULAR
+albinos	199,ADJECTIVE,NOUN,PLURAL
+bachata	199,NOUN,SINGULAR
+flexiva	199,ADJECTIVE
+jarocho	199,ADJECTIVE,NOUN,SINGULAR
+legrado	199,NOUN,PARTICIPLE,SINGULAR
+ropilla	199,NOUN,SINGULAR
+vedette	199,NOUN,SINGULAR
+chacota	198,NOUN,SINGULAR
+lucidos	198,ADJECTIVE,PARTICIPLE
+chanson	197,NOUN,SINGULAR
+derrape	197,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+sonadas	197,ADJECTIVE,PARTICIPLE
+arriate	196,NOUN,VERB,IMP,INFLECTED_FORM,SINGULAR
+aterrar	196,VERB
+chalina	196,NOUN,SINGULAR
+decisor	196,ADJECTIVE,NOUN,SINGULAR
+larvada	196,ADJECTIVE
+monitos	196,ADJECTIVE,NOUN,PLURAL
+novelar	196,VERB
+petarda	196,NOUN,SINGULAR
+pitcher	196,NOUN,SINGULAR
+placaje	196,NOUN,SINGULAR
+porfiar	196,VERB
+rayadas	196,ADJECTIVE,PARTICIPLE
+apriesa	195,ADVERB
+conseja	195,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+pulular	195,VERB
+vibrato	195,NOUN,SINGULAR
+zarismo	195,NOUN,SINGULAR
+zorrita	195,NOUN,SINGULAR
+gollete	194,NOUN,SINGULAR
+melosos	194,ADJECTIVE
+semitas	194,ADJECTIVE,NOUN,PLURAL
+transar	194,VERB
+afganas	193,ADJECTIVE,NOUN,PLURAL
+anidada	193,ADJECTIVE,PARTICIPLE
+camelia	193,NOUN,SINGULAR
+detraer	193,VERB
+expeler	193,VERB
+gaitero	193,NOUN,SINGULAR
+guarros	193,ADJECTIVE,NOUN,PLURAL
+manidas	193,ADJECTIVE,PARTICIPLE
+polares	193,ADJECTIVE,NOUN,PLURAL
+pringue	193,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+tolueno	193,NOUN,SINGULAR
+troquel	193,NOUN,SINGULAR
+balasto	192,NOUN,SINGULAR
+corroer	192,VERB
+embutir	192,VERB
+gabacho	192,ADJECTIVE,NOUN,SINGULAR
+golpazo	192,NOUN,SINGULAR
+invicta	192,ADJECTIVE
+manitol	192,NOUN,SINGULAR
+rockera	192,NOUN,ADJECTIVE,SINGULAR
+timbrar	192,VERB
+advenir	191,VERB
+afiliar	191,VERB
+atenido	191,ADJECTIVE,PARTICIPLE
+babosos	191,ADJECTIVE,NOUN,PLURAL
+pajilla	191,NOUN,SINGULAR
+adiposa	190,ADJECTIVE
+chamaca	190,NOUN,SINGULAR
+cochazo	190,NOUN,SINGULAR
+mohosas	190,ADJECTIVE
+termita	190,NOUN,SINGULAR
+texanos	190,ADJECTIVE,NOUN,PLURAL
+aerobic	189,NOUN,SINGULAR
+borraja	189,NOUN,SINGULAR
+cantiga	189,NOUN,SINGULAR
+codillo	189,NOUN,SINGULAR
+riojana	189,NOUN,ADJECTIVE,SINGULAR
+sanctos	189,ADJECTIVE,NOUN,PLURAL
+airosas	188,ADJECTIVE
+grisura	188,NOUN,SINGULAR
+ovejita	188,NOUN,SINGULAR
+payador	188,NOUN,SINGULAR
+plagiar	188,VERB
+tapizar	188,VERB
+atezado	187,ADJECTIVE,PARTICIPLE
+giganta	187,NOUN,SINGULAR
+guanaco	187,NOUN,ADJECTIVE,SINGULAR
+mialgia	187,NOUN,SINGULAR
+nudismo	187,NOUN,SINGULAR
+contera	186,NOUN,SINGULAR
+pepsina	186,NOUN,SINGULAR
+solapar	186,VERB
+trucada	186,ADJECTIVE,PARTICIPLE
+enanito	185,NOUN,SINGULAR
+fogosas	185,ADJECTIVE
+penadas	185,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+marrana	184,NOUN,SINGULAR
+nubosos	184,ADJECTIVE
+papista	184,NOUN,SINGULAR
+selknam	184,ADJECTIVE,NOUN,SINGULAR
+snorkel	184,NOUN,SINGULAR
+avenido	183,ADJECTIVE,PARTICIPLE
+juliano	183,ADJECTIVE
+mamones	183,ADJECTIVE,NOUN,PLURAL
+minoico	183,ADJECTIVE
+pinball	183,NOUN,SINGULAR
+chamizo	182,NOUN,SINGULAR
+contino	182,ADJECTIVE,NOUN,SINGULAR
+decenal	182,ADJECTIVE
+lamprea	182,NOUN,SINGULAR
+abucheo	181,NOUN,VERB,SINGULAR
+bimodal	181,ADJECTIVE
+enarcar	181,VERB
+graznar	181,VERB
+jordana	181,NOUN,ADJECTIVE,SINGULAR
+liberta	181,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR
+prelada	181,NOUN,SINGULAR
+sexteto	181,NOUN,SINGULAR
+tabardo	181,NOUN,SINGULAR
+verismo	181,NOUN,SINGULAR
+vivible	181,ADJECTIVE
+alienar	180,VERB
+bollito	180,NOUN,SINGULAR
+calcado	180,ADJECTIVE,NOUN,PARTICIPLE,SINGULAR
+invidia	180,NOUN,SINGULAR
+minueto	180,NOUN,SINGULAR
+mugroso	180,ADJECTIVE
+niponas	180,ADJECTIVE,NOUN,PLURAL
+sidecar	180,NOUN,SINGULAR
+tantito	180,ADJECTIVE
+agendar	179,VERB
+alarife	179,NOUN,SINGULAR
+canutos	179,ADJECTIVE,NOUN,PLURAL
+gabarra	179,NOUN,SINGULAR
+galaico	179,ADJECTIVE,NOUN,SINGULAR
+loquita	179,NOUN,ADJECTIVE,SINGULAR
+melliza	179,NOUN,ADJECTIVE,SINGULAR
+mimadas	179,ADJECTIVE,PARTICIPLE
+rotular	179,VERB
+asiduas	178,ADJECTIVE
+bauxita	178,NOUN,SINGULAR
+diorama	178,NOUN,SINGULAR
+gramola	178,NOUN,SINGULAR
+kleenex	178,NOUN,SINGULAR
+pectina	178,NOUN,SINGULAR
+putilla	178,NOUN,SINGULAR
+aerobia	177,ADJECTIVE
+avizora	177,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM
+celiaca	177,ADJECTIVE
+mimosas	177,ADJECTIVE,NOUN,PLURAL
+sabinos	177,ADJECTIVE
+terrazo	177,NOUN,SINGULAR
+vitoria	177,NOUN,SINGULAR
+volados	177,ADJECTIVE,NOUN,PARTICIPLE,PLURAL
+armonio	176,NOUN,SINGULAR
+cananeo	176,ADJECTIVE,NOUN,SINGULAR
+castell	176,NOUN,SINGULAR
+chalada	176,NOUN,ADJECTIVE,PARTICIPLE,SINGULAR
+orejero	176,NOUN,SINGULAR
+website	176,NOUN,SINGULAR
+calmoso	175,ADJECTIVE
+cielito	175,NOUN,SINGULAR
+mentida	175,ADJECTIVE,PARTICIPLE
+mujeril	175,ADJECTIVE
+pisoteo	175,NOUN,VERB,SINGULAR
+renuevo	175,NOUN,VERB,SINGULAR
+skyline	175,NOUN,SINGULAR
+ajedrea	174,NOUN,SINGULAR
+chinche	174,NOUN,ADJECTIVE,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+pulpero	174,NOUN,SINGULAR
+sabidos	174,ADJECTIVE,PARTICIPLE
+sponsor	174,NOUN,SINGULAR
+uralita	174,NOUN,SINGULAR
+expulso	173,ADJECTIVE,VERB
+lituano	173,ADJECTIVE,NOUN,SINGULAR
+marimba	173,NOUN,SINGULAR
+patache	173,NOUN,SINGULAR
+roquero	173,ADJECTIVE,NOUN,SINGULAR
+samario	173,NOUN,ADJECTIVE,SINGULAR
+tiquete	173,NOUN,SINGULAR
+basmati	172,NOUN,SINGULAR
+obturar	172,VERB
+palatal	172,ADJECTIVE,NOUN,SINGULAR
+palmear	172,VERB
+reniego	172,NOUN,VERB,SINGULAR
+sunitas	172,ADJECTIVE,NOUN,PLURAL
+ayudita	171,NOUN,SINGULAR
+betabel	171,NOUN,SINGULAR
+canosas	171,ADJECTIVE
+erectas	171,ADJECTIVE
+picudas	171,ADJECTIVE
+prensar	171,VERB
+puntear	171,VERB
+rubeola	171,NOUN,SINGULAR
+tornera	171,NOUN,SINGULAR
+blondas	170,ADJECTIVE,NOUN,PLURAL
+bracito	170,NOUN,SINGULAR
+cursada	170,ADJECTIVE,PARTICIPLE
+enmedio	170,NOUN,SINGULAR
+estallo	170,NOUN,VERB,SINGULAR
+lignina	170,NOUN,SINGULAR
+primito	170,NOUN,SINGULAR
+zonales	170,ADJECTIVE
+ariscos	169,ADJECTIVE
+decidor	169,ADJECTIVE,NOUN,SINGULAR
+dragado	169,NOUN,PARTICIPLE,SINGULAR
+pularda	169,NOUN,SINGULAR
+semblar	169,VERB
+serbias	169,ADJECTIVE,NOUN,PLURAL
+trapear	169,VERB
+tuitear	169,VERB
+veintes	169,NOUN,SINGULAR
+alfajor	168,NOUN,SINGULAR
+cofrade	168,NOUN,SINGULAR
+derruir	168,VERB
+ravioli	168,NOUN,SINGULAR
+sinodal	168,ADJECTIVE
+tablita	168,NOUN,SINGULAR
+astures	167,ADJECTIVE
+bartola	167,ADVERB
+bribona	167,NOUN,ADJECTIVE,SINGULAR
+lectiva	167,ADJECTIVE
+oliente	167,ADJECTIVE
+panista	167,ADJECTIVE,NOUN,SINGULAR
+yankees	167,ADJECTIVE,NOUN,PLURAL
+doceava	166,ADJECTIVE
+minimal	166,ADJECTIVE
+mosqueo	166,NOUN,VERB,SINGULAR
+reglaje	166,NOUN,SINGULAR
+rumanas	166,ADJECTIVE,NOUN,PLURAL
+sinople	166,ADJECTIVE,NOUN,SINGULAR
+tabasco	166,NOUN,SINGULAR
+verraco	166,NOUN,SINGULAR
+atrezzo	165,NOUN,SINGULAR
+borrica	165,NOUN,SINGULAR
+corrala	165,NOUN,SINGULAR
+marengo	165,ADJECTIVE
+peloteo	165,NOUN,VERB,SINGULAR
+tontera	165,NOUN,SINGULAR
+anisado	164,NOUN,PARTICIPLE,SINGULAR
+cachaza	164,NOUN,SINGULAR
+calcada	164,ADJECTIVE,PARTICIPLE
+despejo	164,NOUN,VERB,SINGULAR
+pardiez	164,INTERJECTION,NOUN,SINGULAR
+penates	164,NOUN,SINGULAR
+pistilo	164,NOUN,SINGULAR
+tenesmo	164,NOUN,SINGULAR
+tozudos	164,ADJECTIVE
+vagales	164,ADJECTIVE,VERB,IMP,INFLECTED_FORM
+almirez	163,NOUN,SINGULAR
+cascote	163,NOUN,SINGULAR
+marbete	163,NOUN,SINGULAR
+mesnada	163,NOUN,SINGULAR
+pulposo	163,ADJECTIVE
+vacunos	163,ADJECTIVE,NOUN,PLURAL
+zapateo	163,NOUN,VERB,SINGULAR
+egresar	162,VERB
+enrolar	162,VERB
+malones	162,ADJECTIVE,NOUN,PLURAL
+manceba	162,NOUN,ADJECTIVE,SINGULAR
+musgosa	162,ADJECTIVE
+puteros	162,ADJECTIVE,NOUN,PLURAL
+sollado	162,NOUN,PARTICIPLE,SINGULAR
+trapito	162,NOUN,SINGULAR
+clivaje	161,NOUN,SINGULAR
+cornuda	161,NOUN,ADJECTIVE,SINGULAR
+cupcake	161,NOUN,SINGULAR
+groupie	161,NOUN,SINGULAR
+valones	161,ADJECTIVE,NOUN,PLURAL
+velloso	161,ADJECTIVE
+viarias	161,ADJECTIVE
+cardial	160,ADJECTIVE
+gorrita	160,NOUN,SINGULAR
+maximal	160,ADJECTIVE
+mochica	160,ADJECTIVE,NOUN,SINGULAR
+noquear	160,VERB
+quichua	160,NOUN,SINGULAR
+sesudas	160,ADJECTIVE
+aserrar	159,VERB
+frigios	159,ADJECTIVE,NOUN,PLURAL
+ganache	159,NOUN,SINGULAR
+irisada	159,ADJECTIVE,PARTICIPLE
+lechada	159,NOUN,PARTICIPLE,SINGULAR
+melopea	159,NOUN,SINGULAR
+micelio	159,NOUN,SINGULAR
+globina	158,NOUN,SINGULAR
+hastial	158,NOUN,SINGULAR
+licitar	158,VERB
+ojeador	158,NOUN,SINGULAR
+efector	157,ADJECTIVE,NOUN,SINGULAR
+henchir	157,VERB
+inodora	157,ADJECTIVE
+predict	157,NOUN,SINGULAR
+amperio	156,NOUN,SINGULAR
+chorreo	156,NOUN,VERB,SINGULAR
+electas	156,ADJECTIVE,PARTICIPLE
+escocer	156,VERB
+esposar	156,VERB
+garboso	156,ADJECTIVE
+lapones	156,ADJECTIVE,NOUN,PLURAL
+pianola	156,NOUN,SINGULAR
+quartos	156,ADJECTIVE,NOUN,PLURAL
+sabinas	156,ADJECTIVE,NOUN,PLURAL
+tercias	156,ADJECTIVE,VERB
+counter	155,NOUN,SINGULAR
+exitazo	155,NOUN,SINGULAR
+gangoso	155,ADJECTIVE
+mengano	155,NOUN,SINGULAR
+rumboso	155,ADJECTIVE
+tornero	155,NOUN,SINGULAR
+biotipo	154,NOUN,SINGULAR
+coturno	154,NOUN,SINGULAR
+opioide	154,ADJECTIVE,NOUN,SINGULAR
+puntazo	154,NOUN,SINGULAR
+alicate	153,NOUN,VERB,3PS,FORM_OF,IMP,INFLECTED_FORM,SINGULAR,SUBJ
+chicote	153,NOUN,SINGULAR
+irisado	153,ADJECTIVE,PARTICIPLE
+llorica	153,NOUN,ADJECTIVE,SINGULAR
+tontina	153,NOUN,SINGULAR
+aciagas	152,ADJECTIVE
+armeros	152,ADJECTIVE,NOUN,PLURAL
+candeal	152,ADJECTIVE
+chirona	152,NOUN,SINGULAR
+excurso	152,NOUN,SINGULAR
+herbosa	152,ADJECTIVE
+herraje	152,NOUN,SINGULAR
+quincho	152,NOUN,SINGULAR
