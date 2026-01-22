@@ -185,7 +185,7 @@ export const Settings: React.FC<SettingsProps> = ({
   }, [selectedDate]); // Removed setCalendarMonth from dependencies - it's recreated on every render
 
   return (
-    <div className="settings">
+    <div className={`settings ${showCalendar ? 'calendar-active' : ''}`}>
       <div className="setting-group">
         <div className="language-select-wrapper">
           <HelpTooltip language={language}>

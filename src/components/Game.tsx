@@ -877,7 +877,7 @@ export const Game: React.FC<GameProps> = ({
         onWordLengthChange={handleWordLengthChange}
         onRandomModeChange={handleRandomModeChange}
         onDateChange={handleDateChange}
-        disabled={false}
+        disabled={showCalendar}
         showCalendar={showCalendar}
         onShowCalendarChange={setShowCalendar}
         calendarGames={calendarGames}
@@ -887,8 +887,7 @@ export const Game: React.FC<GameProps> = ({
       {showCalendar && !randomMode ? (
         <div className="calendar-full-panel">
           <div className="calendar-full-header">
-            <h3>Select Date</h3>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
               <button 
                 className="calendar-today-button"
                 onClick={() => {
