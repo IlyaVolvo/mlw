@@ -286,9 +286,38 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
         });
         if (currentResponse.game && currentResponse.game.is_complete !== 1) {
-          // Found incomplete game - continue playing it
+          // Found incomplete game - continue playing it (unless daily answer changed)
           const target = currentResponse.game.target_word;
           const gameDate = currentResponse.game.game_date;
+          const effectiveDate = gameDate || playDate;
+          const expectedTarget = getDailyWord(dictionary, effectiveDate);
+          if (target !== expectedTarget) {
+            const resetState: GameState = {
+              guesses: [],
+              currentGuess: '',
+              isComplete: false,
+              isWon: false,
+              language: currentResponse.game.language,
+              wordLength: currentResponse.game.word_length,
+              date: effectiveDate,
+              isRandomMode: false,
+              wordSeed: undefined,
+            };
+            setGameState(resetState);
+            setTargetWord(expectedTarget);
+            setLetterStates(new Map());
+            await apiClient.saveGame({
+              language,
+              wordLength,
+              targetWord: expectedTarget,
+              gameDate: effectiveDate,
+              isRandomMode: false,
+              guesses: [],
+              isComplete: false,
+              isWon: false,
+            });
+            return;
+          }
           // Only sync selectedPlayDate if it's empty or invalid - don't override user-initiated date changes
           const isValidDate = selectedPlayDate && /^\d{4}-\d{2}-\d{2}$/.test(selectedPlayDate);
           if (gameDate && !isValidDate) {
@@ -550,6 +579,36 @@ export const Game: React.FC<GameProps> = ({
         if (currentResponse.game && currentResponse.game.is_complete !== 1) {
           const target = currentResponse.game.target_word;
           const gameDate = currentResponse.game.game_date;
+          const effectiveDate = gameDate || playDate;
+          const expectedTarget = getDailyWord(dictionary, effectiveDate);
+          if (target !== expectedTarget) {
+            const resetState: GameState = {
+              guesses: [],
+              currentGuess: '',
+              isComplete: false,
+              isWon: false,
+              language: currentResponse.game.language,
+              wordLength: currentResponse.game.word_length,
+              date: effectiveDate,
+              isRandomMode: false,
+              wordSeed: undefined,
+            };
+            setGameState(resetState);
+            setTargetWord(expectedTarget);
+            setLetterStates(new Map());
+            setIsPlayingMode(true);
+            await apiClient.saveGame({
+              language,
+              wordLength,
+              targetWord: expectedTarget,
+              gameDate: effectiveDate,
+              isRandomMode: false,
+              guesses: [],
+              isComplete: false,
+              isWon: false,
+            });
+            return;
+          }
           // Only sync selectedPlayDate if it's empty or invalid - don't override user-initiated date changes
           const isValidDate = selectedPlayDate && /^\d{4}-\d{2}-\d{2}$/.test(selectedPlayDate);
           if (gameDate && !isValidDate) {
@@ -671,6 +730,16 @@ export const Game: React.FC<GameProps> = ({
       return;
     }
     
+    // Prevent swiping to another day if the current game is not complete
+    // Allow navigation if: no game state exists, or game is complete
+    if (gameState && !gameState.isComplete) {
+      // Game is in progress, don't allow navigation
+      touchStartRef.current = null;
+      touchEndRef.current = null;
+      swipeStartDateRef.current = null;
+      return;
+    }
+    
     const start = touchStartRef.current;
     const end = touchEndRef.current;
     const distance = start - end;
@@ -716,7 +785,7 @@ export const Game: React.FC<GameProps> = ({
     touchStartRef.current = null;
     touchEndRef.current = null;
     swipeStartDateRef.current = null;
-  }, [randomMode, handleDateChange]);
+  }, [randomMode, gameState, handleDateChange]);
 
   const handleRandomModeChange = useCallback((newRandomMode: boolean) => {
     const prefs = loadPreferences();
