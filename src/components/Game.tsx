@@ -11,6 +11,7 @@ import { evaluateGuess, isValidWord } from '../utils/gameLogic';
 import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import { apiClient } from '../api/client';
+import { gameCacheUtils } from '../utils/gameCache';
 
 const MAX_GUESSES = 6;
 
@@ -226,12 +227,62 @@ export const Game: React.FC<GameProps> = ({
     changeSettings();
   }, [language, wordLength, initializedRef.current, loading, loadStoredDate, saveStoredDate]);
 
+  // Preload bulk games for last 30 days when language/wordLength changes
+  useEffect(() => {
+    if (randomMode || !dictionary || loading) return;
+
+    const preloadGames = async () => {
+      const dateRange = gameCacheUtils.getDefaultDateRange();
+      
+      // Check if we already have a valid cache
+      if (gameCacheUtils.hasValidCache(language, wordLength, dateRange)) {
+        return; // Cache is still valid
+      }
+
+      try {
+        const response = await apiClient.getBulkGames({
+          language,
+          wordLength,
+          startDate: dateRange.start,
+          endDate: dateRange.end,
+        });
+
+        // Convert API response to cache format
+        const cachedGames: Record<string, any> = {};
+        Object.entries(response.games).forEach(([date, game]: [string, any]) => {
+          cachedGames[date] = {
+            id: game.id,
+            language: game.language,
+            word_length: game.word_length,
+            target_word: game.target_word,
+            game_date: game.game_date,
+            is_random_mode: game.is_random_mode,
+            word_seed: game.word_seed,
+            is_complete: game.is_complete,
+            guesses: game.guesses || [],
+            isWon: game.isWon,
+            guessesCount: game.guessesCount || 0,
+            created_at: game.created_at,
+            completed_at: game.completed_at,
+          };
+        });
+
+        // Update cache
+        gameCacheUtils.setCachedGames(language, wordLength, cachedGames, dateRange);
+      } catch (err) {
+        // Silently fail - cache is optional for performance
+      }
+    };
+
+    preloadGames();
+  }, [language, wordLength, dictionary, loading, randomMode]);
+
   const saveGameToApi = useCallback(async (state: GameState) => {
     // Don't save Training mode games to DB
     if (state.isRandomMode) return;
     if (!dictionary || !targetWord || !isPlayingMode) return; // Only save when actively playing
     try {
-      await apiClient.saveGame({
+      const response = await apiClient.saveGame({
         language: state.language,
         wordLength: state.wordLength,
         targetWord,
@@ -241,6 +292,23 @@ export const Game: React.FC<GameProps> = ({
         guesses: state.guesses,
         isComplete: state.isComplete,
         isWon: state.isWon,
+      });
+      
+      // Update cache after saving
+      gameCacheUtils.updateCachedGame(state.language, state.wordLength, state.date, {
+        id: response.gameId,
+        language: state.language,
+        word_length: state.wordLength,
+        target_word: targetWord,
+        game_date: state.date,
+        is_random_mode: 0,
+        word_seed: null,
+        is_complete: state.isComplete ? 1 : 0,
+        guesses: state.guesses.map(g => ({ word: g.word, evaluations: [] })),
+        isWon: state.isWon,
+        guessesCount: state.guesses.length,
+        created_at: new Date().toISOString(),
+        completed_at: state.isComplete ? new Date().toISOString() : null,
       });
     } catch (error) {
       console.error('Failed to save game to API:', error);
@@ -571,6 +639,45 @@ export const Game: React.FC<GameProps> = ({
 
     const loadGameForDate = async () => {
       const playDate = selectedPlayDate || formatDate();
+      
+      // Check cache first
+      const cachedGame = gameCacheUtils.getCachedGame(language, wordLength, playDate);
+      if (cachedGame) {
+        // Use cached game
+        const target = cachedGame.target_word;
+        const gameDate = cachedGame.game_date;
+        const effectiveDate = gameDate || playDate;
+        const expectedTarget = getDailyWord(dictionary, effectiveDate);
+        
+        // For incomplete games, verify target word matches expected
+        if (cachedGame.is_complete !== 1 && target !== expectedTarget) {
+          // Target changed, need to reset - fall through to API call
+        } else {
+          // Use cached game
+          const guessesWithEvals = (cachedGame.guesses || []).map((g: any) => ({
+            word: typeof g === 'string' ? g : g.word,
+            evaluations: evaluateGuess(typeof g === 'string' ? g : g.word, target, language),
+          }));
+          const gameState: GameState = {
+            guesses: guessesWithEvals,
+            currentGuess: '',
+            isComplete: cachedGame.is_complete === 1,
+            isWon: cachedGame.isWon,
+            language: cachedGame.language,
+            wordLength: cachedGame.word_length,
+            date: gameDate,
+            isRandomMode: false,
+            wordSeed: undefined,
+          };
+          setGameState(gameState);
+          setTargetWord(target);
+          setIsPlayingMode(cachedGame.is_complete !== 1);
+          updateLetterStates(gameState);
+          return;
+        }
+      }
+      
+      // Not in cache or cache invalid - fetch from API
       try {
         // Check for current game
         const currentResponse = await apiClient.getCurrentGame({
@@ -610,6 +717,22 @@ export const Game: React.FC<GameProps> = ({
               isComplete: false,
               isWon: false,
             });
+            // Update cache
+            gameCacheUtils.updateCachedGame(language, wordLength, effectiveDate, {
+              id: currentResponse.game.id || 0,
+              language: currentResponse.game.language,
+              word_length: currentResponse.game.word_length,
+              target_word: expectedTarget,
+              game_date: effectiveDate,
+              is_random_mode: 0,
+              word_seed: null,
+              is_complete: 0,
+              guesses: [],
+              isWon: false,
+              guessesCount: 0,
+              created_at: new Date().toISOString(),
+              completed_at: null,
+            });
             return;
           }
           // Only sync selectedPlayDate if it's empty or invalid - don't override user-initiated date changes
@@ -635,8 +758,23 @@ export const Game: React.FC<GameProps> = ({
           setGameState(currentGame);
           setTargetWord(target);
           setIsPlayingMode(true);
-          // Update letter states AFTER setting gameState to avoid triggering useEffect
           updateLetterStates(currentGame);
+          // Update cache
+          gameCacheUtils.updateCachedGame(language, wordLength, gameDate, {
+            id: currentResponse.game.id,
+            language: currentResponse.game.language,
+            word_length: currentResponse.game.word_length,
+            target_word: target,
+            game_date: gameDate,
+            is_random_mode: 0,
+            word_seed: null,
+            is_complete: 0,
+            guesses: currentResponse.game.guesses || [],
+            isWon: false,
+            guessesCount: (currentResponse.game.guesses || []).length,
+            created_at: (currentResponse.game as any).created_at || new Date().toISOString(),
+            completed_at: null,
+          });
           return;
         }
         
@@ -666,23 +804,38 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          setIsPlayingMode(false); // Set to false for completed games - keyboard won't show anyway
-          // Update letter states AFTER setting gameState to avoid triggering useEffect
+          setIsPlayingMode(false);
           updateLetterStates(completedGame);
+          // Update cache
+          gameCacheUtils.updateCachedGame(language, wordLength, completedResponse.game.game_date, {
+            id: completedResponse.game.id,
+            language: completedResponse.game.language,
+            word_length: completedResponse.game.word_length,
+            target_word: target,
+            game_date: completedResponse.game.game_date,
+            is_random_mode: 0,
+            word_seed: null,
+            is_complete: 1,
+            guesses: completedResponse.game.guesses || [],
+            isWon: completedResponse.game.isWon,
+            guessesCount: (completedResponse.game.guesses || []).length,
+            created_at: (completedResponse.game as any).created_at || new Date().toISOString(),
+            completed_at: (completedResponse.game as any).completed_at || new Date().toISOString(),
+          });
           return;
         }
         
         // No game exists - clear game state and reset playing mode to allow starting new game
         setGameState(null);
         setTargetWord('');
-        setLetterStates(new Map()); // Reset letter states for new game
-        setIsPlayingMode(false); // Reset to allow starting new game
+        setLetterStates(new Map());
+        setIsPlayingMode(false);
       } catch (err) {
         console.error('Failed to load game:', err);
         setGameState(null);
         setTargetWord('');
-        setLetterStates(new Map()); // Reset letter states on error
-        setIsPlayingMode(false); // Reset to allow starting new game
+        setLetterStates(new Map());
+        setIsPlayingMode(false);
       }
     };
 

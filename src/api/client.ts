@@ -170,6 +170,21 @@ class ApiClient {
     return this.request<{ games: any[] }>(`/games/history?${queryParams.toString()}`);
   }
 
+  async getBulkGames(params: {
+    language: string;
+    wordLength: number;
+    startDate: string;
+    endDate: string;
+  }): Promise<{ games: Record<string, any> }> {
+    const queryParams = new URLSearchParams();
+    queryParams.append('language', params.language);
+    queryParams.append('wordLength', params.wordLength.toString());
+    queryParams.append('startDate', params.startDate);
+    queryParams.append('endDate', params.endDate);
+
+    return this.request<{ games: Record<string, any> }>(`/games/bulk?${queryParams.toString()}`);
+  }
+
   // Preferences endpoints
   async getPreferences(): Promise<{ selectedLanguages: string[] | null }> {
     return this.request<{ selectedLanguages: string[] | null }>('/auth/preferences');
