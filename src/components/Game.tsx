@@ -55,6 +55,7 @@ export const Game: React.FC<GameProps> = ({
   const [letterStates, setLetterStates] = useState<Map<string, LetterState>>(new Map());
   const [randomMode, setRandomMode] = useState<boolean>(false);
   const initializedRef = useRef<boolean>(false);
+  // Track last consistency check to prevent duplicate checks during batched state updates
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
   const [shakeRowIndex, setShakeRowIndex] = useState<number | null>(null);
   const [isPlayingMode, setIsPlayingMode] = useState<boolean>(false); // True when actively playing a game
@@ -189,7 +190,8 @@ export const Game: React.FC<GameProps> = ({
 
   // Handle language or word length change - reload dictionary, normalization and clear preview
   useEffect(() => {
-      if (!initializedRef.current || loading || isPlayingMode) return;
+    // Only run when language or wordLength actually changes, not when isPlayingMode changes
+    if (!initializedRef.current || loading) return;
 
     const changeSettings = async () => {
       try {
@@ -202,7 +204,7 @@ export const Game: React.FC<GameProps> = ({
           setDictionary(dict);
         }
         // Normalization is cached in characterNormalization module, no need to store it
-        // Clear game state when settings change
+        // Clear game state when settings change (language/wordLength, not isPlayingMode)
         setGameState(null);
         setTargetWord('');
         // When switching language/word length, load stored date for this combination
@@ -222,7 +224,7 @@ export const Game: React.FC<GameProps> = ({
     };
 
     changeSettings();
-  }, [language, wordLength, initializedRef.current, loading, isPlayingMode, loadStoredDate, saveStoredDate]);
+  }, [language, wordLength, initializedRef.current, loading, loadStoredDate, saveStoredDate]);
 
   const saveGameToApi = useCallback(async (state: GameState) => {
     // Don't save Training mode games to DB
@@ -443,6 +445,7 @@ export const Game: React.FC<GameProps> = ({
     }
   }, [selectedPlayDate]);
 
+
   // Auto-start game when first letter is typed (instead of Play button)
   const handleKeyPress = useCallback(async (key: string) => {
     const normalizedKey = key.toLowerCase();
@@ -631,8 +634,9 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(currentGame);
           setTargetWord(target);
-          updateLetterStates(currentGame); // Update letter states from loaded guesses
           setIsPlayingMode(true);
+          // Update letter states AFTER setting gameState to avoid triggering useEffect
+          updateLetterStates(currentGame);
           return;
         }
         
@@ -662,8 +666,9 @@ export const Game: React.FC<GameProps> = ({
           };
           setGameState(completedGame);
           setTargetWord(target);
-          updateLetterStates(completedGame); // Update letter states from loaded guesses
           setIsPlayingMode(false); // Set to false for completed games - keyboard won't show anyway
+          // Update letter states AFTER setting gameState to avoid triggering useEffect
+          updateLetterStates(completedGame);
           return;
         }
         
@@ -682,7 +687,7 @@ export const Game: React.FC<GameProps> = ({
     };
 
     loadGameForDate();
-  }, [selectedPlayDate, language, wordLength, randomMode, dictionary, loading, updateLetterStates]);
+  }, [selectedPlayDate, language, wordLength, randomMode, dictionary, loading]);
 
   // Handle date change
   const handleDateChange = useCallback(async (date: string) => {
@@ -1032,17 +1037,20 @@ export const Game: React.FC<GameProps> = ({
             shakeRowIndex={shakeRowIndex}
           />
           {gameState.isComplete && (
-            <div className="game-result">
-              {gameState.isWon ? (
-                <div className="result-message success">
-                  Congratulations! You won!
-                </div>
-              ) : (
-                <div className="result-message failure">
-                  Answer was: <strong>{targetWord}</strong>
-                </div>
-              )}
-            </div>
+            <>
+              <div className="game-result">
+                {gameState.isWon ? (
+                  <div className="result-message success">
+                    Congratulations! You won!
+                  </div>
+                ) : (
+                  <div className="result-message failure">
+                    Answer was: <strong>{targetWord}</strong>
+                  </div>
+                )}
+              </div>
+              <div className="keyboard-placeholder"></div>
+            </>
           )}
           {!gameState.isComplete && (
             <Keyboard
