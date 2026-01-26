@@ -1046,6 +1046,7 @@ export const Game: React.FC<GameProps> = ({
       <div className="header-section">
         <h1>
           <span>PolyWordlot</span>
+          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
           {onLogout && (
             <div className="logout-wrapper">
               <button onClick={onLogout} className="logout-icon" title="Logout">

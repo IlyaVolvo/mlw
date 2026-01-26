@@ -40,6 +40,15 @@ h1 span {
   display: inline-block;
 }
 
+h1 .build-commit {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #999;
+  margin-left: 8px;
+  vertical-align: top;
+  font-family: monospace;
+}
+
 h1 .help-icon {
   display: inline-block;
   margin-left: 8px;

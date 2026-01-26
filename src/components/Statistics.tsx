@@ -401,6 +401,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
       <div className="header-section">
         <h1>
           <span>PolyWordlot</span>
+          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
         </h1>
         {onViewChange && (
           <div className="header-tabs-row">
