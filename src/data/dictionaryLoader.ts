@@ -12,6 +12,25 @@ const languageConfigsCache = new Map<string, LanguageConfig>();
 // Cache for keyboard layouts
 const keyboardCache = new Map<string, string[][]>();
 
+// Cache for keyboard action buttons
+export interface KeyboardActions {
+  enter?: {
+    label: string;
+    position?: 'start' | 'end' | 'none';
+  };
+  backspace?: {
+    label: string;
+    position?: 'start' | 'end' | 'none';
+  };
+}
+
+interface KeyboardConfig {
+  layout: string[][];
+  actions?: KeyboardActions;
+}
+
+const keyboardActionsCache = new Map<string, KeyboardActions>();
+
 /**
  * Structure to map locale codes to language names
  * Format: { [locale]: { language: string, name: string } }
@@ -328,6 +347,7 @@ export async function getLanguageConfig(code: string): Promise<LanguageConfig | 
 
 /**
  * Loads keyboard layout for a language
+ * Supports both old format (2D array) and new format (object with layout and actions)
  */
 export async function loadKeyboard(language: string): Promise<string[][] | null> {
   // Check cache first
@@ -356,12 +376,25 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
       return null;
     }
     
-    const keyboard = await response.json();
+    const keyboardData = await response.json();
     
-    // Validate keyboard structure (should be 2D array)
-    if (Array.isArray(keyboard) && keyboard.every(row => Array.isArray(row))) {
-      keyboardCache.set(language, keyboard);
-      return keyboard;
+    // Handle new format: { layout: [...], actions: {...} }
+    if (keyboardData && typeof keyboardData === 'object' && 'layout' in keyboardData) {
+      const config = keyboardData as KeyboardConfig;
+      if (Array.isArray(config.layout) && config.layout.every(row => Array.isArray(row))) {
+        keyboardCache.set(language, config.layout);
+        // Cache actions if provided
+        if (config.actions) {
+          keyboardActionsCache.set(language, config.actions);
+        }
+        return config.layout;
+      }
+    }
+    
+    // Handle old format: 2D array
+    if (Array.isArray(keyboardData) && keyboardData.every(row => Array.isArray(row))) {
+      keyboardCache.set(language, keyboardData);
+      return keyboardData;
     }
     
     return null;
@@ -369,6 +402,22 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
     // File doesn't exist or error occurred - return null to use default
     return null;
   }
+}
+
+/**
+ * Loads keyboard action buttons configuration for a language
+ */
+export async function loadKeyboardActions(language: string): Promise<KeyboardActions | null> {
+  // Check cache first
+  if (keyboardActionsCache.has(language)) {
+    return keyboardActionsCache.get(language)!;
+  }
+
+  // Try to load keyboard (which will also cache actions if present)
+  await loadKeyboard(language);
+  
+  // Return cached actions or null
+  return keyboardActionsCache.get(language) || null;
 }
 
 /**
