@@ -12,7 +12,10 @@
     "studio": "npx prisma studio --port 5557",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "populate:games": "npx tsx scripts/populateGames.ts"
+    "populate:games": "npx tsx scripts/populateGames.ts",
+    "test:email": "npx tsx test-email.ts",
+    "test:email:alt": "npx tsx test-email-alternative.ts",
+    "debug:email": "npx tsx debug-smtp.ts"
   },
   "dependencies": {
     "@prisma/client": "^7.2.0",
