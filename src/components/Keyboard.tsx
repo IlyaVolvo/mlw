@@ -17,10 +17,21 @@ const DEFAULT_KEYBOARD: string[][] = [
   ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
 ];
 
+// Type for action button configuration
+type ActionButton = {
+  label: string;
+  position: 'start' | 'end' | 'none';
+};
+
+type ActionsState = {
+  enter: ActionButton;
+  backspace: ActionButton;
+};
+
 // Default action buttons (used as fallback)
-const DEFAULT_ACTIONS = {
-  enter: { label: 'ENTER', position: 'start' as const },
-  backspace: { label: '⌫', position: 'end' as const },
+const DEFAULT_ACTIONS: ActionsState = {
+  enter: { label: 'ENTER', position: 'start' },
+  backspace: { label: '⌫', position: 'end' },
 };
 
 export const Keyboard: React.FC<KeyboardProps> = ({
@@ -31,7 +42,7 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   language,
 }) => {
   const [layout, setLayout] = useState<string[][]>(DEFAULT_KEYBOARD);
-  const [actions, setActions] = useState(DEFAULT_ACTIONS);
+  const [actions, setActions] = useState<ActionsState>(DEFAULT_ACTIONS);
 
   useEffect(() => {
     const loadLayout = async () => {
@@ -41,8 +52,14 @@ export const Keyboard: React.FC<KeyboardProps> = ({
       const keyboardActions = await loadKeyboardActions(language);
       if (keyboardActions) {
         setActions({
-          enter: keyboardActions.enter || DEFAULT_ACTIONS.enter,
-          backspace: keyboardActions.backspace || DEFAULT_ACTIONS.backspace,
+          enter: {
+            label: keyboardActions.enter?.label || DEFAULT_ACTIONS.enter.label,
+            position: (keyboardActions.enter?.position || DEFAULT_ACTIONS.enter.position) as 'start' | 'end' | 'none',
+          },
+          backspace: {
+            label: keyboardActions.backspace?.label || DEFAULT_ACTIONS.backspace.label,
+            position: (keyboardActions.backspace?.position || DEFAULT_ACTIONS.backspace.position) as 'start' | 'end' | 'none',
+          },
         });
       } else {
         setActions(DEFAULT_ACTIONS);
@@ -62,30 +79,32 @@ export const Keyboard: React.FC<KeyboardProps> = ({
 
   const shouldShowEnter = (rowIndex: number): boolean => {
     if (rowIndex !== layout.length - 1) return false;
-    const position = actions.enter?.position || 'start';
+    const position = actions.enter.position;
     return position !== 'none';
   };
 
   const shouldShowBackspace = (rowIndex: number): boolean => {
     if (rowIndex !== layout.length - 1) return false;
-    const position = actions.backspace?.position || 'end';
+    const position = actions.backspace.position;
     return position !== 'none';
   };
 
   const getEnterPosition = (): 'start' | 'end' => {
-    return (actions.enter?.position || 'start') as 'start' | 'end';
+    const pos = actions.enter.position;
+    return pos === 'none' ? 'start' : (pos as 'start' | 'end');
   };
 
   const getBackspacePosition = (): 'start' | 'end' => {
-    return (actions.backspace?.position || 'end') as 'start' | 'end';
+    const pos = actions.backspace.position;
+    return pos === 'none' ? 'end' : (pos as 'start' | 'end');
   };
 
   const getEnterLabel = (): string => {
-    return actions.enter?.label || 'ENTER';
+    return actions.enter.label;
   };
 
   const getBackspaceLabel = (): string => {
-    return actions.backspace?.label || '⌫';
+    return actions.backspace.label;
   };
 
   return (
