@@ -128,6 +128,9 @@ export const Game: React.FC<GameProps> = ({
     loadDict();
   }, [language, wordLength]);
 
+  // Track if this is the first settings change after initialization
+  const firstSettingsChangeRef = useRef(true);
+
   // Initialize component - just load dictionary and normalization, don't create game
   useEffect(() => {
     if (initializedRef.current) return;
@@ -150,9 +153,10 @@ export const Game: React.FC<GameProps> = ({
         setDictionary(dict);
         // Normalization is cached in characterNormalization module, no need to store it
         initializedRef.current = true;
-        // On initial load, always default to today (don't load stored dates)
+        // On initial load/refresh, always default to today (don't load stored dates)
         const today = formatDate();
         setSelectedPlayDate(today);
+        firstSettingsChangeRef.current = true; // Mark that this is the first change
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to initialize');
       } finally {
@@ -208,16 +212,26 @@ export const Game: React.FC<GameProps> = ({
         // Clear game state when settings change (language/wordLength, not isPlayingMode)
         setGameState(null);
         setTargetWord('');
-        // When switching language/word length, load stored date for this combination
-        // This allows returning to the last selected date for each combination
-        const storedDate = loadStoredDate(language, wordLength);
-        if (storedDate) {
-          setSelectedPlayDate(storedDate);
-        } else {
-          // If no stored date for this combination, default to today
+        
+        // On page refresh/initial load, always default to today
+        // Only load stored dates when user manually changes language/wordLength
+        if (firstSettingsChangeRef.current) {
+          // This is the first change after initialization (page refresh)
           const today = formatDate();
           setSelectedPlayDate(today);
           saveStoredDate(language, wordLength, today);
+          firstSettingsChangeRef.current = false; // Mark that we've handled the first change
+        } else {
+          // User manually changed language/wordLength - load stored date for this combination
+          const storedDate = loadStoredDate(language, wordLength);
+          if (storedDate) {
+            setSelectedPlayDate(storedDate);
+          } else {
+            // If no stored date for this combination, default to today
+            const today = formatDate();
+            setSelectedPlayDate(today);
+            saveStoredDate(language, wordLength, today);
+          }
         }
       } catch (err) {
         console.error('Failed to load dictionary:', err);
