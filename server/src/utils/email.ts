@@ -188,3 +188,61 @@ export async function sendPasswordResetEmail(email: string, resetToken: string, 
   }
 }
 
+export async function sendFriendInvitationEmail(email: string, inviterEmail: string, baseUrl: string): Promise<void> {
+  try {
+    const transporter = await getTransporter();
+    const fromEmail = process.env.SMTP_FROM || process.env.SMTP_USER;
+
+    if (!fromEmail) {
+      throw new Error('SMTP_FROM or SMTP_USER must be set');
+    }
+
+    // Support display name format
+    let fromField = fromEmail;
+    if (!fromEmail.includes('@')) {
+      const smtpUser = process.env.SMTP_USER;
+      if (smtpUser) {
+        fromField = `"${fromEmail}" <${smtpUser}>`;
+      } else {
+        throw new Error('SMTP_FROM must contain an email address or SMTP_USER must be set');
+      }
+    }
+
+    const loginUrl = `${baseUrl}/#login`;
+
+    const mailOptions = {
+      from: fromField,
+      to: email,
+      subject: 'Friend Invitation - Polywordlot',
+      html: `
+        <h2>Friend Invitation</h2>
+        <p>${inviterEmail} has invited you to be friends on Polywordlot!</p>
+        <p>Accept the invitation to compare your daily game results and see each other's statistics.</p>
+        <p><a href="${loginUrl}">Log in to Polywordlot</a> to view and accept the invitation.</p>
+        <p>If you didn't expect this invitation, you can safely ignore this email.</p>
+      `,
+      text: `
+        Friend Invitation
+        
+        ${inviterEmail} has invited you to be friends on Polywordlot!
+        
+        Accept the invitation to compare your daily game results and see each other's statistics.
+        
+        Log in to Polywordlot to view and accept the invitation: ${loginUrl}
+        
+        If you didn't expect this invitation, you can safely ignore this email.
+      `,
+    };
+
+    logger.info('Sending friend invitation email', { to: email, from: fromEmail, inviterEmail });
+    const info = await transporter.sendMail(mailOptions);
+    logger.info('Friend invitation email sent successfully', { 
+      messageId: info.messageId, 
+      to: email 
+    });
+  } catch (error: any) {
+    logger.error('Failed to send friend invitation email', { error, email });
+    throw error;
+  }
+}
+

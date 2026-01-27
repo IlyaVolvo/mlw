@@ -71,12 +71,33 @@ async function initializeSchema() {
       )
     `);
 
+    // Create friends table (bidirectional relationship)
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS friends (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL,
+        friend_id INTEGER NOT NULL,
+        status VARCHAR(20) NOT NULL DEFAULT 'pending',
+        invited_by INTEGER NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (friend_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (invited_by) REFERENCES users(id) ON DELETE CASCADE,
+        UNIQUE(user_id, friend_id),
+        CHECK (user_id != friend_id)
+      )
+    `);
+
     // Create indexes
     await client.query('CREATE INDEX IF NOT EXISTS idx_games_user_date ON games(user_id, game_date)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_games_user_lang ON games(user_id, language, word_length)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_reset_tokens_token ON password_reset_tokens(token)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_reset_tokens_user ON password_reset_tokens(user_id)');
     await client.query('CREATE INDEX IF NOT EXISTS idx_user_preferences_user ON user_preferences(user_id)');
+    await client.query('CREATE INDEX IF NOT EXISTS idx_friends_user ON friends(user_id)');
+    await client.query('CREATE INDEX IF NOT EXISTS idx_friends_friend ON friends(friend_id)');
+    await client.query('CREATE INDEX IF NOT EXISTS idx_friends_status ON friends(status)');
 
     logger.info('Database schema initialized');
   } catch (error) {

@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import gamesRoutes from './routes/games.js';
+import friendsRoutes from './routes/friends.js';
 import pool from './db/database.js';
 import { query } from './db/database.js';
 import { logger } from './utils/logger.js';
@@ -55,6 +56,7 @@ app.get('/health', async (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/games', gamesRoutes);
+app.use('/api/friends', friendsRoutes);
 
 // Log all registered routes at startup
 const logRegisteredRoutes = () => {
@@ -77,6 +79,16 @@ const logRegisteredRoutes = () => {
   routes.push({ method: 'GET', path: '/api/games/completed' });
   routes.push({ method: 'POST', path: '/api/games/save' });
   routes.push({ method: 'GET', path: '/api/games/history' });
+  
+  // Friends routes
+  routes.push({ method: 'POST', path: '/api/friends/invite' });
+  routes.push({ method: 'GET', path: '/api/friends/invitations' });
+  routes.push({ method: 'POST', path: '/api/friends/accept' });
+  routes.push({ method: 'POST', path: '/api/friends/reject' });
+  routes.push({ method: 'GET', path: '/api/friends' });
+  routes.push({ method: 'DELETE', path: '/api/friends/:friendId' });
+  routes.push({ method: 'GET', path: '/api/friends/:friendId/today' });
+  routes.push({ method: 'GET', path: '/api/friends/:friendId/history' });
   
   logger.info('Registered routes', {
     environment: 'local',

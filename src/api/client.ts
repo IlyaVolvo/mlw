@@ -196,6 +196,57 @@ class ApiClient {
       body: JSON.stringify({ selectedLanguages }),
     });
   }
+
+  // Friends endpoints
+  async inviteFriend(email: string): Promise<{ message: string; friendId: number; wasRejected?: boolean }> {
+    return this.request<{ message: string; friendId: number }>('/friends/invite', {
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    });
+  }
+
+  async getFriendInvitations(): Promise<{ invitations: Array<{ id: number; friendId: number; friendEmail: string; invitedBy: number; createdAt: string }> }> {
+    return this.request<{ invitations: Array<{ id: number; friendId: number; friendEmail: string; invitedBy: number; createdAt: string }> }>('/friends/invitations');
+  }
+
+  async acceptFriendInvitation(friendId: number): Promise<{ message: string }> {
+    return this.request<{ message: string }>('/friends/accept', {
+      method: 'POST',
+      body: JSON.stringify({ friendId }),
+    });
+  }
+
+  async rejectFriendInvitation(friendId: number): Promise<{ message: string }> {
+    return this.request<{ message: string }>('/friends/reject', {
+      method: 'POST',
+      body: JSON.stringify({ friendId }),
+    });
+  }
+
+  async getFriends(): Promise<{ friends: Array<{ id: number; email: string; createdAt: string }>; hasNewFriend?: boolean }> {
+    return this.request<{ friends: Array<{ id: number; email: string; createdAt: string }>; hasNewFriend?: boolean }>('/friends');
+  }
+
+  async removeFriend(friendId: number): Promise<{ message: string }> {
+    return this.request<{ message: string }>(`/friends/${friendId}`, {
+      method: 'DELETE',
+    });
+  }
+
+  async getFriendToday(friendId: number, language?: string, wordLength?: number): Promise<{ game: any; attempts: number | null }> {
+    const queryParams = new URLSearchParams();
+    if (language) queryParams.append('language', language);
+    if (wordLength) queryParams.append('wordLength', wordLength.toString());
+    return this.request<{ game: any; attempts: number | null }>(`/friends/${friendId}/today?${queryParams.toString()}`);
+  }
+
+  async getFriendHistory(friendId: number, language?: string, wordLength?: number, limit?: number): Promise<{ games: any[] }> {
+    const queryParams = new URLSearchParams();
+    if (language) queryParams.append('language', language);
+    if (wordLength) queryParams.append('wordLength', wordLength.toString());
+    if (limit) queryParams.append('limit', limit.toString());
+    return this.request<{ games: any[] }>(`/friends/${friendId}/history?${queryParams.toString()}`);
+  }
 }
 
 export const apiClient = new ApiClient();

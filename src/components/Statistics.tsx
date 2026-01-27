@@ -14,6 +14,7 @@ import {
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
 import { LanguageSelector } from './LanguageSelector';
+import { Friends } from './Friends';
 import type { LanguageConfig } from '../types';
 
 ChartJS.register(
@@ -83,6 +84,39 @@ export const Statistics: React.FC<StatisticsProps> = ({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [showOptions, setShowOptions] = useState(false);
+  const [selectedFriendId, setSelectedFriendId] = useState<number | null>(null);
+  const [selectedFriendEmail, setSelectedFriendEmail] = useState<string | null>(null);
+  const [friendGames, setFriendGames] = useState<GameData[]>([]);
+  const [friendToday, setFriendToday] = useState<{ game: any; attempts: number | null } | null>(null);
+  const [loadingFriend, setLoadingFriend] = useState<boolean>(false);
+  const [showFriends, setShowFriends] = useState<boolean>(false);
+  const [hasPendingInvitations, setHasPendingInvitations] = useState<boolean>(false);
+  const [hasNewFriend, setHasNewFriend] = useState<boolean>(false);
+
+  // Load pending invitations to show red indicator
+  useEffect(() => {
+    const checkInvitations = async () => {
+      try {
+        const response = await apiClient.getFriendInvitations();
+        setHasPendingInvitations((response.invitations || []).length > 0);
+      } catch (err) {
+        console.error('Failed to load invitations', err);
+        setHasPendingInvitations(false);
+      }
+    };
+    checkInvitations();
+    // Check periodically for new invitations
+    const interval = setInterval(checkInvitations, 600000); // Check every 10 minutes
+    return () => clearInterval(interval);
+  }, []);
+
+  // Check for new friends when panel opens
+  useEffect(() => {
+    if (showFriends) {
+      // Clear new friend indicator when panel is opened
+      setHasNewFriend(false);
+    }
+  }, [showFriends]);
 
   useEffect(() => {
     const loadStatistics = async () => {
@@ -108,6 +142,48 @@ export const Statistics: React.FC<StatisticsProps> = ({
     loadStatistics();
   }, [userId, language, wordLength]);
 
+  // Load friend data when friend is selected
+  useEffect(() => {
+    const loadFriendData = async () => {
+      if (!selectedFriendId) {
+        setFriendGames([]);
+        setFriendToday(null);
+        return;
+      }
+
+      setLoadingFriend(true);
+      try {
+        // Load friend's history
+        const historyResponse = await apiClient.getFriendHistory(
+          selectedFriendId,
+          language,
+          wordLength,
+          10000
+        );
+        const filteredFriendGames: GameData[] = (historyResponse.games || []).filter(
+          (game: GameData) => !game.isRandomMode && game.isComplete
+        );
+        setFriendGames(filteredFriendGames);
+
+        // Load friend's today result
+        const todayResponse = await apiClient.getFriendToday(
+          selectedFriendId,
+          language,
+          wordLength
+        );
+        setFriendToday(todayResponse);
+      } catch (err) {
+        console.error('Failed to load friend data', err);
+        setFriendGames([]);
+        setFriendToday(null);
+      } finally {
+        setLoadingFriend(false);
+      }
+    };
+
+    loadFriendData();
+  }, [selectedFriendId, language, wordLength]);
+
   // Calculate attempts distribution (1-6 for wins, 7 for losses)
   const attemptsDistribution = useMemo(() => {
     const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
@@ -119,9 +195,22 @@ export const Statistics: React.FC<StatisticsProps> = ({
   }, [games]);
 
   // Helper function to get attempts count (1-6 for wins, 7 for losses)
+  // Must be defined before useMemo hooks that use it
   const getAttempts = (game: GameData): number => {
     return game.isWon ? game.guessesCount : 7;
   };
+
+  // Calculate friend's attempts distribution
+  const friendAttemptsDistribution = useMemo(() => {
+    const distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
+    if (friendGames && friendGames.length > 0) {
+      friendGames.forEach(game => {
+        const attempts = getAttempts(game);
+        distribution[attempts] = (distribution[attempts] || 0) + 1;
+      });
+    }
+    return distribution;
+  }, [friendGames]);
 
   // Running daily average (average attempts for each day)
   const runningDailyAverage = useMemo(() => {
@@ -152,7 +241,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
     });
     
     return averages;
-  }, [games]);
+  }, [games, getAttempts]);
 
   // Calendar weekly average
   const calendarWeeklyAverage = useMemo(() => {
@@ -305,6 +394,39 @@ export const Statistics: React.FC<StatisticsProps> = ({
     return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
   }
 
+  // Calculate friend's running daily average (must be before early returns)
+  const friendRunningDailyAverage = useMemo(() => {
+    if (!selectedFriendId || friendGames.length === 0) return [];
+    
+    const dailyData: Map<string, { total: number; count: number }> = new Map();
+    friendGames.forEach(game => {
+      const date = new Date(game.gameEnded || game.gameStarted).toISOString().split('T')[0];
+      const attempts = getAttempts(game);
+      const existing = dailyData.get(date) || { total: 0, count: 0 };
+      dailyData.set(date, {
+        total: existing.total + attempts,
+        count: existing.count + 1,
+      });
+    });
+    
+    const sortedDates = Array.from(dailyData.keys()).sort();
+    const averages: { date: string; average: number }[] = [];
+    let runningTotal = 0;
+    let runningCount = 0;
+    
+    sortedDates.forEach(date => {
+      const dayData = dailyData.get(date)!;
+      runningTotal += dayData.total;
+      runningCount += dayData.count;
+      averages.push({
+        date,
+        average: runningCount > 0 ? runningTotal / runningCount : 0,
+      });
+    });
+    
+    return averages;
+  }, [friendGames, selectedFriendId]);
+
   const handleLanguageChange = (newLanguage: string) => {
     const langConfig = availableLanguages.find(l => l.code === newLanguage);
     if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
@@ -335,16 +457,35 @@ export const Statistics: React.FC<StatisticsProps> = ({
     totalGames > 0 ? parseFloat(((attemptsDistribution[7] / totalGames) * 100).toFixed(1)) : 0,
   ];
   
+  // Calculate friend's distribution percentages
+  const friendTotalGames = Object.values(friendAttemptsDistribution).reduce((sum, count) => sum + count, 0);
+  const friendAttemptsDistributionPercentages = selectedFriendId && friendTotalGames > 0 ? [
+    parseFloat(((friendAttemptsDistribution[1] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[2] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[3] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[4] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[5] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[6] / friendTotalGames) * 100).toFixed(1)),
+    parseFloat(((friendAttemptsDistribution[7] / friendTotalGames) * 100).toFixed(1)),
+  ] : null;
+
   const attemptsDistributionChartData = {
     labels: ['1', '2', '3', '4', '5', '6', 'Loss'],
     datasets: [
       {
-        label: 'Percentage (%)',
+        label: 'You',
         data: attemptsDistributionPercentages,
         backgroundColor: 'rgba(102, 126, 234, 0.6)',
         borderColor: 'rgba(102, 126, 234, 1)',
         borderWidth: 1,
       },
+      ...(selectedFriendId && friendAttemptsDistributionPercentages ? [{
+        label: selectedFriendEmail || 'Friend',
+        data: friendAttemptsDistributionPercentages,
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      }] : []),
     ],
   };
 
@@ -398,7 +539,9 @@ export const Statistics: React.FC<StatisticsProps> = ({
 
   return (
     <div className="statistics-container">
-      <div className="header-section">
+      <div className="statistics-layout">
+        <div className="statistics-main">
+          <div className="header-section">
         <h1>
           <span>PolyWordlot</span>
           <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
@@ -407,19 +550,26 @@ export const Statistics: React.FC<StatisticsProps> = ({
           <div className="header-tabs-row">
             <div className="view-tabs">
               <button
+                type="button"
                 className={`view-tab ${view === 'game' ? 'active' : ''}`}
                 onClick={() => onViewChange('game')}
               >
                 Game
               </button>
               <button
+                type="button"
                 className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
-                onClick={() => onViewChange('statistics')}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onViewChange('statistics');
+                }}
               >
                 Statistics
               </button>
             </div>
             <button
+              type="button"
               className={`options-icon-button ${showOptions ? 'active' : ''}`}
               onClick={() => setShowOptions(!showOptions)}
               title="Options"
@@ -459,6 +609,16 @@ export const Statistics: React.FC<StatisticsProps> = ({
             ))}
           </select>
         </div>
+        
+        <button
+          type="button"
+          className={`friends-header-button ${showFriends ? 'active' : ''} ${hasPendingInvitations ? 'has-invitations' : ''} ${!hasPendingInvitations && hasNewFriend ? 'has-new-friend' : ''}`}
+          onClick={() => setShowFriends(!showFriends)}
+          title="Friends"
+        >
+          <span>Friends</span>
+          <span className={`friends-arrow ${showFriends ? 'open' : ''}`}>›</span>
+        </button>
       </div>
 
 
@@ -531,7 +691,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
                       plugins: {
                         ...baseOptions.plugins,
                         legend: {
-                          display: false,
+                          display: selectedFriendId && friendAttemptsDistributionPercentages ? true : false,
                         },
                       },
                       scales: {
@@ -550,21 +710,30 @@ export const Statistics: React.FC<StatisticsProps> = ({
           })()}
 
           {statisticType === 'running-daily' && (
-            runningDailyAverage.length > 0 ? (
+            runningDailyAverage.length > 0 || friendRunningDailyAverage.length > 0 ? (
               <div style={{ height: '600px', position: 'relative' }}>
                 <Line
                   data={{
                     labels: runningDailyAverage.map(d => d.date),
                     datasets: [
                       {
-                        label: 'Average Attempts',
+                        label: 'You',
                         data: runningDailyAverage.map(d => d.average),
                         borderColor: 'rgba(102, 126, 234, 1)',
                         backgroundColor: 'rgba(102, 126, 234, 0.1)',
                       },
+                      ...(selectedFriendId && friendRunningDailyAverage.length > 0 ? [{
+                        label: selectedFriendEmail || 'Friend',
+                        data: friendRunningDailyAverage.map(d => d.average),
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                      }] : []),
                     ],
                   }}
-                  options={createChartOptions<'line'>(runningDailyAverage.map(d => d.average))}
+                  options={createChartOptions<'line'>([
+                    ...runningDailyAverage.map(d => d.average),
+                    ...(selectedFriendId ? friendRunningDailyAverage.map(d => d.average) : [])
+                  ])}
                 />
               </div>
             ) : (
@@ -652,7 +821,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
                     labels: twoWeekRunningAverage.map(d => d.date),
                     datasets: [
                       {
-                        label: 'Average Attempts',
+                        label: 'You',
                         data: twoWeekRunningAverage.map(d => d.average),
                         borderColor: 'rgba(102, 126, 234, 1)',
                         backgroundColor: 'rgba(102, 126, 234, 0.1)',
@@ -675,7 +844,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
                     labels: fourWeekRunningAverage.map(d => d.date),
                     datasets: [
                       {
-                        label: 'Average Attempts',
+                        label: 'You',
                         data: fourWeekRunningAverage.map(d => d.average),
                         borderColor: 'rgba(102, 126, 234, 1)',
                         backgroundColor: 'rgba(102, 126, 234, 0.1)',
@@ -691,12 +860,59 @@ export const Statistics: React.FC<StatisticsProps> = ({
           )}
         </div>
       </div>
+      
       <LanguageSelector
         allAvailableLanguages={allAvailableLanguages}
         isOpen={showOptions}
         onClose={() => setShowOptions(false)}
         onSelectionChange={onLanguageSelectionChange}
       />
+      </div>
+
+        {showFriends && (
+          <div className="statistics-sidebar">
+            {(() => {
+              try {
+                return (
+                  <Friends
+                    onFriendSelect={(friendId, friendEmail) => {
+                      setSelectedFriendId(friendId);
+                      setSelectedFriendEmail(friendEmail || null);
+                    }}
+                    selectedFriendId={selectedFriendId}
+                    isOpen={showFriends}
+                    onInvitationsChange={setHasPendingInvitations}
+                    onNewFriendChange={setHasNewFriend}
+                  />
+                );
+              } catch (err) {
+                console.error('Error rendering Friends component', err);
+                return <div className="error">Error loading friends</div>;
+              }
+            })()}
+            
+            {selectedFriendId && friendToday && (
+              <div className="friend-today-section">
+                <h4>Friend's Today</h4>
+                {loadingFriend ? (
+                  <div>Loading...</div>
+                ) : friendToday.attempts !== null ? (
+                  <div className="friend-today-result">
+                    <div className="friend-attempts">
+                      {friendToday.attempts} {friendToday.attempts === 1 ? 'attempt' : 'attempts'}
+                    </div>
+                    {friendToday.game && friendToday.game.isWon && (
+                      <div className="friend-won">✓ Won</div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="friend-no-game">No game today yet</div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
