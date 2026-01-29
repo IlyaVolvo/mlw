@@ -1082,16 +1082,14 @@ export const Game: React.FC<GameProps> = ({
                 Statistics
               </button>
             </div>
-            {!randomMode && (
-              <select
-                className="mode-selector-compact"
-                value={randomMode ? 'training' : 'daily'}
-                onChange={(e) => handleRandomModeChange(e.target.value === 'training')}
-              >
-                <option value="daily">Daily</option>
-                <option value="training">Training</option>
-              </select>
-            )}
+            <select
+              className="mode-selector-compact"
+              value={randomMode ? 'training' : 'daily'}
+              onChange={(e) => handleRandomModeChange(e.target.value === 'training')}
+            >
+              <option value="daily">Daily</option>
+              <option value="training">Training</option>
+            </select>
             <div className="options-button-wrapper">
               <div className="options-tooltip">Mark one or more languages you'd like to be in language selection menu</div>
               <button
