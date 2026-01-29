@@ -459,7 +459,7 @@ export const Game: React.FC<GameProps> = ({
           return;
         }
         
-        // No existing game, start a new one
+        // No existing game, start a new one (DB record created on first word submitted)
         target = getDailyWord(dictionary, playDate);
         const newState: GameState = {
           guesses: [],
@@ -476,18 +476,6 @@ export const Game: React.FC<GameProps> = ({
         setGameState(newState);
         setTargetWord(target);
         setLetterStates(new Map());
-        
-        // Save game to DB (only for Daily mode)
-        await apiClient.saveGame({
-          language,
-          wordLength,
-          targetWord: target,
-          gameDate: playDate,
-          isRandomMode: false,
-          guesses: [],
-          isComplete: false,
-          isWon: false,
-        });
       }
     } catch (err) {
       console.error('Failed to start game:', err);
@@ -535,15 +523,12 @@ export const Game: React.FC<GameProps> = ({
     // If not in playing mode and we have a dictionary, start the game first
     if (!isPlayingMode && dictionary && !gameState) {
       await handleStartGame();
-      // After game starts, the gameState will be set, so we can process the key
-      // Use a small timeout to ensure state is updated
+      // After game starts, the gameState will be set, so we can process the key (no API save until first word)
       setTimeout(() => {
         setGameState((currentState) => {
           if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
             const newGuess = currentState.currentGuess + normalizedKey;
-            const updatedState = { ...currentState, currentGuess: newGuess };
-            saveGameToApi(updatedState);
-            return updatedState;
+            return { ...currentState, currentGuess: newGuess };
           }
           return currentState;
         });
@@ -555,11 +540,9 @@ export const Game: React.FC<GameProps> = ({
 
     if (gameState.currentGuess.length < wordLength) {
       const newGuess = gameState.currentGuess + normalizedKey;
-      const updatedState = { ...gameState, currentGuess: newGuess };
-      setGameState(updatedState);
-      saveGameToApi(updatedState);
+      setGameState({ ...gameState, currentGuess: newGuess });
     }
-  }, [gameState, wordLength, dictionary, language, saveGameToApi, isPlayingMode, handleStartGame]);
+  }, [gameState, wordLength, dictionary, language, isPlayingMode, handleStartGame]);
 
   const handleEnter = useCallback(() => {
     if (!gameState || gameState.isComplete || !dictionary) return;
@@ -608,11 +591,9 @@ export const Game: React.FC<GameProps> = ({
 
     if (gameState.currentGuess.length > 0) {
       const newGuess = gameState.currentGuess.slice(0, -1);
-      const updatedState = { ...gameState, currentGuess: newGuess };
-      setGameState(updatedState);
-      saveGameToApi(updatedState);
+      setGameState({ ...gameState, currentGuess: newGuess });
     }
-  }, [gameState, saveGameToApi]);
+  }, [gameState]);
 
   const handleLanguageChange = async (newLanguage: string) => {
     // Update word length to first supported length if current is not supported
@@ -987,15 +968,13 @@ export const Game: React.FC<GameProps> = ({
       if (!gameState && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
         if (!isPlayingMode && dictionary) {
           await handleStartGame();
-          // After game starts, process the key
+          // After game starts, process the key (no API save until first word)
           setTimeout(() => {
             setGameState((currentState) => {
               if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
                 const normalizedKey = e.key.toLowerCase();
                 const newGuess = currentState.currentGuess + normalizedKey;
-                const updatedState = { ...currentState, currentGuess: newGuess };
-                saveGameToApi(updatedState);
-                return updatedState;
+                return { ...currentState, currentGuess: newGuess };
               }
               return currentState;
             });
@@ -1017,7 +996,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, isPlayingMode, dictionary, wordLength, language, handleEnter, handleBackspace, handleKeyPress, handleStartGame, saveGameToApi]);
+  }, [loading, gameState, isPlayingMode, dictionary, wordLength, language, handleEnter, handleBackspace, handleKeyPress, handleStartGame]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
