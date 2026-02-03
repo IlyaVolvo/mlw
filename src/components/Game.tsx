@@ -155,18 +155,23 @@ export const Game: React.FC<GameProps> = ({
 
   // Initialize component - just load dictionary and normalization, don't create game
   useEffect(() => {
-    if (initializedRef.current) return;
-    
+    // Re-mount (e.g. React Strict Mode): ref persists but state was reset → loading would stay true
+    if (initializedRef.current) {
+      setLoading(false);
+      return;
+    }
+
+    let cancelled = false;
     const initialize = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        // Load dictionary and normalization in parallel
         const [dict] = await Promise.all([
           loadDictionary(language, wordLength),
           loadNormalization(language),
         ]);
+        if (cancelled) return;
         if (!dict) {
           setError(`Failed to load dictionary for ${language}-${wordLength}`);
           setLoading(false);
@@ -174,20 +179,19 @@ export const Game: React.FC<GameProps> = ({
         }
         setDictionary(dict);
         dictionaryForRef.current = { language, wordLength };
-        // Normalization is cached in characterNormalization module, no need to store it
         initializedRef.current = true;
-        // On initial load/refresh, always default to today (don't load stored dates)
         const today = formatDate();
         setSelectedPlayDate(today);
-        firstSettingsChangeRef.current = true; // Mark that this is the first change
+        firstSettingsChangeRef.current = true;
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to initialize');
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Failed to initialize');
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     initialize();
+    return () => { cancelled = true; };
   }, [userId, language, wordLength]);
 
   // Store selected date per (language, wordLength) combination
