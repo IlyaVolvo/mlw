@@ -106,6 +106,27 @@ export const Game: React.FC<GameProps> = ({
     setLetterStates(states);
   }, []);
 
+  /** Apply a loaded/restored game (has guesses); updates board, target, and keyboard letter states. */
+  const applyLoadedGame = useCallback((state: GameState, target: string) => {
+    setGameState(state);
+    setTargetWord(target);
+    updateLetterStates(state);
+  }, [updateLetterStates]);
+
+  /** Apply a new or reset game (no guesses yet); clears keyboard letter states. */
+  const applyNewOrResetGame = useCallback((state: GameState, target: string) => {
+    setGameState(state);
+    setTargetWord(target);
+    setLetterStates(new Map());
+  }, []);
+
+  /** Clear game display (no game for this day, or leaving Training). */
+  const clearGameDisplay = useCallback(() => {
+    setGameState(null);
+    setTargetWord('');
+    setLetterStates(new Map());
+  }, []);
+
   // Handle historicalDate prop (legacy, might be removed)
   useEffect(() => {
     if (historicalDate && (!gameState || gameState.isComplete)) {
@@ -275,9 +296,7 @@ export const Game: React.FC<GameProps> = ({
    */
   const resolveStateForSelectedDay = useCallback(async () => {
     if (randomMode) {
-      setGameState(null);
-      setTargetWord('');
-      setLetterStates(new Map());
+      clearGameDisplay();
       return;
     }
     if (!dictionary || loading) return;
@@ -346,9 +365,7 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
           wordSeed: undefined,
         };
-        setGameState(state);
-        setTargetWord(target);
-        updateLetterStates(state);
+        applyLoadedGame(state, target);
         return;
       }
     }
@@ -377,9 +394,7 @@ export const Game: React.FC<GameProps> = ({
             isRandomMode: false,
             wordSeed: undefined,
           };
-          setGameState(resetState);
-          setTargetWord(expectedTarget);
-          setLetterStates(new Map());
+          applyNewOrResetGame(resetState, expectedTarget);
           await apiClient.saveGame({
             language,
             wordLength,
@@ -424,9 +439,7 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
           wordSeed: undefined,
         };
-        setGameState(currentGame);
-        setTargetWord(target);
-        updateLetterStates(currentGame);
+        applyLoadedGame(currentGame, target);
         gameCacheUtils.updateCachedGame(language, wordLength, gameDate, {
           id: currentResponse.game.id,
           language: currentResponse.game.language,
@@ -468,9 +481,7 @@ export const Game: React.FC<GameProps> = ({
           isRandomMode: false,
           wordSeed: undefined,
         };
-        setGameState(completedGame);
-        setTargetWord(target);
-        updateLetterStates(completedGame);
+        applyLoadedGame(completedGame, target);
         gameCacheUtils.updateCachedGame(language, wordLength, completedResponse.game.game_date, {
           id: completedResponse.game.id,
           language: completedResponse.game.language,
@@ -489,16 +500,12 @@ export const Game: React.FC<GameProps> = ({
         return;
       }
 
-      setGameState(null);
-      setTargetWord('');
-      setLetterStates(new Map());
+      clearGameDisplay();
     } catch (err) {
       console.error('Failed to load game:', err);
-      setGameState(null);
-      setTargetWord('');
-      setLetterStates(new Map());
+      clearGameDisplay();
     }
-  }, [language, wordLength, selectedPlayDate, randomMode, dictionary, loading, updateLetterStates]);
+  }, [language, wordLength, selectedPlayDate, randomMode, dictionary, loading, applyLoadedGame, applyNewOrResetGame, clearGameDisplay]);
 
   /** Start game; optionally pass first key so it's applied immediately. Returns true if first key was applied. */
   const handleStartGame = useCallback(async (optionalFirstKey?: string): Promise<boolean> => {
@@ -525,10 +532,8 @@ export const Game: React.FC<GameProps> = ({
           wordSeed: wordSeed,
         };
 
-        setGameState(newState);
-        setTargetWord(target);
-        setLetterStates(new Map());
-        
+        applyNewOrResetGame(newState, target);
+
         // Don't save Training mode games to DB
         return !!optionalFirstKey;
       } else {
@@ -558,9 +563,7 @@ export const Game: React.FC<GameProps> = ({
               isRandomMode: false,
               wordSeed: undefined,
             };
-            setGameState(resetState);
-            setTargetWord(expectedTarget);
-            setLetterStates(new Map());
+            applyNewOrResetGame(resetState, expectedTarget);
             await apiClient.saveGame({
               language,
               wordLength,
@@ -593,12 +596,10 @@ export const Game: React.FC<GameProps> = ({
             isRandomMode: false,
             wordSeed: undefined,
           };
-          setGameState(currentGame);
-          setTargetWord(target);
-          updateLetterStates(currentGame); // Update letter states from loaded guesses
+          applyLoadedGame(currentGame, target);
           return false; // key not applied, caller will setTimeout to add it
         }
-        
+
         // Check for completed game
         const completedResponse = await apiClient.getCompletedGame({
           language,
@@ -624,12 +625,10 @@ export const Game: React.FC<GameProps> = ({
             isRandomMode: false,
             wordSeed: undefined,
           };
-          setGameState(completedGame);
-          setTargetWord(target);
-          updateLetterStates(completedGame); // Update letter states from loaded guesses
+          applyLoadedGame(completedGame, target);
           return false;
         }
-        
+
         // No existing game, start a new one (DB record created on first word submitted); apply first key
         target = getDailyWord(dictionary, playDate);
         const newState: GameState = {
@@ -644,9 +643,7 @@ export const Game: React.FC<GameProps> = ({
           wordSeed: undefined,
         };
 
-        setGameState(newState);
-        setTargetWord(target);
-        setLetterStates(new Map());
+        applyNewOrResetGame(newState, target);
         return !!optionalFirstKey;
       }
     } catch (err) {
@@ -654,7 +651,7 @@ export const Game: React.FC<GameProps> = ({
       setError('Failed to start game');
       return false;
     }
-  }, [dictionary, language, wordLength, randomMode, selectedPlayDate, updateLetterStates]);
+  }, [dictionary, language, wordLength, randomMode, selectedPlayDate, applyLoadedGame, applyNewOrResetGame]);
 
   // Load games for calendar when it opens
   useEffect(() => {
@@ -905,10 +902,9 @@ export const Game: React.FC<GameProps> = ({
       setSelectedPlayDate(formatDate());
     } else {
       setSelectedPlayDate('');
-      setGameState(null);
-      setTargetWord('');
+      clearGameDisplay();
     }
-  }, []);
+  }, [clearGameDisplay]);
 
   // Handle keyboard events
   useEffect(() => {
