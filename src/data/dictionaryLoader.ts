@@ -27,20 +27,27 @@ export interface KeyboardActions {
 interface KeyboardConfig {
   layout: string[][];
   actions?: KeyboardActions;
+  /** If true, letters are entered right-to-left (e.g. Hebrew). Defaults to false when missing. */
+  rtl?: boolean;
+  /** Display name for the language selector menu (e.g. "Español" or "Español (MX)"). */
+  menu?: string;
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
+const keyboardRtlCache = new Map<string, boolean>();
+const keyboardMenuCache = new Map<string, string>();
 
 /**
- * Structure to map locale codes to language names
- * Format: { [locale]: { language: string, name: string } }
+ * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
+ * Menu display name comes from each locale's keyboard.json "menu" field.
  */
-const LOCALE_TO_LANGUAGE: Record<string, { language: string; name: string; locale: string }> = {
-  'en': { language: 'English', name: 'English', locale: 'en' },
-  'ru': { language: 'Russian', name: 'Русский', locale: 'ru' },
-  'fr': { language: 'French', name: 'Français', locale: 'fr' },
-  'es': { language: 'Spanish', name: 'Español', locale: 'es' },
-  'de': { language: 'German', name: 'Deutsch', locale: 'de' },
+const LOCALE_PATHS: Record<string, { language: string; locale: string }> = {
+  en: { language: 'English', locale: 'en' },
+  ru: { language: 'Russian', locale: 'ru' },
+  fr: { language: 'French', locale: 'fr' },
+  es: { language: 'Spanish', locale: 'es' },
+  de: { language: 'German', locale: 'de' },
+  he: { language: 'Hebrew', locale: 'he' },
 };
 
 /**
@@ -96,8 +103,28 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
 }
 
 /**
- * Detects available languages by scanning the directory structure
- * Looks for Language/Locale directories with answer files
+ * Fetches the "menu" display name from a locale's keyboard.json.
+ * languageDir is e.g. "Spanish/es". Returns fallback if file missing or menu absent.
+ */
+async function loadMenuFromKeyboard(languageDir: string, fallback: string): Promise<string> {
+  try {
+    const response = await fetch(`/dict/${languageDir}/keyboard.json`);
+    if (!response.ok || response.headers.get('content-type')?.includes('text/html')) {
+      return fallback;
+    }
+    const data = await response.json();
+    if (data && typeof data === 'object' && typeof data.menu === 'string' && data.menu.trim()) {
+      return data.menu.trim();
+    }
+    return fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+/**
+ * Detects available languages by scanning the directory structure.
+ * Menu display name is read from each locale's keyboard.json "menu" field.
  */
 async function discoverLanguages(): Promise<LanguageConfig[]> {
   // Check cache first
@@ -108,16 +135,13 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
   const configs: LanguageConfig[] = [];
 
   console.log('Processing language directories:');
-  // Try each known locale
-  for (const [locale, info] of Object.entries(LOCALE_TO_LANGUAGE)) {
-    // Check if this language/locale has answer files
-    const languageDir = `${info.language}/${locale}`;
+  for (const [locale, info] of Object.entries(LOCALE_PATHS)) {
+    const languageDir = `${info.language}/${info.locale}`;
     console.log(`  - Checking directory: ${languageDir}`);
-    
-    // Check for answer files (answers-4.txt, answers-5.txt, etc.)
+
     const possibleLengths = [4, 5, 6, 7, 8, 9, 10];
     const supportedLengths: number[] = [];
-    
+
     for (const length of possibleLengths) {
       const answerPath = `/dict/${languageDir}/answers-${length}.txt`;
       try {
@@ -125,24 +149,20 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
         if (response.ok && !response.headers.get('content-type')?.includes('text/html')) {
           supportedLengths.push(length);
         }
-      } catch (error) {
+      } catch {
         // File doesn't exist
       }
     }
-    
-    // Only include languages that have at least one answer file
+
     if (supportedLengths.length > 0) {
-      console.log(`    ✓ Found ${languageDir}: word lengths [${supportedLengths.join(', ')}]`);
-      // Format language name: if there's only one locale for this language, use language name
-      // Otherwise use language-locale format
-      const name = info.name; // For now, just use the provided name
-      
+      const name = await loadMenuFromKeyboard(languageDir, info.language);
+      console.log(`    ✓ Found ${languageDir}: ${name}, word lengths [${supportedLengths.join(', ')}]`);
+
       const config: LanguageConfig = {
         code: locale,
         name,
         supportedLengths,
       };
-      
       configs.push(config);
       languageConfigsCache.set(locale, config);
     } else {
@@ -150,7 +170,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
     }
   }
 
-  console.log(`Loaded ${configs.length} language(s) with answer files:`, configs.map(c => `${c.name} (${c.code}): [${c.supportedLengths.join(', ')}]`));
+  console.log(`Loaded ${configs.length} language(s):`, configs.map(c => `${c.name} (${c.code}): [${c.supportedLengths.join(', ')}]`));
   return configs;
 }
 
@@ -158,7 +178,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
  * Gets the directory path for a language/locale
  */
 export function getLanguageDir(locale: string): string | null {
-  const info = LOCALE_TO_LANGUAGE[locale];
+  const info = LOCALE_PATHS[locale];
   if (!info) return null;
   return `${info.language}/${info.locale}`;
 }
@@ -350,8 +370,8 @@ export async function getLanguageConfig(code: string): Promise<LanguageConfig | 
  * Supports both old format (2D array) and new format (object with layout and actions)
  */
 export async function loadKeyboard(language: string): Promise<string[][] | null> {
-  // Check cache first
-  if (keyboardCache.has(language)) {
+  // Use cache only when we have both layout and RTL (so RTL is always in sync with layout)
+  if (keyboardCache.has(language) && keyboardRtlCache.has(language)) {
     return keyboardCache.get(language)!;
   }
 
@@ -363,45 +383,58 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
   const keyboardPath = `/dict/${languageDir}/keyboard.json`;
 
   try {
-    const response = await fetch(keyboardPath);
-    
+    const response = await fetch(keyboardPath, { cache: 'no-store' });
+
     if (response.status === 404 || !response.ok) {
-      // Keyboard not found - return null to use default English keyboard
       return null;
     }
-    
+
     const contentType = response.headers.get('content-type') || '';
     if (contentType.includes('text/html')) {
-      // File doesn't exist
       return null;
     }
-    
+
     const keyboardData = await response.json();
-    
-    // Handle new format: { layout: [...], actions: {...} }
+
+    // Handle object format: { layout: [...], actions?, rtl?, menu? }
     if (keyboardData && typeof keyboardData === 'object' && 'layout' in keyboardData) {
       const config = keyboardData as KeyboardConfig;
       if (Array.isArray(config.layout) && config.layout.every(row => Array.isArray(row))) {
         keyboardCache.set(language, config.layout);
-        // Cache actions if provided
         if (config.actions) {
           keyboardActionsCache.set(language, config.actions);
+        }
+        keyboardRtlCache.set(language, config.rtl === true);
+        if (typeof config.menu === 'string' && config.menu.trim()) {
+          keyboardMenuCache.set(language, config.menu.trim());
         }
         return config.layout;
       }
     }
-    
-    // Handle old format: 2D array
+
+    // Handle legacy format: 2D array only (default LTR, no menu)
     if (Array.isArray(keyboardData) && keyboardData.every(row => Array.isArray(row))) {
       keyboardCache.set(language, keyboardData);
+      keyboardRtlCache.set(language, false);
       return keyboardData;
     }
-    
+
     return null;
   } catch (error) {
-    // File doesn't exist or error occurred - return null to use default
     return null;
   }
+}
+
+/**
+ * Returns whether the keyboard for this language uses right-to-left letter entry.
+ * Loaded once at startup with the keyboard layout and cached; does not change during the game.
+ */
+export async function getKeyboardRtl(language: string): Promise<boolean> {
+  if (keyboardRtlCache.has(language)) {
+    return keyboardRtlCache.get(language)!;
+  }
+  await loadKeyboard(language);
+  return keyboardRtlCache.get(language) ?? false;
 }
 
 /**

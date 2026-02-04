@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary } from '../data/dictionaryLoader';
+import { loadDictionary, getKeyboardRtl } from '../data/dictionaryLoader';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
 import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
@@ -59,6 +59,7 @@ export const Game: React.FC<GameProps> = ({
   /** Ref set when dictionary is loaded so load effect only runs for current language/wordLength */
   const dictionaryForRef = useRef<{ language: string; wordLength: number } | null>(null);
   const [selectedPlayDate, setSelectedPlayDate] = useState<string>('');
+  const [keyboardRtl, setKeyboardRtl] = useState<boolean>(false);
   const [shakeRowIndex, setShakeRowIndex] = useState<number | null>(null);
   const [showOptions, setShowOptions] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -149,6 +150,15 @@ export const Game: React.FC<GameProps> = ({
     };
     loadDict();
   }, [language, wordLength]);
+
+  // Load RTL once per language from keyboard.json (static for the session)
+  useEffect(() => {
+    let cancelled = false;
+    getKeyboardRtl(language).then((rtl) => {
+      if (!cancelled) setKeyboardRtl(rtl);
+    });
+    return () => { cancelled = true; };
+  }, [language]);
 
   // Track if this is the first settings change after initialization
   const firstSettingsChangeRef = useRef(true);
@@ -697,11 +707,11 @@ export const Game: React.FC<GameProps> = ({
     if (needStart) {
       const keyApplied = await handleStartGame(normalizedKey);
       if (!keyApplied) {
-        // Daily mode: game started but key not in state (e.g. loaded existing game) — add key in next tick
         setTimeout(() => {
           setGameState((currentState) => {
             if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
-              return { ...currentState, currentGuess: currentState.currentGuess + normalizedKey };
+              const next = keyboardRtl ? normalizedKey + currentState.currentGuess : currentState.currentGuess + normalizedKey;
+              return { ...currentState, currentGuess: next };
             }
             return currentState;
           });
@@ -713,15 +723,17 @@ export const Game: React.FC<GameProps> = ({
     if (!gameState || gameState.isComplete || !dictionary) return;
 
     if (gameState.currentGuess.length < wordLength) {
-      const newGuess = gameState.currentGuess + normalizedKey;
+      const newGuess = keyboardRtl ? normalizedKey + gameState.currentGuess : gameState.currentGuess + normalizedKey;
       setGameState({ ...gameState, currentGuess: newGuess });
     }
-  }, [gameState, wordLength, dictionary, language, randomMode, handleStartGame]);
+  }, [gameState, wordLength, dictionary, language, randomMode, keyboardRtl, handleStartGame]);
 
   const handleEnter = useCallback(() => {
     if (!gameState || gameState.isComplete || !dictionary) return;
 
-    const guess = gameState.currentGuess.toLowerCase().trim();
+    // RTL: word to check = letters from highest to lowest index (reverse of typing order)
+    const rawGuess = keyboardRtl ? [...gameState.currentGuess].reverse().join('') : gameState.currentGuess;
+    const guess = rawGuess.toLowerCase().trim();
     
     if (guess.length !== wordLength) {
       // Show error - word not long enough
@@ -758,16 +770,16 @@ export const Game: React.FC<GameProps> = ({
     setGameState(updatedState);
     saveGameToApi(updatedState);
     updateLetterStates(updatedState);
-  }, [gameState, dictionary, wordLength, targetWord, language, saveGameToApi, updateLetterStates]);
+  }, [gameState, dictionary, wordLength, targetWord, language, keyboardRtl, saveGameToApi, updateLetterStates]);
 
   const handleBackspace = useCallback(() => {
     if (!gameState || gameState.isComplete) return;
 
     if (gameState.currentGuess.length > 0) {
-      const newGuess = gameState.currentGuess.slice(0, -1);
+      const newGuess = keyboardRtl ? gameState.currentGuess.slice(1) : gameState.currentGuess.slice(0, -1);
       setGameState({ ...gameState, currentGuess: newGuess });
     }
-  }, [gameState]);
+  }, [gameState, keyboardRtl]);
 
   const handleLanguageChange = async (newLanguage: string) => {
     const langConfig = availableLanguages.find(l => l.code === newLanguage);
@@ -924,7 +936,8 @@ export const Game: React.FC<GameProps> = ({
           setTimeout(() => {
             setGameState((currentState) => {
               if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
-                return { ...currentState, currentGuess: currentState.currentGuess + normalizedKey };
+                const next = keyboardRtl ? normalizedKey + currentState.currentGuess : currentState.currentGuess + normalizedKey;
+                return { ...currentState, currentGuess: next };
               }
               return currentState;
             });
@@ -946,7 +959,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, randomMode, dictionary, wordLength, language, handleEnter, handleBackspace, handleKeyPress, handleStartGame]);
+  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -1130,6 +1143,7 @@ export const Game: React.FC<GameProps> = ({
             isComplete={gameState.isComplete}
             isWon={gameState.isWon}
             shakeRowIndex={shakeRowIndex}
+            rtl={keyboardRtl}
           />
           {gameState.isComplete && (
             <>
