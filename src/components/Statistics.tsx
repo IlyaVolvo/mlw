@@ -14,6 +14,7 @@ import {
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
 import { LanguageSelector } from './LanguageSelector';
+import { LanguageDropdown } from './LanguageDropdown';
 import type { LanguageConfig } from '../types';
 
 ChartJS.register(
@@ -435,16 +436,11 @@ export const Statistics: React.FC<StatisticsProps> = ({
       
       <div className="stats-filters">
         <div className="stat-filter-group">
-          <select
+          <LanguageDropdown
+            availableLanguages={availableLanguages}
             value={language}
-            onChange={(e) => handleLanguageChange(e.target.value)}
-          >
-            {availableLanguages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
+            onChange={handleLanguageChange}
+          />
         </div>
         
         <div className="stat-filter-group">

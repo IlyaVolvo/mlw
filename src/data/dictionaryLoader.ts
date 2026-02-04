@@ -31,6 +31,8 @@ interface KeyboardConfig {
   rtl?: boolean;
   /** Display name for the language selector menu (e.g. "Español" or "Español (MX)"). */
   menu?: string;
+  /** Flag emoji for the language (e.g. "🇪🇸"); shown in selector. */
+  flag?: string;
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
@@ -39,7 +41,7 @@ const keyboardMenuCache = new Map<string, string>();
 
 /**
  * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
- * Menu display name comes from each locale's keyboard.json "menu" field.
+ * Menu display name comes from each locale's language.json "menu" field.
  */
 const LOCALE_PATHS: Record<string, { language: string; locale: string }> = {
   en: { language: 'English', locale: 'en' },
@@ -103,28 +105,32 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
 }
 
 /**
- * Fetches the "menu" display name from a locale's keyboard.json.
- * languageDir is e.g. "Spanish/es". Returns fallback if file missing or menu absent.
+ * Fetches menu and flag from a locale's language.json.
+ * languageDir is e.g. "Spanish/es". Returns menu (fallback if missing) and optional flag.
  */
-async function loadMenuFromKeyboard(languageDir: string, fallback: string): Promise<string> {
+async function loadLanguageMeta(
+  languageDir: string,
+  fallbackName: string
+): Promise<{ menu: string; flag?: string }> {
   try {
-    const response = await fetch(`/dict/${languageDir}/keyboard.json`);
+    const response = await fetch(`/dict/${languageDir}/language.json`);
     if (!response.ok || response.headers.get('content-type')?.includes('text/html')) {
-      return fallback;
+      return { menu: fallbackName };
     }
     const data = await response.json();
-    if (data && typeof data === 'object' && typeof data.menu === 'string' && data.menu.trim()) {
-      return data.menu.trim();
-    }
-    return fallback;
+    if (!data || typeof data !== 'object') return { menu: fallbackName };
+    const menu =
+      typeof data.menu === 'string' && data.menu.trim() ? data.menu.trim() : fallbackName;
+    const flag = typeof data.flag === 'string' && data.flag.trim() ? data.flag.trim() : undefined;
+    return { menu, flag };
   } catch {
-    return fallback;
+    return { menu: fallbackName };
   }
 }
 
 /**
  * Detects available languages by scanning the directory structure.
- * Menu display name is read from each locale's keyboard.json "menu" field.
+ * Menu display name is read from each locale's language.json "menu" field.
  */
 async function discoverLanguages(): Promise<LanguageConfig[]> {
   // Check cache first
@@ -155,12 +161,13 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
     }
 
     if (supportedLengths.length > 0) {
-      const name = await loadMenuFromKeyboard(languageDir, info.language);
+      const { menu: name, flag } = await loadLanguageMeta(languageDir, info.language);
       console.log(`    ✓ Found ${languageDir}: ${name}, word lengths [${supportedLengths.join(', ')}]`);
 
       const config: LanguageConfig = {
         code: locale,
         name,
+        flag,
         supportedLengths,
       };
       configs.push(config);
@@ -380,10 +387,10 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
     return null;
   }
 
-  const keyboardPath = `/dict/${languageDir}/keyboard.json`;
+  const languagePath = `/dict/${languageDir}/language.json`;
 
   try {
-    const response = await fetch(keyboardPath, { cache: 'no-store' });
+    const response = await fetch(languagePath, { cache: 'no-store' });
 
     if (response.status === 404 || !response.ok) {
       return null;

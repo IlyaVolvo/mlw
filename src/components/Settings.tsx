@@ -3,6 +3,7 @@ import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
 import { apiClient } from '../api/client';
 import { HelpTooltip } from './HelpTooltip';
+import { LanguageDropdown } from './LanguageDropdown';
 
 interface SettingsProps {
   userId: number;
@@ -188,6 +189,13 @@ export const Settings: React.FC<SettingsProps> = ({
     <div className={`settings ${showCalendar ? 'calendar-active' : ''}`}>
       <div className="setting-group">
         <div className="language-select-wrapper">
+          <LanguageDropdown
+            id="language-select"
+            availableLanguages={availableLanguages}
+            value={language}
+            onChange={onLanguageChange}
+            disabled={disabled}
+          />
           <HelpTooltip language={language}>
             <span className="help-icon" title="Help">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -197,18 +205,6 @@ export const Settings: React.FC<SettingsProps> = ({
               </svg>
             </span>
           </HelpTooltip>
-        <select
-          id="language-select"
-          value={language}
-          onChange={(e) => onLanguageChange(e.target.value)}
-          disabled={disabled}
-        >
-          {availableLanguages.map((lang) => (
-            <option key={lang.code} value={lang.code}>
-              {lang.name}
-            </option>
-          ))}
-        </select>
         </div>
       </div>
       <div className="setting-group">

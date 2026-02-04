@@ -1393,6 +1393,11 @@ h1 .logout-wrapper:hover .logout-tooltip {
   accent-color: #667eea;
 }
 
+.language-selector-flag {
+  margin-right: 6px;
+  font-size: 1.2rem;
+}
+
 .language-selector-item span {
   font-size: 1rem;
   color: #333;
@@ -1668,13 +1673,19 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
 .language-select-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
+  gap: 0;
+}
+
+.language-select-wrapper .language-dropdown {
+  flex: 1;
+  min-width: 0;
 }
 
 .language-select-wrapper .help-icon {
-  position: absolute;
-  top: -20px;
-  right: 0;
   cursor: help;
   color: #666;
   z-index: 10;
@@ -1694,6 +1705,109 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
 .language-select-wrapper select {
   width: 100%;
+}
+
+.language-select-wrapper .help-tooltip-container {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Language dropdown: flag only when closed, flag + name in list */
+.language-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.language-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  min-height: 42px;
+}
+
+.language-dropdown-trigger:hover:not(:disabled) {
+  border-color: #667eea;
+}
+
+.language-dropdown-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.language-dropdown-flag {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.language-dropdown-chevron {
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.language-dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  width: max-content;
+  max-width: min(320px, 90vw);
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.language-dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.language-dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.language-dropdown-option:hover,
+.language-dropdown-option.selected {
+  background: #f0f0ff;
+}
+
+.language-dropdown-option-flag {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.language-dropdown-option-name {
+  flex: 1;
+  white-space: nowrap;
+}
+
+/* Stats page: language dropdown in filters */
+.stat-filter-group .language-dropdown {
+  min-width: 140px;
+}
+
+.stat-filter-group .language-dropdown-trigger {
+  min-height: 38px;
 }
 
 .help-tooltip {

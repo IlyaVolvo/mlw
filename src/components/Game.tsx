@@ -151,7 +151,7 @@ export const Game: React.FC<GameProps> = ({
     loadDict();
   }, [language, wordLength]);
 
-  // Load RTL once per language from keyboard.json (static for the session)
+  // Load RTL once per language from language.json (static for the session)
   useEffect(() => {
     let cancelled = false;
     getKeyboardRtl(language).then((rtl) => {

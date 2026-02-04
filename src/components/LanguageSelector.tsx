@@ -102,6 +102,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   onChange={() => handleToggle(lang.code)}
                   disabled={isDisabled}
                 />
+                {lang.flag && <span className="language-selector-flag">{lang.flag}</span>}
                 <span>{lang.name}</span>
               </label>
             );

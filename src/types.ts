@@ -32,6 +32,8 @@ export interface DictionaryEntry {
 export interface LanguageConfig {
   code: string;
   name: string;
+  /** Optional flag emoji (e.g. "🇪🇸") for display; shown alone when closed, with name in dropdown. */
+  flag?: string;
   supportedLengths: number[];
 }
 
