@@ -12,10 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
+  padding-top: max(20px, env(safe-area-inset-top));
 }
 
 .game-container {
@@ -25,6 +30,8 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   max-width: 600px;
   width: 100%;
+  padding-left: max(32px, env(safe-area-inset-left));
+  padding-right: max(32px, env(safe-area-inset-right));
 }
 
 h1 {
@@ -551,6 +558,8 @@ h1 .logout-wrapper:hover .logout-tooltip {
   cursor: pointer;
   transition: all 0.2s;
   text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .key:hover {
@@ -767,13 +776,72 @@ h1 .logout-wrapper:hover .logout-tooltip {
   border: 1px solid #cfc;
 }
 
+/* iPad and smaller tablets */
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+
+  .game-container {
+    padding: 24px;
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  .game-board {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .row {
+    gap: 6px;
+  }
+
+  .keyboard {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .keyboard-placeholder {
+    height: 158px;
+  }
+}
+
+/* Phones (portrait) */
 @media (max-width: 600px) {
   .game-container {
-    padding: 20px;
+    padding: 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 
   h1 {
-    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px 8px;
+    font-size: 1.5rem;
+  }
+
+  .header-section {
+    margin-bottom: 16px;
+  }
+
+  .settings {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+  }
+
+  .game-controls {
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
   .cell {
@@ -782,33 +850,56 @@ h1 .logout-wrapper:hover .logout-tooltip {
     font-size: 1.2rem;
   }
 
+  .row {
+    gap: 5px;
+  }
+
+  .game-board {
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
   .key {
-    min-width: 32px;
-    height: 45px;
-    padding: 0 8px;
+    min-width: 28px;
+    height: 48px;
+    min-height: 44px;
+    padding: 0 6px;
     font-size: 0.8rem;
   }
 
   .key.key-action {
-    min-width: 50px;
-    font-size: 0.7rem;
+    min-width: 44px;
+    font-size: 0.65rem;
   }
 
   .keyboard-row {
     gap: 4px;
   }
 
-  h1 {
-    font-size: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .keyboard {
+    margin-top: 16px;
+    gap: 6px;
+  }
+
+  .keyboard-placeholder {
+    height: 154px;
+  }
+
+  .game-result {
+    margin-top: 16px;
+    padding: 12px;
+  }
+
+  .result-message {
+    font-size: 1.1rem;
+  }
+
+  .result-message strong {
+    font-size: 1.25rem;
   }
 
   .logout-icon {
-    margin-left: 12px;
-  }
-
-  .logout-icon {
+    margin-left: 8px;
     width: 20px;
     height: 20px;
     padding: 3px;
@@ -821,6 +912,92 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
   .auth-container {
     padding: 24px;
+  }
+
+  .random-watermark {
+    padding: 16px;
+    grid-auto-rows: 60px;
+  }
+
+  .random-watermark__text {
+    font-size: 1rem;
+  }
+}
+
+/* Small phones (e.g. iPhone SE, narrow devices) */
+@media (max-width: 430px) {
+  .game-container {
+    padding: 12px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px 6px;
+    font-size: 1.35rem;
+  }
+
+  .cell {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+
+  .row {
+    gap: 4px;
+  }
+
+  .game-board {
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .key {
+    min-width: 24px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0 4px;
+    font-size: 0.75rem;
+  }
+
+  .key.key-action {
+    min-width: 36px;
+    font-size: 0.6rem;
+  }
+
+  .keyboard-row {
+    gap: 3px;
+  }
+
+  .keyboard {
+    margin-top: 12px;
+    gap: 5px;
+  }
+
+  .keyboard-placeholder {
+    height: 142px;
+  }
+
+  .settings {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .game-controls {
+    margin-bottom: 12px;
+  }
+
+  .random-watermark {
+    padding: 12px;
+    grid-auto-rows: 50px;
+  }
+
+  .random-watermark__text {
+    font-size: 0.9rem;
   }
 }
 
@@ -874,6 +1051,8 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .header-icon-button {
   padding: 6px;
   background: transparent;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   color: #667eea;
   border: 2px solid #667eea;
   border-radius: 8px;
