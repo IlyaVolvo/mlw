@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
 import { loadPreferences, savePreferences } from '../utils/preferences';
+import { HelpTooltip } from './HelpTooltip';
 
 interface LanguageSelectorProps {
   allAvailableLanguages: LanguageConfig[]; // All languages before filtering
@@ -38,18 +39,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     setSelectedLanguages(newSelected);
   };
 
-  const handleSelectAll = () => {
-    setSelectedLanguages(new Set(allAvailableLanguages.map(l => l.code)));
-  };
-
-  const handleDeselectAll = () => {
-    // Keep at least one language selected (default to English or first available)
-    const defaultLang = allAvailableLanguages.find(l => l.code === 'en')?.code || 
-                        allAvailableLanguages[0]?.code || 
-                        'en';
-    setSelectedLanguages(new Set([defaultLang]));
-  };
-
   const handleSave = () => {
     const selectedArray = Array.from(selectedLanguages);
     const prefs = loadPreferences();
@@ -82,10 +71,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           <h2>Select Languages</h2>
           <button className="close-button" onClick={handleCancel} aria-label="Close">×</button>
         </div>
-        <div className="language-selector-actions">
-          <button onClick={handleSelectAll}>Select All</button>
-          <button onClick={handleDeselectAll}>Deselect All</button>
-        </div>
         <div className="language-selector-list">
           {allAvailableLanguages.map((lang) => {
             const isSelected = selectedLanguages.has(lang.code);
@@ -103,7 +88,16 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   disabled={isDisabled}
                 />
                 {lang.flag && <span className="language-selector-flag">{lang.flag}</span>}
-                <span>{lang.name}</span>
+                <span className="language-selector-item-name">{lang.name}</span>
+                <HelpTooltip language={lang.code} placement="left">
+                  <span className="language-selector-item-help" title={`Help for ${lang.name}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                  </span>
+                </HelpTooltip>
               </label>
             );
           })}

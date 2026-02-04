@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
 import { apiClient } from '../api/client';
-import { HelpTooltip } from './HelpTooltip';
 import { LanguageDropdown } from './LanguageDropdown';
 
 interface SettingsProps {
@@ -79,7 +78,7 @@ export const Settings: React.FC<SettingsProps> = ({
   onLanguageChange,
   onWordLengthChange,
   onRandomModeChange,
-  onDateChange,
+  onDateChange: _onDateChange,
   disabled = false,
   onShowCalendarChange,
   showCalendar: externalShowCalendar,
@@ -89,39 +88,7 @@ export const Settings: React.FC<SettingsProps> = ({
 }) => {
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
   const today = formatDate();
-  const [dailyModeTooltipVisible, setDailyModeTooltipVisible] = useState(false);
-  const dailyModeTooltipTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Helper function to add/subtract days from a date string
-  const addDays = (dateStr: string, days: number): string => {
-    const [year, month, day] = dateStr.split('-').map(Number);
-    const date = new Date(year, month - 1, day);
-    date.setDate(date.getDate() + days);
-    return formatDate(date);
-  };
-  
-  // Check if selected date is today
-  const isToday = selectedDate === today;
-  
-  // Navigate to previous date
-  const goToPreviousDate = () => {
-    const currentDate = selectedDate || today;
-    const prevDate = addDays(currentDate, -1);
-    onDateChange(prevDate);
-  };
-  
-  // Navigate to next date (only if not today)
-  const goToNextDate = () => {
-    if (!isToday) {
-      const currentDate = selectedDate || today;
-      const nextDate = addDays(currentDate, 1);
-      // Don't allow future dates
-      if (nextDate <= today) {
-        onDateChange(nextDate);
-      }
-    }
-  };
-  
   const [internalShowCalendar, setInternalShowCalendar] = useState(false);
   const [_internalCalendarGames, setInternalCalendarGames] = useState<any[]>([]);
   const [_internalCalendarMonth, setInternalCalendarMonth] = useState<Date>(() => {
@@ -198,15 +165,6 @@ export const Settings: React.FC<SettingsProps> = ({
             onChange={onLanguageChange}
             disabled={disabled}
           />
-          <HelpTooltip language={language}>
-            <span className="help-icon" title="Help">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-            </span>
-          </HelpTooltip>
         </div>
       </div>
       <div className="setting-group">
@@ -224,51 +182,18 @@ export const Settings: React.FC<SettingsProps> = ({
         </select>
       </div>
       <div className="setting-group date-picker-setting daily-mode-row">
-        <div
-          className="daily-mode-toggle-wrapper"
-          onMouseEnter={() => {
-            dailyModeTooltipTimerRef.current = setTimeout(() => setDailyModeTooltipVisible(true), 1000);
-          }}
-          onMouseLeave={() => {
-            if (dailyModeTooltipTimerRef.current) {
-              clearTimeout(dailyModeTooltipTimerRef.current);
-              dailyModeTooltipTimerRef.current = null;
-            }
-            setDailyModeTooltipVisible(false);
-          }}
+        <select
+          className="mode-select"
+          value={randomMode ? 'practice' : 'daily'}
+          onChange={(e) => onRandomModeChange(e.target.value === 'practice')}
+          disabled={disabled}
+          aria-label="Game mode: Daily or Practice"
         >
-          {dailyModeTooltipVisible && (
-            <span className="daily-mode-tooltip">
-              {randomMode ? 'Select to play the Daily game' : 'Unselect to switch to the Random game'}
-            </span>
-          )}
-          <label className="daily-mode-label">
-            <input
-              type="checkbox"
-              className="daily-mode-checkbox"
-              checked={!randomMode}
-              onChange={(e) => onRandomModeChange(!e.target.checked)}
-              disabled={disabled}
-              aria-label={randomMode ? 'Switch to Daily game' : 'Switch to Random game'}
-            />
-            <span className="daily-mode-radio-dot" aria-hidden="true" />
-          </label>
-        </div>
+          <option value="daily">Daily</option>
+          <option value="practice">Practice</option>
+        </select>
       {!randomMode && (
-        <div 
-          className="date-navigation-wrapper" 
-          style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}
-        >
-            <button
-              className="date-nav-arrow date-nav-arrow-left"
-              onClick={goToPreviousDate}
-              disabled={disabled}
-              aria-label="Previous date"
-              title="Previous date"
-            >
-              ‹
-            </button>
-            <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: 1, alignItems: 'center' }}>
+        <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: 1, alignItems: 'center', minWidth: 0 }}>
             <input
               id="date-picker-hidden"
               type="date"
@@ -393,16 +318,6 @@ export const Settings: React.FC<SettingsProps> = ({
             >
               {formatDateDisplay(selectedDate || null, today)}
             </span>
-          </div>
-          <button
-            className={`date-nav-arrow date-nav-arrow-right ${isToday ? 'date-nav-arrow-disabled' : ''}`}
-            onClick={goToNextDate}
-            disabled={disabled || isToday}
-            aria-label="Next date"
-            title={isToday ? 'Today (no next date)' : 'Next date'}
-          >
-            ›
-          </button>
           </div>
         )}
       </div>

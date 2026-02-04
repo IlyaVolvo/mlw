@@ -3,10 +3,12 @@ import { loadHelpTip } from '../data/dictionaryLoader';
 
 interface HelpTooltipProps {
   language: string;
+  /** Where to show the tooltip relative to the trigger. Default 'above'. */
+  placement?: 'above' | 'left';
   children: React.ReactNode;
 }
 
-export const HelpTooltip: React.FC<HelpTooltipProps> = ({ language, children }) => {
+export const HelpTooltip: React.FC<HelpTooltipProps> = ({ language, placement = 'above', children }) => {
   const [helpText, setHelpText] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState<{ top: number; left: number } | null>(null);
@@ -51,25 +53,26 @@ export const HelpTooltip: React.FC<HelpTooltipProps> = ({ language, children }) 
     const containerRect = containerRef.current.getBoundingClientRect();
     const tooltipRect = tooltipRef.current.getBoundingClientRect();
     
-    // Calculate position relative to container
     const mouseX = e.clientX - containerRect.left;
     const mouseY = e.clientY - containerRect.top;
-    
-    // Default: position above cursor, centered horizontally
-    let left = mouseX - tooltipRect.width / 2;
-    let top = mouseY - tooltipRect.height - 10;
-    
-    // Adjust if tooltip would go off screen horizontally
-    if (left < 10) {
-      left = 10; // Keep some margin from left edge
-    } else if (left + tooltipRect.width > containerRect.width - 10) {
-      left = containerRect.width - tooltipRect.width - 10; // Keep margin from right edge
-    }
-    
-    // Adjust if tooltip would go off screen vertically (above)
-    if (top < 10) {
-      // Position below cursor instead
-      top = mouseY + 20;
+
+    let left: number;
+    let top: number;
+
+    if (placement === 'left') {
+      // Position to the left of the trigger, vertically centered
+      left = -tooltipRect.width - 10;
+      top = mouseY - tooltipRect.height / 2;
+      // Keep within container vertically
+      if (top < 10) top = 10;
+      else if (top + tooltipRect.height > containerRect.height - 10) top = containerRect.height - tooltipRect.height - 10;
+    } else {
+      // Default: position above cursor, centered horizontally
+      left = mouseX - tooltipRect.width / 2;
+      top = mouseY - tooltipRect.height - 10;
+      if (left < 10) left = 10;
+      else if (left + tooltipRect.width > containerRect.width - 10) left = containerRect.width - tooltipRect.width - 10;
+      if (top < 10) top = mouseY + 20;
     }
     
     setPosition({ top, left });
