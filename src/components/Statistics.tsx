@@ -13,7 +13,6 @@ import {
 } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
-import { LanguageSelector } from './LanguageSelector';
 import { LanguageDropdown } from './LanguageDropdown';
 import type { LanguageConfig } from '../types';
 
@@ -46,11 +45,10 @@ interface GameData {
 interface StatisticsProps {
   userId: number;
   availableLanguages: LanguageConfig[];
-  allAvailableLanguages: LanguageConfig[];
   view?: 'game' | 'statistics';
   onViewChange?: (view: 'game' | 'statistics') => void;
   onViewHistoricalGame?: (date: string) => void;
-  onLanguageSelectionChange: (selectedCodes: string[]) => void;
+  /** Language for which statistics are shown; selectable on this screen. */
   language: string;
   wordLength: number;
   onLanguageChange: (language: string) => void;
@@ -69,11 +67,9 @@ type StatisticType =
 export const Statistics: React.FC<StatisticsProps> = ({ 
   userId, 
   availableLanguages,
-  allAvailableLanguages,
-  view, 
+  view: _view,
   onViewChange, 
   onViewHistoricalGame: _onViewHistoricalGame,
-  onLanguageSelectionChange,
   language,
   wordLength,
   onLanguageChange,
@@ -83,7 +79,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
   const [games, setGames] = useState<GameData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
     const loadStatistics = async () => {
@@ -306,14 +301,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
     return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
   }
 
-  const handleLanguageChange = (newLanguage: string) => {
-    const langConfig = availableLanguages.find(l => l.code === newLanguage);
-    if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
-      onWordLengthChange(langConfig.supportedLengths[0] || 5);
-    }
-    onLanguageChange(newLanguage);
-  };
-
   if (loading) {
     return <div className="loading">Loading statistics...</div>;
   }
@@ -323,6 +310,14 @@ export const Statistics: React.FC<StatisticsProps> = ({
   }
 
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
+
+  const handleLanguageChange = (newLanguage: string) => {
+    const langConfig = availableLanguages.find(l => l.code === newLanguage);
+    if (langConfig && !langConfig.supportedLengths.includes(wordLength)) {
+      onWordLengthChange(langConfig.supportedLengths[0] ?? 5);
+    }
+    onLanguageChange(newLanguage);
+  };
 
   // Chart configurations
   const totalGames = Object.values(attemptsDistribution).reduce((sum, count) => sum + count, 0);
@@ -401,37 +396,24 @@ export const Statistics: React.FC<StatisticsProps> = ({
     <div className="statistics-container">
       <div className="header-section">
         <h1>
-          <span>PolyWordlot</span>
           <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
-        </h1>
-        {onViewChange && (
-          <div className="header-tabs-row">
-            <div className="view-tabs">
-              <button
-                className={`view-tab ${view === 'game' ? 'active' : ''}`}
-                onClick={() => onViewChange('game')}
-              >
-                Game
-              </button>
-              <button
-                className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
-                onClick={() => onViewChange('statistics')}
-              >
-                Statistics
-              </button>
-            </div>
+          <span>PolyWordlot</span>
+          {onViewChange && (
             <button
-              className={`options-icon-button ${showOptions ? 'active' : ''}`}
-              onClick={() => setShowOptions(!showOptions)}
-              title="Options"
+              type="button"
+              className="header-back-button"
+              onClick={() => onViewChange('game')}
+              title="Back to game"
+              aria-label="Back to game"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
+              <span>Back</span>
             </button>
-          </div>
-        )}
+          )}
+        </h1>
       </div>
       
       <div className="stats-filters">
@@ -440,9 +422,9 @@ export const Statistics: React.FC<StatisticsProps> = ({
             availableLanguages={availableLanguages}
             value={language}
             onChange={handleLanguageChange}
+            showNameInTrigger
           />
         </div>
-        
         <div className="stat-filter-group">
           <select
             value={wordLength}
@@ -687,12 +669,6 @@ export const Statistics: React.FC<StatisticsProps> = ({
           )}
         </div>
       </div>
-      <LanguageSelector
-        allAvailableLanguages={allAvailableLanguages}
-        isOpen={showOptions}
-        onClose={() => setShowOptions(false)}
-        onSelectionChange={onLanguageSelectionChange}
-      />
     </div>
   );
 };

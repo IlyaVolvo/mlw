@@ -7,6 +7,8 @@ interface LanguageDropdownProps {
   onChange: (code: string) => void;
   disabled?: boolean;
   id?: string;
+  /** When true, trigger shows flag + name (e.g. for Statistics); otherwise only flag. */
+  showNameInTrigger?: boolean;
 }
 
 export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
@@ -15,12 +17,14 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   onChange,
   disabled = false,
   id = 'language-select',
+  showNameInTrigger = false,
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const current = availableLanguages.find((l) => l.code === value);
   const displayLabel = current?.flag ?? '🌐';
+  const displayName = current?.name ?? value;
 
   useEffect(() => {
     if (!open) return;
@@ -48,6 +52,9 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
         <span className="language-dropdown-flag" aria-hidden="true">
           {displayLabel}
         </span>
+        {showNameInTrigger && (
+          <span className="language-dropdown-trigger-name">{displayName}</span>
+        )}
         <span className="language-dropdown-chevron" aria-hidden="true">
           {open ? '▲' : '▼'}
         </span>

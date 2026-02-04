@@ -6,6 +6,7 @@
     "node": "24.x"
   },
   "scripts": {
+    "commit": "sh scripts/commit.sh",
     "dev": "vite",
     "dev:server": "cd server && npm run dev",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",

@@ -35,7 +35,7 @@ interface GameProps {
 export const Game: React.FC<GameProps> = ({ 
   userId, 
   onLogout, 
-  view, 
+  view: _view, 
   onViewChange, 
   historicalDate, 
   onHistoricalDateCleared: _onHistoricalDateCleared, 
@@ -987,8 +987,41 @@ export const Game: React.FC<GameProps> = ({
     >
       <div className="header-section">
         <h1>
-          <span>PolyWordlot</span>
           <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
+          <span>PolyWordlot</span>
+          {onViewChange && (
+            <span className="header-title-icons">
+              <span className="header-icon-with-tooltip">
+                <span className="header-icon-tooltip">Mark one or more languages you'd like to be in language selection menu</span>
+                <button
+                  type="button"
+                  className={`header-icon-button ${showOptions ? 'active' : ''}`}
+                  onClick={() => setShowOptions(!showOptions)}
+                  title="Language selection"
+                  aria-label="Language selection"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </button>
+              </span>
+              <button
+                type="button"
+                className="header-icon-button"
+                onClick={() => onViewChange('statistics')}
+                title="Statistics"
+                aria-label="Statistics"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </button>
+            </span>
+          )}
           {onLogout && (
             <div className="logout-wrapper">
               <button onClick={onLogout} className="logout-icon" title="Logout">
@@ -1002,51 +1035,6 @@ export const Game: React.FC<GameProps> = ({
             </div>
           )}
         </h1>
-        {onViewChange && (
-          <div className="header-tabs-row">
-            <div className="view-tabs">
-              <button
-                className={`view-tab ${view === 'game' ? 'active' : ''}`}
-                onClick={() => {
-                  // Don't clear game state - keep selections sticky
-                  onViewChange('game');
-                }}
-              >
-                Game
-              </button>
-              <button
-                className={`view-tab ${view === 'statistics' ? 'active' : ''}`}
-                onClick={() => {
-                  // Don't clear game state - keep selections sticky
-                  onViewChange('statistics');
-                }}
-              >
-                Statistics
-              </button>
-            </div>
-            <select
-              className="mode-selector-compact"
-              value={randomMode ? 'training' : 'daily'}
-              onChange={(e) => handleRandomModeChange(e.target.value === 'training')}
-            >
-              <option value="daily">Daily</option>
-              <option value="training">Training</option>
-            </select>
-            <div className="options-button-wrapper">
-              <div className="options-tooltip">Mark one or more languages you'd like to be in language selection menu</div>
-              <button
-                className={`options-icon-button ${showOptions ? 'active' : ''}`}
-                onClick={() => setShowOptions(!showOptions)}
-                title="Options"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3m15.364 6.364l-4.243-4.243m-4.242 0l-4.243 4.243m4.242-4.242l-4.243 4.243m4.242 0l4.243 4.243"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
         {showCalendar && !randomMode && (
           <div className="calendar-full-panel">
             <div className="calendar-full-header">
@@ -1121,7 +1109,15 @@ export const Game: React.FC<GameProps> = ({
         onCalendarMonthChange={setCalendarMonth}
       />
       {!showCalendar || randomMode ? (
-        <>
+        <div className={`game-play-area ${randomMode ? 'game-play-area--random' : ''}`}>
+          {randomMode && (
+            <div className="random-watermark" aria-hidden="true">
+              {Array.from({ length: 30 }).map((_, i) => (
+                <span key={i} className="random-watermark__text">Random</span>
+              ))}
+            </div>
+          )}
+          <div className="game-play-area__content">
       {!dictionary && !loading && (
         <GameBoard
           guesses={[]}
@@ -1191,7 +1187,8 @@ export const Game: React.FC<GameProps> = ({
           />
         </>
       )}
-        </>
+          </div>
+        </div>
       ) : null}
       <LanguageSelector
         allAvailableLanguages={allAvailableLanguages}

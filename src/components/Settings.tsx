@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
 import { apiClient } from '../api/client';
@@ -78,7 +78,7 @@ export const Settings: React.FC<SettingsProps> = ({
   selectedDate,
   onLanguageChange,
   onWordLengthChange,
-  onRandomModeChange: _onRandomModeChange,
+  onRandomModeChange,
   onDateChange,
   disabled = false,
   onShowCalendarChange,
@@ -89,7 +89,9 @@ export const Settings: React.FC<SettingsProps> = ({
 }) => {
   const currentLangConfig = availableLanguages.find(lang => lang.code === language);
   const today = formatDate();
-  
+  const [dailyModeTooltipVisible, setDailyModeTooltipVisible] = useState(false);
+  const dailyModeTooltipTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   // Helper function to add/subtract days from a date string
   const addDays = (dateStr: string, days: number): string => {
     const [year, month, day] = dateStr.split('-').map(Number);
@@ -221,12 +223,42 @@ export const Settings: React.FC<SettingsProps> = ({
           ))}
         </select>
       </div>
+      <div className="setting-group date-picker-setting daily-mode-row">
+        <div
+          className="daily-mode-toggle-wrapper"
+          onMouseEnter={() => {
+            dailyModeTooltipTimerRef.current = setTimeout(() => setDailyModeTooltipVisible(true), 1000);
+          }}
+          onMouseLeave={() => {
+            if (dailyModeTooltipTimerRef.current) {
+              clearTimeout(dailyModeTooltipTimerRef.current);
+              dailyModeTooltipTimerRef.current = null;
+            }
+            setDailyModeTooltipVisible(false);
+          }}
+        >
+          {dailyModeTooltipVisible && (
+            <span className="daily-mode-tooltip">
+              {randomMode ? 'Select to play the Daily game' : 'Unselect to switch to the Random game'}
+            </span>
+          )}
+          <label className="daily-mode-label">
+            <input
+              type="checkbox"
+              className="daily-mode-checkbox"
+              checked={!randomMode}
+              onChange={(e) => onRandomModeChange(!e.target.checked)}
+              disabled={disabled}
+              aria-label={randomMode ? 'Switch to Daily game' : 'Switch to Random game'}
+            />
+            <span className="daily-mode-radio-dot" aria-hidden="true" />
+          </label>
+        </div>
       {!randomMode && (
-        <div className="setting-group date-picker-setting">
-          <div 
-            className="date-navigation-wrapper" 
-            style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}
-          >
+        <div 
+          className="date-navigation-wrapper" 
+          style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}
+        >
             <button
               className="date-nav-arrow date-nav-arrow-left"
               onClick={goToPreviousDate}
@@ -372,8 +404,8 @@ export const Settings: React.FC<SettingsProps> = ({
             ›
           </button>
           </div>
+        )}
       </div>
-      )}
 
     </div>
   );

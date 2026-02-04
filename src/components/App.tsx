@@ -297,11 +297,9 @@ export const App: React.FC = () => {
         <Statistics 
           userId={user.id} 
           availableLanguages={availableLanguages}
-          allAvailableLanguages={allAvailableLanguages}
           view={view} 
           onViewChange={handleViewChange}
           onViewHistoricalGame={handleViewHistoricalGame}
-          onLanguageSelectionChange={handleLanguageSelectionChange}
           language={language}
           wordLength={wordLength}
           onLanguageChange={handleLanguageChange}
