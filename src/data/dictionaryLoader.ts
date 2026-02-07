@@ -33,11 +33,14 @@ interface KeyboardConfig {
   menu?: string;
   /** Flag emoji for the language (e.g. "🇪🇸"); shown in selector. */
   flag?: string;
+  /** Character normalization mappings (e.g. {"ä": "a", "ß": "ss"}). */
+  normalization?: Record<string, string>;
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
 const keyboardRtlCache = new Map<string, boolean>();
 const keyboardMenuCache = new Map<string, string>();
+const normalizationCache = new Map<string, Record<string, string>>();
 
 /**
  * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
@@ -415,6 +418,9 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
         if (typeof config.menu === 'string' && config.menu.trim()) {
           keyboardMenuCache.set(language, config.menu.trim());
         }
+        if (config.normalization && typeof config.normalization === 'object') {
+          normalizationCache.set(language, config.normalization);
+        }
         return config.layout;
       }
     }
@@ -458,6 +464,14 @@ export async function loadKeyboardActions(language: string): Promise<KeyboardAct
   
   // Return cached actions or null
   return keyboardActionsCache.get(language) || null;
+}
+
+/**
+ * Returns the normalization mappings for a language, loaded from language.json.
+ * Must be called after loadKeyboard() has been called for this language.
+ */
+export function getNormalization(language: string): Record<string, string> | null {
+  return normalizationCache.get(language) || null;
 }
 
 /**

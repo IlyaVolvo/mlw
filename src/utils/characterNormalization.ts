@@ -1,74 +1,26 @@
-import { getLanguageDir } from '../data/dictionaryLoader';
-
-// Cache for loaded normalization mappings
-const normalizationCache = new Map<string, Record<string, string>>();
+import { getNormalization } from '../data/dictionaryLoader';
 
 /**
- * Loads character normalization mappings for a language from its directory
- * Looks for normalization.json in Language/Locale/ directory
+ * Loads character normalization mappings for a language.
+ * Normalization data is now embedded in language.json and loaded by dictionaryLoader.
+ * This function simply retrieves the cached data.
+ * Must be called after loadKeyboard() has been called for this language.
  */
 export async function loadNormalization(language: string): Promise<Record<string, string> | null> {
-  // Check cache first
-  if (normalizationCache.has(language)) {
-    return normalizationCache.get(language)!;
-  }
-
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) {
-    return null;
-  }
-
-  const normalizationPath = `/dict/${languageDir}/normalization.json`;
-
-  try {
-    const response = await fetch(normalizationPath);
-    
-    if (response.status === 404 || !response.ok) {
-      // Normalization file not found - return null (no normalization for this language)
-      normalizationCache.set(language, {});
-      return null;
-    }
-    
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) {
-      // File doesn't exist
-      normalizationCache.set(language, {});
-      return null;
-    }
-    
-    const normalization = await response.json();
-    
-    // Validate normalization structure (should be object with string keys and string values)
-    if (typeof normalization === 'object' && normalization !== null && !Array.isArray(normalization)) {
-      const isValid = Object.entries(normalization).every(
-        ([key, value]) => typeof key === 'string' && typeof value === 'string'
-      );
-      
-      if (isValid) {
-        normalizationCache.set(language, normalization);
-        return normalization;
-      }
-    }
-    
-    return null;
-  } catch (error) {
-    // File doesn't exist or error occurred - return null (no normalization)
-    normalizationCache.set(language, {});
-    return null;
-  }
+  return getNormalization(language);
 }
 
 /**
  * Normalizes characters for a given language
  * Replaces variant characters with their base equivalents according to language-specific rules
- * Uses cached normalization mappings loaded from language directories
+ * Uses normalization mappings from language.json
  * 
  * @param word - The word to normalize
  * @param language - Language code (e.g., 'ru', 'fr', 'de')
  * @returns Normalized word with variant characters replaced
  */
 export function normalizeForLanguage(word: string, language: string): string {
-  const mappings = normalizationCache.get(language);
+  const mappings = getNormalization(language);
   
   // If no mappings exist for this language, return word as-is
   if (!mappings || Object.keys(mappings).length === 0) {

@@ -15,5 +15,9 @@
       "label": "⌫",
       "position": "start"
     }
+  },
+  "normalization": {
+    "ё": "е",
+    "Ё": "Е"
   }
 }
