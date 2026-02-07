@@ -2250,3 +2250,90 @@ h1 .logout-wrapper:hover .logout-tooltip {
     font-size: 0.8rem;
   }
 }
+
+/* Word Index Popup (Ctrl+Shift+F1 in Training mode) */
+.word-index-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.word-index-popup {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.word-index-popup h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.word-index-info {
+  margin: 0 0 16px 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.word-index-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.word-index-input:focus {
+  border-color: #667eea;
+}
+
+.word-index-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.word-index-btn {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.word-index-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.word-index-btn-go {
+  background: #667eea;
+  color: white;
+}
+
+.word-index-btn-go:hover:not(:disabled) {
+  background: #5a6fd6;
+}
+
+.word-index-btn-cancel {
+  background: #e5e7eb;
+  color: #333;
+}
+
+.word-index-btn-cancel:hover {
+  background: #d1d5db;
+}

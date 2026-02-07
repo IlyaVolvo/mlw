@@ -294,7 +294,8 @@ export async function loadDictionary(
     language,
     wordLength,
     words: combinedWords, // All words for validation
-    answerWords: sortedAnswerWords, // Only answer words for daily word selection
+    answerWords: sortedAnswerWords, // Sorted answer words for daily word selection
+    answerWordsOriginal: answerWords, // Original file order (by frequency)
   };
 
   // Cache the dictionary

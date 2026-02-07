@@ -26,7 +26,8 @@ export interface DictionaryEntry {
   language: string;
   wordLength: number;
   words: string[]; // All valid words (for validation)
-  answerWords: string[]; // Only answer words (for daily word selection)
+  answerWords: string[]; // Only answer words (sorted, for daily word selection)
+  answerWordsOriginal: string[]; // Answer words in original file order (by frequency)
 }
 
 export interface LanguageConfig {

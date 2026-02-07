@@ -63,6 +63,9 @@ export const Game: React.FC<GameProps> = ({
   const [shakeRowIndex, setShakeRowIndex] = useState<number | null>(null);
   const [showOptions, setShowOptions] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [showWordIndexPopup, setShowWordIndexPopup] = useState(false);
+  const [wordIndexInput, setWordIndexInput] = useState('');
+  const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
     const today = formatDate();
@@ -310,6 +313,11 @@ export const Game: React.FC<GameProps> = ({
    */
   const resolveStateForSelectedDay = useCallback(async () => {
     if (randomMode) {
+      // Don't clear if we just started a game via word index selector
+      if (wordIndexGameStartedRef.current) {
+        wordIndexGameStartedRef.current = false;
+        return;
+      }
       clearGameDisplay();
       return;
     }
@@ -520,6 +528,41 @@ export const Game: React.FC<GameProps> = ({
       clearGameDisplay();
     }
   }, [language, wordLength, selectedPlayDate, randomMode, dictionary, loading, applyLoadedGame, applyNewOrResetGame, clearGameDisplay]);
+
+  /** Start a training game with a specific word index (modulo answer count).
+   *  Switches to Practice mode automatically if not already in it. */
+  const handleStartGameWithIndex = useCallback((index: number) => {
+    if (!dictionary) return;
+
+    // Switch to Practice mode if needed
+    if (!randomMode) {
+      const prefs = loadPreferences();
+      prefs.randomMode = true;
+      savePreferences(prefs);
+      setRandomMode(true);
+      setSelectedPlayDate('');
+    }
+
+    const answers = dictionary.answerWordsOriginal;
+    const answerCount = answers.length;
+    const effectiveIndex = ((index % answerCount) + answerCount) % answerCount; // handle negatives
+    const target = answers[effectiveIndex];
+    
+    const newState: GameState = {
+      guesses: [],
+      currentGuess: '',
+      isComplete: false,
+      isWon: false,
+      language,
+      wordLength,
+      date: Date.now().toString(),
+      isRandomMode: true,
+      wordSeed: effectiveIndex,
+    };
+
+    wordIndexGameStartedRef.current = true;
+    applyNewOrResetGame(newState, target);
+  }, [dictionary, randomMode, language, wordLength, applyNewOrResetGame]);
 
   /** Start game; optionally pass first key so it's applied immediately. Returns true if first key was applied. */
   const handleStartGame = useCallback(async (optionalFirstKey?: string): Promise<boolean> => {
@@ -925,6 +968,19 @@ export const Game: React.FC<GameProps> = ({
   // Handle keyboard events
   useEffect(() => {
     const handleKeyDown = async (e: KeyboardEvent) => {
+      // Ctrl+Shift+G (or Cmd+Shift+G): open word index popup — available at any time when dictionary is loaded
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'g' || e.key === 'G')) {
+        e.preventDefault();
+        if (dictionary) {
+          setWordIndexInput('');
+          setShowWordIndexPopup(true);
+        }
+        return;
+      }
+
+      // Don't process game keys when popup is open
+      if (showWordIndexPopup) return;
+
       if (loading) return;
 
       // If no game or (Training + completed game) and it's a letter, start the game first (same as handleKeyPress)
@@ -959,7 +1015,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame]);
+  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -1196,6 +1252,58 @@ export const Game: React.FC<GameProps> = ({
         onClose={() => setShowOptions(false)}
         onSelectionChange={onLanguageSelectionChange}
       />
+      {showWordIndexPopup && (
+        <div className="word-index-overlay" onClick={() => setShowWordIndexPopup(false)}>
+          <div className="word-index-popup" onClick={(e) => e.stopPropagation()}>
+            <h3>Select Word by Index</h3>
+            <p className="word-index-info">
+              Enter a number (0–{dictionary ? dictionary.answerWordsOriginal.length - 1 : '?'}). 
+              Values outside this range will wrap around.
+            </p>
+            <input
+              type="number"
+              className="word-index-input"
+              value={wordIndexInput}
+              onChange={(e) => setWordIndexInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && wordIndexInput.trim()) {
+                  const num = parseInt(wordIndexInput.trim(), 10);
+                  if (!isNaN(num)) {
+                    handleStartGameWithIndex(num);
+                    setShowWordIndexPopup(false);
+                  }
+                } else if (e.key === 'Escape') {
+                  setShowWordIndexPopup(false);
+                }
+                e.stopPropagation();
+              }}
+              placeholder="Word index..."
+              autoFocus
+            />
+            <div className="word-index-buttons">
+              <button
+                className="word-index-btn word-index-btn-go"
+                onClick={() => {
+                  const num = parseInt(wordIndexInput.trim(), 10);
+                  if (!isNaN(num)) {
+                    handleStartGameWithIndex(num);
+                    setShowWordIndexPopup(false);
+                  }
+                }}
+                disabled={!wordIndexInput.trim() || isNaN(parseInt(wordIndexInput.trim(), 10))}
+              >
+                Go
+              </button>
+              <button
+                className="word-index-btn word-index-btn-cancel"
+                onClick={() => setShowWordIndexPopup(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
