@@ -142,9 +142,17 @@ router.post('/forgot-password', async (req, res) => {
       // Send email
       try {
         await sendPasswordResetEmail(email, resetToken, baseUrl || 'http://localhost:3100');
-      } catch (emailError) {
-        logger.error('Failed to send email', emailError);
+        logger.info('Password reset email sent successfully', { email });
+      } catch (emailError: any) {
+        logger.error('Failed to send password reset email', {
+          email,
+          error: emailError?.message || emailError,
+          code: emailError?.code,
+          response: emailError?.response,
+          stack: emailError?.stack,
+        });
         // Still return success to not reveal if email exists
+        // But log the error for debugging
       }
     }
 
