@@ -53,6 +53,7 @@ interface StatisticsProps {
   wordLength: number;
   onLanguageChange: (language: string) => void;
   onWordLengthChange: (wordLength: number) => void;
+  initialStatisticType?: StatisticType;
 }
 
 type StatisticType = 
@@ -62,7 +63,8 @@ type StatisticType =
   | 'calendar-monthly'
   | 'calendar-yearly'
   | 'two-week-running'
-  | 'four-week-running';
+  | 'four-week-running'
+  | 'cross-language';
 
 export const Statistics: React.FC<StatisticsProps> = ({ 
   userId, 
@@ -73,10 +75,13 @@ export const Statistics: React.FC<StatisticsProps> = ({
   language,
   wordLength,
   onLanguageChange,
-  onWordLengthChange
+  onWordLengthChange,
+  initialStatisticType
 }) => {
-  const [statisticType, setStatisticType] = useState<StatisticType>('attempts-distribution');
+  const [statisticType, setStatisticType] = useState<StatisticType>(initialStatisticType || 'attempts-distribution');
   const [games, setGames] = useState<GameData[]>([]);
+  const [allGames, setAllGames] = useState<GameData[]>([]);
+  const [allGamesLoaded, setAllGamesLoaded] = useState(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -103,6 +108,31 @@ export const Statistics: React.FC<StatisticsProps> = ({
 
     loadStatistics();
   }, [userId, language, wordLength]);
+
+  // Load ALL games across all languages/word-lengths for cross-language comparison
+  useEffect(() => {
+    if (statisticType !== 'cross-language') return;
+    if (allGamesLoaded) return;
+
+    const loadAllGames = async () => {
+      try {
+        const response = await apiClient.getHistory(
+          undefined, // no language filter
+          undefined, // no wordLength filter
+          10000
+        );
+        const filteredGames: GameData[] = (response.games as GameData[]).filter(
+          game => !game.isRandomMode && game.isComplete
+        );
+        setAllGames(filteredGames);
+        setAllGamesLoaded(true);
+      } catch (err) {
+        console.error('Failed to load all games for cross-language comparison:', err);
+      }
+    };
+
+    loadAllGames();
+  }, [statisticType, allGamesLoaded]);
 
   // Calculate attempts distribution (1-6 for wins, 7 for losses)
   const attemptsDistribution = useMemo(() => {
@@ -292,6 +322,37 @@ export const Statistics: React.FC<StatisticsProps> = ({
     return averages;
   }, [games]);
 
+  // Cross-language comparison: average attempts per language+wordLength combination
+  const crossLanguageData = useMemo(() => {
+    const combos: Map<string, { total: number; count: number; lang: string; length: number }> = new Map();
+    allGames.forEach(game => {
+      const key = `${game.language}-${game.wordLength}`;
+      const attempts = getAttempts(game);
+      const existing = combos.get(key) || { total: 0, count: 0, lang: game.language, length: game.wordLength };
+      combos.set(key, {
+        total: existing.total + attempts,
+        count: existing.count + 1,
+        lang: game.language,
+        length: game.wordLength,
+      });
+    });
+
+    // Filter to combinations played more than 3 times, compute average, sort descending
+    return Array.from(combos.entries())
+      .filter(([, data]) => data.count > 3)
+      .map(([key, data]) => {
+        const langConfig = availableLanguages.find(l => l.code === data.lang);
+        const langName = langConfig ? langConfig.name : data.lang.toUpperCase();
+        return {
+          key,
+          label: `${langName} ${data.length}`,
+          average: data.total / data.count,
+          count: data.count,
+        };
+      })
+      .sort((a, b) => b.average - a.average);
+  }, [allGames, availableLanguages]);
+
   // Helper function to get ISO week number
   function getWeekNumber(date: Date): number {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -396,8 +457,8 @@ export const Statistics: React.FC<StatisticsProps> = ({
     <div className="statistics-container">
       <div className="header-section">
         <h1>
-          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
           <span>PolyWordlot</span>
+          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
           {onViewChange && (
             <button
               type="button"
@@ -416,47 +477,53 @@ export const Statistics: React.FC<StatisticsProps> = ({
         </h1>
       </div>
       
-      <div className="stats-filters">
-        <div className="stat-filter-group">
-          <LanguageDropdown
-            availableLanguages={availableLanguages}
-            value={language}
-            onChange={handleLanguageChange}
-            showNameInTrigger
-          />
+      {statisticType !== 'cross-language' && (
+        <div className="stats-filters">
+          <div className="stat-filter-group">
+            <LanguageDropdown
+              availableLanguages={availableLanguages}
+              value={language}
+              onChange={handleLanguageChange}
+              showNameInTrigger
+            />
+          </div>
+          <div className="stat-filter-group">
+            <select
+              value={wordLength}
+              onChange={(e) => onWordLengthChange(Number(e.target.value))}
+            >
+              {currentLangConfig?.supportedLengths.map((length) => (
+                <option key={length} value={length}>
+                  {length}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="stat-filter-group">
-          <select
-            value={wordLength}
-            onChange={(e) => onWordLengthChange(Number(e.target.value))}
-          >
-            {currentLangConfig?.supportedLengths.map((length) => (
-              <option key={length} value={length}>
-                {length}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+      )}
 
 
       <div className="stat-display">
         <div className="stat-card">
           <div>
             <h3>
-              <select
-                value={statisticType}
-                onChange={(e) => setStatisticType(e.target.value as StatisticType)}
-                className="stat-title-select"
-              >
-                <option value="attempts-distribution">Attempts Distribution</option>
-                <option value="running-daily">Running Daily Average</option>
-                <option value="calendar-weekly">Calendar Weekly Average</option>
-                <option value="calendar-monthly">Calendar Monthly Average</option>
-                <option value="calendar-yearly">Calendar Yearly Average</option>
-                <option value="two-week-running">2-Week Running Average</option>
-                <option value="four-week-running">4-Week Running Average</option>
-              </select>
+              {statisticType === 'cross-language' ? (
+                <span className="stat-title-text">Cross-Language Comparison</span>
+              ) : (
+                <select
+                  value={statisticType}
+                  onChange={(e) => setStatisticType(e.target.value as StatisticType)}
+                  className="stat-title-select"
+                >
+                  <option value="attempts-distribution">Attempts Distribution</option>
+                  <option value="running-daily">Running Daily Average</option>
+                  <option value="calendar-weekly">Calendar Weekly Average</option>
+                  <option value="calendar-monthly">Calendar Monthly Average</option>
+                  <option value="calendar-yearly">Calendar Yearly Average</option>
+                  <option value="two-week-running">2-Week Running Average</option>
+                  <option value="four-week-running">4-Week Running Average</option>
+                </select>
+              )}
             </h3>
             {statisticType === 'attempts-distribution' && (() => {
               const total = Object.values(attemptsDistribution).reduce((sum, count) => sum + count, 0);
@@ -667,6 +734,109 @@ export const Statistics: React.FC<StatisticsProps> = ({
               <p>No data available</p>
             )
           )}
+
+          {statisticType === 'cross-language' && (() => {
+            if (!allGamesLoaded) {
+              return <p>Loading cross-language data...</p>;
+            }
+            if (crossLanguageData.length === 0) {
+              return <p>No combinations with more than 3 games played</p>;
+            }
+
+            const labelPlugin = {
+              id: 'crossLangBarLabels',
+              afterDatasetsDraw: (chart: any) => {
+                const ctx = chart.ctx;
+                ctx.save();
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = '#333';
+
+                chart.data.datasets.forEach((_dataset: any, i: number) => {
+                  const meta = chart.getDatasetMeta(i);
+                  meta.data.forEach((bar: any, index: number) => {
+                    const item = crossLanguageData[index];
+                    if (item) {
+                      ctx.fillText(
+                        `${item.average.toFixed(2)} (${item.count})`,
+                        bar.x + 6,
+                        bar.y
+                      );
+                    }
+                  });
+                });
+                ctx.restore();
+              },
+            };
+
+            // Generate colors: gradient from green (best) to red (worst)
+            const colors = crossLanguageData.map((_, i) => {
+              const ratio = crossLanguageData.length > 1 ? i / (crossLanguageData.length - 1) : 0;
+              const r = Math.round(220 * ratio + 76 * (1 - ratio));
+              const g = Math.round(76 * ratio + 175 * (1 - ratio));
+              const b = Math.round(76 * ratio + 80 * (1 - ratio));
+              return {
+                bg: `rgba(${r}, ${g}, ${b}, 0.6)`,
+                border: `rgba(${r}, ${g}, ${b}, 1)`,
+              };
+            });
+
+            const chartHeight = Math.max(400, crossLanguageData.length * 45);
+
+            return (
+              <div style={{ height: `${chartHeight}px`, position: 'relative', marginTop: '24px' }}>
+                <Bar
+                  data={{
+                    labels: crossLanguageData.map(d => d.label),
+                    datasets: [
+                      {
+                        label: 'Average Attempts',
+                        data: crossLanguageData.map(d => d.average),
+                        backgroundColor: colors.map(c => c.bg),
+                        borderColor: colors.map(c => c.border),
+                        borderWidth: 1,
+                      },
+                    ],
+                  }}
+                  plugins={[labelPlugin]}
+                  options={{
+                    indexAxis: 'y' as const,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: { display: false },
+                      tooltip: {
+                        callbacks: {
+                          label: (ctx: any) => {
+                            const item = crossLanguageData[ctx.dataIndex];
+                            return `Avg: ${item.average.toFixed(3)} (${item.count} games)`;
+                          },
+                        },
+                      },
+                    },
+                    scales: {
+                      x: {
+                        min: Math.max(0, Math.min(...crossLanguageData.map(d => d.average)) - 0.5),
+                        max: Math.max(...crossLanguageData.map(d => d.average)) + 1,
+                        title: {
+                          display: true,
+                          text: 'Average Attempts',
+                          font: { size: 14 },
+                        },
+                        ticks: { font: { size: 12 } },
+                      },
+                      y: {
+                        ticks: {
+                          font: { size: 13, weight: 'bold' as const },
+                        },
+                      },
+                    },
+                  }}
+                />
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>

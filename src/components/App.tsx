@@ -22,6 +22,7 @@ export const App: React.FC = () => {
   const [authView, setAuthView] = useState<'login' | 'register' | 'forgot' | 'reset'>('login');
   const [resetToken, setResetToken] = useState<string | null>(null);
   const [view, setView] = useState<'game' | 'statistics'>('game');
+  const [initialStatisticType, setInitialStatisticType] = useState<string | undefined>(undefined);
   const [allAvailableLanguages, setAllAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
@@ -205,7 +206,7 @@ export const App: React.FC = () => {
     setView('game'); // Switch to game view when viewing historical game
   };
 
-  const handleViewChange = (newView: 'game' | 'statistics' | null) => {
+  const handleViewChange = (newView: 'game' | 'statistics' | null, statType?: string) => {
     if (newView === null) {
       setView('game'); // Default to game if null
     } else {
@@ -214,6 +215,9 @@ export const App: React.FC = () => {
     // Clear historical date when switching views
     if (newView === 'statistics') {
       setHistoricalDate(null);
+      setInitialStatisticType(statType);
+    } else {
+      setInitialStatisticType(undefined);
     }
   };
 
@@ -304,6 +308,7 @@ export const App: React.FC = () => {
           wordLength={wordLength}
           onLanguageChange={handleLanguageChange}
           onWordLengthChange={handleWordLengthChange}
+          initialStatisticType={initialStatisticType as any}
         />
       )}
     </div>

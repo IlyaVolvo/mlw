@@ -48,12 +48,12 @@ h1 span {
 }
 
 h1 .build-commit {
+  display: block;
   font-size: 0.75rem;
   font-weight: 400;
   color: #999;
-  margin-right: 8px;
-  vertical-align: top;
   font-family: monospace;
+  margin-top: 3px;
 }
 
 h1 .help-icon {
@@ -1005,6 +1005,14 @@ h1 .logout-wrapper:hover .logout-tooltip {
 }
 
 /* Icons next to title (language + statistics) */
+.header-title-icons-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
 .header-title-icons {
   display: inline-flex;
   align-items: center;
@@ -1091,6 +1099,7 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .header-back-button:hover {
   background: rgba(102, 126, 234, 0.1);
 }
+
 
 .header-tabs-row {
   display: flex;
@@ -1309,6 +1318,13 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .stat-card h3 .stat-title-select:focus {
   outline: 2px solid #667eea;
   outline-offset: 2px;
+}
+
+.stat-card h3 .stat-title-text {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 4px 8px;
 }
 
 /* Historical game section */

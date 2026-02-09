@@ -19,7 +19,7 @@ interface GameProps {
   userId: number;
   onLogout?: () => void;
   view?: 'game' | 'statistics';
-  onViewChange?: (view: 'game' | 'statistics') => void;
+  onViewChange?: (view: 'game' | 'statistics', statType?: string) => void;
   historicalDate?: string | null;
   onHistoricalDateCleared?: () => void;
   onViewHistoricalGame?: (date: string) => void;
@@ -1043,7 +1043,37 @@ export const Game: React.FC<GameProps> = ({
     >
       <div className="header-section">
         <h1>
-          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
+          {onViewChange && (
+            <span className="header-title-icons-left">
+              <button
+                type="button"
+                className="header-icon-button"
+                onClick={() => onViewChange('statistics')}
+                title="Statistics"
+                aria-label="Statistics"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </button>
+              <button
+                type="button"
+                className="header-icon-button"
+                onClick={() => onViewChange('statistics', 'cross-language')}
+                title="Cross-Language Comparison"
+                aria-label="Cross-Language Comparison"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                </svg>
+              </button>
+            </span>
+          )}
           <span>PolyWordlot</span>
           {onViewChange && (
             <span className="header-title-icons">
@@ -1063,33 +1093,18 @@ export const Game: React.FC<GameProps> = ({
                   </svg>
                 </button>
               </span>
-              <button
-                type="button"
-                className="header-icon-button"
-                onClick={() => onViewChange('statistics')}
-                title="Statistics"
-                aria-label="Statistics"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </button>
+              {onLogout && (
+                <button onClick={onLogout} className="header-icon-button" title="Logout" aria-label="Logout">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                </button>
+              )}
             </span>
           )}
-          {onLogout && (
-            <div className="logout-wrapper">
-              <button onClick={onLogout} className="logout-icon" title="Logout">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                  <polyline points="16 17 21 12 16 7"></polyline>
-                  <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-              </button>
-              <span className="logout-tooltip">Logout</span>
-            </div>
-          )}
+          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
         </h1>
         {showCalendar && !randomMode && (
           <div className="calendar-full-panel">
