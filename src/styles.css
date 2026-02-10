@@ -2353,3 +2353,167 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .word-index-btn-cancel:hover {
   background: #d1d5db;
 }
+
+/* Tutorial styles */
+.tutorial-container {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.tutorial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tutorial-header h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tutorial-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tutorial-progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.3s;
+}
+
+.tutorial-progress-dot.active {
+  background: #667eea;
+  transform: scale(1.2);
+}
+
+.tutorial-progress-dot.completed {
+  background: #6aaa64;
+}
+
+.tutorial-board-area {
+  display: flex;
+  justify-content: center;
+}
+
+.tutorial-board-area .game-board {
+  gap: 6px;
+}
+
+.tutorial-board-area .row {
+  gap: 6px;
+  transition: all 0.3s;
+}
+
+.tutorial-board-area .cell {
+  width: 48px;
+  height: 48px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.tutorial-highlight-row {
+  box-shadow: 0 0 0 3px #667eea;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.tutorial-explanation {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-height: 80px;
+}
+
+.tutorial-explanation p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.tutorial-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.tutorial-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.tutorial-skip-button {
+  padding: 8px 16px;
+  background: transparent;
+  color: #999;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tutorial-skip-button:hover {
+  color: #666;
+}
+
+.tutorial-prev-button {
+  padding: 10px 20px;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tutorial-prev-button:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.tutorial-next-button {
+  padding: 10px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tutorial-next-button:hover {
+  background: #5a6fd6;
+}
+
+@media (max-width: 480px) {
+  .tutorial-container {
+    padding: 20px;
+  }
+
+  .tutorial-board-area .cell {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .tutorial-header h2 {
+    font-size: 1.25rem;
+  }
+}

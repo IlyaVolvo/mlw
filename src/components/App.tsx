@@ -5,10 +5,13 @@ import { ForgotPassword } from './ForgotPassword';
 import { ResetPassword } from './ResetPassword';
 import { Game } from './Game';
 import { Statistics } from './Statistics';
+import { Tutorial } from './Tutorial';
 import { apiClient } from '../api/client';
 import { getLanguageConfigs } from '../data/dictionaryLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import type { LanguageConfig } from '../types';
+
+const TUTORIAL_COMPLETED_KEY = 'polywordlot-tutorial-completed';
 
 interface User {
   id: number;
@@ -23,6 +26,7 @@ export const App: React.FC = () => {
   const [resetToken, setResetToken] = useState<string | null>(null);
   const [view, setView] = useState<'game' | 'statistics'>('game');
   const [initialStatisticType, setInitialStatisticType] = useState<string | undefined>(undefined);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [allAvailableLanguages, setAllAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
@@ -140,6 +144,11 @@ export const App: React.FC = () => {
     }
   }, []);
 
+  const handleTutorialComplete = () => {
+    localStorage.setItem(TUTORIAL_COMPLETED_KEY, 'true');
+    setShowTutorial(false);
+  };
+
   const handleLogin = async (userData: User) => {
     // Wait for configs to be loaded before setting user (prevents race condition)
     // This ensures Game component doesn't mount until configs are ready
@@ -147,6 +156,12 @@ export const App: React.FC = () => {
       await configsLoadPromiseRef.current;
     }
     
+    // Check if user has completed the tutorial
+    const tutorialDone = localStorage.getItem(TUTORIAL_COMPLETED_KEY);
+    if (!tutorialDone) {
+      setShowTutorial(true);
+    }
+
     // Configs are now loaded (we awaited the promise), safe to set user
     setUser(userData);
     
@@ -277,6 +292,14 @@ export const App: React.FC = () => {
       savePreferences(updatedPrefs);
     }
   };
+
+  if (showTutorial) {
+    return (
+      <div className="app-container">
+        <Tutorial onComplete={handleTutorialComplete} />
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">
