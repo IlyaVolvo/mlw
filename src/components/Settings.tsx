@@ -15,6 +15,7 @@ interface SettingsProps {
   onWordLengthChange: (length: number) => void;
   onRandomModeChange: (randomMode: boolean) => void;
   onDateChange: (date: string) => void;
+  onRestartPractice?: () => void;
   disabled?: boolean;
   onShowCalendarChange?: (show: boolean) => void;
   showCalendar?: boolean;
@@ -79,6 +80,7 @@ export const Settings: React.FC<SettingsProps> = ({
   onWordLengthChange,
   onRandomModeChange,
   onDateChange: _onDateChange,
+  onRestartPractice,
   disabled = false,
   onShowCalendarChange,
   showCalendar: externalShowCalendar,
@@ -192,6 +194,21 @@ export const Settings: React.FC<SettingsProps> = ({
           <option value="daily">Daily</option>
           <option value="practice">Practice</option>
         </select>
+        {randomMode && onRestartPractice && (
+          <button
+            type="button"
+            className="restart-practice-button"
+            onClick={onRestartPractice}
+            disabled={disabled}
+            title="New practice game"
+            aria-label="New practice game"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+          </button>
+        )}
       {!randomMode && (
         <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: 1, alignItems: 'center', minWidth: 0 }}>
             <input

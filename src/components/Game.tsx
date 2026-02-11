@@ -965,6 +965,24 @@ export const Game: React.FC<GameProps> = ({
     }
   }, [clearGameDisplay]);
 
+  const handleRestartPractice = useCallback(() => {
+    if (!dictionary || !randomMode) return;
+    const wordSeed = Date.now();
+    const target = getWordFromSeed(dictionary, wordSeed);
+    const newState: GameState = {
+      guesses: [],
+      currentGuess: '',
+      isComplete: false,
+      isWon: false,
+      language,
+      wordLength,
+      date: Date.now().toString(),
+      isRandomMode: true,
+      wordSeed,
+    };
+    applyNewOrResetGame(newState, target);
+  }, [dictionary, randomMode, language, wordLength, applyNewOrResetGame]);
+
   // Handle keyboard events
   useEffect(() => {
     const handleKeyDown = async (e: KeyboardEvent) => {
@@ -1171,6 +1189,7 @@ export const Game: React.FC<GameProps> = ({
         onLanguageChange={handleLanguageChange}
         onWordLengthChange={handleWordLengthChange}
         onRandomModeChange={handleRandomModeChange}
+        onRestartPractice={handleRestartPractice}
         onDateChange={handleDateChange}
         disabled={showCalendar}
         showCalendar={showCalendar}

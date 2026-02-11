@@ -237,6 +237,32 @@ h1 .logout-wrapper:hover .logout-tooltip {
   cursor: not-allowed;
 }
 
+.restart-practice-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.restart-practice-button:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.restart-practice-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .daily-mode-row .date-picker-wrapper-inline {
   flex: 1;
   min-width: 120px;
