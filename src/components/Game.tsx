@@ -5,7 +5,8 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, getKeyboardRtl } from '../data/dictionaryLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins } from '../data/dictionaryLoader';
+import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
 import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
@@ -183,6 +184,7 @@ export const Game: React.FC<GameProps> = ({
         const [dict] = await Promise.all([
           loadDictionary(language, wordLength),
           loadNormalization(language),
+          loadKeyboard(language),
         ]);
         if (cancelled) return;
         if (!dict) {
@@ -242,6 +244,7 @@ export const Game: React.FC<GameProps> = ({
         const [dict] = await Promise.all([
           loadDictionary(language, wordLength),
           loadNormalization(language),
+          loadKeyboard(language),
         ]);
         if (dict) {
           setDictionary(dict);
@@ -746,14 +749,19 @@ export const Game: React.FC<GameProps> = ({
   const handleKeyPress = useCallback(async (key: string) => {
     const normalizedKey = key.toLowerCase();
     const needStart = dictionary && (!gameState || (randomMode && gameState?.isComplete));
+    const currentGuess = needStart ? (gameState?.currentGuess ?? '') : (gameState?.currentGuess ?? '');
+    const plugins = getInputPlugins(language);
+    const transformedKey = plugins.length > 0
+      ? applyInputPlugins(normalizedKey, currentGuess, wordLength, keyboardRtl, plugins)
+      : normalizedKey;
 
     if (needStart) {
-      const keyApplied = await handleStartGame(normalizedKey);
+      const keyApplied = await handleStartGame(transformedKey);
       if (!keyApplied) {
         setTimeout(() => {
           setGameState((currentState) => {
             if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
-              const next = keyboardRtl ? normalizedKey + currentState.currentGuess : currentState.currentGuess + normalizedKey;
+              const next = keyboardRtl ? transformedKey + currentState.currentGuess : currentState.currentGuess + transformedKey;
               return { ...currentState, currentGuess: next };
             }
             return currentState;
@@ -766,7 +774,7 @@ export const Game: React.FC<GameProps> = ({
     if (!gameState || gameState.isComplete || !dictionary) return;
 
     if (gameState.currentGuess.length < wordLength) {
-      const newGuess = keyboardRtl ? normalizedKey + gameState.currentGuess : gameState.currentGuess + normalizedKey;
+      const newGuess = keyboardRtl ? transformedKey + gameState.currentGuess : gameState.currentGuess + transformedKey;
       setGameState({ ...gameState, currentGuess: newGuess });
     }
   }, [gameState, wordLength, dictionary, language, randomMode, keyboardRtl, handleStartGame]);
@@ -1003,14 +1011,19 @@ export const Game: React.FC<GameProps> = ({
 
       // If no game or (Training + completed game) and it's a letter, start the game first (same as handleKeyPress)
       const needStart = dictionary && (!gameState || (randomMode && gameState?.isComplete));
-      if (needStart && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
+      if (needStart && e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ\u0590-\u05FF]/.test(e.key)) {
         const normalizedKey = e.key.toLowerCase();
-        const keyApplied = await handleStartGame(normalizedKey);
+        const currentGuess = gameState?.currentGuess ?? '';
+        const plugins = getInputPlugins(language);
+        const transformedKey = plugins.length > 0
+          ? applyInputPlugins(normalizedKey, currentGuess, wordLength, keyboardRtl, plugins)
+          : normalizedKey;
+        const keyApplied = await handleStartGame(transformedKey);
         if (!keyApplied) {
           setTimeout(() => {
             setGameState((currentState) => {
               if (currentState && !currentState.isComplete && currentState.currentGuess.length < wordLength) {
-                const next = keyboardRtl ? normalizedKey + currentState.currentGuess : currentState.currentGuess + normalizedKey;
+                const next = keyboardRtl ? transformedKey + currentState.currentGuess : currentState.currentGuess + transformedKey;
                 return { ...currentState, currentGuess: next };
               }
               return currentState;
@@ -1026,7 +1039,7 @@ export const Game: React.FC<GameProps> = ({
         handleEnter();
       } else if (e.key === 'Backspace') {
         handleBackspace();
-      } else if (e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ]/.test(e.key)) {
+      } else if (e.key.length === 1 && /[a-zA-Zа-яА-ЯёЁ\u0590-\u05FF]/.test(e.key)) {
         handleKeyPress(e.key);
       }
     };
