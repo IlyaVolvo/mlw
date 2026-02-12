@@ -133,15 +133,19 @@ export const Keyboard: React.FC<KeyboardProps> = ({
               {getBackspaceLabel()}
             </button>
           )}
-          {row.map((key) => (
-            <button
-              key={key}
-              className={getKeyClass(key)}
-              onClick={() => onKeyPress(key)}
-            >
-              {key.toUpperCase()}
-            </button>
-          ))}
+          {row.map((key, keyIndex) =>
+            key === '' ? (
+              <div key={`spacer-${rowIndex}-${keyIndex}`} className="keyboard-spacer" aria-hidden="true" />
+            ) : (
+              <button
+                key={`${rowIndex}-${keyIndex}-${key}`}
+                className={getKeyClass(key)}
+                onClick={() => onKeyPress(key)}
+              >
+                {key.toUpperCase()}
+              </button>
+            )
+          )}
           {shouldShowEnter(rowIndex) && getEnterPosition() === 'end' && (
             <button className="key key-action" onClick={onEnter}>
               {getEnterLabel()}

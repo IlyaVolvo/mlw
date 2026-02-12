@@ -519,6 +519,15 @@ h1 .logout-wrapper:hover .logout-tooltip {
   justify-content: center;
 }
 
+.keyboard-spacer {
+  min-width: 40px;
+  height: 50px;
+  flex-shrink: 0;
+  /* Invisible but takes up space */
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .key {
   min-width: 40px;
   height: 50px;
@@ -875,6 +884,11 @@ h1 .logout-wrapper:hover .logout-tooltip {
     font-size: 0.65rem;
   }
 
+  .keyboard-spacer {
+    min-width: 28px;
+    height: 48px;
+  }
+
   .keyboard-row {
     gap: 4px;
   }
@@ -991,6 +1005,11 @@ h1 .logout-wrapper:hover .logout-tooltip {
   .key.key-action {
     min-width: 36px;
     font-size: 0.6rem;
+  }
+
+  .keyboard-spacer {
+    min-width: 24px;
+    height: 44px;
   }
 
   .keyboard-row {
