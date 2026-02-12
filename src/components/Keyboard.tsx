@@ -21,6 +21,8 @@ const DEFAULT_KEYBOARD: string[][] = [
 type ActionButton = {
   label: string;
   position: 'start' | 'end' | 'none';
+  /** Row index (0-based). If omitted, defaults to last row. */
+  row?: number;
 };
 
 type ActionsState = {
@@ -47,22 +49,30 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   useEffect(() => {
     const loadLayout = async () => {
       const keyboard = await loadKeyboard(language);
-      setLayout(keyboard || DEFAULT_KEYBOARD);
+      const effectiveLayout = keyboard || DEFAULT_KEYBOARD;
+      setLayout(effectiveLayout);
       
       const keyboardActions = await loadKeyboardActions(language);
+      const lastRow = effectiveLayout.length > 0 ? effectiveLayout.length - 1 : 0;
       if (keyboardActions) {
         setActions({
           enter: {
             label: keyboardActions.enter?.label || DEFAULT_ACTIONS.enter.label,
             position: (keyboardActions.enter?.position || DEFAULT_ACTIONS.enter.position) as 'start' | 'end' | 'none',
+            row: keyboardActions.enter?.row ?? lastRow,
           },
           backspace: {
             label: keyboardActions.backspace?.label || DEFAULT_ACTIONS.backspace.label,
             position: (keyboardActions.backspace?.position || DEFAULT_ACTIONS.backspace.position) as 'start' | 'end' | 'none',
+            row: keyboardActions.backspace?.row ?? lastRow,
           },
         });
       } else {
-        setActions(DEFAULT_ACTIONS);
+        setActions({
+          ...DEFAULT_ACTIONS,
+          enter: { ...DEFAULT_ACTIONS.enter, row: lastRow },
+          backspace: { ...DEFAULT_ACTIONS.backspace, row: lastRow },
+        });
       }
     };
     
@@ -78,13 +88,15 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   const shouldShowEnter = (rowIndex: number): boolean => {
-    if (rowIndex !== layout.length - 1) return false;
+    const targetRow = actions.enter.row ?? layout.length - 1;
+    if (rowIndex !== targetRow) return false;
     const position = actions.enter.position;
     return position !== 'none';
   };
 
   const shouldShowBackspace = (rowIndex: number): boolean => {
-    if (rowIndex !== layout.length - 1) return false;
+    const targetRow = actions.backspace.row ?? layout.length - 1;
+    if (rowIndex !== targetRow) return false;
     const position = actions.backspace.position;
     return position !== 'none';
   };

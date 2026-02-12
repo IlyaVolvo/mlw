@@ -17,10 +17,14 @@ export interface KeyboardActions {
   enter?: {
     label: string;
     position?: 'start' | 'end' | 'none';
+    /** Row index (0-based) where the key appears. Defaults to last row if omitted. */
+    row?: number;
   };
   backspace?: {
     label: string;
     position?: 'start' | 'end' | 'none';
+    /** Row index (0-based) where the key appears. Defaults to last row if omitted. */
+    row?: number;
   };
 }
 
