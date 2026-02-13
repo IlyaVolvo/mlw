@@ -164,9 +164,6 @@ export const Game: React.FC<GameProps> = ({
     return () => { cancelled = true; };
   }, [language]);
 
-  // Track if this is the first settings change after initialization
-  const firstSettingsChangeRef = useRef(true);
-
   // Initialize component - just load dictionary and normalization, don't create game
   useEffect(() => {
     // Re-mount (e.g. React Strict Mode): ref persists but state was reset → loading would stay true
@@ -197,7 +194,6 @@ export const Game: React.FC<GameProps> = ({
         initializedRef.current = true;
         const today = formatDate();
         setSelectedPlayDate(today);
-        firstSettingsChangeRef.current = true;
       } catch (err) {
         if (!cancelled) setError(err instanceof Error ? err.message : 'Failed to initialize');
       } finally {
@@ -250,21 +246,27 @@ export const Game: React.FC<GameProps> = ({
           setDictionary(dict);
           dictionaryForRef.current = { language, wordLength };
         }
-        if (firstSettingsChangeRef.current) {
-          const today = formatDate();
-          setSelectedPlayDate(today);
-          saveStoredDate(language, wordLength, today);
-          firstSettingsChangeRef.current = false;
-        } else {
-          const storedDate = loadStoredDate(language, wordLength);
-          if (storedDate) {
-            setSelectedPlayDate(storedDate);
-          } else {
-            const today = formatDate();
-            setSelectedPlayDate(today);
-            saveStoredDate(language, wordLength, today);
+        const today = formatDate();
+        const storedDate = loadStoredDate(language, wordLength);
+        let dateToUse = today;
+        if (storedDate) {
+          try {
+            const response = await apiClient.getCurrentGame({
+              language,
+              wordLength,
+              gameDate: storedDate,
+              isRandomMode: false,
+            });
+            // Use last played date only if game exists and is not finished
+            if (response.game && !response.game.is_complete) {
+              dateToUse = storedDate;
+            }
+          } catch {
+            // API error or not logged in: default to today
           }
         }
+        setSelectedPlayDate(dateToUse);
+        saveStoredDate(language, wordLength, dateToUse);
       } catch (err) {
         console.error('Failed to load dictionary:', err);
       }
