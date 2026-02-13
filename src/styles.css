@@ -497,6 +497,35 @@ h1 .logout-wrapper:hover .logout-tooltip {
   color: white;
 }
 
+.cell {
+  position: relative;
+}
+
+.cell-cursor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 1.2em;
+  background: currentColor;
+  animation: cell-cursor-blink 1s step-end infinite;
+  pointer-events: none;
+}
+
+.cell.empty .cell-cursor {
+  color: #999;
+}
+
+.cell.absent .cell-cursor {
+  background: white;
+}
+
+@keyframes cell-cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .keyboard {
   display: flex;
   flex-direction: column;

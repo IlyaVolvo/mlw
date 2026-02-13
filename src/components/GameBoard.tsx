@@ -61,19 +61,26 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     return null;
   };
 
-  const getCellClass = (state: LetterEvaluation | null): string => {
-    if (!state) return 'cell empty';
-    return `cell ${state.state}`;
+  const getCellClass = (state: LetterEvaluation | null, isActive: boolean): string => {
+    if (!state) return `cell empty${isActive ? ' cell-active' : ''}`;
+    return `cell ${state.state}${isActive ? ' cell-active' : ''}`;
+  };
+
+  const getActiveCol = (): number => {
+    return rtl ? wordLength - 1 - currentGuess.length : currentGuess.length;
   };
 
   const rows: React.ReactNode[] = [];
   for (let row = 0; row < maxGuesses; row++) {
     const cells: React.ReactNode[] = [];
+    const activeCol = !isComplete && row === guesses.length ? getActiveCol() : -1;
     for (let col = 0; col < wordLength; col++) {
       const cellState = getCellState(row, col);
+      const isActive = col === activeCol;
       cells.push(
-        <div key={col} className={getCellClass(cellState)}>
+        <div key={col} className={getCellClass(cellState, isActive)}>
           {cellState?.letter.toUpperCase() || ''}
+          {isActive && <span className="cell-cursor" aria-hidden="true" />}
         </div>
       );
     }

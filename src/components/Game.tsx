@@ -1231,6 +1231,7 @@ export const Game: React.FC<GameProps> = ({
           maxGuesses={MAX_GUESSES}
           isComplete={false}
           isWon={false}
+          rtl={keyboardRtl}
         />
       )}
       {gameState && dictionary && (
@@ -1282,6 +1283,7 @@ export const Game: React.FC<GameProps> = ({
             maxGuesses={MAX_GUESSES}
             isComplete={false}
             isWon={false}
+            rtl={keyboardRtl}
           />
           <Keyboard
             onKeyPress={handleKeyPress}
