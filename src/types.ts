@@ -1,4 +1,4 @@
-export type LetterState = 'correct' | 'present' | 'absent';
+export type LetterState = 'correct' | 'present' | 'absent' | 'typing';
 
 export interface LetterEvaluation {
   letter: string;

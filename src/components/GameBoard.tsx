@@ -43,17 +43,18 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     }
 
     // Show current guess being typed (only if game is not complete)
+    // Letters stay white until Enter; use 'typing' state for uncolored display
     if (!isComplete && row === guesses.length && currentGuess.length > 0) {
       if (rtl) {
         // RTL: first letter (index 0) in rightmost cell; letters fill to the left
         const startCol = wordLength - currentGuess.length;
         if (col >= startCol && col < wordLength) {
           const idx = col - startCol;
-          return { letter: currentGuess[idx], state: 'absent' };
+          return { letter: currentGuess[idx], state: 'typing' };
         }
       } else {
         if (col < currentGuess.length) {
-          return { letter: currentGuess[col], state: 'absent' };
+          return { letter: currentGuess[col], state: 'typing' };
         }
       }
     }

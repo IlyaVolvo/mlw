@@ -479,6 +479,12 @@ h1 .logout-wrapper:hover .logout-tooltip {
   background: white;
 }
 
+.cell.typing {
+  border-color: #ddd;
+  background: white;
+  color: #333;
+}
+
 .cell.correct {
   background: #6aaa64;
   border-color: #6aaa64;
@@ -515,6 +521,10 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
 .cell.empty .cell-cursor {
   color: #999;
+}
+
+.cell.typing .cell-cursor {
+  color: #333;
 }
 
 .cell.absent .cell-cursor {
