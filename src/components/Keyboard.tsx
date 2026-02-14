@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { LetterState } from '../types';
 import { loadKeyboard, loadKeyboardActions } from '../data/dictionaryLoader';
+import { normalizeForLanguage } from '../utils/characterNormalization';
 
 interface KeyboardProps {
   onKeyPress: (key: string) => void;
@@ -80,7 +81,9 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   }, [language]);
 
   const getKeyClass = (key: string): string => {
-    const state = letterStates.get(key.toLowerCase());
+    const rawKey = key.toLowerCase();
+    const canonicalKey = normalizeForLanguage(rawKey, language);
+    const state = letterStates.get(canonicalKey);
     if (state) {
       return `key ${state}`;
     }

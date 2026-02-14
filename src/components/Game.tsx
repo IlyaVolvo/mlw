@@ -97,14 +97,17 @@ export const Game: React.FC<GameProps> = ({
 
   const updateLetterStates = useCallback((state: GameState) => {
     const states = new Map<string, LetterState>();
+    const lang = state.language;
     for (const guess of state.guesses) {
       for (const eval_ of guess.evaluations) {
-        const currentState = states.get(eval_.letter);
+        // Use normalized (canonical) form for key so final/non-final variants share state (e.g. Hebrew ם/מ)
+        const canonicalKey = normalizeForLanguage(eval_.letter, lang);
+        const currentState = states.get(canonicalKey);
         // Priority: correct > present > absent
-        if (!currentState || 
+        if (!currentState ||
             (currentState === 'absent' && eval_.state !== 'absent') ||
             (currentState === 'present' && eval_.state === 'correct')) {
-          states.set(eval_.letter, eval_.state);
+          states.set(canonicalKey, eval_.state);
         }
       }
     }
