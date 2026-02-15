@@ -6,12 +6,14 @@ import { ResetPassword } from './ResetPassword';
 import { Game } from './Game';
 import { Statistics } from './Statistics';
 import { Tutorial } from './Tutorial';
+import { IconsTutorial } from './IconsTutorial';
 import { apiClient } from '../api/client';
 import { getLanguageConfigs } from '../data/dictionaryLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import type { LanguageConfig } from '../types';
 
 const TUTORIAL_COMPLETED_KEY = 'polywordlot-tutorial-completed';
+const ICONS_TUTORIAL_COMPLETED_KEY = 'polywordlot-icons-tutorial-completed';
 
 interface User {
   id: number;
@@ -27,6 +29,7 @@ export const App: React.FC = () => {
   const [view, setView] = useState<'game' | 'statistics'>('game');
   const [initialStatisticType, setInitialStatisticType] = useState<string | undefined>(undefined);
   const [showTutorial, setShowTutorial] = useState(false);
+  const [showIconsTutorial, setShowIconsTutorial] = useState(false);
   const [allAvailableLanguages, setAllAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
@@ -100,6 +103,15 @@ export const App: React.FC = () => {
           
           // Configs are now loaded (we awaited the promise), safe to set user
           setUser(response.user);
+
+          // Show tutorials if not yet completed (for returning users with existing token)
+          const tutorialDone = localStorage.getItem(TUTORIAL_COMPLETED_KEY);
+          const iconsTutorialDone = localStorage.getItem(ICONS_TUTORIAL_COMPLETED_KEY);
+          if (!tutorialDone) {
+            setShowTutorial(true);
+          } else if (!iconsTutorialDone) {
+            setShowIconsTutorial(true);
+          }
           
           // Load preferences from API when logged in
           try {
@@ -147,6 +159,15 @@ export const App: React.FC = () => {
   const handleTutorialComplete = () => {
     localStorage.setItem(TUTORIAL_COMPLETED_KEY, 'true');
     setShowTutorial(false);
+    const iconsDone = localStorage.getItem(ICONS_TUTORIAL_COMPLETED_KEY);
+    if (!iconsDone) {
+      setShowIconsTutorial(true);
+    }
+  };
+
+  const handleIconsTutorialComplete = () => {
+    localStorage.setItem(ICONS_TUTORIAL_COMPLETED_KEY, 'true');
+    setShowIconsTutorial(false);
   };
 
   const handleLogin = async (userData: User) => {
@@ -156,10 +177,13 @@ export const App: React.FC = () => {
       await configsLoadPromiseRef.current;
     }
     
-    // Check if user has completed the tutorial
+    // Check if user has completed the tutorials
     const tutorialDone = localStorage.getItem(TUTORIAL_COMPLETED_KEY);
+    const iconsTutorialDone = localStorage.getItem(ICONS_TUTORIAL_COMPLETED_KEY);
     if (!tutorialDone) {
       setShowTutorial(true);
+    } else if (!iconsTutorialDone) {
+      setShowIconsTutorial(true);
     }
 
     // Configs are now loaded (we awaited the promise), safe to set user
@@ -297,6 +321,14 @@ export const App: React.FC = () => {
     return (
       <div className="app-container">
         <Tutorial onComplete={handleTutorialComplete} />
+      </div>
+    );
+  }
+
+  if (showIconsTutorial) {
+    return (
+      <div className="app-container">
+        <IconsTutorial onComplete={handleIconsTutorialComplete} />
       </div>
     );
   }

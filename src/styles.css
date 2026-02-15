@@ -2661,3 +2661,43 @@ h1 .logout-wrapper:hover .logout-tooltip {
     font-size: 1.25rem;
   }
 }
+
+/* Icons tutorial */
+.icons-tutorial-container .icons-tutorial-card {
+  max-width: 420px;
+}
+
+.icons-tutorial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.icons-tutorial-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 12px;
+  color: #667eea;
+}
+
+.icons-tutorial-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.icons-tutorial-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.icons-tutorial-content .tutorial-explanation {
+  width: 100%;
+}
