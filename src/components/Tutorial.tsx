@@ -208,7 +208,7 @@ export const Tutorial: React.FC<TutorialProps> = ({ onComplete }) => {
               className="tutorial-next-button"
               onClick={handleNext}
             >
-              {isLastStep ? 'Start Playing!' : 'Next'}
+              {isLastStep ? 'Other Features' : 'Next'}
             </button>
           </div>
         </div>

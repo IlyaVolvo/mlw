@@ -206,7 +206,7 @@ export async function sendFeedbackEmail(userEmail: string, comments: string): Pr
     const mailOptions = {
       from: fromField,
       to: smtpUser,
-      replyTo: 'polywordlot@gmail.com',
+      replyTo: userEmail,
       subject: `Polywordlot Feedback from ${userEmail}`,
       text: comments.trim(),
       html: `<pre style="white-space: pre-wrap; font-family: inherit;">${comments.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`,

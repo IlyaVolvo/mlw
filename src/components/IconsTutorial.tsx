@@ -139,7 +139,7 @@ export const IconsTutorial: React.FC<IconsTutorialProps> = ({ onComplete }) => {
               className="tutorial-next-button"
               onClick={handleNext}
             >
-              {isLastStep ? 'Got it!' : 'Next'}
+              {isLastStep ? 'Start Playing!' : 'Next'}
             </button>
           </div>
         </div>

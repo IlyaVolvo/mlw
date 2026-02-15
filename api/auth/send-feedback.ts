@@ -68,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await transport.sendMail({
       from: fromEmail,
       to: smtpUser,
-      replyTo: 'polywordlot@gmail.com',
+      replyTo: userEmail,
       subject: `Polywordlot Feedback from ${userEmail}`,
       text: comments.trim(),
       html: `<pre style="white-space: pre-wrap; font-family: inherit;">${comments.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`,

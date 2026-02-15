@@ -1403,7 +1403,7 @@ export const Game: React.FC<GameProps> = ({
           <div className="feedback-popup" onClick={(e) => e.stopPropagation()}>
             <h3>Send Feedback</h3>
             <p className="feedback-popup-info">
-              Your message will be sent to the author. Your email ({userEmail || 'registered user'}) will be used as the reply address.
+              Please introduce yourself — I only know your email address. Your message will be sent to the author. Your email ({userEmail || 'registered user'}) will be used as the reply address.
             </p>
             <textarea
               className="feedback-textarea"
