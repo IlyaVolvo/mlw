@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import { randomBytes } from 'crypto';
 import { query } from '../db/database.js';
 import { generateToken, authenticateToken, AuthRequest } from '../middleware/auth.js';
-import { sendPasswordResetEmail } from '../utils/email.js';
+import { sendPasswordResetEmail, sendFeedbackEmail } from '../utils/email.js';
 import { logger } from '../utils/logger.js';
 
 const router = express.Router();
@@ -275,6 +275,24 @@ router.get('/preferences', authenticateToken, async (req: AuthRequest, res) => {
   } catch (error) {
     logger.error('Get preferences error', error);
     res.status(500).json({ error: 'Failed to get preferences' });
+  }
+});
+
+// Send feedback (requires auth)
+router.post('/send-feedback', authenticateToken, async (req: AuthRequest, res) => {
+  try {
+    const userEmail = req.email!;
+    const { comments } = req.body;
+
+    if (!comments || typeof comments !== 'string' || !comments.trim()) {
+      return res.status(400).json({ error: 'Comments are required' });
+    }
+
+    await sendFeedbackEmail(userEmail, comments.trim());
+    res.json({ success: true, message: 'Feedback sent successfully' });
+  } catch (error) {
+    logger.error('Send feedback error', error);
+    res.status(500).json({ error: 'Failed to send feedback' });
   }
 });
 

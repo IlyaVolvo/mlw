@@ -305,7 +305,8 @@ export const App: React.FC = () => {
     <div className="app-container">
       {view === 'game' ? (
         <Game 
-          userId={user.id} 
+          userId={user.id}
+          userEmail={user.email}
           onLogout={handleLogout} 
           view={view} 
           onViewChange={handleViewChange}

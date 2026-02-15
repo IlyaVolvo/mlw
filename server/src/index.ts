@@ -71,6 +71,7 @@ const logRegisteredRoutes = () => {
   routes.push({ method: 'GET', path: '/api/auth/me' });
   routes.push({ method: 'GET', path: '/api/auth/preferences' });
   routes.push({ method: 'POST', path: '/api/auth/preferences' });
+  routes.push({ method: 'POST', path: '/api/auth/send-feedback' });
   
   // Games routes
   routes.push({ method: 'GET', path: '/api/games/current' });

@@ -18,6 +18,7 @@ const MAX_GUESSES = 6;
 
 interface GameProps {
   userId: number;
+  userEmail?: string;
   onLogout?: () => void;
   view?: 'game' | 'statistics';
   onViewChange?: (view: 'game' | 'statistics', statType?: string) => void;
@@ -35,6 +36,7 @@ interface GameProps {
 
 export const Game: React.FC<GameProps> = ({ 
   userId, 
+  userEmail,
   onLogout, 
   view: _view, 
   onViewChange, 
@@ -66,6 +68,10 @@ export const Game: React.FC<GameProps> = ({
   const [showCalendar, setShowCalendar] = useState(false);
   const [showWordIndexPopup, setShowWordIndexPopup] = useState(false);
   const [wordIndexInput, setWordIndexInput] = useState('');
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [feedbackSending, setFeedbackSending] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
@@ -869,6 +875,25 @@ export const Game: React.FC<GameProps> = ({
     setSelectedPlayDate(date);
     saveStoredDate(language, wordLength, date);
   }, [language, wordLength, saveStoredDate]);
+
+  const handleSendFeedback = useCallback(async () => {
+    if (!feedbackText.trim() || feedbackSending) return;
+    setFeedbackSending(true);
+    setFeedbackMessage(null);
+    try {
+      await apiClient.sendFeedback(feedbackText.trim());
+      setFeedbackMessage('Thank you! Your feedback has been sent.');
+      setFeedbackText('');
+      setTimeout(() => {
+        setShowFeedbackModal(false);
+        setFeedbackMessage(null);
+      }, 1500);
+    } catch (err) {
+      setFeedbackMessage(err instanceof Error ? err.message : 'Failed to send feedback');
+    } finally {
+      setFeedbackSending(false);
+    }
+  }, [feedbackText, feedbackSending]);
   
   // Swipe gesture handlers for date navigation
   const onTouchStart = useCallback((e: React.TouchEvent) => {
@@ -1010,7 +1035,7 @@ export const Game: React.FC<GameProps> = ({
       }
 
       // Don't process game keys when popup is open
-      if (showWordIndexPopup) return;
+      if (showWordIndexPopup || showFeedbackModal) return;
 
       if (loading) return;
 
@@ -1051,7 +1076,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup]);
+  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup, showFeedbackModal]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -1126,6 +1151,21 @@ export const Game: React.FC<GameProps> = ({
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </button>
+              </span>
+              <span className="header-icon-with-tooltip">
+                <span className="header-icon-tooltip">Please, send comments if you find any comments, found bugs, incorrect or missing words. If you'd like to add a new language, it is relatively easy - all you need a couple of dictionaries for each word length. Please contact the author. I would gladly explain the details.</span>
+                <button
+                  type="button"
+                  className="header-icon-button"
+                  onClick={() => { setShowFeedbackModal(true); setFeedbackText(''); setFeedbackMessage(null); }}
+                  title="Send feedback"
+                  aria-label="Send feedback"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
                 </button>
               </span>
@@ -1351,6 +1391,50 @@ export const Game: React.FC<GameProps> = ({
               <button
                 className="word-index-btn word-index-btn-cancel"
                 onClick={() => setShowWordIndexPopup(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {showFeedbackModal && (
+        <div className="word-index-overlay" onClick={() => !feedbackSending && setShowFeedbackModal(false)}>
+          <div className="feedback-popup" onClick={(e) => e.stopPropagation()}>
+            <h3>Send Feedback</h3>
+            <p className="feedback-popup-info">
+              Your message will be sent to the author. Your email ({userEmail || 'registered user'}) will be used as the reply address.
+            </p>
+            <textarea
+              className="feedback-textarea"
+              value={feedbackText}
+              onChange={(e) => setFeedbackText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') setShowFeedbackModal(false);
+                e.stopPropagation();
+              }}
+              placeholder="Your comments, bug reports, or suggestions..."
+              rows={5}
+              autoFocus
+              disabled={feedbackSending}
+            />
+            {feedbackMessage && (
+              <p className={`feedback-message ${feedbackMessage.includes('Thank you') ? 'success' : 'error'}`}>
+                {feedbackMessage}
+              </p>
+            )}
+            <div className="word-index-buttons">
+              <button
+                className="word-index-btn word-index-btn-go"
+                onClick={handleSendFeedback}
+                disabled={!feedbackText.trim() || feedbackSending}
+              >
+                {feedbackSending ? 'Sending...' : 'Send'}
+              </button>
+              <button
+                className="word-index-btn word-index-btn-cancel"
+                onClick={() => !feedbackSending && setShowFeedbackModal(false)}
+                disabled={feedbackSending}
               >
                 Cancel
               </button>

@@ -188,3 +188,36 @@ export async function sendPasswordResetEmail(email: string, resetToken: string, 
   }
 }
 
+export async function sendFeedbackEmail(userEmail: string, comments: string): Promise<void> {
+  try {
+    const transporter = await getTransporter();
+    const smtpUser = process.env.SMTP_USER;
+    const fromEmail = process.env.SMTP_FROM || smtpUser;
+
+    if (!smtpUser) {
+      throw new Error('SMTP_USER must be set');
+    }
+
+    let fromField = fromEmail || smtpUser;
+    if (fromField && !fromField.includes('@')) {
+      fromField = `"${fromField}" <${smtpUser}>`;
+    }
+
+    const mailOptions = {
+      from: fromField,
+      to: smtpUser,
+      replyTo: 'polywordlot@gmail.com',
+      subject: `Polywordlot Feedback from ${userEmail}`,
+      text: comments.trim(),
+      html: `<pre style="white-space: pre-wrap; font-family: inherit;">${comments.trim().replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`,
+    };
+
+    logger.info('Sending feedback email', { from: userEmail, to: smtpUser });
+    await transporter.sendMail(mailOptions);
+    logger.info('Feedback email sent successfully');
+  } catch (error: any) {
+    logger.error('Failed to send feedback email', { error: error.message, userEmail });
+    throw error;
+  }
+}
+

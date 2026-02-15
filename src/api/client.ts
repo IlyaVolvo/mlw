@@ -109,6 +109,13 @@ class ApiClient {
     });
   }
 
+  async sendFeedback(comments: string): Promise<{ success: boolean; message: string }> {
+    return this.request<{ success: boolean; message: string }>('/auth/send-feedback', {
+      method: 'POST',
+      body: JSON.stringify({ comments }),
+    });
+  }
+
   // Game endpoints
   async getCurrentGame(params: {
     language?: string;
