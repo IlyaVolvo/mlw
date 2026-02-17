@@ -7,6 +7,8 @@ import { Game } from './Game';
 import { Statistics } from './Statistics';
 import { Tutorial } from './Tutorial';
 import { IconsTutorial } from './IconsTutorial';
+import { ReleaseMessageModal } from './ReleaseMessageModal';
+import { getReleasesToShow, recordPlayed } from '../utils/releaseNotes';
 import { apiClient } from '../api/client';
 import { getLanguageConfigs } from '../data/dictionaryLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
@@ -18,6 +20,7 @@ const ICONS_TUTORIAL_COMPLETED_KEY = 'polywordlot-icons-tutorial-completed';
 interface User {
   id: number;
   email: string;
+  verified?: number;
 }
 
 export const App: React.FC = () => {
@@ -30,6 +33,8 @@ export const App: React.FC = () => {
   const [initialStatisticType, setInitialStatisticType] = useState<string | undefined>(undefined);
   const [showTutorial, setShowTutorial] = useState(false);
   const [showIconsTutorial, setShowIconsTutorial] = useState(false);
+  const [releasesToShow, setReleasesToShow] = useState<Array<{ message: string }>>([]);
+  const [lastDisplayedIndex, setLastDisplayedIndex] = useState<number>(-1);
   const [allAvailableLanguages, setAllAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [availableLanguages, setAvailableLanguages] = useState<LanguageConfig[]>([]);
   const [historicalDate, setHistoricalDate] = useState<string | null>(null);
@@ -37,6 +42,56 @@ export const App: React.FC = () => {
   const [wordLength, setWordLength] = useState<number>(5);
   const configsLoadPromiseRef = useRef<Promise<void> | null>(null);
   const allConfigsRef = useRef<LanguageConfig[]>([]);
+  const dismissedReleaseRef = useRef(false);
+  const lastReleaseCheckRef = useRef<number>(0);
+  const RELEASE_CHECK_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
+  const MIN_CHECK_GAP_MS = 60 * 1000; // 1 minute - throttle language/wordLength triggers
+
+  const checkForReleases = (bustCache: boolean) => {
+    if (!user || showTutorial || showIconsTutorial) return;
+    const now = Date.now();
+    if (!bustCache && now - lastReleaseCheckRef.current < MIN_CHECK_GAP_MS) return;
+    lastReleaseCheckRef.current = now;
+    const lastSeen = user.verified ?? 0;
+    getReleasesToShow(lastSeen, bustCache).then(({ releases, lastDisplayedIndex: idx }) => {
+      if (releases.length > 0) {
+        dismissedReleaseRef.current = false; // allow showing new releases
+        setReleasesToShow(releases);
+        setLastDisplayedIndex(idx);
+      }
+    });
+  };
+
+  // Initial check on login (bust cache to get fresh server content)
+  useEffect(() => {
+    if (user && !showTutorial && !showIconsTutorial && !dismissedReleaseRef.current) {
+      const lastSeen = user.verified ?? 0;
+      getReleasesToShow(lastSeen, true).then(({ releases, lastDisplayedIndex: idx }) => {
+        if (releases.length > 0) {
+          setReleasesToShow(releases);
+          setLastDisplayedIndex(idx);
+        }
+      });
+    }
+  }, [user, showTutorial, showIconsTutorial]);
+
+  // Periodic check every 10 minutes (bust cache for fresh server content)
+  useEffect(() => {
+    if (!user || showTutorial || showIconsTutorial) return;
+    const id = setInterval(() => checkForReleases(true), RELEASE_CHECK_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [user, showTutorial, showIconsTutorial]);
+
+  // Check on language or wordLength change (throttled, bust cache) - skip initial mount
+  const langWordInitializedRef = useRef(false);
+  useEffect(() => {
+    if (!user || showTutorial || showIconsTutorial) return;
+    if (!langWordInitializedRef.current) {
+      langWordInitializedRef.current = true;
+      return;
+    }
+    checkForReleases(true);
+  }, [language, wordLength]);
 
   useEffect(() => {
     // Load preferences first
@@ -151,6 +206,7 @@ export const App: React.FC = () => {
       setAuthView('reset');
       // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
+      configsPromise.finally(() => setLoading(false));
     } else {
       checkAuth();
     }
@@ -211,6 +267,7 @@ export const App: React.FC = () => {
   };
 
   const handleLogout = () => {
+    dismissedReleaseRef.current = false;
     apiClient.setToken(null);
     setUser(null);
   };
@@ -333,8 +390,23 @@ export const App: React.FC = () => {
     );
   }
 
+  const handleReleaseDismiss = () => {
+    dismissedReleaseRef.current = true;
+    const indexToSave = lastDisplayedIndex;
+    setReleasesToShow([]);
+    setLastDisplayedIndex(-1);
+    if (indexToSave >= 0) {
+      apiClient.updateReleaseSeen(indexToSave).then(() => {
+        setUser((u) => (u ? { ...u, verified: indexToSave } : null));
+      }).catch(() => { /* ignore */ });
+    }
+  };
+
   return (
     <div className="app-container">
+      {releasesToShow.length > 0 && (
+        <ReleaseMessageModal releases={releasesToShow} onDismiss={handleReleaseDismiss} />
+      )}
       {view === 'game' ? (
         <Game 
           userId={user.id}
@@ -342,6 +414,7 @@ export const App: React.FC = () => {
           onLogout={handleLogout} 
           view={view} 
           onViewChange={handleViewChange}
+          onRecordPlayed={() => recordPlayed()}
           historicalDate={historicalDate}
           onHistoricalDateCleared={() => setHistoricalDate(null)}
           onViewHistoricalGame={handleViewHistoricalGame}

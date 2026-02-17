@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { apiClient } from '../api/client';
+import { loadReleaseNotes } from '../utils/releaseNotes';
 
 interface RegisterProps {
-  onRegister: (user: { id: number; email: string }) => void;
+  onRegister: (user: { id: number; email: string; verified?: number }) => void;
   onSwitchToLogin: () => void;
 }
 
@@ -18,7 +19,9 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
     setLoading(true);
 
     try {
-      const response = await apiClient.register(email, password);
+      const releases = await loadReleaseNotes();
+      const lastReleaseIndex = releases.length > 0 ? releases.length - 1 : 0;
+      const response = await apiClient.register(email, password, lastReleaseIndex);
       onRegister(response.user);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');

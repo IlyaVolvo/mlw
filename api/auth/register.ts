@@ -42,7 +42,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     console.log('Register request received', { email: req.body.email });
-    const { email, password } = req.body;
+    const { email, password, lastReleaseIndex } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -67,11 +67,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Hash password
     const passwordHash = await bcrypt.hash(password, 10);
 
-    // Create user
+    const verifiedIndex = typeof lastReleaseIndex === 'number' && lastReleaseIndex >= 0 ? lastReleaseIndex : 0;
     try {
       const result = await query(
-        'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id',
-        [email, passwordHash]
+        'INSERT INTO users (email, password_hash, verified) VALUES ($1, $2, $3) RETURNING id',
+        [email, passwordHash, verifiedIndex]
       );
 
       const userId = result.rows[0].id;
@@ -82,6 +82,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         user: {
           id: userId,
           email,
+          verified: verifiedIndex,
         },
       });
     } catch (dbError: any) {

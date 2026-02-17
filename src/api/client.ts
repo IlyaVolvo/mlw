@@ -3,6 +3,7 @@ const API_BASE = (import.meta as any).env?.VITE_API_URL || '/api';
 export interface User {
   id: number;
   email: string;
+  verified?: number;
 }
 
 export interface AuthResponse {
@@ -73,10 +74,12 @@ class ApiClient {
   }
 
   // Auth endpoints
-  async register(email: string, password: string): Promise<AuthResponse> {
+  async register(email: string, password: string, lastReleaseIndex?: number): Promise<AuthResponse> {
+    const body: { email: string; password: string; lastReleaseIndex?: number } = { email, password };
+    if (typeof lastReleaseIndex === 'number' && lastReleaseIndex >= 0) body.lastReleaseIndex = lastReleaseIndex;
     const response = await this.request<AuthResponse>('/auth/register', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(body),
     });
     this.setToken(response.token);
     return response;
@@ -201,6 +204,13 @@ class ApiClient {
     return this.request<{ success: boolean }>('/auth/preferences', {
       method: 'POST',
       body: JSON.stringify({ selectedLanguages }),
+    });
+  }
+
+  async updateReleaseSeen(index: number): Promise<{ success: boolean }> {
+    return this.request<{ success: boolean }>('/auth/preferences', {
+      method: 'POST',
+      body: JSON.stringify({ lastSeenReleaseIndex: index }),
     });
   }
 }
