@@ -128,13 +128,14 @@ class ApiClient {
     wordSeed?: number;
   }): Promise<GameResponse> {
     const queryParams = new URLSearchParams();
+    queryParams.append('isComplete', '0');
     if (params.language) queryParams.append('language', params.language);
     if (params.wordLength) queryParams.append('wordLength', params.wordLength.toString());
     if (params.gameDate) queryParams.append('gameDate', params.gameDate);
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games/current?${queryParams.toString()}`);
+    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
   }
 
   async getCompletedGame(params: {
@@ -145,13 +146,14 @@ class ApiClient {
     wordSeed?: number;
   }): Promise<GameResponse> {
     const queryParams = new URLSearchParams();
+    queryParams.append('isComplete', '1');
     if (params.language) queryParams.append('language', params.language);
     if (params.wordLength) queryParams.append('wordLength', params.wordLength.toString());
     if (params.gameDate) queryParams.append('gameDate', params.gameDate);
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games/completed?${queryParams.toString()}`);
+    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
   }
 
   async saveGame(gameData: {
