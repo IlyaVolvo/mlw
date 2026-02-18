@@ -53,10 +53,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       res.json({ selectedLanguages });
     } else if (req.method === 'POST') {
-      const { selectedLanguages, lastSeenReleaseIndex } = req.body;
+      let body = req.body;
+      if (typeof body === 'string') {
+        try {
+          body = JSON.parse(body);
+        } catch {
+          body = {};
+        }
+      }
+      body = body || {};
+      const { selectedLanguages, lastSeenReleaseIndex } = body;
 
-      if (typeof lastSeenReleaseIndex === 'number' && lastSeenReleaseIndex >= 0) {
-        await query('UPDATE users SET verified = $1 WHERE id = $2', [lastSeenReleaseIndex, userId]);
+      const idx = typeof lastSeenReleaseIndex === 'number' ? lastSeenReleaseIndex : typeof lastSeenReleaseIndex === 'string' ? parseInt(lastSeenReleaseIndex, 10) : NaN;
+      if (!isNaN(idx) && idx >= 0) {
+        await query('UPDATE users SET verified = $1 WHERE id = $2', [idx, userId]);
       }
 
       if (selectedLanguages !== undefined) {

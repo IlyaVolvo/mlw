@@ -392,12 +392,12 @@ export const App: React.FC = () => {
 
   const handleReleaseDismiss = () => {
     dismissedReleaseRef.current = true;
-    const indexToSave = lastDisplayedIndex;
+    const nextUnseenIndex = lastDisplayedIndex >= 0 ? lastDisplayedIndex + 1 : -1;
     setReleasesToShow([]);
     setLastDisplayedIndex(-1);
-    if (indexToSave >= 0) {
-      apiClient.updateReleaseSeen(indexToSave).then(() => {
-        setUser((u) => (u ? { ...u, verified: indexToSave } : null));
+    if (nextUnseenIndex >= 0) {
+      apiClient.updateReleaseSeen(nextUnseenIndex).then(() => {
+        setUser((u) => (u ? { ...u, verified: nextUnseenIndex } : null));
       }).catch(() => { /* ignore */ });
     }
   };

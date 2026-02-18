@@ -63,9 +63,8 @@ export interface ReleasesToShowResult {
 
 /**
  * Returns releases the user should see.
- * - lastSeenIndex: from user.verified (DB). 0 = legacy (existing player), show all
+ * - verified (lastSeenIndex): index of next unseen release. 0 = legacy (show all from 0).
  * - lastPlayedVersion: from localStorage, when they last played
- * - Show from max(startFromSeen, startFromPlayed) to end
  * @param bustCache - if true, fetches fresh from server (for periodic/change-triggered checks)
  */
 export async function getReleasesToShow(lastSeenIndex: number, bustCache = false): Promise<ReleasesToShowResult> {
@@ -78,8 +77,8 @@ export async function getReleasesToShow(lastSeenIndex: number, bustCache = false
   // New user (verified set on register): if they haven't played, don't show
   if (lastPlayedKey === null && lastSeenIndex > 0) return { releases: [], lastDisplayedIndex: -1 };
 
-  // startFromSeen: legacy (verified=0) -> 0; else lastSeenIndex + 1 (next unseen in DB)
-  const startFromSeen = lastSeenIndex === 0 ? 0 : lastSeenIndex + 1;
+  // verified = next unseen index. Legacy (0) -> show from 0; else show from verified
+  const startFromSeen = lastSeenIndex;
   // Always show undismissed releases. lastPlayedVersion must not block (user may have played without seeing modal).
   if (startFromSeen > currentIndex) return { releases: [], lastDisplayedIndex: -1 };
 

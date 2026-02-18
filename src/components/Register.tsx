@@ -20,8 +20,8 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
 
     try {
       const releases = await loadReleaseNotes();
-      const lastReleaseIndex = releases.length > 0 ? releases.length - 1 : 0;
-      const response = await apiClient.register(email, password, lastReleaseIndex);
+      const nextUnseenIndex = releases.length;
+      const response = await apiClient.register(email, password, nextUnseenIndex);
       onRegister(response.user);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');
