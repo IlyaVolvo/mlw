@@ -61,6 +61,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       user: {
         id: user.id,
         email: user.email,
+        verified: user.verified ?? 0,
       },
     });
   } catch (error) {

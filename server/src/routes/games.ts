@@ -5,15 +5,16 @@ import { logger } from '../utils/logger.js';
 
 const router = express.Router();
 
-// Get current game state
-router.get('/current', authenticateToken, async (req: AuthRequest, res) => {
+// Get game by criteria (current in-progress or completed). Query param: isComplete=0|1
+router.get('/', authenticateToken, async (req: AuthRequest, res) => {
   try {
     const userId = req.userId!;
-    const { language, wordLength, gameDate, isRandomMode, wordSeed } = req.query;
+    const { language, wordLength, gameDate, isRandomMode, wordSeed, isComplete } = req.query;
 
-    let queryText = 'SELECT * FROM games WHERE user_id = $1 AND is_complete = 0';
-    const params: any[] = [userId];
-    let paramIndex = 2;
+    const isCompleteVal = isComplete === '1' || isComplete === 'true' ? 1 : 0;
+    let queryText = 'SELECT * FROM games WHERE user_id = $1 AND is_complete = $2';
+    const params: any[] = [userId, isCompleteVal];
+    let paramIndex = 3;
 
     if (language) {
       queryText += ` AND language = $${paramIndex}`;
@@ -41,7 +42,7 @@ router.get('/current', authenticateToken, async (req: AuthRequest, res) => {
       paramIndex++;
     }
 
-    queryText += ' ORDER BY created_at DESC LIMIT 1';
+    queryText += isCompleteVal === 1 ? ' ORDER BY completed_at DESC LIMIT 1' : ' ORDER BY created_at DESC LIMIT 1';
 
     const result = await query(queryText, params);
     const game = result.rows[0] as any;
@@ -73,77 +74,6 @@ router.get('/current', authenticateToken, async (req: AuthRequest, res) => {
   } catch (error) {
     logger.error('Get game error', error);
     res.status(500).json({ error: 'Failed to get game' });
-  }
-});
-
-// Get completed game for a specific date/language/length
-router.get('/completed', authenticateToken, async (req: AuthRequest, res) => {
-  try {
-    const userId = req.userId!;
-    const { language, wordLength, gameDate, isRandomMode, wordSeed } = req.query;
-
-    let queryText = 'SELECT * FROM games WHERE user_id = $1 AND is_complete = 1';
-    const params: any[] = [userId];
-    let paramIndex = 2;
-
-    if (language) {
-      queryText += ` AND language = $${paramIndex}`;
-      params.push(language);
-      paramIndex++;
-    }
-    if (wordLength) {
-      queryText += ` AND word_length = $${paramIndex}`;
-      params.push(parseInt(wordLength as string));
-      paramIndex++;
-    }
-    if (gameDate) {
-      queryText += ` AND game_date = $${paramIndex}`;
-      params.push(gameDate);
-      paramIndex++;
-    }
-    if (isRandomMode !== undefined) {
-      queryText += ` AND is_random_mode = $${paramIndex}`;
-      params.push(isRandomMode === 'true' ? 1 : 0);
-      paramIndex++;
-    }
-    if (wordSeed) {
-      queryText += ` AND word_seed = $${paramIndex}`;
-      params.push(parseInt(wordSeed as string));
-      paramIndex++;
-    }
-
-    queryText += ' ORDER BY completed_at DESC LIMIT 1';
-
-    const result = await query(queryText, params);
-    const game = result.rows[0] as any;
-
-    if (!game) {
-      return res.json({ game: null });
-    }
-
-    // Handle PostgreSQL array - ensure it's a proper array
-    const guessesArray = Array.isArray(game.guesses) ? game.guesses : (game.guesses ? [game.guesses] : []);
-    res.json({
-      game: {
-        id: game.id,
-        user_id: game.user_id,
-        language: game.language,
-        word_length: game.word_length,
-        target_word: game.target_word,
-        game_date: game.game_date,
-        is_random_mode: game.is_random_mode,
-        word_seed: game.word_seed,
-        is_complete: game.is_complete,
-        created_at: game.created_at ? new Date(game.created_at).toISOString() : null,
-        completed_at: game.completed_at ? new Date(game.completed_at).toISOString() : null,
-        guesses: guessesArray.map((word: string) => ({ word, evaluations: [] })),
-        isWon: guessesArray.includes(game.target_word), // Derived: check if guesses contains target word
-        guessesCount: guessesArray.length, // Derived: length of guesses array
-      },
-    });
-  } catch (error) {
-    logger.error('Get completed game error', error);
-    res.status(500).json({ error: 'Failed to get completed game' });
   }
 });
 

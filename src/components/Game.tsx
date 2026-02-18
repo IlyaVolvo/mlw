@@ -22,6 +22,7 @@ interface GameProps {
   onLogout?: () => void;
   view?: 'game' | 'statistics';
   onViewChange?: (view: 'game' | 'statistics', statType?: string) => void;
+  onRecordPlayed?: () => void;
   historicalDate?: string | null;
   onHistoricalDateCleared?: () => void;
   onViewHistoricalGame?: (date: string) => void;
@@ -40,6 +41,7 @@ export const Game: React.FC<GameProps> = ({
   onLogout, 
   view: _view, 
   onViewChange, 
+  onRecordPlayed,
   historicalDate, 
   onHistoricalDateCleared: _onHistoricalDateCleared, 
   onViewHistoricalGame: _onViewHistoricalGame,
@@ -832,7 +834,8 @@ export const Game: React.FC<GameProps> = ({
     setGameState(updatedState);
     saveGameToApi(updatedState);
     updateLetterStates(updatedState);
-  }, [gameState, dictionary, wordLength, targetWord, language, keyboardRtl, saveGameToApi, updateLetterStates]);
+    onRecordPlayed?.();
+  }, [gameState, dictionary, wordLength, targetWord, language, keyboardRtl, saveGameToApi, updateLetterStates, onRecordPlayed]);
 
   const handleBackspace = useCallback(() => {
     if (!gameState || gameState.isComplete) return;

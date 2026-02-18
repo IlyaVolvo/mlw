@@ -3,6 +3,7 @@ const API_BASE = (import.meta as any).env?.VITE_API_URL || '/api';
 export interface User {
   id: number;
   email: string;
+  verified?: number;
 }
 
 export interface AuthResponse {
@@ -73,10 +74,12 @@ class ApiClient {
   }
 
   // Auth endpoints
-  async register(email: string, password: string): Promise<AuthResponse> {
+  async register(email: string, password: string, lastReleaseIndex?: number): Promise<AuthResponse> {
+    const body: { email: string; password: string; lastReleaseIndex?: number } = { email, password };
+    if (typeof lastReleaseIndex === 'number' && lastReleaseIndex >= 0) body.lastReleaseIndex = lastReleaseIndex;
     const response = await this.request<AuthResponse>('/auth/register', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(body),
     });
     this.setToken(response.token);
     return response;
@@ -125,13 +128,14 @@ class ApiClient {
     wordSeed?: number;
   }): Promise<GameResponse> {
     const queryParams = new URLSearchParams();
+    queryParams.append('isComplete', '0');
     if (params.language) queryParams.append('language', params.language);
     if (params.wordLength) queryParams.append('wordLength', params.wordLength.toString());
     if (params.gameDate) queryParams.append('gameDate', params.gameDate);
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games/current?${queryParams.toString()}`);
+    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
   }
 
   async getCompletedGame(params: {
@@ -142,13 +146,14 @@ class ApiClient {
     wordSeed?: number;
   }): Promise<GameResponse> {
     const queryParams = new URLSearchParams();
+    queryParams.append('isComplete', '1');
     if (params.language) queryParams.append('language', params.language);
     if (params.wordLength) queryParams.append('wordLength', params.wordLength.toString());
     if (params.gameDate) queryParams.append('gameDate', params.gameDate);
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games/completed?${queryParams.toString()}`);
+    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
   }
 
   async saveGame(gameData: {
@@ -201,6 +206,13 @@ class ApiClient {
     return this.request<{ success: boolean }>('/auth/preferences', {
       method: 'POST',
       body: JSON.stringify({ selectedLanguages }),
+    });
+  }
+
+  async updateReleaseSeen(index: number): Promise<{ success: boolean }> {
+    return this.request<{ success: boolean }>('/auth/preferences', {
+      method: 'POST',
+      body: JSON.stringify({ lastSeenReleaseIndex: index }),
     });
   }
 }

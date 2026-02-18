@@ -53,19 +53,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       res.json({ selectedLanguages });
     } else if (req.method === 'POST') {
-      const { selectedLanguages } = req.body;
+      let body = req.body;
+      if (typeof body === 'string') {
+        try {
+          body = JSON.parse(body);
+        } catch {
+          body = {};
+        }
+      }
+      body = body || {};
+      const { selectedLanguages, lastSeenReleaseIndex } = body;
 
-      const languagesArray = selectedLanguages && Array.isArray(selectedLanguages) 
-        ? selectedLanguages 
-        : null;
+      const idx = typeof lastSeenReleaseIndex === 'number' ? lastSeenReleaseIndex : typeof lastSeenReleaseIndex === 'string' ? parseInt(lastSeenReleaseIndex, 10) : NaN;
+      if (!isNaN(idx) && idx >= 0) {
+        await query('UPDATE users SET verified = $1 WHERE id = $2', [idx, userId]);
+      }
 
-      await query(
+      if (selectedLanguages !== undefined) {
+        const languagesArray = selectedLanguages && Array.isArray(selectedLanguages) 
+          ? selectedLanguages 
+          : null;
+
+        await query(
         `INSERT INTO user_preferences (user_id, selected_languages, updated_at) 
          VALUES ($1, $2, CURRENT_TIMESTAMP)
          ON CONFLICT (user_id) 
          DO UPDATE SET selected_languages = $2, updated_at = CURRENT_TIMESTAMP`,
         [userId, languagesArray || []]
-      );
+        );
+      }
 
       res.json({ success: true });
     } else {

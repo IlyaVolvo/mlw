@@ -12,7 +12,7 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
   try {
     logger.info('Register request received', { email: req.body.email });
-    const { email, password } = req.body;
+    const { email, password, lastReleaseIndex } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -37,11 +37,11 @@ router.post('/register', async (req, res) => {
     // Hash password
     const passwordHash = await bcrypt.hash(password, 10);
 
-    // Create user (with error handling for database constraint violations)
+    const verifiedIndex = typeof lastReleaseIndex === 'number' && lastReleaseIndex >= 0 ? lastReleaseIndex : 0;
     try {
       const result = await query(
-        'INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id',
-        [email, passwordHash]
+        'INSERT INTO users (email, password_hash, verified) VALUES ($1, $2, $3) RETURNING id',
+        [email, passwordHash, verifiedIndex]
       );
 
       const userId = result.rows[0].id;
@@ -52,6 +52,7 @@ router.post('/register', async (req, res) => {
         user: {
           id: userId,
           email,
+          verified: verifiedIndex,
         },
       });
     } catch (dbError: any) {
@@ -82,6 +83,7 @@ router.post('/login', async (req, res) => {
       id: number;
       email: string;
       password_hash: string;
+      verified: number | null;
     } | undefined;
 
     if (!user) {
@@ -101,6 +103,7 @@ router.post('/login', async (req, res) => {
       user: {
         id: user.id,
         email: user.email,
+        verified: user.verified ?? 0,
       },
     });
   } catch (error) {
@@ -230,18 +233,19 @@ router.get('/me', async (req, res) => {
       const decoded = jwt.default.verify(token, JWT_SECRET) as { userId: number; email: string };
       const payload = decoded;
       
-      const result = await query('SELECT id, email, created_at FROM users WHERE id = $1', [payload.userId]);
+      const result = await query('SELECT id, email, created_at, verified FROM users WHERE id = $1', [payload.userId]);
       const user = result.rows[0] as {
         id: number;
         email: string;
         created_at: Date;
+        verified: number | null;
       } | undefined;
 
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
 
-      res.json({ user });
+      res.json({ user: { id: user.id, email: user.email, created_at: user.created_at, verified: user.verified ?? 0 } });
     } catch (jwtError) {
       return res.status(401).json({ error: 'Invalid token' });
     }
@@ -296,25 +300,29 @@ router.post('/send-feedback', authenticateToken, async (req: AuthRequest, res) =
   }
 });
 
-// Save user preferences
+// Save user preferences (also accepts lastSeenReleaseIndex to update users.verified)
 router.post('/preferences', authenticateToken, async (req: AuthRequest, res) => {
   try {
     const userId = req.userId!;
-    const { selectedLanguages } = req.body;
+    const { selectedLanguages, lastSeenReleaseIndex } = req.body;
 
-    // Validate selectedLanguages is an array or null/undefined
-    const languagesArray = selectedLanguages && Array.isArray(selectedLanguages) 
-      ? selectedLanguages 
-      : null;
+    if (typeof lastSeenReleaseIndex === 'number' && lastSeenReleaseIndex >= 0) {
+      await query('UPDATE users SET verified = $1 WHERE id = $2', [lastSeenReleaseIndex, userId]);
+    }
 
-    // Use INSERT ... ON CONFLICT to upsert
-    await query(
-      `INSERT INTO user_preferences (user_id, selected_languages, updated_at) 
-       VALUES ($1, $2, CURRENT_TIMESTAMP)
-       ON CONFLICT (user_id) 
-       DO UPDATE SET selected_languages = $2, updated_at = CURRENT_TIMESTAMP`,
-      [userId, languagesArray || []]
-    );
+    if (selectedLanguages !== undefined) {
+      const languagesArray = selectedLanguages && Array.isArray(selectedLanguages) 
+        ? selectedLanguages 
+        : null;
+
+      await query(
+        `INSERT INTO user_preferences (user_id, selected_languages, updated_at) 
+         VALUES ($1, $2, CURRENT_TIMESTAMP)
+         ON CONFLICT (user_id) 
+         DO UPDATE SET selected_languages = $2, updated_at = CURRENT_TIMESTAMP`,
+        [userId, languagesArray || []]
+      );
+    }
 
     res.json({ success: true });
   } catch (error) {

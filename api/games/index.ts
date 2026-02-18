@@ -39,11 +39,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const userId = auth.userId;
-    const { language, wordLength, gameDate, isRandomMode, wordSeed } = req.query;
+    const { language, wordLength, gameDate, isRandomMode, wordSeed, isComplete } = req.query;
 
-    let queryText = 'SELECT * FROM games WHERE user_id = $1 AND is_complete = 1';
-    const params: any[] = [userId];
-    let paramIndex = 2;
+    const isCompleteVal = isComplete === '1' || isComplete === 'true' ? 1 : 0;
+    let queryText = 'SELECT * FROM games WHERE user_id = $1 AND is_complete = $2';
+    const params: any[] = [userId, isCompleteVal];
+    let paramIndex = 3;
 
     if (language) {
       queryText += ` AND language = $${paramIndex}`;
@@ -71,7 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       paramIndex++;
     }
 
-    queryText += ' ORDER BY created_at DESC LIMIT 1';
+    queryText += isCompleteVal === 1 ? ' ORDER BY completed_at DESC LIMIT 1' : ' ORDER BY created_at DESC LIMIT 1';
 
     const result = await query(queryText, params);
     const game = result.rows[0] as any;
@@ -100,7 +101,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     });
   } catch (error) {
-    console.error('Get completed game error', error);
-    res.status(500).json({ error: 'Failed to get completed game' });
+    console.error('Get game error', error);
+    res.status(500).json({ error: 'Failed to get game' });
   }
 }
