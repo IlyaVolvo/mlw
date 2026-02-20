@@ -2358,7 +2358,6 @@ gyros 279,NOUN
 thuya 274,NOUN
 monoï 274,NOUN
 rivet 273,NOUN
-cañon 269,NOUN
 darse 269,NOUN
 visio 268,NOUN
 gambe 268,NOUN

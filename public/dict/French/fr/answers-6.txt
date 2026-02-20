@@ -3930,7 +3930,6 @@ cardia 219,NOUN
 gradée 217,ADJECTIVE
 hennin 217,NOUN
 acquêt 216,NOUN
-piñata 216,NOUN
 volter 216,VERB
 exigüe 216,ADJECTIVE
 legato 216,NOUN
