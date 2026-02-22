@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!api/|assets/|dict/|favicon\\.png).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png",
+      "permanent": false
+    }
+  ]
+}
