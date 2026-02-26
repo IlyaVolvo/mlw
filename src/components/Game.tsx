@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins } from '../data/dictionaryLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage } from '../data/dictionaryLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
@@ -76,6 +76,7 @@ export const Game: React.FC<GameProps> = ({
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
+  const [winMessage, setWinMessage] = useState<string>('Congratulations! You won!');
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
     const today = formatDate();
     const [year, month] = today.split('-').map(Number);
@@ -171,6 +172,15 @@ export const Game: React.FC<GameProps> = ({
     let cancelled = false;
     getKeyboardRtl(language).then((rtl) => {
       if (!cancelled) setKeyboardRtl(rtl);
+    });
+    return () => { cancelled = true; };
+  }, [language]);
+
+  // Load win message for the current language
+  useEffect(() => {
+    let cancelled = false;
+    loadWinMessage(language).then((msg) => {
+      if (!cancelled) setWinMessage(msg || 'Congratulations! You won!');
     });
     return () => { cancelled = true; };
   }, [language]);
@@ -1298,7 +1308,7 @@ export const Game: React.FC<GameProps> = ({
               <div className="game-result">
                 {gameState.isWon ? (
                   <div className="result-message success">
-                    Congratulations! You won!
+                    {winMessage}
                   </div>
                 ) : (
                   <div className="result-message failure">

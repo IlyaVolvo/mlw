@@ -207,6 +207,26 @@ export function getLanguageDir(locale: string): string | null {
 }
 
 /**
+ * Loads the win message for a language (e.g. "Congratulations! You won!")
+ * Returns null if the file doesn't exist; caller should use default.
+ */
+export async function loadWinMessage(language: string): Promise<string | null> {
+  const languageDir = getLanguageDir(language);
+  if (!languageDir) return null;
+
+  try {
+    const response = await fetch(`/dict/${languageDir}/WinMessage.txt`);
+    if (response.status === 404 || !response.ok) return null;
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/html')) return null;
+    const text = await response.text();
+    return text.trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Loads the help tip text for a language
  * Returns null if the file doesn't exist
  */
