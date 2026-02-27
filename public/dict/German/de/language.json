@@ -15,5 +15,7 @@
     "Ü": "U",
     "ß": "ss",
     "ẞ": "SS"
-  }
+  },
+  "winMessage": "Herzlichen Glückwunsch! Du hast gewonnen!",
+  "helpTip": "Details kommen bald..."
 }

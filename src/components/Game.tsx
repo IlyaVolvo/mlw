@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage } from '../data/languageLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, getWinMessage } from '../data/languageLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord, checkWin } from '../utils/gameLogic';
@@ -178,13 +178,8 @@ export const Game: React.FC<GameProps> = ({
     return () => { cancelled = true; };
   }, [language]);
 
-  // Load win message for the current language
   useEffect(() => {
-    let cancelled = false;
-    loadWinMessage(language).then((msg) => {
-      if (!cancelled) setWinMessage(msg || 'Congratulations! You won!');
-    });
-    return () => { cancelled = true; };
+    setWinMessage(getWinMessage(language) || 'Congratulations! You won!');
   }, [language]);
 
   // Initialize component - just load dictionary and normalization, don't create game

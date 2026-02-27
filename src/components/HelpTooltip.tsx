@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { loadHelpTip } from '../data/languageLoader';
+import { getHelpTip } from '../data/languageLoader';
 
 interface HelpTooltipProps {
   language: string;
@@ -16,14 +16,7 @@ export const HelpTooltip: React.FC<HelpTooltipProps> = ({ language, placement = 
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load help tip text when language changes
-    const loadTip = async () => {
-      console.log(`[HelpTooltip] Loading help tip for language: ${language}`);
-      const text = await loadHelpTip(language);
-      console.log(`[HelpTooltip] Loaded help text:`, text ? `"${text}"` : 'null');
-      setHelpText(text);
-    };
-    loadTip();
+    setHelpText(getHelpTip(language));
   }, [language]);
 
 

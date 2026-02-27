@@ -32,5 +32,7 @@
         "exceptions": []
       }
     }
-  ]
+  ],
+  "winMessage": "!מזל טוב! ניצחת",
+  "helpTip": "Words are entered right-to-left. Only valid Hebrew words are accepted."
 }

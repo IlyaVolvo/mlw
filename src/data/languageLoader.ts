@@ -56,6 +56,10 @@ interface KeyboardConfig {
   normalization?: Record<string, string>;
   /** Optional input plugins invoked on every letter entry. */
   plugins?: InputPluginConfig[];
+  /** Localized win message (e.g. "Congratulations! You won!"). */
+  winMessage?: string;
+  /** Localized help tip text shown in the help tooltip. */
+  helpTip?: string;
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
@@ -213,74 +217,12 @@ export function getLanguageDir(locale: string): string | null {
   return `${info.language}/${info.locale}`;
 }
 
-/**
- * Loads the win message for a language (e.g. "Congratulations! You won!")
- * Returns null if the file doesn't exist; caller should use default.
- */
-export async function loadWinMessage(language: string): Promise<string | null> {
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) return null;
-
-  try {
-    const response = await fetch(`/dict/${languageDir}/WinMessage.txt`);
-    if (response.status === 404 || !response.ok) return null;
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) return null;
-    const text = await response.text();
-    return text.trim() || null;
-  } catch {
-    return null;
-  }
+export function getWinMessage(language: string): string | null {
+  return LANGUAGES[language]?.config?.winMessage || null;
 }
 
-/**
- * Loads the help tip text for a language
- * Returns null if the file doesn't exist
- */
-export async function loadHelpTip(language: string): Promise<string | null> {
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) {
-    console.log(`[loadHelpTip] Unknown language: ${language}`);
-    return null;
-  }
-
-  const helpTipPath = `/dict/${languageDir}/HelpTip.txt`;
-  console.log(`[loadHelpTip] Loading help tip from: ${helpTipPath}`);
-  
-  try {
-    const response = await fetch(helpTipPath);
-    console.log(`[loadHelpTip] Response status: ${response.status} for ${helpTipPath}`);
-    
-    // Check if file exists (404 means file doesn't exist)
-    if (response.status === 404) {
-      console.log(`[loadHelpTip] File not found: ${helpTipPath}`);
-      return null;
-    }
-    
-    // Check if response is OK
-    if (!response.ok) {
-      console.log(`[loadHelpTip] Response not OK: ${response.status} for ${helpTipPath}`);
-      return null;
-    }
-    
-    // Check Content-Type to ensure it's a text file, not HTML
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) {
-      // File doesn't exist (server returned HTML error page)
-      console.log(`[loadHelpTip] Got HTML instead of text for ${helpTipPath}`);
-      return null;
-    }
-    
-    // Read the text content
-    const text = await response.text();
-    const trimmedText = text.trim() || null;
-    console.log(`[loadHelpTip] Loaded help tip text:`, trimmedText ? `"${trimmedText.substring(0, 50)}..."` : 'null');
-    return trimmedText;
-  } catch (error) {
-    // File doesn't exist or error occurred
-    console.error(`[loadHelpTip] Error loading ${helpTipPath}:`, error);
-    return null;
-  }
+export function getHelpTip(language: string): string | null {
+  return LANGUAGES[language]?.config?.helpTip || null;
 }
 
 /**
