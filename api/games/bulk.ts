@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import pg from 'pg';
 import jwt from 'jsonwebtoken';
 import { deriveIsWon } from './normalization';
-import { getNormalization } from './languageData';
+import { getNormalization } from '../../src/data/languageLoader';
 
 const { Pool } = pg;
 

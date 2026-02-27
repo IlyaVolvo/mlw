@@ -1,6 +1,6 @@
 import type { LetterEvaluation, DictionaryEntry } from '../types';
 import { normalize } from './characterNormalization';
-import { getNormalization } from '../data/dictionaryLoader';
+import { getNormalization } from '../data/languageLoader';
 
 /**
  * Evaluates a guess against the target word

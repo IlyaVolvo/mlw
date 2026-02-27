@@ -1,5 +1,14 @@
 import type { DictionaryEntry, LanguageConfig } from '../types';
 
+import enLang from '../../public/dict/English/en/language.json';
+import ruLang from '../../public/dict/Russian/ru/language.json';
+import frLang from '../../public/dict/French/fr/language.json';
+import esLang from '../../public/dict/Spanish/es/language.json';
+import deLang from '../../public/dict/German/de/language.json';
+import heLang from '../../public/dict/Hebrew/he/language.json';
+import elLang from '../../public/dict/Greek/el/language.json';
+import hyLang from '../../public/dict/Armenian/hy/language.json';
+
 // Cache for loaded dictionaries
 const dictionaryCache = new Map<string, DictionaryEntry>();
 
@@ -55,19 +64,15 @@ const keyboardMenuCache = new Map<string, string>();
 const normalizationCache = new Map<string, Record<string, string>>();
 const inputPluginsCache = new Map<string, InputPluginConfig[]>();
 
-/**
- * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
- * Menu display name comes from each locale's language.json "menu" field.
- */
-const LOCALE_PATHS: Record<string, { language: string; locale: string }> = {
-  en: { language: 'English', locale: 'en' },
-  ru: { language: 'Russian', locale: 'ru' },
-  fr: { language: 'French', locale: 'fr' },
-  es: { language: 'Spanish', locale: 'es' },
-  de: { language: 'German', locale: 'de' },
-  he: { language: 'Hebrew', locale: 'he' },
-  el: { language: 'Greek', locale: 'el' },
-  hy: { language: 'Armenian', locale: 'hy' },
+const LANGUAGES: Record<string, { language: string; locale: string; config: any }> = {
+  en: { language: 'English', locale: 'en', config: enLang },
+  ru: { language: 'Russian', locale: 'ru', config: ruLang },
+  fr: { language: 'French', locale: 'fr', config: frLang },
+  es: { language: 'Spanish', locale: 'es', config: esLang },
+  de: { language: 'German', locale: 'de', config: deLang },
+  he: { language: 'Hebrew', locale: 'he', config: heLang },
+  el: { language: 'Greek', locale: 'el', config: elLang },
+  hy: { language: 'Armenian', locale: 'hy', config: hyLang },
 };
 
 /**
@@ -159,7 +164,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
   const configs: LanguageConfig[] = [];
 
   console.log('Processing language directories:');
-  for (const [locale, info] of Object.entries(LOCALE_PATHS)) {
+  for (const [locale, info] of Object.entries(LANGUAGES)) {
     const languageDir = `${info.language}/${info.locale}`;
     console.log(`  - Checking directory: ${languageDir}`);
 
@@ -203,7 +208,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
  * Gets the directory path for a language/locale
  */
 export function getLanguageDir(locale: string): string | null {
-  const info = LOCALE_PATHS[locale];
+  const info = LANGUAGES[locale];
   if (!info) return null;
   return `${info.language}/${info.locale}`;
 }
@@ -515,8 +520,16 @@ export async function loadKeyboardActions(language: string): Promise<KeyboardAct
  * Returns the normalization mappings for a language, loaded from language.json.
  * Must be called after loadKeyboard() has been called for this language.
  */
-export function getNormalization(language: string): Record<string, string> | null {
-  return normalizationCache.get(language) || null;
+export function getNormalization(language: string): Record<string, string> | undefined {
+  const cached = normalizationCache.get(language);
+  if (cached) return cached;
+
+  const lang = LANGUAGES[language];
+  if (lang?.config?.normalization && typeof lang.config.normalization === 'object') {
+    normalizationCache.set(language, lang.config.normalization);
+    return lang.config.normalization;
+  }
+  return undefined;
 }
 
 /**
