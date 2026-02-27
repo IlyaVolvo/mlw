@@ -66,6 +66,8 @@ const LOCALE_PATHS: Record<string, { language: string; locale: string }> = {
   es: { language: 'Spanish', locale: 'es' },
   de: { language: 'German', locale: 'de' },
   he: { language: 'Hebrew', locale: 'he' },
+  el: { language: 'Greek', locale: 'el' },
+  hy: { language: 'Armenian', locale: 'hy' },
 };
 
 /**
