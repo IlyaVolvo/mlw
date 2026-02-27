@@ -17,5 +17,6 @@
     "ẞ": "SS"
   },
   "winMessage": "Herzlichen Glückwunsch! Du hast gewonnen!",
+  "loseMessage": "Die Antwort war: {word}",
   "helpTip": "Details kommen bald..."
 }

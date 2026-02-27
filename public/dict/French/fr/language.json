@@ -55,5 +55,6 @@
     "Ç": "C"
   },
   "winMessage": "Félicitations ! Vous avez gagné !",
+  "loseMessage": "La réponse était : {word}",
   "helpTip": "Les détails arrivent..."
 }

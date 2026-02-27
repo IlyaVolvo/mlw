@@ -58,6 +58,8 @@ interface KeyboardConfig {
   plugins?: InputPluginConfig[];
   /** Localized win message (e.g. "Congratulations! You won!"). */
   winMessage?: string;
+  /** Localized lose message with {word} placeholder (e.g. "The answer was: {word}"). */
+  loseMessage?: string;
   /** Localized help tip text shown in the help tooltip. */
   helpTip?: string;
 }
@@ -219,6 +221,12 @@ export function getLanguageDir(locale: string): string | null {
 
 export function getWinMessage(language: string): string | null {
   return LANGUAGES[language]?.config?.winMessage || null;
+}
+
+export function getLoseMessage(language: string, word: string): string {
+  const template = LANGUAGES[language]?.config?.loseMessage;
+  if (!template) return `The answer was: ${word}`;
+  return template.replace('{word}', word);
 }
 
 export function getHelpTip(language: string): string | null {

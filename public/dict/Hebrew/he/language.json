@@ -34,5 +34,6 @@
     }
   ],
   "winMessage": "!מזל טוב! ניצחת",
+  "loseMessage": "{word} :התשובה הייתה",
   "helpTip": "Words are entered right-to-left. Only valid Hebrew words are accepted."
 }

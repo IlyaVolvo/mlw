@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
 import { loadPreferences, savePreferences } from '../utils/preferences';
-import { HelpTooltip } from './HelpTooltip';
 
 interface LanguageSelectorProps {
   allAvailableLanguages: LanguageConfig[]; // All languages before filtering
@@ -89,15 +88,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 />
                 {lang.flag && <span className="language-selector-flag">{lang.flag}</span>}
                 <span className="language-selector-item-name">{lang.name}</span>
-                <HelpTooltip language={lang.code} placement="left">
-                  <span className="language-selector-item-help" title={`Help for ${lang.name}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                  </span>
-                </HelpTooltip>
               </label>
             );
           })}

@@ -23,5 +23,6 @@
     "Ü": "U"
   },
   "winMessage": "¡Felicitaciones! ¡Has ganado!",
+  "loseMessage": "La respuesta era: {word}",
   "helpTip": "Los detalles están llegando..."
 }

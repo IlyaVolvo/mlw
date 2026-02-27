@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
+import { getHelpTip } from '../data/languageLoader';
 
 interface LanguageDropdownProps {
   availableLanguages: LanguageConfig[];
@@ -20,6 +21,7 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   showNameInTrigger = false,
 }) => {
   const [open, setOpen] = useState(false);
+  const [hoveredLang, setHoveredLang] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const current = availableLanguages.find((l) => l.code === value);
@@ -75,11 +77,18 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
                 onChange(lang.code);
                 setOpen(false);
               }}
+              onMouseEnter={() => setHoveredLang(lang.code)}
+              onMouseLeave={() => setHoveredLang((prev) => prev === lang.code ? null : prev)}
             >
               {lang.flag && <span className="language-dropdown-option-flag">{lang.flag}</span>}
               <span className="language-dropdown-option-name">{lang.name}</span>
             </li>
           ))}
+          {hoveredLang && getHelpTip(hoveredLang) && (
+            <li className="language-dropdown-helptip" aria-live="polite">
+              {getHelpTip(hoveredLang)}
+            </li>
+          )}
         </ul>
       )}
     </div>

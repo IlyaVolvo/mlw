@@ -2310,6 +2310,17 @@ h1 .logout-wrapper:hover .logout-tooltip {
   white-space: nowrap;
 }
 
+.language-dropdown-helptip {
+  display: block;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: #666;
+  background: #f8f8ff;
+  border-top: 1px solid #e0e0e0;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
 /* Stats page: language dropdown in filters */
 .stat-filter-group .language-dropdown {
   min-width: 140px;

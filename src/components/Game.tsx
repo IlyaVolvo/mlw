@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, getWinMessage } from '../data/languageLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, getWinMessage, getLoseMessage } from '../data/languageLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord, checkWin } from '../utils/gameLogic';
@@ -1375,7 +1375,7 @@ export const Game: React.FC<GameProps> = ({
                   </div>
                 ) : (
                   <div className="result-message failure">
-                    Answer was: <strong>{targetWord}</strong>
+                    {getLoseMessage(language, targetWord)}
                   </div>
                 )}
               </div>
