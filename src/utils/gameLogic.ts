@@ -1,23 +1,23 @@
 import type { LetterEvaluation, DictionaryEntry } from '../types';
-import { normalizeForLanguage } from './characterNormalization';
+import { normalize } from './characterNormalization';
+import { getNormalization } from '../data/dictionaryLoader';
 
 /**
  * Evaluates a guess against the target word
  */
-export function evaluateGuess(guess: string, target: string, language: string = 'en'): LetterEvaluation[] {
+export function evaluateGuess(guess: string, target: string, language: string): LetterEvaluation[] {
   const evaluations: LetterEvaluation[] = [];
-  
-  // Normalize for Russian (ё -> е)
-  const normalizedTarget = normalizeForLanguage(target, language);
-  const normalizedGuess = normalizeForLanguage(guess, language);
-  
+  const mappings = getNormalization(language);
+
+  const normalizedTarget = normalize(target, mappings);
+  const normalizedGuess = normalize(guess, mappings);
+
   const targetChars = normalizedTarget.split('');
   const guessChars = normalizedGuess.split('');
-  const originalGuessChars = guess.split(''); // Keep original for display
+  const originalGuessChars = guess.split('');
   const targetLetterCounts: Map<string, number> = new Map();
   const usedIndices = new Set<number>();
 
-  // Count letters in target word (using normalized characters)
   for (const char of targetChars) {
     targetLetterCounts.set(char, (targetLetterCounts.get(char) || 0) + 1);
   }
@@ -48,17 +48,23 @@ export function evaluateGuess(guess: string, target: string, language: string = 
 }
 
 /**
+ * Checks whether a guess matches the target word after normalization.
+ * Used both during live gameplay (Enter pressed) and when restoring from history.
+ */
+export function checkWin(guess: string, targetWord: string, language: string): boolean {
+  const mappings = getNormalization(language);
+  return normalize(guess, mappings) === normalize(targetWord, mappings);
+}
+
+/**
  * Checks if a word is valid in the dictionary
  */
 export function isValidWord(word: string, dictionary: DictionaryEntry | null): boolean {
   if (!dictionary) return false;
-  const normalized = word.toLowerCase().trim();
-  const normalizedForLang = normalizeForLanguage(normalized, dictionary.language);
-  
-  // Check if word exists in dictionary (normalize both word and dictionary entries)
+  const mappings = getNormalization(dictionary.language);
+  const normalized = normalize(word.toLowerCase().trim(), mappings);
+
   return dictionary.words.some(dictWord => {
-    const normalizedDictWord = normalizeForLanguage(dictWord.toLowerCase(), dictionary.language);
-    return normalizedDictWord === normalizedForLang;
+    return normalize(dictWord.toLowerCase(), mappings) === normalized;
   });
 }
-

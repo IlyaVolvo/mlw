@@ -8,8 +8,9 @@ import { LanguageSelector } from './LanguageSelector';
 import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage } from '../data/dictionaryLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
-import { evaluateGuess, isValidWord } from '../utils/gameLogic';
-import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
+import { evaluateGuess, isValidWord, checkWin } from '../utils/gameLogic';
+import { normalize } from '../utils/characterNormalization';
+import { getNormalization } from '../data/dictionaryLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import { apiClient } from '../api/client';
 import { gameCacheUtils } from '../utils/gameCache';
@@ -110,7 +111,7 @@ export const Game: React.FC<GameProps> = ({
     for (const guess of state.guesses) {
       for (const eval_ of guess.evaluations) {
         // Use normalized (canonical) form for key so final/non-final variants share state (e.g. Hebrew ם/מ)
-        const canonicalKey = normalizeForLanguage(eval_.letter, lang);
+        const canonicalKey = normalize(eval_.letter, getNormalization(lang));
         const currentState = states.get(canonicalKey);
         // Priority: correct > present > absent
         if (!currentState ||
@@ -201,7 +202,6 @@ export const Game: React.FC<GameProps> = ({
       try {
         const [dict] = await Promise.all([
           loadDictionary(language, wordLength),
-          loadNormalization(language),
           loadKeyboard(language),
         ]);
         if (cancelled) return;
@@ -260,7 +260,6 @@ export const Game: React.FC<GameProps> = ({
       try {
         const [dict] = await Promise.all([
           loadDictionary(language, wordLength),
-          loadNormalization(language),
           loadKeyboard(language),
         ]);
         if (dict) {
@@ -366,6 +365,8 @@ export const Game: React.FC<GameProps> = ({
         });
         const cachedGames: Record<string, any> = {};
         Object.entries(response.games || {}).forEach(([date, game]: [string, any]) => {
+          const guesses = game.guesses || [];
+          const lastWord = guesses.length > 0 ? (typeof guesses[guesses.length - 1] === 'string' ? guesses[guesses.length - 1] : guesses[guesses.length - 1].word) : '';
           cachedGames[date] = {
             id: game.id,
             language: game.language,
@@ -375,8 +376,8 @@ export const Game: React.FC<GameProps> = ({
             is_random_mode: game.is_random_mode,
             word_seed: game.word_seed,
             is_complete: game.is_complete,
-            guesses: game.guesses || [],
-            isWon: game.isWon,
+            guesses,
+            isWon: game.is_complete === 1 && lastWord && checkWin(lastWord, game.target_word, game.language),
             guessesCount: game.guessesCount || 0,
             created_at: game.created_at,
             completed_at: game.completed_at,
@@ -402,11 +403,12 @@ export const Game: React.FC<GameProps> = ({
           word: typeof g === 'string' ? g : g.word,
           evaluations: evaluateGuess(typeof g === 'string' ? g : g.word, target, language),
         }));
+        const lastGuessWord = guessesWithEvals.length > 0 ? guessesWithEvals[guessesWithEvals.length - 1].word : '';
         const state: GameState = {
           guesses: guessesWithEvals,
           currentGuess: '',
           isComplete: cachedGame.is_complete === 1,
-          isWon: cachedGame.isWon,
+          isWon: cachedGame.is_complete === 1 && !!lastGuessWord && checkWin(lastGuessWord, target, language),
           language: cachedGame.language,
           wordLength: cachedGame.word_length,
           date: gameDate,
@@ -518,11 +520,13 @@ export const Game: React.FC<GameProps> = ({
           word: g.word,
           evaluations: evaluateGuess(g.word, target, language),
         }));
+        const lastWord = guessesWithEvals.length > 0 ? guessesWithEvals[guessesWithEvals.length - 1].word : '';
+        const derivedIsWon = completedResponse.game.is_complete === 1 && !!lastWord && checkWin(lastWord, target, language);
         const completedGame: GameState = {
           guesses: guessesWithEvals,
           currentGuess: '',
           isComplete: completedResponse.game.is_complete === 1,
-          isWon: completedResponse.game.isWon,
+          isWon: derivedIsWon,
           language: completedResponse.game.language,
           wordLength: completedResponse.game.word_length,
           date: completedResponse.game.game_date,
@@ -540,7 +544,7 @@ export const Game: React.FC<GameProps> = ({
           word_seed: null,
           is_complete: 1,
           guesses: completedResponse.game.guesses || [],
-          isWon: completedResponse.game.isWon,
+          isWon: derivedIsWon,
           guessesCount: (completedResponse.game.guesses || []).length,
           created_at: (completedResponse.game as any).created_at || new Date().toISOString(),
           completed_at: (completedResponse.game as any).completed_at || new Date().toISOString(),
@@ -697,11 +701,12 @@ export const Game: React.FC<GameProps> = ({
             word: g.word,
             evaluations: evaluateGuess(g.word, target, language),
           }));
+          const lastWord = guessesWithEvals.length > 0 ? guessesWithEvals[guessesWithEvals.length - 1].word : '';
           const completedGame: GameState = {
             guesses: guessesWithEvals,
             currentGuess: '',
             isComplete: completedResponse.game.is_complete === 1,
-            isWon: completedResponse.game.isWon,
+            isWon: completedResponse.game.is_complete === 1 && !!lastWord && checkWin(lastWord, target, language),
             language: completedResponse.game.language,
             wordLength: completedResponse.game.word_length,
             date: completedResponse.game.game_date,
@@ -742,8 +747,17 @@ export const Game: React.FC<GameProps> = ({
       const loadGames = async () => {
         try {
           const response = await apiClient.getHistory(language, wordLength, 10000);
-          // Filter to only daily games (non-random mode)
-          const dailyGames = response.games.filter((game: any) => !game.isRandomMode);
+          // Filter to only daily games (non-random mode), re-derive isWon using the same normalization as live play
+          const dailyGames = response.games
+            .filter((game: any) => !game.isRandomMode)
+            .map((game: any) => {
+              const guesses = game.guesses || [];
+              const lastWord = guesses.length > 0 ? (typeof guesses[guesses.length - 1] === 'string' ? guesses[guesses.length - 1] : guesses[guesses.length - 1].word) : '';
+              return {
+                ...game,
+                isWon: game.isComplete && !!lastWord && checkWin(lastWord, game.targetWord, game.language),
+              };
+            });
           setCalendarGames(dailyGames);
         } catch (err) {
           console.error('Failed to load games for calendar:', err);
@@ -826,10 +840,7 @@ export const Game: React.FC<GameProps> = ({
     }
 
     const evaluations = evaluateGuess(guess, targetWord, language);
-    // Normalize for language-specific character equivalences when checking win condition
-    const normalizedGuess = normalizeForLanguage(guess, language);
-    const normalizedTarget = normalizeForLanguage(targetWord, language);
-    const isWon = normalizedGuess === normalizedTarget;
+    const isWon = checkWin(guess, targetWord, language);
     const newGuesses = [...gameState.guesses, { word: guess, evaluations }];
     const isComplete = isWon || newGuesses.length >= MAX_GUESSES;
 

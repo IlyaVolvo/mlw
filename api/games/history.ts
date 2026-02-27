@@ -1,6 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import pg from 'pg';
 import jwt from 'jsonwebtoken';
+import { deriveIsWon } from './normalization';
+import { getNormalization } from './languageData';
 
 const { Pool } = pg;
 
@@ -92,7 +94,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           targetWord: game.target_word,
           guesses: guessesArray.map((word: string) => ({ word, evaluations: [] })),
           isComplete: game.is_complete === 1,
-          isWon: guessesArray.includes(game.target_word),
+          isWon: deriveIsWon(game.is_complete, guessesArray, game.target_word, getNormalization(game.language), game.id),
           guessesCount: guessesArray.length,
         };
       }),

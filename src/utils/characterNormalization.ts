@@ -1,62 +1,31 @@
-import { getNormalization } from '../data/dictionaryLoader';
-
 /**
- * Loads character normalization mappings for a language.
- * Normalization data is now embedded in language.json and loaded by dictionaryLoader.
- * This function simply retrieves the cached data.
- * Must be called after loadKeyboard() has been called for this language.
+ * Normalizes characters in a word using the provided mappings.
+ * Pure function — knows nothing about languages; the caller supplies the right map.
+ *
+ * Multi-character replacements (e.g. ß → ss) are applied before single-character
+ * ones to avoid partial-match conflicts.
  */
-export async function loadNormalization(language: string): Promise<Record<string, string> | null> {
-  return getNormalization(language);
-}
+export function normalize(word: string, mappings: Record<string, string> | null | undefined): string {
+  if (!mappings || Object.keys(mappings).length === 0) return word;
 
-/**
- * Normalizes characters for a given language
- * Replaces variant characters with their base equivalents according to language-specific rules
- * Uses normalization mappings from language.json
- * 
- * @param word - The word to normalize
- * @param language - Language code (e.g., 'ru', 'fr', 'de')
- * @returns Normalized word with variant characters replaced
- */
-export function normalizeForLanguage(word: string, language: string): string {
-  const mappings = getNormalization(language);
-  
-  // If no mappings exist for this language, return word as-is
-  if (!mappings || Object.keys(mappings).length === 0) {
-    return word;
-  }
-  
-  // Apply all character replacements
-  // Process multi-character replacements first to avoid conflicts
-  let normalized = word;
-  const singleCharReplacements: [string, string][] = [];
-  const multiCharReplacements: [string, string][] = [];
-  
+  let result = word;
+  const singleChar: [string, string][] = [];
+  const multiChar: [string, string][] = [];
+
   for (const [variant, base] of Object.entries(mappings)) {
-    if (base.length > 1) {
-      multiCharReplacements.push([variant, base]);
-    } else {
-      singleCharReplacements.push([variant, base]);
-    }
+    (base.length > 1 ? multiChar : singleChar).push([variant, base]);
   }
-  
-  // Apply multi-character replacements first (e.g., ß -> ss)
-  for (const [variant, base] of multiCharReplacements) {
-    normalized = normalized.replace(new RegExp(escapeRegex(variant), 'g'), base);
+
+  for (const [variant, base] of multiChar) {
+    result = result.replace(new RegExp(escapeRegex(variant), 'g'), base);
   }
-  
-  // Then apply single-character replacements
-  for (const [variant, base] of singleCharReplacements) {
-    normalized = normalized.replace(new RegExp(escapeRegex(variant), 'g'), base);
+  for (const [variant, base] of singleChar) {
+    result = result.replace(new RegExp(escapeRegex(variant), 'g'), base);
   }
-  
-  return normalized;
+
+  return result;
 }
 
-/**
- * Escapes special regex characters in a string
- */
 function escapeRegex(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

@@ -13,6 +13,7 @@ import {
 } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
 import { apiClient } from '../api/client';
+import { checkWin } from '../utils/gameLogic';
 import { LanguageDropdown } from './LanguageDropdown';
 import type { LanguageConfig } from '../types';
 
@@ -96,7 +97,12 @@ export const Statistics: React.FC<StatisticsProps> = ({
           10000 // Get a large number to calculate all stats
         );
         // Stats are only maintained for daily games (non-random mode)
-        const filteredGames: GameData[] = (response.games as GameData[]).filter(game => !game.isRandomMode);
+        // Re-derive isWon using client-side normalization (same logic as live gameplay)
+        const filteredGames: GameData[] = (response.games as GameData[]).filter(game => !game.isRandomMode).map(game => {
+          const guesses = game.guesses || [];
+          const lastWord = guesses.length > 0 ? (typeof guesses[guesses.length - 1] === 'string' ? guesses[guesses.length - 1] : (guesses[guesses.length - 1] as any).word) : '';
+          return { ...game, isWon: game.isComplete && !!lastWord && checkWin(lastWord, game.targetWord, game.language) };
+        });
         const completedGames = filteredGames.filter(game => game.isComplete);
         setGames(completedGames);
       } catch (err) {
@@ -123,7 +129,11 @@ export const Statistics: React.FC<StatisticsProps> = ({
         );
         const filteredGames: GameData[] = (response.games as GameData[]).filter(
           game => !game.isRandomMode && game.isComplete
-        );
+        ).map(game => {
+          const guesses = game.guesses || [];
+          const lastWord = guesses.length > 0 ? (typeof guesses[guesses.length - 1] === 'string' ? guesses[guesses.length - 1] : (guesses[guesses.length - 1] as any).word) : '';
+          return { ...game, isWon: game.isComplete && !!lastWord && checkWin(lastWord, game.targetWord, game.language) };
+        });
         setAllGames(filteredGames);
         setAllGamesLoaded(true);
       } catch (err) {
