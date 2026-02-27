@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type GameStatus = 'won' | 'lost' | 'incomplete' | 'not-played';
+export type GameStatus = 'won' | 'lost' | 'incomplete' | 'wiped' | 'not-played';
 
 // Helper function to format date as YYYY-MM-DD in local timezone
 const formatLocalDate = (date: Date): string => {
@@ -32,6 +32,7 @@ interface CalendarProps {
   currentMonth: Date;
   onMonthChange: (date: Date) => void;
   onDateClick?: (date: string) => void;
+  blinkingDates?: Set<string>;
 }
 
 export const Calendar: React.FC<CalendarProps> = ({
@@ -39,6 +40,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   currentMonth,
   onMonthChange,
   onDateClick,
+  blinkingDates,
 }) => {
   // Create a map of date strings to game status
   const gameStatusMap = new Map<string, GameStatus>();
@@ -62,13 +64,14 @@ export const Calendar: React.FC<CalendarProps> = ({
     if (gameDate) {
       datesWithGames.add(gameDate);
       
-      // Determine game status based on completion and win state
       if (game.isComplete && game.isWon) {
         gameStatusMap.set(gameDate, 'won');
       } else if (game.isComplete && !game.isWon) {
         gameStatusMap.set(gameDate, 'lost');
       } else if (!game.isComplete && game.guesses && game.guesses.length > 0) {
         gameStatusMap.set(gameDate, 'incomplete');
+      } else if (!game.isComplete) {
+        gameStatusMap.set(gameDate, 'wiped');
       }
     }
   });
@@ -222,7 +225,12 @@ export const Calendar: React.FC<CalendarProps> = ({
       classes.push('calendar-day-today');
     }
     
-    classes.push(`calendar-day-${day.status}`);
+    const dateStr = formatLocalDate(day.date);
+    if (blinkingDates?.has(dateStr)) {
+      classes.push('calendar-day-blinking');
+    } else {
+      classes.push(`calendar-day-${day.status}`);
+    }
     
     // Only make clickable if it's current month, not future, and has a day number
     if (day.isCurrentMonth && !day.isFuture && day.day > 0) {
@@ -273,7 +281,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             onClick={() => handleDateClick(day)}
             title={
               day.isCurrentMonth && !day.isFuture && day.day > 0
-                ? `${day.date.toLocaleDateString()} - ${day.status === 'won' ? 'Won' : day.status === 'lost' ? 'Lost' : day.status === 'incomplete' ? 'Incomplete' : 'Not played'}`
+                ? `${day.date.toLocaleDateString()} - ${day.status === 'won' ? 'Won' : day.status === 'lost' ? 'Lost' : day.status === 'incomplete' ? 'Incomplete' : day.status === 'wiped' ? 'Wiped' : 'Not played'}`
                 : undefined
             }
           >
@@ -294,6 +302,10 @@ export const Calendar: React.FC<CalendarProps> = ({
         <div className="legend-item">
           <div className="legend-color legend-incomplete"></div>
           <span>Incomplete</span>
+        </div>
+        <div className="legend-item">
+          <div className="legend-color legend-wiped"></div>
+          <span>Wiped</span>
         </div>
         <div className="legend-item">
           <div className="legend-color legend-not-played"></div>
