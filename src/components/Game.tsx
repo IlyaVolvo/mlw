@@ -76,6 +76,7 @@ export const Game: React.FC<GameProps> = ({
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
+  const [calendarBlinkingDates, setCalendarBlinkingDates] = useState<Set<string>>(new Set());
   const [winMessage, setWinMessage] = useState<string>('Congratulations! You won!');
   const [loseMessage, setLoseMessage] = useState<string>('Answer was: {word}');
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
@@ -746,7 +747,7 @@ export const Game: React.FC<GameProps> = ({
     }
   }, [dictionary, language, wordLength, randomMode, selectedPlayDate, applyLoadedGame, applyNewOrResetGame]);
 
-  // Load games for calendar when it opens
+  // Load games for calendar when it opens; detect and wipe stale incomplete games
   useEffect(() => {
     if (showCalendar && !randomMode) {
       const loadGames = async () => {
@@ -754,14 +755,69 @@ export const Game: React.FC<GameProps> = ({
           const response = await apiClient.getHistory(language, wordLength, 10000);
           // Filter to only daily games (non-random mode)
           const dailyGames = response.games.filter((game: any) => !game.isRandomMode);
+
+          const staleDates = new Set<string>();
+          if (dictionary) {
+            for (const game of dailyGames) {
+              const gameDate = game.game_date || game.gameDate;
+              if (!game.isComplete && game.guesses?.length > 0 && gameDate) {
+                const expectedTarget = getDailyWord(dictionary, gameDate);
+                if (game.targetWord !== expectedTarget) {
+                  staleDates.add(gameDate);
+                }
+              }
+            }
+          }
           setCalendarGames(dailyGames);
+
+          if (staleDates.size > 0) {
+            setCalendarBlinkingDates(staleDates);
+
+            const wipePromises = dailyGames
+              .filter((g: any) => staleDates.has(g.game_date || g.gameDate))
+              .map(async (game: any) => {
+                const gameDate = game.game_date || game.gameDate;
+                const expectedTarget = dictionary ? getDailyWord(dictionary, gameDate) : game.targetWord;
+                await apiClient.saveGame({
+                  language,
+                  wordLength,
+                  targetWord: expectedTarget,
+                  gameDate,
+                  isRandomMode: false,
+                  guesses: [],
+                  isComplete: false,
+                  isWon: false,
+                });
+                gameCacheUtils.updateCachedGame(language, wordLength, gameDate, {
+                  ...game,
+                  target_word: expectedTarget,
+                  guesses: [],
+                  is_complete: 0,
+                  isWon: false,
+                  guessesCount: 0,
+                  completed_at: null,
+                });
+              });
+            Promise.all(wipePromises).catch(err => console.error('Failed to wipe stale games:', err));
+
+            setTimeout(() => {
+              setCalendarGames(prev => prev.map(g => {
+                const gd = g.game_date || g.gameDate;
+                if (staleDates.has(gd)) {
+                  return { ...g, guesses: [], isComplete: false, isWon: false };
+                }
+                return g;
+              }));
+              setCalendarBlinkingDates(new Set());
+            }, 2000);
+          }
         } catch (err) {
           console.error('Failed to load games for calendar:', err);
         }
       };
       loadGames();
     }
-  }, [showCalendar, language, wordLength, randomMode]);
+  }, [showCalendar, language, wordLength, randomMode, dictionary]);
 
   // Update calendar month when selectedPlayDate changes
   useEffect(() => {
@@ -1258,6 +1314,7 @@ export const Game: React.FC<GameProps> = ({
                 handleDateChange(date);
                 setShowCalendar(false);
               }}
+              blinkingDates={calendarBlinkingDates}
             />
           </div>
         )}

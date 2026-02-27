@@ -2043,6 +2043,24 @@ h1 .logout-wrapper:hover .logout-tooltip {
   color: #6c757d;
 }
 
+.calendar-day-wiped {
+  background: #b0b0b0;
+  color: white;
+}
+
+@keyframes calendarWipeBlink {
+  0%   { background: #ffc107; }
+  20%  { background: transparent; }
+  40%  { background: #ffc107; }
+  60%  { background: transparent; }
+  80%  { background: #ffc107; }
+  100% { background: #b0b0b0; }
+}
+
+.calendar-day-blinking {
+  animation: calendarWipeBlink 2s ease forwards;
+}
+
 .calendar-day-future {
   background: #e9ecef;
   border-color: #6c757d;
@@ -2127,6 +2145,10 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
 .legend-incomplete {
   background: #ffc107;
+}
+
+.legend-wiped {
+  background: #b0b0b0;
 }
 
 .legend-not-played {
