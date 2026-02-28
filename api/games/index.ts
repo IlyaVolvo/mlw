@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import pg from 'pg';
 import jwt from 'jsonwebtoken';
-import { getNormalization } from '../../src/data/languageLoader';
+import { getNormalization } from '../../src/data/languageLoader.js';
 
 const MAX_GUESSES = 6;
 
