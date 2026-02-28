@@ -47,6 +47,12 @@ interface KeyboardConfig {
   normalization?: Record<string, string>;
   /** Optional input plugins invoked on every letter entry. */
   plugins?: InputPluginConfig[];
+  /** Localized message shown on win. */
+  winMessage?: string;
+  /** Localized help tip text. */
+  helpTip?: string;
+  /** Localized lose message template, with {word} placeholder. */
+  loseMessage?: string;
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
@@ -54,6 +60,9 @@ const keyboardRtlCache = new Map<string, boolean>();
 const keyboardMenuCache = new Map<string, string>();
 const normalizationCache = new Map<string, Record<string, string>>();
 const inputPluginsCache = new Map<string, InputPluginConfig[]>();
+const winMessageCache = new Map<string, string>();
+const helpTipCache = new Map<string, string>();
+const loseMessageCache = new Map<string, string>();
 
 /**
  * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
@@ -206,74 +215,28 @@ export function getLanguageDir(locale: string): string | null {
   return `${info.language}/${info.locale}`;
 }
 
-/**
- * Loads the win message for a language (e.g. "Congratulations! You won!")
- * Returns null if the file doesn't exist; caller should use default.
- */
 export async function loadWinMessage(language: string): Promise<string | null> {
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) return null;
-
-  try {
-    const response = await fetch(`/dict/${languageDir}/WinMessage.txt`);
-    if (response.status === 404 || !response.ok) return null;
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) return null;
-    const text = await response.text();
-    return text.trim() || null;
-  } catch {
-    return null;
+  if (winMessageCache.has(language)) {
+    return winMessageCache.get(language)!;
   }
+  await loadKeyboard(language);
+  return winMessageCache.get(language) || null;
 }
 
-/**
- * Loads the help tip text for a language
- * Returns null if the file doesn't exist
- */
 export async function loadHelpTip(language: string): Promise<string | null> {
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) {
-    console.log(`[loadHelpTip] Unknown language: ${language}`);
-    return null;
+  if (helpTipCache.has(language)) {
+    return helpTipCache.get(language)!;
   }
+  await loadKeyboard(language);
+  return helpTipCache.get(language) || null;
+}
 
-  const helpTipPath = `/dict/${languageDir}/HelpTip.txt`;
-  console.log(`[loadHelpTip] Loading help tip from: ${helpTipPath}`);
-  
-  try {
-    const response = await fetch(helpTipPath);
-    console.log(`[loadHelpTip] Response status: ${response.status} for ${helpTipPath}`);
-    
-    // Check if file exists (404 means file doesn't exist)
-    if (response.status === 404) {
-      console.log(`[loadHelpTip] File not found: ${helpTipPath}`);
-      return null;
-    }
-    
-    // Check if response is OK
-    if (!response.ok) {
-      console.log(`[loadHelpTip] Response not OK: ${response.status} for ${helpTipPath}`);
-      return null;
-    }
-    
-    // Check Content-Type to ensure it's a text file, not HTML
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) {
-      // File doesn't exist (server returned HTML error page)
-      console.log(`[loadHelpTip] Got HTML instead of text for ${helpTipPath}`);
-      return null;
-    }
-    
-    // Read the text content
-    const text = await response.text();
-    const trimmedText = text.trim() || null;
-    console.log(`[loadHelpTip] Loaded help tip text:`, trimmedText ? `"${trimmedText.substring(0, 50)}..."` : 'null');
-    return trimmedText;
-  } catch (error) {
-    // File doesn't exist or error occurred
-    console.error(`[loadHelpTip] Error loading ${helpTipPath}:`, error);
-    return null;
+export async function loadLoseMessage(language: string, word: string): Promise<string> {
+  if (!loseMessageCache.has(language)) {
+    await loadKeyboard(language);
   }
+  const template = loseMessageCache.get(language) || 'Answer was: {word}';
+  return template.replace('{word}', word);
 }
 
 /**
@@ -454,6 +417,15 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
         }
         if (config.normalization && typeof config.normalization === 'object') {
           normalizationCache.set(language, config.normalization);
+        }
+        if (typeof config.winMessage === 'string' && config.winMessage.trim()) {
+          winMessageCache.set(language, config.winMessage.trim());
+        }
+        if (typeof config.helpTip === 'string' && config.helpTip.trim()) {
+          helpTipCache.set(language, config.helpTip.trim());
+        }
+        if (typeof config.loseMessage === 'string' && config.loseMessage.trim()) {
+          loseMessageCache.set(language, config.loseMessage.trim());
         }
         if (Array.isArray(config.plugins) && config.plugins.length > 0) {
           const valid = config.plugins.filter(

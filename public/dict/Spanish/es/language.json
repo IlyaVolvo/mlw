@@ -21,5 +21,8 @@
     "Ñ": "N",
     "ü": "u",
     "Ü": "U"
-  }
+  },
+  "winMessage": "¡Felicitaciones! ¡Has ganado!",
+  "helpTip": "Los detalles están llegando...",
+  "loseMessage": "La respuesta era: {word}"
 }

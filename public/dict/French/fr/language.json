@@ -53,5 +53,8 @@
     "Ÿ": "Y",
     "ç": "c",
     "Ç": "C"
-  }
+  },
+  "winMessage": "Félicitations ! Vous avez gagné !",
+  "helpTip": "Les détails arrivent...",
+  "loseMessage": "La réponse était : {word}"
 }

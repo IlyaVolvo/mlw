@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage } from '../data/dictionaryLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage, loadLoseMessage } from '../data/dictionaryLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
@@ -77,6 +77,7 @@ export const Game: React.FC<GameProps> = ({
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
   const [winMessage, setWinMessage] = useState<string>('Congratulations! You won!');
+  const [loseMessage, setLoseMessage] = useState<string>('Answer was: {word}');
   const [calendarMonth, setCalendarMonth] = useState<Date>(() => {
     const today = formatDate();
     const [year, month] = today.split('-').map(Number);
@@ -181,6 +182,15 @@ export const Game: React.FC<GameProps> = ({
     let cancelled = false;
     loadWinMessage(language).then((msg) => {
       if (!cancelled) setWinMessage(msg || 'Congratulations! You won!');
+    });
+    return () => { cancelled = true; };
+  }, [language]);
+
+  // Load lose message template for the current language
+  useEffect(() => {
+    let cancelled = false;
+    loadLoseMessage(language, '{word}').then((msg) => {
+      if (!cancelled) setLoseMessage(msg || 'Answer was: {word}');
     });
     return () => { cancelled = true; };
   }, [language]);
@@ -1312,7 +1322,7 @@ export const Game: React.FC<GameProps> = ({
                   </div>
                 ) : (
                   <div className="result-message failure">
-                    Answer was: <strong>{targetWord}</strong>
+                    {loseMessage.replace('{word}', targetWord)}
                   </div>
                 )}
               </div>
