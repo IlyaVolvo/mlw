@@ -1,13 +1,13 @@
 import type { DictionaryEntry, LanguageConfig } from '../types';
 
-import enLang from '../../public/dict/English/en/language.json';
-import ruLang from '../../public/dict/Russian/ru/language.json';
-import frLang from '../../public/dict/French/fr/language.json';
-import esLang from '../../public/dict/Spanish/es/language.json';
-import deLang from '../../public/dict/German/de/language.json';
-import heLang from '../../public/dict/Hebrew/he/language.json';
-import elLang from '../../public/dict/Greek/el/language.json';
-import hyLang from '../../public/dict/Armenian/hy/language.json';
+import enLang from '../../lang/English/en/language.json';
+import ruLang from '../../lang/Russian/ru/language.json';
+import frLang from '../../lang/French/fr/language.json';
+import esLang from '../../lang/Spanish/es/language.json';
+import deLang from '../../lang/German/de/language.json';
+import heLang from '../../lang/Hebrew/he/language.json';
+import elLang from '../../lang/Greek/el/language.json';
+import hyLang from '../../lang/Armenian/hy/language.json';
 
 // Cache for loaded dictionaries
 const dictionaryCache = new Map<string, DictionaryEntry>();
@@ -137,24 +137,15 @@ async function loadDictionaryFile(path: string): Promise<string[]> {
  * Fetches menu and flag from a locale's language.json.
  * languageDir is e.g. "Spanish/es". Returns menu (fallback if missing) and optional flag.
  */
-async function loadLanguageMeta(
-  languageDir: string,
+function getLanguageMeta(
+  locale: string,
   fallbackName: string
-): Promise<{ menu: string; flag?: string }> {
-  try {
-    const response = await fetch(`/dict/${languageDir}/language.json`);
-    if (!response.ok || response.headers.get('content-type')?.includes('text/html')) {
-      return { menu: fallbackName };
-    }
-    const data = await response.json();
-    if (!data || typeof data !== 'object') return { menu: fallbackName };
-    const menu =
-      typeof data.menu === 'string' && data.menu.trim() ? data.menu.trim() : fallbackName;
-    const flag = typeof data.flag === 'string' && data.flag.trim() ? data.flag.trim() : undefined;
-    return { menu, flag };
-  } catch {
-    return { menu: fallbackName };
-  }
+): { menu: string; flag?: string } {
+  const config = LANGUAGES[locale]?.config;
+  if (!config) return { menu: fallbackName };
+  const menu = typeof config.menu === 'string' && config.menu.trim() ? config.menu.trim() : fallbackName;
+  const flag = typeof config.flag === 'string' && config.flag.trim() ? config.flag.trim() : undefined;
+  return { menu, flag };
 }
 
 /**
@@ -178,7 +169,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
     const supportedLengths: number[] = [];
 
     for (const length of possibleLengths) {
-      const answerPath = `/dict/${languageDir}/answers-${length}.txt`;
+      const answerPath = `/lang/${languageDir}/answers-${length}.txt`;
       try {
         const response = await fetch(answerPath, { method: 'HEAD' });
         if (response.ok && !response.headers.get('content-type')?.includes('text/html')) {
@@ -190,7 +181,7 @@ async function discoverLanguages(): Promise<LanguageConfig[]> {
     }
 
     if (supportedLengths.length > 0) {
-      const { menu: name, flag } = await loadLanguageMeta(languageDir, info.language);
+      const { menu: name, flag } = getLanguageMeta(locale, info.language);
       console.log(`    ✓ Found ${languageDir}: ${name}, word lengths [${supportedLengths.join(', ')}]`);
 
       const config: LanguageConfig = {
@@ -255,8 +246,8 @@ export async function loadDictionary(
   }
 
   // Load answer words and dictionary words from new structure
-  const answersPath = `/dict/${languageDir}/answers-${wordLength}.txt`;
-  const dictionaryPath = `/dict/${languageDir}/dictionary-${wordLength}.txt`;
+  const answersPath = `/lang/${languageDir}/answers-${wordLength}.txt`;
+  const dictionaryPath = `/lang/${languageDir}/dictionary-${wordLength}.txt`;
 
   const [answerWords, allWords] = await Promise.all([
     loadDictionaryFile(answersPath),
@@ -313,7 +304,7 @@ async function detectSupportedLengths(language: string): Promise<number[]> {
 
   // Check for answer files directly (faster than loading full dictionaries)
   const checkPromises = possibleLengths.map(async (length) => {
-    const answerPath = `/dict/${languageDir}/answers-${length}.txt`;
+    const answerPath = `/lang/${languageDir}/answers-${length}.txt`;
     try {
       const response = await fetch(answerPath, { method: 'HEAD' });
       if (response.ok && !response.headers.get('content-type')?.includes('text/html')) {
@@ -370,99 +361,61 @@ export async function getLanguageConfig(code: string): Promise<LanguageConfig | 
  * Loads keyboard layout for a language
  * Supports both old format (2D array) and new format (object with layout and actions)
  */
-export async function loadKeyboard(language: string): Promise<string[][] | null> {
-  // Use cache only when we have both layout and RTL (so RTL is always in sync with layout)
+export function loadKeyboard(language: string): string[][] | null {
   if (keyboardCache.has(language) && keyboardRtlCache.has(language)) {
     return keyboardCache.get(language)!;
   }
 
-  const languageDir = getLanguageDir(language);
-  if (!languageDir) {
+  const lang = LANGUAGES[language];
+  if (!lang) return null;
+
+  const config = lang.config as KeyboardConfig;
+  if (!config || !Array.isArray(config.layout) || !config.layout.every(row => Array.isArray(row))) {
     return null;
   }
 
-  const languagePath = `/dict/${languageDir}/language.json`;
-
-  try {
-    const response = await fetch(languagePath, { cache: 'no-store' });
-
-    if (response.status === 404 || !response.ok) {
-      return null;
-    }
-
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) {
-      return null;
-    }
-
-    const keyboardData = await response.json();
-
-    // Handle object format: { layout: [...], actions?, rtl?, menu? }
-    if (keyboardData && typeof keyboardData === 'object' && 'layout' in keyboardData) {
-      const config = keyboardData as KeyboardConfig;
-      if (Array.isArray(config.layout) && config.layout.every(row => Array.isArray(row))) {
-        keyboardCache.set(language, config.layout);
-        if (config.actions) {
-          keyboardActionsCache.set(language, config.actions);
-        }
-        keyboardRtlCache.set(language, config.rtl === true);
-        if (typeof config.menu === 'string' && config.menu.trim()) {
-          keyboardMenuCache.set(language, config.menu.trim());
-        }
-        if (config.normalization && typeof config.normalization === 'object') {
-          normalizationCache.set(language, config.normalization);
-        }
-        if (Array.isArray(config.plugins) && config.plugins.length > 0) {
-          const valid = config.plugins.filter(
-            (p): p is InputPluginConfig => p && typeof p === 'object' && typeof (p as InputPluginConfig).id === 'string'
-          );
-          inputPluginsCache.set(language, valid);
-        } else {
-          inputPluginsCache.set(language, []);
-        }
-        return config.layout;
-      }
-    }
-
-    // Handle legacy format: 2D array only (default LTR, no menu)
-    if (Array.isArray(keyboardData) && keyboardData.every(row => Array.isArray(row))) {
-      keyboardCache.set(language, keyboardData);
-      keyboardRtlCache.set(language, false);
-      inputPluginsCache.set(language, []);
-      return keyboardData;
-    }
-
-    return null;
-  } catch (error) {
-    return null;
+  keyboardCache.set(language, config.layout);
+  if (config.actions) {
+    keyboardActionsCache.set(language, config.actions);
   }
+  keyboardRtlCache.set(language, config.rtl === true);
+  if (typeof config.menu === 'string' && config.menu.trim()) {
+    keyboardMenuCache.set(language, config.menu.trim());
+  }
+  if (config.normalization && typeof config.normalization === 'object') {
+    normalizationCache.set(language, config.normalization);
+  }
+  if (Array.isArray(config.plugins) && config.plugins.length > 0) {
+    const valid = config.plugins.filter(
+      (p): p is InputPluginConfig => p && typeof p === 'object' && typeof (p as InputPluginConfig).id === 'string'
+    );
+    inputPluginsCache.set(language, valid);
+  } else {
+    inputPluginsCache.set(language, []);
+  }
+  return config.layout;
 }
 
 /**
  * Returns whether the keyboard for this language uses right-to-left letter entry.
  * Loaded once at startup with the keyboard layout and cached; does not change during the game.
  */
-export async function getKeyboardRtl(language: string): Promise<boolean> {
+export function getKeyboardRtl(language: string): boolean {
   if (keyboardRtlCache.has(language)) {
     return keyboardRtlCache.get(language)!;
   }
-  await loadKeyboard(language);
+  loadKeyboard(language);
   return keyboardRtlCache.get(language) ?? false;
 }
 
 /**
  * Loads keyboard action buttons configuration for a language
  */
-export async function loadKeyboardActions(language: string): Promise<KeyboardActions | null> {
-  // Check cache first
+export function loadKeyboardActions(language: string): KeyboardActions | null {
   if (keyboardActionsCache.has(language)) {
     return keyboardActionsCache.get(language)!;
   }
-
-  // Try to load keyboard (which will also cache actions if present)
-  await loadKeyboard(language);
-  
-  // Return cached actions or null
+  loadKeyboard(language);
   return keyboardActionsCache.get(language) || null;
 }
 
