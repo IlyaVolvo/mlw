@@ -1,8 +1,35 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import pg from 'pg';
 import jwt from 'jsonwebtoken';
-import { deriveIsWon } from './_normalization';
 import { getNormalization } from '../../src/data/languageLoader';
+
+const MAX_GUESSES = 6;
+
+function normalize(word: string, mappings: Record<string, string> | undefined): string {
+  if (!mappings) return word;
+  let result = word;
+  for (const [variant, base] of Object.entries(mappings)) {
+    result = result.split(variant).join(base);
+  }
+  return result;
+}
+
+function deriveIsWon(
+  isComplete: number, guesses: string[], targetWord: string,
+  mappings: Record<string, string> | undefined, gameId?: number,
+): boolean {
+  if (isComplete !== 1) return false;
+  if (guesses.length === 0) {
+    console.error(`[deriveIsWon] Game ${gameId ?? '?'}: complete with 0 guesses`);
+    return false;
+  }
+  const normalizedLast = normalize(guesses[guesses.length - 1], mappings);
+  const normalizedTarget = normalize(targetWord, mappings);
+  if (normalizedLast === normalizedTarget) return true;
+  if (guesses.length >= MAX_GUESSES) return false;
+  console.error(`[deriveIsWon] Game ${gameId ?? '?'}: complete with ${guesses.length} guesses but last guess ≠ target`);
+  return false;
+}
 
 const { Pool } = pg;
 
