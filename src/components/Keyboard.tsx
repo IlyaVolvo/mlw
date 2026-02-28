@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { LetterState } from '../types';
-import { loadKeyboard, loadKeyboardActions } from '../data/dictionaryLoader';
+import { loadKeyboard, loadKeyboardActions } from '../data/languageLoader';
 import { normalizeForLanguage } from '../utils/characterNormalization';
 
 interface KeyboardProps {

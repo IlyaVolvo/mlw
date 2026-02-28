@@ -10,7 +10,7 @@ import { IconsTutorial } from './IconsTutorial';
 import { ReleaseMessageModal } from './ReleaseMessageModal';
 import { getReleasesToShow, recordPlayed } from '../utils/releaseNotes';
 import { apiClient } from '../api/client';
-import { getLanguageConfigs } from '../data/dictionaryLoader';
+import { getLanguageConfigs } from '../data/languageLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import type { LanguageConfig } from '../types';
 

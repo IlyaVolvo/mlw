@@ -518,4 +518,3 @@ export async function preloadAllDictionaries(): Promise<void> {
 
   await Promise.all(loadPromises);
 }
-

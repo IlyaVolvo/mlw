@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { loadHelpTip } from '../data/dictionaryLoader';
+import { loadHelpTip } from '../data/languageLoader';
 
 interface HelpTooltipProps {
   language: string;

@@ -1,8 +1,8 @@
-import { getNormalization } from '../data/dictionaryLoader';
+import { getNormalization } from '../data/languageLoader';
 
 /**
  * Loads character normalization mappings for a language.
- * Normalization data is now embedded in language.json and loaded by dictionaryLoader.
+ * Normalization data is now embedded in language.json and loaded by languageLoader.
  * This function simply retrieves the cached data.
  * Must be called after loadKeyboard() has been called for this language.
  */
