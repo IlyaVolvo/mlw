@@ -1851,28 +1851,6 @@ h1 .logout-wrapper:hover .logout-tooltip {
   min-width: 0;
 }
 
-.language-selector-item .help-tooltip-container {
-  flex-shrink: 0;
-}
-
-.language-selector-item-help {
-  cursor: help;
-  color: #666;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-  transition: color 0.2s;
-}
-
-.language-selector-item-help:hover {
-  color: #333;
-}
-
-.language-selector-item-help svg {
-  display: block;
-}
-
 .language-selector-flag {
   margin-right: 6px;
   font-size: 1.2rem;
@@ -1881,6 +1859,17 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .language-selector-item span {
   font-size: 1rem;
   color: #333;
+}
+
+.language-selector-help-tooltip {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(128, 128, 128, 0.85);
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
 }
 
 .language-selector-footer {

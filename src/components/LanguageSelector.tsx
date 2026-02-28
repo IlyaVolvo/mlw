@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { LanguageConfig } from '../types';
+import { loadHelpTip } from '../data/languageLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
-import { HelpTooltip } from './HelpTooltip';
 
 interface LanguageSelectorProps {
   allAvailableLanguages: LanguageConfig[]; // All languages before filtering
@@ -17,14 +17,33 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   onSelectionChange,
 }) => {
   const [selectedLanguages, setSelectedLanguages] = useState<Set<string>>(new Set());
+  const [activeLanguage, setActiveLanguage] = useState<string | null>(null);
+  const [helpText, setHelpText] = useState<string>('');
 
   useEffect(() => {
     if (isOpen) {
       const prefs = loadPreferences();
       const selected = prefs.selectedLanguages || allAvailableLanguages.map(l => l.code);
       setSelectedLanguages(new Set(selected));
+      setActiveLanguage(null);
+      setHelpText('');
     }
   }, [isOpen, allAvailableLanguages]);
+
+  useEffect(() => {
+    if (!activeLanguage) return;
+    let cancelled = false;
+
+    const load = async () => {
+      const text = await loadHelpTip(activeLanguage);
+      if (!cancelled) setHelpText(text || '');
+    };
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeLanguage]);
 
   const handleToggle = (code: string) => {
     const newSelected = new Set(selectedLanguages);
@@ -80,6 +99,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
               <label 
                 key={lang.code} 
                 className={`language-selector-item ${isDisabled ? 'disabled' : ''}`}
+                onMouseEnter={() => setActiveLanguage(lang.code)}
+                onFocus={() => setActiveLanguage(lang.code)}
               >
                 <input
                   type="checkbox"
@@ -89,19 +110,15 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 />
                 {lang.flag && <span className="language-selector-flag">{lang.flag}</span>}
                 <span className="language-selector-item-name">{lang.name}</span>
-                <HelpTooltip language={lang.code} placement="left">
-                  <span className="language-selector-item-help" title={`Help for ${lang.name}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                  </span>
-                </HelpTooltip>
               </label>
             );
           })}
         </div>
+        {helpText && (
+          <div className="language-selector-help-tooltip">
+            {helpText}
+          </div>
+        )}
         <div className="language-selector-footer">
           <button onClick={handleCancel}>Cancel</button>
           <button onClick={handleSave} className="primary">Save</button>
