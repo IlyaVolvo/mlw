@@ -2,6 +2,7 @@ import { loadKeyboard } from '../data/languageLoader';
 import { normalizeForLanguage } from './characterNormalization';
 
 type GuessLike = { word: string } | string;
+const MAX_GUESSES = 6;
 
 const toGuessWords = (guesses: GuessLike[] | undefined): string[] => {
   if (!Array.isArray(guesses)) return [];
@@ -21,6 +22,11 @@ export async function deriveGameOutcome(input: {
   const guessesCount = guessWords.length;
 
   if (!input.isComplete || guessesCount === 0) {
+    return { isWon: false, guessesCount };
+  }
+
+  // A valid win must happen within the allowed attempts.
+  if (guessesCount > MAX_GUESSES) {
     return { isWon: false, guessesCount };
   }
 

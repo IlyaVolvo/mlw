@@ -835,12 +835,14 @@ export const Game: React.FC<GameProps> = ({
       return;
     }
 
-    const evaluations = evaluateGuess(guess, targetWord, language);
     // Normalize for language-specific character equivalences when checking win condition
     const normalizedGuess = normalizeForLanguage(guess, language);
     const normalizedTarget = normalizeForLanguage(targetWord, language);
     const isWon = normalizedGuess === normalizedTarget;
-    const newGuesses = [...gameState.guesses, { word: guess, evaluations }];
+    // On normalized win, persist/display the canonical target form as the final guess.
+    const committedGuess = isWon ? targetWord : guess;
+    const evaluations = evaluateGuess(committedGuess, targetWord, language);
+    const newGuesses = [...gameState.guesses, { word: committedGuess, evaluations }];
     const isComplete = isWon || newGuesses.length >= MAX_GUESSES;
 
     const updatedState: GameState = {
