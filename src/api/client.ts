@@ -1,3 +1,4 @@
+import { deriveGameOutcome } from '../utils/gameOutcome';
 const API_BASE = (import.meta as any).env?.VITE_API_URL || '/api';
 
 export interface User {
@@ -135,7 +136,21 @@ class ApiClient {
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
+    const response = await this.request<GameResponse>(`/games?${queryParams.toString()}`);
+    if (!response.game) return response;
+    const outcome = await deriveGameOutcome({
+      language: response.game.language,
+      isComplete: response.game.is_complete === 1,
+      targetWord: response.game.target_word,
+      guesses: response.game.guesses,
+    });
+    return {
+      game: {
+        ...response.game,
+        isWon: outcome.isWon,
+        guessesCount: outcome.guessesCount,
+      },
+    };
   }
 
   async getCompletedGame(params: {
@@ -153,7 +168,21 @@ class ApiClient {
     if (params.isRandomMode !== undefined) queryParams.append('isRandomMode', params.isRandomMode.toString());
     if (params.wordSeed) queryParams.append('wordSeed', params.wordSeed.toString());
 
-    return this.request<GameResponse>(`/games?${queryParams.toString()}`);
+    const response = await this.request<GameResponse>(`/games?${queryParams.toString()}`);
+    if (!response.game) return response;
+    const outcome = await deriveGameOutcome({
+      language: response.game.language,
+      isComplete: response.game.is_complete === 1,
+      targetWord: response.game.target_word,
+      guesses: response.game.guesses,
+    });
+    return {
+      game: {
+        ...response.game,
+        isWon: outcome.isWon,
+        guessesCount: outcome.guessesCount,
+      },
+    };
   }
 
   async saveGame(gameData: {
@@ -179,7 +208,23 @@ class ApiClient {
     if (wordLength) queryParams.append('wordLength', wordLength.toString());
     if (limit) queryParams.append('limit', limit.toString());
 
-    return this.request<{ games: any[] }>(`/games/history?${queryParams.toString()}`);
+    const response = await this.request<{ games: any[] }>(`/games/history?${queryParams.toString()}`);
+    const games = await Promise.all(
+      (response.games || []).map(async (game: any) => {
+        const outcome = await deriveGameOutcome({
+          language: game.language,
+          isComplete: game.isComplete === true,
+          targetWord: game.targetWord,
+          guesses: game.guesses,
+        });
+        return {
+          ...game,
+          isWon: outcome.isWon,
+          guessesCount: outcome.guessesCount,
+        };
+      })
+    );
+    return { games };
   }
 
   async getBulkGames(params: {
@@ -194,7 +239,27 @@ class ApiClient {
     queryParams.append('startDate', params.startDate);
     queryParams.append('endDate', params.endDate);
 
-    return this.request<{ games: Record<string, any> }>(`/games/bulk?${queryParams.toString()}`);
+    const response = await this.request<{ games: Record<string, any> }>(`/games/bulk?${queryParams.toString()}`);
+    const entries = await Promise.all(
+      Object.entries(response.games || {}).map(async ([date, game]) => {
+        const typedGame = game as any;
+        const outcome = await deriveGameOutcome({
+          language: typedGame.language,
+          isComplete: typedGame.is_complete === 1,
+          targetWord: typedGame.target_word,
+          guesses: typedGame.guesses,
+        });
+        return [
+          date,
+          {
+            ...typedGame,
+            isWon: outcome.isWon,
+            guessesCount: outcome.guessesCount,
+          },
+        ] as const;
+      })
+    );
+    return { games: Object.fromEntries(entries) };
   }
 
   // Preferences endpoints

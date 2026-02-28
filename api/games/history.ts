@@ -92,8 +92,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           targetWord: game.target_word,
           guesses: guessesArray.map((word: string) => ({ word, evaluations: [] })),
           isComplete: game.is_complete === 1,
-          isWon: guessesArray.includes(game.target_word),
-          guessesCount: guessesArray.length,
         };
       }),
     });

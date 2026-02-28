@@ -107,8 +107,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           created_at: game.created_at ? new Date(game.created_at).toISOString() : null,
           completed_at: game.completed_at ? new Date(game.completed_at).toISOString() : null,
           guesses: guessesArray.map((word: string) => ({ word, evaluations: [] })),
-          isWon: guessesArray.includes(game.target_word),
-          guessesCount: guessesArray.length,
         };
       }
     });
