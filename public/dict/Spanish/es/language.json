@@ -8,19 +8,11 @@
   "flag": "🇪🇸",
   "normalization": {
     "á": "a",
-    "Á": "A",
     "é": "e",
-    "É": "E",
     "í": "i",
-    "Í": "I",
     "ó": "o",
-    "Ó": "O",
-    "ú": "u",
-    "Ú": "U",
-    "ñ": "n",
-    "Ñ": "N",
-    "ü": "u",
-    "Ü": "U"
+    "úü": "u",
+    "ñ": "n"
   },
   "winMessage": "¡Felicitaciones! ¡Has ganado!",
   "helpTip": "Los detalles están llegando...",

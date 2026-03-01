@@ -37,7 +37,11 @@ export function normalizeForLanguage(word: string, language: string): string {
     if (base.length > 1) {
       multiCharReplacements.push([variant, base]);
     } else {
-      singleCharReplacements.push([variant, base]);
+      // Support grouped keys like "àáâä": "a" and regular single-char keys.
+      // In both cases we normalize each variant character individually.
+      for (const singleVariant of Array.from(variant)) {
+        singleCharReplacements.push([singleVariant, base]);
+      }
     }
   }
   

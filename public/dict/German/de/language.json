@@ -8,13 +8,9 @@
   "flag": "🇩🇪",
   "normalization": {
     "ä": "a",
-    "Ä": "A",
     "ö": "o",
-    "Ö": "O",
     "ü": "u",
-    "Ü": "U",
-    "ß": "ss",
-    "ẞ": "SS"
+    "ß": "ss"
   },
   "winMessage": "Herzlichen Glückwunsch! Du hast gewonnen!",
   "helpTip": "Details kommen bald...",
