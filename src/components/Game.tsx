@@ -9,7 +9,7 @@ import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinM
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
-import { normalizeForLanguage, loadNormalization } from '../utils/characterNormalization';
+import { normalizeForLanguage, loadNormalization, isWinningGuessForLanguage } from '../utils/characterNormalization';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import { apiClient } from '../api/client';
 import { gameCacheUtils } from '../utils/gameCache';
@@ -891,10 +891,8 @@ export const Game: React.FC<GameProps> = ({
       return;
     }
 
-    // Normalize for language-specific character equivalences when checking win condition
-    const normalizedGuess = normalizeForLanguage(guess, language);
-    const normalizedTarget = normalizeForLanguage(targetWord, language);
-    const isWon = normalizedGuess === normalizedTarget;
+    // Directional rule: target is normalized; guess is compared as entered.
+    const isWon = isWinningGuessForLanguage(guess, targetWord, language);
     // On normalized win, persist/display the canonical target form as the final guess.
     const committedGuess = isWon ? targetWord : guess;
     const evaluations = evaluateGuess(committedGuess, targetWord, language);

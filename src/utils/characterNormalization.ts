@@ -58,6 +58,12 @@ export function normalizeForLanguage(word: string, language: string): string {
   return normalized;
 }
 
+export function isWinningGuessForLanguage(guess: string, target: string, language: string): boolean {
+  const normalizedGuess = normalizeForLanguage(guess.toLowerCase().trim(), language);
+  const normalizedTarget = normalizeForLanguage(target.toLowerCase().trim(), language);
+  return normalizedGuess === normalizedTarget;
+}
+
 /**
  * Escapes special regex characters in a string
  */

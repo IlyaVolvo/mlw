@@ -1,5 +1,5 @@
 import { loadKeyboard } from '../data/languageLoader';
-import { normalizeForLanguage } from './characterNormalization';
+import { isWinningGuessForLanguage } from './characterNormalization';
 
 type GuessLike = { word: string } | string;
 const MAX_GUESSES = 6;
@@ -30,8 +30,11 @@ export async function deriveGameOutcome(input: {
     return { isWon: false, guessesCount };
   }
 
-  const normalizedTarget = normalizeForLanguage(input.targetWord, input.language);
-  const normalizedLastGuess = normalizeForLanguage(guessWords[guessesCount - 1], input.language);
-  return { isWon: normalizedLastGuess === normalizedTarget, guessesCount };
+  const isWon = isWinningGuessForLanguage(
+    guessWords[guessesCount - 1],
+    input.targetWord,
+    input.language
+  );
+  return { isWon, guessesCount };
 }
 
