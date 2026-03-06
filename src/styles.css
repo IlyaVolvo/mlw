@@ -2456,6 +2456,10 @@ h1 .logout-wrapper:hover .logout-tooltip {
   line-height: 1.5;
 }
 
+.release-message-content {
+  white-space: pre-line;
+}
+
 .release-message-label {
   font-size: 0.8rem;
   font-weight: 600;

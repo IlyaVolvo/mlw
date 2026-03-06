@@ -1,4 +1,5 @@
 [
   { "message": "Welcome back! From now on, you'll see brief updates here when we add new features or offer apologies for bugs or bad words. Thanks for playing." },
-  { "message": "Cleaned up English dictionaries. Please, report any erronious or missing words. Hopefully there are will be none" }
+  { "message": "Cleaned up English dictionaries. Please report any erroneous or missing words. Hopefully there will be none." },
+  { "message": "Added Armenian language.\n\nSpecial thanks to contributor:\n**Aram Airapetian**\n\nBelated acknowledgements:\n**Olga Lichten** - Spanish\n**Tanya Levshina** - French\n**Alex Kaplinsky** - Hebrew\n**Alexey Demidov** - Russian" }
 ]
