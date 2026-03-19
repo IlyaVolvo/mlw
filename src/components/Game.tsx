@@ -1198,33 +1198,37 @@ export const Game: React.FC<GameProps> = ({
         <h1>
           {onViewChange && (
             <span className="header-title-icons-left">
-              <button
-                type="button"
-                className="header-icon-button"
-                onClick={() => onViewChange('statistics')}
-                title="Statistics"
-                aria-label="Statistics"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="header-icon-button"
-                onClick={() => onViewChange('statistics', 'cross-language')}
-                title="Cross-Language Comparison"
-                aria-label="Cross-Language Comparison"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-                  <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-                  <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-                  <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-                </svg>
-              </button>
+              <span className="header-icon-with-tooltip">
+                <span className="header-icon-tooltip header-icon-tooltip--left">Single Language Statistics</span>
+                <button
+                  type="button"
+                  className="header-icon-button"
+                  onClick={() => onViewChange('statistics')}
+                  aria-label="Single Language Statistics"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </button>
+              </span>
+              <span className="header-icon-with-tooltip">
+                <span className="header-icon-tooltip header-icon-tooltip--left">Cross-Language Comparison</span>
+                <button
+                  type="button"
+                  className="header-icon-button"
+                  onClick={() => onViewChange('statistics', 'cross-language')}
+                  aria-label="Cross-Language Comparison"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                  </svg>
+                </button>
+              </span>
             </span>
           )}
           <span>PolyWordlot</span>
@@ -1247,7 +1251,7 @@ export const Game: React.FC<GameProps> = ({
                 </button>
               </span>
               <span className="header-icon-with-tooltip">
-                <span className="header-icon-tooltip">Please, send comments if you find any comments, found bugs, incorrect or missing words. If you'd like to add a new language, it is relatively easy - all you need a couple of dictionaries for each word length. Please contact the author. I would gladly explain the details.</span>
+                <span className="header-icon-tooltip">Please, send comments if you find bugs, incorrect, offensive or missing words. If you'd like to add a new language, it is relatively easy - all you need is a couple of dictionaries for each word length. Please contact the author. I would gladly explain the details and work with you.</span>
                 <button
                   type="button"
                   className="header-icon-button"

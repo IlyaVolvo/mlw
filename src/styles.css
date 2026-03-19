@@ -1159,9 +1159,9 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
 .header-icon-tooltip {
   position: absolute;
-  bottom: 100%;
-  left: 0;
-  margin-bottom: 8px;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
   background: rgba(128, 128, 128, 0.85);
   color: white;
   padding: 12px 16px;
@@ -1175,7 +1175,7 @@ h1 .logout-wrapper:hover .logout-tooltip {
   line-height: 1.5;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(4px);
+  transform: translateY(-4px);
   transition: opacity 0.2s ease-out 0.3s, transform 0.2s ease-out 0.3s;
   z-index: 20;
 }
@@ -1183,6 +1183,13 @@ h1 .logout-wrapper:hover .logout-tooltip {
 .header-icon-with-tooltip:hover .header-icon-tooltip {
   opacity: 1;
   transform: translateY(0);
+}
+
+.header-icon-tooltip--left {
+  right: auto;
+  left: 0;
+  min-width: auto;
+  white-space: nowrap;
 }
 
 .header-icon-button {
