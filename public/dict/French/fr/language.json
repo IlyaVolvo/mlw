@@ -17,5 +17,10 @@
   },
   "winMessage": "Félicitations ! Vous avez gagné !",
   "helpTip": "Les détails arrivent...",
-  "loseMessage": "La réponse était : {word}"
+  "loseMessage": "La réponse était : {word}",
+  "about": {
+    "contributorLabel": "Contributeurs",
+    "rulesLabel": "Règles du jeu",
+    "contributor": "Tanya Levshina"
+  }
 }

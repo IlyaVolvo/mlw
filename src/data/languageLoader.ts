@@ -53,6 +53,12 @@ interface KeyboardConfig {
   helpTip?: string;
   /** Localized lose message template, with {word} placeholder. */
   loseMessage?: string;
+  /** About section with localized labels and contributor info. */
+  about?: {
+    contributorLabel?: string;
+    rulesLabel?: string;
+    contributor?: string;
+  };
 }
 
 const keyboardActionsCache = new Map<string, KeyboardActions>();
@@ -63,6 +69,7 @@ const inputPluginsCache = new Map<string, InputPluginConfig[]>();
 const winMessageCache = new Map<string, string>();
 const helpTipCache = new Map<string, string>();
 const loseMessageCache = new Map<string, string>();
+const aboutCache = new Map<string, { contributorLabel?: string; rulesLabel?: string; contributor?: string }>();
 
 /**
  * Locale to directory path (language name + locale). Used for getLanguageDir and discovery.
@@ -238,6 +245,14 @@ export async function loadLoseMessage(language: string, word: string): Promise<s
   }
   const template = loseMessageCache.get(language) || 'Answer was: {word}';
   return template.replace('{word}', word);
+}
+
+export async function loadAbout(language: string): Promise<{ contributorLabel?: string; rulesLabel?: string; contributor?: string } | null> {
+  if (aboutCache.has(language)) {
+    return aboutCache.get(language)!;
+  }
+  await loadKeyboard(language);
+  return aboutCache.get(language) || null;
 }
 
 /**
@@ -427,6 +442,9 @@ export async function loadKeyboard(language: string): Promise<string[][] | null>
         }
         if (typeof config.loseMessage === 'string' && config.loseMessage.trim()) {
           loseMessageCache.set(language, config.loseMessage.trim());
+        }
+        if (config.about && typeof config.about === 'object') {
+          aboutCache.set(language, config.about);
         }
         if (Array.isArray(config.plugins) && config.plugins.length > 0) {
           const valid = config.plugins.filter(

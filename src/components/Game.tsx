@@ -5,7 +5,7 @@ import { Keyboard } from './Keyboard';
 import { Settings } from './Settings';
 import { Calendar } from './Calendar';
 import { LanguageSelector } from './LanguageSelector';
-import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage, loadLoseMessage } from '../data/languageLoader';
+import { loadDictionary, loadKeyboard, getKeyboardRtl, getInputPlugins, loadWinMessage, loadLoseMessage, loadAbout } from '../data/languageLoader';
 import { applyInputPlugins } from '../utils/inputPlugins';
 import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
@@ -33,6 +33,7 @@ interface GameProps {
   availableLanguages: LanguageConfig[];
   allAvailableLanguages: LanguageConfig[];
   onLanguageSelectionChange: (selectedCodes: string[]) => void;
+  onShowTutorial?: () => void;
 }
 
 export const Game: React.FC<GameProps> = ({ 
@@ -51,7 +52,8 @@ export const Game: React.FC<GameProps> = ({
   onWordLengthChange,
   availableLanguages,
   allAvailableLanguages,
-  onLanguageSelectionChange
+  onLanguageSelectionChange,
+  onShowTutorial
 }) => {
   const [dictionary, setDictionary] = useState<DictionaryEntry | null>(null);
   const [targetWord, setTargetWord] = useState<string>('');
@@ -74,6 +76,8 @@ export const Game: React.FC<GameProps> = ({
   const [feedbackText, setFeedbackText] = useState('');
   const [feedbackSending, setFeedbackSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
+  const [showAbout, setShowAbout] = useState(false);
+  const [aboutData, setAboutData] = useState<{ contributorLabel?: string; rulesLabel?: string; contributor?: string } | null>(null);
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
   const [calendarBlinkingDates, setCalendarBlinkingDates] = useState<Set<string>>(new Set());
@@ -192,6 +196,15 @@ export const Game: React.FC<GameProps> = ({
     let cancelled = false;
     loadLoseMessage(language, '{word}').then((msg) => {
       if (!cancelled) setLoseMessage(msg || 'Answer was: {word}');
+    });
+    return () => { cancelled = true; };
+  }, [language]);
+
+  // Load about data for the current language
+  useEffect(() => {
+    let cancelled = false;
+    loadAbout(language).then((data) => {
+      if (!cancelled) setAboutData(data);
     });
     return () => { cancelled = true; };
   }, [language]);
@@ -1114,7 +1127,7 @@ export const Game: React.FC<GameProps> = ({
       }
 
       // Don't process game keys when popup is open
-      if (showWordIndexPopup || showFeedbackModal) return;
+      if (showWordIndexPopup || showFeedbackModal || showAbout) return;
 
       if (loading) return;
 
@@ -1155,7 +1168,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup, showFeedbackModal]);
+  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup, showFeedbackModal, showAbout]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -1248,6 +1261,19 @@ export const Game: React.FC<GameProps> = ({
                   </svg>
                 </button>
               </span>
+              <button
+                type="button"
+                className="header-icon-button"
+                onClick={() => setShowAbout(true)}
+                title="About"
+                aria-label="About"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
               {onLogout && (
                 <button onClick={onLogout} className="header-icon-button" title="Logout" aria-label="Logout">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1519,6 +1545,41 @@ export const Game: React.FC<GameProps> = ({
                 Cancel
               </button>
             </div>
+          </div>
+        </div>
+      )}
+      {showAbout && (
+        <div className="word-index-overlay" onClick={() => setShowAbout(false)}>
+          <div className="about-popup" onClick={(e) => e.stopPropagation()}>
+            <h3>PolyWordlot</h3>
+            <p className="about-author">Author: <strong>Ilya Volvovski</strong></p>
+            {aboutData?.contributor && (
+              <p className="about-contributor">
+                {aboutData.contributorLabel || 'Contributors'}: <strong>{aboutData.contributor}</strong>
+              </p>
+            )}
+            {onShowTutorial && (
+              <button
+                type="button"
+                className="about-rules-link"
+                onClick={() => {
+                  setShowAbout(false);
+                  onShowTutorial();
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                {aboutData?.rulesLabel || 'Game Rules'}
+              </button>
+            )}
+            <button
+              className="about-close-btn"
+              onClick={() => setShowAbout(false)}
+            >
+              OK
+            </button>
           </div>
         </div>
       )}

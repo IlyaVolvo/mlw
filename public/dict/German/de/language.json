@@ -14,5 +14,9 @@
   },
   "winMessage": "Herzlichen Glückwunsch! Du hast gewonnen!",
   "helpTip": "Details kommen bald...",
-  "loseMessage": "Die Antwort war: {word}"
+  "loseMessage": "Die Antwort war: {word}",
+  "about": {
+    "contributorLabel": "Mitwirkende",
+    "rulesLabel": "Spielregeln"
+  }
 }

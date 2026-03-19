@@ -16,5 +16,10 @@
   },
   "winMessage": "¡Felicitaciones! ¡Has ganado!",
   "helpTip": "Los detalles están llegando...",
-  "loseMessage": "La respuesta era: {word}"
+  "loseMessage": "La respuesta era: {word}",
+  "about": {
+    "contributorLabel": "Colaboradores",
+    "rulesLabel": "Reglas del juego",
+    "contributor": "Olga Lichten"
+  }
 }

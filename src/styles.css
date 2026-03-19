@@ -2607,6 +2607,72 @@ h1 .logout-wrapper:hover .logout-tooltip {
   margin-top: 16px;
 }
 
+/* About popup */
+.about-popup {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  min-width: 220px;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.about-popup h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.15rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.about-author {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.about-contributor {
+  margin: 0 0 14px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.about-rules-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+  margin-bottom: 14px;
+  transition: color 0.2s;
+}
+
+.about-rules-link:hover {
+  color: #5a6fd6;
+}
+
+.about-close-btn {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #e5e7eb;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.about-close-btn:hover {
+  background: #d1d5db;
+}
+
 /* Tutorial styles */
 .tutorial-container {
   background: white;

@@ -425,6 +425,7 @@ export const App: React.FC = () => {
           availableLanguages={availableLanguages}
           allAvailableLanguages={allAvailableLanguages}
           onLanguageSelectionChange={handleLanguageSelectionChange}
+          onShowTutorial={() => setShowTutorial(true)}
         />
       ) : (
         <Statistics 

@@ -35,5 +35,10 @@
   ],
   "winMessage": "מזל טוב! ניצחת!",
   "helpTip": "Words are entered right-to-left. Only valid Hebrew words are accepted.",
-  "loseMessage": "התשובה הייתה: {word}"
+  "loseMessage": "התשובה הייתה: {word}",
+  "about": {
+    "contributorLabel": "תורמים",
+    "rulesLabel": "חוקי המשחק",
+    "contributor": "Alex Kaplinsky"
+  }
 }
