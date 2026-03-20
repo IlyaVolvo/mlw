@@ -931,10 +931,69 @@ h1 .logout-wrapper:hover .logout-tooltip {
   }
 
   .settings {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 6px;
     margin-bottom: 8px;
     justify-content: center;
+  }
+
+  .setting-group select {
+    padding: 4px 6px;
+    font-size: 0.85rem;
+    border-width: 1.5px;
+  }
+
+  .setting-group select.mode-select {
+    padding: 4px 6px;
+    padding-right: 24px;
+    font-size: 0.8rem;
+    background-position: right 4px center;
+    background-size: 10px 10px;
+  }
+
+  .language-dropdown-trigger {
+    padding: 4px 8px;
+    min-height: 32px;
+    border-width: 1.5px;
+  }
+
+  .language-dropdown-flag {
+    font-size: 1.2rem;
+  }
+
+  .daily-mode-row {
+    gap: 6px;
+  }
+
+  .daily-mode-row .date-picker-wrapper-inline {
+    min-width: 90px;
+  }
+
+  .date-picker-input-compact {
+    height: 32px !important;
+    padding: 4px 6px !important;
+    padding-left: 26px !important;
+    font-size: 0.85rem !important;
+    border-width: 1.5px !important;
+  }
+
+  .date-picker-icon-overlay svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .date-display-text-compact {
+    left: 26px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .restart-practice-button {
+    padding: 4px;
+  }
+
+  .restart-practice-button svg {
+    width: 14px;
+    height: 14px;
   }
 
   .game-controls {
@@ -1027,8 +1086,46 @@ h1 .logout-wrapper:hover .logout-tooltip {
   }
 }
 
+/* Phone icon sizing */
+@media (max-width: 600px) {
+  .header-title-icons-left,
+  .header-title-icons {
+    gap: 2px;
+  }
+
+  .header-icon-button {
+    padding: 4px;
+  }
+
+  .header-icon-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 /* Small phones (e.g. iPhone SE, narrow devices) */
 @media (max-width: 430px) {
+  .header-title-icons-left {
+    margin-right: 8px;
+  }
+
+  .header-title-icons {
+    margin-left: 8px;
+  }
+
+  .header-title-icons-left,
+  .header-title-icons {
+    gap: 0px;
+  }
+
+  .header-icon-button {
+    padding: 3px;
+  }
+
+  .header-icon-button svg {
+    width: 14px;
+    height: 14px;
+  }
   body {
     padding: 4px;
     padding-left: max(4px, env(safe-area-inset-left));
@@ -1058,7 +1155,75 @@ h1 .logout-wrapper:hover .logout-tooltip {
   }
 
   .settings {
+    gap: 4px;
     margin-bottom: 6px;
+  }
+
+  .setting-group select {
+    padding: 3px 4px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .setting-group select.mode-select {
+    padding: 3px 4px;
+    padding-right: 20px;
+    font-size: 0.75rem;
+    background-position: right 3px center;
+    background-size: 9px 9px;
+  }
+
+  .language-dropdown-trigger {
+    padding: 3px 6px;
+    min-height: 28px;
+    border-radius: 6px;
+  }
+
+  .language-dropdown-flag {
+    font-size: 1.1rem;
+  }
+
+  .language-dropdown-chevron {
+    font-size: 0.5rem;
+  }
+
+  .daily-mode-row {
+    gap: 4px;
+  }
+
+  .daily-mode-row .date-picker-wrapper-inline {
+    min-width: 80px;
+  }
+
+  .date-picker-input-compact {
+    height: 28px !important;
+    padding: 3px 4px !important;
+    padding-left: 22px !important;
+    font-size: 0.8rem !important;
+    border-radius: 6px !important;
+  }
+
+  .date-picker-icon-overlay {
+    left: 5px !important;
+  }
+
+  .date-picker-icon-overlay svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .date-display-text-compact {
+    left: 22px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .restart-practice-button {
+    padding: 3px;
+  }
+
+  .restart-practice-button svg {
+    width: 13px;
+    height: 13px;
   }
 
   .game-controls {
@@ -1109,15 +1274,6 @@ h1 .logout-wrapper:hover .logout-tooltip {
 
   .keyboard-placeholder {
     height: 142px;
-  }
-
-  .settings {
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-
-  .game-controls {
-    margin-bottom: 8px;
   }
 
   .random-watermark {
