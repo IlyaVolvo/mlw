@@ -49,6 +49,9 @@ Thumbs.db
 server/logs/
 server/*.db
 
+# SQLite data directory (runtime, persisted on Render disk)
+data/
+
 # Prisma
 server/src/generated/prisma
 
