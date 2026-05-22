@@ -11,7 +11,8 @@ import { getDailyWord, getWordFromSeed, formatDate } from '../utils/dailyWord';
 import { evaluateGuess, isValidWord } from '../utils/gameLogic';
 import { normalizeForLanguage, loadNormalization, isWinningGuessForLanguage } from '../utils/characterNormalization';
 import { loadPreferences, savePreferences } from '../utils/preferences';
-import { apiClient } from '../api/client';
+import { apiClient, OFFLINE_MODE } from '../api/client';
+import { exportDatabase, importDatabase } from '../utils/dbExport';
 import { gameCacheUtils } from '../utils/gameCache';
 
 const MAX_GUESSES = 6;
@@ -77,6 +78,8 @@ export const Game: React.FC<GameProps> = ({
   const [feedbackSending, setFeedbackSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const [showAbout, setShowAbout] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const menuRef = React.useRef<HTMLDivElement>(null);
   const [aboutData, setAboutData] = useState<{ contributorLabel?: string; rulesLabel?: string; contributor?: string } | null>(null);
   const wordIndexGameStartedRef = useRef(false);
   const [calendarGames, setCalendarGames] = useState<any[]>([]);
@@ -100,6 +103,18 @@ export const Game: React.FC<GameProps> = ({
   const touchEndRef = useRef<number | null>(null);
   const swipeStartDateRef = useRef<string | null>(null); // Capture date at swipe start
   const minSwipeDistance = 100;
+
+  // Close the ⋮ menu when clicking outside it
+  useEffect(() => {
+    if (!showMenu) return;
+    const handleOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutside);
+    return () => document.removeEventListener('mousedown', handleOutside);
+  }, [showMenu]);
 
   // Load preferences on mount - default to Daily mode (not Training)
   useEffect(() => {
@@ -1127,7 +1142,7 @@ export const Game: React.FC<GameProps> = ({
       }
 
       // Don't process game keys when popup is open
-      if (showWordIndexPopup || showFeedbackModal || showAbout) return;
+      if (showWordIndexPopup || showFeedbackModal || showAbout || showMenu) return;
 
       if (loading) return;
 
@@ -1168,7 +1183,7 @@ export const Game: React.FC<GameProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup, showFeedbackModal, showAbout]);
+  }, [loading, gameState, randomMode, dictionary, wordLength, language, keyboardRtl, handleEnter, handleBackspace, handleKeyPress, handleStartGame, showWordIndexPopup, showFeedbackModal, showAbout, showMenu]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -1232,64 +1247,122 @@ export const Game: React.FC<GameProps> = ({
             </span>
           )}
           <span>PolyWordlot</span>
-          {onViewChange && (
-            <span className="header-title-icons">
-              <span className="header-icon-with-tooltip">
-                <span className="header-icon-tooltip">Mark one or more languages you'd like to be in language selection menu</span>
-                <button
-                  type="button"
-                  className={`header-icon-button ${showOptions ? 'active' : ''}`}
-                  onClick={() => setShowOptions(!showOptions)}
-                  title="Language selection"
-                  aria-label="Language selection"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                </button>
-              </span>
-              <span className="header-icon-with-tooltip">
-                <span className="header-icon-tooltip">Please, send comments if you find bugs, incorrect, offensive or missing words. If you'd like to add a new language, it is relatively easy - all you need is a couple of dictionaries for each word length. Please contact the author. I would gladly explain the details and work with you.</span>
-                <button
-                  type="button"
-                  className="header-icon-button"
-                  onClick={() => { setShowFeedbackModal(true); setFeedbackText(''); setFeedbackMessage(null); }}
-                  title="Send feedback"
-                  aria-label="Send feedback"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </button>
-              </span>
+          <div ref={menuRef} style={{ position: 'absolute', right: 0, top: 'calc(50% - 8px)', transform: 'translateY(-50%)' }}>
               <button
                 type="button"
                 className="header-icon-button"
-                onClick={() => setShowAbout(true)}
-                title="About"
-                aria-label="About"
+                onClick={() => setShowMenu((v) => !v)}
+                title="More options"
+                aria-label="More options"
+                aria-haspopup="true"
+                aria-expanded={showMenu}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  <circle cx="12" cy="5" r="1" fill="currentColor"></circle>
+                  <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                  <circle cx="12" cy="19" r="1" fill="currentColor"></circle>
                 </svg>
               </button>
-              {onLogout && (
-                <button onClick={onLogout} className="header-icon-button" title="Logout" aria-label="Logout">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16 17 21 12 16 7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                  </svg>
-                </button>
+              {showMenu && (
+                <div
+                  style={{
+                    position: 'absolute', right: 0, top: 'calc(100% + 4px)', zIndex: 1000,
+                    background: 'white', border: '1px solid #e0e0e0', borderRadius: '10px',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.12)', minWidth: '180px', padding: '4px 0',
+                  }}
+                  onClick={() => setShowMenu(false)}
+                >
+                  <button
+                    className="settings-menu-item"
+                    onClick={() => setShowOptions(!showOptions)}
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap' }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    Language Setup
+                  </button>
+                  <button
+                    className="settings-menu-item"
+                    onClick={() => { setShowFeedbackModal(true); setFeedbackText(''); setFeedbackMessage(null); }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap' }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Feedback
+                  </button>
+                  <button
+                    className="settings-menu-item"
+                    onClick={() => setShowAbout(true)}
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap' }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    About
+                  </button>
+                  {OFFLINE_MODE ? (
+                    <>
+                      <div style={{ height: '1px', background: '#f0f0f0', margin: '4px 0' }} />
+                      <button
+                        className="settings-menu-item"
+                        onClick={() => exportDatabase()}
+                        style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap' }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export data
+                      </button>
+                      <label
+                        className="settings-menu-item"
+                        style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap', boxSizing: 'border-box' }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="17 8 12 3 7 8"></polyline>
+                          <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Import data
+                        <input type="file" accept=".json" style={{ display: 'none' }}
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            const ok = await importDatabase(file);
+                            if (ok) window.location.reload();
+                            e.target.value = '';
+                          }}
+                        />
+                      </label>
+                    </>
+                  ) : onLogout && (
+                    <>
+                      <div style={{ height: '1px', background: '#f0f0f0', margin: '4px 0' }} />
+                      <button
+                        className="settings-menu-item"
+                        onClick={onLogout}
+                        style={{ display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 16px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', textAlign: 'left', whiteSpace: 'nowrap', color: '#e53e3e' }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                          <polyline points="16 17 21 12 16 7"></polyline>
+                          <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        Logout
+                      </button>
+                    </>
+                  )}
+                </div>
               )}
-            </span>
-          )}
-          <span className="build-commit">{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
+          </div>
+          <span className="build-commit">{OFFLINE_MODE && <span title="Offline mode" style={{ marginRight: '3px', opacity: 0.7 }}>off</span>}{__GIT_COMMIT_HASH__ ? __GIT_COMMIT_HASH__.substring(0, 6) : ''}</span>
         </h1>
         {showCalendar && !randomMode && (
           <div className="calendar-full-panel">

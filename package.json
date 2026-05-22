@@ -11,6 +11,9 @@
     "dev:server": "cd server && npm run dev",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
     "build": "cd server && npm install && npm run build && cd .. && tsc && vite build",
+    "build:offline": "cd server && npm install && npm run build && cd .. && tsc && VITE_OFFLINE_MODE=true vite build && bash scripts/generate-version.sh dist",
+    "start:offline": "OFFLINE_MODE=true node server/dist/index.js",
+    "dev:offline": "VITE_OFFLINE_MODE=true vite",
     "preview": "vite preview"
   },
   "dependencies": {

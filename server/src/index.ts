@@ -1,16 +1,17 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.js';
-import gamesRoutes from './routes/games.js';
-import pool from './db/database.js';
-import { query } from './db/database.js';
 import { logger } from './utils/logger.js';
 
 dotenv.config();
 
+const OFFLINE_MODE = process.env.OFFLINE_MODE === 'true';
 const app = express();
 const PORT = process.env.PORT || 3101;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Request and response logging middleware - logs all incoming requests and responses
 app.use((req, res, next) => {
@@ -42,66 +43,54 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 
-// Health check
-app.get('/health', async (req, res) => {
-  try {
-    await query('SELECT 1');
-    res.json({ status: 'ok', database: 'connected' });
-  } catch (error) {
-    res.status(500).json({ status: 'error', database: 'disconnected' });
-  }
-});
+if (OFFLINE_MODE) {
+  // Offline mode: analytics + static file serving, no PostgreSQL
+  const { accessLogMiddleware } = await import('./middleware/accessLog.js');
+  const analyticsRoutes = (await import('./routes/analytics.js')).default;
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/games', gamesRoutes);
+  app.use(accessLogMiddleware);
+  app.use('/api/analytics', analyticsRoutes);
 
-// Log all registered routes at startup
-const logRegisteredRoutes = () => {
-  const routes: Array<{ method: string; path: string }> = [];
-  
+  // Health check (no DB)
+  app.get('/health', (_req, res) => {
+    res.json({ status: 'ok', mode: 'offline' });
+  });
+
+  // Serve static frontend build
+  const distPath = path.resolve(__dirname, '../../dist');
+  app.use(express.static(distPath));
+  // SPA fallback
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+} else {
+  // Online mode: PostgreSQL + auth + games
+  const { default: pool, query } = await import('./db/database.js');
+  const authRoutes = (await import('./routes/auth.js')).default;
+  const gamesRoutes = (await import('./routes/games.js')).default;
+
   // Health check
-  routes.push({ method: 'GET', path: '/health' });
-  
-  // Auth routes
-  routes.push({ method: 'POST', path: '/api/auth/register' });
-  routes.push({ method: 'POST', path: '/api/auth/login' });
-  routes.push({ method: 'POST', path: '/api/auth/forgot-password' });
-  routes.push({ method: 'POST', path: '/api/auth/reset-password' });
-  routes.push({ method: 'GET', path: '/api/auth/me' });
-  routes.push({ method: 'GET', path: '/api/auth/preferences' });
-  routes.push({ method: 'POST', path: '/api/auth/preferences' });
-  routes.push({ method: 'POST', path: '/api/auth/send-feedback' });
-  
-  // Games routes
-  routes.push({ method: 'GET', path: '/api/games' });
-  routes.push({ method: 'POST', path: '/api/games/save' });
-  routes.push({ method: 'GET', path: '/api/games/history' });
-  
-  logger.info('Registered routes', {
-    environment: 'local',
-    totalRoutes: routes.length,
-    routes: routes.map(r => `${r.method} ${r.path}`).sort()
-  });
-  
-  // Log grouped by prefix
-  const grouped: Record<string, string[]> = {};
-  routes.forEach(route => {
-    const prefix = route.path.split('/').slice(0, 3).join('/');
-    if (!grouped[prefix]) {
-      grouped[prefix] = [];
+  app.get('/health', async (_req, res) => {
+    try {
+      await query('SELECT 1');
+      res.json({ status: 'ok', database: 'connected' });
+    } catch (error) {
+      res.status(500).json({ status: 'error', database: 'disconnected' });
     }
-    grouped[prefix].push(`${route.method} ${route.path}`);
   });
-  
-  logger.info('Routes by prefix', {
-    environment: 'local',
-    grouped
-  });
-};
 
-// Log routes after routes are registered
-logRegisteredRoutes();
+  // Routes
+  app.use('/api/auth', authRoutes);
+  app.use('/api/games', gamesRoutes);
+
+  // Graceful shutdown
+  process.on('SIGINT', async () => {
+    logger.info('Shutting down gracefully...');
+    await pool.end();
+    process.exit(0);
+  });
+}
+
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -111,21 +100,23 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 try {
   app.listen(PORT, () => {
-    const message = `Server running on port ${PORT}`;
-    const dbMessage = `Database: PostgreSQL (${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || '5432'}/${process.env.DB_NAME || 'mlw'})`;
-    logger.info(message);
-    logger.info(dbMessage);
-    logger.info('All routes logged above');
+    logger.info(`Server running on port ${PORT} (mode: ${OFFLINE_MODE ? 'offline' : 'online'})`);
+    if (!OFFLINE_MODE) {
+      logger.info(`Database: PostgreSQL (${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || '5432'}/${process.env.DB_NAME || 'mlw'})`);
+    }
   });
 } catch (error) {
   logger.error('Failed to start server', error);
   process.exit(1);
 }
 
-// Graceful shutdown
-process.on('SIGINT', async () => {
-  logger.info('Shutting down gracefully...');
-  await pool.end();
-  process.exit(0);
-});
+// Graceful shutdown for SQLite in offline mode
+if (OFFLINE_MODE) {
+  process.on('SIGINT', async () => {
+    logger.info('Shutting down gracefully...');
+    const { closeSqliteDb } = await import('./db/sqlite.js');
+    closeSqliteDb();
+    process.exit(0);
+  });
+}
 

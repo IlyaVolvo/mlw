@@ -9,7 +9,7 @@ import { Tutorial } from './Tutorial';
 import { IconsTutorial } from './IconsTutorial';
 import { ReleaseMessageModal } from './ReleaseMessageModal';
 import { getReleasesToShow, recordPlayed } from '../utils/releaseNotes';
-import { apiClient } from '../api/client';
+import { apiClient, OFFLINE_MODE } from '../api/client';
 import { getLanguageConfigs } from '../data/languageLoader';
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import type { LanguageConfig } from '../types';
@@ -152,6 +152,37 @@ export const App: React.FC = () => {
         // Wait for configs to load before setting user (prevents race condition)
         await configsPromise;
         
+        if (OFFLINE_MODE) {
+          // Offline mode: auto-login with local user
+          const response = await apiClient.getCurrentUser();
+          setUser(response.user);
+
+          const tutorialDone = localStorage.getItem(TUTORIAL_COMPLETED_KEY);
+          const iconsTutorialDone = localStorage.getItem(ICONS_TUTORIAL_COMPLETED_KEY);
+          if (!tutorialDone) {
+            setShowTutorial(true);
+          } else if (!iconsTutorialDone) {
+            setShowIconsTutorial(true);
+          }
+
+          // Load preferences from IndexedDB
+          try {
+            const apiPrefs = await apiClient.getPreferences();
+            if (apiPrefs.selectedLanguages !== null) {
+              const prefs = loadPreferences();
+              prefs.selectedLanguages = apiPrefs.selectedLanguages;
+              savePreferences(prefs);
+              const selectedSet = new Set(apiPrefs.selectedLanguages);
+              const filteredConfigs = allConfigsRef.current.filter(lang => selectedSet.has(lang.code));
+              setAvailableLanguages(filteredConfigs);
+            }
+          } catch (apiError) {
+            console.error('Failed to load preferences:', apiError);
+          }
+          setLoading(false);
+          return;
+        }
+
         const token = apiClient.getToken();
         if (token) {
           const response = await apiClient.getCurrentUser();
@@ -198,17 +229,21 @@ export const App: React.FC = () => {
       }
     };
 
-    // Check for reset token in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('token');
-    if (token) {
-      setResetToken(token);
-      setAuthView('reset');
-      // Clean URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-      configsPromise.finally(() => setLoading(false));
-    } else {
+    if (OFFLINE_MODE) {
       checkAuth();
+    } else {
+      // Check for reset token in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      if (token) {
+        setResetToken(token);
+        setAuthView('reset');
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+        configsPromise.finally(() => setLoading(false));
+      } else {
+        checkAuth();
+      }
     }
   }, []);
 

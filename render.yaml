@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: polywordlot-offline
+    runtime: node
+    buildCommand: npm run build:offline
+    startCommand: npm run start:offline
+    envVars:
+      - key: OFFLINE_MODE
+        value: "true"
+      - key: NODE_ENV
+        value: production
+      - key: ANALYTICS_API_KEY
+        generateValue: true
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: polywordlot-data
+      mountPath: /data
+      sizeGB: 1
