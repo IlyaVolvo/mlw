@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { apiClient } from '../api/client';
+import { PasswordField } from './PasswordField';
 
 interface LoginProps {
   onLogin: (user: { id: number; email: string }) => void;
@@ -43,17 +44,13 @@ export const Login: React.FC<LoginProps> = ({ onLogin, onSwitchToRegister, onSwi
             autoComplete="email"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            autoComplete="current-password"
-          />
-        </div>
+        <PasswordField
+          id="password"
+          label="Password:"
+          value={password}
+          onChange={setPassword}
+          autoComplete="current-password"
+        />
         {error && <div className="error-message">{error}</div>}
         <button type="submit" disabled={loading} className="auth-button">
           {loading ? 'Logging in...' : 'Login'}
@@ -72,4 +69,3 @@ export const Login: React.FC<LoginProps> = ({ onLogin, onSwitchToRegister, onSwi
     </div>
   );
 };
-

@@ -133,7 +133,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string, 
         <p>You requested to reset your password for Polywordlot.</p>
         <p>Click the link below to reset your password:</p>
         <p><a href="${resetUrl}">${resetUrl}</a></p>
-        <p>This link will expire in 1 hour.</p>
+        <p>This link will expire in 6 hours.</p>
         <p>If you didn't request this, please ignore this email.</p>
       `,
       text: `
@@ -143,7 +143,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string, 
         Click the link below to reset your password:
         ${resetUrl}
         
-        This link will expire in 1 hour.
+        This link will expire in 6 hours.
         If you didn't request this, please ignore this email.
       `,
     };

@@ -56,3 +56,5 @@ server/src/generated/prisma
 
 
 
+data/analytics.db-shm
+data/analytics.db-wal

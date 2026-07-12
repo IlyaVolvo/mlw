@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { apiClient } from '../api/client';
+import { PasswordField } from './PasswordField';
 
 interface ResetPasswordProps {
   token: string | null;
@@ -66,30 +67,22 @@ export const ResetPassword: React.FC<ResetPasswordProps> = ({ token, onSuccess }
     <div className="auth-container">
       <h2>Reset Password</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="new-password">New Password:</label>
-          <input
-            id="new-password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={6}
-            autoComplete="new-password"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirm-password">Confirm Password:</label>
-          <input
-            id="confirm-password"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            minLength={6}
-            autoComplete="new-password"
-          />
-        </div>
+        <PasswordField
+          id="new-password"
+          label="New Password:"
+          value={password}
+          onChange={setPassword}
+          autoComplete="new-password"
+          minLength={6}
+        />
+        <PasswordField
+          id="confirm-password"
+          label="Confirm Password:"
+          value={confirmPassword}
+          onChange={setConfirmPassword}
+          autoComplete="new-password"
+          minLength={6}
+        />
         {error && <div className="error-message">{error}</div>}
         {message && <div className="success-message">{message}</div>}
         <button type="submit" disabled={loading} className="auth-button">
@@ -99,4 +92,3 @@ export const ResetPassword: React.FC<ResetPasswordProps> = ({ token, onSuccess }
     </div>
   );
 };
-

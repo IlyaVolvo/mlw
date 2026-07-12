@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { apiClient } from '../api/client';
 import { loadReleaseNotes } from '../utils/releaseNotes';
+import { PasswordField } from './PasswordField';
 
 interface RegisterProps {
   onRegister: (user: { id: number; email: string; verified?: number }) => void;
@@ -45,19 +46,15 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
             autoComplete="email"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="reg-password">Password:</label>
-          <input
-            id="reg-password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={6}
-            autoComplete="new-password"
-          />
-          <small>Minimum 6 characters</small>
-        </div>
+        <PasswordField
+          id="reg-password"
+          label="Password:"
+          value={password}
+          onChange={setPassword}
+          autoComplete="new-password"
+          minLength={6}
+          hint="Minimum 6 characters"
+        />
         {error && <div className="error-message">{error}</div>}
         <button type="submit" disabled={loading} className="auth-button">
           {loading ? 'Registering...' : 'Register'}
@@ -72,4 +69,3 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
     </div>
   );
 };
-

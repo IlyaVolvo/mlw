@@ -72,7 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (user) {
       // Generate reset token
       const resetToken = randomBytes(32).toString('hex');
-      const expiresAt = new Date(Date.now() + 3600000); // 1 hour
+      const expiresAt = new Date(Date.now() + 6 * 3600000); // 6 hours
 
       // Delete old tokens
       await query('DELETE FROM password_reset_tokens WHERE user_id = $1 AND used = 0', [user.id]);
@@ -107,10 +107,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             <p>You requested to reset your password for Polywordlot.</p>
             <p>Click the link below to reset your password:</p>
             <p><a href="${resetUrl}">${resetUrl}</a></p>
-            <p>This link will expire in 1 hour.</p>
+            <p>This link will expire in 6 hours.</p>
             <p>If you didn't request this, please ignore this email.</p>
           `,
-          text: `Password Reset Request\n\nYou requested to reset your password for Polywordlot.\nClick the link below to reset your password:\n${resetUrl}\n\nThis link will expire in 1 hour.\nIf you didn't request this, please ignore this email.`,
+          text: `Password Reset Request\n\nYou requested to reset your password for Polywordlot.\nClick the link below to reset your password:\n${resetUrl}\n\nThis link will expire in 6 hours.\nIf you didn't request this, please ignore this email.`,
         });
 
         console.log('Password reset email sent', { email });

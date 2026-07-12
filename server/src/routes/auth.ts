@@ -131,7 +131,7 @@ router.post('/forgot-password', async (req, res) => {
     if (user) {
       // Generate reset token
       const resetToken = randomBytes(32).toString('hex');
-      const expiresAt = new Date(Date.now() + 3600000); // 1 hour from now
+      const expiresAt = new Date(Date.now() + 6 * 3600000); // 6 hours from now
 
       // Delete old tokens for this user
       await query('DELETE FROM password_reset_tokens WHERE user_id = $1 AND used = 0', [user.id]);
