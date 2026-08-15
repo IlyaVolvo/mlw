@@ -16,6 +16,8 @@ interface SettingsProps {
   onRandomModeChange: (randomMode: boolean) => void;
   onDateChange: (date: string) => void;
   onRestartPractice?: () => void;
+  onExportResults?: () => void;
+  exporting?: boolean;
   disabled?: boolean;
   onShowCalendarChange?: (show: boolean) => void;
   showCalendar?: boolean;
@@ -81,6 +83,8 @@ export const Settings: React.FC<SettingsProps> = ({
   onRandomModeChange,
   onDateChange: _onDateChange,
   onRestartPractice,
+  onExportResults,
+  exporting = false,
   disabled = false,
   onShowCalendarChange,
   showCalendar: externalShowCalendar,
@@ -210,7 +214,7 @@ export const Settings: React.FC<SettingsProps> = ({
           </button>
         )}
       {!randomMode && (
-        <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: 1, alignItems: 'center', minWidth: 0 }}>
+        <div className="date-picker-wrapper-inline" style={{ position: 'relative', display: 'flex', flex: '0 0 auto', alignItems: 'center', minWidth: 0 }}>
             <input
               id="date-picker-hidden"
               type="date"
@@ -336,6 +340,36 @@ export const Settings: React.FC<SettingsProps> = ({
               {formatDateDisplay(selectedDate || null, today)}
             </span>
           </div>
+        )}
+        {onExportResults && (
+          <span className="export-button-with-tooltip">
+            <span className="export-tooltip" role="tooltip">
+              Please export the results, this version will not be supported. The latest Wordaholic software is here:{' '}
+              <a
+                href="https://wordaholic-6rxd.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                https://wordaholic-6rxd.onrender.com/
+              </a>
+              . It doesn't require registration or login but has the same functionality, the same word sets as used in this version of Polywordlot.
+            </span>
+            <button
+              type="button"
+              className="export-results-button"
+              onClick={onExportResults}
+              disabled={disabled || exporting}
+              aria-label="Export results"
+              aria-busy={exporting}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </span>
         )}
       </div>
 

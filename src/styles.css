@@ -263,8 +263,75 @@ h1 .logout-wrapper:hover .logout-tooltip {
   cursor: not-allowed;
 }
 
+.export-button-with-tooltip {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.export-results-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: #ff6b00;
+  color: white;
+  border: 2px solid #ff6b00;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.export-results-button:hover:not(:disabled) {
+  background: #e55f00;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.28);
+}
+
+.export-results-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.export-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  width: min(280px, 70vw);
+  padding: 10px 12px;
+  background: #1f2937;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.35;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s, visibility 0.15s;
+  z-index: 40;
+  text-align: left;
+  white-space: normal;
+}
+
+.export-tooltip a {
+  color: #ffd199;
+  word-break: break-all;
+}
+
+.export-button-with-tooltip:hover .export-tooltip,
+.export-button-with-tooltip:focus-within .export-tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .daily-mode-row .date-picker-wrapper-inline {
-  flex: 1;
+  flex: 0 0 auto;
   min-width: 120px;
 }
 

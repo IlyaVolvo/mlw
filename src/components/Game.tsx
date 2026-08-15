@@ -13,6 +13,7 @@ import { normalizeForLanguage, loadNormalization, isWinningGuessForLanguage } fr
 import { loadPreferences, savePreferences } from '../utils/preferences';
 import { apiClient } from '../api/client';
 import { gameCacheUtils } from '../utils/gameCache';
+import { exportCompletedDailies } from '../export/gameExport';
 
 const MAX_GUESSES = 6;
 
@@ -76,6 +77,8 @@ export const Game: React.FC<GameProps> = ({
   const [feedbackText, setFeedbackText] = useState('');
   const [feedbackSending, setFeedbackSending] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
+  const [exporting, setExporting] = useState(false);
+  const [exportMessage, setExportMessage] = useState<string | null>(null);
   const [showAbout, setShowAbout] = useState(false);
   const [aboutData, setAboutData] = useState<{ contributorLabel?: string; rulesLabel?: string; contributor?: string } | null>(null);
   const wordIndexGameStartedRef = useRef(false);
@@ -968,6 +971,19 @@ export const Game: React.FC<GameProps> = ({
     saveStoredDate(language, wordLength, date);
   }, [language, wordLength, saveStoredDate]);
 
+  const handleExportResults = useCallback(async () => {
+    if (exporting) return;
+    setExporting(true);
+    setExportMessage(null);
+    try {
+      await exportCompletedDailies();
+    } catch (err) {
+      setExportMessage(err instanceof Error ? err.message : 'Failed to export results');
+    } finally {
+      setExporting(false);
+    }
+  }, [exporting]);
+
   const handleSendFeedback = useCallback(async () => {
     if (!feedbackText.trim() || feedbackSending) return;
     setFeedbackSending(true);
@@ -1194,6 +1210,9 @@ export const Game: React.FC<GameProps> = ({
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
+      {exportMessage && (
+        <div className="error" role="status">{exportMessage}</div>
+      )}
       <div className="header-section">
         <h1>
           {onViewChange && (
@@ -1358,6 +1377,8 @@ export const Game: React.FC<GameProps> = ({
         onWordLengthChange={handleWordLengthChange}
         onRandomModeChange={handleRandomModeChange}
         onRestartPractice={handleRestartPractice}
+        onExportResults={handleExportResults}
+        exporting={exporting}
         onDateChange={handleDateChange}
         disabled={showCalendar}
         showCalendar={showCalendar}
