@@ -3,6 +3,7 @@ import type { LanguageConfig } from '../types';
 import { formatDate } from '../utils/dailyWord';
 import { apiClient } from '../api/client';
 import { LanguageDropdown } from './LanguageDropdown';
+import { RETIREMENT_MESSAGE, WORDAHOLIC_URL } from '../constants/retirement';
 
 interface SettingsProps {
   userId: number;
@@ -344,16 +345,21 @@ export const Settings: React.FC<SettingsProps> = ({
         {onExportResults && (
           <span className="export-button-with-tooltip">
             <span className="export-tooltip" role="tooltip">
-              Please export the results, this version will not be supported. The latest Wordaholic software is here:{' '}
-              <a
-                href="https://wordaholic-6rxd.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                https://wordaholic-6rxd.onrender.com/
-              </a>
-              . It doesn't require registration or login but has the same functionality, the same word sets as used in this version of Polywordlot.
+              {RETIREMENT_MESSAGE.split(WORDAHOLIC_URL).map((part, index, parts) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index < parts.length - 1 && (
+                    <a
+                      href={WORDAHOLIC_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {WORDAHOLIC_URL}
+                    </a>
+                  )}
+                </React.Fragment>
+              ))}
             </span>
             <button
               type="button"

@@ -2724,6 +2724,11 @@ h1 .logout-wrapper:hover .logout-tooltip {
   white-space: pre-line;
 }
 
+.release-message-content a {
+  color: #667eea;
+  word-break: break-all;
+}
+
 .release-message-label {
   font-size: 0.8rem;
   font-weight: 600;

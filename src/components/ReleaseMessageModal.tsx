@@ -6,6 +6,25 @@ interface ReleaseMessageModalProps {
   onDismiss: () => void;
 }
 
+const renderTextWithLinks = (text: string, keyPrefix: string): React.ReactNode[] => {
+  const parts = text.split(/(https?:\/\/[^\s]+)/g);
+  return parts.map((part, index) => {
+    if (/^https?:\/\//.test(part)) {
+      return (
+        <a
+          key={`${keyPrefix}-url-${index}`}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <React.Fragment key={`${keyPrefix}-text-${index}`}>{part}</React.Fragment>;
+  });
+};
+
 const renderReleaseMessage = (message: string): React.ReactNode => {
   // Accept both "**bold**" and escaped "\*\*bold\*\*" forms.
   const normalizedMessage = message.replace(/\\\*\\\*/g, '**');
@@ -22,9 +41,7 @@ const renderReleaseMessage = (message: string): React.ReactNode => {
       const matchStart = match.index;
       if (matchStart > lastIndex) {
         nodes.push(
-          <React.Fragment key={`text-${lineIndex}-${partIndex++}`}>
-            {line.slice(lastIndex, matchStart)}
-          </React.Fragment>
+          ...renderTextWithLinks(line.slice(lastIndex, matchStart), `pre-${lineIndex}-${partIndex++}`)
         );
       }
       nodes.push(<strong key={`bold-${lineIndex}-${partIndex++}`}>{boldText}</strong>);
@@ -32,11 +49,7 @@ const renderReleaseMessage = (message: string): React.ReactNode => {
     }
 
     if (lastIndex < line.length) {
-      nodes.push(
-        <React.Fragment key={`tail-${lineIndex}-${partIndex++}`}>
-          {line.slice(lastIndex)}
-        </React.Fragment>
-      );
+      nodes.push(...renderTextWithLinks(line.slice(lastIndex), `tail-${lineIndex}-${partIndex++}`));
     }
 
     if (nodes.length === 0) {
